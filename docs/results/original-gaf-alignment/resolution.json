@@ -1,0 +1,59 @@
+{
+  "rows": {
+    "real_full_vehicle": {
+      "samples": 269,
+      "constant_fraction": 0.16728624535315986,
+      "median_distinct_hilbert_cells": 10.0,
+      "per_class_constant_fraction": {
+        "pedestrian": 0.5189873417721519,
+        "bus": 0.0,
+        "motorcycle": 0.0,
+        "private_car": 0.03571428571428571,
+        "bycicle": 0.0,
+        "taxi_or_uber": 0.0
+      }
+    },
+    "real_64_point_windows": {
+      "samples": 2791,
+      "constant_fraction": 0.46864922966678607,
+      "median_distinct_hilbert_cells": 2.0,
+      "per_class_constant_fraction": {
+        "pedestrian": 0.924901185770751,
+        "bus": 0.5803571428571429,
+        "motorcycle": 0.47530864197530864,
+        "private_car": 0.3477106834771068,
+        "bycicle": 0.6571428571428571,
+        "taxi_or_uber": 0.3684210526315789
+      }
+    },
+    "generated_fixed_route_64": {
+      "samples": 320,
+      "constant_fraction": 0.509375,
+      "median_distinct_hilbert_cells": 1.0,
+      "per_class_constant_fraction": {
+        "bus": 0.5,
+        "motorcycle": 0.234375,
+        "private_car": 0.375,
+        "bycicle": 0.96875,
+        "taxi_or_uber": 0.46875
+      }
+    },
+    "generated_same_condition": {
+      "conditions": 80,
+      "draws_each": 4,
+      "all_four_images_identical_fraction": 0.375,
+      "mean_distinct_images": 2.4125
+    }
+  },
+  "hilbert_eps": 0.0037,
+  "depth": 5,
+  "grid_shape": [
+    32,
+    32
+  ],
+  "cell_width_m": [
+    311.816875,
+    194.979375
+  ],
+  "scope": "Representation diagnostics only; no classifier-guided generation was run. Full trajectories, real windows and generated windows are different populations, not a model performance comparison."
+}
