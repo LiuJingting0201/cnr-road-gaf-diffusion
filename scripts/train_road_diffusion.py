@@ -23,6 +23,7 @@ def main():
     p.add_argument('--batch-size',type=int,default=128)
     p.add_argument('--semantic-teacher',default=None)
     p.add_argument('--semantic-weight',type=float,default=.01)
+    p.add_argument('--semantic-objective',choices=['ce','consistency'],default='ce')
     p.add_argument('--shuffle-semantic-labels',action='store_true')
     p.add_argument('--noise-seed',type=int,default=None)
     a=p.parse_args();torch.set_num_threads(4);torch.manual_seed(a.seed);np.random.seed(a.seed)
@@ -46,6 +47,11 @@ def main():
         teacher_record={'variant':tc['variant'],'sha256':hashlib.sha256((tp/'best.pt').read_bytes()).hexdigest()}
     if a.noise_seed is not None:torch.manual_seed(a.noise_seed)
     shuffle_generator=torch.Generator(device='cuda').manual_seed(a.seed+3000)
+    reference_probabilities=None
+    if teacher is not None and a.semantic_objective=='consistency':
+        if a.shuffle_semantic_labels:raise ValueError('Consistency and label permutation are separate experiments')
+        with torch.no_grad():
+            reference_probabilities=torch.cat([teacher(xy[j:j+128]).softmax(-1) for j in range(0,len(xy),128)])
     roads=RoadFields(a.fields).cuda()
     patches=None
     with torch.no_grad():
@@ -98,7 +104,10 @@ def main():
                     if a.shuffle_semantic_labels:
                         # Permute full minibatch labels, independently of diffusion RNG.
                         targets=y[torch.randperm(batch,device='cuda',generator=shuffle_generator)][active]
-                    semantic=torch.nn.functional.cross_entropy(teacher(pred[active]),targets)
+                    logits=teacher(pred[active])
+                    if a.semantic_objective=='consistency':
+                        semantic=torch.nn.functional.kl_div(logits.log_softmax(-1),reference_probabilities[ix][active],reduction='batchmean')
+                    else:semantic=torch.nn.functional.cross_entropy(logits,targets)
             loss=diffusion+.02*motion+(.05*road if a.variant=='map_roadloss' else 0)+a.semantic_weight*semantic
             if not torch.isfinite(loss):raise RuntimeError('Nonfinite loss')
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optim.step()
