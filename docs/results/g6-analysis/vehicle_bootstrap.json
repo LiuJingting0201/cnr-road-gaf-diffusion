@@ -1,0 +1,371 @@
+{
+  "bootstrap_replicates": 2000,
+  "rows": [
+    {
+      "family": "path-g5-repeat",
+      "variant": "gaf_0.3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 16.61279296875,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.04099893162393163,
+        "bootstrap_percentile_95": [
+          0.01978899572649572,
+          0.06738782051282052
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.014676816239316237,
+        "bootstrap_percentile_95": [
+          0.005380942841880342,
+          0.02590845352564102
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "gaf_1",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 34.70001220703125,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.0751869658119658,
+        "bootstrap_percentile_95": [
+          0.0444684829059829,
+          0.1106597222222222
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.021768162393162392,
+        "bootstrap_percentile_95": [
+          0.0013782051282051286,
+          0.045679086538461505
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "gaf_3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 68.22085571289062,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.16856303418803417,
+        "bootstrap_percentile_95": [
+          0.12387686965811963,
+          0.2166245993589743
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.008026175213675213,
+        "bootstrap_percentile_95": [
+          -0.02104767628205128,
+          0.037701655982905966
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "tcn_0.3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 14.807876586914062,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.025854700854700853,
+        "bootstrap_percentile_95": [
+          0.011589209401709401,
+          0.04150641025641026
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.0953926282051282,
+        "bootstrap_percentile_95": [
+          0.0580859375,
+          0.1366276041666666
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "tcn_1",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 32.93513488769531,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.04910523504273504,
+        "bootstrap_percentile_95": [
+          0.02437199519230769,
+          0.07780849358974357
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.13667200854700853,
+        "bootstrap_percentile_95": [
+          0.08466479700854701,
+          0.1891573183760684
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "tcn_3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 69.14993286132812,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.0673344017094017,
+        "bootstrap_percentile_95": [
+          0.0332678952991453,
+          0.10438167735042735
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.07256944444444444,
+        "bootstrap_percentile_95": [
+          0.021819577991452996,
+          0.12190972222222216
+        ]
+      }
+    },
+    {
+      "family": "path-g5-repeat",
+      "variant": "shuffled_gaf",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 28.511390686035156,
+      "gaf": {
+        "vehicle_macro_paired_gain": -0.06308760683760684,
+        "bootstrap_percentile_95": [
+          -0.08963942307692306,
+          -0.0357865918803419
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": -0.11327457264957266,
+        "bootstrap_percentile_95": [
+          -0.15080662393162392,
+          -0.07528979700854703
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "gaf_0.3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 6.103515625e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.030088141025641023,
+        "bootstrap_percentile_95": [
+          0.01402043269230769,
+          0.05056490384615382
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.009147970085470086,
+        "bootstrap_percentile_95": [
+          0.0016015625,
+          0.018068910256410255
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "gaf_1",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 6.103515625e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.06092414529914529,
+        "bootstrap_percentile_95": [
+          0.03386284722222223,
+          0.09244190705128205
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.010122863247863247,
+        "bootstrap_percentile_95": [
+          -0.00833934294871795,
+          0.030004006410256356
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "gaf_3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 6.103515625e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.11605235042735043,
+        "bootstrap_percentile_95": [
+          0.06944377670940172,
+          0.1674232104700854
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.0038327991452991447,
+        "bootstrap_percentile_95": [
+          -0.026363181089743587,
+          0.032814503205128194
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "tcn_0.3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 9.1552734375e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.021794871794871794,
+        "bootstrap_percentile_95": [
+          0.009025774572649572,
+          0.03685897435897435
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.09678151709401708,
+        "bootstrap_percentile_95": [
+          0.05912860576923077,
+          0.13910523504273503
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "tcn_1",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 6.103515625e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.03795405982905983,
+        "bootstrap_percentile_95": [
+          0.01818442841880342,
+          0.06175213675213674
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.1219818376068376,
+        "bootstrap_percentile_95": [
+          0.06965211004273504,
+          0.17740785256410255
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "tcn_3",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 7.62939453125e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": 0.05008012820512821,
+        "bootstrap_percentile_95": [
+          0.02628071581196581,
+          0.07553819444444441
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": 0.05718482905982906,
+        "bootstrap_percentile_95": [
+          -0.0073243856837606905,
+          0.11686698717948711
+        ]
+      }
+    },
+    {
+      "family": "preserved-g6",
+      "variant": "shuffled_gaf",
+      "vehicle_counts": {
+        "bus": 13,
+        "motorcycle": 16,
+        "private_car": 16,
+        "bycicle": 16,
+        "taxi_or_uber": 8
+      },
+      "max_arc_length_change_m": 6.103515625e-05,
+      "gaf": {
+        "vehicle_macro_paired_gain": -0.04827724358974359,
+        "bootstrap_percentile_95": [
+          -0.07771834935897436,
+          -0.02099893162393167
+        ]
+      },
+      "tcn": {
+        "vehicle_macro_paired_gain": -0.08811431623931625,
+        "bootstrap_percentile_95": [
+          -0.11920606303418804,
+          -0.05688835470085472
+        ]
+      }
+    }
+  ],
+  "unit": "vehicle, class-stratified; average repetitions/seeds/windows first; macro vehicle-weighted estimates differ from window-weighted headline",
+  "scope": "posthoc validation exploration; no multiple-comparison correction; teacher seed fixed; uncertainty does not include teacher variation"
+}

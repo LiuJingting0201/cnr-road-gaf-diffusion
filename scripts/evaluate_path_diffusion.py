@@ -42,9 +42,9 @@ for path in sorted(root.glob('*.npz')):
   row[key]=float(np.mean([v[key] for v in row['per_class'].values()])) if all(v[key] is not None for v in row['per_class'].values()) else None
  rows.append(row);print(json.dumps(row),flush=True)
 out=Path('docs/results')/root.parent.name/root.name;out.mkdir(parents=True,exist_ok=True)
-report={'rows':rows,'config':cfg,'model_family':'coordinate' if 'variant' in cfg else 'path_progress','scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; repeat count recorded in config; pairwise distance measured only between draws sharing the same source condition'}
+report={'rows':rows,'config':cfg,'model_family':('path_conditioned_coordinate' if cfg.get('variant')=='path_xy' else ('coordinate' if 'variant' in cfg else 'path_progress')),'scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; repeat count recorded in config; pairwise distance measured only between draws sharing the same source condition'}
 (out/'results.json').write_text(json.dumps(report,indent=2))
 lines=['# 地图路径条件扩散与采样引导','',report['scope'],'','| 引导 | 图一致率 | GAF独立审计 | TCN独立审计 | 速度W1 | 路径末端截断 |','|---|---:|---:|---:|---:|---:|']
 for r in rows:lines.append(f"| {r['variant']} | {r['graph_consistent']:.3f} | {r['gaf_accuracy']:.3f} | {r['tcn_accuracy']:.3f} | {r['speed_w1_mps']:.3f} | {str(r['route_end_capped'])} |")
-lines+=['','路径模型使用训练转移统计规划路线，坐标模型使用局部地图栅格；不能把规划器保证的连接归功于GAF。独立审计器未参与引导；同架构偏好仍可能存在。测试集未使用。']
+lines+=['','进度模型与path_xy坐标对照使用相同规划路线；map坐标基线使用局部地图栅格；不能把规划器保证的连接归功于GAF。独立审计器未参与引导；同架构偏好仍可能存在。测试集未使用。']
 (out/'REPORT.md').write_text('\n'.join(lines))
