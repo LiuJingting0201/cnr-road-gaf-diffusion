@@ -339,3 +339,5 @@ motion-audit-e7只读E4r/E3b保存候选及真实验证参考。主比较全部�
 实现final_protocol锁定校验、prepare_locked_test参考/请求分离、plan_locked_test仅起点/类别规划、sample_locked_test不读取真实测试未来、共享选择评价的显式锁定测试入口，以及36个既有下游模型和6个既有辅助分类模型的最终推断与汇总。固定某条件K=8路径规划有任一失败则整组列为未服务，记录具体槽位与覆盖，不补抽；已补充到候选协议，测试内容尚未读取。
 
 preflight_final_test默认只做构造数据测试与训练侧权重/统计/代码哈希清单，status=preflight_only，不能用于解封。显式--lock还要求协议正文已标记锁定、最终执行文件齐备且检查通过；所有测试内容入口先校验lock及文件哈希，缺失权重或变化时拒绝。检查不打开canonical包，仅从既有开发元数据取得预期原始包哈希；实际输入校验放在锁定之后。当前先部署并运行预检查，不把代码完成称为检查通过或最终测试完成。
+
+解封前检查已在 /workspace/cnr-experiments/final-02ba1dd 完成：runs/final-preflight-02ba1dd/complete.json为preflight_only；19项测试通过，包含锁定状态/缺失清单/文件变更拒绝、真实未来字段拒绝、共享K预算失败记录、原编码一致性、路径解码及配对统计，217个代码、权重和统计文件存在并完成哈希。检查未打开canonical包或读取测试轨迹。按已授权路线将FINAL_TEST_PROTOCOL状态锁定；后续必须再次生成locked机器清单并核验后才启动有限最终评价，不因测试结果改变方案。
