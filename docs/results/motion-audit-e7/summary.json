@@ -1,0 +1,292 @@
+{
+  "paired_w1": {
+    "speed_w1_mps": {
+      "diffusion": 1.0183389276724475,
+      "empirical": 1.182429209385622,
+      "empirical_minus_diffusion": 0.1640902817131744,
+      "paired_percentile95": [
+        -0.30067982025571977,
+        0.6840692701594863
+      ]
+    },
+    "acceleration_w1_mps2": {
+      "diffusion": 0.21703857948784377,
+      "empirical": 0.2543302908389224,
+      "empirical_minus_diffusion": 0.037291711351078616,
+      "paired_percentile95": [
+        0.0016811633631213852,
+        0.0799126169000633
+      ]
+    },
+    "travel_w1_m": {
+      "diffusion": 145.728754901886,
+      "empirical": 152.72314405441284,
+      "empirical_minus_diffusion": 6.99438915252685,
+      "paired_percentile95": [
+        -40.319208538797156,
+        90.39335424449706
+      ]
+    }
+  },
+  "memory": {
+    "route-diverse-e4r": [
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 0.5028330401700893,
+        "median_nearest_increment_mae_m": 0.48642556369304657,
+        "quantile05_nearest_increment_mae_m": 0.05012760050594807,
+        "mean_nearest_speed_profile_mae_mps": 2.0113321606803574,
+        "near_copy_fraction_at_1mm_mean_increment": 0.0,
+        "median_normalized_shape_mae": 0.20136117190122604,
+        "unique_nearest_training_parents": 150,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 0.6545040011405945,
+            "near_copy_fraction": 0.0
+          },
+          "2": {
+            "median_increment_mae_m": 0.7802310585975647,
+            "near_copy_fraction": 0.0
+          },
+          "3": {
+            "median_increment_mae_m": 0.4016079753637314,
+            "near_copy_fraction": 0.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.13188138604164124,
+            "near_copy_fraction": 0.0
+          },
+          "5": {
+            "median_increment_mae_m": 0.778515636920929,
+            "near_copy_fraction": 0.0
+          }
+        },
+        "seed": 42
+      },
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 0.5202147515109655,
+        "median_nearest_increment_mae_m": 0.5295717120170593,
+        "quantile05_nearest_increment_mae_m": 0.05484524611383677,
+        "mean_nearest_speed_profile_mae_mps": 2.080859006043862,
+        "near_copy_fraction_at_1mm_mean_increment": 0.0,
+        "median_normalized_shape_mae": 0.2069878950715065,
+        "unique_nearest_training_parents": 155,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 0.6701893210411072,
+            "near_copy_fraction": 0.0
+          },
+          "2": {
+            "median_increment_mae_m": 0.8017880618572235,
+            "near_copy_fraction": 0.0
+          },
+          "3": {
+            "median_increment_mae_m": 0.4350138157606125,
+            "near_copy_fraction": 0.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.14565879851579666,
+            "near_copy_fraction": 0.0
+          },
+          "5": {
+            "median_increment_mae_m": 0.8968421816825867,
+            "near_copy_fraction": 0.0
+          }
+        },
+        "seed": 43
+      },
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 0.5172148478732472,
+        "median_nearest_increment_mae_m": 0.5299786329269409,
+        "quantile05_nearest_increment_mae_m": 0.052638224139809606,
+        "mean_nearest_speed_profile_mae_mps": 2.068859391492989,
+        "near_copy_fraction_at_1mm_mean_increment": 0.0,
+        "median_normalized_shape_mae": 0.22516097128391266,
+        "unique_nearest_training_parents": 145,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 0.6705620884895325,
+            "near_copy_fraction": 0.0
+          },
+          "2": {
+            "median_increment_mae_m": 0.818047821521759,
+            "near_copy_fraction": 0.0
+          },
+          "3": {
+            "median_increment_mae_m": 0.4083574563264847,
+            "near_copy_fraction": 0.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.15438266098499298,
+            "near_copy_fraction": 0.0
+          },
+          "5": {
+            "median_increment_mae_m": 0.8839580416679382,
+            "near_copy_fraction": 0.0
+          }
+        },
+        "seed": 44
+      }
+    ],
+    "empirical-motion-e3b": [
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 2.893624548095504e-09,
+        "median_nearest_increment_mae_m": 9.331451167327032e-10,
+        "quantile05_nearest_increment_mae_m": 0.0,
+        "mean_nearest_speed_profile_mae_mps": 1.1574498192382016e-08,
+        "near_copy_fraction_at_1mm_mean_increment": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "unique_nearest_training_parents": 176,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 1.3341059368343622e-09,
+            "near_copy_fraction": 1.0
+          },
+          "2": {
+            "median_increment_mae_m": 1.7496470938738184e-09,
+            "near_copy_fraction": 1.0
+          },
+          "3": {
+            "median_increment_mae_m": 1.8662902334654063e-09,
+            "near_copy_fraction": 1.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.0,
+            "near_copy_fraction": 1.0
+          },
+          "5": {
+            "median_increment_mae_m": 1.166431395915879e-09,
+            "near_copy_fraction": 1.0
+          }
+        },
+        "seed": 42
+      },
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 2.282114467097332e-09,
+        "median_nearest_increment_mae_m": 9.331451167327032e-10,
+        "quantile05_nearest_increment_mae_m": 0.0,
+        "mean_nearest_speed_profile_mae_mps": 9.128457868389329e-09,
+        "near_copy_fraction_at_1mm_mean_increment": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "unique_nearest_training_parents": 177,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 9.331451167327032e-10,
+            "near_copy_fraction": 1.0
+          },
+          "2": {
+            "median_increment_mae_m": 1.8662902334654063e-09,
+            "near_copy_fraction": 1.0
+          },
+          "3": {
+            "median_increment_mae_m": 1.8662902334654063e-09,
+            "near_copy_fraction": 1.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.0,
+            "near_copy_fraction": 1.0
+          },
+          "5": {
+            "median_increment_mae_m": 6.998588375495274e-10,
+            "near_copy_fraction": 1.0
+          }
+        },
+        "seed": 43
+      },
+      {
+        "samples": 264,
+        "mean_nearest_increment_mae_m": 2.2662258422959693e-09,
+        "median_nearest_increment_mae_m": 9.331451167327032e-10,
+        "quantile05_nearest_increment_mae_m": 0.0,
+        "mean_nearest_speed_profile_mae_mps": 9.064903369183877e-09,
+        "near_copy_fraction_at_1mm_mean_increment": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "unique_nearest_training_parents": 185,
+        "per_class": {
+          "1": {
+            "median_increment_mae_m": 9.404352852016018e-10,
+            "near_copy_fraction": 1.0
+          },
+          "2": {
+            "median_increment_mae_m": 1.8662902334654063e-09,
+            "near_copy_fraction": 1.0
+          },
+          "3": {
+            "median_increment_mae_m": 9.331451167327032e-10,
+            "near_copy_fraction": 1.0
+          },
+          "4": {
+            "median_increment_mae_m": 0.0,
+            "near_copy_fraction": 1.0
+          },
+          "5": {
+            "median_increment_mae_m": 9.331451167327032e-10,
+            "near_copy_fraction": 1.0
+          }
+        },
+        "seed": 44
+      }
+    ],
+    "real_validation_reference": {
+      "samples": 33,
+      "mean_nearest_increment_mae_m": 0.35943045517937705,
+      "median_nearest_increment_mae_m": 0.24685359001159668,
+      "quantile05_nearest_increment_mae_m": 0.026989317685365676,
+      "mean_nearest_speed_profile_mae_mps": 1.4377218207175082,
+      "near_copy_fraction_at_1mm_mean_increment": 0.0,
+      "median_normalized_shape_mae": 0.11490359157323837,
+      "unique_nearest_training_parents": 31,
+      "per_class": {
+        "1": {
+          "median_increment_mae_m": 0.1714872047305107,
+          "near_copy_fraction": 0.0
+        },
+        "2": {
+          "median_increment_mae_m": 0.7382262051105499,
+          "near_copy_fraction": 0.0
+        },
+        "3": {
+          "median_increment_mae_m": 0.2847921699285507,
+          "near_copy_fraction": 0.0
+        },
+        "4": {
+          "median_increment_mae_m": 0.05999485403299332,
+          "near_copy_fraction": 0.0
+        },
+        "5": {
+          "median_increment_mae_m": 0.7472655177116394,
+          "near_copy_fraction": 0.0
+        }
+      }
+    }
+  },
+  "plan": {
+    "pid": 181873,
+    "bootstrap_repetitions": 2000,
+    "bootstrap_seed": 20261108,
+    "comparison": "empirical minus diffusion W1; positive favors diffusion",
+    "population": "33 fixed validation vehicles, class-stratified paired clusters, all K=8 candidates",
+    "conditioning": "Fixed 3 diffusion checkpoints, 3 empirical pools and planned paths; no model refits",
+    "copy_tolerance_mean_increment_m": 0.001,
+    "git_commit": "e53800e999927e4d91ba5844fd8a6fc2735fdfa4"
+  },
+  "candidate_hashes": {
+    "runs/route-diverse-e4r/seed42/candidates.npz": "787dd26717da7a6677b02258e2b21ee5f9a08c2b9f22b3dfefc37f6f9f48d7a7",
+    "runs/route-diverse-e4r/seed43/candidates.npz": "08e9cea601629ccaf63bac4d69ef56854edac4f0d828d3b8da9b7ebd5e6cf0b2",
+    "runs/route-diverse-e4r/seed44/candidates.npz": "24238e069ee40bb0aa09c25e8eeef050906aba2eb9dfd2c68678e5645060d044",
+    "runs/empirical-motion-e3b/seed42/candidates.npz": "7fcf95fddb856ac4ec163975e3a40ce85bb75ab19b4a0fcc450a8992b8152066",
+    "runs/empirical-motion-e3b/seed43/candidates.npz": "78c3e59372c28cde3d607bc77b5f30e13dbcd7eff10652a0862559fe434a1b14",
+    "runs/empirical-motion-e3b/seed44/candidates.npz": "5590329c1682b90820a68b6ef0fa9b0db6f8b5808e53f235b76abf01b010885e"
+  },
+  "class_vehicle_counts": {
+    "1": 8,
+    "2": 6,
+    "3": 8,
+    "4": 8,
+    "5": 3
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pid": 181873,
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 20261108,
+  "comparison": "empirical minus diffusion W1; positive favors diffusion",
+  "population": "33 fixed validation vehicles, class-stratified paired clusters, all K=8 candidates",
+  "conditioning": "Fixed 3 diffusion checkpoints, 3 empirical pools and planned paths; no model refits",
+  "copy_tolerance_mean_increment_m": 0.001,
+  "git_commit": "e53800e999927e4d91ba5844fd8a6fc2735fdfa4"
+}

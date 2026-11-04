@@ -26,6 +26,7 @@
 
 ## 最新结果入口
 
+- [E7 配对区间与运动记忆诊断](docs/results/motion-audit-e7/REPORT.md)：加速度单项区间未跨零，速度/行程仍跨零；未发现预定义的完整对齐近复制，不能宣称无记忆。[最终测试协议候选](docs/FINAL_TEST_PROTOCOL.md)已写，尚未解封。
 - [E3b 相同路径的经验运动基线](docs/results/empirical-motion-e3b/REPORT.md)：三次重采样完成；扩散运动分布误差较小，但经验基线的候选差异更大，尚无显著性结论。当前进入配对不确定性、记忆审计与最终测试协议准备。
 - [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益。
 - [E4r 路线多样性对照](docs/results/route-diverse-e4r/REPORT.md)：三种子已完成，平均每池6.70条路径；GAF同家族分数改善仍未转化为跨家族收益。
