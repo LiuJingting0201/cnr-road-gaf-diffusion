@@ -1,0 +1,47 @@
+{
+  "selection": "first condition per class, repetition zero, fixed before inspecting plots",
+  "examples": [
+    {
+      "class": "pedestrian",
+      "condition": 0,
+      "repetition": 0,
+      "vehicle_id": "pedestrian_3-1_5386",
+      "validation_index": 2153
+    },
+    {
+      "class": "bus",
+      "condition": 8,
+      "repetition": 0,
+      "vehicle_id": "bus_M1:France.1",
+      "validation_index": 130
+    },
+    {
+      "class": "motorcycle",
+      "condition": 16,
+      "repetition": 0,
+      "vehicle_id": "pedestrian_1-2_2564_tr",
+      "validation_index": 681
+    },
+    {
+      "class": "private_car",
+      "condition": 24,
+      "repetition": 0,
+      "vehicle_id": "pedestrian_GW2-1_1912_tr",
+      "validation_index": 2639
+    },
+    {
+      "class": "bycicle",
+      "condition": 32,
+      "repetition": 0,
+      "vehicle_id": "pedestrian_1-1-pt_2170_tr",
+      "validation_index": 283
+    },
+    {
+      "class": "taxi_or_uber",
+      "condition": 40,
+      "repetition": 0,
+      "vehicle_id": "pedestrian_2-1_5526_tr",
+      "validation_index": 1692
+    }
+  ]
+}

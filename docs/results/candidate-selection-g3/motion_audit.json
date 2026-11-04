@@ -1,0 +1,662 @@
+{
+  "scope": "post-hoc validation diagnostic; no policy retuning",
+  "nearly_static_definition": "max distance from supplied start < 1 meter over all 64 points",
+  "dt": 0.25,
+  "reference": "all real validation windows within each class, no test access",
+  "limitations": [
+    "unconfirmed original time unit, seconds assumed",
+    "reference and generated start distributions differ",
+    "descriptive acceleration, no physical acceptance threshold",
+    "stationarity may be legitimate"
+  ],
+  "real_reference": {
+    "pedestrian": {
+      "mean_path_length_m": 16.999468245383166,
+      "mean_displacement_m": 15.13984203338623,
+      "nearly_static_fraction": 0.023715415019762844,
+      "acceleration_p95_mps2": 2.5708827916184496
+    },
+    "bus": {
+      "mean_path_length_m": 101.58285371283485,
+      "mean_displacement_m": 91.36394500732422,
+      "nearly_static_fraction": 0.17410714285714285,
+      "acceleration_p95_mps2": 4.526938565851487
+    },
+    "motorcycle": {
+      "mean_path_length_m": 130.3825839716753,
+      "mean_displacement_m": 114.38554382324219,
+      "nearly_static_fraction": 0.22839506172839505,
+      "acceleration_p95_mps2": 9.827134764946631
+    },
+    "private_car": {
+      "mean_path_length_m": 173.17690231699078,
+      "mean_displacement_m": 159.69268798828125,
+      "nearly_static_fraction": 0.10351692103516921,
+      "acceleration_p95_mps2": 7.238175865141586
+    },
+    "bycicle": {
+      "mean_path_length_m": 74.57350773645246,
+      "mean_displacement_m": 70.19330596923828,
+      "nearly_static_fraction": 0.0,
+      "acceleration_p95_mps2": 5.322605043471866
+    },
+    "taxi_or_uber": {
+      "mean_path_length_m": 139.59652267101063,
+      "mean_displacement_m": 126.23699951171875,
+      "nearly_static_fraction": 0.0,
+      "acceleration_p95_mps2": 6.342240285357168
+    }
+  },
+  "policies": [
+    {
+      "policy": "random",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 17.615404559998026,
+          "mean_displacement_m": 15.455652236938477,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 1.5540668285371897,
+          "acceleration_w1_mps2": 1.8169872042703172,
+          "acceleration_p95_mps2": 6.691963646918702
+        },
+        "bus": {
+          "mean_path_length_m": 125.74762472493546,
+          "mean_displacement_m": 114.40821838378906,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 26.483188503987932,
+          "acceleration_w1_mps2": 3.0313611667639453,
+          "acceleration_p95_mps2": 11.634354666606793
+        },
+        "motorcycle": {
+          "mean_path_length_m": 98.43211895398773,
+          "mean_displacement_m": 86.70175170898438,
+          "nearly_static_fraction": 0.046875,
+          "path_length_w1_m": 36.62227412727472,
+          "acceleration_w1_mps2": 1.3032881963075935,
+          "acceleration_p95_mps2": 9.196594203769296
+        },
+        "private_car": {
+          "mean_path_length_m": 168.18262294195677,
+          "mean_displacement_m": 152.72279357910156,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 10.397929325323343,
+          "acceleration_w1_mps2": 2.8183627431325404,
+          "acceleration_p95_mps2": 11.675255699503808
+        },
+        "bycicle": {
+          "mean_path_length_m": 75.0804257898904,
+          "mean_displacement_m": 70.47711944580078,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 5.930319354510969,
+          "acceleration_w1_mps2": 1.8749389087469088,
+          "acceleration_p95_mps2": 7.348381925300296
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 159.16257350591357,
+          "mean_displacement_m": 147.00759887695312,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 19.566050834902946,
+          "acceleration_w1_mps2": 2.3865865119536225,
+          "acceleration_p95_mps2": 12.064215634340679
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 107.37012841278033,
+        "mean_displacement_m": 97.7955223719279,
+        "nearly_static_fraction": 0.0078125,
+        "path_length_w1_m": 16.758971495756185,
+        "acceleration_w1_mps2": 2.2052541218624877,
+        "acceleration_p95_mps2": 9.768460962739928
+      }
+    },
+    {
+      "policy": "road",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 13.135922363746772,
+          "mean_displacement_m": 10.045156478881836,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 4.785018513196886,
+          "acceleration_w1_mps2": 1.6408440120603838,
+          "acceleration_p95_mps2": 6.297223734896467
+        },
+        "bus": {
+          "mean_path_length_m": 60.88039566196382,
+          "mean_displacement_m": 53.65737533569336,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 44.12196416841906,
+          "acceleration_w1_mps2": 1.90366255735546,
+          "acceleration_p95_mps2": 7.647227207442777
+        },
+        "motorcycle": {
+          "mean_path_length_m": 61.87274577913688,
+          "mean_displacement_m": 49.34075164794922,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 70.97755905972508,
+          "acceleration_w1_mps2": 1.1973229581993265,
+          "acceleration_p95_mps2": 9.184371511326548
+        },
+        "private_car": {
+          "mean_path_length_m": 158.18145697383133,
+          "mean_displacement_m": 143.1751251220703,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 16.690721370749777,
+          "acceleration_w1_mps2": 2.8253702548425914,
+          "acceleration_p95_mps2": 11.808181416907718
+        },
+        "bycicle": {
+          "mean_path_length_m": 65.0661092373849,
+          "mean_displacement_m": 60.00502395629883,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 10.882327659733408,
+          "acceleration_w1_mps2": 1.6566037622706697,
+          "acceleration_p95_mps2": 6.885734772518574
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 120.13442482209803,
+          "mean_displacement_m": 102.91996765136719,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 22.704480173291213,
+          "acceleration_w1_mps2": 1.984669136426932,
+          "acceleration_p95_mps2": 9.972405987394264
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 79.87850913969362,
+        "mean_displacement_m": 69.85723336537679,
+        "nearly_static_fraction": 0.0,
+        "path_length_w1_m": 28.360345157519237,
+        "acceleration_w1_mps2": 1.8680787801925607,
+        "acceleration_p95_mps2": 8.632524105081059
+      }
+    },
+    {
+      "policy": "hilbert",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 18.49288853826019,
+          "mean_displacement_m": 16.238853454589844,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 2.3531360357957354,
+          "acceleration_w1_mps2": 1.7627209658151355,
+          "acceleration_p95_mps2": 6.298247686145131
+        },
+        "bus": {
+          "mean_path_length_m": 110.11627282632404,
+          "mean_displacement_m": 99.38783264160156,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 21.408003948985083,
+          "acceleration_w1_mps2": 2.4108665201742903,
+          "acceleration_p95_mps2": 8.844441930004159
+        },
+        "motorcycle": {
+          "mean_path_length_m": 75.4533913562828,
+          "mean_displacement_m": 61.53792190551758,
+          "nearly_static_fraction": 0.0625,
+          "path_length_w1_m": 57.099167817209214,
+          "acceleration_w1_mps2": 1.1889094784882261,
+          "acceleration_p95_mps2": 9.342802673314841
+        },
+        "private_car": {
+          "mean_path_length_m": 161.65108650137392,
+          "mean_displacement_m": 142.6916046142578,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 15.535058435987864,
+          "acceleration_w1_mps2": 2.7577483831293588,
+          "acceleration_p95_mps2": 12.040464095062717
+        },
+        "bycicle": {
+          "mean_path_length_m": 69.462395137506,
+          "mean_displacement_m": 64.99613952636719,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 6.002104098500003,
+          "acceleration_w1_mps2": 1.6953065102423577,
+          "acceleration_p95_mps2": 6.864436895110945
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 136.09546675460794,
+          "mean_displacement_m": 117.06951141357422,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 13.617054699117723,
+          "acceleration_w1_mps2": 1.9341593345847465,
+          "acceleration_p95_mps2": 10.11535060939048
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 95.21191685239249,
+        "mean_displacement_m": 83.6536439259847,
+        "nearly_static_fraction": 0.010416666666666666,
+        "path_length_w1_m": 19.33575417259927,
+        "acceleration_w1_mps2": 1.958285198739019,
+        "acceleration_p95_mps2": 8.917623981504713
+      }
+    },
+    {
+      "policy": "road_hilbert",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 14.978416476026968,
+          "mean_displacement_m": 12.143159866333008,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.541243186200153,
+          "acceleration_w1_mps2": 1.6355275958848463,
+          "acceleration_p95_mps2": 6.23306484085391
+        },
+        "bus": {
+          "mean_path_length_m": 81.91162659680234,
+          "mean_displacement_m": 75.80564880371094,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 27.936926663261957,
+          "acceleration_w1_mps2": 2.061142069791289,
+          "acceleration_p95_mps2": 8.348576879758557
+        },
+        "motorcycle": {
+          "mean_path_length_m": 70.15011073577735,
+          "mean_displacement_m": 55.34742736816406,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 62.541713427720296,
+          "acceleration_w1_mps2": 1.0426364896841909,
+          "acceleration_p95_mps2": 9.434324993164243
+        },
+        "private_car": {
+          "mean_path_length_m": 169.41145123733133,
+          "mean_displacement_m": 155.80841064453125,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 10.221249398493121,
+          "acceleration_w1_mps2": 2.622468617143915,
+          "acceleration_p95_mps2": 10.649641125009769
+        },
+        "bycicle": {
+          "mean_path_length_m": 63.35562384704391,
+          "mean_displacement_m": 58.42418670654297,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 11.75013979298873,
+          "acceleration_w1_mps2": 1.7181720389886712,
+          "acceleration_p95_mps2": 7.255026425742341
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 114.7513442086609,
+          "mean_displacement_m": 97.97441101074219,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 32.32896192898978,
+          "acceleration_w1_mps2": 1.6572900500694434,
+          "acceleration_p95_mps2": 8.61901404437957
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 85.75976218360712,
+        "mean_displacement_m": 75.91720740000407,
+        "nearly_static_fraction": 0.005208333333333333,
+        "path_length_w1_m": 24.72003906627567,
+        "acceleration_w1_mps2": 1.7895394769270594,
+        "acceleration_p95_mps2": 8.423274718151399
+      }
+    },
+    {
+      "policy": "delta_gaf",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 14.888573367508211,
+          "mean_displacement_m": 13.634466171264648,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.0300884412640663,
+          "acceleration_w1_mps2": 1.361398434159993,
+          "acceleration_p95_mps2": 4.512401828871449
+        },
+        "bus": {
+          "mean_path_length_m": 77.47891632644235,
+          "mean_displacement_m": 64.81028747558594,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 46.40848117512983,
+          "acceleration_w1_mps2": 2.3820575761917344,
+          "acceleration_p95_mps2": 9.171772281760097
+        },
+        "motorcycle": {
+          "mean_path_length_m": 116.45513306372183,
+          "mean_displacement_m": 86.46112060546875,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 25.1994072478755,
+          "acceleration_w1_mps2": 2.4493920499786466,
+          "acceleration_p95_mps2": 13.933488136078724
+        },
+        "private_car": {
+          "mean_path_length_m": 212.72644638050483,
+          "mean_displacement_m": 207.0876922607422,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 40.014420224857524,
+          "acceleration_w1_mps2": 2.9881838743613285,
+          "acceleration_p95_mps2": 12.817622341722549
+        },
+        "bycicle": {
+          "mean_path_length_m": 82.94482242749837,
+          "mean_displacement_m": 80.8409423828125,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 8.688093544663268,
+          "acceleration_w1_mps2": 1.9175938494287699,
+          "acceleration_p95_mps2": 7.961104406085368
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 140.0496443108476,
+          "mean_displacement_m": 125.33547973632812,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 21.103349452751875,
+          "acceleration_w1_mps2": 1.8954675055447787,
+          "acceleration_p95_mps2": 9.477976956861319
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 107.42392264608719,
+        "mean_displacement_m": 96.36166477203369,
+        "nearly_static_fraction": 0.005208333333333333,
+        "path_length_w1_m": 24.073973347757008,
+        "acceleration_w1_mps2": 2.1656822149442085,
+        "acceleration_p95_mps2": 9.645727658563251
+      }
+    },
+    {
+      "policy": "road_delta_gaf",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 14.476731702563116,
+          "mean_displacement_m": 12.189799308776855,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.1363546511617773,
+          "acceleration_w1_mps2": 1.6552080147100927,
+          "acceleration_p95_mps2": 5.8321922849813
+        },
+        "bus": {
+          "mean_path_length_m": 78.29868702109277,
+          "mean_displacement_m": 69.21126556396484,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 33.899159326390794,
+          "acceleration_w1_mps2": 1.9977880159165449,
+          "acceleration_p95_mps2": 8.122014068378919
+        },
+        "motorcycle": {
+          "mean_path_length_m": 76.07609987162911,
+          "mean_displacement_m": 60.97905349731445,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 56.579112498188,
+          "acceleration_w1_mps2": 1.155029176533188,
+          "acceleration_p95_mps2": 10.14375336657322
+        },
+        "private_car": {
+          "mean_path_length_m": 188.64943076471323,
+          "mean_displacement_m": 177.47250366210938,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 17.660874837510093,
+          "acceleration_w1_mps2": 2.700699668321578,
+          "acceleration_p95_mps2": 11.741861091089886
+        },
+        "bycicle": {
+          "mean_path_length_m": 72.58272309949854,
+          "mean_displacement_m": 69.48660278320312,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.977381472869103,
+          "acceleration_w1_mps2": 1.5671101281505602,
+          "acceleration_p95_mps2": 6.538141908153631
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 129.27124437681647,
+          "mean_displacement_m": 109.76457977294922,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 17.0145144626354,
+          "acceleration_w1_mps2": 1.9506712602584608,
+          "acceleration_p95_mps2": 9.197172011136006
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 93.22581947271887,
+        "mean_displacement_m": 83.18396743138631,
+        "nearly_static_fraction": 0.005208333333333333,
+        "path_length_w1_m": 22.04456620812586,
+        "acceleration_w1_mps2": 1.8377510439817375,
+        "acceleration_p95_mps2": 8.595855788385494
+      }
+    },
+    {
+      "policy": "sequence",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 17.67733588179243,
+          "mean_displacement_m": 16.427635192871094,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 1.893117257752869,
+          "acceleration_w1_mps2": 1.4160188536702538,
+          "acceleration_p95_mps2": 4.801479621941596
+        },
+        "bus": {
+          "mean_path_length_m": 82.1242066228758,
+          "mean_displacement_m": 73.01788330078125,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 33.015317584866224,
+          "acceleration_w1_mps2": 2.114717894974849,
+          "acceleration_p95_mps2": 7.95351263933765
+        },
+        "motorcycle": {
+          "mean_path_length_m": 107.68165581415766,
+          "mean_displacement_m": 82.6116943359375,
+          "nearly_static_fraction": 0.015625,
+          "path_length_w1_m": 25.77331367111337,
+          "acceleration_w1_mps2": 2.411369851160934,
+          "acceleration_p95_mps2": 15.68005896525534
+        },
+        "private_car": {
+          "mean_path_length_m": 194.89712645856514,
+          "mean_displacement_m": 185.87725830078125,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 23.52690789100891,
+          "acceleration_w1_mps2": 2.493549291296027,
+          "acceleration_p95_mps2": 10.91891195661158
+        },
+        "bycicle": {
+          "mean_path_length_m": 83.91869716976879,
+          "mean_displacement_m": 81.82574462890625,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 9.41332286113937,
+          "acceleration_w1_mps2": 1.7722295273056836,
+          "acceleration_p95_mps2": 6.9768504746721085
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 147.06740020562222,
+          "mean_displacement_m": 134.6283721923828,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 12.971390074930879,
+          "acceleration_w1_mps2": 1.8962406956113764,
+          "acceleration_p95_mps2": 9.588864404955551
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 105.561070358797,
+        "mean_displacement_m": 95.73143132527669,
+        "nearly_static_fraction": 0.0078125,
+        "path_length_w1_m": 17.765561556801938,
+        "acceleration_w1_mps2": 2.0173543523365205,
+        "acceleration_p95_mps2": 9.319946343795637
+      }
+    },
+    {
+      "policy": "road_sequence",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 15.03774288393219,
+          "mean_displacement_m": 12.611143112182617,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 2.844178965531025,
+          "acceleration_w1_mps2": 1.573974073836815,
+          "acceleration_p95_mps2": 5.904131972401655
+        },
+        "bus": {
+          "mean_path_length_m": 61.162179277691564,
+          "mean_displacement_m": 52.75444030761719,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 44.988582818267226,
+          "acceleration_w1_mps2": 1.8345128092149363,
+          "acceleration_p95_mps2": 7.244265681000705
+        },
+        "motorcycle": {
+          "mean_path_length_m": 72.95129248478281,
+          "mean_displacement_m": 56.78766632080078,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 59.67234225011161,
+          "acceleration_w1_mps2": 1.0074766044754377,
+          "acceleration_p95_mps2": 9.600548131503961
+        },
+        "private_car": {
+          "mean_path_length_m": 179.45052963313137,
+          "mean_displacement_m": 165.03854370117188,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 10.60848501806335,
+          "acceleration_w1_mps2": 2.7851778527594933,
+          "acceleration_p95_mps2": 12.245762896029532
+        },
+        "bycicle": {
+          "mean_path_length_m": 73.96118046933957,
+          "mean_displacement_m": 69.53361511230469,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.3692414047033763,
+          "acceleration_w1_mps2": 1.5507879011888819,
+          "acceleration_p95_mps2": 6.383433103078065
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 130.43217247552985,
+          "mean_displacement_m": 113.18234252929688,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 15.8673967409954,
+          "acceleration_w1_mps2": 1.847066328477624,
+          "acceleration_p95_mps2": 8.73232928379675
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 88.83251620406789,
+        "mean_displacement_m": 78.31795851389568,
+        "nearly_static_fraction": 0.005208333333333333,
+        "path_length_w1_m": 22.89170453294533,
+        "acceleration_w1_mps2": 1.7664992616588648,
+        "acceleration_p95_mps2": 8.351745177968445
+      }
+    },
+    {
+      "policy": "delta_tcn",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 17.10694696842892,
+          "mean_displacement_m": 15.92064380645752,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 1.898200260542336,
+          "acceleration_w1_mps2": 1.3842467289001408,
+          "acceleration_p95_mps2": 4.619339990292993
+        },
+        "bus": {
+          "mean_path_length_m": 117.44958532107186,
+          "mean_displacement_m": 108.28684997558594,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 32.03761153981203,
+          "acceleration_w1_mps2": 2.4618455540421,
+          "acceleration_p95_mps2": 8.850919744874254
+        },
+        "motorcycle": {
+          "mean_path_length_m": 101.76171564895672,
+          "mean_displacement_m": 77.3402099609375,
+          "nearly_static_fraction": 0.0625,
+          "path_length_w1_m": 30.72493478000141,
+          "acceleration_w1_mps2": 2.1416550657547755,
+          "acceleration_p95_mps2": 14.230811065432158
+        },
+        "private_car": {
+          "mean_path_length_m": 220.63104646256605,
+          "mean_displacement_m": 214.98648071289062,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 49.07311963298994,
+          "acceleration_w1_mps2": 3.0267099438577603,
+          "acceleration_p95_mps2": 13.028183022842988
+        },
+        "bycicle": {
+          "mean_path_length_m": 84.49210972444983,
+          "mean_displacement_m": 82.50089263916016,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 10.106883848995711,
+          "acceleration_w1_mps2": 1.8279594748622947,
+          "acceleration_p95_mps2": 7.278808228036757
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 125.20613274682337,
+          "mean_displacement_m": 110.88665771484375,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 23.125933586421688,
+          "acceleration_w1_mps2": 1.8932112730116506,
+          "acceleration_p95_mps2": 8.94538010767566
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 111.10792281204947,
+        "mean_displacement_m": 101.65362246831258,
+        "nearly_static_fraction": 0.015625,
+        "path_length_w1_m": 24.494447274793853,
+        "acceleration_w1_mps2": 2.122604673404787,
+        "acceleration_p95_mps2": 9.492240359859135
+      }
+    },
+    {
+      "policy": "road_delta_tcn",
+      "per_class": {
+        "pedestrian": {
+          "mean_path_length_m": 15.182731622070039,
+          "mean_displacement_m": 13.014400482177734,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 2.738677665586854,
+          "acceleration_w1_mps2": 1.5419089089867148,
+          "acceleration_p95_mps2": 5.418371074948484
+        },
+        "bus": {
+          "mean_path_length_m": 88.58449537292022,
+          "mean_displacement_m": 80.27613830566406,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 22.25475018237642,
+          "acceleration_w1_mps2": 2.002632565209718,
+          "acceleration_p95_mps2": 7.8929005256446425
+        },
+        "motorcycle": {
+          "mean_path_length_m": 66.90853554122013,
+          "mean_displacement_m": 49.99489974975586,
+          "nearly_static_fraction": 0.03125,
+          "path_length_w1_m": 65.7541513199998,
+          "acceleration_w1_mps2": 1.015532324740104,
+          "acceleration_p95_mps2": 9.566926149567378
+        },
+        "private_car": {
+          "mean_path_length_m": 190.57505817243452,
+          "mean_displacement_m": 179.352783203125,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 19.586502245231365,
+          "acceleration_w1_mps2": 2.7602800018029967,
+          "acceleration_p95_mps2": 12.113534338050314
+        },
+        "bycicle": {
+          "mean_path_length_m": 74.08479629351937,
+          "mean_displacement_m": 70.05108642578125,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 3.833423937234932,
+          "acceleration_w1_mps2": 1.5744900200725716,
+          "acceleration_p95_mps2": 6.520816232736568
+        },
+        "taxi_or_uber": {
+          "mean_path_length_m": 121.45589994578827,
+          "mean_displacement_m": 102.52285766601562,
+          "nearly_static_fraction": 0.0,
+          "path_length_w1_m": 23.853710242111557,
+          "acceleration_w1_mps2": 1.8073300166031214,
+          "acceleration_p95_mps2": 8.700836044488282
+        }
+      },
+      "macro": {
+        "mean_path_length_m": 92.79858615799209,
+        "mean_displacement_m": 82.5353609720866,
+        "nearly_static_fraction": 0.005208333333333333,
+        "path_length_w1_m": 23.003535932090156,
+        "acceleration_w1_mps2": 1.7836956395692045,
+        "acceleration_p95_mps2": 8.368897394239278
+      }
+    }
+  ]
+}
