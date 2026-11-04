@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "locked_commit": "e6a375d70902893c6eb76480fe79604fc2039ac5",
+  "lock_sha256": "2ef4bddc8b727bc53c78e7cd2b8abf55b1757b7e880b832560e2feaefcfeebba",
+  "test_ids_total": 270,
+  "encodable_windows": 182,
+  "strict_generation_requests": 53,
+  "class_counts": {
+    "pedestrian": 12,
+    "bus": 13,
+    "motorcycle": 31,
+    "private_car": 103,
+    "bycicle": 15,
+    "taxi_or_uber": 8
+  },
+  "generation_class_counts": {
+    "pedestrian": 0,
+    "bus": 7,
+    "motorcycle": 4,
+    "private_car": 33,
+    "bycicle": 7,
+    "taxi_or_uber": 2
+  },
+  "coordinate_clipped_points": 0,
+  "channel_clipped_values": 0,
+  "test_reference_sha256": "43503387ac47ba537520b16fe0eafcd3720ef65ace36f8f4b2cbed598893d5a1",
+  "requests_sha256": "e68d57d4c76cb49b90ca9cc413b0647f875ad41b766f7a510525a20d19649a75"
+}

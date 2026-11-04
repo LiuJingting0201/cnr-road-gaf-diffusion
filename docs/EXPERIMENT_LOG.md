@@ -343,3 +343,11 @@ preflight_final_test默认只做构造数据测试与训练侧权重/统计/代�
 解封前检查已在 /workspace/cnr-experiments/final-02ba1dd 完成：runs/final-preflight-02ba1dd/complete.json为preflight_only；19项测试通过，包含锁定状态/缺失清单/文件变更拒绝、真实未来字段拒绝、共享K预算失败记录、原编码一致性、路径解码及配对统计，217个代码、权重和统计文件存在并完成哈希。检查未打开canonical包或读取测试轨迹。按已授权路线将FINAL_TEST_PROTOCOL状态锁定；后续必须再次生成locked机器清单并核验后才启动有限最终评价，不因测试结果改变方案。
 
 正式锁定已完成并回收：执行提交e6a375d，服务器清单 runs/final-lock-e6a375d/manifest.json，SHA256=2ef4bddc8b727bc53c78e7cd2b8abf55b1757b7e880b832560e2feaefcfeebba，status=locked、checks_passed=true，217项哈希；19项测试再次通过。完整清单和检查记录保存于 docs/results/final-lock-e7。此时尚未启动最终队列；在发布该记录之后才允许run_final_test使用此清单解封。后续工作树固定为 /workspace/cnr-experiments/final-02ba1dd（HEAD e6a375d），不要因文件夹名而误判执行版本。
+
+### 最终测试已按锁定协议启动并解封
+
+GitHub提交3afce6a先发布锁定清单，之后启动一次性队列：PID182280，工作树 /workspace/cnr-experiments/final-02ba1dd（执行e6a375d），日志 /workspace/cnr-road-gaf-diffusion/final-test-e7-queue.log，运行目录 runs/final-test-e7。所有入口已通过locked清单核验；自此测试已被访问，禁止后续据结果重选模型或阈值。
+
+准备实际完成：270个测试ID，182条可编码512点窗口；六类数量12/13/31/103/15/8。道路严格生成子集53条，五类为bus7、motorcycle4、private_car33、bicycle7、taxi2，行人不合成。53条件均规划成功、失败槽位0；每组53×8=424条。taxi只有2个参考，必须披露统计限制，不放宽规则补样。seed42正式扩散采样及道路/同池评价已完成，seed43评价启动；这不是整个最终队列完成，不从单种子得出总体结论。
+
+下一次先查 runs/final-test-e7/complete.json 或 failed.json 及各stage日志，不重复启动。队列依次完成三扩散/三经验池评价、6个冻结辅助分类器推断、36个既有下游模型推断及配对区间/记忆汇总。已有测试结果只用于锁定报告。完成后回收 docs/results/final-test-e7、final-diffusion-e7、final-empirical-e7、final-downstream-e7、final-auxiliary-e7；补固定地图案例、论文总表与结论边界，再按任务书暂停本轮自动迭代。若代码异常，保存已暴露结果与失败记录，仅修实现错误，不借机改协议。
