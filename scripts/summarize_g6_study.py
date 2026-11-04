@@ -2,7 +2,9 @@ import json,statistics
 from pathlib import Path
 out=Path('docs/results/g6-analysis');out.mkdir(parents=True,exist_ok=True)
 rows=[]
-for family in ['coordinate-g6','path-g5-repeat','preserved-g6']:
+families=['coordinate-g6','path-g5-repeat','preserved-g6']
+if Path('docs/results/route-coordinate-g6/seed44/results.json').exists():families.insert(1,'route-coordinate-g6')
+for family in families:
  reports=[json.loads((Path('docs/results')/family/f'seed{s}/results.json').read_text()) for s in [42,43,44]]
  for variant in [r['variant'] for r in reports[0]['rows']]:
   runs=[next(r for r in p['rows'] if r['variant']==variant) for p in reports]
@@ -11,7 +13,7 @@ for family in ['coordinate-g6','path-g5-repeat','preserved-g6']:
 (out/'summary.json').write_text(json.dumps({'rows':rows},indent=2))
 lines=['# G6：公平坐标基线与保持行程的GAF引导','',
  '所有模型使用相同16,779训练窗口；验证为同一批80个起点，每起点4次采样。坐标基线三模型新训各20,000步；路径模型复用G5三模型。报告三种子均值。测试集未用。','',
- '坐标基线与路径模型在生成表示、地图输入与损失上均有差异；这是系统级比较，不能解释成只加一个拓扑模块的因果消融。前者使用地图栅格，后者额外使用规划器的有向路径条件。二者不同维度噪声，仅起点/类别/采样数匹配。','',
+ 'coordinate-g6为栅格地图坐标扩散；route-coordinate-g6为同一路线条件的坐标扩散（追加对照）；path-g5-repeat为沿路线进度扩散。追加对照与进度模型共享路线编码器和噪声MSE目标、无运动辅助损失，区别主要为自由XY与非负进度表示。不同输出维度的噪声不能逐元素配对。栅格基线另有运动辅助损失，仅作为系统比较。','',
  '| 系列 | 引导 | 图一致% | GAF审计% | TCN审计% | 速度W1↓ | 同条件样本间距m |','|---|---|---:|---:|---:|---:|---:|']
 for r in rows:
  vals=[r[k]['mean']*(100 if k in ['graph_consistent','gaf_accuracy','tcn_accuracy'] else 1) for k in ['graph_consistent','gaf_accuracy','tcn_accuracy','speed_w1_mps','within_condition_pairwise_distance_m']]
