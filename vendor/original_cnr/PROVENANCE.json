@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/LiuJingting0201/Deep-Learning-Based-Generative-Models-for-Traffic-Trajectory-Synthesis",
+  "commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+  "files": [
+    {
+      "path": "src/cnr_trajectory/__init__.py",
+      "sha256": "af75704e826f480731f2e7ca2d83b936216b7b2a5212291ca78fe9e667d12a5b"
+    },
+    {
+      "path": "src/cnr_trajectory/encoding/__init__.py",
+      "sha256": "dbbcea4d60ac0708fa58da7388ede5293fedba3ffbc5f3416cf4a931633b48d2"
+    },
+    {
+      "path": "src/cnr_trajectory/encoding/hilbert.py",
+      "sha256": "80d40b879b3c7d997e738274a71af914c461f2f22ed081618e3c49bc8f04af53"
+    },
+    {
+      "path": "src/cnr_trajectory/encoding/gaf.py",
+      "sha256": "646c7c5b17ae7958b275c9c338e75cadfc05f6d4b89f7f7aa67375385da0840a"
+    },
+    {
+      "path": "src/cnr_trajectory/encoding/sequence.py",
+      "sha256": "096ea10df30a02ea4c7609459f83a463c8289461a6b7a2258f52802c4b76cc97"
+    }
+  ],
+  "note": "Unmodified source snapshot. These encoding files are unchanged between dev and week07. Not a snapshot of a group CNN: user confirms classifier implementation was not supplied."
+}
