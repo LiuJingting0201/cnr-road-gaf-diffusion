@@ -37,3 +37,13 @@ def test_total_progress_projection_preserves_model_sample_without_future():
     assert (inc(result)>=0).all()
     zero=preserve_total_progress(candidate,torch.full_like(reference,-10),1.,.7)
     assert inc(zero).sum()<1e-3
+
+
+def test_coordinate_control_uses_same_route_condition():
+    from cnr.path_diffusion import PathCoordinateDenoiser
+    model=PathCoordinateDenoiser()
+    route=torch.randn(2,2,129,requires_grad=True)
+    result=model(torch.randn(2,2,63),torch.tensor([50,80]),torch.tensor([1,2]),torch.zeros(2,2),route)
+    assert result.shape==(2,2,63)
+    result.square().mean().backward()
+    assert torch.isfinite(route.grad).all() and route.grad.abs().sum()>0
