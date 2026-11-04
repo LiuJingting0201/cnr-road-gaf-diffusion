@@ -24,6 +24,9 @@
 
 ## 最新结果入口
 
+- [G5地图路径扩散与GAF引导：三种子重复采样](docs/results/path-g5-repeat/REPORT.md)
+- [固定起点全部采样地图图表](docs/results/path-g5-repeat/seed42/fixed_examples.png)
+
 - [GAF继承关系与当前缺口](docs/GAF_CONTINUITY.md)
 - [G4/G4b完整反馈对照：16次训练](docs/results/semantic-followup/REPORT.md)
 - [道路连接与停车状态审计：数据与评价支撑](docs/results/TOPOLOGY_AND_PARKING.md)
