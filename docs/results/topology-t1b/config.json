@@ -1,0 +1,20 @@
+{
+  "git_commit": "377bf59c6523399b6bec47b6c8c7ae25b2ede517",
+  "radius_m": 2.0,
+  "max_candidates": 12,
+  "reverse_tolerance_m": 0.05,
+  "projection_candidates": "nearby segment projections, including multiple positions on one bent lane",
+  "route_budget": "min(200m, 2 * observed displacement + 5m)",
+  "real_selection": "first validation manifest window of each distinct vehicle; no pedestrian topology",
+  "map_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "unresolved_connections": 0,
+  "gate": "real geometry coverage >=95% overall, graph consistency among geometry-covered >=95% overall and >=90% each vehicle class; no unresolved connections",
+  "limits": [
+    "graph consistency within a geometric envelope is not physical trajectory validity",
+    "permissive adjacent-lane changes on same normal edge",
+    "no traffic signal or collision model",
+    "pedestrian topology excluded; category-to-vClass remains a hypothesis",
+    "2D map cannot by itself certify bridge elevation or source simulation version",
+    "candidate cap and bounded detour can cause false incompatibility"
+  ]
+}

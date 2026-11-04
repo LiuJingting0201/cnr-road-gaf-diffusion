@@ -1,0 +1,111 @@
+[
+  {
+    "validation_index": 332,
+    "class": "bycicle",
+    "minimum_breaks": 1,
+    "locally_incompatible_steps": [
+      {
+        "step": 46,
+        "from_xy": [
+          4925.4501953125,
+          1393.510009765625
+        ],
+        "to_xy": [
+          4924.759765625,
+          1393.4599609375
+        ],
+        "budget": 6.384482383728027,
+        "pairs": [
+          {
+            "from_lane": "152935_1",
+            "to_lane": "152935_1",
+            "from_attributes": {
+              "id": "152935_1",
+              "index": "1",
+              "disallow": "pedestrian tram rail_urban rail rail_electric ship",
+              "speed": "13.89",
+              "length": "87.41",
+              "shape": "4882.43,1373.64,61.72 4901.15,1389.66,62.10 4925.59,1394.84,61.60 4933.04,1375.56,61.80 4937.91,1356.32,62.16",
+              "edge": "152935",
+              "function": "normal"
+            },
+            "to_attributes": {
+              "id": "152935_1",
+              "index": "1",
+              "disallow": "pedestrian tram rail_urban rail rail_electric ship",
+              "speed": "13.89",
+              "length": "87.41",
+              "shape": "4882.43,1373.64,61.72 4901.15,1389.66,62.10 4925.59,1394.84,61.60 4933.04,1375.56,61.80 4937.91,1356.32,62.16",
+              "edge": "152935",
+              "function": "normal"
+            },
+            "from_progress": 50.81208517993511,
+            "to_progress": 48.52355144018331,
+            "from_distance": 0.609785904306795,
+            "to_distance": 1.1779066459095324,
+            "route_distance": 169.29954596226293,
+            "forward_successors": [
+              ":151299_2_0",
+              ":151299_3_0"
+            ],
+            "fits_budget": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "validation_index": 380,
+    "class": "bycicle",
+    "minimum_breaks": 1,
+    "locally_incompatible_steps": [
+      {
+        "step": 8,
+        "from_xy": [
+          4732.27978515625,
+          1342.280029296875
+        ],
+        "to_xy": [
+          4732.06982421875,
+          1341.7900390625
+        ],
+        "budget": 6.066159248352051,
+        "pairs": [
+          {
+            "from_lane": "152863_1",
+            "to_lane": "152863_1",
+            "from_attributes": {
+              "id": "152863_1",
+              "index": "1",
+              "disallow": "pedestrian tram rail_urban rail rail_electric ship",
+              "speed": "13.89",
+              "length": "83.56",
+              "shape": "4729.90,1339.65,63.97 4731.35,1342.80,63.48 4736.74,1344.63,62.90 4741.70,1344.72,62.90 4754.38,1341.67,63.80 4786.83,1337.23,65.20 4811.74,1334.70,65.57",
+              "edge": "152863",
+              "function": "normal"
+            },
+            "to_attributes": {
+              "id": "152863_1",
+              "index": "1",
+              "disallow": "pedestrian tram rail_urban rail rail_electric ship",
+              "speed": "13.89",
+              "length": "83.56",
+              "shape": "4729.90,1339.65,63.97 4731.35,1342.80,63.48 4736.74,1344.63,62.90 4741.70,1344.72,62.90 4754.38,1341.67,63.80 4786.83,1337.23,65.20 4811.74,1334.70,65.57",
+              "edge": "152863",
+              "function": "normal"
+            },
+            "from_progress": 4.180965692324007,
+            "to_progress": 2.8512688091763367,
+            "from_distance": 0.7912860958927774,
+            "to_distance": 1.0761833055382666,
+            "route_distance": null,
+            "forward_successors": [
+              ":147315_3_0"
+            ],
+            "fits_budget": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -11,6 +11,7 @@ from cnr.data import CLASSES
 from cnr.topology import LaneConsistency
 
 p=argparse.ArgumentParser();p.add_argument('--output',default='docs/results/topology-t1')
+p.add_argument('--real-selection',choices=['first_per_vehicle','all_windows'],default='first_per_vehicle')
 p.add_argument('--radius',type=float,default=2.);a=p.parse_args()
 out=Path(a.output);out.mkdir(parents=True,exist_ok=False);started=time.monotonic()
 matcher=LaneConsistency('data/maps/most.net.xml',radius=a.radius)
@@ -18,7 +19,7 @@ config={'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=Tru
         'radius_m':a.radius,'max_candidates':12,'reverse_tolerance_m':.05,
         'projection_candidates':'nearby segment projections, including multiple positions on one bent lane',
         'route_budget':'min(200m, 2 * observed displacement + 5m)',
-        'real_selection':'first validation manifest window of each distinct vehicle; no pedestrian topology',
+        'real_selection':a.real_selection+'; no pedestrian topology',
         'map_sha256':hashlib.sha256(Path('data/maps/most.net.xml').read_bytes()).hexdigest(),
         'unresolved_connections':matcher.unresolved_connections,
         'gate':'real geometry coverage >=95% overall, graph consistency among geometry-covered >=95% overall and >=90% each vehicle class; no unresolved connections',
@@ -53,7 +54,8 @@ def audit(xy,labels,indices=None):
 
 data=Path('data/processed/most64');real=np.load(data/'val.npz')
 manifest=pd.read_csv(data/'manifest.csv',dtype={'vehicle_id':str})
-selected=manifest[manifest.split=='val'].drop_duplicates('vehicle_id').array_index.to_numpy()
+frame=manifest[manifest.split=='val']
+selected=(frame.drop_duplicates('vehicle_id') if a.real_selection=='first_per_vehicle' else frame).array_index.to_numpy()
 calibration=audit(real['xy'][selected],real['labels'][selected],selected)
 s=calibration['summary']
 passed=(matcher.unresolved_connections==0 and s['geometry_covered_fraction']>=.95
@@ -80,7 +82,7 @@ lines=['# T1：有向车道连接一致性诊断','',
        '同edge相邻车道切换为宽松近似；通过不等于合法驾驶，未校验信号、碰撞及真实vClass。','',
        '| 数据/策略 | 轨迹数 | 全点有候选 | 全序列图一致 | 几何覆盖条件下图一致 |',
        '|---|---:|---:|---:|---:|']
-for name,result in [('real_unique_vehicles',calibration),('reversed_moving_real',report['reversed_real_control'])]+list(report['generated'].items()):
+for name,result in [('real_'+a.real_selection,calibration),('reversed_moving_real',report['reversed_real_control'])]+list(report['generated'].items()):
     s=result['summary'];conditional='N/A' if s['graph_consistent_given_geometry'] is None else f"{100*s['graph_consistent_given_geometry']:.2f}%"
     lines.append(f"| {name} | {s['trajectories']} | {100*s['geometry_covered_fraction']:.2f}% | {100*s['graph_consistent_fraction']:.2f}% | {conditional} |")
 lines+=['','反转轨迹仅为保持空间点不变的方向扰动，并非所有情况下都是不合法反例。不同半径可能允许匹配到邻近反向车道。',
