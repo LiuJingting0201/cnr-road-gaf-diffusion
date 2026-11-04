@@ -16,7 +16,7 @@ from cnr.original_gaf import trajectory_sequence, encode_frozen
 from cnr.representations import RepresentationClassifier
 from cnr.topology import LaneConsistency
 
-p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');a=p.parse_args()
 torch.set_num_threads(4)
 run=Path(f'runs/long-path-e3/seed{a.seed}')
 cfg=json.loads((run/'config.json').read_text())
@@ -29,8 +29,8 @@ assert np.array_equal(labels,raw['labels'][s['source_index']])
 groups=[np.flatnonzero(s['condition_id']==i) for i in np.unique(s['condition_id'])]
 assert all(len(g)==8 and len(np.unique(s['source_index'][g]))==1 for g in groups)
 meta=json.loads((source/'dataset.json').read_text());length=xy.shape[1]
-out=Path(f'docs/results/long-selection-e4/seed{a.seed}');out.mkdir(parents=True,exist_ok=False)
-predroot=Path(f'runs/long-selection-e4/seed{a.seed}');predroot.mkdir(parents=True,exist_ok=False)
+out=Path(f'docs/results/{a.tag}/seed{a.seed}');out.mkdir(parents=True,exist_ok=False)
+predroot=Path(f'runs/{a.tag}/seed{a.seed}');predroot.mkdir(parents=True,exist_ok=False)
 provenance={}
 
 def gaf_images(tracks):
@@ -79,7 +79,7 @@ for seed in [42,43,44]:
 
 auditors={k:(v[43]+v[44])/2 for k,v in prob.items()}
 real_auditors={k:(v[43]+v[44])/2 for k,v in real_prob.items()}
-matcher=LaneConsistency('data/maps/most.net.xml',radius=5.)
+matcher=LaneConsistency('data/maps/most.net.xml',radius=5.,max_candidates=a.max_candidates)
 graphs=[]
 for i,(x,label) in enumerate(zip(xy,labels)):
     graphs.append(matcher.match(x,CLASSES[int(label)]))
@@ -136,7 +136,7 @@ indices=np.linspace(0,length-1,32).astype(int)
 nearest=[]
 for x in xy:
     nearest.append(float(np.linalg.norm(training[:,indices]-x[indices][None],axis=-1).mean(-1).min()))
-summary={'seed':a.seed,'config':cfg,'candidate_sha256':hashlib.sha256((run/'candidates.npz').read_bytes()).hexdigest(),
+summary={'max_candidates':a.max_candidates,'tag':a.tag,'seed':a.seed,'config':cfg,'candidate_sha256':hashlib.sha256((run/'candidates.npz').read_bytes()).hexdigest(),
     'teachers':provenance,'rows':rows,'conditions':len(groups),'unique_vehicles':len(np.unique(s['source_index'])),
     'valid_candidate_fraction':float(valid.mean()),'encoding_failures':int((~enc_valid).sum()),'coordinate_clipped_points':coord_clip,'channel_clipped_values':channel_clip,
     'identical_gaf_pool_fraction':float(np.mean(np.array(unique_images)==1)),'mean_unique_gaf_images_per_pool':float(np.mean(unique_images)),
