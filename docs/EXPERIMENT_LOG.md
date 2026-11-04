@@ -341,3 +341,5 @@ motion-audit-e7只读E4r/E3b保存候选及真实验证参考。主比较全部�
 preflight_final_test默认只做构造数据测试与训练侧权重/统计/代码哈希清单，status=preflight_only，不能用于解封。显式--lock还要求协议正文已标记锁定、最终执行文件齐备且检查通过；所有测试内容入口先校验lock及文件哈希，缺失权重或变化时拒绝。检查不打开canonical包，仅从既有开发元数据取得预期原始包哈希；实际输入校验放在锁定之后。当前先部署并运行预检查，不把代码完成称为检查通过或最终测试完成。
 
 解封前检查已在 /workspace/cnr-experiments/final-02ba1dd 完成：runs/final-preflight-02ba1dd/complete.json为preflight_only；19项测试通过，包含锁定状态/缺失清单/文件变更拒绝、真实未来字段拒绝、共享K预算失败记录、原编码一致性、路径解码及配对统计，217个代码、权重和统计文件存在并完成哈希。检查未打开canonical包或读取测试轨迹。按已授权路线将FINAL_TEST_PROTOCOL状态锁定；后续必须再次生成locked机器清单并核验后才启动有限最终评价，不因测试结果改变方案。
+
+正式锁定已完成并回收：执行提交e6a375d，服务器清单 runs/final-lock-e6a375d/manifest.json，SHA256=2ef4bddc8b727bc53c78e7cd2b8abf55b1757b7e880b832560e2feaefcfeebba，status=locked、checks_passed=true，217项哈希；19项测试再次通过。完整清单和检查记录保存于 docs/results/final-lock-e7。此时尚未启动最终队列；在发布该记录之后才允许run_final_test使用此清单解封。后续工作树固定为 /workspace/cnr-experiments/final-02ba1dd（HEAD e6a375d），不要因文件夹名而误判执行版本。
