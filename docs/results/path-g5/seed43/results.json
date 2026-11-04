@@ -1,0 +1,476 @@
+{
+  "rows": [
+    {
+      "variant": "gaf_01",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.4987158503511363,
+          "gaf_accuracy": 0.34375,
+          "tcn_accuracy": 0.53125,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.8210968971252441,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0600976675924603,
+          "gaf_accuracy": 0.125,
+          "tcn_accuracy": 0.65625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.6324764490127563,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.8049551568747987,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.8125,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.754916787147522,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.17944406729102846,
+          "gaf_accuracy": 1.0,
+          "tcn_accuracy": 1.0,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.5538830757141113,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.1168084638203644,
+          "gaf_accuracy": 0.21875,
+          "tcn_accuracy": 0.5625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.2376093864440918,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7320042411859576,
+      "gaf_accuracy": 0.5125,
+      "tcn_accuracy": 0.7125,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    },
+    {
+      "variant": "gaf_03",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.434321865090169,
+          "gaf_accuracy": 0.375,
+          "tcn_accuracy": 0.59375,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.8566470146179199,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.05369789637385,
+          "gaf_accuracy": 0.125,
+          "tcn_accuracy": 0.625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.690965175628662,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.8290033725992083,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.84375,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.784457802772522,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.17073580026922247,
+          "gaf_accuracy": 1.0,
+          "tcn_accuracy": 1.0,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.5528947114944458,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0639258071189812,
+          "gaf_accuracy": 0.21875,
+          "tcn_accuracy": 0.59375,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.3009065389633179,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7103369482902862,
+      "gaf_accuracy": 0.51875,
+      "tcn_accuracy": 0.73125,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    },
+    {
+      "variant": "none",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.5502825669204795,
+          "gaf_accuracy": 0.34375,
+          "tcn_accuracy": 0.53125,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.8323416113853455,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0659784206470089,
+          "gaf_accuracy": 0.09375,
+          "tcn_accuracy": 0.65625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.6077009439468384,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.7927905945550828,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.8125,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.747753381729126,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.20546319999451204,
+          "gaf_accuracy": 1.0,
+          "tcn_accuracy": 0.96875,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.5549615621566772,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.1471009874235494,
+          "gaf_accuracy": 0.21875,
+          "tcn_accuracy": 0.5625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.2163413763046265,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7523231539081265,
+      "gaf_accuracy": 0.50625,
+      "tcn_accuracy": 0.70625,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    },
+    {
+      "variant": "shuffled_gaf_01",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.53359984164721,
+          "gaf_accuracy": 0.34375,
+          "tcn_accuracy": 0.5625,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.8694162964820862,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.1650556729254609,
+          "gaf_accuracy": 0.09375,
+          "tcn_accuracy": 0.625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.6270331144332886,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.784723100474193,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.8125,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.7802728414535522,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.3031851398714242,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.90625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.7045486569404602,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0840940566897246,
+          "gaf_accuracy": 0.25,
+          "tcn_accuracy": 0.65625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.2563068866729736,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7741315623216025,
+      "gaf_accuracy": 0.4875,
+      "tcn_accuracy": 0.7125,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    },
+    {
+      "variant": "tcn_01",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.4989851312285672,
+          "gaf_accuracy": 0.34375,
+          "tcn_accuracy": 0.59375,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.887947678565979,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.050322801125442,
+          "gaf_accuracy": 0.125,
+          "tcn_accuracy": 0.875,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.7585968971252441,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.8024519977292845,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.84375,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.7787524461746216,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.1925657021827878,
+          "gaf_accuracy": 1.0,
+          "tcn_accuracy": 1.0,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.5472072958946228,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.1030213281813461,
+          "gaf_accuracy": 0.1875,
+          "tcn_accuracy": 0.5625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.2432819604873657,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7294693920894855,
+      "gaf_accuracy": 0.50625,
+      "tcn_accuracy": 0.775,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    },
+    {
+      "variant": "tcn_03",
+      "samples": 160,
+      "per_class": {
+        "bus": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.47715277966973,
+          "gaf_accuracy": 0.34375,
+          "tcn_accuracy": 0.65625,
+          "endpoint_displacement_le5m": 0.03125,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.0067591667175293,
+          "reference_acceleration_abs_mean_mps2": 0.6737752556800842
+        },
+        "motorcycle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0351136294625505,
+          "gaf_accuracy": 0.125,
+          "tcn_accuracy": 0.9375,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 2.2031383514404297,
+          "reference_acceleration_abs_mean_mps2": 1.836670994758606
+        },
+        "private_car": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.8221105163887381,
+          "gaf_accuracy": 0.875,
+          "tcn_accuracy": 0.84375,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.8370394706726074,
+          "reference_acceleration_abs_mean_mps2": 0.8516904711723328
+        },
+        "bycicle": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 0.18962154453915975,
+          "gaf_accuracy": 1.0,
+          "tcn_accuracy": 1.0,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 0.5455762147903442,
+          "reference_acceleration_abs_mean_mps2": 0.9671939611434937
+        },
+        "taxi_or_uber": {
+          "n": 32,
+          "graph_consistent": 1.0,
+          "speed_w1_mps": 1.0125556833798846,
+          "gaf_accuracy": 0.21875,
+          "tcn_accuracy": 0.5625,
+          "endpoint_displacement_le5m": 0.0,
+          "route_end_capped": 0.0,
+          "acceleration_abs_mean_mps2": 1.313415765762329,
+          "reference_acceleration_abs_mean_mps2": 1.206467866897583
+        }
+      },
+      "graph_consistent": 1.0,
+      "speed_w1_mps": 0.7073108306880126,
+      "gaf_accuracy": 0.5125,
+      "tcn_accuracy": 0.8,
+      "endpoint_displacement_le5m": 0.00625,
+      "route_end_capped": 0.0
+    }
+  ],
+  "config": {
+    "data": "data/processed/route512",
+    "output": "runs/path-g5/seed43",
+    "steps": 20000,
+    "seed": 43,
+    "samples_per_class": 32,
+    "git_commit": "fe2d6ba66385158a1025ebaebf8510f8d6ee205d",
+    "log_increment_mean": 1.2338842153549194,
+    "log_increment_std": 0.43786102533340454,
+    "dataset": {
+      "source_limit": 0,
+      "scope": "moving non-pedestrian explicit-connection route pilot; not interchangeable with the six-class G4 population",
+      "git_commit": "fe2d6ba66385158a1025ebaebf8510f8d6ee205d",
+      "summary": {
+        "train": {
+          "windows": 16779,
+          "class_counts": {
+            "pedestrian": 0,
+            "bus": 1249,
+            "motorcycle": 2951,
+            "private_car": 9693,
+            "bycicle": 1918,
+            "taxi_or_uber": 968
+          },
+          "projection_mean_error_m": 0.25539422035217285
+        },
+        "val": {
+          "windows": 1858,
+          "class_counts": {
+            "pedestrian": 0,
+            "bus": 164,
+            "motorcycle": 306,
+            "private_car": 1083,
+            "bycicle": 235,
+            "taxi_or_uber": 70
+          },
+          "projection_mean_error_m": 0.24485941231250763
+        }
+      },
+      "route_budget_m": 512,
+      "route_points": 1025,
+      "prior_training_only": true,
+      "validation_route": "nearest permitted start lane then training-count Markov transitions with 0.1 smoothing; no true future",
+      "oracle_route": "retained separately for reconstruction diagnostics only; default generation must use route",
+      "start_offset": "preserve original start via offset decaying over first 10m",
+      "mean": [
+        4155.595790410829,
+        1972.10506593795
+      ],
+      "std": [
+        1909.3990303256344,
+        1080.6960889559339
+      ],
+      "length": 64,
+      "prior_sha256": "54f8cbef3865fc30792470c9df811abca9c7b8fe6005cb2cccd699ed3d8845e8",
+      "source_hashes": {
+        "train": "43590e5b23f762762639b0226b3a5f24ea690fa66cf1d82c55df964d1d2afceb",
+        "val": "069320a56c541998f9110bc09db64af8c25340c5ea7d2df1ba54e7e5ac90b9bc"
+      },
+      "elapsed_s": 273.7317256256938
+    },
+    "decoder": "exp(log increments clipped [0,5])-1; cumulative capped at route length; start offset fades over 10m",
+    "data_hashes": {
+      "train": "a018880ad66c07dc9809e0d71a60aa6db72d18771e59915a6e218dbaf29b95fc",
+      "val": "20204a98cb96c89cef9135901ef46fac18a9895731572665908886ff1e21e14f"
+    },
+    "guidance": "gradient of clean-trajectory teacher logprob for t<100; per-sample gradient norm capped at 1; clean latent update weight*gradient; fixed DDIM epsilon",
+    "scope": "moving nonpedestrian subset; route planner plus conditional motion diffusion; not learned end-to-end route diffusion"
+  },
+  "scope": "validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; one draw per supplied condition, within-condition diversity not yet measured"
+}
