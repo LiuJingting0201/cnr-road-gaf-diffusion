@@ -1,0 +1,81 @@
+{
+  "complete": true,
+  "cells": {
+    "grid32-random": {
+      "finished_seeds": 3,
+      "accuracy": {
+        "mean": 0.5179677605628967,
+        "std_population": 0.027373880755829753
+      },
+      "macro_f1": {
+        "mean": 0.38807055354118347,
+        "std_population": 0.05174056406582912
+      },
+      "ece_10bins": {
+        "mean": 0.3529385998457049,
+        "std_population": 0.04267807636337119
+      },
+      "nll": {
+        "mean": 4.045709848403931,
+        "std_population": 2.102170412856185
+      }
+    },
+    "grid32-imagenet": {
+      "finished_seeds": 3,
+      "accuracy": {
+        "mean": 0.7273853818575541,
+        "std_population": 0.039028533307146625
+      },
+      "macro_f1": {
+        "mean": 0.5879501104354858,
+        "std_population": 0.03361642526815247
+      },
+      "ece_10bins": {
+        "mean": 0.18688376616531363,
+        "std_population": 0.05294854602340218
+      },
+      "nll": {
+        "mean": 1.6002514759699504,
+        "std_population": 0.10549600950706019
+      }
+    },
+    "grid64-random": {
+      "finished_seeds": 3,
+      "accuracy": {
+        "mean": 0.629491925239563,
+        "std_population": 0.011491475703707338
+      },
+      "macro_f1": {
+        "mean": 0.444368710120519,
+        "std_population": 0.02397094462930606
+      },
+      "ece_10bins": {
+        "mean": 0.26877760246861726,
+        "std_population": 0.01612776205180646
+      },
+      "nll": {
+        "mean": 2.322771946589152,
+        "std_population": 0.1795578057214121
+      }
+    },
+    "grid64-imagenet": {
+      "finished_seeds": 3,
+      "accuracy": {
+        "mean": 0.7571251392364502,
+        "std_population": 0.012267038951385978
+      },
+      "macro_f1": {
+        "mean": 0.6009469032287598,
+        "std_population": 0.009228090787177805
+      },
+      "ece_10bins": {
+        "mean": 0.18315142388261543,
+        "std_population": 0.006906728573427266
+      },
+      "nll": {
+        "mean": 1.6685187816619873,
+        "std_population": 0.04450299685979899
+      }
+    }
+  }
+}

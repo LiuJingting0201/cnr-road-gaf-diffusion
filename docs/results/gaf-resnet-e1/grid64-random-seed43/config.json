@@ -1,0 +1,110 @@
+{
+  "data": "data/processed/original-hilbert64grid224",
+  "output": "runs/gaf-resnet-e1/grid64-random-seed43",
+  "initialization": "random",
+  "seed": 43,
+  "epochs": 50,
+  "batch_size": 64,
+  "git_commit": "b54b769f1bbe3ff6078817662539f2c20946aa23",
+  "torch": "2.5.1+cu121",
+  "torchvision": "0.20.1+cu121",
+  "dataset": {
+    "source": {
+      "raw_source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+      "source_name": "midimost_with_class2.csv",
+      "rows": 4840789,
+      "classes": [
+        "pedestrian",
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "coordinate_scale": 100,
+      "time_scale": 4,
+      "note": "Canonical columns only; speed stays in original CSV. Float32 XY and times verified unchanged.",
+      "max_coordinate_decimal_roundoff": 0.0
+    },
+    "source_package_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+    "source_commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+    "git_commit": "b54b769f1bbe3ff6078817662539f2c20946aa23",
+    "summary": {
+      "train": {
+        "vehicles": 2146,
+        "class_counts": {
+          "pedestrian": 631,
+          "bus": 111,
+          "motorcycle": 296,
+          "private_car": 893,
+          "bycicle": 141,
+          "taxi_or_uber": 74
+        },
+        "coordinate_clipped_points": 0,
+        "channel_clipped_values": 0
+      },
+      "val": {
+        "vehicles": 269,
+        "class_counts": {
+          "pedestrian": 79,
+          "bus": 14,
+          "motorcycle": 37,
+          "private_car": 112,
+          "bycicle": 18,
+          "taxi_or_uber": 9
+        },
+        "coordinate_clipped_points": 1,
+        "channel_clipped_values": 0
+      }
+    },
+    "xy_min": [
+      -0.17,
+      117.18
+    ],
+    "xy_max": [
+      9977.97,
+      6356.52
+    ],
+    "channel_min": [
+      -1.0,
+      -1.0000000000000036,
+      0.0
+    ],
+    "channel_max": [
+      1.000000000000007,
+      1.0000000000000036,
+      1.0
+    ],
+    "hilbert_eps": 0.0009,
+    "length": 224,
+    "mtf_bins": 8,
+    "scope": "Full vehicle trajectory, original squeeze and mirror duplication, RGB GASF/GADF/MTF; newly trained CNN, not original classifier reproduction. Test neither encoded nor evaluated.",
+    "adaptations": [
+      "Canonical time ordering verified by packer",
+      "local SUMO x/y used in original normalized coordinate slots, not claimed GPS",
+      "train-only coordinate and channel extrema frozen for deployment; clip out of bounds and count",
+      "keep previous vehicle split; no claim to original group classification accuracy"
+    ],
+    "elapsed_s": 40.7240402251482
+  },
+  "data_hashes": {
+    "train": "910a6289b198086f64811106be058139dd3e735bd9ce602c44bc52267289ab69",
+    "val": "4d6bcec4d0412290035dafedac2e9d44bdf9b5b9635be0de5ea245aa4dd4a949"
+  },
+  "weights": "None",
+  "class_weights": [
+    0.5596764087677002,
+    1.3344128131866455,
+    0.8171575665473938,
+    0.4704635441303253,
+    1.1839739084243774,
+    1.6343151330947876
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.0001
+  },
+  "scope": "Self-trained auxiliary CNN. Fixed final epoch primary; val-best secondary. No test access.",
+  "preprocess": "RGB /255, ImageNet mean/std; no resize, crop, flip or color jitter"
+}
