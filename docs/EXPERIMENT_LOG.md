@@ -272,3 +272,6 @@ E4-cap64 已完成并回收三种子报告：提高审计搜索容量后有效�
 按 docs/E5_AUGMENTATION_PROTOCOL.md 执行：E3 seed42，425 个训练 ID 的已知路径条件×8候选=3,400条；不复用验证候选。每种增强组固定425条、同父条件同额外类别分布。真实-only、重复、单调2%时间扰动、随机合成、原 Hilbert–GAF 选择、原轨迹 TCN 选择，共六组。两个固定下游架构（TCN、双向GRU），三个新初始化100/101/102，共36次；每次1,150更新×64有放回抽样，真实-only归一化和类别权重固定，最终checkpoint为主。比较同一164条真实验证数据，配对分层车辆重采样；最终测试不动。
 
 这是训练已知路径上的运动增广，不是新路线泛化或低标注实验。生成器仅覆盖425条严格子集，五个合成类别；真实下游保留六类。记录parent ID不泄漏、checkpoint和输入哈希、所有选择回退。36次学习器训练是下游实用性实验，不是继续搜索GAF分类器。启动状态另行核验，代码完成不等于实验完成。
+
+
+E5 后台队列已启动：提交 d1c67d4，隔离目录 /workspace/cnr-experiments/e5-d1c67d4，PID 176111，日志 /workspace/cnr-road-gaf-diffusion/e5-queue.log，运行目录 runs/augmentation-e5。30 项测试通过，新增验证 ID/未知 ID 不能混入合成训练条件，以及时间扰动端点与单调性测试。先生成训练条件池，再做道路审计和六组训练数据构建；两种下游学习器各2步运行检查后才进入36次正式训练。恢复时检查 pool/complete.json、prepare_augmentation_e5.py.log、各下游日志与根目录 complete/failed，不重复启动。结果汇总目标 docs/results/augmentation-e5/REPORT.md；本轮启动不等于增广有效，最终测试仍冻结。

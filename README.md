@@ -26,6 +26,8 @@
 
 ## 最新结果入口
 
+- 当前运行：[E5 训练条件合成与下游增广协议](docs/E5_AUGMENTATION_PROTOCOL.md)，验证合成数据是否有实际用途；完成前不报告增益。
+
 - [E2 原 Hilbert–GAF 时长匹配诊断](docs/results/gaf-duration-e2/REPORT.md)：已完成，长轨迹需使用匹配时长分类器。
 - [E1 原编码 ResNet18 对照](docs/results/gaf-resnet-e1/REPORT.md)：已完成，非组内未知 CNN 复现。
 - [E3/E4 长轨迹生成与原 GAF 同池筛选](docs/results/long-selection-e4-cap64/REPORT.md)：三种子评价及道路搜索容量复核完成；GAF 尚未显示稳定跨模型收益，下一步是有界下游增广验证。原保守评价也保留在 [strict E4](docs/results/long-selection-e4/REPORT.md)。
