@@ -8,13 +8,14 @@ import time
 from pathlib import Path
 import numpy as np
 import torch
+from cnr.path_diffusion import PathCoordinateDenoiser
 from cnr.road_diffusion import RoadDenoiser,RoadFields
 from cnr.representations import RepresentationClassifier
 
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument('--variant',choices=['relative','map','map_roadloss'],required=True)
+    p.add_argument('--variant',choices=['relative','map','map_roadloss','path_xy'],required=True)
     p.add_argument('--data',default='data/processed/most64')
     p.add_argument('--fields',default='data/maps/road_fields_4m.npz')
     p.add_argument('--output',required=True)
@@ -23,6 +24,8 @@ def main():
     p.add_argument('--batch-size',type=int,default=128)
     p.add_argument('--samples-per-class',type=int,default=32)
     p.add_argument('--repeats',type=int,default=1)
+    p.add_argument('--motion-weight',type=float,default=.02)
+    p.add_argument('--route-data',default='data/processed/route512')
     p.add_argument('--semantic-teacher',default=None)
     p.add_argument('--semantic-weight',type=float,default=.01)
     p.add_argument('--semantic-objective',choices=['ce','consistency'],default='ce')
@@ -37,7 +40,7 @@ def main():
     to=lambda v:torch.tensor(v,dtype=torch.float32,device='cuda')
     relmean,relstd,deltastd=to(rm),to(rs),to(ds);mean,std=to(meta['mean']),to(meta['std'])
     xy=torch.from_numpy(tr['xy']).cuda();label=torch.from_numpy(tr['labels']).cuda()
-    model=RoadDenoiser(use_map=a.variant!='relative').cuda();ema=copy.deepcopy(model).eval()
+    model=(PathCoordinateDenoiser() if a.variant=='path_xy' else RoadDenoiser(use_map=a.variant!='relative')).cuda();ema=copy.deepcopy(model).eval()
     for p in ema.parameters():p.requires_grad_(False)
     teacher=None;teacher_record=None
     if a.semantic_teacher:
@@ -57,16 +60,20 @@ def main():
     roads=RoadFields(a.fields).cuda()
     patches=None
     with torch.no_grad():
-        if model.use_map:
+        if a.variant=='path_xy':
+            route_train=np.load(Path(a.route_data)/'train.npz');route_val=np.load(Path(a.route_data)/'val.npz')
+            if not np.array_equal(tr['source_index'],route_train['source_index']) or not np.array_equal(va['source_index'],route_val['source_index']):raise ValueError('Path cohort must match exactly')
+            patches=((to(route_train['route'][:,::8])-xy[:,0,None])/128).transpose(1,2)
+        elif model.use_map:
             patches=torch.cat([roads.patches(xy[i:i+256,0],label[i:i+256]) for i in range(0,len(xy),256)])
     alpha=torch.cumprod(1-torch.linspace(1e-4,.02,1000,device='cuda'),0)
     optim=torch.optim.AdamW(model.parameters(),lr=2e-4,weight_decay=1e-4)
     config=vars(a)|{'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                    'semantic_teacher_record':teacher_record,'semantic_timesteps':'t<100',
                    'relative_mean':rm.tolist(),'relative_std':rs.tolist(),'delta_std':ds.tolist(),
-                   'ema_decay':.999,'motion_loss_weight':.02,'motion_loss_timesteps':'t<100',
+                   'ema_decay':.999,'motion_loss_weight':a.motion_weight,'motion_loss_timesteps':'t<100',
                    'road_loss_weight':.05 if a.variant=='map_roadloss' else 0.,'road_loss_timesteps':'t<250',
-                   'map_patch':'32x32 centered at supplied start, radius256m; class-permitted distance and proximity',
+                   'map_patch':('planned directed route, same as G5, relative coords /128' if a.variant=='path_xy' else '32x32 centered at supplied start, radius256m; class-permitted distance and proximity'),
                    'dataset':meta,'torch':torch.__version__,'gpu':torch.cuda.get_device_name(),
                    'parameters':sum(p.numel() for p in model.parameters()),
                    'road_field_sha256':hashlib.sha256(Path(a.fields).read_bytes()).hexdigest(),
@@ -110,7 +117,7 @@ def main():
                     if a.semantic_objective=='consistency':
                         semantic=torch.nn.functional.kl_div(logits.log_softmax(-1),reference_probabilities[ix][active],reduction='batchmean')
                     else:semantic=torch.nn.functional.cross_entropy(logits,targets)
-            loss=diffusion+.02*motion+(.05*road if a.variant=='map_roadloss' else 0)+a.semantic_weight*semantic
+            loss=diffusion+a.motion_weight*motion+(.05*road if a.variant=='map_roadloss' else 0)+a.semantic_weight*semantic
             if not torch.isfinite(loss):raise RuntimeError('Nonfinite loss')
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optim.step()
             with torch.no_grad():
@@ -125,7 +132,8 @@ def main():
                                   min(a.samples_per_class,(va['labels']==c).sum())).astype(int)] for c in range(6)])
     selected=np.repeat(selected,a.repeats)
     real=torch.from_numpy(va['xy'][selected]).cuda();labels=torch.from_numpy(va['labels'][selected]).cuda()
-    start=real[:,0];patch=roads.patches(start,labels) if ema.use_map else None
+    start=real[:,0]
+    patch=((to(route_val['route'][selected,::8])-start[:,None])/128).transpose(1,2) if a.variant=='path_xy' else (roads.patches(start,labels) if ema.use_map else None)
     torch.manual_seed(2026);sample=torch.randn(len(real),2,meta['length']-1,device='cuda')
     times=torch.linspace(999,0,100).long().tolist()
     with torch.no_grad():

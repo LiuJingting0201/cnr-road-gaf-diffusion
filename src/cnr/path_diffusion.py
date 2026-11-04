@@ -46,3 +46,12 @@ def preserve_total_progress(candidate,reference,mean,std):
         low=torch.where(value<total,mid,low);high=torch.where(value>=total,mid,high)
     increments=(raw+(low+high)/2).clamp(0,cap)
     return ((torch.log1p(increments)-mean)/std)[:,None]
+
+
+class PathCoordinateDenoiser(PathDenoiser):
+    """Same planned-path encoder, free two-coordinate output for a controlled baseline."""
+    def __init__(self):
+        super().__init__()
+        self.backbone.input=nn.Conv1d(3,128,1)
+        self.backbone.out=nn.Conv1d(128,2,1)
+        self.use_map=True
