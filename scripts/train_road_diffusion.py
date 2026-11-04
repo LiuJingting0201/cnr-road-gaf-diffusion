@@ -9,6 +9,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from cnr.road_diffusion import RoadDenoiser,RoadFields
+from cnr.representations import RepresentationClassifier
 
 
 def main():
@@ -20,6 +21,10 @@ def main():
     p.add_argument('--steps',type=int,default=20000)
     p.add_argument('--seed',type=int,default=42)
     p.add_argument('--batch-size',type=int,default=128)
+    p.add_argument('--semantic-teacher',default=None)
+    p.add_argument('--semantic-weight',type=float,default=.01)
+    p.add_argument('--shuffle-semantic-labels',action='store_true')
+    p.add_argument('--noise-seed',type=int,default=None)
     a=p.parse_args();torch.set_num_threads(4);torch.manual_seed(a.seed);np.random.seed(a.seed)
     out=Path(a.output);out.mkdir(parents=True,exist_ok=False)
     data=Path(a.data);tr=np.load(data/'train.npz');va=np.load(data/'val.npz');meta=json.loads((data/'dataset.json').read_text())
@@ -31,6 +36,16 @@ def main():
     xy=torch.from_numpy(tr['xy']).cuda();label=torch.from_numpy(tr['labels']).cuda()
     model=RoadDenoiser(use_map=a.variant!='relative').cuda();ema=copy.deepcopy(model).eval()
     for p in ema.parameters():p.requires_grad_(False)
+    teacher=None;teacher_record=None
+    if a.semantic_teacher:
+        tp=Path(a.semantic_teacher);tc=json.loads((tp/'config.json').read_text())
+        if tc['variant'] not in ['delta_gaf','delta_tcn']:raise ValueError('Use matched differentiable displacement inputs')
+        teacher=RepresentationClassifier(tc['variant'],tc['stats']).cuda().eval()
+        teacher.load_state_dict(torch.load(tp/'best.pt',map_location='cuda',weights_only=True))
+        for parameter in teacher.parameters():parameter.requires_grad_(False)
+        teacher_record={'variant':tc['variant'],'sha256':hashlib.sha256((tp/'best.pt').read_bytes()).hexdigest()}
+    if a.noise_seed is not None:torch.manual_seed(a.noise_seed)
+    shuffle_generator=torch.Generator(device='cuda').manual_seed(a.seed+3000)
     roads=RoadFields(a.fields).cuda()
     patches=None
     with torch.no_grad():
@@ -39,6 +54,7 @@ def main():
     alpha=torch.cumprod(1-torch.linspace(1e-4,.02,1000,device='cuda'),0)
     optim=torch.optim.AdamW(model.parameters(),lr=2e-4,weight_decay=1e-4)
     config=vars(a)|{'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+                   'semantic_teacher_record':teacher_record,'semantic_timesteps':'t<100',
                    'relative_mean':rm.tolist(),'relative_std':rs.tolist(),'delta_std':ds.tolist(),
                    'ema_decay':.999,'motion_loss_weight':.02,'motion_loss_timesteps':'t<100',
                    'road_loss_weight':.05 if a.variant=='map_roadloss' else 0.,'road_loss_timesteps':'t<250',
@@ -74,7 +90,16 @@ def main():
                 if active.any():
                     distance=roads.distances(pred[active,1:],y[active])/10
                     road=torch.nn.functional.smooth_l1_loss(distance,torch.zeros_like(distance))
-            loss=diffusion+.02*motion+(.05*road if a.variant=='map_roadloss' else 0)
+            semantic=torch.zeros((),device='cuda')
+            if teacher is not None:
+                active=t<100
+                if active.any():
+                    targets=y[active]
+                    if a.shuffle_semantic_labels:
+                        # Permute full minibatch labels, independently of diffusion RNG.
+                        targets=y[torch.randperm(batch,device='cuda',generator=shuffle_generator)][active]
+                    semantic=torch.nn.functional.cross_entropy(teacher(pred[active]),targets)
+            loss=diffusion+.02*motion+(.05*road if a.variant=='map_roadloss' else 0)+a.semantic_weight*semantic
             if not torch.isfinite(loss):raise RuntimeError('Nonfinite loss')
             loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),1.);optim.step()
             with torch.no_grad():
@@ -82,7 +107,7 @@ def main():
             if step==1 or step%1000==0 or step==a.steps:
                 torch.cuda.synchronize()
                 row={'step':step,'loss':loss.item(),'noise_mse':diffusion.item(),'motion':motion.item(),
-                     'road':road.item(),'elapsed_s':time.monotonic()-started}
+                     'road':road.item(),'semantic':semantic.item(),'elapsed_s':time.monotonic()-started}
                 log.write(json.dumps(row)+'\n');print(json.dumps(row),flush=True)
                 torch.save({'model':model.state_dict(),'ema':ema.state_dict(),'step':step},out/'latest.pt')
     selected=np.concatenate([np.flatnonzero(va['labels']==c)[np.linspace(0,(va['labels']==c).sum()-1,
