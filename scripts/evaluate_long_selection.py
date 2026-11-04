@@ -16,7 +16,7 @@ from cnr.original_gaf import trajectory_sequence, encode_frozen
 from cnr.representations import RepresentationClassifier
 from cnr.topology import LaneConsistency
 
-p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');p.add_argument('--generator-root',default='runs/long-path-e3');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');p.add_argument('--generator-root',default='runs/long-path-e3');p.add_argument('--prediction-subdir',default='');a=p.parse_args()
 torch.set_num_threads(4)
 run=Path(a.generator_root)/f'seed{a.seed}'
 cfg=json.loads((run/'config.json').read_text())
@@ -30,7 +30,7 @@ groups=[np.flatnonzero(s['condition_id']==i) for i in np.unique(s['condition_id'
 assert all(len(g)==8 and len(np.unique(s['source_index'][g]))==1 for g in groups)
 meta=json.loads((source/'dataset.json').read_text());length=xy.shape[1]
 out=Path(f'docs/results/{a.tag}/seed{a.seed}');out.mkdir(parents=True,exist_ok=False)
-predroot=Path(f'runs/{a.tag}/seed{a.seed}');predroot.mkdir(parents=True,exist_ok=False)
+predroot=Path('runs')/a.tag/a.prediction_subdir/f'seed{a.seed}';predroot.mkdir(parents=True,exist_ok=False)
 provenance={}
 
 def gaf_images(tracks):
