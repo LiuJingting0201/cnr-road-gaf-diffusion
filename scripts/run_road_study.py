@@ -8,12 +8,13 @@ import subprocess
 import sys
 
 p=argparse.ArgumentParser();p.add_argument('--name',default='road-g2');p.add_argument('--steps',type=int,default=20000)
+p.add_argument('--seed',type=int,default=42)
 a=p.parse_args();out=Path('runs')/a.name;out.mkdir(parents=True,exist_ok=False)
 
 def worker(gpu,variant):
     env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES=str(gpu),PYTHONPATH='src',OMP_NUM_THREADS='4')
     cmd=[sys.executable,'-u','scripts/train_road_diffusion.py','--variant',variant,
-         '--steps',str(a.steps),'--output',str(out/variant)]
+         '--steps',str(a.steps),'--seed',str(a.seed),'--output',str(out/variant)]
     with (out/f'{variant}.log').open('x') as log:
         child=subprocess.Popen(cmd,env=env,stdout=log,stderr=subprocess.STDOUT)
         (out/f'{variant}-job.json').write_text(json.dumps({'gpu':gpu,'pid':child.pid,'command':cmd}))

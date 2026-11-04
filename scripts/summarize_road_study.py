@@ -1,4 +1,5 @@
 """Independent vector-road, kinematic and classifier audit for the G2 ablation."""
+import argparse
 import json
 from pathlib import Path
 import numpy as np
@@ -9,7 +10,8 @@ from cnr.representations import RepresentationClassifier
 from cnr.roads import RoadNetwork
 
 torch.set_num_threads(4)
-root=Path('runs/road-g2');out=Path('docs/results/road-g2');out.mkdir(parents=True,exist_ok=True)
+p=argparse.ArgumentParser();p.add_argument('--name',default='road-g2');a=p.parse_args()
+root=Path('runs')/a.name;out=Path('docs/results')/a.name;out.mkdir(parents=True,exist_ok=True)
 roads=RoadNetwork('data/maps/most.net.xml');real=np.load('data/processed/most64/val.npz')
 auditors=[]
 for seed in [43,44]:
@@ -34,8 +36,9 @@ for variant in ['relative','map','map_roadloss']:
                          'speed_wasserstein_mps':float(wasserstein_distance(speed.ravel(),refspeed.ravel())),
                          'speed_p95_mps':float(np.quantile(speed,.95)),
                          'audit_target_accuracy':float(np.mean(pred[labels==i]==i))}
-    row={'variant':variant,'samples':len(xy),'per_class':per_class,
-         'scope':'single generator seed42; held-out-vehicle validation starts; generated points only (given start excluded)',
+    cfg=json.loads((path/'config.json').read_text())
+    row={'variant':variant,'samples':len(xy),'per_class':per_class,'seed':cfg['seed'],
+         'scope':'single generator seed; held-out-vehicle validation starts; generated points only (given start excluded)',
          'generation':json.loads((path/'complete.json').read_text()),
          'git_commit':json.loads((path/'config.json').read_text())['git_commit']}
     for key in ['road_within_5m','road_distance_mean_m','speed_wasserstein_mps','audit_target_accuracy']:
@@ -45,7 +48,7 @@ report={'rows':rows,'scope':'validation-only, single-seed pilot; geometric proxi
         'auditor':'raw XY/motion TCN seeds43/44; distinct from generators; no semantic guidance used in G2'}
 (out/'results.json').write_text(json.dumps(report,indent=2))
 lines=['# G2：道路条件扩散预实验','',
-       '三组共享相对坐标、EMA和运动约束，只改变地图条件及道路距离损失。均seed42、20,000步；不是多种子最终结论。',
+       f"三组共享相对坐标、EMA和运动约束，只改变地图条件及道路距离损失。seed={rows[0]['seed']}；训练步数见原始日志。单次种子报告不是最终结论。",
        '使用独立向量车道精确距离；道路指标排除给定起点。语义审计使用独立训练的序列分类器，不参与生成。','',
        '| 变体 | 许可车道5m内 | 平均道路距离m | 每类速度W1均值m/s | 审计目标类别准确率 |',
        '|---|---:|---:|---:|---:|']

@@ -35,7 +35,7 @@ report={'scope':'validation-only exploratory representation study; checkpoints s
 fields=['variant','seeds','macro_f1_mean','macro_f1_std','accuracy_mean','mean_elapsed_s','parameters']
 with (out/'summary.tsv').open('w') as f:
     writer=csv.DictWriter(f,fieldnames=fields,delimiter='\t');writer.writeheader();writer.writerows(aggregate)
-lines=['# R1：轨迹表示对照结果','',
+lines=[f'# {root.name}：轨迹表示对照结果','',
        '所有数字来自真实运行。按验证集 macro-F1 选择 checkpoint；下表为验证集结果，不是独立测试结论。',
        f"已完成 {len(rows)}/{len(spec['tasks'])} 个任务。",'',
        '| 表示 | 种子数 | Macro-F1 均值 ± 标准差 | Accuracy | 参数量 | 平均秒数 |',
@@ -57,7 +57,7 @@ if aggregate:
     for i,r in enumerate(ordered):
         values=[100*x['macro_f1'] for x in rows if x['variant']==r['variant']]
         ax.scatter(values,[i]*len(values),color='#172c3b',s=18,zorder=3)
-    ax.set_xlabel('Validation macro-F1 (%)');ax.set_title('R1: representation study (validation-selected checkpoints)')
+    ax.set_xlabel('Validation macro-F1 (%)');ax.set_title(f'{root.name} (validation-selected checkpoints)')
     ax.set_xlim(0,100);ax.grid(axis='x',alpha=.2);fig.tight_layout()
     fig.savefig(out/'validation_f1.png',dpi=180);fig.savefig(out/'validation_f1.svg');plt.close(fig)
 print(json.dumps({'complete':not missing,'missing':missing,'aggregate':aggregate},indent=2))
