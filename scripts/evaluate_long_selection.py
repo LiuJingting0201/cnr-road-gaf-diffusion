@@ -16,13 +16,21 @@ from cnr.original_gaf import trajectory_sequence, encode_frozen
 from cnr.representations import RepresentationClassifier
 from cnr.topology import LaneConsistency
 
-p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');p.add_argument('--generator-root',default='runs/long-path-e3');p.add_argument('--prediction-subdir',default='');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');p.add_argument('--generator-root',default='runs/long-path-e3');p.add_argument('--prediction-subdir',default='');p.add_argument('--test-reference');p.add_argument('--lock');a=p.parse_args()
 torch.set_num_threads(4)
 run=Path(a.generator_root)/f'seed{a.seed}'
 cfg=json.loads((run/'config.json').read_text())
-data=Path(cfg['data']);routeval=np.load(data/'val.npz')
+data=Path(cfg['data'])
 source=Path(cfg['dataset']['source_directory'])
-raw=np.load(source/'val.npz');training=np.load(data/'train.npz')['xy']
+if a.test_reference or a.lock or cfg.get('final_test'):
+    if not (a.test_reference and a.lock and cfg.get('final_test')):
+        raise ValueError('Final evaluation requires lock, final candidates and explicit test references')
+    from cnr.final_protocol import verify_lock
+    verify_lock(a.lock)
+    raw=np.load(Path(a.test_reference)/'test.npz')
+else:
+    raw=np.load(source/'val.npz')
+training=np.load(data/'train.npz')['xy']
 s=np.load(run/'candidates.npz');xy=s['xy'];labels=s['labels'];real=raw['xy'][s['source_index']]
 assert xy.shape==real.shape and np.isfinite(xy).all()
 assert np.array_equal(labels,raw['labels'][s['source_index']])
@@ -93,7 +101,7 @@ speed=np.linalg.norm(np.diff(xy,axis=1),axis=-1)/.25
 rspeed=np.linalg.norm(np.diff(real,axis=1),axis=-1)/.25
 acc=np.diff(speed,axis=1)/.25;racc=np.diff(rspeed,axis=1)/.25
 travel=speed.sum(1)*.25;rtravel=rspeed.sum(1)*.25
-rng=np.random.default_rng(20261104)
+rng=np.random.default_rng(20261111 if a.test_reference else 20261104)
 order=rng.random(len(xy))
 target=np.array([labels[g[0]] for g in groups]);shuffled=rng.permutation(target)
 shuffled_per_sample=np.empty(len(xy),dtype=np.int64)
@@ -142,7 +150,7 @@ summary={'max_candidates':a.max_candidates,'tag':a.tag,'seed':a.seed,'config':cf
     'identical_gaf_pool_fraction':float(np.mean(np.array(unique_images)==1)),'mean_unique_gaf_images_per_pool':float(np.mean(unique_images)),
     'candidate_pairwise_mean_distance_m':float(np.mean(pair_dist)),'median_nearest_training_track_32point_distance_m':float(np.median(nearest)),
     'validity':'shared: graph-consistent in 5m envelope, no candidate truncation, no route-end cap, GAF encodable; no tuned motion rejection',
-    'scope':'Five-class strict moving subset, validation exploration. Teacher seed42, audit seeds43/44; architecture bias remains. All variants same K=8 pool. One selected sample per condition cannot establish retained within-condition diversity. Real references used for evaluation only. Test untouched.'}
+    'scope':('Locked held-out test. ' if a.test_reference else 'Validation exploration. ')+'Five-class strict moving subset. Teacher seed42, audit seeds43/44; architecture bias remains. All variants same K=8 pool. One selected sample per condition cannot establish retained within-condition diversity. Real references used for evaluation only. '+('Final test accessed under verified lock.' if a.test_reference else 'Test untouched.')}
 (out/'results.json').write_text(json.dumps(summary,indent=2))
 (out/'graphs.json').write_text(json.dumps(graphs))
 print(json.dumps({'seed':a.seed,'rows':[{k:v for k,v in r.items() if k not in ['per_class','selected_indices']} for r in rows],'identical_gaf_pool_fraction':summary['identical_gaf_pool_fraction']}),flush=True)
