@@ -1,0 +1,210 @@
+{
+  "rows": [
+    {
+      "variant": "relative",
+      "samples": 192,
+      "per_class": {
+        "pedestrian": {
+          "road_within_5m": 0.8209325396825397,
+          "road_distance_mean_m": 2.9672136771791235,
+          "road_distance_p95_m": 10.156489328135663,
+          "speed_wasserstein_mps": 0.11983619631143833,
+          "speed_p95_mps": 2.0324926376342773,
+          "audit_target_accuracy": 0.9375
+        },
+        "bus": {
+          "road_within_5m": 0.5639880952380952,
+          "road_distance_mean_m": 14.695405987505184,
+          "road_distance_p95_m": 71.84827121635203,
+          "speed_wasserstein_mps": 0.9870268613810949,
+          "speed_p95_mps": 16.349411010742188,
+          "audit_target_accuracy": 0.4375
+        },
+        "motorcycle": {
+          "road_within_5m": 0.4538690476190476,
+          "road_distance_mean_m": 11.917038265594668,
+          "road_distance_p95_m": 48.1615368744438,
+          "speed_wasserstein_mps": 0.9773186084571058,
+          "speed_p95_mps": 17.31381607055664,
+          "audit_target_accuracy": 0.25
+        },
+        "private_car": {
+          "road_within_5m": 0.3462301587301587,
+          "road_distance_mean_m": 29.608422349688368,
+          "road_distance_p95_m": 124.66244786329689,
+          "speed_wasserstein_mps": 0.8742237782160871,
+          "speed_p95_mps": 20.73820686340332,
+          "audit_target_accuracy": 0.6875
+        },
+        "bycicle": {
+          "road_within_5m": 0.5749007936507936,
+          "road_distance_mean_m": 6.090763318369391,
+          "road_distance_p95_m": 18.66518846020339,
+          "speed_wasserstein_mps": 0.5910664579565876,
+          "speed_p95_mps": 7.514790058135986,
+          "audit_target_accuracy": 0.90625
+        },
+        "taxi_or_uber": {
+          "road_within_5m": 0.3834325396825397,
+          "road_distance_mean_m": 13.453730258993996,
+          "road_distance_p95_m": 43.836755600577696,
+          "speed_wasserstein_mps": 2.3350582538809044,
+          "speed_p95_mps": 18.157058715820312,
+          "audit_target_accuracy": 0.40625
+        }
+      },
+      "scope": "single generator seed42; held-out-vehicle validation starts; generated points only (given start excluded)",
+      "generation": {
+        "status": "complete",
+        "variant": "relative",
+        "steps": 20000,
+        "elapsed_s": 222.5053839199245,
+        "generated_samples": 192,
+        "sampler": "EMA DDIM100 unclipped"
+      },
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "road_within_5m": 0.5238921957671957,
+      "road_distance_mean_m": 13.122095642888455,
+      "speed_wasserstein_mps": 0.9807550260338699,
+      "audit_target_accuracy": 0.6041666666666666
+    },
+    {
+      "variant": "map",
+      "samples": 192,
+      "per_class": {
+        "pedestrian": {
+          "road_within_5m": 0.7827380952380952,
+          "road_distance_mean_m": 3.076491124703987,
+          "road_distance_p95_m": 9.34332171050566,
+          "speed_wasserstein_mps": 0.11683847660415539,
+          "speed_p95_mps": 2.0660085678100586,
+          "audit_target_accuracy": 0.96875
+        },
+        "bus": {
+          "road_within_5m": 0.5689484126984127,
+          "road_distance_mean_m": 12.27971353992772,
+          "road_distance_p95_m": 54.31898390465678,
+          "speed_wasserstein_mps": 1.3764646087393406,
+          "speed_p95_mps": 15.755756378173828,
+          "audit_target_accuracy": 0.625
+        },
+        "motorcycle": {
+          "road_within_5m": 0.7003968253968254,
+          "road_distance_mean_m": 7.443817257193779,
+          "road_distance_p95_m": 31.99247625371393,
+          "speed_wasserstein_mps": 2.9805384720556676,
+          "speed_p95_mps": 17.17987632751465,
+          "audit_target_accuracy": 0.1875
+        },
+        "private_car": {
+          "road_within_5m": 0.5114087301587301,
+          "road_distance_mean_m": 16.05812179642162,
+          "road_distance_p95_m": 77.02881633326047,
+          "speed_wasserstein_mps": 0.93861357572106,
+          "speed_p95_mps": 21.24965476989746,
+          "audit_target_accuracy": 0.6875
+        },
+        "bycicle": {
+          "road_within_5m": 0.5877976190476191,
+          "road_distance_mean_m": 5.958501293233786,
+          "road_distance_p95_m": 18.08989562737086,
+          "speed_wasserstein_mps": 0.5298669201358707,
+          "speed_p95_mps": 7.652739524841309,
+          "audit_target_accuracy": 0.875
+        },
+        "taxi_or_uber": {
+          "road_within_5m": 0.4156746031746032,
+          "road_distance_mean_m": 13.497282028686815,
+          "road_distance_p95_m": 42.34041698136927,
+          "speed_wasserstein_mps": 1.8178189330444101,
+          "speed_p95_mps": 16.373815536499023,
+          "audit_target_accuracy": 0.4375
+        }
+      },
+      "scope": "single generator seed42; held-out-vehicle validation starts; generated points only (given start excluded)",
+      "generation": {
+        "status": "complete",
+        "variant": "map",
+        "steps": 20000,
+        "elapsed_s": 227.90706142410636,
+        "generated_samples": 192,
+        "sampler": "EMA DDIM100 unclipped"
+      },
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "road_within_5m": 0.5944940476190476,
+      "road_distance_mean_m": 9.718987840027951,
+      "speed_wasserstein_mps": 1.293356831050084,
+      "audit_target_accuracy": 0.6302083333333334
+    },
+    {
+      "variant": "map_roadloss",
+      "samples": 192,
+      "per_class": {
+        "pedestrian": {
+          "road_within_5m": 0.8169642857142857,
+          "road_distance_mean_m": 2.788844097640315,
+          "road_distance_p95_m": 7.925240080967127,
+          "speed_wasserstein_mps": 0.14879732750143962,
+          "speed_p95_mps": 2.0191502571105957,
+          "audit_target_accuracy": 0.96875
+        },
+        "bus": {
+          "road_within_5m": 0.5689484126984127,
+          "road_distance_mean_m": 12.849630956766399,
+          "road_distance_p95_m": 58.9096575469222,
+          "speed_wasserstein_mps": 1.4243897711232516,
+          "speed_p95_mps": 15.900127410888672,
+          "audit_target_accuracy": 0.5625
+        },
+        "motorcycle": {
+          "road_within_5m": 0.722718253968254,
+          "road_distance_mean_m": 6.776323370468433,
+          "road_distance_p95_m": 28.88267943963946,
+          "speed_wasserstein_mps": 3.0079954223603966,
+          "speed_p95_mps": 16.87335777282715,
+          "audit_target_accuracy": 0.125
+        },
+        "private_car": {
+          "road_within_5m": 0.5208333333333334,
+          "road_distance_mean_m": 15.838278378609884,
+          "road_distance_p95_m": 71.20405599803563,
+          "speed_wasserstein_mps": 0.909947528278288,
+          "speed_p95_mps": 20.851177215576172,
+          "audit_target_accuracy": 0.6875
+        },
+        "bycicle": {
+          "road_within_5m": 0.5565476190476191,
+          "road_distance_mean_m": 6.169041129970187,
+          "road_distance_p95_m": 19.16841180390274,
+          "speed_wasserstein_mps": 0.6512674901966089,
+          "speed_p95_mps": 7.935264587402344,
+          "audit_target_accuracy": 0.8125
+        },
+        "taxi_or_uber": {
+          "road_within_5m": 0.4146825396825397,
+          "road_distance_mean_m": 13.40572361342501,
+          "road_distance_p95_m": 43.03046567026277,
+          "speed_wasserstein_mps": 1.7360485610657168,
+          "speed_p95_mps": 16.473506927490234,
+          "audit_target_accuracy": 0.4375
+        }
+      },
+      "scope": "single generator seed42; held-out-vehicle validation starts; generated points only (given start excluded)",
+      "generation": {
+        "status": "complete",
+        "variant": "map_roadloss",
+        "steps": 20000,
+        "elapsed_s": 298.3044541589916,
+        "generated_samples": 192,
+        "sampler": "EMA DDIM100 unclipped"
+      },
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "road_within_5m": 0.6001157407407408,
+      "road_distance_mean_m": 9.637973591146705,
+      "speed_wasserstein_mps": 1.313074350087617,
+      "audit_target_accuracy": 0.5989583333333334
+    }
+  ],
+  "scope": "validation-only, single-seed pilot; geometric proximity is not topology validity",
+  "auditor": "raw XY/motion TCN seeds43/44; distinct from generators; no semantic guidance used in G2"
+}

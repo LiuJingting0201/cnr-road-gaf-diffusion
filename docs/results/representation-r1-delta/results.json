@@ -1,0 +1,243 @@
+{
+  "scope": "validation-only exploratory representation study; checkpoints selected on this validation set",
+  "complete": true,
+  "missing": [],
+  "runs": [
+    {
+      "variant": "delta_tcn",
+      "seed": 42,
+      "steps": 4000,
+      "best_step": 4000,
+      "macro_f1": 0.676132082939148,
+      "accuracy": 0.748835563659668,
+      "per_class_f1": [
+        0.9801587462425232,
+        0.52173912525177,
+        0.5738798975944519,
+        0.7954393029212952,
+        0.9657947421073914,
+        0.21978022158145905
+      ],
+      "confusion": [
+        [
+          247,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          96,
+          44,
+          74,
+          4,
+          5
+        ],
+        [
+          0,
+          8,
+          301,
+          170,
+          2,
+          5
+        ],
+        [
+          1,
+          32,
+          207,
+          1186,
+          5,
+          76
+        ],
+        [
+          2,
+          3,
+          0,
+          0,
+          240,
+          0
+        ],
+        [
+          0,
+          4,
+          6,
+          45,
+          1,
+          20
+        ]
+      ],
+      "elapsed_s": 23.222104363143444,
+      "parameters": 100550,
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "data_hashes": {
+        "train.npz": "43590e5b23f762762639b0226b3a5f24ea690fa66cf1d82c55df964d1d2afceb",
+        "val.npz": "069320a56c541998f9110bc09db64af8c25340c5ea7d2df1ba54e7e5ac90b9bc"
+      }
+    },
+    {
+      "variant": "delta_tcn",
+      "seed": 43,
+      "steps": 4000,
+      "best_step": 4000,
+      "macro_f1": 0.6524573564529419,
+      "accuracy": 0.7130060791969299,
+      "per_class_f1": [
+        0.9780439138412476,
+        0.49197861552238464,
+        0.519262969493866,
+        0.7601810097694397,
+        0.9691991806030273,
+        0.19607843458652496
+      ],
+      "confusion": [
+        [
+          245,
+          2,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          92,
+          48,
+          77,
+          3,
+          3
+        ],
+        [
+          0,
+          15,
+          310,
+          156,
+          1,
+          4
+        ],
+        [
+          1,
+          28,
+          329,
+          1092,
+          2,
+          55
+        ],
+        [
+          1,
+          8,
+          0,
+          0,
+          236,
+          0
+        ],
+        [
+          0,
+          5,
+          15,
+          41,
+          0,
+          15
+        ]
+      ],
+      "elapsed_s": 22.934632368385792,
+      "parameters": 100550,
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "data_hashes": {
+        "train.npz": "43590e5b23f762762639b0226b3a5f24ea690fa66cf1d82c55df964d1d2afceb",
+        "val.npz": "069320a56c541998f9110bc09db64af8c25340c5ea7d2df1ba54e7e5ac90b9bc"
+      }
+    },
+    {
+      "variant": "delta_tcn",
+      "seed": 44,
+      "steps": 4000,
+      "best_step": 4000,
+      "macro_f1": 0.6236790418624878,
+      "accuracy": 0.7459691762924194,
+      "per_class_f1": [
+        0.9695740342140198,
+        0.48603352904319763,
+        0.3724137842655182,
+        0.8085983395576477,
+        0.9599999785423279,
+        0.145454540848732
+      ],
+      "confusion": [
+        [
+          239,
+          5,
+          0,
+          4,
+          5,
+          0
+        ],
+        [
+          0,
+          87,
+          5,
+          125,
+          3,
+          4
+        ],
+        [
+          0,
+          13,
+          135,
+          333,
+          1,
+          4
+        ],
+        [
+          0,
+          21,
+          90,
+          1373,
+          5,
+          18
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          240,
+          0
+        ],
+        [
+          0,
+          4,
+          9,
+          54,
+          1,
+          8
+        ]
+      ],
+      "elapsed_s": 23.051122311502695,
+      "parameters": 100550,
+      "git_commit": "576ad7cff0d03f91630bd36da981cd05225f3198",
+      "data_hashes": {
+        "train.npz": "43590e5b23f762762639b0226b3a5f24ea690fa66cf1d82c55df964d1d2afceb",
+        "val.npz": "069320a56c541998f9110bc09db64af8c25340c5ea7d2df1ba54e7e5ac90b9bc"
+      }
+    }
+  ],
+  "aggregate": [
+    {
+      "variant": "delta_tcn",
+      "seeds": 3,
+      "macro_f1_mean": 0.6507561604181925,
+      "macro_f1_std": 0.02626786878505629,
+      "accuracy_mean": 0.7359369397163391,
+      "mean_elapsed_s": 23.06928634767731,
+      "parameters": 100550
+    }
+  ],
+  "limitations": [
+    "not paper reproduction",
+    "no test-set conclusion",
+    "no generated-trajectory benefit established",
+    "different encoders have different parameter counts; budgets matched by updates, not FLOPs"
+  ]
+}

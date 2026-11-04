@@ -1,0 +1,2 @@
+variant	seeds	macro_f1_mean	macro_f1_std	accuracy_mean	mean_elapsed_s	parameters
+delta_tcn	3	0.6507561604181925	0.02626786878505629	0.7359369397163391	23.06928634767731	100550
