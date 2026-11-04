@@ -1,0 +1,210 @@
+{
+  "scope": "current 64-point train/val windows; no test-set inspection; not historical 224-point pipeline accuracy",
+  "coordinate_bounds": [
+    -0.18,
+    9977.97,
+    117.18,
+    6356.52
+  ],
+  "source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+  "conditions": {
+    "0.0037": {
+      "recursion_depth": 5,
+      "grid_cells_per_axis": 32,
+      "cell_size_m": [
+        311.8171875,
+        194.979375
+      ],
+      "scalar_vector_checks": 2000,
+      "splits": {
+        "train": {
+          "pedestrian": {
+            "windows": 3852,
+            "constant_hilbert_fraction": 0.9322429906542056,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.9392523364485982,
+            "constant_hilbert_among_moving_over_5m": 0.9284134881149807
+          },
+          "bus": {
+            "windows": 1732,
+            "constant_hilbert_fraction": 0.625866050808314,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.7736720554272517,
+            "constant_hilbert_among_moving_over_5m": 0.5164179104477612
+          },
+          "motorcycle": {
+            "windows": 4516,
+            "constant_hilbert_fraction": 0.4550487156775908,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 0.7905225863596103,
+            "constant_hilbert_among_moving_over_5m": 0.31064425770308124
+          },
+          "private_car": {
+            "windows": 13340,
+            "constant_hilbert_fraction": 0.34962518740629683,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 0.8926536731634183,
+            "constant_hilbert_among_moving_over_5m": 0.2714981525025193
+          },
+          "bycicle": {
+            "windows": 2100,
+            "constant_hilbert_fraction": 0.6876190476190476,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.9880952380952381,
+            "constant_hilbert_among_moving_over_5m": 0.683855421686747
+          },
+          "taxi_or_uber": {
+            "windows": 1102,
+            "constant_hilbert_fraction": 0.3502722323049002,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 0.9954627949183303,
+            "constant_hilbert_among_moving_over_5m": 0.3473108477666363
+          }
+        },
+        "val": {
+          "pedestrian": {
+            "windows": 253,
+            "constant_hilbert_fraction": 0.924901185770751,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.9407114624505929,
+            "constant_hilbert_among_moving_over_5m": 0.9243697478991597
+          },
+          "bus": {
+            "windows": 224,
+            "constant_hilbert_fraction": 0.5803571428571429,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.7901785714285714,
+            "constant_hilbert_among_moving_over_5m": 0.4689265536723164
+          },
+          "motorcycle": {
+            "windows": 486,
+            "constant_hilbert_fraction": 0.47530864197530864,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 0.7695473251028807,
+            "constant_hilbert_among_moving_over_5m": 0.3181818181818182
+          },
+          "private_car": {
+            "windows": 1507,
+            "constant_hilbert_fraction": 0.3477106834771068,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 0.8958195089581951,
+            "constant_hilbert_among_moving_over_5m": 0.27185185185185184
+          },
+          "bycicle": {
+            "windows": 245,
+            "constant_hilbert_fraction": 0.6571428571428571,
+            "median_distinct_hilbert_values": 1.0,
+            "moving_over_5m_fraction": 0.9959183673469387,
+            "constant_hilbert_among_moving_over_5m": 0.6557377049180327
+          },
+          "taxi_or_uber": {
+            "windows": 76,
+            "constant_hilbert_fraction": 0.3684210526315789,
+            "median_distinct_hilbert_values": 2.0,
+            "moving_over_5m_fraction": 1.0,
+            "constant_hilbert_among_moving_over_5m": 0.3684210526315789
+          }
+        }
+      }
+    },
+    "1e-07": {
+      "recursion_depth": 12,
+      "grid_cells_per_axis": 4096,
+      "cell_size_m": [
+        2.43607177734375,
+        1.5232763671875
+      ],
+      "scalar_vector_checks": 2000,
+      "splits": {
+        "train": {
+          "pedestrian": {
+            "windows": 3852,
+            "constant_hilbert_fraction": 0.03920041536863967,
+            "median_distinct_hilbert_values": 11.0,
+            "moving_over_5m_fraction": 0.9392523364485982,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "bus": {
+            "windows": 1732,
+            "constant_hilbert_fraction": 0.19110854503464203,
+            "median_distinct_hilbert_values": 40.0,
+            "moving_over_5m_fraction": 0.7736720554272517,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "motorcycle": {
+            "windows": 4516,
+            "constant_hilbert_fraction": 0.20571302037201064,
+            "median_distinct_hilbert_values": 57.0,
+            "moving_over_5m_fraction": 0.7905225863596103,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "private_car": {
+            "windows": 13340,
+            "constant_hilbert_fraction": 0.10547226386806596,
+            "median_distinct_hilbert_values": 64.0,
+            "moving_over_5m_fraction": 0.8926536731634183,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "bycicle": {
+            "windows": 2100,
+            "constant_hilbert_fraction": 0.009047619047619047,
+            "median_distinct_hilbert_values": 44.0,
+            "moving_over_5m_fraction": 0.9880952380952381,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "taxi_or_uber": {
+            "windows": 1102,
+            "constant_hilbert_fraction": 0.0018148820326678765,
+            "median_distinct_hilbert_values": 58.0,
+            "moving_over_5m_fraction": 0.9954627949183303,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          }
+        },
+        "val": {
+          "pedestrian": {
+            "windows": 253,
+            "constant_hilbert_fraction": 0.023715415019762844,
+            "median_distinct_hilbert_values": 12.0,
+            "moving_over_5m_fraction": 0.9407114624505929,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "bus": {
+            "windows": 224,
+            "constant_hilbert_fraction": 0.17410714285714285,
+            "median_distinct_hilbert_values": 45.0,
+            "moving_over_5m_fraction": 0.7901785714285714,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "motorcycle": {
+            "windows": 486,
+            "constant_hilbert_fraction": 0.22839506172839505,
+            "median_distinct_hilbert_values": 55.0,
+            "moving_over_5m_fraction": 0.7695473251028807,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "private_car": {
+            "windows": 1507,
+            "constant_hilbert_fraction": 0.10351692103516921,
+            "median_distinct_hilbert_values": 64.0,
+            "moving_over_5m_fraction": 0.8958195089581951,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "bycicle": {
+            "windows": 245,
+            "constant_hilbert_fraction": 0.0,
+            "median_distinct_hilbert_values": 43.0,
+            "moving_over_5m_fraction": 0.9959183673469387,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          },
+          "taxi_or_uber": {
+            "windows": 76,
+            "constant_hilbert_fraction": 0.0,
+            "median_distinct_hilbert_values": 57.0,
+            "moving_over_5m_fraction": 1.0,
+            "constant_hilbert_among_moving_over_5m": 0.0
+          }
+        }
+      }
+    }
+  }
+}

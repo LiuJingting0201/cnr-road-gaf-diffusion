@@ -6,4 +6,7 @@ shapely==2.1.2
 matplotlib==3.10.3
 pillow==11.2.1
 pytest==8.3.5
+pyts==0.13.0
+scikit-learn==1.6.1
+numba==0.61.2
 
