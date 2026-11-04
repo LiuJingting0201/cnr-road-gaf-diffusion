@@ -33,6 +33,7 @@ def main():
     p.add_argument('--steps',type=int,default=4000)
     p.add_argument('--batch-size',type=int,default=128)
     p.add_argument('--eval-every',type=int,default=500)
+    p.add_argument('--primary-checkpoint',choices=['best','final'],default='best')
     a=p.parse_args()
     if min(a.steps,a.batch_size,a.eval_every)<=0: raise ValueError('Positive budgets required')
     torch.set_num_threads(4)
@@ -47,7 +48,7 @@ def main():
                  'torch':torch.__version__,'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                  'dataset':json.loads((data/'dataset.json').read_text()),
                  'hashes':{n:hashlib.sha256((data/n).read_bytes()).hexdigest() for n in ['train.npz','val.npz']},
-                 'selection':'best validation macro-F1; no test-set access',
+                 'selection':a.primary_checkpoint+' checkpoint primary; no test-set access',
                  'protocol':'fixed windows; train-only bounds; no squeeze/bounce; Hilbert RGB fixed channel range uint8',
                  'input_scope':'XY-derived only; fixed dt; not historical classifier reproduction'}
     (out/'config.json').write_text(json.dumps(cfg,indent=2))
@@ -87,8 +88,9 @@ def main():
                     torch.save(model.state_dict(),out/'best.pt')
                     np.savez_compressed(out/'best_val_predictions.npz',probabilities=prob,labels=val['labels'])
     torch.save({'model':model.state_dict(),'optimizer':optim.state_dict(),'step':a.steps},out/'latest.pt')
+    np.savez_compressed(out/'final_val_predictions.npz',probabilities=prob,labels=val['labels'])
     (out/'complete.json').write_text(json.dumps({'status':'complete','variant':a.variant,'seed':a.seed,
-          'steps':a.steps,'best_step':best_step,'best_validation':best_report,'parameters':params,
+          'steps':a.steps,'best_step':best_step,'best_validation':best_report,'final_validation':report,'parameters':params,
           'elapsed_s':time.monotonic()-started,'peak_gpu_memory_mb':torch.cuda.max_memory_allocated()/1024**2},indent=2))
 
 
