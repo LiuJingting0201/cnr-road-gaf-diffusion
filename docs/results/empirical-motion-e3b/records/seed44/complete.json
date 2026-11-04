@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "samples": 264,
+  "points": 512,
+  "unique_training_parents": 185,
+  "log_increment_clipped_fraction": 0.0,
+  "route_end_capped_fraction": 0.003787878787878788,
+  "elapsed_s": 0.24722393974661827
+}
