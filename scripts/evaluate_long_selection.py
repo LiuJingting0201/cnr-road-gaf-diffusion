@@ -16,9 +16,9 @@ from cnr.original_gaf import trajectory_sequence, encode_frozen
 from cnr.representations import RepresentationClassifier
 from cnr.topology import LaneConsistency
 
-p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--seed',type=int,required=True);p.add_argument('--max-candidates',type=int,default=12);p.add_argument('--tag',default='long-selection-e4');p.add_argument('--generator-root',default='runs/long-path-e3');a=p.parse_args()
 torch.set_num_threads(4)
-run=Path(f'runs/long-path-e3/seed{a.seed}')
+run=Path(a.generator_root)/f'seed{a.seed}'
 cfg=json.loads((run/'config.json').read_text())
 data=Path(cfg['data']);routeval=np.load(data/'val.npz')
 source=Path(cfg['dataset']['source_directory'])

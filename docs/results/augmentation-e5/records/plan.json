@@ -1,0 +1,27 @@
+{
+  "pid": 176111,
+  "diffusion_seed": 42,
+  "training_conditions": 425,
+  "K": 8,
+  "extra_per_group": 425,
+  "groups": [
+    "real_only",
+    "repeat",
+    "timewarp",
+    "synthetic_random",
+    "synthetic_gaf",
+    "synthetic_tcn"
+  ],
+  "downstream_arch": [
+    "tcn",
+    "gru"
+  ],
+  "downstream_seeds": [
+    100,
+    101,
+    102
+  ],
+  "steps": 1150,
+  "batch_size": 64,
+  "git_commit": "d1c67d4688f591150f804442002a061b54a79ec4"
+}
