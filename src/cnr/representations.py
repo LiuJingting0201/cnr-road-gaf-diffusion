@@ -10,7 +10,7 @@ from torch import nn
 from cnr.models import gaf_channels
 
 VARIANTS = ('hilbert_coarse_rgb', 'hilbert_fine_rgb', 'hilbert_fine_tcn',
-            'delta_gaf', 'xy_motion_tcn', 'xy_gaf')
+            'delta_gaf', 'xy_motion_tcn', 'xy_gaf', 'delta_tcn')
 
 
 def hilbert_numpy(xy, eps=.0037):
@@ -120,7 +120,7 @@ class RepresentationClassifier(nn.Module):
         self.variant = variant
         for k, value in stats.items():
             self.register_buffer(k, torch.tensor(value, dtype=torch.float64))
-        channels = 1 if variant == 'hilbert_fine_tcn' else 4
+        channels = 1 if variant == 'hilbert_fine_tcn' else (2 if variant == 'delta_tcn' else 4)
         self.classifier = (SequenceClassifier(channels) if variant.endswith('tcn') else
                            ImageClassifier(3 if variant.startswith('hilbert') else 4))
 
@@ -133,6 +133,8 @@ class RepresentationClassifier(nn.Module):
             return gaf_channels(xy)
         delta = torch.diff(xy, dim=1, prepend=xy[:, :1])
         zdelta = ((delta-self.delta_mean)/self.delta_std).float()
+        if self.variant == 'delta_tcn':
+            return torch.sigmoid(zdelta).transpose(1,2)
         if self.variant == 'xy_motion_tcn':
             zxy = ((xy-self.xy_mean)/self.xy_std).float()
             return torch.cat((zxy, zdelta), -1).transpose(1, 2)

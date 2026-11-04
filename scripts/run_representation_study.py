@@ -14,10 +14,11 @@ p.add_argument('--name',required=True)
 p.add_argument('--steps',type=int,default=4000)
 p.add_argument('--seeds',type=int,nargs='+',default=[42,43,44])
 p.add_argument('--gpus',type=int,nargs='+',default=[0,1,2,3])
+p.add_argument('--variants',choices=VARIANTS,nargs='+',default=list(VARIANTS))
 p.add_argument('--data',default='data/processed/most64')
 a=p.parse_args()
 out=Path('runs')/a.name;out.mkdir(parents=True,exist_ok=False)
-tasks=[{'variant':v,'seed':s} for s in a.seeds for v in VARIANTS]
+tasks=[{'variant':v,'seed':s} for s in a.seeds for v in a.variants]
 (out/'study.json').write_text(json.dumps(vars(a)|{'tasks':tasks,'created_utc':datetime.now(timezone.utc).isoformat()},indent=2))
 
 def worker(gpu,tasks):

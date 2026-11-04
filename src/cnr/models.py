@@ -48,10 +48,11 @@ class TrajectoryDenoiser(nn.Module):
         self.input=nn.Conv1d(3,width,1)
         self.blocks=nn.ModuleList([Residual(width,2**(i%5)) for i in range(10)])
         self.out=nn.Conv1d(width,2,1)
-    def forward(self,x,t,label,start):
+    def forward(self,x,t,label,start,map_embedding=None):
         freq=torch.exp(torch.arange(self.width//2,device=x.device)*(-math.log(10000)/(self.width//2-1)))
         angles=t[:,None]*freq[None,:]
         c=self.time(torch.cat([angles.sin(),angles.cos()],1))+self.label(label)+self.start(start)
+        if map_embedding is not None:c=c+map_embedding
         position=torch.linspace(-1,1,x.shape[-1],device=x.device)[None,None,:].expand(len(x),1,-1)
         h=self.input(torch.cat([x,position],1))
         for block in self.blocks:h=block(h,c)

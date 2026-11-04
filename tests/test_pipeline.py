@@ -3,6 +3,9 @@ import pandas as pd
 import torch
 from cnr.data import split_ids,continuous_ranges,CLASSES,prepare
 import json
+import subprocess
+import sys
+from pathlib import Path
 from cnr.models import gaf_channels,TrajectoryDenoiser
 
 
@@ -50,3 +53,10 @@ def test_preparation_split_manifest_and_training_normalization(tmp_path):
     train=np.load(dest/'train.npz')['xy']
     np.testing.assert_allclose(meta['mean'],train.mean(axis=(0,1)),rtol=1e-5)
     assert meta['normalization_source']=='training_windows_only'
+    packed=tmp_path/'canonical.npz.xz'
+    subprocess.run([sys.executable,str(Path(__file__).resolve().parents[1]/'scripts/pack_canonical_data.py'),
+                    '--source',str(source),'--output',str(packed)],check=True,capture_output=True)
+    other=tmp_path/'from_canonical';prepare(packed,other)
+    for split in ['train','val','test']:
+        aa=np.load(dest/f'{split}.npz');bb=np.load(other/f'{split}.npz')
+        np.testing.assert_array_equal(aa['xy'],bb['xy']);np.testing.assert_array_equal(aa['labels'],bb['labels'])

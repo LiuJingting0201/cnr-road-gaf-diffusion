@@ -1,6 +1,8 @@
 """Split by vehicle first; never mirror-pad or bridge temporal gaps."""
 import hashlib
+import io
 import json
+import lzma
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -39,7 +41,19 @@ def prepare(source, output, length=64, seed=42, max_per_vehicle=16):
     source, output = Path(source), Path(output)
     if output.exists():
         raise FileExistsError(f'Refusing to overwrite {output}')
-    frame = pd.read_csv(source, dtype={'vehicle_id': str})
+    packed_meta = None
+    if str(source).endswith('.npz.xz'):
+        packed = np.load(io.BytesIO(lzma.decompress(source.read_bytes())), allow_pickle=False)
+        packed_meta = json.loads(str(packed['metadata']))
+        xy = np.cumsum(packed['delta_xy'], axis=0, dtype=np.int64)/packed_meta['coordinate_scale']
+        t = np.cumsum(packed['delta_t'], dtype=np.int64)/packed_meta['time_scale']
+        frame = pd.DataFrame({'vehicle_id': np.repeat(packed['ids'], packed['counts']),
+                              'class2': np.repeat(np.array(packed_meta['classes'])[packed['labels']], packed['counts']),
+                              'timestep_time': t, 'vehicle_x': xy[:,0], 'vehicle_y': xy[:,1]})
+        if len(frame) != packed_meta['rows']:
+            raise ValueError('Packed row count mismatch')
+    else:
+        frame = pd.read_csv(source, dtype={'vehicle_id': str})
     required = ['timestep_time', 'vehicle_id', 'vehicle_x', 'vehicle_y', 'class2']
     if frame[required].isna().any().any():
         raise ValueError('Missing required field')
@@ -86,7 +100,7 @@ def prepare(source, output, length=64, seed=42, max_per_vehicle=16):
                             labels=np.array(labels[split], dtype=np.int64))
     pd.DataFrame(manifest).to_csv(output/'manifest.csv', index=False)
     pd.DataFrame(excluded).to_csv(output/'excluded_vehicles.csv', index=False)
-    digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    digest = packed_meta['raw_source_sha256'] if packed_meta else hashlib.sha256(source.read_bytes()).hexdigest()
     payload = {'source_sha256': digest, 'classes': CLASSES, 'length': length,
                'dt_raw_units': .25, 'span_raw_units': (length-1)*.25,
                'seed': seed, 'max_windows_per_vehicle': max_per_vehicle,
@@ -95,5 +109,7 @@ def prepare(source, output, length=64, seed=42, max_per_vehicle=16):
                'vehicles': {s:sum(v == s for v in split_by_id.values()) for s in arrays},
                'excluded_vehicles': len(excluded), 'split_by_id': split_by_id,
                'normalization_source': 'training_windows_only'}
+    if packed_meta:
+        payload['canonical_package_sha256'] = hashlib.sha256(source.read_bytes()).hexdigest()
     (output/'dataset.json').write_text(json.dumps(payload, indent=2))
     return {k:v for k,v in payload.items() if k != 'split_by_id'}
