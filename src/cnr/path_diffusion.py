@@ -27,3 +27,22 @@ def decode(latent,mean,std,route,length,start):
     xy=left*(1-w)+right*w
     xy=xy+(1-capped/10).clamp_min(0)[...,None]*(start-route[:,0])[:,None]
     return xy,progress
+
+
+def preserve_total_progress(candidate,reference,mean,std):
+    """Project decoded increments to the unguided total with a bounded simplex.
+
+    Euclidean projection changes timing while preserving the model's own sampled
+    total travel; no real future length or speed is supplied. Bounds match decode.
+    """
+    cap=candidate.new_tensor(5.).expm1()
+    raw=torch.expm1((candidate[:,0]*std+mean).clamp(0,5))
+    ref=torch.expm1((reference[:,0]*std+mean).clamp(0,5))
+    total=ref.sum(-1,keepdim=True)
+    low=-raw.amax(-1,keepdim=True)-cap;high=cap+raw.amax(-1,keepdim=True)
+    for _ in range(40):
+        mid=(low+high)/2
+        value=(raw+mid).clamp(0,cap).sum(-1,keepdim=True)
+        low=torch.where(value<total,mid,low);high=torch.where(value>=total,mid,high)
+    increments=(raw+(low+high)/2).clamp(0,cap)
+    return ((torch.log1p(increments)-mean)/std)[:,None]

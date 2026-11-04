@@ -21,6 +21,8 @@ def main():
     p.add_argument('--steps',type=int,default=20000)
     p.add_argument('--seed',type=int,default=42)
     p.add_argument('--batch-size',type=int,default=128)
+    p.add_argument('--samples-per-class',type=int,default=32)
+    p.add_argument('--repeats',type=int,default=1)
     p.add_argument('--semantic-teacher',default=None)
     p.add_argument('--semantic-weight',type=float,default=.01)
     p.add_argument('--semantic-objective',choices=['ce','consistency'],default='ce')
@@ -120,7 +122,8 @@ def main():
                 log.write(json.dumps(row)+'\n');print(json.dumps(row),flush=True)
                 torch.save({'model':model.state_dict(),'ema':ema.state_dict(),'step':step},out/'latest.pt')
     selected=np.concatenate([np.flatnonzero(va['labels']==c)[np.linspace(0,(va['labels']==c).sum()-1,
-                                  min(32,(va['labels']==c).sum())).astype(int)] for c in range(6)])
+                                  min(a.samples_per_class,(va['labels']==c).sum())).astype(int)] for c in range(6)])
+    selected=np.repeat(selected,a.repeats)
     real=torch.from_numpy(va['xy'][selected]).cuda();labels=torch.from_numpy(va['labels'][selected]).cuda()
     start=real[:,0];patch=roads.patches(start,labels) if ema.use_map else None
     torch.manual_seed(2026);sample=torch.randn(len(real),2,meta['length']-1,device='cuda')
@@ -133,7 +136,7 @@ def main():
             sample=prev.sqrt()*clean+(1-prev).sqrt()*eps
         generated=torch.cat((start[:,None],sample.transpose(1,2)*relstd+relmean+start[:,None]),1)
         if not torch.isfinite(generated).all():raise RuntimeError('Nonfinite samples')
-    np.savez_compressed(out/'validation_samples.npz',xy=generated.cpu().numpy(),labels=labels.cpu().numpy(),validation_indices=selected)
+    np.savez_compressed(out/'validation_samples.npz',xy=generated.cpu().numpy(),labels=labels.cpu().numpy(),validation_indices=selected,source_index=va['source_index'][selected] if 'source_index' in va else selected)
     (out/'complete.json').write_text(json.dumps({'status':'complete','variant':a.variant,'steps':a.steps,
         'elapsed_s':time.monotonic()-started,'generated_samples':len(selected),'sampler':'EMA DDIM100 unclipped'},indent=2))
 

@@ -3,13 +3,14 @@ import argparse,copy,hashlib,json,subprocess,time
 from pathlib import Path
 import numpy as np
 import torch
-from cnr.path_diffusion import PathDenoiser,decode
+from cnr.path_diffusion import PathDenoiser,decode,preserve_total_progress
 from cnr.representations import RepresentationClassifier
 
 p=argparse.ArgumentParser();p.add_argument('--data',default='data/processed/route512')
 p.add_argument('--output',required=True);p.add_argument('--steps',type=int,default=20000)
 p.add_argument('--seed',type=int,default=42);p.add_argument('--samples-per-class',type=int,default=32)
 p.add_argument('--checkpoint');p.add_argument('--repeats',type=int,default=1);p.add_argument('--guidance-weights',type=float,nargs='+',default=[.1,.3])
+p.add_argument('--guidance-mode',choices=['standard','distance_preserving'],default='standard')
 a=p.parse_args();torch.set_num_threads(4);torch.manual_seed(a.seed)
 out=Path(a.output);out.mkdir(parents=True,exist_ok=False);d=Path(a.data)
 tr=np.load(d/'train.npz');va=np.load(d/'val.npz');meta=json.loads((d/'dataset.json').read_text())
@@ -57,6 +58,7 @@ for kind,path in [('gaf','runs/representation-r1/delta_gaf-seed42'),('tcn','runs
  teachers[kind]=m;records[kind]={'path':path,'sha256':hashlib.sha256((tp/'best.pt').read_bytes()).hexdigest()}
 (out/'teachers.json').write_text(json.dumps(records,indent=2))
 sweep=[('none',None,0)]+[(f'{kind}_{w:g}',kind,w) for kind in ['gaf','tcn'] for w in a.guidance_weights]+[('shuffled_gaf','gaf',a.guidance_weights[0])]
+unguided_clean={}
 results=[];times=torch.linspace(999,0,100).long().tolist()
 for name,kind,weight in sweep:
  torch.manual_seed(2026);sample=torch.randn(len(lab),1,63,device='cuda')
@@ -65,11 +67,14 @@ for name,kind,weight in sweep:
   with torch.no_grad():
    eps=ema(sample,torch.full((len(lab),),t,device='cuda'),lab,(start-mean)/std,condition)
    clean=(sample-(1-alpha[t]).sqrt()*eps)/alpha[t].sqrt()
+  if name=='none' and t<100:unguided_clean[t]=clean.detach().clone()
   if kind and t<100:
    clean=clean.detach().requires_grad_(True);xy,_=decode(clean,mu,sd,route,length,start)
    score=teachers[kind](xy).log_softmax(-1).gather(1,goal[:,None]).sum()
    grad=torch.autograd.grad(score,clean)[0];norm=grad.flatten(1).norm(dim=1)[:,None,None].clamp_min(1)
    clean=(clean+weight*grad/norm).detach()
+   if a.guidance_mode=='distance_preserving':
+    clean=preserve_total_progress(clean,unguided_clean[t],mu,sd)
   with torch.no_grad():
    prev=alpha[times[j+1]] if j+1<len(times) else 1.
    sample=prev**.5*clean+(1-prev)**.5*eps

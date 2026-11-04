@@ -34,16 +34,17 @@ for path in sorted(root.glob('*.npz')):
     'speed_w1_mps':float(wasserstein_distance(speed[keep].ravel(),rs[keep].ravel())),
     'gaf_accuracy':float(np.mean(predictions['gaf'][keep]==c)),'tcn_accuracy':float(np.mean(predictions['tcn'][keep]==c)),
     'endpoint_displacement_le5m':float(np.mean(np.linalg.norm(tracks[:,-1]-tracks[:,0],axis=-1)<=5)),
-    'route_end_capped':float(np.mean(s['progress'][keep,-1]>=s['route_length'][keep])),
+    'route_end_capped':float(np.mean(s['progress'][keep,-1]>=s['route_length'][keep])) if 'progress' in s else None,
+    'mean_travel_m':float(np.linalg.norm(np.diff(tracks,axis=1),axis=-1).sum(-1).mean()),
     'acceleration_abs_mean_mps2':float(np.abs(np.diff(speed[keep],axis=1)/.25).mean()),
     'reference_acceleration_abs_mean_mps2':float(np.abs(np.diff(rs[keep],axis=1)/.25).mean())}
  for key in ['graph_consistent','speed_w1_mps','gaf_accuracy','tcn_accuracy','endpoint_displacement_le5m','route_end_capped']:
-  row[key]=float(np.mean([v[key] for v in row['per_class'].values()]))
+  row[key]=float(np.mean([v[key] for v in row['per_class'].values()])) if all(v[key] is not None for v in row['per_class'].values()) else None
  rows.append(row);print(json.dumps(row),flush=True)
 out=Path('docs/results')/root.parent.name/root.name;out.mkdir(parents=True,exist_ok=True)
-report={'rows':rows,'config':cfg,'scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; repeat count recorded in config; pairwise distance measured only between draws sharing the same source condition'}
+report={'rows':rows,'config':cfg,'model_family':'coordinate' if 'variant' in cfg else 'path_progress','scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; repeat count recorded in config; pairwise distance measured only between draws sharing the same source condition'}
 (out/'results.json').write_text(json.dumps(report,indent=2))
 lines=['# 地图路径条件扩散与采样引导','',report['scope'],'','| 引导 | 图一致率 | GAF独立审计 | TCN独立审计 | 速度W1 | 路径末端截断 |','|---|---:|---:|---:|---:|---:|']
-for r in rows:lines.append(f"| {r['variant']} | {r['graph_consistent']:.3f} | {r['gaf_accuracy']:.3f} | {r['tcn_accuracy']:.3f} | {r['speed_w1_mps']:.3f} | {r['route_end_capped']:.3f} |")
-lines+=['','路径规划使用训练转移统计，扩散学习条件运动；不能把规划器保证的连接归功于GAF。引导教师未参与独立审计训练；同架构偏好仍可能存在。测试集未使用。']
+for r in rows:lines.append(f"| {r['variant']} | {r['graph_consistent']:.3f} | {r['gaf_accuracy']:.3f} | {r['tcn_accuracy']:.3f} | {r['speed_w1_mps']:.3f} | {str(r['route_end_capped'])} |")
+lines+=['','路径模型使用训练转移统计规划路线，坐标模型使用局部地图栅格；不能把规划器保证的连接归功于GAF。独立审计器未参与引导；同架构偏好仍可能存在。测试集未使用。']
 (out/'REPORT.md').write_text('\n'.join(lines))

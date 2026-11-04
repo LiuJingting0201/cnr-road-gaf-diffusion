@@ -23,3 +23,17 @@ def test_decode_gradient_monotone_and_bounded():
  xy,progress=decode(torch.ones(1,1,4)*10,1.,1.,route,length,start)
  assert torch.allclose(xy[0,-1],route[0,-1])
  assert torch.allclose(xy[0,0],start[0])
+
+
+def test_total_progress_projection_preserves_model_sample_without_future():
+    from cnr.path_diffusion import preserve_total_progress
+    torch.manual_seed(7)
+    reference=torch.randn(8,1,63)*.5
+    candidate=reference+torch.randn_like(reference)*2
+    result=preserve_total_progress(candidate,reference,1.,.7)
+    inc=lambda x:torch.expm1((x[:,0]*.7+1).clamp(0,5))
+    assert torch.allclose(inc(result).sum(-1),inc(reference).sum(-1),atol=1e-3)
+    assert not torch.allclose(inc(result),inc(reference))
+    assert (inc(result)>=0).all()
+    zero=preserve_total_progress(candidate,torch.full_like(reference,-10),1.,.7)
+    assert inc(zero).sum()<1e-3
