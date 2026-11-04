@@ -1,0 +1,100 @@
+{
+  "rule": "seed42, first condition per class; fixed before viewing; no real future supplied",
+  "examples": [
+    {
+      "class": "bus",
+      "condition": 0,
+      "candidate_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected": {
+        "random": 5,
+        "gaf": 3,
+        "tcn": 3
+      }
+    },
+    {
+      "class": "motorcycle",
+      "condition": 8,
+      "candidate_indices": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "selected": {
+        "random": 68,
+        "gaf": 68,
+        "tcn": 66
+      }
+    },
+    {
+      "class": "private_car",
+      "condition": 14,
+      "candidate_indices": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "selected": {
+        "random": 119,
+        "gaf": 117,
+        "tcn": 114
+      }
+    },
+    {
+      "class": "bycicle",
+      "condition": 22,
+      "candidate_indices": [
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183
+      ],
+      "selected": {
+        "random": 177,
+        "gaf": 178,
+        "tcn": 179
+      }
+    },
+    {
+      "class": "taxi_or_uber",
+      "condition": 30,
+      "candidate_indices": [
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247
+      ],
+      "selected": {
+        "random": 247,
+        "gaf": 240,
+        "tcn": 247
+      }
+    }
+  ]
+}

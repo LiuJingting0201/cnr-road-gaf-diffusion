@@ -25,7 +25,8 @@ for name,row in summary.items():
         scale=1 if 'w1' in key else 100
         vals.append(f'{row[key]["mean"]*scale:.2f} +/- {row[key]["std_population"]*scale:.2f}')
     lines.append('| '+name+' | '+' | '.join(vals)+' |')
-lines+=['','## Representation and coverage diagnostics','',f'Lane candidate search limit per point: {reports[0]["max_candidates"]}. Expanded-limit runs are post-hoc sensitivity checks on the same saved candidates, not new training or resampling.']
+search_note = ('All methods use the previously established search limit; this experiment resamples paths while freezing models.' if a.tag == 'route-diverse-e4r' else 'Expanded-limit runs are post-hoc sensitivity checks on the same saved candidates, not new training or resampling.')
+lines+=['','## Representation and coverage diagnostics','',f'Lane candidate search limit per point: {reports[0]["max_candidates"]}. {search_note}']
 for r in reports:
     lines.append(f'- Seed {r["seed"]}: valid candidates {r["valid_candidate_fraction"]:.3f}; identical GAF pools {r["identical_gaf_pool_fraction"]:.3f}; mean distinct images per eight draws {r["mean_unique_gaf_images_per_pool"]:.2f}; candidate-pair distance {r["candidate_pairwise_mean_distance_m"]:.2f} m; encoding failures {r["encoding_failures"]}.')
 lines+=['','## Interpretation limits','',

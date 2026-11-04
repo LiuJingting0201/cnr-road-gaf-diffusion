@@ -18,7 +18,7 @@
 
 本仓库独立于历史仓库。目前包括车辆级数据划分、连续片段提取、Hilbert/GAF/序列分类对照、类别与起点条件扩散、相对坐标扩散、类别许可道路距离场条件及训练损失，以及独立的向量车道几何评价。
 
-**G5/G6 已实现选定五类移动子集的路径规划与路径条件运动扩散，以及有向连接评价。** 这不代表六类、全地图或任意轨迹均已完成。早期道路距离场实验只具备几何条件，保留为历史基线；当前主要缺口是生成时长与原 Hilbert–GAF 反馈适配，以及合成数据下游价值验证。
+**G5/G6 已实现选定五类移动子集的路径规划与路径条件运动扩散，以及有向连接评价。** 这不代表六类、全地图或任意轨迹均已完成。早期道路距离场实验只具备几何条件，保留为历史基线；E1–E5 已完成匹配时长的原编码反馈与下游验证，当前尚未证明 GAF 的稳定独立收益；长轨迹生成仍限于严格筛选的五类子集。
 
 实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成三种子共9项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。全部目前为验证集探索，不是最终测试结论。
 
@@ -26,11 +26,12 @@
 
 ## 最新结果入口
 
-- [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益；当前转入冻结模型的候选路线多样性对照 E4r。
+- [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益。
+- [E4r 路线多样性对照](docs/results/route-diverse-e4r/REPORT.md)：三种子已完成，平均每池6.70条路径；GAF同家族分数改善仍未转化为跨家族收益。
 
 - [E2 原 Hilbert–GAF 时长匹配诊断](docs/results/gaf-duration-e2/REPORT.md)：已完成，长轨迹需使用匹配时长分类器。
 - [E1 原编码 ResNet18 对照](docs/results/gaf-resnet-e1/REPORT.md)：已完成，非组内未知 CNN 复现。
-- [E3/E4 长轨迹生成与原 GAF 同池筛选](docs/results/long-selection-e4-cap64/REPORT.md)：三种子评价及道路搜索容量复核完成；GAF 尚未显示稳定跨模型收益，下一步是有界下游增广验证。原保守评价也保留在 [strict E4](docs/results/long-selection-e4/REPORT.md)。
+- [E3/E4 长轨迹生成与原 GAF 同池筛选](docs/results/long-selection-e4-cap64/REPORT.md)：三种子评价及道路搜索容量复核完成；GAF 尚未显示稳定跨模型收益；后续 E5 与 E4r 结果见上。原保守评价也保留在 [strict E4](docs/results/long-selection-e4/REPORT.md)。
 
 - [G6同路线公平对照与保持行程引导](docs/results/g6-analysis/REPORT.md)
 

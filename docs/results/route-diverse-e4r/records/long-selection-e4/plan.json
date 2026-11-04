@@ -1,0 +1,16 @@
+{
+  "pid": 173430,
+  "length": 512,
+  "data": "data/processed/gaf-duration-e2/length512",
+  "steps": 1150,
+  "batch_size": 64,
+  "equivalent_epochs": 50,
+  "selector_seed": 42,
+  "auditor_seeds": [
+    43,
+    44
+  ],
+  "checkpoint": "final",
+  "K": 8,
+  "git_commit": "947b004183157fb9c6c4a2766c229285d821aee4"
+}

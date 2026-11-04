@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "samples": 264,
+  "route_planning_fallback": 0,
+  "mean_unique_routes_per_pool": 6.696969696969697,
+  "identical_route_pool_fraction": 0.06060606060606061,
+  "route_end_capped_fraction": 0.0,
+  "next": "Same-pool original GAF/TCN/random/shuffled evaluation; no downstream gain claim"
+}

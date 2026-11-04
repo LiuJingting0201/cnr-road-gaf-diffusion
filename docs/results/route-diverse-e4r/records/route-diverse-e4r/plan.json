@@ -1,0 +1,13 @@
+{
+  "pid": 180056,
+  "K": 8,
+  "diffusion_seeds": [
+    42,
+    43,
+    44
+  ],
+  "new_training": false,
+  "route_seed": 20261107,
+  "paired_noise_seed": 2026,
+  "git_commit": "8366bc206b13ac0badad14898b59a89f2d08446e"
+}
