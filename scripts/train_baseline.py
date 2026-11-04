@@ -76,7 +76,9 @@ def main():
     if not classifier:
         model.eval()
         with torch.no_grad():
-            xy=torch.from_numpy(val['xy'][:96]).cuda();labels=torch.from_numpy(val['labels'][:96]).cuda()
+            # Vehicle IDs are sorted in the archive; a head slice can contain only one class.
+            selected=np.concatenate([np.flatnonzero(val['labels']==c)[:16] for c in range(6)])
+            xy=torch.from_numpy(val['xy'][selected]).cuda();labels=torch.from_numpy(val['labels'][selected]).cuda()
             starts=(xy[:,0]-mean)/std
             sample=torch.randn(len(xy),2,meta['length']-1,device='cuda')
             times=torch.linspace(999,0,50).long().tolist()
@@ -87,7 +89,7 @@ def main():
                 sample=prev.sqrt()*x0+(1-prev).sqrt()*eps
             generated=torch.cat([xy[:,:1],sample.transpose(1,2)*std+mean],1)
             if not torch.isfinite(generated).all():raise RuntimeError('Nonfinite generated sample')
-            np.savez_compressed(out/'validation_samples.npz',xy=generated.cpu().numpy(),labels=labels.cpu().numpy(),starts=xy[:,0].cpu().numpy())
+            np.savez_compressed(out/'validation_samples.npz',xy=generated.cpu().numpy(),labels=labels.cpu().numpy(),starts=xy[:,0].cpu().numpy(),validation_indices=selected)
     (out/'complete.json').write_text(json.dumps({'steps':step,'elapsed_s':time.monotonic()-started,'status':'complete'}))
 
 

@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 import torch
-from cnr.data import split_ids,continuous_ranges,CLASSES
+from cnr.data import split_ids,continuous_ranges,CLASSES,prepare
+import json
 from cnr.models import gaf_channels,TrajectoryDenoiser
 
 
@@ -30,3 +31,22 @@ def test_denoiser_backward_and_condition_shapes():
     assert y.shape==x.shape
     y.square().mean().backward()
     assert all(torch.isfinite(p.grad).all() for p in m.parameters() if p.grad is not None)
+
+
+def test_preparation_split_manifest_and_training_normalization(tmp_path):
+    rows=[]
+    for c,label in enumerate(CLASSES):
+        for vehicle in range(20):
+            for t in range(70):
+                rows.append({'vehicle_id':f'{c}_{vehicle}', 'class2':label,
+                             'timestep_time':t*.25,'vehicle_x':vehicle*100+t,
+                             'vehicle_y':c*100+t*.2})
+    source=tmp_path/'raw.csv';pd.DataFrame(rows).to_csv(source,index=False)
+    dest=tmp_path/'prepared';prepare(source,dest)
+    manifest=pd.read_csv(dest/'manifest.csv',dtype={'vehicle_id':str})
+    assert manifest.groupby('vehicle_id').split.nunique().max()==1
+    assert ((manifest.last_time-manifest.first_time)==15.75).all()
+    meta=json.loads((dest/'dataset.json').read_text())
+    train=np.load(dest/'train.npz')['xy']
+    np.testing.assert_allclose(meta['mean'],train.mean(axis=(0,1)),rtol=1e-5)
+    assert meta['normalization_source']=='training_windows_only'
