@@ -1,0 +1,12 @@
+{
+  "pid": 181263,
+  "K": 8,
+  "points": 512,
+  "resampling_seeds": [
+    42,
+    43,
+    44
+  ],
+  "new_training": false,
+  "git_commit": "39081dadbb93c22f39a4992489cc6748c4d3a827"
+}
