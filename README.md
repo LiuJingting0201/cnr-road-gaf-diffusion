@@ -4,6 +4,8 @@
 
 ## 当前主线：承接原GAF工作开展扩散轨迹合成
 
+**最新执行优先级：** 用户确认原仓库没有CNN本体、分类标签为参与者类别。当前先对齐原Hilbert→GASF/GADF/MTF构图并重训类别CNN，暂停新增guidance与增广。见[原编码对齐记录](docs/ORIGINAL_GAF_ALIGNMENT.md)。既有位移GAF结果仅作历史扩展实验，不能称为原方法复现。
+
 用户最新明确目标为地图条件扩散、道路拓扑约束和GAF分类引导，不要求图像域生成再反解。当前执行计划见[实验路线](docs/NEXT_STAGE.md)；[GAF承接关系](docs/GAF_CONTINUITY.md)保留前一轮审计历史，不能覆盖最新路线。
 
 ### 已有扩展实验：扩散训练与GAF反馈

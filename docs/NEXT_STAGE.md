@@ -23,3 +23,7 @@
 ## G6后状态
 
 六次新训练与引导消融全部完成，见results/g6-analysis/REPORT.md。保持行程方案未全面优于普通弱引导，作为机制消融保留。下一步按G7_AUGMENTATION_PROTOCOL.md检验真实GAF分类增广；G7尚未执行。当前G6无剩余训练任务。
+
+## 用户最新澄清后的优先级（取代前述G7优先）
+
+组内CNN实现未提供，目标是参与者类别分类。先完成原Hilbert/GAF构图一致性、原表示CNN分类和全车辆→短窗口迁移诊断，参见ORIGINAL_GAF_ALIGNMENT.md。暂停新增guidance与增广；不得再以自定义位移GAF替代原表示。最终仍服务于路网约束的类别条件轨迹合成，不要求图像域生成。
