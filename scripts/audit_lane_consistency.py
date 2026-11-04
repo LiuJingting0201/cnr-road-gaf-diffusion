@@ -16,6 +16,7 @@ out=Path(a.output);out.mkdir(parents=True,exist_ok=False);started=time.monotonic
 matcher=LaneConsistency('data/maps/most.net.xml',radius=a.radius)
 config={'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         'radius_m':a.radius,'max_candidates':12,'reverse_tolerance_m':.05,
+        'projection_candidates':'nearby segment projections, including multiple positions on one bent lane',
         'route_budget':'min(200m, 2 * observed displacement + 5m)',
         'real_selection':'first validation manifest window of each distinct vehicle; no pedestrian topology',
         'map_sha256':hashlib.sha256(Path('data/maps/most.net.xml').read_bytes()).hexdigest(),

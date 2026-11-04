@@ -20,6 +20,11 @@ class LaneConsistency:
         self.reverse_tolerance=reverse_tolerance;self.route_factor=route_factor
         self.route_slack=route_slack;self.route_cap=route_cap
         self.lengths=shapely.length(self.road.shapes)
+        self.segments=[]
+        for shape in self.road.shapes:
+            coords=np.asarray(shape.coords);vec=np.diff(coords,axis=0)
+            length=np.linalg.norm(vec,axis=1)
+            self.segments.append((coords[:-1],vec,length,np.r_[0.,np.cumsum(length)[:-1]]))
         self.ids={lane['id']:i for i,lane in enumerate(self.road.lanes)}
         self.by_edge_index={(x['edge'],x.get('index','0')):i for i,x in enumerate(self.road.lanes)}
         self.successors=[set() for _ in self.road.lanes];self.unresolved_connections=0
@@ -76,9 +81,17 @@ class LaneConsistency:
         groups=[[] for _ in xy];truncated=0
         if pairs.shape[1]:
             ix=self.class_indices[label][pairs[1]]
-            distances=shapely.distance(points[pairs[0]],self.road.shapes[ix])
-            positions=shapely.line_locate_point(self.road.shapes[ix],points[pairs[0]])
-            for j,lane,d,s in zip(pairs[0],ix,distances,positions):groups[j].append((int(lane),float(s),float(d)))
+            # A bent polyline can have multiple nearby longitudinal positions.
+            # Keeping only its globally nearest projection creates false reversals.
+            for j,lane in zip(pairs[0],ix):
+                start,vec,length,cumulative=self.segments[lane]
+                fraction=np.clip(np.sum((xy[j]-start)*vec,axis=1)/np.maximum(length**2,1e-20),0,1)
+                distance=np.linalg.norm(xy[j]-start-fraction[:,None]*vec,axis=1)
+                positions=cumulative+fraction*length;seen=set()
+                for s,d in zip(positions[distance<=self.radius],distance[distance<=self.radius]):
+                    key=round(float(s),7)
+                    if key not in seen:
+                        groups[j].append((int(lane),float(s),float(d)));seen.add(key)
         for j,g in enumerate(groups):
             g.sort(key=lambda x:(x[2],x[0]));truncated+=int(len(g)>self.max_candidates)
             groups[j]=g[:self.max_candidates]

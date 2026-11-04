@@ -38,3 +38,18 @@ def test_offroad_and_ambiguous_crossing(tmp_path):
     assert m.match([[2,0],[5,0],[8,0]],'private_car')['graph_consistent']
     r=m.match([[2,0],[2,3],[8,0]],'private_car')
     assert r['missing_candidate_points']==1 and not r['graph_consistent']
+
+
+def test_multiple_positions_on_one_bent_lane(tmp_path):
+    p=tmp_path/'bend.xml'
+    p.write_text('<net><location netOffset="0,0"/><edge id="a">'
+                 '<lane id="a_0" index="0" allow="passenger" shape="0,0 10,0 10,10"/>'
+                 '</edge></net>')
+    m=LaneConsistency(p,radius=.75)
+    x=np.array([[9.6,.6],[9.4,.4],[9.8,1.2]])
+    candidates,_=m.candidates(x,'private_car')
+    assert len(candidates[0])==2 and len(candidates[1])==2
+    # Individually nearest projections move 10.6 -> 9.4 backwards; the full
+    # candidate set admits a forward sequence without relaxing any tolerance.
+    assert m.match(x,'private_car')['graph_consistent']
+    assert not m.match(x[::-1],'private_car')['graph_consistent']
