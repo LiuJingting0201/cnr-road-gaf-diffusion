@@ -1,0 +1,195 @@
+{
+  "data": "data/processed/long-path-e3-512",
+  "output": "runs/long-path-e3/seed43",
+  "steps": 20000,
+  "seed": 43,
+  "samples_per_class": 8,
+  "checkpoint": null,
+  "repeats": 8,
+  "git_commit": "11807a6afd73e1dc53387e3804a796abc9d1d177",
+  "checkpoint_sha256": null,
+  "log_increment_mean": 1.1417715549468994,
+  "log_increment_std": 0.48441120982170105,
+  "dataset": {
+    "source_limit": 0,
+    "source_directory": "data/processed/gaf-duration-e2/length512",
+    "source_protocol": {
+      "source": {
+        "raw_source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+        "source_name": "midimost_with_class2.csv",
+        "rows": 4840789,
+        "classes": [
+          "pedestrian",
+          "bus",
+          "motorcycle",
+          "private_car",
+          "bycicle",
+          "taxi_or_uber"
+        ],
+        "coordinate_scale": 100,
+        "time_scale": 4,
+        "note": "Canonical columns only; speed stays in original CSV. Float32 XY and times verified unchanged.",
+        "max_coordinate_decimal_roundoff": 0.0
+      },
+      "source_package_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+      "source_commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+      "git_commit": "4001113adbfa6eb57e22fafc5898bd647ad6a81d",
+      "summary": {
+        "train": {
+          "vehicles": 1437,
+          "constant_fraction": 0.08211551844119694,
+          "median_unique_hilbert": 13.0,
+          "coordinate_clipped_points": 0,
+          "channel_clipped_values": 0,
+          "per_class": {
+            "pedestrian": {
+              "vehicles": 82,
+              "constant_fraction": 0.3048780487804878
+            },
+            "bus": {
+              "vehicles": 107,
+              "constant_fraction": 0.0
+            },
+            "motorcycle": {
+              "vehicles": 268,
+              "constant_fraction": 0.22014925373134328
+            },
+            "private_car": {
+              "vehicles": 798,
+              "constant_fraction": 0.042606516290726815
+            },
+            "bycicle": {
+              "vehicles": 119,
+              "constant_fraction": 0.0
+            },
+            "taxi_or_uber": {
+              "vehicles": 63,
+              "constant_fraction": 0.0
+            }
+          }
+        },
+        "val": {
+          "vehicles": 164,
+          "constant_fraction": 0.08536585365853659,
+          "median_unique_hilbert": 13.0,
+          "coordinate_clipped_points": 0,
+          "channel_clipped_values": 0,
+          "per_class": {
+            "pedestrian": {
+              "vehicles": 6,
+              "constant_fraction": 0.16666666666666666
+            },
+            "bus": {
+              "vehicles": 14,
+              "constant_fraction": 0.0
+            },
+            "motorcycle": {
+              "vehicles": 31,
+              "constant_fraction": 0.22580645161290322
+            },
+            "private_car": {
+              "vehicles": 93,
+              "constant_fraction": 0.06451612903225806
+            },
+            "bycicle": {
+              "vehicles": 16,
+              "constant_fraction": 0.0
+            },
+            "taxi_or_uber": {
+              "vehicles": 4,
+              "constant_fraction": 0.0
+            }
+          }
+        }
+      },
+      "xy_min": [
+        -0.17,
+        117.18
+      ],
+      "xy_max": [
+        9977.97,
+        6356.52
+      ],
+      "channel_min": [
+        -1.0,
+        -1.0000000000000036,
+        0.0
+      ],
+      "channel_max": [
+        1.000000000000007,
+        1.0000000000000036,
+        1.0
+      ],
+      "hilbert_eps": 0.0009,
+      "length": 224,
+      "mtf_bins": 8,
+      "scope": "E2 real continuous-window diagnostic; frozen full-training coordinate/channel bounds; no test encoding",
+      "adaptations": [
+        "Canonical time ordering verified by packer",
+        "local SUMO x/y used in original normalized coordinate slots, not claimed GPS",
+        "train-only coordinate and channel extrema frozen for deployment; clip out of bounds and count",
+        "keep previous vehicle split; no claim to original group classification accuracy"
+      ],
+      "elapsed_s": 40.7240402251482,
+      "window_points": 512,
+      "span_seconds": 127.75,
+      "selection": "One centered window in longest continuous segment per vehicle; dt=.25, rate<=100; different eligibility by duration"
+    },
+    "scope": "moving non-pedestrian explicit-connection route pilot; not interchangeable with the six-class G4 population",
+    "git_commit": "11807a6afd73e1dc53387e3804a796abc9d1d177",
+    "summary": {
+      "train": {
+        "windows": 425,
+        "class_counts": {
+          "pedestrian": 0,
+          "bus": 57,
+          "motorcycle": 66,
+          "private_car": 225,
+          "bycicle": 56,
+          "taxi_or_uber": 21
+        },
+        "projection_mean_error_m": 0.2774795591831207
+      },
+      "val": {
+        "windows": 57,
+        "class_counts": {
+          "pedestrian": 0,
+          "bus": 8,
+          "motorcycle": 6,
+          "private_car": 30,
+          "bycicle": 10,
+          "taxi_or_uber": 3
+        },
+        "projection_mean_error_m": 0.2670690417289734
+      }
+    },
+    "route_budget_m": 4096.0,
+    "route_points": 1025,
+    "prior_training_only": true,
+    "validation_route": "nearest permitted start lane then training-count Markov transitions with 0.1 smoothing; no true future",
+    "oracle_route": "retained separately for reconstruction diagnostics only; default generation must use route",
+    "start_offset": "preserve original start via offset decaying over first 10m",
+    "mean": [
+      4159.93017578125,
+      1884.94775390625
+    ],
+    "std": [
+      1672.2550048828125,
+      1102.2490234375
+    ],
+    "length": 512,
+    "prior_sha256": "7ab13217dede731f5922f5c255e59efef6faeefa182bdba9b047c429b07720b2",
+    "source_hashes": {
+      "train": "417faf9a9b51af60cc0121b7f0fbaa5ef14e58036057e36f9de87884b6c0dd68",
+      "val": "006717ae441f1b03af7e8a91cdc31a9886828e6b5af0c9bb1a5607a8ebc8b51b"
+    },
+    "elapsed_s": 81.03466292470694
+  },
+  "decoder": "exp(log increments clipped [0,5])-1; cumulative capped at route length; start offset fades over 10m",
+  "data_hashes": {
+    "train": "d8fc9060ac462359488d6e17d2dc4b713cafcf35a1b080ffc9c45b567d0ebbec",
+    "val": "5ec816b64282fc10d2bb8173099bf72ca6b0062c820187cf2075329fa0efd693"
+  },
+  "guidance": "none; inherited GAF selection is a separate future same-pool evaluation",
+  "scope": "moving nonpedestrian subset; route planner plus conditional motion diffusion; not learned end-to-end route diffusion"
+}

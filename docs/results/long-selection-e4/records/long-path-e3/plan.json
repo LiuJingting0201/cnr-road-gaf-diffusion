@@ -1,0 +1,18 @@
+{
+  "pid": 172162,
+  "preferred_length": 512,
+  "fallback_length": 224,
+  "budget_m": 4096,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "steps": 20000,
+  "K": 8,
+  "minimum_training_per_class": 16,
+  "minimum_validation_per_class": 3,
+  "minimum_retention": 0.2,
+  "maximum_mean_reconstruction_error_m": 2,
+  "git_commit": "11807a6afd73e1dc53387e3804a796abc9d1d177"
+}
