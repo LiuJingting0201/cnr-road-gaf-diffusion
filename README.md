@@ -8,9 +8,19 @@
 
 **道路条件与候选语义筛选已实现；GAF 梯度引导、训练期语义约束和连接感知后处理尚未实现。** 当前道路条件是近似几何条件，不保证方向与拓扑合法性。Hilbert/GAF 已核对原递归编码及 pyts 输出，但采用新的窗口协议与分类器，不宣称复现原论文精度。历史 GASF 图像扩散仍待在统一协议下重训。完整实验排期见 [docs/plan.md](docs/plan.md)。
 
-实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成3项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。全部目前为验证集探索，不是最终测试结论。
+实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成三种子共9项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。全部目前为验证集探索，不是最终测试结论。
 
 代码与记录已发布到私有仓库 [LiuJingting0201/cnr-road-gaf-diffusion](https://github.com/LiuJingting0201/cnr-road-gaf-diffusion)，同时保留开发机 Git 远端 `server`（服务器端名为 `origin`）。长窗口研究完成后，一次性回调只将完整报告推到 `results/representation-r2-long` 分支，不包含原始数据或权重。
+
+## 最新结果入口
+
+- [224点表示对照：21项训练](docs/results/representation-r2-long/REPORT.md)
+- [道路扩散三种子汇总：9项训练](docs/results/road-g2-multiseed/REPORT.md)
+- [G3公平筛选：道路与类别一致性的权衡](docs/results/candidate-selection-g3/REPORT.md)
+- [固定地图案例](docs/results/candidate-selection-g3/map_examples.png)与[追加运动诊断](docs/results/candidate-selection-g3/MOTION_AUDIT.md)
+- [下一阶段路线与验收门槛](docs/NEXT_STAGE.md)
+
+GAF评分已显示相对随机选择的语义筛选作用，但未显示相对同输入TCN的独特优势。地图贴合仍不等于道路连接与方向合法，当前所有结果均为验证探索。
 
 ## 首次启动验证（2026-11-04）
 
