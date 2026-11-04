@@ -1,0 +1,32 @@
+{
+  "format": [
+    "time",
+    "id",
+    "x",
+    "y",
+    "type"
+  ],
+  "source_pool_sha256": "8195732df9f6b451a5b59863b36836f2517a89e7439ebb26a74748ba630e311a",
+  "scope": "Exact E5 synthetic extras from training IDs and known training paths; one generator seed42. No real, validation or test trajectories are exported. GAF benefit was not established. Variants overlap and are alternatives, not independent sets.",
+  "time": "Relative seconds per trajectory, 0..127.75, dt=0.25",
+  "coordinates": "MoST SUMO XY metres, not GPS; no joint traffic timeline",
+  "files": {
+    "training_synthetic_random.csv.gz": {
+      "trajectories": 425,
+      "rows": 217600,
+      "sha256": "66e652f5315f100bd305aa61d5d5f8091ece3ce419939e3f3f41af78fe506ef2"
+    },
+    "training_synthetic_gaf.csv.gz": {
+      "trajectories": 425,
+      "rows": 217600,
+      "sha256": "f0a612b5c5da565c482a66d5f565bd9b223493b09bfa4cb9fb81052fef1b9b98"
+    },
+    "training_synthetic_tcn.csv.gz": {
+      "trajectories": 425,
+      "rows": 217600,
+      "sha256": "0584b56e2a7c945bfdc5ea3f33c4f6387853b73c0284b8cc0891674031b951da"
+    }
+  },
+  "server_archive": "runs/training-synthetic-export/training_synthetic_trajectories.zip",
+  "archive_sha256": "df318dc08117fcb536cf74f0d3b2425afc794e6be3b62b13bcd30fab014e4d33"
+}

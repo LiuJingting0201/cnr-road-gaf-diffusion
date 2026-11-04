@@ -1,0 +1,4222 @@
+{
+  "coverage": {
+    "complete": true,
+    "locked_commit": "e6a375d70902893c6eb76480fe79604fc2039ac5",
+    "lock_sha256": "2ef4bddc8b727bc53c78e7cd2b8abf55b1757b7e880b832560e2feaefcfeebba",
+    "test_ids_total": 270,
+    "encodable_windows": 182,
+    "strict_generation_requests": 53,
+    "class_counts": {
+      "pedestrian": 12,
+      "bus": 13,
+      "motorcycle": 31,
+      "private_car": 103,
+      "bycicle": 15,
+      "taxi_or_uber": 8
+    },
+    "generation_class_counts": {
+      "pedestrian": 0,
+      "bus": 7,
+      "motorcycle": 4,
+      "private_car": 33,
+      "bycicle": 7,
+      "taxi_or_uber": 2
+    },
+    "coordinate_clipped_points": 0,
+    "channel_clipped_values": 0,
+    "test_reference_sha256": "43503387ac47ba537520b16fe0eafcd3720ef65ace36f8f4b2cbed598893d5a1",
+    "requests_sha256": "e68d57d4c76cb49b90ca9cc413b0647f875ad41b766f7a510525a20d19649a75"
+  },
+  "planning": {
+    "requested_conditions": 53,
+    "served_conditions": 53,
+    "failed_conditions": 0,
+    "failed_candidate_slots": 0,
+    "K": 8,
+    "path_seed": 20261109,
+    "request_sha256": "e68d57d4c76cb49b90ca9cc413b0647f875ad41b766f7a510525a20d19649a75"
+  },
+  "generation": {
+    "diffusion": {
+      "all_candidates": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.2437576003242243,
+          "std_population": 0.037689179568759765
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.26911324059230374,
+          "std_population": 0.005661770866166032
+        },
+        "travel_w1_m": {
+          "mean": 177.4140007871226,
+          "std_population": 6.331349850507353
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.47477453102453104,
+          "std_population": 0.002164652471933636
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.7768308080808081,
+          "std_population": 0.014240314911909692
+        },
+        "stop_fraction": {
+          "mean": 0.0786112099468264,
+          "std_population": 0.001824176821914692
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "random": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.4022493573728452,
+          "std_population": 0.05712962295243352
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.27990547919117104,
+          "std_population": 0.012123635939623786
+        },
+        "travel_w1_m": {
+          "mean": 206.00394933230606,
+          "std_population": 11.611269253893731
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.5185425685425686,
+          "std_population": 0.08364885328048027
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.8986291486291487,
+          "std_population": 0.015101270363002696
+        },
+        "stop_fraction": {
+          "mean": 0.06888270459699032,
+          "std_population": 0.009185614361566277
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "gaf": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.410211037724549,
+          "std_population": 0.2006965118115695
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2859972135992034,
+          "std_population": 0.007028333139553114
+        },
+        "travel_w1_m": {
+          "mean": 191.51939424336558,
+          "std_population": 27.196286370402753
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.7045454545454546,
+          "std_population": 0.09490348538983738
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.7810245310245311,
+          "std_population": 0.002856997095703293
+        },
+        "stop_fraction": {
+          "mean": 0.08468498233664573,
+          "std_population": 0.012933224035923922
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "tcn": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.4438354946089185,
+          "std_population": 0.07779067740577808
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2909920219285862,
+          "std_population": 0.013875394142719306
+        },
+        "travel_w1_m": {
+          "mean": 209.29513622565358,
+          "std_population": 4.295505791151831
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.47316017316017317,
+          "std_population": 0.04210536281824893
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.9318181818181818,
+          "std_population": 0.00494846412683469
+        },
+        "stop_fraction": {
+          "mean": 0.06545070498103767,
+          "std_population": 0.00598863072136327
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled_gaf": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.5014427918473505,
+          "std_population": 0.12298597597834132
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2789905787549078,
+          "std_population": 0.01097026570867694
+        },
+        "travel_w1_m": {
+          "mean": 195.79821307129328,
+          "std_population": 22.625050484508716
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.39552669552669545,
+          "std_population": 0.06170548185979247
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.7694805194805195,
+          "std_population": 0.017925772182706495
+        },
+        "stop_fraction": {
+          "mean": 0.06861782488005581,
+          "std_population": 0.004491879935863166
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "diagnostics": [
+        {
+          "seed": 42,
+          "candidate_pairwise_mean_distance_m": 137.03013224743125,
+          "mean_unique_gaf_images_per_pool": 8.0,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        },
+        {
+          "seed": 43,
+          "candidate_pairwise_mean_distance_m": 140.60796303693658,
+          "mean_unique_gaf_images_per_pool": 7.981132075471698,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        },
+        {
+          "seed": 44,
+          "candidate_pairwise_mean_distance_m": 139.0470324992491,
+          "mean_unique_gaf_images_per_pool": 8.0,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        }
+      ]
+    },
+    "empirical": {
+      "all_candidates": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.4464516906980733,
+          "std_population": 0.07359454635533819
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2387056848786968,
+          "std_population": 0.006817012823838294
+        },
+        "travel_w1_m": {
+          "mean": 201.11949759369114,
+          "std_population": 7.107647078655833
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.40471681096681095,
+          "std_population": 0.022017386137494196
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.7106962481962481,
+          "std_population": 0.02040512514567312
+        },
+        "stop_fraction": {
+          "mean": 0.10209999421105094,
+          "std_population": 0.000686003192811054
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "random": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.6919290341416549,
+          "std_population": 0.4149816078445517
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.25735359123438856,
+          "std_population": 0.029320581813714587
+        },
+        "travel_w1_m": {
+          "mean": 233.88712316643105,
+          "std_population": 58.44912927018373
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.456132756132756,
+          "std_population": 0.050540803671470416
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.7817460317460317,
+          "std_population": 0.032699189591990356
+        },
+        "stop_fraction": {
+          "mean": 0.10570507987337734,
+          "std_population": 0.026221358000363515
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "gaf": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.887103673486583,
+          "std_population": 0.2763919496725663
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2843536293487086,
+          "std_population": 0.056882508875312765
+        },
+        "travel_w1_m": {
+          "mean": 252.5491215703463,
+          "std_population": 29.606950610521196
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.631096681096681,
+          "std_population": 0.05029548357620004
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.684126984126984,
+          "std_population": 0.07147498018646439
+        },
+        "stop_fraction": {
+          "mean": 0.13200794639150804,
+          "std_population": 0.015169745206024647
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "tcn": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 2.28090312368009,
+          "std_population": 0.06876737749277198
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.30792368115302876,
+          "std_population": 0.021518727512674567
+        },
+        "travel_w1_m": {
+          "mean": 282.1418651684366,
+          "std_population": 19.054496871561685
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.4272005772005772,
+          "std_population": 0.05498299435417565
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.9136363636363637,
+          "std_population": 0.00494846412683469
+        },
+        "stop_fraction": {
+          "mean": 0.10412356723511322,
+          "std_population": 0.0046257914233024874
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "shuffled_gaf": {
+        "graph_consistent": {
+          "mean": 1.0,
+          "std_population": 0.0
+        },
+        "capped": {
+          "mean": 0.0,
+          "std_population": 0.0
+        },
+        "speed_w1_mps": {
+          "mean": 1.4875672492563607,
+          "std_population": 0.24701716502580068
+        },
+        "acceleration_w1_mps2": {
+          "mean": 0.2673525922187869,
+          "std_population": 0.03929977446853161
+        },
+        "travel_w1_m": {
+          "mean": 195.0179293074133,
+          "std_population": 31.164452181914275
+        },
+        "gaf_audit_accuracy": {
+          "mean": 0.3541125541125541,
+          "std_population": 0.08336902592007431
+        },
+        "tcn_audit_accuracy": {
+          "mean": 0.6304473304473305,
+          "std_population": 0.050244224459948285
+        },
+        "stop_fraction": {
+          "mean": 0.11275771412757714,
+          "std_population": 0.009263563161805486
+        },
+        "fallback_conditions": [
+          0,
+          0,
+          0
+        ]
+      },
+      "diagnostics": [
+        {
+          "seed": 42,
+          "candidate_pairwise_mean_distance_m": 200.60368521523606,
+          "mean_unique_gaf_images_per_pool": 7.90566037735849,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        },
+        {
+          "seed": 43,
+          "candidate_pairwise_mean_distance_m": 206.9082538523238,
+          "mean_unique_gaf_images_per_pool": 7.867924528301887,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        },
+        {
+          "seed": 44,
+          "candidate_pairwise_mean_distance_m": 203.46165387864812,
+          "mean_unique_gaf_images_per_pool": 7.962264150943396,
+          "valid_candidate_fraction": 1.0,
+          "encoding_failures": 0
+        }
+      ]
+    }
+  },
+  "paired_w1": {
+    "speed_w1_mps": {
+      "empirical_minus_diffusion": 0.202694090373849,
+      "percentile95": [
+        -0.01806949302782565,
+        0.9926174073659224
+      ]
+    },
+    "acceleration_w1_mps2": {
+      "empirical_minus_diffusion": -0.03040755571360723,
+      "percentile95": [
+        -0.08047248948599275,
+        0.0460294073213796
+      ]
+    },
+    "travel_w1_m": {
+      "empirical_minus_diffusion": 23.705496806568533,
+      "percentile95": [
+        7.857419182231601,
+        132.9121335715554
+      ]
+    }
+  },
+  "motion_memory": {
+    "diffusion": [
+      {
+        "median_increment_mae_m": 0.3064514696598053,
+        "near_copy_fraction": 0.0,
+        "median_normalized_shape_mae": 0.12366467714309692,
+        "seed": 42
+      },
+      {
+        "median_increment_mae_m": 0.3306737691164017,
+        "near_copy_fraction": 0.0,
+        "median_normalized_shape_mae": 0.12780766934156418,
+        "seed": 43
+      },
+      {
+        "median_increment_mae_m": 0.3300568014383316,
+        "near_copy_fraction": 0.0,
+        "median_normalized_shape_mae": 0.13107441365718842,
+        "seed": 44
+      }
+    ],
+    "empirical": [
+      {
+        "median_increment_mae_m": 9.331451167327032e-10,
+        "near_copy_fraction": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "seed": 42
+      },
+      {
+        "median_increment_mae_m": 1.8662902334654063e-09,
+        "near_copy_fraction": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "seed": 43
+      },
+      {
+        "median_increment_mae_m": 9.331451167327032e-10,
+        "near_copy_fraction": 1.0,
+        "median_normalized_shape_mae": 4.665725583663516e-10,
+        "seed": 44
+      }
+    ],
+    "real_test_reference": {
+      "median_increment_mae_m": 0.38339218497276306,
+      "near_copy_fraction": 0.0,
+      "median_normalized_shape_mae": 0.1476563662290573
+    }
+  },
+  "downstream": {
+    "class_counts": [
+      12,
+      13,
+      31,
+      103,
+      15,
+      8
+    ],
+    "vehicles": 182,
+    "models": {
+      "tcn": {
+        "real_only": {
+          "macro_f1_mean": 0.7691608815013723,
+          "accuracy_mean": 0.7912087912087912,
+          "individual": [
+            {
+              "accuracy": 0.8021978021978022,
+              "macro_f1": 0.7730325814536342,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  16,
+                  9,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  4,
+                  10,
+                  87,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  2,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                0.96,
+                0.7333333333333333,
+                0.5614035087719298,
+                0.8571428571428571,
+                1.0,
+                0.5263157894736842
+              ],
+              "per_class_recall": [
+                1.0,
+                0.8461538461538461,
+                0.5161290322580645,
+                0.8446601941747572,
+                1.0,
+                0.625
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "1b57359fe9995f7222b8ca926268e6dc0ded26e103139298a3a24da2f78af4fe"
+            },
+            {
+              "accuracy": 0.7857142857142857,
+              "macro_f1": 0.7704153720715657,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  17,
+                  9,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  2,
+                  15,
+                  83,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  3,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                1.0,
+                0.8275862068965517,
+                0.5396825396825397,
+                0.8341708542713567,
+                1.0,
+                0.42105263157894735
+              ],
+              "per_class_recall": [
+                1.0,
+                0.9230769230769231,
+                0.5483870967741935,
+                0.8058252427184466,
+                1.0,
+                0.5
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "b7db32c93104f4e0c04324180e57610dc2f97a6e4429b86c09d14e5efdd4824b"
+            },
+            {
+              "accuracy": 0.7857142857142857,
+              "macro_f1": 0.764034690978917,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  10,
+                  0,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  15,
+                  9,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  5,
+                  11,
+                  85,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                1.0,
+                0.6666666666666666,
+                0.5263157894736842,
+                0.845771144278607,
+                1.0,
+                0.5454545454545454
+              ],
+              "per_class_recall": [
+                1.0,
+                0.7692307692307693,
+                0.4838709677419355,
+                0.8252427184466019,
+                1.0,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "cf4413f76a120a8d296ae043de5ebbebdba76dc6cbb577baf78b5e48d80d6a6c"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "repeat": {
+              "point": 0.04141365216180415,
+              "percentile95": [
+                0.003805470175676287,
+                0.08251513995195713
+              ]
+            },
+            "timewarp": {
+              "point": 0.0359337347575579,
+              "percentile95": [
+                0.000972878162367408,
+                0.073569387363547
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.06625251170434165,
+              "percentile95": [
+                0.03098371730191379,
+                0.10683299923744384
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.052283306741591984,
+              "percentile95": [
+                0.01651441386654885,
+                0.09014700249939084
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.04836921780365078,
+              "percentile95": [
+                0.009063574363434298,
+                0.09419118781518673
+              ]
+            }
+          }
+        },
+        "repeat": {
+          "macro_f1_mean": 0.7277472293395681,
+          "accuracy_mean": 0.7765567765567765,
+          "individual": [
+            {
+              "accuracy": 0.7857142857142857,
+              "macro_f1": 0.730579635362917,
+              "confusion": [
+                [
+                  11,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  13,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  15,
+                  8,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  5,
+                  10,
+                  86,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  3,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.9166666666666666,
+                0.7647058823529411,
+                0.5263157894736842,
+                0.86,
+                1.0,
+                0.3157894736842105
+              ],
+              "per_class_recall": [
+                0.9166666666666666,
+                1.0,
+                0.4838709677419355,
+                0.8349514563106796,
+                1.0,
+                0.375
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "4a783ae4f892117dbd1259a41fe8e69af32612c038efa07eea3a1744638db84c"
+            },
+            {
+              "accuracy": 0.7637362637362637,
+              "macro_f1": 0.7002545624927317,
+              "confusion": [
+                [
+                  9,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  15,
+                  10,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  4,
+                  12,
+                  86,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  1,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.782608695652174,
+                0.6470588235294118,
+                0.4918032786885246,
+                0.8514851485148515,
+                1.0,
+                0.42857142857142855
+              ],
+              "per_class_recall": [
+                0.75,
+                0.8461538461538461,
+                0.4838709677419355,
+                0.8349514563106796,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "a6c03f084665e8b741cc91b33d194c067a0ab591238486250776e2fbfb1673d7"
+            },
+            {
+              "accuracy": 0.7802197802197802,
+              "macro_f1": 0.7524074901630556,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  15,
+                  10,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  7,
+                  10,
+                  84,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                0.96,
+                0.6666666666666666,
+                0.5172413793103449,
+                0.8442211055276382,
+                1.0,
+                0.5263157894736842
+              ],
+              "per_class_recall": [
+                1.0,
+                0.8461538461538461,
+                0.4838709677419355,
+                0.8155339805825242,
+                1.0,
+                0.625
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "a5f0c0f0c8a01a17b3330d1cd6af455856c0ff42d789cc486428af016f9a5b2b"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.04141365216180415,
+              "percentile95": [
+                -0.08251513995195715,
+                -0.003805470175676289
+              ]
+            },
+            "repeat": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "timewarp": {
+              "point": -0.005479917404246248,
+              "percentile95": [
+                -0.03309728301022909,
+                0.019215944069225877
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.024838859542537506,
+              "percentile95": [
+                -0.0005534653325340281,
+                0.05042993015679863
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.010869654579787835,
+              "percentile95": [
+                -0.019295282551851593,
+                0.040200174232314756
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.006955565641846628,
+              "percentile95": [
+                -0.024356449267750276,
+                0.0394743644090916
+              ]
+            }
+          }
+        },
+        "timewarp": {
+          "macro_f1_mean": 0.7332271467438144,
+          "accuracy_mean": 0.782051282051282,
+          "individual": [
+            {
+              "accuracy": 0.7857142857142857,
+              "macro_f1": 0.7316693799169105,
+              "confusion": [
+                [
+                  11,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  13,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  15,
+                  8,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  5,
+                  10,
+                  86,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  2,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.9565217391304348,
+                0.7428571428571429,
+                0.5263157894736842,
+                0.864321608040201,
+                1.0,
+                0.3
+              ],
+              "per_class_recall": [
+                0.9166666666666666,
+                1.0,
+                0.4838709677419355,
+                0.8349514563106796,
+                1.0,
+                0.375
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "9fac7fc499089ed452431b60155c5f0346dea4dfa720181bd845acda4b949881"
+            },
+            {
+              "accuracy": 0.7692307692307693,
+              "macro_f1": 0.7063089988786584,
+              "confusion": [
+                [
+                  10,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  14,
+                  10,
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  4,
+                  10,
+                  87,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  1,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.9090909090909091,
+                0.6470588235294118,
+                0.49122807017543857,
+                0.8571428571428571,
+                1.0,
+                0.3333333333333333
+              ],
+              "per_class_recall": [
+                0.8333333333333334,
+                0.8461538461538461,
+                0.45161290322580644,
+                0.8446601941747572,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "2abe04856a7a7c6a794873169f1d4e61c3c3fae3d81d31c5ed579fbb65cc33f5"
+            },
+            {
+              "accuracy": 0.7912087912087912,
+              "macro_f1": 0.7617030614358744,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  16,
+                  9,
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  9,
+                  85,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                1.0,
+                0.7096774193548387,
+                0.5517241379310345,
+                0.8542713567839196,
+                1.0,
+                0.45454545454545453
+              ],
+              "per_class_recall": [
+                1.0,
+                0.8461538461538461,
+                0.5161290322580645,
+                0.8252427184466019,
+                1.0,
+                0.625
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "9e3c4851acc976cb294850d2aabef22b39b10a41c7c86c0b9843ab6880765ca4"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.0359337347575579,
+              "percentile95": [
+                -0.073569387363547,
+                -0.0009728781623674395
+              ]
+            },
+            "repeat": {
+              "point": 0.005479917404246248,
+              "percentile95": [
+                -0.01921594406922588,
+                0.03309728301022907
+              ]
+            },
+            "timewarp": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.030318776946783754,
+              "percentile95": [
+                0.006505918220958704,
+                0.056827742588594916
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.016349571984034084,
+              "percentile95": [
+                -0.013293559326670779,
+                0.044162485456309526
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.012435483046092877,
+              "percentile95": [
+                -0.014878308897307766,
+                0.0442851326195801
+              ]
+            }
+          }
+        },
+        "synthetic_random": {
+          "macro_f1_mean": 0.7029083697970306,
+          "accuracy_mean": 0.7673992673992673,
+          "individual": [
+            {
+              "accuracy": 0.7912087912087912,
+              "macro_f1": 0.7312599579548733,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  13,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  17,
+                  8,
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  6,
+                  11,
+                  85,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  2,
+                  0,
+                  2
+                ]
+              ],
+              "per_class_f1": [
+                1.0,
+                0.7027027027027027,
+                0.576271186440678,
+                0.8585858585858586,
+                1.0,
+                0.25
+              ],
+              "per_class_recall": [
+                1.0,
+                1.0,
+                0.5483870967741935,
+                0.8252427184466019,
+                1.0,
+                0.25
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "b44b1ec3c1f9be476021a5a45b4b88ed866774dce69e8110206103bd2a87444f"
+            },
+            {
+              "accuracy": 0.7472527472527473,
+              "macro_f1": 0.671315144167754,
+              "confusion": [
+                [
+                  9,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  14,
+                  10,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  5,
+                  10,
+                  85,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  2,
+                  0,
+                  2
+                ]
+              ],
+              "per_class_f1": [
+                0.8571428571428571,
+                0.6111111111111112,
+                0.4827586206896552,
+                0.8415841584158416,
+                1.0,
+                0.23529411764705882
+              ],
+              "per_class_recall": [
+                0.75,
+                0.8461538461538461,
+                0.45161290322580644,
+                0.8252427184466019,
+                1.0,
+                0.25
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "cde0170862c46599a29890910e2ad73af74d19aefa21fa3d19db3e4624efab00"
+            },
+            {
+              "accuracy": 0.7637362637362637,
+              "macro_f1": 0.7061500072684647,
+              "confusion": [
+                [
+                  10,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  3,
+                  1,
+                  14,
+                  9,
+                  0,
+                  4
+                ],
+                [
+                  3,
+                  4,
+                  9,
+                  84,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  3,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.7142857142857143,
+                0.7741935483870968,
+                0.4745762711864407,
+                0.8527918781725888,
+                1.0,
+                0.42105263157894735
+              ],
+              "per_class_recall": [
+                0.8333333333333334,
+                0.9230769230769231,
+                0.45161290322580644,
+                0.8155339805825242,
+                1.0,
+                0.5
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "5499a5e25c27eb36634ab86d4a7335df723f400df2ce032573a0445e5d056ec5"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.06625251170434165,
+              "percentile95": [
+                -0.10683299923744385,
+                -0.030983717301913804
+              ]
+            },
+            "repeat": {
+              "point": -0.024838859542537506,
+              "percentile95": [
+                -0.050429930156798655,
+                0.0005534653325340088
+              ]
+            },
+            "timewarp": {
+              "point": -0.030318776946783754,
+              "percentile95": [
+                -0.056827742588594916,
+                -0.006505918220958708
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_gaf": {
+              "point": -0.01396920496274967,
+              "percentile95": [
+                -0.05162435372992845,
+                0.015432410791469337
+              ]
+            },
+            "synthetic_tcn": {
+              "point": -0.017883293900690878,
+              "percentile95": [
+                -0.045801988407724516,
+                0.010492632379309832
+              ]
+            }
+          }
+        },
+        "synthetic_gaf": {
+          "macro_f1_mean": 0.7168775747597803,
+          "accuracy_mean": 0.7619047619047619,
+          "individual": [
+            {
+              "accuracy": 0.7747252747252747,
+              "macro_f1": 0.7328567728567729,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  13,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  14,
+                  8,
+                  0,
+                  7
+                ],
+                [
+                  0,
+                  6,
+                  11,
+                  83,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.96,
+                0.7222222222222222,
+                0.5,
+                0.8512820512820513,
+                1.0,
+                0.36363636363636365
+              ],
+              "per_class_recall": [
+                1.0,
+                1.0,
+                0.45161290322580644,
+                0.8058252427184466,
+                1.0,
+                0.5
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "a0f9bc83001c86e29e002abae9610f8036253f487cbc257310fea6c9943bd452"
+            },
+            {
+              "accuracy": 0.7582417582417582,
+              "macro_f1": 0.7115560365560366,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  13,
+                  10,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  5,
+                  12,
+                  83,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  1,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                1.0,
+                0.6666666666666666,
+                0.4642857142857143,
+                0.8383838383838383,
+                1.0,
+                0.3
+              ],
+              "per_class_recall": [
+                1.0,
+                0.9230769230769231,
+                0.41935483870967744,
+                0.8058252427184466,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "facd9a48eee0d44e8fcee689571c624e70335661f5abcf8e1b77bdf9c9247382"
+            },
+            {
+              "accuracy": 0.7527472527472527,
+              "macro_f1": 0.7062199148665315,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  3,
+                  13,
+                  9,
+                  0,
+                  4
+                ],
+                [
+                  1,
+                  8,
+                  10,
+                  82,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  3,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.8888888888888888,
+                0.6111111111111112,
+                0.45614035087719296,
+                0.8367346938775511,
+                1.0,
+                0.4444444444444444
+              ],
+              "per_class_recall": [
+                1.0,
+                0.8461538461538461,
+                0.41935483870967744,
+                0.7961165048543689,
+                1.0,
+                0.5
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "ae83206273581c2f16122c90418e5622f516b4fffa52dc012e0d80e86098b170"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.052283306741591984,
+              "percentile95": [
+                -0.09014700249939087,
+                -0.016514413866548866
+              ]
+            },
+            "repeat": {
+              "point": -0.010869654579787835,
+              "percentile95": [
+                -0.04020017423231477,
+                0.019295282551851582
+              ]
+            },
+            "timewarp": {
+              "point": -0.016349571984034084,
+              "percentile95": [
+                -0.04416248545630956,
+                0.013293559326670756
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.01396920496274967,
+              "percentile95": [
+                -0.015432410791469347,
+                0.05162435372992844
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_tcn": {
+              "point": -0.003914088937941207,
+              "percentile95": [
+                -0.044075772393399264,
+                0.04258359982561649
+              ]
+            }
+          }
+        },
+        "synthetic_tcn": {
+          "macro_f1_mean": 0.7207916636977215,
+          "accuracy_mean": 0.7747252747252746,
+          "individual": [
+            {
+              "accuracy": 0.7802197802197802,
+              "macro_f1": 0.7261615274784722,
+              "confusion": [
+                [
+                  10,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  16,
+                  8,
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  5,
+                  11,
+                  86,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  3,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.9090909090909091,
+                0.7058823529411765,
+                0.5333333333333333,
+                0.8557213930348259,
+                1.0,
+                0.35294117647058826
+              ],
+              "per_class_recall": [
+                0.8333333333333334,
+                0.9230769230769231,
+                0.5161290322580645,
+                0.8349514563106796,
+                1.0,
+                0.375
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "01f0c442e5a479e5ef6bcc353244ae2a8bf4877e456ff9402c26cf46c21ee86e"
+            },
+            {
+              "accuracy": 0.7582417582417582,
+              "macro_f1": 0.6930923363759184,
+              "confusion": [
+                [
+                  10,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  2,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  16,
+                  10,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  7,
+                  11,
+                  84,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  0,
+                  2,
+                  0,
+                  2
+                ]
+              ],
+              "per_class_f1": [
+                0.9090909090909091,
+                0.5945945945945946,
+                0.5333333333333333,
+                0.835820895522388,
+                1.0,
+                0.2857142857142857
+              ],
+              "per_class_recall": [
+                0.8333333333333334,
+                0.8461538461538461,
+                0.5161290322580645,
+                0.8155339805825242,
+                1.0,
+                0.25
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "4634a75d6c11370f88e28b2293b57aceaf573b79bd1b8d7ecb17dc459489a183"
+            },
+            {
+              "accuracy": 0.7857142857142857,
+              "macro_f1": 0.7431211272387742,
+              "confusion": [
+                [
+                  10,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  12,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  16,
+                  10,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  6,
+                  10,
+                  86,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  1,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.9090909090909091,
+                0.6857142857142857,
+                0.5333333333333333,
+                0.86,
+                1.0,
+                0.47058823529411764
+              ],
+              "per_class_recall": [
+                0.8333333333333334,
+                0.9230769230769231,
+                0.5161290322580645,
+                0.8349514563106796,
+                1.0,
+                0.5
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "246863ee3b0f46a9ef0383615822a344146867b83e426e5eae47941068b7b5f0"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.04836921780365078,
+              "percentile95": [
+                -0.09419118781518673,
+                -0.009063574363434307
+              ]
+            },
+            "repeat": {
+              "point": -0.006955565641846628,
+              "percentile95": [
+                -0.039474364409091627,
+                0.024356449267750265
+              ]
+            },
+            "timewarp": {
+              "point": -0.012435483046092877,
+              "percentile95": [
+                -0.044285132619580114,
+                0.014878308897307761
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.017883293900690878,
+              "percentile95": [
+                -0.010492632379309877,
+                0.0458019884077245
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.003914088937941207,
+              "percentile95": [
+                -0.0425835998256165,
+                0.04407577239339923
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "gru": {
+        "real_only": {
+          "macro_f1_mean": 0.6438148818390198,
+          "accuracy_mean": 0.7307692307692308,
+          "individual": [
+            {
+              "accuracy": 0.7307692307692307,
+              "macro_f1": 0.6671498695727646,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  0,
+                  5,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  12,
+                  11,
+                  0,
+                  1
+                ],
+                [
+                  5,
+                  4,
+                  7,
+                  82,
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.5,
+                0.47058823529411764,
+                0.8159203980099502,
+                0.967741935483871,
+                0.6
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.3870967741935484,
+                0.7961165048543689,
+                1.0,
+                0.75
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "2a24150462ecc390045d98ed99b9602111a9e09076271e915efec719238353b9"
+            },
+            {
+              "accuracy": 0.7197802197802198,
+              "macro_f1": 0.6201137944742595,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  4,
+                  3,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  8,
+                  15,
+                  0,
+                  1
+                ],
+                [
+                  5,
+                  4,
+                  2,
+                  86,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                0.6666666666666666,
+                0.48,
+                0.37209302325581395,
+                0.8269230769230769,
+                0.875,
+                0.5
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.25806451612903225,
+                0.8349514563106796,
+                0.9333333333333333,
+                0.625
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "aea6042c9bca363ce9c39bde7369547222b1a4a2630a04646f757f0e0dd20d43"
+            },
+            {
+              "accuracy": 0.7417582417582418,
+              "macro_f1": 0.6441809814700353,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  2,
+                  5,
+                  2,
+                  0
+                ],
+                [
+                  5,
+                  0,
+                  15,
+                  8,
+                  1,
+                  2
+                ],
+                [
+                  4,
+                  3,
+                  6,
+                  85,
+                  1,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                0.7272727272727273,
+                0.4,
+                0.5172413793103449,
+                0.845771144278607,
+                0.8484848484848485,
+                0.5263157894736842
+              ],
+              "per_class_recall": [
+                1.0,
+                0.3076923076923077,
+                0.4838709677419355,
+                0.8252427184466019,
+                0.9333333333333333,
+                0.625
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "2d1c98781dfa3a772e625bfb1ca0279b02cf2b3c03266c46c988f525066e20e3"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "repeat": {
+              "point": 0.04678751536202963,
+              "percentile95": [
+                0.00888487963235467,
+                0.0869284550643474
+              ]
+            },
+            "timewarp": {
+              "point": 0.01240877998159129,
+              "percentile95": [
+                -0.03827444232312867,
+                0.060947819035624115
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.03562624349231469,
+              "percentile95": [
+                -0.007868978329545421,
+                0.0836081099892576
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.017035396407547587,
+              "percentile95": [
+                -0.0313174920953434,
+                0.06424229748156934
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.03179080770853093,
+              "percentile95": [
+                -0.020090294608453203,
+                0.0857218622763146
+              ]
+            }
+          }
+        },
+        "repeat": {
+          "macro_f1_mean": 0.5970273664769902,
+          "accuracy_mean": 0.7051282051282052,
+          "individual": [
+            {
+              "accuracy": 0.6978021978021978,
+              "macro_f1": 0.6016554567599265,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8,
+                  0,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  6,
+                  10,
+                  0,
+                  2
+                ],
+                [
+                  5,
+                  7,
+                  6,
+                  83,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  3,
+                  1,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.42105263157894735,
+                0.2727272727272727,
+                0.8341708542713567,
+                0.9333333333333333,
+                0.5
+              ],
+              "per_class_recall": [
+                1.0,
+                0.6153846153846154,
+                0.1935483870967742,
+                0.8058252427184466,
+                0.9333333333333333,
+                0.5
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "68bb88298442c73eb244a243bc5795eb318eebc336d8a383b876733a365a6851"
+            },
+            {
+              "accuracy": 0.6868131868131868,
+              "macro_f1": 0.5549436421742185,
+              "confusion": [
+                [
+                  8,
+                  0,
+                  0,
+                  0,
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  0,
+                  5,
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  2,
+                  11,
+                  9,
+                  3,
+                  2
+                ],
+                [
+                  3,
+                  5,
+                  4,
+                  83,
+                  3,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.5925925925925926,
+                0.37037037037037035,
+                0.4489795918367347,
+                0.83,
+                0.6666666666666666,
+                0.42105263157894735
+              ],
+              "per_class_recall": [
+                0.6666666666666666,
+                0.38461538461538464,
+                0.3548387096774194,
+                0.8058252427184466,
+                0.9333333333333333,
+                0.5
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "dfd8b4ac67c9e54c708b13dba66474bb60527c953eda9c91253be9316bbb7aa0"
+            },
+            {
+              "accuracy": 0.7307692307692307,
+              "macro_f1": 0.6344830004968255,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  5,
+                  1,
+                  4,
+                  2,
+                  0
+                ],
+                [
+                  7,
+                  1,
+                  11,
+                  8,
+                  0,
+                  4
+                ],
+                [
+                  5,
+                  5,
+                  5,
+                  85,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.38461538461538464,
+                0.4489795918367347,
+                0.85,
+                0.9032258064516129,
+                0.5714285714285714
+              ],
+              "per_class_recall": [
+                1.0,
+                0.38461538461538464,
+                0.3548387096774194,
+                0.8252427184466019,
+                0.9333333333333333,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "4d6d1210a89b7c6b0e86b5915729f988a4d59bc5a643a2be0577505df514ab50"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.04678751536202963,
+              "percentile95": [
+                -0.08692845506434746,
+                -0.00888487963235469
+              ]
+            },
+            "repeat": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "timewarp": {
+              "point": -0.03437873538043834,
+              "percentile95": [
+                -0.06475468927284887,
+                -0.006964978241618577
+              ]
+            },
+            "synthetic_random": {
+              "point": -0.01116127186971494,
+              "percentile95": [
+                -0.04399654919909035,
+                0.01983591127446316
+              ]
+            },
+            "synthetic_gaf": {
+              "point": -0.029752118954482043,
+              "percentile95": [
+                -0.05948469548464523,
+                -0.0028405295103567114
+              ]
+            },
+            "synthetic_tcn": {
+              "point": -0.014996707653498698,
+              "percentile95": [
+                -0.048655155978695616,
+                0.017894902127218674
+              ]
+            }
+          }
+        },
+        "timewarp": {
+          "macro_f1_mean": 0.6314061018574285,
+          "accuracy_mean": 0.7197802197802198,
+          "individual": [
+            {
+              "accuracy": 0.7252747252747253,
+              "macro_f1": 0.654953661148428,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  9,
+                  0,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  7,
+                  9,
+                  0,
+                  2
+                ],
+                [
+                  5,
+                  7,
+                  5,
+                  84,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.4864864864864865,
+                0.3181818181818182,
+                0.8442211055276382,
+                0.9655172413793104,
+                0.6666666666666666
+              ],
+              "per_class_recall": [
+                1.0,
+                0.6923076923076923,
+                0.22580645161290322,
+                0.8155339805825242,
+                0.9333333333333333,
+                0.75
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "b2f26251112d7a78436676215c7b4419ea4e9a302ba0e1a0ebbd52bf718b10e3"
+            },
+            {
+              "accuracy": 0.6868131868131868,
+              "macro_f1": 0.5595921870431675,
+              "confusion": [
+                [
+                  8,
+                  0,
+                  0,
+                  0,
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  5,
+                  2,
+                  0
+                ],
+                [
+                  4,
+                  1,
+                  12,
+                  9,
+                  3,
+                  2
+                ],
+                [
+                  3,
+                  6,
+                  5,
+                  81,
+                  3,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  3,
+                  0,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.5925925925925926,
+                0.42857142857142855,
+                0.47058823529411764,
+                0.8181818181818182,
+                0.7142857142857143,
+                0.3333333333333333
+              ],
+              "per_class_recall": [
+                0.6666666666666666,
+                0.46153846153846156,
+                0.3870967741935484,
+                0.7864077669902912,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "a5ad23b213d0c5316c2c9212f1e9068e3327bf644ff667f99f2988c5eda31176"
+            },
+            {
+              "accuracy": 0.7472527472527473,
+              "macro_f1": 0.6796724573806904,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  12,
+                  9,
+                  0,
+                  3
+                ],
+                [
+                  5,
+                  2,
+                  8,
+                  85,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.5714285714285714,
+                0.4444444444444444,
+                0.845771144278607,
+                0.967741935483871,
+                0.6
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.3870967741935484,
+                0.8252427184466019,
+                1.0,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "6afd873b32df0a3ba6453048e1b298809f495e5665df608f3f8212051d6bc0c6"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.01240877998159129,
+              "percentile95": [
+                -0.060947819035624115,
+                0.03827444232312867
+              ]
+            },
+            "repeat": {
+              "point": 0.03437873538043834,
+              "percentile95": [
+                0.0069649782416185335,
+                0.06475468927284884
+              ]
+            },
+            "timewarp": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.023217463510723402,
+              "percentile95": [
+                -0.007986974734581811,
+                0.05531948746602948
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.004626616425956298,
+              "percentile95": [
+                -0.0216343263568745,
+                0.027742654624301616
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.019382027726939643,
+              "percentile95": [
+                -0.0059065412583154285,
+                0.045085234236062
+              ]
+            }
+          }
+        },
+        "synthetic_random": {
+          "macro_f1_mean": 0.6081886383467051,
+          "accuracy_mean": 0.7142857142857143,
+          "individual": [
+            {
+              "accuracy": 0.7032967032967034,
+              "macro_f1": 0.5941466959570408,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  9,
+                  0,
+                  3,
+                  0,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  6,
+                  10,
+                  0,
+                  2
+                ],
+                [
+                  5,
+                  7,
+                  4,
+                  84,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  4,
+                  1,
+                  0,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.45,
+                0.2857142857142857,
+                0.84,
+                0.9655172413793104,
+                0.375
+              ],
+              "per_class_recall": [
+                1.0,
+                0.6923076923076923,
+                0.1935483870967742,
+                0.8155339805825242,
+                0.9333333333333333,
+                0.375
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "e2667c423da35b6a60f4f55ec525de6031fa19f4aa2ff95120fe3f6b05de7c26"
+            },
+            {
+              "accuracy": 0.6978021978021978,
+              "macro_f1": 0.5852218750339051,
+              "confusion": [
+                [
+                  7,
+                  0,
+                  0,
+                  0,
+                  5,
+                  0
+                ],
+                [
+                  0,
+                  5,
+                  1,
+                  4,
+                  3,
+                  0
+                ],
+                [
+                  3,
+                  0,
+                  14,
+                  8,
+                  4,
+                  2
+                ],
+                [
+                  3,
+                  5,
+                  8,
+                  81,
+                  2,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  5
+                ]
+              ],
+              "per_class_f1": [
+                0.56,
+                0.4166666666666667,
+                0.5,
+                0.826530612244898,
+                0.6818181818181818,
+                0.5263157894736842
+              ],
+              "per_class_recall": [
+                0.5833333333333334,
+                0.38461538461538464,
+                0.45161290322580644,
+                0.7864077669902912,
+                1.0,
+                0.625
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "b08322a96aa1731c8d46b487801efac60c98478f95b8ba2a52ad3ecefb34ee2c"
+            },
+            {
+              "accuracy": 0.7417582417582418,
+              "macro_f1": 0.6451973440491697,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  9,
+                  9,
+                  0,
+                  6
+                ],
+                [
+                  5,
+                  4,
+                  3,
+                  88,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.5217391304347826,
+                0.3829787234042553,
+                0.8627450980392157,
+                0.9333333333333333,
+                0.5217391304347826
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.2903225806451613,
+                0.8543689320388349,
+                0.9333333333333333,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "7d82c1eb6ff926702e2bdb6308903a9cb8a2c63d097da917d7d2778fdf3c78a9"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.03562624349231469,
+              "percentile95": [
+                -0.08360810998925765,
+                0.007868978329545414
+              ]
+            },
+            "repeat": {
+              "point": 0.01116127186971494,
+              "percentile95": [
+                -0.019835911274463203,
+                0.04399654919909035
+              ]
+            },
+            "timewarp": {
+              "point": -0.023217463510723402,
+              "percentile95": [
+                -0.05531948746602955,
+                0.007986974734581776
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_gaf": {
+              "point": -0.018590847084767104,
+              "percentile95": [
+                -0.054715605614247445,
+                0.016969244822176235
+              ]
+            },
+            "synthetic_tcn": {
+              "point": -0.0038354357837837583,
+              "percentile95": [
+                -0.04017142097278014,
+                0.03276182295407751
+              ]
+            }
+          }
+        },
+        "synthetic_gaf": {
+          "macro_f1_mean": 0.6267794854314722,
+          "accuracy_mean": 0.7106227106227107,
+          "individual": [
+            {
+              "accuracy": 0.7142857142857143,
+              "macro_f1": 0.6460183612767115,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  11,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  6,
+                  9,
+                  0,
+                  3
+                ],
+                [
+                  5,
+                  5,
+                  8,
+                  81,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.5945945945945946,
+                0.2608695652173913,
+                0.8350515463917526,
+                0.9655172413793104,
+                0.5714285714285714
+              ],
+              "per_class_recall": [
+                1.0,
+                0.8461538461538461,
+                0.1935483870967742,
+                0.7864077669902912,
+                0.9333333333333333,
+                0.75
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "9bbe57443bfb6e164dabf0feb17f2842dd6fad2a27dc6d6f48acb7358f3d374f"
+            },
+            {
+              "accuracy": 0.6868131868131868,
+              "macro_f1": 0.5896630586936379,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  1,
+                  4,
+                  2,
+                  0
+                ],
+                [
+                  7,
+                  1,
+                  11,
+                  10,
+                  0,
+                  2
+                ],
+                [
+                  5,
+                  7,
+                  7,
+                  78,
+                  1,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  3,
+                  0,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.6666666666666666,
+                0.41379310344827586,
+                0.41509433962264153,
+                0.8,
+                0.9090909090909091,
+                0.3333333333333333
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.3548387096774194,
+                0.7572815533980582,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "12349430fcdab87b54caa0d214cca53be7d3460399bb66b00bdfad37056bec35"
+            },
+            {
+              "accuracy": 0.7307692307692307,
+              "macro_f1": 0.6446570363240671,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  11,
+                  8,
+                  0,
+                  5
+                ],
+                [
+                  5,
+                  4,
+                  6,
+                  84,
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.48,
+                0.44,
+                0.8442211055276382,
+                0.9333333333333333,
+                0.5217391304347826
+              ],
+              "per_class_recall": [
+                1.0,
+                0.46153846153846156,
+                0.3548387096774194,
+                0.8155339805825242,
+                0.9333333333333333,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "07f654b262aedbc026e4b3d87ad8611eec8a68b52407fd55d8d32f8979be8ad7"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.017035396407547587,
+              "percentile95": [
+                -0.06424229748156936,
+                0.03131749209534333
+              ]
+            },
+            "repeat": {
+              "point": 0.029752118954482043,
+              "percentile95": [
+                0.002840529510356674,
+                0.05948469548464518
+              ]
+            },
+            "timewarp": {
+              "point": -0.004626616425956298,
+              "percentile95": [
+                -0.02774265462430162,
+                0.02163432635687449
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.018590847084767104,
+              "percentile95": [
+                -0.016969244822176262,
+                0.05471560561424742
+              ]
+            },
+            "synthetic_gaf": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.014755411300983345,
+              "percentile95": [
+                -0.017215395270865914,
+                0.048235034366045176
+              ]
+            }
+          }
+        },
+        "synthetic_tcn": {
+          "macro_f1_mean": 0.6120240741304889,
+          "accuracy_mean": 0.7124542124542125,
+          "individual": [
+            {
+              "accuracy": 0.7087912087912088,
+              "macro_f1": 0.6193694882591719,
+              "confusion": [
+                [
+                  12,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  9,
+                  0,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  5,
+                  8,
+                  9,
+                  0,
+                  2
+                ],
+                [
+                  5,
+                  7,
+                  6,
+                  82,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  14,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  4
+                ]
+              ],
+              "per_class_f1": [
+                0.6486486486486487,
+                0.4864864864864865,
+                0.3404255319148936,
+                0.8367346938775511,
+                0.9333333333333333,
+                0.47058823529411764
+              ],
+              "per_class_recall": [
+                1.0,
+                0.6923076923076923,
+                0.25806451612903225,
+                0.7961165048543689,
+                0.9333333333333333,
+                0.5
+              ],
+              "seed": 100,
+              "checkpoint_sha256": "7149d1eb64a1775c2f44526c47c2c9ab5469f47f76d1a1dcc6c86f9ffd7dc5f7"
+            },
+            {
+              "accuracy": 0.6923076923076923,
+              "macro_f1": 0.5636130672159013,
+              "confusion": [
+                [
+                  8,
+                  0,
+                  0,
+                  0,
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  6,
+                  1,
+                  3,
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  0,
+                  12,
+                  9,
+                  3,
+                  3
+                ],
+                [
+                  3,
+                  5,
+                  7,
+                  82,
+                  3,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  3,
+                  0,
+                  0,
+                  3
+                ]
+              ],
+              "per_class_f1": [
+                0.5925925925925926,
+                0.46153846153846156,
+                0.4444444444444444,
+                0.8324873096446701,
+                0.6976744186046512,
+                0.35294117647058826
+              ],
+              "per_class_recall": [
+                0.6666666666666666,
+                0.46153846153846156,
+                0.3870967741935484,
+                0.7961165048543689,
+                1.0,
+                0.375
+              ],
+              "seed": 101,
+              "checkpoint_sha256": "efdef6c524094bdb0c18d2364c9ef82a0b2b489a737197e75ee1e8b31461d7be"
+            },
+            {
+              "accuracy": 0.7362637362637363,
+              "macro_f1": 0.6530896669163933,
+              "confusion": [
+                [
+                  11,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  6,
+                  1,
+                  4,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0,
+                  13,
+                  8,
+                  0,
+                  3
+                ],
+                [
+                  5,
+                  3,
+                  6,
+                  83,
+                  0,
+                  6
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  6
+                ]
+              ],
+              "per_class_f1": [
+                0.6111111111111112,
+                0.5,
+                0.5098039215686274,
+                0.8383838383838383,
+                0.9375,
+                0.5217391304347826
+              ],
+              "per_class_recall": [
+                0.9166666666666666,
+                0.46153846153846156,
+                0.41935483870967744,
+                0.8058252427184466,
+                1.0,
+                0.75
+              ],
+              "seed": 102,
+              "checkpoint_sha256": "6fbedf4d2d403aa8fce8a43f0a7b0a95385af267603fbe193ec12e5ef4674340"
+            }
+          ],
+          "paired_delta_f1": {
+            "real_only": {
+              "point": -0.03179080770853093,
+              "percentile95": [
+                -0.08572186227631468,
+                0.02009029460845313
+              ]
+            },
+            "repeat": {
+              "point": 0.014996707653498698,
+              "percentile95": [
+                -0.01789490212721869,
+                0.048655155978695616
+              ]
+            },
+            "timewarp": {
+              "point": -0.019382027726939643,
+              "percentile95": [
+                -0.045085234236062,
+                0.00590654125831542
+              ]
+            },
+            "synthetic_random": {
+              "point": 0.0038354357837837583,
+              "percentile95": [
+                -0.03276182295407756,
+                0.040171420972780106
+              ]
+            },
+            "synthetic_gaf": {
+              "point": -0.014755411300983345,
+              "percentile95": [
+                -0.0482350343660452,
+                0.017215395270865914
+              ]
+            },
+            "synthetic_tcn": {
+              "point": 0.0,
+              "percentile95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "scope": "Locked final test, fixed 36 learners; 2000 paired vehicle resamples, no retraining; fixed six-class macro-F1 (undefined-class terms are zero)."
+  },
+  "auxiliary": {
+    "vehicles": 182,
+    "class_counts": [
+      12,
+      13,
+      31,
+      103,
+      15,
+      8
+    ],
+    "models": {
+      "gaf": {
+        "individual": [
+          {
+            "seed": 42,
+            "accuracy": 0.6538461538461539,
+            "macro_f1": 0.5471146692856265,
+            "confusion": [
+              [
+                9,
+                0,
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                9,
+                3,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                14,
+                12,
+                2,
+                3
+              ],
+              [
+                0,
+                0,
+                20,
+                79,
+                2,
+                2
+              ],
+              [
+                0,
+                1,
+                4,
+                2,
+                8,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                3,
+                4,
+                0
+              ]
+            ],
+            "per_class_f1": [
+              0.8571428571428571,
+              0.782608695652174,
+              0.3783783783783784,
+              0.7939698492462312,
+              0.47058823529411764,
+              0.0
+            ],
+            "per_class_recall": [
+              0.75,
+              0.6923076923076923,
+              0.45161290322580644,
+              0.7669902912621359,
+              0.5333333333333333,
+              0.0
+            ],
+            "checkpoint_sha256": "e80bc360ed874444be386b19edf51bc844475bfe72b7acc64ba290615ab86004"
+          },
+          {
+            "seed": 43,
+            "accuracy": 0.6263736263736264,
+            "macro_f1": 0.545528158707166,
+            "confusion": [
+              [
+                10,
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                12,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                12,
+                12,
+                3,
+                4
+              ],
+              [
+                1,
+                0,
+                21,
+                73,
+                2,
+                6
+              ],
+              [
+                1,
+                1,
+                3,
+                3,
+                7,
+                0
+              ],
+              [
+                0,
+                1,
+                2,
+                2,
+                3,
+                0
+              ]
+            ],
+            "per_class_f1": [
+              0.8333333333333334,
+              0.8888888888888888,
+              0.34285714285714286,
+              0.7564766839378239,
+              0.45161290322580644,
+              0.0
+            ],
+            "per_class_recall": [
+              0.8333333333333334,
+              0.9230769230769231,
+              0.3870967741935484,
+              0.7087378640776699,
+              0.4666666666666667,
+              0.0
+            ],
+            "checkpoint_sha256": "fc2d51eb98bae45c41cc071f372d1204465fe89826f0ed6e65915673327d2457"
+          },
+          {
+            "seed": 44,
+            "accuracy": 0.6483516483516484,
+            "macro_f1": 0.5088999000862306,
+            "confusion": [
+              [
+                10,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                9,
+                2,
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                12,
+                15,
+                2,
+                1
+              ],
+              [
+                0,
+                2,
+                15,
+                81,
+                3,
+                2
+              ],
+              [
+                0,
+                4,
+                2,
+                3,
+                6,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                1,
+                4,
+                0
+              ]
+            ],
+            "per_class_f1": [
+              0.8695652173913043,
+              0.6428571428571429,
+              0.36363636363636365,
+              0.7902439024390244,
+              0.3870967741935484,
+              0.0
+            ],
+            "per_class_recall": [
+              0.8333333333333334,
+              0.6923076923076923,
+              0.3870967741935484,
+              0.7864077669902912,
+              0.4,
+              0.0
+            ],
+            "checkpoint_sha256": "27edc76a5152de6aaf2dad0d57fa0d48944cc4516b1a2f90cbc355f6e2746bb1"
+          }
+        ],
+        "macro_f1_mean": 0.533847576026341,
+        "accuracy_mean": 0.6428571428571428
+      },
+      "tcn": {
+        "individual": [
+          {
+            "seed": 42,
+            "accuracy": 0.7692307692307693,
+            "macro_f1": 0.7590013645395359,
+            "confusion": [
+              [
+                12,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                13,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                16,
+                10,
+                0,
+                4
+              ],
+              [
+                0,
+                10,
+                12,
+                79,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                15,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                1,
+                0,
+                5
+              ]
+            ],
+            "per_class_f1": [
+              1.0,
+              0.6666666666666666,
+              0.5423728813559322,
+              0.8186528497409327,
+              1.0,
+              0.5263157894736842
+            ],
+            "per_class_recall": [
+              1.0,
+              1.0,
+              0.5161290322580645,
+              0.7669902912621359,
+              1.0,
+              0.625
+            ],
+            "checkpoint_sha256": "89a7b26c9cd4f2f7d66d467faf0fbb41e39d23b86fae6c88e34a5aae7a903a7d"
+          },
+          {
+            "seed": 43,
+            "accuracy": 0.8076923076923077,
+            "macro_f1": 0.7005913476501712,
+            "confusion": [
+              [
+                12,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                12,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                20,
+                10,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                9,
+                88,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                15,
+                0
+              ],
+              [
+                0,
+                3,
+                3,
+                2,
+                0,
+                0
+              ]
+            ],
+            "per_class_f1": [
+              1.0,
+              0.7058823529411765,
+              0.6349206349206349,
+              0.8627450980392157,
+              1.0,
+              0.0
+            ],
+            "per_class_recall": [
+              1.0,
+              0.9230769230769231,
+              0.6451612903225806,
+              0.8543689320388349,
+              1.0,
+              0.0
+            ],
+            "checkpoint_sha256": "3059943ca132cfc565f6b068cfbcfde86c9224af0b3802772480aaec25b72926"
+          },
+          {
+            "seed": 44,
+            "accuracy": 0.7802197802197802,
+            "macro_f1": 0.7278987286607083,
+            "confusion": [
+              [
+                12,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                7,
+                0,
+                6,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                19,
+                10,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                14,
+                87,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                15,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                3,
+                0,
+                2
+              ]
+            ],
+            "per_class_f1": [
+              0.96,
+              0.7,
+              0.5671641791044776,
+              0.8325358851674641,
+              1.0,
+              0.3076923076923077
+            ],
+            "per_class_recall": [
+              1.0,
+              0.5384615384615384,
+              0.6129032258064516,
+              0.8446601941747572,
+              1.0,
+              0.25
+            ],
+            "checkpoint_sha256": "debe9aee408471aa976b909f1046ef6e6c4474afeed854f1bb9bcd9469628dbe"
+          }
+        ],
+        "macro_f1_mean": 0.7291638136168052,
+        "accuracy_mean": 0.7857142857142857
+      }
+    },
+    "scope": "Self-trained participant networks, all encodable six-class held-out windows; final fixed checkpoints, no tuning."
+  },
+  "missing_generation_classes": [],
+  "lock_sha256": "2ef4bddc8b727bc53c78e7cd2b8abf55b1757b7e880b832560e2feaefcfeebba",
+  "scope": "Locked final held-out-ID test, fixed models/pools; exploratory validation selection disclosed"
+}

@@ -1,0 +1,49 @@
+{
+  "format": [
+    "time",
+    "id",
+    "x",
+    "y",
+    "type"
+  ],
+  "time": "seconds relative to each synthetic trajectory start, 0..127.75 at dt=0.25",
+  "coordinates": "Local SUMO XY metres on MoST; not GPS longitude/latitude",
+  "types": [
+    "pedestrian",
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "scope": "Saved locked-test outputs, five moving participant classes, no pedestrians. No joint traffic timeline, collision or signal compliance guarantee. Do not train on these and reuse the same final test.",
+  "files": {
+    "diffusion_all_candidates.csv.gz": {
+      "trajectories": 1272,
+      "rows": 651264,
+      "sha256": "6f49ec3ad98c761775a0dcae876e3b0f50f0148c5e73d112c8753dffb0d67239"
+    },
+    "diffusion_random.csv.gz": {
+      "trajectories": 159,
+      "rows": 81408,
+      "sha256": "18211a8aa9328f0826f7afe2803a2a05e258a6a7a553366aa67f42e0d1f2159f"
+    },
+    "diffusion_gaf.csv.gz": {
+      "trajectories": 159,
+      "rows": 81408,
+      "sha256": "2dfb8f7798425dd08f7aa5b2c1bcd9c366b67f5998b0f20f43a96f8490d58cee"
+    },
+    "diffusion_tcn.csv.gz": {
+      "trajectories": 159,
+      "rows": 81408,
+      "sha256": "ca7e485959fea9997c9c4b0582fc1882c85952a770dce9a9deb606602f7b3a2d"
+    },
+    "diffusion_shuffled_gaf.csv.gz": {
+      "trajectories": 159,
+      "rows": 81408,
+      "sha256": "24af6c5738593919eac2d3be2fdcfc4d167bb42b0e35612eba97940adfafa9c0"
+    }
+  },
+  "archive_sha256": "b7a81b83a9836d7b991619ed27dd30c4be5d50cc3c0e35d75382d8a3428352a4",
+  "server_archive": "runs/final-synthetic-export/synthetic_trajectories.zip"
+}

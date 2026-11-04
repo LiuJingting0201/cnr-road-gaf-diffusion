@@ -8,7 +8,7 @@
 
 原仓库没有提供 CNN。组内编码、我们训练的辅助网络、历史位移 GAF 和正式论文配置分别标识，不能混称复现。
 
-### 已有扩展实验：扩散训练与GAF反馈
+### 历史扩展实验：扩散训练与GAF反馈
 
 核心目标是训练能够合成轨迹的路网条件扩散模型，并检验GAF语义反馈是否带来实际生成或下游分类收益。G4/G4b共16次20,000步训练已完成，含三种子反馈对照与单种子软一致性消融；结果未证明GAF反馈有稳定的总体收益。
 
@@ -20,14 +20,17 @@
 
 **G5/G6 已实现选定五类移动子集的路径规划与路径条件运动扩散，以及有向连接评价。** 这不代表六类、全地图或任意轨迹均已完成。早期道路距离场实验只具备几何条件，保留为历史基线；E1–E5 已完成匹配时长的原编码反馈与下游验证，当前尚未证明 GAF 的稳定独立收益；长轨迹生成仍限于严格筛选的五类子集。
 
-实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成三种子共9项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。全部目前为验证集探索，不是最终测试结论。
+实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成三种子共9项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。上述历史结果为验证集探索；锁定后的正式测试另见下方最终报告。
 
 代码与记录已发布到私有仓库 [LiuJingting0201/cnr-road-gaf-diffusion](https://github.com/LiuJingting0201/cnr-road-gaf-diffusion)，同时保留开发机 Git 远端 `server`（服务器端名为 `origin`）。长窗口研究完成后，一次性回调只将完整报告推到 `results/representation-r2-long` 分支，不包含原始数据或权重。
 
 ## 最新结果入口
 
+- **[本轮毕设总结与论文写作依据](docs/THESIS_RESULTS_SUMMARY.md)**：E1–E5/E7及一次性正式测试已完成；路网条件扩散合成闭环跑通，GAF增广收益未建立。
+- **[锁定正式测试报告与图表](docs/results/final-test-e7/REPORT.md)**：53个严格测试条件、1,272条扩散候选；行程分布有条件改善，速度/加速度区间跨零；GAF增广在TCN上较仅真实数据下降5.23个百分点。
+
 - [E7 配对区间与运动记忆诊断](docs/results/motion-audit-e7/REPORT.md)：加速度单项区间未跨零，速度/行程仍跨零；未发现预定义的完整对齐近复制，不能宣称无记忆。[最终测试协议](docs/FINAL_TEST_PROTOCOL.md)与[217项锁定清单](docs/results/final-lock-e7/manifest.json)已固定，最终运行状态见实验日志。
-- [E3b 相同路径的经验运动基线](docs/results/empirical-motion-e3b/REPORT.md)：三次重采样完成；扩散运动分布误差较小，但经验基线的候选差异更大，尚无显著性结论。当前进入配对不确定性、记忆审计与最终测试协议准备。
+- [E3b 相同路径的经验运动基线](docs/results/empirical-motion-e3b/REPORT.md)：三次重采样完成；扩散运动分布误差较小，但经验基线的候选差异更大，尚无显著性结论。后续配对审计与正式测试均已完成，见上述报告。
 - [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益。
 - [E4r 路线多样性对照](docs/results/route-diverse-e4r/REPORT.md)：三种子已完成，平均每池6.70条路径；GAF同家族分数改善仍未转化为跨家族收益。
 
@@ -50,7 +53,7 @@
 - [固定地图案例](docs/results/candidate-selection-g3/map_examples.png)与[追加运动诊断](docs/results/candidate-selection-g3/MOTION_AUDIT.md)
 - [下一阶段路线与验收门槛](docs/NEXT_STAGE.md)
 
-GAF评分已显示相对随机选择的语义筛选作用，但未显示相对同输入TCN的独特优势。地图贴合仍不等于道路连接与方向合法，当前所有结果均为验证探索。
+GAF评分已显示相对随机选择的语义筛选作用，但未显示相对同输入TCN的独特优势。地图贴合仍不等于道路连接与方向合法，历史结果为验证探索，最终结果以锁定测试报告为准。
 
 ## 首次启动验证（2026-11-04）
 
