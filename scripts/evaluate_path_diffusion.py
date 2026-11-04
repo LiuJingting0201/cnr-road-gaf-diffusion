@@ -21,6 +21,9 @@ for path in sorted(root.glob('*.npz')):
  s=np.load(path);xy=s['xy'];labels=s['labels'];real=source['xy'][s['source_index']]
  speed=np.linalg.norm(np.diff(xy,axis=1),axis=-1)/.25;rs=np.linalg.norm(np.diff(real,axis=1),axis=-1)/.25
  row={'variant':path.stem,'samples':len(xy),'per_class':{}}
+ groups=[np.flatnonzero(s['source_index']==i) for i in np.unique(s['source_index'])]
+ pair_d=[float(np.linalg.norm(xy[g[j]]-xy[g[k]],axis=-1).mean()) for g in groups for j in range(len(g)) for k in range(j)]
+ row['within_condition_pairwise_distance_m']=float(np.mean(pair_d)) if pair_d else None
  predictions={}
  with torch.no_grad():
   for kind,models in auditors.items():
@@ -38,7 +41,7 @@ for path in sorted(root.glob('*.npz')):
   row[key]=float(np.mean([v[key] for v in row['per_class'].values()]))
  rows.append(row);print(json.dumps(row),flush=True)
 out=Path('docs/results')/root.parent.name/root.name;out.mkdir(parents=True,exist_ok=True)
-report={'rows':rows,'config':cfg,'scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; one draw per supplied condition, within-condition diversity not yet measured'}
+report={'rows':rows,'config':cfg,'scope':'validation selected moving nonpedestrian cohort; five-class macro; not comparable to full six-class G4; graph audit is not traffic validity; repeat count recorded in config; pairwise distance measured only between draws sharing the same source condition'}
 (out/'results.json').write_text(json.dumps(report,indent=2))
 lines=['# 地图路径条件扩散与采样引导','',report['scope'],'','| 引导 | 图一致率 | GAF独立审计 | TCN独立审计 | 速度W1 | 路径末端截断 |','|---|---:|---:|---:|---:|---:|']
 for r in rows:lines.append(f"| {r['variant']} | {r['graph_consistent']:.3f} | {r['gaf_accuracy']:.3f} | {r['tcn_accuracy']:.3f} | {r['speed_w1_mps']:.3f} | {r['route_end_capped']:.3f} |")

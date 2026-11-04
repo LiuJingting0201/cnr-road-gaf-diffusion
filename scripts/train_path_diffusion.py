@@ -9,6 +9,7 @@ from cnr.representations import RepresentationClassifier
 p=argparse.ArgumentParser();p.add_argument('--data',default='data/processed/route512')
 p.add_argument('--output',required=True);p.add_argument('--steps',type=int,default=20000)
 p.add_argument('--seed',type=int,default=42);p.add_argument('--samples-per-class',type=int,default=32)
+p.add_argument('--checkpoint');p.add_argument('--repeats',type=int,default=1);p.add_argument('--guidance-weights',type=float,nargs='+',default=[.1,.3])
 a=p.parse_args();torch.set_num_threads(4);torch.manual_seed(a.seed)
 out=Path(a.output);out.mkdir(parents=True,exist_ok=False);d=Path(a.data)
 tr=np.load(d/'train.npz');va=np.load(d/'val.npz');meta=json.loads((d/'dataset.json').read_text())
@@ -20,9 +21,12 @@ starts=to(tr['xy'][:,0]);mean=to(meta['mean']);std=to(meta['std'])
 routes=to(tr['route']);route_condition=((routes[:,::8]-starts[:,None])/128).transpose(1,2)
 model=PathDenoiser().cuda();ema=copy.deepcopy(model).eval()
 for x in ema.parameters():x.requires_grad_(False)
+if a.checkpoint:
+ ema.load_state_dict(torch.load(a.checkpoint,map_location='cuda',weights_only=True)['ema'])
 opt=torch.optim.AdamW(model.parameters(),lr=2e-4,weight_decay=1e-4)
 alpha=torch.cumprod(1-torch.linspace(1e-4,.02,1000,device='cuda'),0)
 cfg=vars(a)|{'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+ 'checkpoint_sha256':hashlib.sha256(Path(a.checkpoint).read_bytes()).hexdigest() if a.checkpoint else None,
  'log_increment_mean':mu,'log_increment_std':sd,'dataset':meta,'decoder':'exp(log increments clipped [0,5])-1; cumulative capped at route length; start offset fades over 10m',
  'data_hashes':{s:hashlib.sha256((d/f'{s}.npz').read_bytes()).hexdigest() for s in ['train','val']},
  'guidance':'gradient of clean-trajectory teacher logprob for t<100; per-sample gradient norm capped at 1; clean latent update weight*gradient; fixed DDIM epsilon',
@@ -31,7 +35,7 @@ cfg=vars(a)|{'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],tex
 generator=torch.Generator(device='cuda').manual_seed(a.seed+1000);order=torch.randperm(len(target),device='cuda',generator=generator);offset=0
 beg=time.monotonic()
 with (out/'metrics.jsonl').open('w',buffering=1) as f:
- for step in range(1,a.steps+1):
+ for step in range(1,1 if a.checkpoint else a.steps+1):
   if offset>=len(target):order=torch.randperm(len(target),device='cuda',generator=generator);offset=0
   ix=order[offset:offset+128];offset+=128;x=target[ix];t=torch.randint(1000,(len(ix),),device='cuda');noise=torch.randn_like(x);aa=alpha[t,None,None]
   eps=model(aa.sqrt()*x+(1-aa).sqrt()*noise,t,labels[ix],(starts[ix]-mean)/std,route_condition[ix]);loss=(eps-noise).square().mean()
@@ -43,6 +47,7 @@ with (out/'metrics.jsonl').open('w',buffering=1) as f:
    row={'step':step,'loss':loss.item(),'elapsed_s':time.monotonic()-beg};f.write(json.dumps(row)+'\n');print(row,flush=True)
    torch.save({'model':model.state_dict(),'ema':ema.state_dict()},out/'latest.pt')
 selected=np.concatenate([np.flatnonzero(va['labels']==c)[np.linspace(0,np.sum(va['labels']==c)-1,min(a.samples_per_class,np.sum(va['labels']==c))).astype(int)] for c in np.unique(va['labels'])])
+selected=np.repeat(selected,a.repeats)
 route=to(va['route'][selected]);length=to(va['route_length'][selected]);start=to(va['xy'][selected,0]);lab=torch.as_tensor(va['labels'][selected],device='cuda')
 condition=((route[:,::8]-start[:,None])/128).transpose(1,2)
 teachers={};records={}
@@ -51,7 +56,7 @@ for kind,path in [('gaf','runs/representation-r1/delta_gaf-seed42'),('tcn','runs
  for q in m.parameters():q.requires_grad_(False)
  teachers[kind]=m;records[kind]={'path':path,'sha256':hashlib.sha256((tp/'best.pt').read_bytes()).hexdigest()}
 (out/'teachers.json').write_text(json.dumps(records,indent=2))
-sweep=[('none',None,0),('gaf_01','gaf',.1),('gaf_03','gaf',.3),('tcn_01','tcn',.1),('tcn_03','tcn',.3),('shuffled_gaf_01','gaf',.1)]
+sweep=[('none',None,0)]+[(f'{kind}_{w:g}',kind,w) for kind in ['gaf','tcn'] for w in a.guidance_weights]+[('shuffled_gaf','gaf',a.guidance_weights[0])]
 results=[];times=torch.linspace(999,0,100).long().tolist()
 for name,kind,weight in sweep:
  torch.manual_seed(2026);sample=torch.randn(len(lab),1,63,device='cuda')
@@ -72,4 +77,4 @@ for name,kind,weight in sweep:
  if not torch.isfinite(xy).all():raise RuntimeError('Nonfinite sample')
  np.savez_compressed(out/f'{name}.npz',xy=xy.cpu().numpy(),labels=lab.cpu().numpy(),source_index=va['source_index'][selected],progress=progress.cpu().numpy(),route_length=length.cpu().numpy())
  results.append({'variant':name,'route_end_capped_fraction':float((progress[:,-1]>=length).float().mean()),'samples':len(lab)})
-(out/'complete.json').write_text(json.dumps({'status':'complete','steps':a.steps,'sweeps':results,'elapsed_s':time.monotonic()-beg},indent=2))
+(out/'complete.json').write_text(json.dumps({'status':'complete','steps':0 if a.checkpoint else a.steps,'sampling_only':bool(a.checkpoint),'sweeps':results,'elapsed_s':time.monotonic()-beg},indent=2))
