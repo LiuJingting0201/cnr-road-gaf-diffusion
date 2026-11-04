@@ -26,7 +26,7 @@
 
 ## 最新结果入口
 
-- 当前运行：[E5 训练条件合成与下游增广协议](docs/E5_AUGMENTATION_PROTOCOL.md)，验证合成数据是否有实际用途；完成前不报告增益。
+- [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益；当前转入冻结模型的候选路线多样性对照 E4r。
 
 - [E2 原 Hilbert–GAF 时长匹配诊断](docs/results/gaf-duration-e2/REPORT.md)：已完成，长轨迹需使用匹配时长分类器。
 - [E1 原编码 ResNet18 对照](docs/results/gaf-resnet-e1/REPORT.md)：已完成，非组内未知 CNN 复现。

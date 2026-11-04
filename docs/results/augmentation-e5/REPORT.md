@@ -19,6 +19,10 @@ Six groups use fixed 1,150 updates of 64 uniform-with-replacement draws. Normali
 | gru | synthetic_gaf | 58.11 +/- 2.63 | 69.92 +/- 2.74 | 0.90 [-2.52, 4.30] |
 | gru | synthetic_tcn | 57.11 +/- 1.98 | 70.12 +/- 2.59 | -0.10 [-4.11, 3.75] |
 
+![Paired validation utility contrasts](utility.png)
+
+[PDF figure](utility.pdf)
+
 ## Scope and interpretation
 
 Validation counts by class (pedestrian, bus, motorcycle, car, bicycle, taxi): [6, 14, 31, 93, 16, 4]. Small minority classes limit certainty. Intervals condition on one generator checkpoint and a fixed synthesis pool; they do not include generator variation or correct multiple comparisons.
