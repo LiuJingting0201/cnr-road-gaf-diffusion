@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "scope": "training and unguided sampling complete; topology, dynamics and selection evaluation pending",
+  "steps": 20000,
+  "samples": 264,
+  "points": 512,
+  "candidates_per_condition": 8,
+  "route_end_capped_fraction": 0.0,
+  "elapsed_s": 369.5007083527744
+}

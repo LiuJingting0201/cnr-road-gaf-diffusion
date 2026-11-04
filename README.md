@@ -28,7 +28,7 @@
 
 - [E2 原 Hilbert–GAF 时长匹配诊断](docs/results/gaf-duration-e2/REPORT.md)：已完成，长轨迹需使用匹配时长分类器。
 - [E1 原编码 ResNet18 对照](docs/results/gaf-resnet-e1/REPORT.md)：已完成，非组内未知 CNN 复现。
-- 当前：E3 三种子长轨迹扩散训练完成，E4 同候选池筛选与独立生成评价运行中；状态以[实验日志](docs/EXPERIMENT_LOG.md)为准。
+- [E3/E4 长轨迹生成与原 GAF 同池筛选](docs/results/long-selection-e4-cap64/REPORT.md)：三种子评价及道路搜索容量复核完成；GAF 尚未显示稳定跨模型收益，下一步是有界下游增广验证。原保守评价也保留在 [strict E4](docs/results/long-selection-e4/REPORT.md)。
 
 - [G6同路线公平对照与保持行程引导](docs/results/g6-analysis/REPORT.md)
 
