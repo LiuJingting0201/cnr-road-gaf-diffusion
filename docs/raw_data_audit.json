@@ -1,0 +1,453 @@
+[
+  {
+    "file": "/Users/bytedance/Downloads/vehicle_positions_TS_New.csv",
+    "bytes": 103579103,
+    "sha256": "e033d58142a3320daa129ae9f69e6c71726dc735e1ef8f50a30345d56f4cc40e",
+    "fields": [
+      "time",
+      "id",
+      "x",
+      "y",
+      "type"
+    ],
+    "rows": 2189591,
+    "invalid_rows": 0,
+    "invalid_examples": [],
+    "tracks": 12061,
+    "rows_by_class": {
+      "veh_passenger": 2189591
+    },
+    "tracks_by_class": {
+      "veh_passenger": 12061
+    },
+    "multiclass_ids": 0,
+    "length_quantiles_nearest_rank": {
+      "0": 13,
+      "5": 67,
+      "25": 122,
+      "50": 173,
+      "75": 231,
+      "95": 327,
+      "100": 657
+    },
+    "length_mean": 181.54307271370533,
+    "duration_quantiles_raw_time_units": {
+      "0": 12.0,
+      "5": 66.0,
+      "25": 121.0,
+      "50": 172.0,
+      "75": 230.0,
+      "95": 326.0,
+      "100": 656.0
+    },
+    "length_coverage": {
+      "32": {
+        "at_least": 12034,
+        "exactly": 3
+      },
+      "64": {
+        "at_least": 11575,
+        "exactly": 33
+      },
+      "128": {
+        "at_least": 8720,
+        "exactly": 55
+      },
+      "224": {
+        "at_least": 3323,
+        "exactly": 40
+      }
+    },
+    "per_id_file_order_dt_top20": [
+      [
+        1.0,
+        2177530
+      ]
+    ],
+    "positive_dt_max": 1.0,
+    "nonmodal_dt_steps": 0,
+    "backward_time_steps": 0,
+    "duplicate_id_timestamps": 0,
+    "zero_distance_steps": 376517,
+    "xy_bounds": [
+      0.33,
+      3302.46,
+      1845.99,
+      4245.55
+    ],
+    "max_displacement_per_time_unit": 37.41956841012453,
+    "displacement_rate_threshold_counts": {
+      "gt_30": 11366,
+      "gt_60": 0,
+      "gt_100": 0
+    },
+    "reported_speed": {
+      "count": 0,
+      "negative": 0,
+      "max": null
+    },
+    "unavailable_reported_speed_rows": null,
+    "largest_displacement_rates": [
+      {
+        "rate": 37.41956841012453,
+        "csv_line": 746424,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4399.0,
+        "dt": 1.0,
+        "distance": 37.41956841012453
+      },
+      {
+        "rate": 37.40957364098112,
+        "csv_line": 746427,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4402.0,
+        "dt": 1.0,
+        "distance": 37.40957364098112
+      },
+      {
+        "rate": 37.39771383386972,
+        "csv_line": 746375,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4350.0,
+        "dt": 1.0,
+        "distance": 37.39771383386972
+      },
+      {
+        "rate": 37.33961033540649,
+        "csv_line": 746421,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4396.0,
+        "dt": 1.0,
+        "distance": 37.33961033540649
+      },
+      {
+        "rate": 37.30962610372821,
+        "csv_line": 746416,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4391.0,
+        "dt": 1.0,
+        "distance": 37.30962610372821
+      },
+      {
+        "rate": 37.289313482551535,
+        "csv_line": 746419,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4394.0,
+        "dt": 1.0,
+        "distance": 37.289313482551535
+      },
+      {
+        "rate": 36.828908482332146,
+        "csv_line": 746422,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4397.0,
+        "dt": 1.0,
+        "distance": 36.828908482332146
+      },
+      {
+        "rate": 36.799245916187125,
+        "csv_line": 746425,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4400.0,
+        "dt": 1.0,
+        "distance": 36.799245916187125
+      },
+      {
+        "rate": 36.78925114758382,
+        "csv_line": 746418,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4393.0,
+        "dt": 1.0,
+        "distance": 36.78925114758382
+      },
+      {
+        "rate": 36.768939337435334,
+        "csv_line": 746420,
+        "id": "veh2910",
+        "class": "veh_passenger",
+        "time": 4395.0,
+        "dt": 1.0,
+        "distance": 36.768939337435334
+      }
+    ],
+    "limits": "Coordinate/time units and simulator provenance require external metadata. Speed thresholds are diagnostics, not automatic rejection. No model evaluation performed."
+  },
+  {
+    "file": "/Users/bytedance/Downloads/midimost_with_class2.csv",
+    "bytes": 304202507,
+    "sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+    "fields": [
+      "timestep_time",
+      "vehicle_id",
+      "vehicle_x",
+      "vehicle_y",
+      "vehicle_speed",
+      "class2"
+    ],
+    "rows": 4840789,
+    "invalid_rows": 0,
+    "invalid_examples": [],
+    "tracks": 2685,
+    "rows_by_class": {
+      "pedestrian": 322343,
+      "bus": 516912,
+      "motorcycle": 820564,
+      "private_car": 2845614,
+      "bycicle": 241927,
+      "taxi_or_uber": 93429
+    },
+    "tracks_by_class": {
+      "pedestrian": 789,
+      "bus": 139,
+      "motorcycle": 370,
+      "private_car": 1117,
+      "bycicle": 177,
+      "taxi_or_uber": 93
+    },
+    "multiclass_ids": 0,
+    "length_quantiles_nearest_rank": {
+      "0": 3,
+      "5": 57,
+      "25": 383,
+      "50": 1363,
+      "75": 2712,
+      "95": 5303,
+      "100": 9388
+    },
+    "length_mean": 1802.9009310986964,
+    "duration_quantiles_raw_time_units": {
+      "0": 0.5,
+      "5": 21.5,
+      "25": 140.75,
+      "50": 399.5,
+      "75": 720.5,
+      "95": 1325.5,
+      "100": 2346.75
+    },
+    "length_coverage": {
+      "32": {
+        "at_least": 2626,
+        "exactly": 4
+      },
+      "64": {
+        "at_least": 2532,
+        "exactly": 3
+      },
+      "128": {
+        "at_least": 2400,
+        "exactly": 3
+      },
+      "224": {
+        "at_least": 2242,
+        "exactly": 0
+      }
+    },
+    "per_id_file_order_dt_top20": [
+      [
+        0.25,
+        4835946
+      ],
+      [
+        0.5,
+        115
+      ],
+      [
+        6.0,
+        26
+      ],
+      [
+        5.25,
+        23
+      ],
+      [
+        4.5,
+        23
+      ],
+      [
+        8.5,
+        22
+      ],
+      [
+        6.75,
+        21
+      ],
+      [
+        7.0,
+        21
+      ],
+      [
+        4.25,
+        20
+      ],
+      [
+        4.0,
+        20
+      ],
+      [
+        5.5,
+        19
+      ],
+      [
+        4.75,
+        18
+      ],
+      [
+        8.0,
+        18
+      ],
+      [
+        0.75,
+        18
+      ],
+      [
+        7.25,
+        18
+      ],
+      [
+        8.25,
+        17
+      ],
+      [
+        3.75,
+        16
+      ],
+      [
+        10.25,
+        16
+      ],
+      [
+        9.75,
+        16
+      ],
+      [
+        18.5,
+        16
+      ]
+    ],
+    "positive_dt_max": 1039.25,
+    "nonmodal_dt_steps": 2158,
+    "backward_time_steps": 0,
+    "duplicate_id_timestamps": 0,
+    "zero_distance_steps": 1120092,
+    "xy_bounds": [
+      -0.18,
+      9977.97,
+      117.18,
+      6356.52
+    ],
+    "max_displacement_per_time_unit": 692.0219233521427,
+    "displacement_rate_threshold_counts": {
+      "gt_30": 13585,
+      "gt_60": 49,
+      "gt_100": 44
+    },
+    "reported_speed": {
+      "count": 4839344,
+      "negative": 0,
+      "max": 46.37
+    },
+    "unavailable_reported_speed_rows": 1445,
+    "largest_displacement_rates": [
+      {
+        "rate": 692.0219233521427,
+        "csv_line": 1454403,
+        "id": "pedestrian_GW2-1_1464_tr",
+        "class": "private_car",
+        "time": 18591.25,
+        "dt": 0.25,
+        "distance": 173.00548083803568
+      },
+      {
+        "rate": 676.7610686202346,
+        "csv_line": 1587974,
+        "id": "pedestrian_3-1_5482_tr",
+        "class": "private_car",
+        "time": 18644.5,
+        "dt": 0.25,
+        "distance": 169.19026715505865
+      },
+      {
+        "rate": 676.0905903797213,
+        "csv_line": 1855281,
+        "id": "pedestrian_3-1_1719_tr",
+        "class": "private_car",
+        "time": 18743.75,
+        "dt": 0.25,
+        "distance": 169.02264759493033
+      },
+      {
+        "rate": 664.5912187202005,
+        "csv_line": 2664908,
+        "id": "pedestrian_3-1_4399_tr",
+        "class": "private_car",
+        "time": 18996.25,
+        "dt": 0.25,
+        "distance": 166.14780468005011
+      },
+      {
+        "rate": 626.5697866957853,
+        "csv_line": 2303770,
+        "id": "pedestrian_3-1_2223_tr",
+        "class": "private_car",
+        "time": 18891.0,
+        "dt": 0.25,
+        "distance": 156.64244667394632
+      },
+      {
+        "rate": 616.4928547842228,
+        "csv_line": 1958784,
+        "id": "pedestrian_3-1_3123_tr",
+        "class": "private_car",
+        "time": 18779.5,
+        "dt": 0.25,
+        "distance": 154.1232136960557
+      },
+      {
+        "rate": 548.4929578399343,
+        "csv_line": 3110304,
+        "id": "pedestrian_3-1_3902_tr",
+        "class": "private_car",
+        "time": 19116.75,
+        "dt": 0.25,
+        "distance": 137.12323945998358
+      },
+      {
+        "rate": 534.5494042649378,
+        "csv_line": 813206,
+        "id": "pedestrian_3-1_557_tr",
+        "class": "private_car",
+        "time": 18238.0,
+        "dt": 0.25,
+        "distance": 133.63735106623446
+      },
+      {
+        "rate": 529.1131070007632,
+        "csv_line": 1018148,
+        "id": "pedestrian_3-1_5564_tr",
+        "class": "private_car",
+        "time": 18380.0,
+        "dt": 0.25,
+        "distance": 132.2782767501908
+      },
+      {
+        "rate": 497.9436626768134,
+        "csv_line": 1490659,
+        "id": "pedestrian_3-1_4114_tr",
+        "class": "private_car",
+        "time": 18606.0,
+        "dt": 0.25,
+        "distance": 124.48591566920335
+      }
+    ],
+    "limits": "Coordinate/time units and simulator provenance require external metadata. Speed thresholds are diagnostics, not automatic rejection. No model evaluation performed."
+  }
+]

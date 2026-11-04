@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+runs/
+logs/
+*.pt
+*.npz
+*.npy
+*.csv
+*.xml
+*.tar.gz
+

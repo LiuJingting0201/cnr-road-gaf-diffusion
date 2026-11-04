@@ -1,0 +1,104 @@
+{
+  "source": "https://github.com/lcodeca/MoSTScenario/blob/master/scenario/in/most.net.xml",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "location": {
+    "netOffset": "-368142.40,-4841896.61",
+    "convBoundary": "0.00,0.00,9975.22,6362.01",
+    "origBoundary": "7.362913,43.718985,7.485778,43.776857",
+    "projParameter": "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+  },
+  "protocol": "Every 1000th CSV row; all lane centerlines including internal lanes; unchanged XY; no fitting; distances >100m censored to 101. Spatial match diagnostic only, no heading, permission or transition validation. Samples are point-weighted, not vehicle-balanced.",
+  "results": [
+    {
+      "file": "midimost_with_class2.csv",
+      "all": {
+        "n": 4841,
+        "median_m_censored100": 0.0043031372822291605,
+        "p95_m_censored100": 1.156028087853238,
+        "within_2m": 0.999793431109275,
+        "within_5m": 1.0,
+        "within_10m": 1.0,
+        "beyond_100m": 0.0
+      },
+      "classes": {
+        "pedestrian": {
+          "n": 323,
+          "median_m_censored100": 0.37641529005631225,
+          "p95_m_censored100": 1.2741560390118332,
+          "within_2m": 0.9969040247678018,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        },
+        "bus": {
+          "n": 524,
+          "median_m_censored100": 0.0024619963751263125,
+          "p95_m_censored100": 0.005893693437618606,
+          "within_2m": 1.0,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        },
+        "bycicle": {
+          "n": 245,
+          "median_m_censored100": 1.0756718734147763,
+          "p95_m_censored100": 1.2763241735415558,
+          "within_2m": 1.0,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        },
+        "private_car": {
+          "n": 2845,
+          "median_m_censored100": 0.003165107405920592,
+          "p95_m_censored100": 0.852111976429082,
+          "within_2m": 1.0,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        },
+        "motorcycle": {
+          "n": 815,
+          "median_m_censored100": 0.8494007882495223,
+          "p95_m_censored100": 1.560773510660343,
+          "within_2m": 1.0,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        },
+        "taxi_or_uber": {
+          "n": 89,
+          "median_m_censored100": 0.0020262263152651615,
+          "p95_m_censored100": 0.07103077218365497,
+          "within_2m": 1.0,
+          "within_5m": 1.0,
+          "within_10m": 1.0,
+          "beyond_100m": 0.0
+        }
+      }
+    },
+    {
+      "file": "vehicle_positions_TS_New.csv",
+      "all": {
+        "n": 2190,
+        "median_m_censored100": 56.555141234020695,
+        "p95_m_censored100": 101,
+        "within_2m": 0.07990867579908675,
+        "within_5m": 0.11232876712328767,
+        "within_10m": 0.17031963470319636,
+        "beyond_100m": 0.3767123287671233
+      },
+      "classes": {
+        "veh_passenger": {
+          "n": 2190,
+          "median_m_censored100": 56.555141234020695,
+          "p95_m_censored100": 101,
+          "within_2m": 0.07990867579908675,
+          "within_5m": 0.11232876712328767,
+          "within_10m": 0.17031963470319636,
+          "beyond_100m": 0.3767123287671233
+        }
+      }
+    }
+  ]
+}
