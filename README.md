@@ -24,6 +24,8 @@
 
 ## 最新结果入口
 
+- [G6同路线公平对照与保持行程引导](docs/results/g6-analysis/REPORT.md)
+
 - [G5地图路径扩散与GAF引导：三种子重复采样](docs/results/path-g5-repeat/REPORT.md)
 - [固定起点全部采样地图图表](docs/results/path-g5-repeat/seed42/fixed_examples.png)
 
