@@ -27,6 +27,7 @@ try:
     for seed in [42,43,44]:
         with (root/f'eval{seed}.log').open('x') as log:
             subprocess.run([sys.executable,'-u','scripts/evaluate_long_selection.py','--seed',str(seed)],env=env|{'CUDA_VISIBLE_DEVICES':'0'},stdout=log,stderr=subprocess.STDOUT,check=True)
+    subprocess.run([sys.executable,'scripts/summarize_long_selection.py'],env=env,check=True)
     (root/'complete.json').write_text(json.dumps({'complete':True,'time':time.time()}))
 except Exception as ex:
     (root/'failed.json').write_text(json.dumps({'error':str(ex),'time':time.time()}));raise
