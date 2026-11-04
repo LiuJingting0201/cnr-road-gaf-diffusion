@@ -18,6 +18,21 @@ def worker(item):
     gpu, (grid, init) = item
     env = os.environ | {'CUDA_VISIBLE_DEVICES': str(gpu), 'PYTHONPATH': 'src', 'OMP_NUM_THREADS': '4'}
     data = 'data/processed/original-hilbert224' if grid == 32 else 'data/processed/original-hilbert64grid224'
+    if init == 'imagenet':
+        # Preflight caches the official weights once; avoid concurrent downloads.
+        import torch
+        cache = Path(torch.hub.get_dir())/'checkpoints/resnet18-f37072fd.pth'
+        deadline = time.monotonic() + 1800
+        (root/f'gpu{gpu}-waiting-weights.json').write_text(json.dumps({'cache': str(cache), 'started_unix': time.time()}))
+        while not cache.is_file():
+            if time.monotonic() > deadline:
+                raise TimeoutError('Official ResNet18 weight preflight did not finish within 30 minutes')
+            time.sleep(5)
+        # Torch hub verifies the hash on download; independently verify cached bytes.
+        import hashlib
+        if not hashlib.sha256(cache.read_bytes()).hexdigest().startswith('f37072fd'):
+            raise RuntimeError('Official weight cache hash mismatch')
+        (root/f'gpu{gpu}-weights-ready.json').write_text(json.dumps({'time': time.time()}))
     completed = []
     for seed in [42, 43, 44]:
         name = f'grid{grid}-{init}-seed{seed}'
