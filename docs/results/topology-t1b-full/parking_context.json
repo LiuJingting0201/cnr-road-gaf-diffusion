@@ -1,0 +1,1549 @@
+{
+  "scope": "post-hoc source-context proximity check; not confirmed original simulation or parking occupancy",
+  "source_url": "https://github.com/lcodeca/MoSTScenario/blob/master/scenario/in/add/most.parking.allvisible.add.xml",
+  "source_sha256": "ea80318e236e2801cde7eb6c838257777e3135cd78d4dbcdb8a3d93966d0c0ad",
+  "config_url": "https://github.com/lcodeca/MoSTScenario/blob/master/scenario/most.sumocfg",
+  "sumo_reference": "https://sumo.dlr.de/docs/Simulation/ParkingArea.html",
+  "approximation": "lane-subsegment offset by half lane width plus half parking width; no exact slot/vehicle-front reconstruction",
+  "areas": 127,
+  "corridors_used": 127,
+  "skipped_area_ids": [],
+  "selected_windows": "non-pedestrian validation windows with endpoint displacement <=5m and incomplete 2m permitted-lane candidate coverage",
+  "windows": 254,
+  "within_2m": 1.0,
+  "within_5m": 1.0,
+  "distance_median_m": 0.0020130359784292636,
+  "distance_p95_m": 0.024919653219424864,
+  "rows": [
+    {
+      "validation_index": 604,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.0034471581594876623
+    },
+    {
+      "validation_index": 1408,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1409,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1410,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1411,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1412,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1413,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1414,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1415,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1416,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1417,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1418,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1419,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.001961387729061012
+    },
+    {
+      "validation_index": 1441,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1442,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1443,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1444,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1445,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1446,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1447,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1448,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1449,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1450,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0026174253614931493
+    },
+    {
+      "validation_index": 1463,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1464,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1465,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1466,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1467,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1468,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1469,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1470,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1471,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1472,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1473,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1474,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1475,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.001241275325565353
+    },
+    {
+      "validation_index": 1489,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1490,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1491,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1492,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1493,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1494,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1495,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1496,
+      "class": "motorcycle",
+      "nearest_parking_id": "1104",
+      "distance_to_approximate_corridor_m": 0.002552057713680092
+    },
+    {
+      "validation_index": 1501,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1502,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1503,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1504,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1505,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1506,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1507,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1508,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1509,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1510,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1511,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1512,
+      "class": "motorcycle",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0036989936672043376
+    },
+    {
+      "validation_index": 1521,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1522,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1523,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1524,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1525,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1526,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1527,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1528,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 0.0032843995817646923
+    },
+    {
+      "validation_index": 1533,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1534,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1535,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1536,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1537,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1538,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1539,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1540,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1541,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1542,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1543,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1544,
+      "class": "motorcycle",
+      "nearest_parking_id": "1115",
+      "distance_to_approximate_corridor_m": 0.0004737825548695637
+    },
+    {
+      "validation_index": 1559,
+      "class": "motorcycle",
+      "nearest_parking_id": "1123",
+      "distance_to_approximate_corridor_m": 0.002602305831139147
+    },
+    {
+      "validation_index": 1560,
+      "class": "motorcycle",
+      "nearest_parking_id": "1123",
+      "distance_to_approximate_corridor_m": 0.002602305831139147
+    },
+    {
+      "validation_index": 1590,
+      "class": "motorcycle",
+      "nearest_parking_id": "1144",
+      "distance_to_approximate_corridor_m": 0.0004870812610523332
+    },
+    {
+      "validation_index": 1591,
+      "class": "motorcycle",
+      "nearest_parking_id": "1144",
+      "distance_to_approximate_corridor_m": 0.0004870812610523332
+    },
+    {
+      "validation_index": 1592,
+      "class": "motorcycle",
+      "nearest_parking_id": "1144",
+      "distance_to_approximate_corridor_m": 0.0004870812610523332
+    },
+    {
+      "validation_index": 1593,
+      "class": "motorcycle",
+      "nearest_parking_id": "1144",
+      "distance_to_approximate_corridor_m": 0.0004870812610523332
+    },
+    {
+      "validation_index": 1619,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1620,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1621,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1622,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1623,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1624,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1625,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1626,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1627,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1628,
+      "class": "motorcycle",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0061861028072671
+    },
+    {
+      "validation_index": 1726,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1727,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1728,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1729,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1730,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1731,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1732,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1733,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1734,
+      "class": "motorcycle",
+      "nearest_parking_id": "1135",
+      "distance_to_approximate_corridor_m": 3.993134677621212e-05
+    },
+    {
+      "validation_index": 1745,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1746,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1747,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1748,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1749,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1750,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1751,
+      "class": "motorcycle",
+      "nearest_parking_id": "1151",
+      "distance_to_approximate_corridor_m": 0.005104555961795236
+    },
+    {
+      "validation_index": 1781,
+      "class": "private_car",
+      "nearest_parking_id": "1128",
+      "distance_to_approximate_corridor_m": 0.006146560259148931
+    },
+    {
+      "validation_index": 1782,
+      "class": "private_car",
+      "nearest_parking_id": "1128",
+      "distance_to_approximate_corridor_m": 0.006146560259148931
+    },
+    {
+      "validation_index": 1783,
+      "class": "private_car",
+      "nearest_parking_id": "1128",
+      "distance_to_approximate_corridor_m": 0.006146560259148931
+    },
+    {
+      "validation_index": 1866,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.007487999334884112
+    },
+    {
+      "validation_index": 1867,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.007487999334884112
+    },
+    {
+      "validation_index": 1868,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.007487999334884112
+    },
+    {
+      "validation_index": 1878,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1879,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1880,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1881,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1882,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1883,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1884,
+      "class": "private_car",
+      "nearest_parking_id": "1136",
+      "distance_to_approximate_corridor_m": 0.0009379500154641595
+    },
+    {
+      "validation_index": 1941,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1942,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1943,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1944,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1945,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1946,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1947,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1948,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1949,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1950,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.032192803999891134
+    },
+    {
+      "validation_index": 1965,
+      "class": "private_car",
+      "nearest_parking_id": "1129",
+      "distance_to_approximate_corridor_m": 0.004900687805593784
+    },
+    {
+      "validation_index": 1966,
+      "class": "private_car",
+      "nearest_parking_id": "1129",
+      "distance_to_approximate_corridor_m": 0.004900687805593784
+    },
+    {
+      "validation_index": 1977,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 1978,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 1979,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 1980,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 1981,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 1982,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0002721699090064823
+    },
+    {
+      "validation_index": 2094,
+      "class": "private_car",
+      "nearest_parking_id": "1119",
+      "distance_to_approximate_corridor_m": 0.005430391900986508
+    },
+    {
+      "validation_index": 2133,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.024919653219424864
+    },
+    {
+      "validation_index": 2134,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.024919653219424864
+    },
+    {
+      "validation_index": 2135,
+      "class": "private_car",
+      "nearest_parking_id": "1133",
+      "distance_to_approximate_corridor_m": 0.024919653219424864
+    },
+    {
+      "validation_index": 2169,
+      "class": "private_car",
+      "nearest_parking_id": "1108",
+      "distance_to_approximate_corridor_m": 0.00048193521850526354
+    },
+    {
+      "validation_index": 2170,
+      "class": "private_car",
+      "nearest_parking_id": "1108",
+      "distance_to_approximate_corridor_m": 0.00048193521850526354
+    },
+    {
+      "validation_index": 2171,
+      "class": "private_car",
+      "nearest_parking_id": "1108",
+      "distance_to_approximate_corridor_m": 0.00048193521850526354
+    },
+    {
+      "validation_index": 2172,
+      "class": "private_car",
+      "nearest_parking_id": "1108",
+      "distance_to_approximate_corridor_m": 0.00048193521850526354
+    },
+    {
+      "validation_index": 2173,
+      "class": "private_car",
+      "nearest_parking_id": "1108",
+      "distance_to_approximate_corridor_m": 0.00048193521850526354
+    },
+    {
+      "validation_index": 2184,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2185,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2186,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2187,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2188,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2189,
+      "class": "private_car",
+      "nearest_parking_id": "1145",
+      "distance_to_approximate_corridor_m": 0.0016167128813255726
+    },
+    {
+      "validation_index": 2205,
+      "class": "private_car",
+      "nearest_parking_id": "1131",
+      "distance_to_approximate_corridor_m": 0.0056800554247103075
+    },
+    {
+      "validation_index": 2222,
+      "class": "private_car",
+      "nearest_parking_id": "1107",
+      "distance_to_approximate_corridor_m": 0.004211783810623087
+    },
+    {
+      "validation_index": 2223,
+      "class": "private_car",
+      "nearest_parking_id": "1107",
+      "distance_to_approximate_corridor_m": 0.004211783810623087
+    },
+    {
+      "validation_index": 2224,
+      "class": "private_car",
+      "nearest_parking_id": "1107",
+      "distance_to_approximate_corridor_m": 0.004211783810623087
+    },
+    {
+      "validation_index": 2225,
+      "class": "private_car",
+      "nearest_parking_id": "1107",
+      "distance_to_approximate_corridor_m": 0.004211783810623087
+    },
+    {
+      "validation_index": 2226,
+      "class": "private_car",
+      "nearest_parking_id": "1107",
+      "distance_to_approximate_corridor_m": 0.004211783810623087
+    },
+    {
+      "validation_index": 2275,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2276,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2277,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2278,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2279,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2280,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2281,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2282,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2283,
+      "class": "private_car",
+      "nearest_parking_id": "1147",
+      "distance_to_approximate_corridor_m": 0.0020130359784292636
+    },
+    {
+      "validation_index": 2312,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.0009107700942783581
+    },
+    {
+      "validation_index": 2313,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.0009107700942783581
+    },
+    {
+      "validation_index": 2314,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.0009107700942783581
+    },
+    {
+      "validation_index": 2315,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.0009107700942783581
+    },
+    {
+      "validation_index": 2331,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0007733687247143786
+    },
+    {
+      "validation_index": 2332,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0007733687247143786
+    },
+    {
+      "validation_index": 2333,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.0007733687247143786
+    },
+    {
+      "validation_index": 2347,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2348,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2349,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2350,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2351,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2352,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2353,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2354,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.00098180947443142
+    },
+    {
+      "validation_index": 2365,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2366,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2367,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2368,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2369,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2370,
+      "class": "private_car",
+      "nearest_parking_id": "1063",
+      "distance_to_approximate_corridor_m": 2.1859075482442618e-05
+    },
+    {
+      "validation_index": 2397,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2398,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2399,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2400,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2401,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2402,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2403,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2404,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 9.869877763157542e-05
+    },
+    {
+      "validation_index": 2429,
+      "class": "private_car",
+      "nearest_parking_id": "1114",
+      "distance_to_approximate_corridor_m": 0.0013584261462762323
+    },
+    {
+      "validation_index": 2430,
+      "class": "private_car",
+      "nearest_parking_id": "1114",
+      "distance_to_approximate_corridor_m": 0.0013584261462762323
+    },
+    {
+      "validation_index": 2431,
+      "class": "private_car",
+      "nearest_parking_id": "1114",
+      "distance_to_approximate_corridor_m": 0.0013584261462762323
+    },
+    {
+      "validation_index": 2462,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2463,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2464,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2465,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2466,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2467,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2468,
+      "class": "private_car",
+      "nearest_parking_id": "1109",
+      "distance_to_approximate_corridor_m": 0.00521698525091323
+    },
+    {
+      "validation_index": 2483,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.0002770967318676543
+    },
+    {
+      "validation_index": 2484,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.0002770967318676543
+    },
+    {
+      "validation_index": 2485,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.0002770967318676543
+    },
+    {
+      "validation_index": 2486,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.0002770967318676543
+    },
+    {
+      "validation_index": 2487,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.0002770967318676543
+    },
+    {
+      "validation_index": 2495,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2496,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2497,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2498,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2499,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2500,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2501,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2502,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2503,
+      "class": "private_car",
+      "nearest_parking_id": "1160",
+      "distance_to_approximate_corridor_m": 0.003863511621288609
+    },
+    {
+      "validation_index": 2520,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2521,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2522,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2523,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2524,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2525,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2526,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2527,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2528,
+      "class": "private_car",
+      "nearest_parking_id": "1116",
+      "distance_to_approximate_corridor_m": 0.00916466478490408
+    },
+    {
+      "validation_index": 2536,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2537,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2538,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2539,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2540,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2541,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2542,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2543,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2544,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.020627467433106988
+    },
+    {
+      "validation_index": 2620,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0008640607225718329
+    },
+    {
+      "validation_index": 2621,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0008640607225718329
+    },
+    {
+      "validation_index": 2622,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0008640607225718329
+    },
+    {
+      "validation_index": 2623,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0008640607225718329
+    },
+    {
+      "validation_index": 2624,
+      "class": "private_car",
+      "nearest_parking_id": "1120",
+      "distance_to_approximate_corridor_m": 0.0008640607225718329
+    },
+    {
+      "validation_index": 2660,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.054164187892889244
+    },
+    {
+      "validation_index": 2661,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.004443799738434964
+    },
+    {
+      "validation_index": 2662,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.004443799738434964
+    },
+    {
+      "validation_index": 2663,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.004443799738434964
+    },
+    {
+      "validation_index": 2664,
+      "class": "private_car",
+      "nearest_parking_id": "1150",
+      "distance_to_approximate_corridor_m": 0.004443799738434964
+    },
+    {
+      "validation_index": 2723,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.001871156922985404
+    },
+    {
+      "validation_index": 2724,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.001871156922985404
+    },
+    {
+      "validation_index": 2725,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.001871156922985404
+    },
+    {
+      "validation_index": 2726,
+      "class": "private_car",
+      "nearest_parking_id": "1118",
+      "distance_to_approximate_corridor_m": 0.001871156922985404
+    }
+  ],
+  "limitations": [
+    "many windows share vehicles and locations; not independent samples",
+    "proximity alone does not prove parking",
+    "source config may differ from data generator",
+    "parking corridors are for context only, not used to modify pass/fail metrics"
+  ]
+}

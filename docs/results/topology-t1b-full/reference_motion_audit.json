@@ -1,0 +1,98 @@
+{
+  "scope": "post-hoc real-validation diagnostic; no thresholds retuned",
+  "split": "endpoint displacement >5m, matching the existing reversal control",
+  "limitations": [
+    "endpoint displacement is not path length",
+    "low displacement does not prove parking",
+    "vClass mapping remains unconfirmed",
+    "all-lane distance includes lanes unavailable to assumed class"
+  ],
+  "groups": {
+    "moving_endpoint_gt5m": {
+      "windows": 2221,
+      "whole_window_geometry_covered": 0.995047276001801,
+      "whole_window_graph_consistent": 0.9882935614588023,
+      "per_class": {
+        "bus": {
+          "windows": 177,
+          "whole_window_geometry_covered": 1.0,
+          "whole_window_graph_consistent": 0.9887005649717514,
+          "permitted_point_distance_p95_m": 0.005602800363525063,
+          "any_lane_point_distance_p95_m": 0.005602800363525063,
+          "mean_path_length_m": 128.4285125732422
+        },
+        "bycicle": {
+          "windows": 244,
+          "whole_window_geometry_covered": 1.0,
+          "whole_window_graph_consistent": 1.0,
+          "permitted_point_distance_p95_m": 1.2791216836094463,
+          "any_lane_point_distance_p95_m": 1.2765330198114277,
+          "mean_path_length_m": 74.8699722290039
+        },
+        "motorcycle": {
+          "windows": 374,
+          "whole_window_geometry_covered": 0.9919786096256684,
+          "whole_window_graph_consistent": 0.9919786096256684,
+          "permitted_point_distance_p95_m": 1.573133127369099,
+          "any_lane_point_distance_p95_m": 1.571555028664962,
+          "mean_path_length_m": 169.42051696777344
+        },
+        "private_car": {
+          "windows": 1350,
+          "whole_window_geometry_covered": 0.9940740740740741,
+          "whole_window_graph_consistent": 0.9844444444444445,
+          "permitted_point_distance_p95_m": 0.38717863967939325,
+          "any_lane_point_distance_p95_m": 0.38474416126747313,
+          "mean_path_length_m": 193.31422424316406
+        },
+        "taxi_or_uber": {
+          "windows": 76,
+          "whole_window_geometry_covered": 1.0,
+          "whole_window_graph_consistent": 1.0,
+          "permitted_point_distance_p95_m": 0.47377365410406913,
+          "any_lane_point_distance_p95_m": 0.3863421048404955,
+          "mean_path_length_m": 139.59652709960938
+        }
+      }
+    },
+    "low_endpoint_displacement_le5m": {
+      "windows": 317,
+      "whole_window_geometry_covered": 0.19873817034700317,
+      "whole_window_graph_consistent": 0.19873817034700317,
+      "per_class": {
+        "bus": {
+          "windows": 47,
+          "whole_window_geometry_covered": 1.0,
+          "whole_window_graph_consistent": 1.0,
+          "permitted_point_distance_p95_m": 0.005299650894748266,
+          "any_lane_point_distance_p95_m": 0.005299650894748266,
+          "mean_path_length_m": 0.48322969675064087
+        },
+        "bycicle": {
+          "windows": 1,
+          "whole_window_geometry_covered": 1.0,
+          "whole_window_graph_consistent": 1.0,
+          "permitted_point_distance_p95_m": 1.2744407016848918,
+          "any_lane_point_distance_p95_m": 0.449343560611207,
+          "mean_path_length_m": 2.2358105182647705
+        },
+        "motorcycle": {
+          "windows": 112,
+          "whole_window_geometry_covered": 0.03571428571428571,
+          "whole_window_graph_consistent": 0.03571428571428571,
+          "permitted_point_distance_p95_m": 3.202125314467197,
+          "any_lane_point_distance_p95_m": 0.8542696040446632,
+          "mean_path_length_m": 0.02376101352274418
+        },
+        "private_car": {
+          "windows": 157,
+          "whole_window_geometry_covered": 0.07006369426751592,
+          "whole_window_graph_consistent": 0.07006369426751592,
+          "permitted_point_distance_p95_m": 3.2063523728317254,
+          "any_lane_point_distance_p95_m": 0.8550144127059669,
+          "mean_path_length_m": 0.02152894251048565
+        }
+      }
+    }
+  }
+}
