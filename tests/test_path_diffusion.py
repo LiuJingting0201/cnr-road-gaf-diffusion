@@ -47,3 +47,21 @@ def test_coordinate_control_uses_same_route_condition():
     assert result.shape==(2,2,63)
     result.square().mean().backward()
     assert torch.isfinite(route.grad).all() and route.grad.abs().sum()>0
+
+
+def test_long_path_denoiser_and_decode_preserve_horizon_and_start():
+    from cnr.path_diffusion import PathDenoiser
+    torch.set_num_threads(2)
+    torch.manual_seed(12)
+    model=PathDenoiser()
+    for points in [224,512]:
+        z=torch.randn(2,1,points-1)
+        route=torch.stack((torch.linspace(0,4096,1025),torch.zeros(1025)),1)[None].repeat(2,1,1)
+        start=torch.tensor([[0.,1.],[0.,-1.]])
+        pred=model(z,torch.tensor([10,900]),torch.tensor([1,3]),start,route[:,::8].transpose(1,2)/128)
+        assert pred.shape==z.shape and torch.isfinite(pred).all()
+        xy,progress=decode(z,.2,.1,route,torch.full((2,),4096.),start)
+        assert xy.shape==(2,points,2)
+        assert torch.allclose(xy[:,0],start)
+        assert torch.all(progress[:,1:]>=progress[:,:-1])
+        assert torch.isfinite(xy).all()

@@ -1,0 +1,153 @@
+{
+  "data": "data/processed/gaf-duration-e2/length224",
+  "output": "runs/gaf-duration-e2/length224-seed44",
+  "initialization": "imagenet",
+  "seed": 44,
+  "epochs": 50,
+  "batch_size": 64,
+  "git_commit": "4001113adbfa6eb57e22fafc5898bd647ad6a81d",
+  "torch": "2.5.1+cu121",
+  "torchvision": "0.20.1+cu121",
+  "dataset": {
+    "source": {
+      "raw_source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+      "source_name": "midimost_with_class2.csv",
+      "rows": 4840789,
+      "classes": [
+        "pedestrian",
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "coordinate_scale": 100,
+      "time_scale": 4,
+      "note": "Canonical columns only; speed stays in original CSV. Float32 XY and times verified unchanged.",
+      "max_coordinate_decimal_roundoff": 0.0
+    },
+    "source_package_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+    "source_commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+    "git_commit": "4001113adbfa6eb57e22fafc5898bd647ad6a81d",
+    "summary": {
+      "train": {
+        "vehicles": 1700,
+        "constant_fraction": 0.14176470588235293,
+        "median_unique_hilbert": 6.0,
+        "coordinate_clipped_points": 0,
+        "channel_clipped_values": 0,
+        "per_class": {
+          "pedestrian": {
+            "vehicles": 251,
+            "constant_fraction": 0.50199203187251
+          },
+          "bus": {
+            "vehicles": 108,
+            "constant_fraction": 0.046296296296296294
+          },
+          "motorcycle": {
+            "vehicles": 286,
+            "constant_fraction": 0.21678321678321677
+          },
+          "private_car": {
+            "vehicles": 845,
+            "constant_fraction": 0.054437869822485205
+          },
+          "bycicle": {
+            "vehicles": 137,
+            "constant_fraction": 0.014598540145985401
+          },
+          "taxi_or_uber": {
+            "vehicles": 73,
+            "constant_fraction": 0.0
+          }
+        }
+      },
+      "val": {
+        "vehicles": 198,
+        "constant_fraction": 0.15656565656565657,
+        "median_unique_hilbert": 6.0,
+        "coordinate_clipped_points": 0,
+        "channel_clipped_values": 0,
+        "per_class": {
+          "pedestrian": {
+            "vehicles": 22,
+            "constant_fraction": 0.7272727272727273
+          },
+          "bus": {
+            "vehicles": 14,
+            "constant_fraction": 0.07142857142857142
+          },
+          "motorcycle": {
+            "vehicles": 34,
+            "constant_fraction": 0.23529411764705882
+          },
+          "private_car": {
+            "vehicles": 103,
+            "constant_fraction": 0.05825242718446602
+          },
+          "bycicle": {
+            "vehicles": 18,
+            "constant_fraction": 0.0
+          },
+          "taxi_or_uber": {
+            "vehicles": 7,
+            "constant_fraction": 0.0
+          }
+        }
+      }
+    },
+    "xy_min": [
+      -0.17,
+      117.18
+    ],
+    "xy_max": [
+      9977.97,
+      6356.52
+    ],
+    "channel_min": [
+      -1.0,
+      -1.0000000000000036,
+      0.0
+    ],
+    "channel_max": [
+      1.000000000000007,
+      1.0000000000000036,
+      1.0
+    ],
+    "hilbert_eps": 0.0009,
+    "length": 224,
+    "mtf_bins": 8,
+    "scope": "E2 real continuous-window diagnostic; frozen full-training coordinate/channel bounds; no test encoding",
+    "adaptations": [
+      "Canonical time ordering verified by packer",
+      "local SUMO x/y used in original normalized coordinate slots, not claimed GPS",
+      "train-only coordinate and channel extrema frozen for deployment; clip out of bounds and count",
+      "keep previous vehicle split; no claim to original group classification accuracy"
+    ],
+    "elapsed_s": 40.7240402251482,
+    "window_points": 224,
+    "span_seconds": 55.75,
+    "selection": "One centered window in longest continuous segment per vehicle; dt=.25, rate<=100; different eligibility by duration"
+  },
+  "data_hashes": {
+    "train": "bac05d4d50c5a8ddacc072e67541cefc0f8971e9b42710cef62a7d689c3be44d",
+    "val": "9068276cfdbe167bb7eebee9cecc93ac9c4a307b618d011ad7206de1ba18c42d"
+  },
+  "weights": "ResNet18_Weights.IMAGENET1K_V1",
+  "class_weights": [
+    0.8316977620124817,
+    1.2679160833358765,
+    0.7791469097137451,
+    0.453287810087204,
+    1.1257503032684326,
+    1.5422008037567139
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.0001
+  },
+  "scope": "Self-trained auxiliary CNN. Fixed final epoch primary; val-best secondary. No test access.",
+  "preprocess": "RGB /255, ImageNet mean/std; no resize, crop, flip or color jitter"
+}
