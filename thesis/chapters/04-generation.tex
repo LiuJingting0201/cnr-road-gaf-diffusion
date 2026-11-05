@@ -1,0 +1,71 @@
+\chapter{Learning motion on a sampled road path}
+\label{ch:generator}
+\section{Factorizing the generative process}
+Write $M$ for the road graph, $p_0$ for the requested starting position, $c$ for the participant class and $R$ for a directed geometric path. The generator can be expressed as the following sampling program:
+\begin{align}
+R &\sim \pi_{\rm train}(\,\cdot\mid M,p_0,c),\\
+z &\sim p_\theta(\,\cdot\mid R,p_0,c),\\
+X &= D(R,p_0,z).
+\end{align}
+The first line chooses where motion is permitted. The second samples its timing. The last returns coordinates. Figure~\ref{fig:method} also shows the optional downstream selection step. The generative output exists before any classifier is consulted.
+
+\fig{method.pdf}{1}{From a class and start to coordinate output. Each candidate is decoded before a classifier can score its inherited image. The mask and budget are shared by all selection methods.}{method}
+The factorization gives a practical advantage in an audit. Suppose a generated bus travels an implausibly short distance but stays on a legal road. Changing the path planner, retraining the motion law and changing the selector are three distinct interventions. With a shared decoder we can ask which intervention the evidence supports. In particular, a route-only mechanism may already account for nearly all the success of a road consistency check. The learned model has to be assessed on a quantity that still varies after the route is fixed.
+
+\section{A training-only prior over compatible successors}
+During training an observed route supplies evidence for transitions between permitted lanes. Let $N_c(l,l')$ denote the count for class $c$ from lane $l$ to its permitted successor $l'$, and let $\mathcal S_c(l)$ be the permitted successors. The planning distribution at a branch is
+\begin{equation}
+ \pi(l'\mid l,c)=
+ \frac{N_c(l,l')+0.1}{\sum_{h\in\mathcal S_c(l)}(N_c(l,h)+0.1)}.
+\end{equation}
+Smoothing gives an unobserved permitted successor positive probability. The graph determines the allowable alternatives. Counts determine how they are weighted. A branch with three equally unobserved permitted successors therefore receives uniform probabilities, which is a modelling assumption about uncertainty at that branch.
+
+At inference the planner projects the given start onto the nearest permitted candidate lane, without an observed future heading. It appends a section of that lane and samples successors up to a distance budget of 4,096 metres or a termination condition. A path can finish earlier at a dead end. A valid polyline is represented by 1,025 equally spaced locations over its actual length. Using a fixed number of points standardizes the geometry supplied to the network, while storing the length preserves the metric scale required for decoding.
+
+The reconstructed training route includes the observed portion and a possible extension to the planning budget. It provides an aligned path for computing the training target. Formal test paths are independently planned from the start and class. Consequently training, inference and evaluation handle the future differently by design. The validation study first shared a single path across the eight candidates and later drew candidate paths independently. Comparing those settings measures how much diversity is supplied by the planner.
+
+\section{The diffusion target}
+For a reconstructed training trace let $s_i$ be cumulative directed distance at time $i$. A same-lane jitter or a numerical artifact is prevented from creating a negative increment. The 511 targets before standardization are
+\begin{equation}
+ d_i=\max(0,s_{i+1}-s_i),\qquad u_i=\log(1+d_i),\qquad z_{0,i}=(u_i-\mu)/\sigma .
+ \label{eq:target}
+\end{equation}
+Here $\mu$ and $\sigma$ are computed on the training increments. A stopped interval maps to zero before standardization. Taking the logarithm compresses the upper tail while allowing exact zero. The decoder later truncates the predicted log quantity, which can also create zero increments. The distribution of stops therefore reflects the design of both the training target and its inverse.
+
+For forward diffusion time $t$, let $\beta_t$ increase linearly from $10^{-4}$ to $0.02$ through 1,000 steps, and let $\bar\alpha_t=\prod_{j\leq t}(1-\beta_j)$. A training sample is corrupted as
+\begin{equation}
+ z_t=\sqrt{\bar\alpha_t}\,z_0+\sqrt{1-\bar\alpha_t}\,\epsilon,\qquad
+ \epsilon\sim\mathcal N(0,I).
+\end{equation}
+The network minimizes the mean squared error between sampled noise and predicted noise,
+\begin{equation}
+ \mathcal L(\theta)=
+ \mathbb E\big[\|\epsilon-\epsilon_\theta(z_t,t,c,p_0,R)\|_2^2/511\big].
+\end{equation}
+The noise level is shared across the time series in one training case. Temporal dependencies among clean increments are learned through the denoising network, even though the sampled corruption has independent components.
+
+\section{Network, optimization and sampling}
+The denoiser is a temporal residual convolutional network with 128 channels. The noisy sequence is concatenated with a normalized temporal position channel. Ten residual blocks use dilations $1,2,4,8,16$ twice. The diffusion timestep has a sinusoidal embedding followed by learned transformations. Class embedding, normalized start coordinates and an embedding of the route enter the conditioning vector. The route encoder processes two-coordinate displacements with temporal convolutions and a global average pool. It uses every eighth point on the route relative to the start, scaled by 128 metres.
+
+Pooling permits a fixed-dimensional route description, but it sacrifices some fine location-specific information along the path. Two routes with similar broad shape can receive similar global descriptions despite a different sequence of turns. The geometric decoder still distinguishes the exact paths. This separation suggests a specific limitation: the motion network could generate similar timing through different local bends even when their decoded coordinates follow the correct centerlines.
+
+Each of three random seeds is trained for 20,000 AdamW updates with a learning rate of $2\times10^{-4}$ and weight decay $10^{-4}$. Training uses batches of up to 128, gradient norm clipping at one, and an exponential moving average with update weight 0.001. The final averaged weights are used for generation. A 100-step DDIM schedule transforms initial Gaussian noise into one standardized motion sequence. Each request receives eight independent path slots. The three models share path and initial-noise ordering at final evaluation.
+
+\section{Decoding timed coordinates}
+Let $\tilde z_i$ be the sampled standardized latent value. Denote the actual path length by $L$ and its arc-interpolated position by $R(s)$. The decoder uses
+\begin{align}
+ \hat d_i &=\exp\{\operatorname{clip}(\mu+\sigma\tilde z_i,0,5)\}-1,\\
+ q_i &= \min\{L,\textstyle\sum_{j<i}\hat d_j\},\\
+ \hat p_i &= R(q_i)+\max\{0,1-q_i/10\}\big[p_0-R(0)\big].
+ \label{eq:decode}
+\end{align}
+The last term reconciles the requested start with the projected lane centerline and fades over the first ten metres of progress. At time zero the coordinate is exactly $p_0$. A nonzero initial offset means the first part of the decoded trajectory need not coincide exactly with the centerline. This is one reason to run an independent geometric check on the returned positions. Capping progress at $L$ can keep a trace parked at a path end. The evaluation records attempts to exhaust the path rather than replacing those samples.
+
+\input{chapters/motion-detail}
+
+One illustrative sequence has raw increments $0,2,3$ metres at quarter-second intervals. Its cumulative positions along the path are $0,0,2,5$ metres. If the route turns at metre two, the final three metres follow the new direction. Displacement in the plane can be shorter than arc distance when a sample interval crosses a bend. The motion objective operates on arc increments, while the reported speed and distance distributions are measured from decoded planar positions for both real and synthetic data.
+
+\section{The empirical transfer comparator}
+For each class, the empirical mechanism draws a complete 511-increment training sequence and transfers it to the same candidate path. Whole-sequence transfer preserves actual temporal correlations, including dwell and acceleration patterns. It is a demanding baseline for a small training set: a smooth or plausible observed motion profile can satisfy road checks as easily as a learned one when both share the decoder.
+
+Three empirical resampling seeds provide three pools. These are repetitions of a sampling rule, whereas the diffusion seeds represent three separately fitted models. Comparing their pooled results estimates the additional value of learning motion under this design. It also exposes the cost of diversity or memorization. A copied training profile projected onto a different path can be far from every training coordinate trace. This motivates comparing aligned increments as well as coordinates.

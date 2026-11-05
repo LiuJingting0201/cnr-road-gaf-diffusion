@@ -1,0 +1,45 @@
+% !TEX program = pdflatex
+% Layout adapted from Luigi De Russis, CC BY 4.0. See TEMPLATE.md.
+\documentclass[a4paper,corpo=12pt,oneside,stile=standard,tipotesi=magistrale,numerazioneromana,cucitura=7mm]{toptesi}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,tabularx,placeins,float}
+\usepackage[hidelinks]{hyperref}
+\input{metadata}
+\hypersetup{pdftitle={\CnrThesisTitle},pdfauthor={\CnrCandidate}}
+\newcommand{\W}{W_1}
+\newcommand{\fig}[4]{\begin{figure}[htbp]\centering\includegraphics[width=#2\linewidth,height=.76\textheight,keepaspectratio]{figures/#1}\caption{#3}\label{fig:#4}\end{figure}}
+\newcommand{\tab}[3]{\begin{table}[htbp]\centering\caption{#1}\label{tab:#2}\small #3\end{table}}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.73}
+\raggedbottom
+\begin{document}
+\selectlanguage{english}
+\hypersetup{pageanchor=false}
+\input{cover}
+\frontmatter
+\hypersetup{pageanchor=true}
+\chapter*{Abstract}
+\input{abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+\mainmatter
+\input{chapters/01-introduction}
+\input{chapters/02-background}
+\input{chapters/03-data}
+\input{chapters/04-generation}
+\input{chapters/05-feedback}
+\input{chapters/06-protocol}
+\input{chapters/07-results}
+\input{chapters/08-intervention}
+\input{chapters/08-discussion}
+\appendix
+\input{chapters/appendix}
+\clearpage
+\phantomsection
+\input{references}
+\end{document}

@@ -1,0 +1,14 @@
+\tab{Downstream per-class recall on the observed test set, in percent. Entries average the three learner initializations.}{recall}{\begin{tabular}{llrrrrrr}\toprule
+Model & Group & Ped. & Bus & Moto. & Car & Bike & Taxi\\\midrule
+TCN & Observed only & 100.0 & 84.6 & 51.6 & 82.5 & 100.0 & 62.5\\
+ & Repeat & 88.9 & 89.7 & 48.4 & 82.8 & 100.0 & 45.8\\
+ & Time warp & 91.7 & 89.7 & 48.4 & 83.5 & 100.0 & 45.8\\
+ & Random synthetic & 86.1 & 92.3 & 48.4 & 82.2 & 100.0 & 33.3\\
+ & GAF synthetic & 100.0 & 92.3 & 43.0 & 80.3 & 100.0 & 45.8\\
+ & TCN synthetic & 83.3 & 89.7 & 51.6 & 82.8 & 100.0 & 37.5\\
+GRU & Observed only & 100.0 & 41.0 & 37.6 & 81.9 & 95.6 & 66.7\\
+ & Repeat & 88.9 & 46.2 & 30.1 & 81.2 & 93.3 & 58.3\\
+ & Time warp & 88.9 & 53.8 & 33.3 & 80.9 & 97.8 & 62.5\\
+ & Random synthetic & 86.1 & 51.3 & 31.2 & 81.9 & 95.6 & 58.3\\
+ & GAF synthetic & 100.0 & 59.0 & 30.1 & 78.6 & 95.6 & 62.5\\
+ & TCN synthetic & 86.1 & 53.8 & 35.5 & 79.9 & 97.8 & 54.2\\\bottomrule\end{tabular}}

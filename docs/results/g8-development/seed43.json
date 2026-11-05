@@ -1,0 +1,527 @@
+{
+  "seed": 43,
+  "conditions": 33,
+  "complete": true,
+  "arms": {
+    "identity": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.5,
+          0.7858464701401108,
+          0.09397512678760012,
+          130.01680755615234,
+          0.5213063955307007
+        ],
+        "motorcycle": [
+          0.8333333333333334,
+          0.5181659121937056,
+          0.19252228015619838,
+          161.80103556315103,
+          0.33038678765296936
+        ],
+        "private_car": [
+          0.875,
+          0.7684452357435011,
+          0.1181369627407049,
+          63.536651611328125,
+          0.7811672687530518
+        ],
+        "bycicle": [
+          1.0,
+          0.38670250189724353,
+          0.3933908734580174,
+          32.07649230957031,
+          0.48223644495010376
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.9863357903746874,
+          0.28999869677852963,
+          240.67167154947919,
+          0.0005297753377817571
+        ]
+      },
+      "macro": [
+        0.7083333333333334,
+        0.8890991820698495,
+        0.2176047879842101,
+        125.62053171793619,
+        0.42312533444492145
+      ],
+      "pair_distance": 86.72541569218491,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "uniform": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          0.42008237582982244,
+          0.10270684499626832,
+          140.77046585083008,
+          0.37465670704841614
+        ],
+        "motorcycle": [
+          0.6666666666666666,
+          1.293354574173558,
+          0.21875402721168546,
+          119.30042012532553,
+          0.49832186102867126
+        ],
+        "private_car": [
+          0.75,
+          0.8035425628568369,
+          0.1257185335071328,
+          62.59053039550781,
+          0.5112596750259399
+        ],
+        "bycicle": [
+          1.0,
+          0.5632774628809433,
+          0.3758647126572518,
+          36.98722457885742,
+          0.4769783020019531
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.913738501624527,
+          0.13740608661977288,
+          266.99641927083337,
+          0.3307400643825531
+        ]
+      },
+      "macro": [
+        0.7,
+        0.9987990954731375,
+        0.19209004099842225,
+        125.32901204427085,
+        0.43839132189750674
+      ],
+      "pair_distance": 73.64989495999885,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "mid_gaf": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.875,
+          1.2234684459523595,
+          0.07888733019856006,
+          136.01507949829102,
+          0.8449427485466003
+        ],
+        "motorcycle": [
+          0.6666666666666666,
+          0.7867864921331891,
+          0.291120135859781,
+          87.34406026204427,
+          0.5532272458076477
+        ],
+        "private_car": [
+          0.75,
+          1.1853254954959687,
+          0.12621418074796012,
+          124.0156478881836,
+          0.684463381767273
+        ],
+        "bycicle": [
+          1.0,
+          0.5559270487525414,
+          0.4336692946221151,
+          33.94784927368164,
+          0.6449023485183716
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.1273974460942715,
+          0.19573540010434737,
+          171.74847412109375,
+          0.442128449678421
+        ]
+      },
+      "macro": [
+        0.725,
+        0.9757809856856661,
+        0.22512526830655272,
+        110.61422220865884,
+        0.6339328348636627
+      ],
+      "pair_distance": 48.782494790626295,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "wrong": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          1.2587461136982603,
+          0.12452817920643341,
+          86.1677360534668,
+          0.37769049406051636
+        ],
+        "motorcycle": [
+          0.8333333333333334,
+          0.8449060372194637,
+          0.21739773694791034,
+          194.66504923502606,
+          0.06802883744239807
+        ],
+        "private_car": [
+          0.625,
+          0.507195093792959,
+          0.11694966021596506,
+          54.683380126953125,
+          0.6491026878356934
+        ],
+        "bycicle": [
+          1.0,
+          0.6972947920801996,
+          0.39128018778694035,
+          75.25929260253906,
+          0.5373750925064087
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.5369772510511943,
+          0.19586976645088272,
+          177.78043619791669,
+          0.3097131550312042
+        ]
+      },
+      "macro": [
+        0.7083333333333334,
+        0.9690238575684154,
+        0.20920510612162638,
+        117.71117884318035,
+        0.3883820533752441
+      ],
+      "pair_distance": 36.26511494318644,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "post_gaf": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.625,
+          1.0381714670201028,
+          0.06282857910401242,
+          107.06521606445312,
+          0.8789781928062439
+        ],
+        "motorcycle": [
+          1.0,
+          0.2335904056310535,
+          0.2533127043231883,
+          145.6469523111979,
+          0.6496440172195435
+        ],
+        "private_car": [
+          0.75,
+          1.009128523632552,
+          0.14473789398713655,
+          95.623291015625,
+          0.8539973497390747
+        ],
+        "bycicle": [
+          1.0,
+          0.5637794174684518,
+          0.4044848734622494,
+          38.8411865234375,
+          0.7801389694213867
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.6754151978690983,
+          0.2131088099083285,
+          234.5949910481771,
+          0.5148624777793884
+        ]
+      },
+      "macro": [
+        0.7416666666666667,
+        0.9040170023242518,
+        0.21569457215698304,
+        124.35432739257813,
+        0.7355242013931275
+      ],
+      "pair_distance": 86.72541569218491,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    }
+  },
+  "mid": [
+    {
+      "label": 1,
+      "mid_range": 0.9905781745910645,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9994140267372131,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9967502951622009,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9995653629302979,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.7873073220252991,
+      "valid": true,
+      "distinct_mid": 1,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9993342161178589,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.998962938785553,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9999207854270935,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.9994199872016907,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.007130877114832401,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.9983649253845215,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.9981364607810974,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.9860725402832031,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 2,
+      "mid_range": 0.037542808800935745,
+      "valid": true,
+      "distinct_mid": 1,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.301202654838562,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 3,
+      "mid_range": 0.0006570219993591309,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 3,
+      "mid_range": 0.6468759179115295,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 5.424022674560547e-05,
+      "valid": true,
+      "distinct_mid": 6,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.0016027092933654785,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 3,
+      "mid_range": 0.3121773600578308,
+      "valid": true,
+      "distinct_mid": 6,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.7466764450073242,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.0013090968132019043,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 3
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9992190599441528,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 7
+    },
+    {
+      "label": 4,
+      "mid_range": 0.03725665807723999,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9996128678321838,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 3
+    },
+    {
+      "label": 4,
+      "mid_range": 0.09865230321884155,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9505771398544312,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.570274829864502,
+      "valid": true,
+      "distinct_mid": 6,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9978703260421753,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.0014287226367741823,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 5,
+      "mid_range": 0.9998831152915955,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 5,
+      "mid_range": 0.5303771495819092,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 8
+    },
+    {
+      "label": 5,
+      "mid_range": 0.38326361775398254,
+      "valid": true,
+      "distinct_mid": 1,
+      "distinct_uniform": 5
+    }
+  ],
+  "shared_mid_plus_terminal_scoring_seconds": 8.126711670309305,
+  "shared_sampling_cnn_images": 528
+}

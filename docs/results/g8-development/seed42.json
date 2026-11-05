@@ -1,0 +1,527 @@
+{
+  "seed": 42,
+  "conditions": 33,
+  "complete": true,
+  "arms": {
+    "identity": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.625,
+          0.9004788757971084,
+          0.10093814828227657,
+          133.74525451660156,
+          0.46314573287963867
+        ],
+        "motorcycle": [
+          1.0,
+          0.7499313886532991,
+          0.20335577719820522,
+          164.40584309895831,
+          0.17482900619506836
+        ],
+        "private_car": [
+          0.625,
+          0.5000242442911258,
+          0.1192363843876485,
+          55.07623291015625,
+          0.8728214502334595
+        ],
+        "bycicle": [
+          1.0,
+          0.3838888681448136,
+          0.41229392272584586,
+          33.23288345336914,
+          0.42361879348754883
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.8793012294748195,
+          0.2567191498086246,
+          220.27693684895834,
+          0.00820915773510933
+        ]
+      },
+      "macro": [
+        0.7166666666666667,
+        0.8827249212722332,
+        0.21850867648052014,
+        121.34743016560871,
+        0.38852482810616495
+      ],
+      "pair_distance": 74.65246108084014,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "uniform": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          0.7355070302268369,
+          0.1259868404727575,
+          117.1289291381836,
+          0.5487395524978638
+        ],
+        "motorcycle": [
+          1.0,
+          0.9812751648328994,
+          0.17593486894354265,
+          167.79753621419275,
+          0.3181357681751251
+        ],
+        "private_car": [
+          0.75,
+          0.6992689054258284,
+          0.10148104307008905,
+          59.220550537109375,
+          0.7434566020965576
+        ],
+        "bycicle": [
+          1.0,
+          0.5499001807189654,
+          0.38403137780237484,
+          27.926776885986328,
+          0.5242577791213989
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          2.056190588498769,
+          0.1775678387459586,
+          276.6901041666667,
+          0.2442486733198166
+        ]
+      },
+      "macro": [
+        0.7666666666666667,
+        1.0044283739406599,
+        0.1930003938069445,
+        129.75277938842774,
+        0.4757676750421524
+      ],
+      "pair_distance": 66.35755667541966,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "mid_gaf": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          1.1092980884135393,
+          0.12046111463660411,
+          85.4098129272461,
+          0.7305991649627686
+        ],
+        "motorcycle": [
+          1.0,
+          0.5193264577170987,
+          0.21102389035460356,
+          163.7337849934896,
+          0.355334609746933
+        ],
+        "private_car": [
+          0.75,
+          0.5414729355517187,
+          0.1087893249811696,
+          61.57452392578125,
+          0.873576283454895
+        ],
+        "bycicle": [
+          1.0,
+          0.5998330672397761,
+          0.43190793619335954,
+          34.610530853271484,
+          0.5656600594520569
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.9136507734692785,
+          0.17077605906581755,
+          244.4688720703125,
+          0.009779505431652069
+        ]
+      },
+      "macro": [
+        0.7666666666666667,
+        0.9367162644782823,
+        0.20859166504631088,
+        117.95950495402019,
+        0.5069899246096611
+      ],
+      "pair_distance": 50.14351664167462,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "wrong": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          0.6520767361013954,
+          0.12880592670442315,
+          132.71892547607422,
+          0.0989709347486496
+        ],
+        "motorcycle": [
+          1.0,
+          1.4120811000372182,
+          0.16752797021634042,
+          244.7189229329427,
+          0.20503373444080353
+        ],
+        "private_car": [
+          0.875,
+          0.6001530707631089,
+          0.11690329146804286,
+          65.95850372314453,
+          0.8674533367156982
+        ],
+        "bycicle": [
+          1.0,
+          0.3609490918016987,
+          0.3712261626987683,
+          36.91322326660156,
+          0.263381689786911
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.3954357595814164,
+          0.22133073084713784,
+          174.76127115885419,
+          0.009811035357415676
+        ]
+      },
+      "macro": [
+        0.7916666666666667,
+        0.8841391516569675,
+        0.20115881638694252,
+        131.01416931152343,
+        0.2889301462098956
+      ],
+      "pair_distance": 32.7060710661339,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    },
+    "post_gaf": {
+      "columns": [
+        "tcn_agreement",
+        "speed_w1",
+        "acc_w1",
+        "travel_w1",
+        "gaf_target_probability"
+      ],
+      "per_class": {
+        "bus": [
+          0.75,
+          0.8886133976806495,
+          0.0994819881561139,
+          102.16893005371094,
+          0.768497109413147
+        ],
+        "motorcycle": [
+          1.0,
+          0.3645324437360815,
+          0.19569492521239257,
+          120.70414225260417,
+          0.46163997054100037
+        ],
+        "private_car": [
+          0.75,
+          0.693793868761017,
+          0.11939090124660115,
+          66.74485778808594,
+          0.9887483716011047
+        ],
+        "bycicle": [
+          1.0,
+          0.7263102634559767,
+          0.45645130859578364,
+          61.93654251098633,
+          0.6972246766090393
+        ],
+        "taxi_or_uber": [
+          0.3333333333333333,
+          1.4656325135755472,
+          0.2240740133680744,
+          201.486083984375,
+          0.6755373477935791
+        ]
+      },
+      "macro": [
+        0.7666666666666667,
+        0.8277764974418543,
+        0.2190186273157931,
+        110.60811131795249,
+        0.7183294951915741
+      ],
+      "pair_distance": 74.65246108084014,
+      "selected_graph_pass": 33,
+      "selected_caps": 0,
+      "selected_encoding_failures": 0
+    }
+  },
+  "mid": [
+    {
+      "label": 1,
+      "mid_range": 0.9998354911804199,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9510561227798462,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9999978542327881,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9999909996986389,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.0008028662414290011,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9975588917732239,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9999523162841797,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 1,
+      "mid_range": 0.9999873638153076,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.997105062007904,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.05033348500728607,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.26426583528518677,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.9582046866416931,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 2,
+      "mid_range": 0.17864389717578888,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 2,
+      "mid_range": 0.010231667198240757,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.9765082001686096,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 3,
+      "mid_range": 0.00022739171981811523,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 3,
+      "mid_range": 0.9247511029243469,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.004307210445404053,
+      "valid": true,
+      "distinct_mid": 6,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.00027757883071899414,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 3,
+      "mid_range": 0.9757635593414307,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.03616154193878174,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 3,
+      "mid_range": 0.00045484304428100586,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 3
+    },
+    {
+      "label": 4,
+      "mid_range": 0.8208712339401245,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 7
+    },
+    {
+      "label": 4,
+      "mid_range": 0.6802318096160889,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9933580160140991,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 3
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9969788193702698,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 4
+    },
+    {
+      "label": 4,
+      "mid_range": 0.8142443299293518,
+      "valid": true,
+      "distinct_mid": 2,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9517456293106079,
+      "valid": true,
+      "distinct_mid": 6,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 4,
+      "mid_range": 0.9996907114982605,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 4,
+      "mid_range": 0.06308484822511673,
+      "valid": true,
+      "distinct_mid": 3,
+      "distinct_uniform": 6
+    },
+    {
+      "label": 5,
+      "mid_range": 0.9593803286552429,
+      "valid": true,
+      "distinct_mid": 5,
+      "distinct_uniform": 5
+    },
+    {
+      "label": 5,
+      "mid_range": 0.03841583803296089,
+      "valid": true,
+      "distinct_mid": 4,
+      "distinct_uniform": 8
+    },
+    {
+      "label": 5,
+      "mid_range": 0.015437501482665539,
+      "valid": true,
+      "distinct_mid": 1,
+      "distinct_uniform": 5
+    }
+  ],
+  "shared_mid_plus_terminal_scoring_seconds": 8.857981134206057,
+  "shared_sampling_cnn_images": 528
+}
