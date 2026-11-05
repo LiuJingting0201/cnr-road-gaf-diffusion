@@ -1,14 +1,15 @@
 """Paired episode bootstrap; a traffic episode, not an output trace, is the unit."""
 import hashlib,json
+import os
 from pathlib import Path
 import numpy as np
 from scipy.stats import wasserstein_distance
 from cnr.topology import LaneConsistency
 from cnr.data import CLASSES
-root=Path('g10-data');q=np.load(root/'requests.npz');r=np.load(root/'references.npz')
+root=Path(os.getenv('CNR_RUN_ROOT','g10-data'));q=np.load(root/'requests.npz');r=np.load(root/'references.npz')
 assert np.array_equal(q['ids'],r['ids'])
 ds=[np.load(root/f'{s}-76.npz') for s in [42,43,44]]
-ep=q['episode']-260101;y=q['labels'];bur=ds[0]['burden'];high=np.zeros(len(y),bool)
+ep=q['episode']-int(os.getenv('CNR_FIRST_SEED',260101));y=q['labels'];bur=ds[0]['burden'];high=np.zeros(len(y),bool)
 for c in np.unique(y):
     ix=np.where(y==c)[0];high[ix[np.argsort(bur[ix],kind='stable')[len(ix)//2:]]]=True
 # One row per bootstrap draw, each column the multiplicity of a complete episode.
@@ -16,21 +17,7 @@ cnt=np.vstack([np.ones(8),np.random.default_rng(34176).multinomial(8,np.ones(8)/
 def metrics(x):
     v=np.linalg.norm(np.diff(x,axis=-2),axis=-1)/.25
     return [v,np.diff(v,axis=-1)/.25,v.sum(-1)*.25,(v<.1).mean(-1)]
-def episode_w1(a,b,e,stop):
-    n=np.bincount(e,minlength=8)
-    denom=cnt@n
-    if denom.min()==0: raise ValueError('Unsupported bootstrap group')
-    if stop:
-        diff=np.bincount(e,weights=a.mean(1)-b.mean(1),minlength=8)
-        return abs(cnt@diff/denom)
-    grid=np.unique(np.r_[a.ravel(),b.ravel()]);width=np.diff(grid);cdf=np.zeros((8,len(width)))
-    for k in np.unique(e):
-        aa=np.sort(a[e==k].ravel());bb=np.sort(b[e==k].ravel())
-        cdf[k]=n[k]*(np.searchsorted(aa,grid[:-1],'right')/len(aa)-np.searchsorted(bb,grid[:-1],'right')/len(bb))
-    w=cnt/denom[:,None]
-    z=np.concatenate([np.abs(w[i:i+16]@cdf)@width for i in range(0,len(w),16)])
-    assert abs(z[0]-wasserstein_distance(a.ravel(),b.ravel()))<.001
-    return z
+from cnr.episode_w1 import episode_w1
 truth=metrics(r['xy'][:,None]);matcher=LaneConsistency('data/maps/most.net.xml',radius=5.,max_candidates=64)
 out={'N':len(y),'n_high':int(high.sum()),'classes':{},'bootstrap_unit':'8 independent SUMO traffic episodes','metrics':['speed W1','acc W1','travel W1','stop fraction abs error']}
 variants=['mid','terminal'];draws={};cache={}
@@ -56,7 +43,7 @@ for arm in variants:
             ix=(y==c)&mask;n=sum(ix);class_est=np.zeros_like(est)
             for v in vs:
                 for j in range(4):
-                    class_est[:,j]+=episode_w1(v[j][ix].reshape(n,-1),truth[j][ix].reshape(n,-1),ep[ix],j==3)/3
+                    class_est[:,j]+=episode_w1(v[j][ix].reshape(n,-1),truth[j][ix].reshape(n,-1),ep[ix],j==3,cnt)/3
             class_scores[CLASSES[int(c)]]=class_est[0].tolist();est+=class_est/len(np.unique(y))
         out[arm][group+'_by_class']=class_scores;out[arm][group]=est[0].tolist();draws[arm,group]=est
 for name in ['high','low','all','interaction']:

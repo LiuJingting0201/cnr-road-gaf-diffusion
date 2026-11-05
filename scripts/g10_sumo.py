@@ -1,4 +1,5 @@
 """Generate fresh traffic episodes with independently randomized OD demand."""
+import os
 import argparse, collections, hashlib, json, subprocess
 from pathlib import Path
 import xml.etree.ElementTree as E
@@ -8,7 +9,7 @@ from cnr.data import CLASSES
 from cnr.route_paths import RoutePaths
 VC=['','bus','motorcycle','passenger','bicycle','taxi']
 def simulate(seed,binary):
-    out=Path('g10-data')/str(seed);out.mkdir(exist_ok=False)
+    out=Path(os.getenv('CNR_RUN_ROOT','g10-data'))/str(seed);out.mkdir(exist_ok=False)
     network=Path('data/maps/most.net.xml').resolve()
     net=sumolib.net.readNet(str(network));rng=np.random.default_rng(seed)
     types=E.Element('routes')
