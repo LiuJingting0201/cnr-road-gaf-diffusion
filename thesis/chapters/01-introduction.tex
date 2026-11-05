@@ -1,0 +1,28 @@
+\chapter{Introduction}
+\label{ch:intro}
+A bus and a private car may leave the same junction and follow the same road. Their traces can still be quite different. One may dwell repeatedly, while the other travels farther before the observation ends. Conversely, two traces with nearly identical speed profiles can occupy different branches of a junction. A traffic trajectory contains both choices. A generator must decide where a participant can go and how it moves along the chosen path.
+
+The input to this study is unusually sparse in one respect and rich in another. Two tables record time, participant identity, position and a traffic label. They do not carry the original route files or simulation configuration. The principal table nevertheless contains more than four million observations, sampled closely enough to reconstruct motion on the streets of Monaco. This makes it possible to study class-conditioned movement against an explicit road network, provided that the reconstruction procedure and the population it retains are reported alongside model performance.
+
+\section{The synthesis task}
+Consider a request for a motorcycle trajectory starting at a given point. The request contains a network, a position, a class and a duration. It supplies no destination, observed prefix, traffic signal state or subsequent road. A valid response is one sampled sequence of timestamped positions. Two draws may reasonably take different turns or cover different distances. Reproducing the motorcycle's one recorded future point by point would reward a forecasting objective different from the synthesis objective here.
+
+This distinction determines the evaluation. The recorded future is available to the evaluator for population selection and distributional comparisons. The model receives a newly planned path. The empirical comparator receives exactly the same path. A route planner with access to future turns could make a poor motion generator appear geographically accurate. Conversely, an unconstrained coordinate model could reproduce the speed distribution while regularly crossing from one unconnected street to another. The experiments separate these possibilities.
+
+\section{From class recognition to class control}
+Previous work at Politecnico di Torino and CNR investigated a classification problem: given a recorded trace, infer the type of traffic participant from an image derived from its ordered positions \cite{salvadori,ferreira}. Our question runs in a different direction. Given a requested participant class, does that representation help select a useful synthetic trace? The original project provides the spatial encoding and image routines. It supplies no trained classifier, so the auxiliary network is trained here on observed trajectories. Its output enters only after the diffusion model has generated candidates.
+
+There are at least two ways a classifier can succeed in this setting. It can reward plausible class-specific movement, such as a pattern of progression that transfers to another representation. It can also reward spatial or image features preferred by its own architecture. A higher score under the selecting classifier is expected in either case. To distinguish the two explanations, we use an auditor trained on coordinates and train new classifiers with the selected examples. The final measure of training utility is performance on observed held-out participants.
+
+\section{Research questions and contributions}
+\begin{enumerate}
+\item Given only a start and a class at inference time, how often can the system generate a complete set of trajectories that satisfy a directed, class-permitted road-graph check?
+\item On identical planned paths, how does learned diffusion motion compare with transferring a complete empirical motion profile from the training set?
+\item At a fixed budget of eight candidates, how does Hilbert--GAF selection change class agreement, movement distributions and the value of the samples for training a downstream classifier?
+\end{enumerate}
+The first contribution is a reconstruction and evaluation protocol for simulation exports whose original network configuration is unavailable. The second is a trained motion diffusion model attached to a route planner and an explicit coordinate decoder. Splitting the generator in this way makes it possible to interchange the motion model while holding its geographic opportunities fixed. The third is an experimental test of an inherited representation as feedback. Its contribution is the comparison under controlled conditions, including cases in which feedback worsens an outcome.
+
+The central unit of evidence is a held-out participant. A path contains hundreds of closely related points and a request produces eight related trajectories. Neither multiplicity creates hundreds of independent test cases. The distinction matters particularly for the taxi class, for which only two requests qualify in the final generation evaluation.
+
+\section{Reading the evidence}
+Chapter~\ref{ch:background} relates the design to diffusion synthesis, time-series imaging and road-network models. Chapter~\ref{ch:data} reconstructs the data population. Chapters~\ref{ch:generator} and~\ref{ch:gaf} specify the generator and feedback mechanism. Chapter~\ref{ch:protocol} explains how the same candidate pool and held-out IDs are used across comparisons. Chapter~\ref{ch:results} presents development diagnostics and the locked results separately. Chapter~\ref{ch:discussion} interprets the observed trade-offs and the boundary of the evidence.

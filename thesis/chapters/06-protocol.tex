@@ -1,0 +1,52 @@
+\chapter{Experimental design}
+\label{ch:protocol}
+\section{Exploration, locking and the unit of comparison}
+Development decisions were made on training and validation participants. These include the image resolution, observation horizon, road search capacity and independent path sampling. Several comparisons were exploratory, and their outcomes motivated later controls. Before accessing the held-out test cohort we froze the final model weights, the map, preprocessing statistics, path budget, selectors, evaluation code and random seeds. The machine-readable lock covers 217 files. Nineteen preflight checks passed before the final run. Locking the final evaluation constrains test-driven adaptation while retaining an accurate account of development choices.
+
+The validation generation pilot used 33 conditions selected from 57 available strict validation tracks. The final evaluation uses every eligible test condition, without a per-class cap. There are three different populations throughout this chapter. Road and motion comparisons concern the strict five-class subset. Standalone recognition uses every encodable six-class window. Downstream training uses real training windows with extra examples generated only from training IDs. Metric values between these populations are not interchangeable.
+
+\section{Road consistency and motion distances}
+For each decoded candidate the audit tries to assign a permitted lane position to every point within a five-metre envelope. It then tests whether the assignments can form a directionally compatible sequence. The search retains up to 64 candidates at a point and records truncation. During development an earlier limit of 12 could trigger warnings at dense intersections. Increasing search capacity reduced artificial rejection while preserving the same geometric envelope. The final protocol uses the larger capacity for every method.
+
+Let $\Delta=0.25$ seconds. From decoded positions we compute
+\begin{align}
+ v_i &= \|p_{i+1}-p_i\|_2/\Delta,\\
+ a_i &= (v_{i+1}-v_i)/\Delta,\qquad
+ \ell =\Delta\textstyle\sum_i v_i.
+\end{align}
+Acceleration here represents signed change in scalar speed. It does not measure lateral acceleration around a bend. The stop fraction counts intervals with $v_i<0.1$ metres per second. There are 511 speeds, 510 accelerations and one travel length per 512-point trajectory. The true trace is processed with the identical coordinate formulas.
+
+For each supported class and each quantity, we compare generated and reference empirical distributions using
+\begin{equation}
+ \W(F,G)=\int_{\mathbb R}|F(x)-G(x)|\,\mathrm{d}x .
+\end{equation}
+We average the per-class distances equally. This treats the taxi discrepancy as one fifth of the final macro result even though it has only two qualifying reference participants. A macro result is useful for a class-conditional task, but it should be accompanied by class support and by a separate account of uncertainty. It describes the observed distributions and is insensitive to some errors in sequence order. Two speed sequences containing the same values in a different order share the same marginal speed distribution.
+
+\section{Diversity, memorization and sampling uncertainty}
+For a request with several candidates we measure mean pairwise coordinate distance at corresponding times. The quantity responds to route divergence as well as different rates of progress on one path. A large value can reflect unrealistic dispersion; a small one can reflect a tightly constrained corridor. We also inspect whether images of the candidates are distinguishable. In the final selection experiment only one candidate per request is retained by a method, so it cannot by itself estimate within-condition diversity after selection.
+
+The motion-copy diagnostic compares each complete intended increment profile to training profiles of the same class. For a generated profile $d$ and the set $\mathcal D_c$ of observed training profiles, the statistic is
+\begin{equation}
+ m(d)=\min_{d'\in\mathcal D_c}\frac{1}{511}\sum_{i=1}^{511}|d_i-d'_i|.
+\end{equation}
+The threshold for a near copy is 0.001 metres per increment. Comparing intended progress before path capping prevents a truncated endpoint from disguising a copied profile. Empirical transfer is a positive control because it explicitly reuses whole sequences. The experiment also compares real held-out profiles against the same training library. Sensitivity to time shifts, spatial fragments or partial subsequences is outside the scope of this measure.
+
+To estimate uncertainty, we resample held-out participants within class 2,000 times. A selected participant contributes its observed reference and its entire set of generated candidates. The same draw is used for both motion generators and across their fixed seeds. Distances are recomputed on each draw and the percentile interval is taken over the paired difference. For the main comparison, positive empirical-minus-diffusion values favor diffusion. Recomputing the full statistic matters because the Wasserstein distance between pooled distributions is generally not the mean of per-participant distances.
+
+With two taxis, bootstrap resampling cannot reveal variation among taxi behaviors absent from those two references. Nor does the procedure refit a network on a different training set. It quantifies variation conditional on the fitted models, paths, noise and class counts. The report includes all three primary motion quantities and makes no multiplicity adjustment. An interval excluding zero on one quantity is interpreted as metric-specific evidence under these conditions.
+
+\section{A downstream test on observed trajectories}
+The augmentation experiment generates 3,400 training candidates with one fixed generator: eight motion draws for each of 425 known training paths. The routes used here correspond to training participants and their known paths. This evaluates motion augmentation with controlled labels, while the final generative experiment evaluates independently planned paths from held-out starts. Keeping the two pools separate ensures that no test condition supplies an augmentation sample.
+
+Six downstream groups are compared. The real-only group contains 1,437 observed training windows. Each of the other five groups adds 425 examples with the same class inventory. One repeats the parent traces. Another performs a small monotone time warp on those parents. The last three select one synthetic trace per parent using random priority, the GAF scorer or the TCN scorer. The extra set has 57 buses, 66 motorcycles, 225 cars, 56 bicycles and 21 taxis. The six-class downstream task includes pedestrians even though no extra pedestrian traces are added.
+
+For normalized time $t\in[0,1]$, the time-warp control samples $t+a\sin(2\pi t)$ with $a$ uniform on $[-0.02,0.02]$, using linear interpolation. Endpoints are unchanged and the map is monotone on this interval of amplitudes. It is a useful low-cost comparator: it changes timing on the same path without requiring training a generator.
+
+Each group trains a fresh TCN and a two-layer bidirectional gated recurrent unit (GRU) with 64 hidden units and mean pooling. Three seeds per model and group yield 36 fits. Each receives 1,150 updates with batch size 64, or 73,600 example presentations. Statistics and class weights are fitted only on the real training set and held fixed. Under this design the augmented groups distribute a fixed number of updates over more examples. A positive or negative effect therefore refers to fixed-budget training, rather than the effect of simply doing extra optimization.
+
+We score final checkpoints on the same 182 observed held-out trajectories. Per-class F1 is the harmonic mean of precision and recall. Six-class macro-F1 averages these scores equally. Changes are reported in percentage points, with the same participants paired across methods and with the three already trained learners held fixed. The classifiers used as selectors are not reused as downstream learner weights.
+
+\section{Fairness of the candidate comparison}
+All four selectors see the same eight candidates and the same mask per request. The empirical and diffusion generators see the same routes and starting positions. The final planner attempts exactly eight slots. A planning failure in any slot makes the complete request unserved and is counted without replacement. This rule avoids giving one method extra draws to repair an unfavorable candidate. All unselected candidates are retained for measuring the underlying generator before selection.
+
+The baselines answer different causal questions. Repeated data controls the mix of added classes and parent identities. Time warp controls a simple variation in timing. Random synthetic selection measures the effect of using generated motion without targeted scoring. TCN selection measures the value of scoring in a different representation. Finally, ranking with a shuffled class tests whether a change depends on the requested semantic label. The formal comparison is transparent because the code records the selected indices, rather than exporting only a new collection of traces after each filtering rule.

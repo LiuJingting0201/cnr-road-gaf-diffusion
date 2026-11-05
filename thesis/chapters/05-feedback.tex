@@ -1,0 +1,57 @@
+\chapter{Hilbert image feedback}
+\label{ch:gaf}
+\section{An inherited encoder and a new recognition model}
+A feedback experiment requires a reproducible scoring function. The historical code provides five modules with provenance recorded at revision \texttt{4773ad65}. They implement the spatial Hilbert map, sequence adjustment and image construction. We preserved the original modules and used the original spatial and sequence functions in the adapted pipeline. Small examples were checked against the historical encoder. A trainable participant CNN was not present in the source. We trained a ResNet-18 classifier for this thesis \cite{resnet}.
+
+The image pipeline accepts a time-ordered planar trajectory. Global coordinate ranges map the spatial domain to a normalized square. A recursive Hilbert partition assigns a scalar to each visited cell. The final resolution uses a $64\times64$ grid, corresponding to 4,096 possible cells. A coarser $32\times32$ grid was evaluated during development. The function visits trajectory points in their original time order. Sorting the observations by Hilbert value would transform a trip that leaves and returns to one neighborhood into a different temporal sequence.
+
+A run of identical cell values can occur during a stop or while a moving participant remains within one cell. The sequence adjustment reduces repeated runs and mirrors short sequences until the target image sequence has 224 entries. A long sequence that cannot be reduced by the inherited rule is recorded as an encoding failure. Mirror extension can introduce a reversed portion of a short sequence. Consequently an image index cannot generally be interpreted as one quarter-second time step. This is an important distinction from a diffusion target, where each increment has a physical duration.
+
+\section{Constructing the three channels}
+Let $h_1,\dots,h_{224}$ be the adjusted Hilbert sequence. In the two angular channels, the image routine scales the sample to $u_i\in[0,1]$ and uses $\phi_i=\arccos u_i$. The summation and difference arrays are
+\begin{align}
+ A^+_{ij}&=\cos(\phi_i+\phi_j),\\
+ A^-_{ij}&=\sin(\phi_i-\phi_j).
+\end{align}
+Thus $A^+$ is symmetric and $A^-$ is antisymmetric. The diagonal of $A^+$ encodes $2u_i^2-1$. This observation can recover angular-channel scalar information under the specified scaling, but it cannot recreate the original two-dimensional positions and dwell times lost earlier in the chain. Several different coordinates can occupy the same cell, and repeated-run adjustment changes temporal resolution.
+
+For the third channel, split the scalar sequence into eight uniformly spaced bins. Let $b_i$ be the bin at index $i$, and let $P_{ab}$ be the estimated probability of an adjacent transition from bin $a$ to bin $b$. The Markov transition field uses $M_{ij}=P_{b_i b_j}$. A row describes transitions from the state at the first time index to the states occurring at the second indices. These are transitions of a quantized Hilbert signal. They differ from the physical lane successor counts used by the road planner.
+
+The three channels are stacked and scaled to integer RGB values. Historical processing estimated channel extrema over the batch being converted. A generator or scorer must handle a single new candidate independently of the other images arriving in the same request. We therefore freeze coordinate and channel extrema estimated on training vehicles and count values that require clipping. This adaptation preserves the inherited channel definitions while removing batch dependence at inference. The original GAF term throughout the thesis refers to these two angular channels together with the MTF channel of the inherited pipeline.
+
+Figure~\ref{fig:encoding} follows one saved bus candidate from its decoded coordinates to its three-channel classifier input. The strong blocks span multiple index pairs. Their presence is compatible with repeated quantized positions and with sequence adjustment. Inspecting a block alone does not reveal how many seconds the bus spent in a location.
+
+\fig{encoding.pdf}{1}{The inherited encoder applied to the fixed seed-42 bus candidate selected by GAF. Channel panels show the actual quantized inputs of the frozen classifier. Coordinates in the first panel are relative to its start for display.}{encoding}
+
+\section{Testing the recognition time scale}
+We first ask whether a classifier trained on entire observed tracks can be used on a generated window. The complete-vehicle experiment crosses two grid resolutions with random or ImageNet initialization. Each setting has three seeds and is evaluated at epoch 50. The finer, pretrained model gives 75.71\% validation accuracy and 60.09\% macro-F1. The distinction between these metrics already suggests uneven recognition across participant classes.
+
+\tab{Full-track recognition on validation IDs, in percent. Each entry is the mean across three trained models.}{e1}{\begin{tabular}{llrr}\toprule Grid & Initialization & Accuracy & Macro-F1\\\midrule
+$32\times32$ & Random &51.80&38.81\\
+$32\times32$ & ImageNet &72.74&58.80\\
+$64\times64$ & Random &62.95&44.44\\
+$64\times64$ & ImageNet &75.71&60.09\\\bottomrule\end{tabular}}
+Transfer to partial trajectories is poor even at the longest window. On 512 points, a full-track model yields 18.26\% macro-F1. Training at the intended horizon gives 59.12\%. At 64 points the corresponding values are 11.39\% and 28.63\%. Both changes are relevant to synthesis: a classifier trained on the same representation can react very differently when the duration of the source sequence changes. Table~\ref{tab:e2} reports the common validation cohort as well as the horizon-specific values.
+
+\tab{Validation macro-F1 for the inherited image representation. The fixed-ID comparison uses the same 164 validation participants at each length. Training eligibility still varies with length.}{e2}{\begin{tabular}{rrrrr}\toprule &\multicolumn{2}{c}{All eligible IDs} &\multicolumn{2}{c}{Common IDs}\\
+Points & Full track & Matched & Full track & Matched\\\midrule
+64&11.39&28.63&5.28&21.66\\
+224&13.61&42.37&10.82&38.81\\
+512&18.26&59.12&18.26&59.12\\\bottomrule\end{tabular}}
+The 512-point training cohort has a median of 13 distinct Hilbert values per adjusted sequence. About 8.2\% of its sequences are constant, including about 30.5\% of pedestrian windows and 22.0\% of motorcycle windows. A constant spatial index may reflect either low displacement or quantization. Such images offer limited evidence about timing within a cell. This is a property of the input, not a statement about the duration of a traffic stop.
+
+Longer windows provide more opportunity to see location changes and recurring movement. They also remove participants whose traces are short. The common-cohort analysis controls the identity of the evaluation participants across durations but does not equalize the corresponding training sets. We select the 512-point horizon as an operational compromise between class information and the feasibility of reconstructing a two-minute path. Its coverage is measured on the held-out data.
+
+\section{Selecting among eight decoded candidates}
+For each request the generator returns $K=8$ candidates. Define a common mask $m_k$ that requires a successful graph audit, no truncated lane search, no route-end cap and an encodable GAF image. A fixed random priority resolves ties. The image selector chooses
+\begin{equation}
+ k_{\rm image}=\arg\max_{k:m_k=1} f_{\rm image}(c\mid E(X_k)).
+\end{equation}
+Here $E$ is the inherited conversion and $f_{\rm image}$ is the newly trained network. Random selection uses the first eligible candidate in the same priority order. A temporal convolutional network (TCN) ranks the same pool using coordinate-derived motion features. A fourth control permutes the requested class labels across conditions and ranks by those labels through the GAF network. A permutation can preserve some original labels. If every candidate fails the mask, all methods use the same random fallback and the event is counted.
+
+This formulation has a concrete consequence. If every candidate follows essentially the same motion, ranking cannot add a missing behavior. If there are several distinct candidates, the classifier can change which sample is returned, but it can do so by emphasizing a feature peculiar to its own input representation. The discrete grid, sequence adjustment and integer quantization are compatible with scoring a completed sample. The implemented feedback therefore has a precise computational scope: it changes selection and leaves the denoising trajectory of every candidate intact.
+
+\section{Auditing feedback}
+One network seed is used for ranking and two other seeds in each family are used for auditing, with the audit decision made from their mean class probabilities. Different seeds prevent literal reuse of a selector as its own evaluator. They do not remove architectural preference. A second family using coordinates supplies a stronger comparison. Evaluation on observed windows reveals the accuracy available to these auditors on real examples at the same duration.
+
+Feedback is evaluated at three levels. An auditor from the same family measures whether the selector has a reproducible effect on that representation. A cross-family auditor measures whether the effect transfers to another representation. A downstream learner trained with the selected examples measures whether they improve learning on held-out data. These levels do not necessarily agree. Their disagreement in Chapter~\ref{ch:results} identifies the boundary of the feedback claim.

@@ -1,0 +1,52 @@
+\chapter{Simulation data and road reconstruction}
+\label{ch:data}
+\section{Two exports, two different populations}
+The larger of the two supplied tables is \texttt{midimost\_with\_class2.csv}. Each row carries a simulation time, vehicle ID, horizontal position, speed and a class label named \texttt{class2}. The canonical representation retains time, identity, planar coordinates and class. Derived speed in the evaluation is computed from consecutive positions for both observed and synthetic traces, so differences in simulator speed conventions do not enter that comparison.
+
+The other file, \texttt{vehicle\_positions\_TS\_New.csv}, already uses the five-column schema. It has more participants but a single participant type. Its median trajectory has 173 points compared with 1,363 in the principal file. An apparent increase in sample size from pooling these sources would therefore change the class distribution, sampling regime and spatial support at the same time. The two tables are audited separately. All model fitting and all headline results in this thesis use the principal table.
+
+\tab{The supplied simulation exports. The median refers to the number of original rows per ID, before extracting continuous windows.}{sources}{\begin{tabularx}{\linewidth}{Xrrr}\toprule Export & Rows & IDs & Classes\\\midrule
+MoST principal & 4,840,789 & 2,685 & 6\\
+TS secondary & 2,189,591 & 12,061 & 1\\\bottomrule\end{tabularx}}
+
+Class imbalance appears at several different stages. Private cars are the largest class in the original MoST table. Pedestrians constitute a substantial fraction of all IDs, but few pedestrian IDs provide an encodable 512-point test window, and the explicit lane route generator targets five non-pedestrian classes. Counting all rows would give particularly long traces more weight. Counting IDs, windows and synthesis requests separately exposes these changes in the definition of the population.
+
+\tab{Participant counts across stages. The first column counts all original MoST IDs. The next three concern different subsets, not a single sequential funnel.}{cohorts}{\begin{tabular}{lrrrr}\toprule & All IDs & Generator train & Test windows & Test requests\\\midrule
+Pedestrian &789&0&12&0\\
+Bus &139&57&13&7\\
+Motorcycle &370&66&31&4\\
+Private car &1,117&225&103&33\\
+Bicycle &177&56&15&7\\
+Taxi or Uber &93&21&8&2\\\midrule
+Total &2,685&425&182&53\\\bottomrule\end{tabular}}
+
+\section{Identifying the coordinate frame}
+The original network file, route definitions and simulation version were not delivered with the tables. We compared the untransformed positions against the public MoST network \cite{most}. Its projected local boundary spans approximately 9,975 by 6,362 metres. The file also carries a projection and offset relating this rectangle to Monaco. We use local metres throughout. Treating the CSV values as longitude and latitude would invalidate both lane distances and speeds.
+
+A systematic sample took every thousandth CSV row. For each location we measured distance to the nearest lane centerline, including internal lanes, without fitting an offset or rotation. All 4,841 sampled principal positions were within five metres. The median distance was about 0.004 metres and the 95th percentile about 1.16 metres. For the secondary export only 11.2\% of its 2,190 sampled positions were within five metres. Distances above 100 metres were censored in this exploratory audit. The agreement justifies using the public network as a geometric reference for the first table. It cannot identify the precise version of the simulation or prove that every traffic rule in the downloaded configuration was active.
+
+\fig{map-alignment.pdf}{1}{Systematic sample of 4,841 observed MoST positions superimposed on the public lane network in the unchanged local coordinate frame. The map supports a geometric alignment decision, not a version match.}{alignment}
+Spatial agreement also says little about imbalance. Sampling every thousandth row favors participants present for longer periods. The result supports a coordinate-frame decision and does not estimate the probability that a uniformly sampled vehicle has a reconstructible route. That probability requires whole-sequence checks on held-out IDs, which lead to a much smaller population.
+
+\section{Participant splits and continuous windows}
+We reserve approximately 80\% of participants for training, 10\% for development and 10\% for final testing according to the stored ID assignment. All observations from a participant follow its assignment. A window split performed after slicing a long route could put nearly identical fragments of a vehicle in both training and evaluation. Splitting by ID first removes this particular shortcut. Common roads, simulated demand and map geometry are intentionally shared.
+
+For the fixed-horizon study we sort each participant's positions by time, break segments at incompatible sampling intervals or implausible intersample speeds above 100 metres per second, and choose a centered window from the longest continuous segment. At most one window per participant enters a given horizon. With 512 samples at 0.25-second spacing, the elapsed time is $(512-1)0.25=127.75$ seconds. Both the interval count and the duration matter when converting displacement to speed.
+
+The 64-, 224- and 512-point experiments use centered windows so that changes in recognition cannot be explained simply by comparing the beginning of one trip with the end of another. A longer window still imposes a stronger requirement on the training population. We report both the eligible validation populations and a common cohort for the duration study. Final downstream classification has 1,437 training windows and 182 held-out test windows. The validation cohort at 512 points contains 164 vehicles.
+
+\section{Geometry, topology and strict eligibility}
+For each observed point, the matcher constructs candidate lane positions within a specified radius and checks class permissions. Candidate states include both a lane identity and a position along that lane. The same lane can supply several projections near a bend. A dynamic program resolves assignments over time using compatible transitions. Retaining several projections addresses the case in which the closest point changes abruptly along a curved polyline even though the observed vehicle proceeds continuously.
+
+A strict reconstruction converts a compatible sequence into cumulative progress. For movement within a lane, progress follows the directed centerline. At a transition it follows explicit connections, including internal lanes where required. Lateral jumps between parallel lanes during the window are excluded from the generator's strict reconstruction. The taxi class uses a union of taxi and passenger permissions as an operational mapping. These choices narrow the target task. In particular, the five-class synthesis experiment does not adopt the pedestrian walking-area model.
+
+\input{chapters/geometry-detail}
+
+Training and test windows must represent movement with endpoint separation greater than five metres. A reconstructed trip must also fit below the length budget, with margin for the endpoint. A long out-and-back movement can have small endpoint separation and fail this rule. Describing the eligible cohort as all vehicles that move would therefore be inaccurate. The purpose of the filter is to define a reconstructible task. The coverage figures quantify its cost.
+
+In an earlier development audit of shorter windows, tightening the lane envelope from five to two metres disproportionately removed low-displacement windows. Some observed stationary locations aligned with parking-area geometry. These examples explain why distance to a driving centerline is an incomplete definition of validity for a whole city. They do not motivate silently increasing a threshold after inspecting final outcomes. The final audit radius was frozen at five metres. Signals, precise parking dynamics and interactions with other vehicles would require a richer state than a single trace contains.
+
+\section{What is known at generation time}
+The reference-side process may use the full observed window to determine whether it meets the strict criteria and to compute evaluation statistics. The generation-side request carries the start and class. A planner attaches candidate routes using training transition counts and the map. These two interfaces prevent a true test path from entering the motion model. Conditioning on a population selected using the observed future still changes the population to which the results apply.
+
+Of 270 held-out participants, 182 supply the required encodable horizon and 53 also qualify for strict generation. Thus the headline road result covers 29.1\% of the horizon-eligible set and 19.6\% of all held-out IDs. The 53 comprise seven buses, four motorcycles, 33 private cars, seven bicycles and two taxis. All qualified requests were retained. This distinction between eligibility and success is necessary whenever the system is evaluated on a filtered population.

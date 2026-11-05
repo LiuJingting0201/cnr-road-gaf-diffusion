@@ -1,0 +1,80 @@
+\chapter{Implementation and reproducibility}
+\label{app:rep}
+\section{Data lineage}
+The experiment snapshot for this thesis is \texttt{6031e3f}. The frozen run used commit \texttt{e6a375d}, with its machine lock published in \texttt{3afce6a} before opening the test data. The private project includes the complete protocol and small results alongside the code \cite{project}. It excludes the original tables, learned weights and credentials. Exact regeneration requires access to the original tables and weights. The LaTeX project includes the figure assets and tables required to compile the document without that access.
+
+The network file is identified by SHA-256 prefix \texttt{a06b5c0765fb2d49}. The locked machine manifest has prefix \texttt{2ef4bddc8b727bc5}. These prefixes identify the full hashes in the experiment records. Changing a lane connection or polyline can alter a route while leaving the filename unchanged. The code checks paths, counts and weights so that two variants cannot silently consume different inputs.
+
+\tab{Execution stages. An empirical seed selects a resampling realization, whereas a training seed identifies a separately fitted network.}{work}{\begin{tabularx}{\linewidth}{lX}\toprule Stage & Unit of work\\\midrule
+E1 & 12 auxiliary CNN fits. Two grids, two initialization choices and three seeds. Full-vehicle classification.\\
+E2 & Nine horizon-matched CNN fits plus transfer evaluation. Three horizons, three seeds and one common validation cohort.\\
+E3 & Three motion diffusion models, 20,000 updates each. Each produces 511 incremental distances.\\
+E4/E4r & Three raw-coordinate TCN fits, shared masks, fixed versus independent candidate paths and shuffled-target controls.\\
+E3b & Three empirical motion resamplings on the same paths.\\
+E5 & Six groups, two downstream architectures and three seeds. Thirty-six fixed-budget learner fits.\\
+E7 & Lock manifest, checks, one held-out evaluation, conditional bootstrap, copy control and exports.\\\bottomrule\end{tabularx}}
+The historical short-horizon coordinate and displacement-image studies explain why the representation was changed. Their validation numbers refer to different data and are kept separate from the formal long-window results.
+
+\section{Run parameters}
+\tab{Parameters of the main comparison. The actual length of a path can be smaller than its budget.}{params}{\begin{tabularx}{\linewidth}{lX}\toprule Item & Locked value\\\midrule
+Horizon & 512 samples at 0.25 seconds, 511 increments\\
+Path & Up to 4,096 m and 1,025 interpolation points\\
+Successor prior & Class-conditioned counts, 0.1 smoothing per permitted successor\\
+Denoiser & Width 128 with ten dilated residual blocks, class, start, time and route conditions\\
+Noise & 1,000 linear schedule steps, 100-step DDIM at generation\\
+Generator & Final averaged weights, seeds 42/43/44\\
+Candidate budget & Eight per request per seed, shared paths and ordered noise\\
+Path and noise seeds & 20261109 and 20261110\\
+Selection seed & 20261111 for priority and target shuffle\\
+Paired resampling & 2,000 draws, seeds 20261112 (motion) and 20261113 (downstream)\\
+Augmentation & One generator, training paths only, 425 selected per variant\\
+Downstream & Seeds 100/101/102, fixed 1,150 updates at batch size 64\\
+\bottomrule\end{tabularx}}
+When computing a paired interval, the same resampled participant multiplicities apply to all seeds. Treating all 1,272 generated samples as independent bootstrap units would represent the original 53 references many times without corresponding new information about the population.
+
+\section{Reference and request interfaces}
+Preparation reads the assigned test participants, identifies their continuous segments, attempts image encoding and road reconstruction and writes references and requests separately. The request interface permits the start and class. Indices relate a request to its reference during evaluation. Planning consumes requests and training-side transition counts. Sampling consumes planned routes, starts, labels and frozen weights.
+
+This separation can be tested without a real vehicle. One interface test presents a request with an unexpected future-path field and expects rejection. A budget test supplies a condition with one planning failure among eight slots and expects an unserved request. A file-integrity test changes a locked file and expects verification to fail before scoring. The full lock manifest and completion markers identify which run produced the results.
+
+\section{Coordinate export specification}
+Each output row has the fields \texttt{time,id,x,y,type}. The first sample of each track has relative time zero and the last has time 127.75 seconds. Coordinates are local MoST metres. The machine-readable bicycle class retains its historical spelling \texttt{bycicle}. Synthetic identities distinguish samples even when several samples share a start.
+
+The training archive contains the exact extras used in E5. Each of the random, image-selected and TCN-selected variants contains 425 trajectories or 217,600 rows. Their coordinates and labels match the synthetic tail of the corresponding training arrays, and parent IDs belong to the training split. Alternatives originate in one common candidate pool, so combining all versions would count some samples several times.
+
+The final-condition archive contains all 1,272 diffusion candidates and four selected variants of 159 trajectories each. Each selected file takes one sample per condition per generator seed. Counts, finite coordinates and timestamps were verified by reading the exports back. Archive hashes identify the exact files. A new model trained with these final-condition traces would require a new independent evaluation population.
+
+\chapter{Class evidence and fixed trajectory examples}
+\label{app:cases}
+The five panels below use the first served condition per class at generator seed 42, the rule used in Figure~\ref{fig:map}. Their labels refer to the same candidate indices as the recorded map-example manifest. The panels show speed and cumulative planar travel for all eight synthetic candidates. Highlighting the image-selected trace connects the map view to differences in timing. Each accompanying class table uses all available test conditions for that class and all three frozen seeds. Thus the table describes the full class-specific distributions, while the curves describe one particular request.
+
+\begingroup
+\renewcommand{\tab}[3]{\begin{table}[H]\centering\caption{#1}\label{tab:#2}\small #3\end{table}}
+\input{tables/case-pages}
+\endgroup
+
+\chapter{Detailed classification and selection results}
+\label{app:classification}
+\section{Auditor confusion and imbalance}
+The confusion summaries retain errors hidden by aggregate accuracy. Each matrix averages the row proportions of three separately trained networks on the same 182 vehicles. A cell is the share of participants of the true class predicted as the column class. Row counts are 12, 13, 31, 103, 15 and 8. An error on one taxi changes taxi recall by 12.5 points for one model.
+
+\fig{confusion.pdf}{1}{Final auxiliary classification on observed windows. Rows are true classes and columns are predictions. Each cell averages percentages across the three frozen seeds.}{confusion}
+\input{tables/auxiliary}
+These matrices use observed-window recognition. The audit percentages on generated traces use requested classes on the five-class subset and two audit seeds per family. Accuracy across observed windows, six-class macro-F1 and class-macro agreement on generated candidates measure different outcomes.
+
+\section{The complete selection comparison}
+\input{tables/selection}
+The complete-candidate row describes the distribution available to each selector. The single-selection rows serve one trace per request and therefore also use fewer samples. A difference between the full-pool and random rows alone is not an effect of feedback. The direct comparator for GAF ranking is random ranking within the same saved pool.
+
+\section{Paired downstream contrasts}
+\input{tables/downstream}
+The comparison with repeated data concerns a change in motion while maintaining parent counts and class inventory. The comparison with randomly selected synthetic data isolates the value of choosing an image-preferred candidate. The comparison with observed-only training measures the practical effect of the delivered augmentation package as a whole.
+
+\section{Per-class downstream outcomes}
+\input{tables/recall}
+The downstream task keeps pedestrians in evaluation although augmentation adds no pedestrian traces. Their recall can therefore change: adding examples of other classes changes the learned decision boundary. Improved recall in a class can also come at the expense of precision if the learner predicts the class more often. Consequently the primary six-class evaluation uses macro-F1, with per-class recall as a diagnostic.
+
+\section{Sensitivity of the evidence}
+The network could be retrained, the planner and motion sampler could draw new candidate pools, and a different set of participants could be observed. Only the last component enters the paired intervals, conditional on the existing models and routes. Resampling test participants cannot estimate sensitivity to another city or simulator version.
+
+The whole-profile copying control has a specific interpretation. Time alignment is fixed, all 511 increments enter equally and error is measured in metres per increment. A copied short maneuver within an otherwise novel trajectory could escape detection. Two naturally similar motion sequences could also agree under a looser threshold. The empirical positive control and held-out reference comparison make the operational threshold interpretable in this study.
