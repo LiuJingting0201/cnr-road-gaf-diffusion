@@ -1,0 +1,52 @@
+{
+  "original": {
+    "retained": {
+      "bus": 57,
+      "bycicle": 56,
+      "taxi_or_uber": 21,
+      "motorcycle": 65,
+      "private_car": 224
+    },
+    "short": {
+      "motorcycle": 1,
+      "private_car": 1
+    }
+  },
+  "expanded": {
+    "retained": {
+      "pedestrian": 7993,
+      "bus": 7954,
+      "motorcycle": 7961,
+      "private_car": 7954,
+      "bycicle": 7989,
+      "taxi_or_uber": 7958,
+      "truck": 7953,
+      "delivery": 7955
+    },
+    "short": {
+      "private_car": 46,
+      "taxi_or_uber": 42,
+      "truck": 47,
+      "delivery": 45,
+      "bus": 46,
+      "motorcycle": 39,
+      "bycicle": 11,
+      "pedestrian": 7
+    }
+  },
+  "requests": {
+    "selected": {
+      "pedestrian": 21,
+      "bus": 22,
+      "motorcycle": 22,
+      "private_car": 22,
+      "bycicle": 22,
+      "taxi_or_uber": 22,
+      "truck": 22,
+      "delivery": 22
+    },
+    "failed_before_quota": {
+      "pedestrian": 301
+    }
+  }
+}

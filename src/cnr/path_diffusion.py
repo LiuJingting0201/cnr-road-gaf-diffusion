@@ -4,9 +4,9 @@ from torch import nn
 from cnr.models import TrajectoryDenoiser
 
 class PathDenoiser(nn.Module):
-    def __init__(self):
+    def __init__(self, classes=6):
         super().__init__()
-        self.backbone=TrajectoryDenoiser()
+        self.backbone=TrajectoryDenoiser(classes=classes)
         self.backbone.input=nn.Conv1d(2,128,1)
         self.backbone.out=nn.Conv1d(128,1,1)
         self.route_encoder=nn.Sequential(nn.Conv1d(2,64,5,padding=2),nn.SiLU(),

@@ -9,6 +9,7 @@ from shapely import STRtree
 CLASS_TO_VCLASSES = {
     'pedestrian': ('pedestrian',), 'bus': ('bus',),
     'motorcycle': ('motorcycle',), 'private_car': ('passenger',),
+    'truck': ('truck',), 'delivery': ('delivery',),
     'bycicle': ('bicycle',), 'taxi_or_uber': ('taxi', 'passenger'),
 }
 
