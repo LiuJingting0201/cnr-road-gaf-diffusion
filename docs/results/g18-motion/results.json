@@ -1,0 +1,1928 @@
+{
+  "0.3": {
+    "pedestrian": {
+      "all": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -18.93778409090909,
+          -10.529017857142861
+        ],
+        "reference": {
+          "cruise_s": 121.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 106.1547619047619,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.025333333333333326
+      },
+      "matched": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -18.93778409090909,
+          -10.529017857142861
+        ],
+        "reference": {
+          "cruise_s": 121.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 106.1547619047619,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.025333333333333326
+      },
+      "shuffled": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -7.2,
+          0.0
+        ],
+        "reference": {
+          "cruise_s": 121.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 118.0952380952381,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.05100676922227586,
+          "stop_fraction": 0.0
+        },
+        "transition_TV": 0.000761904761904873
+      },
+      "matched_candidates": 168,
+      "curve_vs_straight": {
+        "paired_requests": 12,
+        "means_ref_gen_candidate_count": [
+          -0.0018356730614482915,
+          -0.00045010053635611305,
+          8.0
+        ]
+      }
+    },
+    "bus": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -14.767471590909091,
+          -0.09048295454545688
+        ],
+        "reference": {
+          "cruise_s": 25.636363636363637,
+          "braking_events": 4.454545454545454,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 18.9375,
+          "braking_events": 3.9488636363636362,
+          "restarts": 0.7670454545454546,
+          "lag4_mps": 1.7457075306695145,
+          "stop_fraction": 0.20749821045096636
+        },
+        "transition_TV": 0.14981818181818188
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -11.798046875,
+          2.6549107142857133
+        ],
+        "reference": {
+          "cruise_s": 23.6875,
+          "braking_events": 4.625,
+          "restarts": 0.5625,
+          "lag4_mps": 2.0206417230998874,
+          "stop_fraction": 0.08070866141732283
+        },
+        "synthetic": {
+          "cruise_s": 20.182291666666668,
+          "braking_events": 5.265625,
+          "restarts": 0.40625000000000006,
+          "lag4_mps": 1.8870226465590443,
+          "stop_fraction": 0.04896653543307086
+        },
+        "transition_TV": 0.057708333333333334
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -28.5,
+          -14.953409090909098
+        ],
+        "reference": {
+          "cruise_s": 25.636363636363637,
+          "braking_events": 4.454545454545454,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 4.136363636363637,
+          "braking_events": 8.5,
+          "restarts": 0.9090909090909091,
+          "lag4_mps": 4.701366494271654,
+          "stop_fraction": 0.07158196134574087
+        },
+        "transition_TV": 0.5552727272727274
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -3.423287719865648,
+          -0.5645163587502869,
+          7.909090909090909
+        ]
+      }
+    },
+    "motorcycle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -0.3134943181818181,
+          10.19957386363636
+        ],
+        "reference": {
+          "cruise_s": 21.5,
+          "braking_events": 3.8636363636363638,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 26.017045454545453,
+          "braking_events": 5.0625,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.8859342104040586,
+          "stop_fraction": 0.05051002147458841
+        },
+        "transition_TV": 0.0894090909090909
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          0.8823115079365079,
+          8.548071428571427
+        ],
+        "reference": {
+          "cruise_s": 20.5625,
+          "braking_events": 4.4375,
+          "restarts": 0.1875,
+          "lag4_mps": 1.8905631884045397,
+          "stop_fraction": 0.07431102362204725
+        },
+        "synthetic": {
+          "cruise_s": 24.820833333333333,
+          "braking_events": 5.669791666666667,
+          "restarts": 0.375,
+          "lag4_mps": 2.187704739121938,
+          "stop_fraction": 0.029773622047244094
+        },
+        "transition_TV": 0.11480833333333332
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -15.681818181818182,
+          -10.954545454545455
+        ],
+        "reference": {
+          "cruise_s": 21.5,
+          "braking_events": 3.8636363636363638,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 8.363636363636363,
+          "braking_events": 3.8636363636363638,
+          "restarts": 1.5454545454545454,
+          "lag4_mps": 4.382071009656813,
+          "stop_fraction": 0.09269863994273443
+        },
+        "transition_TV": 0.44254545454545446
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -1.9320235359669624,
+          -0.125102175317784,
+          8.0
+        ]
+      }
+    },
+    "private_car": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -6.7901988636363635,
+          5.323863636363637
+        ],
+        "reference": {
+          "cruise_s": 29.636363636363637,
+          "braking_events": 4.136363636363637,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 29.15340909090909,
+          "braking_events": 4.3522727272727275,
+          "restarts": 0.4318181818181818,
+          "lag4_mps": 1.7161068342155852,
+          "stop_fraction": 0.050688976377952756
+        },
+        "transition_TV": 0.040590909090909066
+      },
+      "matched": {
+        "requests": 15,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          -4.2981388888888885,
+          13.261785714285711
+        ],
+        "reference": {
+          "cruise_s": 27.2,
+          "braking_events": 4.533333333333333,
+          "restarts": 0.13333333333333333,
+          "lag4_mps": 2.1190706480477037,
+          "stop_fraction": 0.01574803149606299
+        },
+        "synthetic": {
+          "cruise_s": 32.123333333333335,
+          "braking_events": 4.0344444444444445,
+          "restarts": 0.29555555555555557,
+          "lag4_mps": 1.6948715103350238,
+          "stop_fraction": 0.024461942257217848
+        },
+        "transition_TV": 0.029955555555555444
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -27.001136363636363,
+          -17.40795454545455
+        ],
+        "reference": {
+          "cruise_s": 29.636363636363637,
+          "braking_events": 4.136363636363637,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 7.818181818181818,
+          "braking_events": 6.363636363636363,
+          "restarts": 0.4090909090909091,
+          "lag4_mps": 3.962203602086892,
+          "stop_fraction": 0.03758052970651396
+        },
+        "transition_TV": 0.49236363636363645
+      },
+      "matched_candidates": 53,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.932142361052193,
+          -0.2114144368256331,
+          8.0
+        ]
+      }
+    },
+    "bycicle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -36.230397727272724,
+          2.337357954545443
+        ],
+        "reference": {
+          "cruise_s": 73.54545454545455,
+          "braking_events": 1.3181818181818181,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 56.05681818181818,
+          "braking_events": 1.5170454545454546,
+          "restarts": 0.17045454545454544,
+          "lag4_mps": 0.3377643829219331,
+          "stop_fraction": 0.036864710093056544
+        },
+        "transition_TV": 0.06036363636363649
+      },
+      "matched": {
+        "requests": 20,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -40.18578993055555,
+          5.461377976190474
+        ],
+        "reference": {
+          "cruise_s": 74.9,
+          "braking_events": 1.25,
+          "restarts": 0.05,
+          "lag4_mps": 0.2724539132739106,
+          "stop_fraction": 0.03858267716535433
+        },
+        "synthetic": {
+          "cruise_s": 56.78994047619047,
+          "braking_events": 1.614404761904762,
+          "restarts": 0.10208333333333333,
+          "lag4_mps": 0.343031135617943,
+          "stop_fraction": 0.015042650918635169
+        },
+        "transition_TV": 0.06511476190476198
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -44.91022727272727,
+          -23.544318181818188
+        ],
+        "reference": {
+          "cruise_s": 73.54545454545455,
+          "braking_events": 1.3181818181818181,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 39.54545454545455,
+          "braking_events": 0.8636363636363636,
+          "restarts": 0.5909090909090909,
+          "lag4_mps": 0.6059504565340181,
+          "stop_fraction": 0.047244094488188976
+        },
+        "transition_TV": 0.24509090909090922
+      },
+      "matched_candidates": 96,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -0.537567079505246,
+          -0.14065571571877336,
+          8.0
+        ]
+      }
+    },
+    "taxi_or_uber": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -19.38721590909091,
+          1.4376420454545447
+        ],
+        "reference": {
+          "cruise_s": 37.45454545454545,
+          "braking_events": 3.5,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 30.71590909090909,
+          "braking_events": 4.130681818181818,
+          "restarts": 0.6022727272727273,
+          "lag4_mps": 1.7628343345903763,
+          "stop_fraction": 0.0703740157480315
+        },
+        "transition_TV": 0.0825909090909091
+      },
+      "matched": {
+        "requests": 18,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -22.16875,
+          1.6308333333333267
+        ],
+        "reference": {
+          "cruise_s": 41.55555555555556,
+          "braking_events": 3.388888888888889,
+          "restarts": 0.2777777777777778,
+          "lag4_mps": 1.5848248279282795,
+          "stop_fraction": 0.0647419072615923
+        },
+        "synthetic": {
+          "cruise_s": 33.18518518518518,
+          "braking_events": 3.949074074074074,
+          "restarts": 0.5138888888888888,
+          "lag4_mps": 1.5679544854106284,
+          "stop_fraction": 0.07020997375328082
+        },
+        "transition_TV": 0.04799999999999999
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -39.81818181818182,
+          -20.044318181818188
+        ],
+        "reference": {
+          "cruise_s": 37.45454545454545,
+          "braking_events": 3.5,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 8.0,
+          "braking_events": 4.0,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 3.313568982394117,
+          "stop_fraction": 0.10415175375805297
+        },
+        "transition_TV": 0.44218181818181823
+      },
+      "matched_candidates": 57,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.363469795890604,
+          -0.30858678216171237,
+          8.0
+        ]
+      }
+    },
+    "truck": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -20.13309659090909,
+          -3.897585227272728
+        ],
+        "reference": {
+          "cruise_s": 34.90909090909091,
+          "braking_events": 3.8181818181818183,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 22.892045454545453,
+          "braking_events": 4.238636363636363,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.7453672789812429,
+          "stop_fraction": 0.06683965640658554
+        },
+        "transition_TV": 0.0762272727272727
+      },
+      "matched": {
+        "requests": 13,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -27.342269230769226,
+          -6.355625000000015
+        ],
+        "reference": {
+          "cruise_s": 41.23076923076923,
+          "braking_events": 3.3076923076923075,
+          "restarts": 0.38461538461538464,
+          "lag4_mps": 1.462894438364303,
+          "stop_fraction": 0.03634161114476075
+        },
+        "synthetic": {
+          "cruise_s": 25.13076923076923,
+          "braking_events": 3.9923076923076923,
+          "restarts": 0.3423076923076923,
+          "lag4_mps": 1.7308151318632574,
+          "stop_fraction": 0.046779729456894806
+        },
+        "transition_TV": 0.1256820512820513
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -37.092045454545456,
+          -21.180681818181824
+        ],
+        "reference": {
+          "cruise_s": 34.90909090909091,
+          "braking_events": 3.8181818181818183,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 5.7272727272727275,
+          "braking_events": 6.409090909090909,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 4.255143149131034,
+          "stop_fraction": 0.07695060844667144
+        },
+        "transition_TV": 0.5476363636363637
+      },
+      "matched_candidates": 45,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.3937504097940776,
+          -0.16590061566090006,
+          8.0
+        ]
+      }
+    },
+    "delivery": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -10.227414772727272,
+          0.1251420454545447
+        ],
+        "reference": {
+          "cruise_s": 30.59090909090909,
+          "braking_events": 3.409090909090909,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 25.8125,
+          "braking_events": 4.920454545454546,
+          "restarts": 0.5284090909090909,
+          "lag4_mps": 1.8988733305012049,
+          "stop_fraction": 0.07010558339298496
+        },
+        "transition_TV": 0.09809090909090912
+      },
+      "matched": {
+        "requests": 11,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -26.27340909090909,
+          5.030438311688311
+        ],
+        "reference": {
+          "cruise_s": 32.27272727272727,
+          "braking_events": 3.8181818181818183,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.9959888730392579,
+          "stop_fraction": 0.0901932712956335
+        },
+        "synthetic": {
+          "cruise_s": 24.530303030303035,
+          "braking_events": 4.878787878787879,
+          "restarts": 0.38636363636363635,
+          "lag4_mps": 2.0735803481685298,
+          "stop_fraction": 0.03602958721068957
+        },
+        "transition_TV": 0.10272727272727272
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -31.001136363636363,
+          -18.136363636363637
+        ],
+        "reference": {
+          "cruise_s": 30.59090909090909,
+          "braking_events": 3.409090909090909,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 6.409090909090909,
+          "braking_events": 5.5,
+          "restarts": 1.2727272727272727,
+          "lag4_mps": 4.118100435041477,
+          "stop_fraction": 0.12383679312813171
+        },
+        "transition_TV": 0.49272727272727274
+      },
+      "matched_candidates": 23,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.627976982608322,
+          -0.33986738081322165,
+          8.0
+        ]
+      }
+    }
+  },
+  "0.5": {
+    "pedestrian": {
+      "all": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -17.153566919191917,
+          -9.703125000000009
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 112.74404761904762,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.02104761904761896
+      },
+      "matched": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -17.153566919191917,
+          -9.703125000000009
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 112.74404761904762,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.02104761904761896
+      },
+      "shuffled": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          0.0,
+          0.0
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.05100676922227586,
+          "stop_fraction": 0.0
+        },
+        "transition_TV": 0.0
+      },
+      "matched_candidates": 168,
+      "curve_vs_straight": {
+        "paired_requests": 12,
+        "means_ref_gen_candidate_count": [
+          -0.0018356730614482915,
+          -0.00045010053635611305,
+          8.0
+        ]
+      }
+    },
+    "bus": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -16.545596590909092,
+          1.2563920454545414
+        ],
+        "reference": {
+          "cruise_s": 29.59090909090909,
+          "braking_events": 4.045454545454546,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 22.522727272727273,
+          "braking_events": 3.4545454545454546,
+          "restarts": 0.7670454545454546,
+          "lag4_mps": 1.7457075306695145,
+          "stop_fraction": 0.20749821045096636
+        },
+        "transition_TV": 0.1487727272727273
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -10.64720179738562,
+          5.218888888888883
+        ],
+        "reference": {
+          "cruise_s": 26.625,
+          "braking_events": 4.0625,
+          "restarts": 0.5625,
+          "lag4_mps": 2.0206417230998874,
+          "stop_fraction": 0.08070866141732283
+        },
+        "synthetic": {
+          "cruise_s": 24.625000000000004,
+          "braking_events": 4.536458333333334,
+          "restarts": 0.40625000000000006,
+          "lag4_mps": 1.8870226465590443,
+          "stop_fraction": 0.04896653543307086
+        },
+        "transition_TV": 0.06966666666666661
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -32.68295454545454,
+          -18.136363636363637
+        ],
+        "reference": {
+          "cruise_s": 29.59090909090909,
+          "braking_events": 4.045454545454546,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 4.363636363636363,
+          "braking_events": 7.7727272727272725,
+          "restarts": 0.9090909090909091,
+          "lag4_mps": 4.701366494271654,
+          "stop_fraction": 0.07158196134574087
+        },
+        "transition_TV": 0.5614545454545454
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -3.423287719865648,
+          -0.5645163587502869,
+          7.909090909090909
+        ]
+      }
+    },
+    "motorcycle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -9.829829545454546,
+          0.5916193181818143
+        ],
+        "reference": {
+          "cruise_s": 36.27272727272727,
+          "braking_events": 3.409090909090909,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 31.77840909090909,
+          "braking_events": 4.1022727272727275,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.8859342104040586,
+          "stop_fraction": 0.05051002147458841
+        },
+        "transition_TV": 0.07540909090909083
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          -16.621198830409355,
+          1.8663318452380846
+        ],
+        "reference": {
+          "cruise_s": 37.3125,
+          "braking_events": 3.875,
+          "restarts": 0.1875,
+          "lag4_mps": 1.8905631884045397,
+          "stop_fraction": 0.07431102362204725
+        },
+        "synthetic": {
+          "cruise_s": 29.770833333333332,
+          "braking_events": 4.609375,
+          "restarts": 0.375,
+          "lag4_mps": 2.187704739121938,
+          "stop_fraction": 0.029773622047244094
+        },
+        "transition_TV": 0.10486666666666665
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -35.273863636363636,
+          -19.315909090909102
+        ],
+        "reference": {
+          "cruise_s": 36.27272727272727,
+          "braking_events": 3.409090909090909,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 10.045454545454545,
+          "braking_events": 3.4545454545454546,
+          "restarts": 1.5454545454545454,
+          "lag4_mps": 4.382071009656813,
+          "stop_fraction": 0.09269863994273443
+        },
+        "transition_TV": 0.4727272727272728
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -1.9320235359669624,
+          -0.125102175317784,
+          8.0
+        ]
+      }
+    },
+    "private_car": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -1.9038352272727272,
+          10.784659090909088
+        ],
+        "reference": {
+          "cruise_s": 31.545454545454547,
+          "braking_events": 3.8636363636363638,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 36.18181818181818,
+          "braking_events": 3.778409090909091,
+          "restarts": 0.4318181818181818,
+          "lag4_mps": 1.7161068342155852,
+          "stop_fraction": 0.050688976377952756
+        },
+        "transition_TV": 0.03399999999999998
+      },
+      "matched": {
+        "requests": 15,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          -1.7900446428571424,
+          20.674166666666654
+        ],
+        "reference": {
+          "cruise_s": 28.933333333333334,
+          "braking_events": 4.2,
+          "restarts": 0.13333333333333333,
+          "lag4_mps": 2.1190706480477037,
+          "stop_fraction": 0.01574803149606299
+        },
+        "synthetic": {
+          "cruise_s": 38.367777777777775,
+          "braking_events": 3.49,
+          "restarts": 0.29555555555555557,
+          "lag4_mps": 1.6948715103350238,
+          "stop_fraction": 0.024461942257217848
+        },
+        "transition_TV": 0.0555555555555556
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -28.1375,
+          -18.954545454545453
+        ],
+        "reference": {
+          "cruise_s": 31.545454545454547,
+          "braking_events": 3.8636363636363638,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 8.318181818181818,
+          "braking_events": 5.454545454545454,
+          "restarts": 0.4090909090909091,
+          "lag4_mps": 3.962203602086892,
+          "stop_fraction": 0.03758052970651396
+        },
+        "transition_TV": 0.48363636363636364
+      },
+      "matched_candidates": 53,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.932142361052193,
+          -0.2114144368256331,
+          8.0
+        ]
+      }
+    },
+    "bycicle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -34.23863636363637,
+          -0.33750000000001856
+        ],
+        "reference": {
+          "cruise_s": 82.77272727272727,
+          "braking_events": 0.9090909090909091,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 64.85795454545455,
+          "braking_events": 1.0113636363636365,
+          "restarts": 0.17045454545454544,
+          "lag4_mps": 0.3377643829219331,
+          "stop_fraction": 0.036864710093056544
+        },
+        "transition_TV": 0.032181818181818235
+      },
+      "matched": {
+        "requests": 20,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -41.2277840909091,
+          1.0895044642856455
+        ],
+        "reference": {
+          "cruise_s": 85.05,
+          "braking_events": 0.9,
+          "restarts": 0.05,
+          "lag4_mps": 0.2724539132739106,
+          "stop_fraction": 0.03858267716535433
+        },
+        "synthetic": {
+          "cruise_s": 62.91660714285714,
+          "braking_events": 1.087857142857143,
+          "restarts": 0.10208333333333333,
+          "lag4_mps": 0.343031135617943,
+          "stop_fraction": 0.015042650918635169
+        },
+        "transition_TV": 0.038155238095238034
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -46.36363636363637,
+          -20.818181818181817
+        ],
+        "reference": {
+          "cruise_s": 82.77272727272727,
+          "braking_events": 0.9090909090909091,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 48.09090909090909,
+          "braking_events": 0.5454545454545454,
+          "restarts": 0.5909090909090909,
+          "lag4_mps": 0.6059504565340181,
+          "stop_fraction": 0.047244094488188976
+        },
+        "transition_TV": 0.23272727272727275
+      },
+      "matched_candidates": 96,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -0.537567079505246,
+          -0.14065571571877336,
+          8.0
+        ]
+      }
+    },
+    "taxi_or_uber": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -20.358664772727273,
+          1.8809659090909074
+        ],
+        "reference": {
+          "cruise_s": 42.95454545454545,
+          "braking_events": 3.3181818181818183,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 34.92613636363637,
+          "braking_events": 3.6420454545454546,
+          "restarts": 0.6022727272727273,
+          "lag4_mps": 1.7628343345903763,
+          "stop_fraction": 0.0703740157480315
+        },
+        "transition_TV": 0.06090909090909097
+      },
+      "matched": {
+        "requests": 18,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -21.76861685463659,
+          0.6824013157894636
+        ],
+        "reference": {
+          "cruise_s": 45.5,
+          "braking_events": 3.1666666666666665,
+          "restarts": 0.2777777777777778,
+          "lag4_mps": 1.5848248279282795,
+          "stop_fraction": 0.0647419072615923
+        },
+        "synthetic": {
+          "cruise_s": 37.0462962962963,
+          "braking_events": 3.5509259259259256,
+          "restarts": 0.5138888888888888,
+          "lag4_mps": 1.5679544854106284,
+          "stop_fraction": 0.07020997375328082
+        },
+        "transition_TV": 0.04029629629629633
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -43.81931818181818,
+          -24.36136363636365
+        ],
+        "reference": {
+          "cruise_s": 42.95454545454545,
+          "braking_events": 3.3181818181818183,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 9.045454545454545,
+          "braking_events": 3.590909090909091,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 3.313568982394117,
+          "stop_fraction": 0.10415175375805297
+        },
+        "transition_TV": 0.4425454545454546
+      },
+      "matched_candidates": 57,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.363469795890604,
+          -0.30858678216171237,
+          8.0
+        ]
+      }
+    },
+    "truck": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -17.170454545454547,
+          -2.0487215909091043
+        ],
+        "reference": {
+          "cruise_s": 36.31818181818182,
+          "braking_events": 3.4545454545454546,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 26.869318181818183,
+          "braking_events": 3.721590909090909,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.7453672789812429,
+          "stop_fraction": 0.06683965640658554
+        },
+        "transition_TV": 0.04940909090909095
+      },
+      "matched": {
+        "requests": 13,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -25.715659340659343,
+          -4.7109375000000036
+        ],
+        "reference": {
+          "cruise_s": 43.0,
+          "braking_events": 3.076923076923077,
+          "restarts": 0.38461538461538464,
+          "lag4_mps": 1.462894438364303,
+          "stop_fraction": 0.03634161114476075
+        },
+        "synthetic": {
+          "cruise_s": 28.51923076923077,
+          "braking_events": 3.5141025641025645,
+          "restarts": 0.3423076923076923,
+          "lag4_mps": 1.7308151318632574,
+          "stop_fraction": 0.046779729456894806
+        },
+        "transition_TV": 0.10558974358974355
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -37.592045454545456,
+          -22.40909090909091
+        ],
+        "reference": {
+          "cruise_s": 36.31818181818182,
+          "braking_events": 3.4545454545454546,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 6.2727272727272725,
+          "braking_events": 5.636363636363637,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 4.255143149131034,
+          "stop_fraction": 0.07695060844667144
+        },
+        "transition_TV": 0.544
+      },
+      "matched_candidates": 45,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.3937504097940776,
+          -0.16590061566090006,
+          8.0
+        ]
+      }
+    },
+    "delivery": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -14.075000000000001,
+          2.538210227272705
+        ],
+        "reference": {
+          "cruise_s": 35.95454545454545,
+          "braking_events": 3.272727272727273,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 30.443181818181817,
+          "braking_events": 4.267045454545454,
+          "restarts": 0.5284090909090909,
+          "lag4_mps": 1.8988733305012049,
+          "stop_fraction": 0.07010558339298496
+        },
+        "transition_TV": 0.06749999999999995
+      },
+      "matched": {
+        "requests": 11,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -24.078030303030303,
+          3.3197916666666645
+        ],
+        "reference": {
+          "cruise_s": 35.90909090909091,
+          "braking_events": 3.5454545454545454,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.9959888730392579,
+          "stop_fraction": 0.0901932712956335
+        },
+        "synthetic": {
+          "cruise_s": 28.257575757575754,
+          "braking_events": 4.196969696969696,
+          "restarts": 0.38636363636363635,
+          "lag4_mps": 2.0735803481685298,
+          "stop_fraction": 0.03602958721068957
+        },
+        "transition_TV": 0.061636363636363614
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -34.36477272727273,
+          -19.08977272727273
+        ],
+        "reference": {
+          "cruise_s": 35.95454545454545,
+          "braking_events": 3.272727272727273,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 9.545454545454545,
+          "braking_events": 4.818181818181818,
+          "restarts": 1.2727272727272727,
+          "lag4_mps": 4.118100435041477,
+          "stop_fraction": 0.12383679312813171
+        },
+        "transition_TV": 0.49309090909090914
+      },
+      "matched_candidates": 23,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.627976982608322,
+          -0.33986738081322165,
+          8.0
+        ]
+      }
+    }
+  },
+  "0.7": {
+    "pedestrian": {
+      "all": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -14.017978896103896,
+          -6.868452380952384
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 115.64880952380952,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.017476190476190506
+      },
+      "matched": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -14.017978896103896,
+          -6.868452380952384
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 115.64880952380952,
+          "braking_events": 0.0,
+          "restarts": 0.08333333333333333,
+          "lag4_mps": 0.05252285414824078,
+          "stop_fraction": 0.012232845894263216
+        },
+        "transition_TV": 0.017476190476190506
+      },
+      "shuffled": {
+        "requests": 21,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          0.0,
+          0.0
+        ],
+        "reference": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.051552692290553516,
+          "stop_fraction": 0.0
+        },
+        "synthetic": {
+          "cruise_s": 126.0,
+          "braking_events": 0.0,
+          "restarts": 0.0,
+          "lag4_mps": 0.05100676922227586,
+          "stop_fraction": 0.0
+        },
+        "transition_TV": 0.0
+      },
+      "matched_candidates": 168,
+      "curve_vs_straight": {
+        "paired_requests": 12,
+        "means_ref_gen_candidate_count": [
+          -0.0018356730614482915,
+          -0.00045010053635611305,
+          8.0
+        ]
+      }
+    },
+    "bus": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -14.394886363636363,
+          1.9058238636363505
+        ],
+        "reference": {
+          "cruise_s": 31.40909090909091,
+          "braking_events": 3.727272727272727,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 25.59659090909091,
+          "braking_events": 3.164772727272727,
+          "restarts": 0.7670454545454546,
+          "lag4_mps": 1.7457075306695145,
+          "stop_fraction": 0.20749821045096636
+        },
+        "transition_TV": 0.14154545454545453
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -10.250735294117646,
+          5.708413461538461
+        ],
+        "reference": {
+          "cruise_s": 29.0,
+          "braking_events": 3.75,
+          "restarts": 0.5625,
+          "lag4_mps": 2.0206417230998874,
+          "stop_fraction": 0.08070866141732283
+        },
+        "synthetic": {
+          "cruise_s": 27.453125,
+          "braking_events": 4.166666666666667,
+          "restarts": 0.40625000000000006,
+          "lag4_mps": 1.8870226465590443,
+          "stop_fraction": 0.04896653543307086
+        },
+        "transition_TV": 0.09766666666666671
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -34.092045454545456,
+          -19.59090909090909
+        ],
+        "reference": {
+          "cruise_s": 31.40909090909091,
+          "braking_events": 3.727272727272727,
+          "restarts": 0.45454545454545453,
+          "lag4_mps": 2.030363194316869,
+          "stop_fraction": 0.07158196134574087
+        },
+        "synthetic": {
+          "cruise_s": 4.7272727272727275,
+          "braking_events": 7.5,
+          "restarts": 0.9090909090909091,
+          "lag4_mps": 4.701366494271654,
+          "stop_fraction": 0.07158196134574087
+        },
+        "transition_TV": 0.5523636363636364
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -3.423287719865648,
+          -0.5645163587502869,
+          7.909090909090909
+        ]
+      }
+    },
+    "motorcycle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -10.881392045454545,
+          0.6426136363636333
+        ],
+        "reference": {
+          "cruise_s": 41.0,
+          "braking_events": 3.227272727272727,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 35.6875,
+          "braking_events": 3.6363636363636362,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.8859342104040586,
+          "stop_fraction": 0.05051002147458841
+        },
+        "transition_TV": 0.04972727272727279
+      },
+      "matched": {
+        "requests": 16,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          -14.355969669117648,
+          2.475277777777776
+        ],
+        "reference": {
+          "cruise_s": 38.9375,
+          "braking_events": 3.625,
+          "restarts": 0.1875,
+          "lag4_mps": 1.8905631884045397,
+          "stop_fraction": 0.07431102362204725
+        },
+        "synthetic": {
+          "cruise_s": 33.153125,
+          "braking_events": 4.302083333333333,
+          "restarts": 0.375,
+          "lag4_mps": 2.187704739121938,
+          "stop_fraction": 0.029773622047244094
+        },
+        "transition_TV": 0.07224166666666673
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -38.54545454545455,
+          -23.818181818181817
+        ],
+        "reference": {
+          "cruise_s": 41.0,
+          "braking_events": 3.227272727272727,
+          "restarts": 0.3181818181818182,
+          "lag4_mps": 1.7356061305666801,
+          "stop_fraction": 0.09269863994273443
+        },
+        "synthetic": {
+          "cruise_s": 10.272727272727273,
+          "braking_events": 3.1363636363636362,
+          "restarts": 1.5454545454545454,
+          "lag4_mps": 4.382071009656813,
+          "stop_fraction": 0.09269863994273443
+        },
+        "transition_TV": 0.47236363636363643
+      },
+      "matched_candidates": 42,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -1.9320235359669624,
+          -0.125102175317784,
+          8.0
+        ]
+      }
+    },
+    "private_car": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -2.2734375,
+          12.489346590909086
+        ],
+        "reference": {
+          "cruise_s": 35.04545454545455,
+          "braking_events": 3.6363636363636362,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 40.34090909090909,
+          "braking_events": 3.4545454545454546,
+          "restarts": 0.4318181818181818,
+          "lag4_mps": 1.7161068342155852,
+          "stop_fraction": 0.050688976377952756
+        },
+        "transition_TV": 0.04540909090909089
+      },
+      "matched": {
+        "requests": 15,
+        "episodes": 10,
+        "cruise_difference_ci": [
+          -3.583326465201466,
+          23.158038194444433
+        ],
+        "reference": {
+          "cruise_s": 32.266666666666666,
+          "braking_events": 3.933333333333333,
+          "restarts": 0.13333333333333333,
+          "lag4_mps": 2.1190706480477037,
+          "stop_fraction": 0.01574803149606299
+        },
+        "synthetic": {
+          "cruise_s": 42.128888888888895,
+          "braking_events": 3.103333333333333,
+          "restarts": 0.29555555555555557,
+          "lag4_mps": 1.6948715103350238,
+          "stop_fraction": 0.024461942257217848
+        },
+        "transition_TV": 0.06939555555555552
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -31.182954545454546,
+          -22.227272727272727
+        ],
+        "reference": {
+          "cruise_s": 35.04545454545455,
+          "braking_events": 3.6363636363636362,
+          "restarts": 0.09090909090909091,
+          "lag4_mps": 1.9978752919208589,
+          "stop_fraction": 0.03758052970651396
+        },
+        "synthetic": {
+          "cruise_s": 8.454545454545455,
+          "braking_events": 4.863636363636363,
+          "restarts": 0.4090909090909091,
+          "lag4_mps": 3.962203602086892,
+          "stop_fraction": 0.03758052970651396
+        },
+        "transition_TV": 0.48363636363636375
+      },
+      "matched_candidates": 53,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.932142361052193,
+          -0.2114144368256331,
+          8.0
+        ]
+      }
+    },
+    "bycicle": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -31.404829545454547,
+          3.199431818181815
+        ],
+        "reference": {
+          "cruise_s": 86.5909090909091,
+          "braking_events": 0.5,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 71.43181818181819,
+          "braking_events": 0.7215909090909091,
+          "restarts": 0.17045454545454544,
+          "lag4_mps": 0.3377643829219331,
+          "stop_fraction": 0.036864710093056544
+        },
+        "transition_TV": 0.017727272727272682
+      },
+      "matched": {
+        "requests": 20,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -36.0292748917749,
+          6.599020989974909
+        ],
+        "reference": {
+          "cruise_s": 86.2,
+          "braking_events": 0.55,
+          "restarts": 0.05,
+          "lag4_mps": 0.2724539132739106,
+          "stop_fraction": 0.03858267716535433
+        },
+        "synthetic": {
+          "cruise_s": 69.3315476190476,
+          "braking_events": 0.7748214285714285,
+          "restarts": 0.10208333333333333,
+          "lag4_mps": 0.343031135617943,
+          "stop_fraction": 0.015042650918635169
+        },
+        "transition_TV": 0.026208571428571376
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -43.637499999999996,
+          -25.99886363636364
+        ],
+        "reference": {
+          "cruise_s": 86.5909090909091,
+          "braking_events": 0.5,
+          "restarts": 0.045454545454545456,
+          "lag4_mps": 0.2684851576995223,
+          "stop_fraction": 0.047244094488188976
+        },
+        "synthetic": {
+          "cruise_s": 51.27272727272727,
+          "braking_events": 0.36363636363636365,
+          "restarts": 0.5909090909090909,
+          "lag4_mps": 0.6059504565340181,
+          "stop_fraction": 0.047244094488188976
+        },
+        "transition_TV": 0.2196363636363635
+      },
+      "matched_candidates": 96,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -0.537567079505246,
+          -0.14065571571877336,
+          8.0
+        ]
+      }
+    },
+    "taxi_or_uber": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -23.1609375,
+          4.8125
+        ],
+        "reference": {
+          "cruise_s": 45.27272727272727,
+          "braking_events": 3.090909090909091,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 38.28977272727273,
+          "braking_events": 3.2613636363636362,
+          "restarts": 0.6022727272727273,
+          "lag4_mps": 1.7628343345903763,
+          "stop_fraction": 0.0703740157480315
+        },
+        "transition_TV": 0.04322727272727278
+      },
+      "matched": {
+        "requests": 18,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -25.574877450980395,
+          3.6527960526315786
+        ],
+        "reference": {
+          "cruise_s": 48.333333333333336,
+          "braking_events": 2.9444444444444446,
+          "restarts": 0.2777777777777778,
+          "lag4_mps": 1.5848248279282795,
+          "stop_fraction": 0.0647419072615923
+        },
+        "synthetic": {
+          "cruise_s": 40.18981481481481,
+          "braking_events": 3.2083333333333335,
+          "restarts": 0.5138888888888888,
+          "lag4_mps": 1.5679544854106284,
+          "stop_fraction": 0.07020997375328082
+        },
+        "transition_TV": 0.0334074074074074
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -48.184090909090905,
+          -24.59090909090909
+        ],
+        "reference": {
+          "cruise_s": 45.27272727272727,
+          "braking_events": 3.090909090909091,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.5926353473282817,
+          "stop_fraction": 0.10415175375805297
+        },
+        "synthetic": {
+          "cruise_s": 9.772727272727273,
+          "braking_events": 3.3636363636363638,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 3.313568982394117,
+          "stop_fraction": 0.10415175375805297
+        },
+        "transition_TV": 0.4323636363636364
+      },
+      "matched_candidates": 57,
+      "curve_vs_straight": {
+        "paired_requests": 22,
+        "means_ref_gen_candidate_count": [
+          -2.363469795890604,
+          -0.30858678216171237,
+          8.0
+        ]
+      }
+    },
+    "truck": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -22.234375,
+          -1.3514204545454591
+        ],
+        "reference": {
+          "cruise_s": 39.95454545454545,
+          "braking_events": 3.090909090909091,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 29.244318181818183,
+          "braking_events": 3.3238636363636362,
+          "restarts": 0.3409090909090909,
+          "lag4_mps": 1.7453672789812429,
+          "stop_fraction": 0.06683965640658554
+        },
+        "transition_TV": 0.04613636363636372
+      },
+      "matched": {
+        "requests": 13,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -31.432400932400935,
+          -1.8012820512820515
+        ],
+        "reference": {
+          "cruise_s": 47.61538461538461,
+          "braking_events": 2.923076923076923,
+          "restarts": 0.38461538461538464,
+          "lag4_mps": 1.462894438364303,
+          "stop_fraction": 0.03634161114476075
+        },
+        "synthetic": {
+          "cruise_s": 32.31410256410256,
+          "braking_events": 3.2025641025641027,
+          "restarts": 0.3423076923076923,
+          "lag4_mps": 1.7308151318632574,
+          "stop_fraction": 0.046779729456894806
+        },
+        "transition_TV": 0.07688205128205124
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -43.68295454545454,
+          -24.40909090909091
+        ],
+        "reference": {
+          "cruise_s": 39.95454545454545,
+          "braking_events": 3.090909090909091,
+          "restarts": 0.2727272727272727,
+          "lag4_mps": 1.6833566942669869,
+          "stop_fraction": 0.07695060844667144
+        },
+        "synthetic": {
+          "cruise_s": 6.454545454545454,
+          "braking_events": 4.863636363636363,
+          "restarts": 0.7272727272727273,
+          "lag4_mps": 4.255143149131034,
+          "stop_fraction": 0.07695060844667144
+        },
+        "transition_TV": 0.5447272727272727
+      },
+      "matched_candidates": 45,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.3937504097940776,
+          -0.16590061566090006,
+          8.0
+        ]
+      }
+    },
+    "delivery": {
+      "all": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -13.824857954545454,
+          3.8809659090909077
+        ],
+        "reference": {
+          "cruise_s": 38.0,
+          "braking_events": 3.1363636363636362,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 32.90909090909091,
+          "braking_events": 3.8579545454545454,
+          "restarts": 0.5284090909090909,
+          "lag4_mps": 1.8988733305012049,
+          "stop_fraction": 0.07010558339298496
+        },
+        "transition_TV": 0.05513636363636357
+      },
+      "matched": {
+        "requests": 11,
+        "episodes": 9,
+        "cruise_difference_ci": [
+          -23.883333333333333,
+          3.392291666666664
+        ],
+        "reference": {
+          "cruise_s": 38.0,
+          "braking_events": 3.4545454545454546,
+          "restarts": 0.36363636363636365,
+          "lag4_mps": 1.9959888730392579,
+          "stop_fraction": 0.0901932712956335
+        },
+        "synthetic": {
+          "cruise_s": 30.265151515151516,
+          "braking_events": 4.0606060606060606,
+          "restarts": 0.38636363636363635,
+          "lag4_mps": 2.0735803481685298,
+          "stop_fraction": 0.03602958721068957
+        },
+        "transition_TV": 0.06818181818181818
+      },
+      "shuffled": {
+        "requests": 22,
+        "episodes": 11,
+        "cruise_difference_ci": [
+          -35.86477272727273,
+          -17.90909090909091
+        ],
+        "reference": {
+          "cruise_s": 38.0,
+          "braking_events": 3.1363636363636362,
+          "restarts": 0.5,
+          "lag4_mps": 1.7229536683422884,
+          "stop_fraction": 0.12383679312813171
+        },
+        "synthetic": {
+          "cruise_s": 11.090909090909092,
+          "braking_events": 4.090909090909091,
+          "restarts": 1.2727272727272727,
+          "lag4_mps": 4.118100435041477,
+          "stop_fraction": 0.12383679312813171
+        },
+        "transition_TV": 0.48763636363636365
+      },
+      "matched_candidates": 23,
+      "curve_vs_straight": {
+        "paired_requests": 21,
+        "means_ref_gen_candidate_count": [
+          -2.627976982608322,
+          -0.33986738081322165,
+          8.0
+        ]
+      }
+    }
+  }
+}

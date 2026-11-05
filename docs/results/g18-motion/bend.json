@@ -1,0 +1,267 @@
+{
+  "g14": {
+    "A": {
+      "bus": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.403931823521233,
+        "generated": -0.002753711633038595,
+        "supported_candidates": 192,
+        "diff_ci": [
+          1.7695850931233479,
+          2.9843202103077133
+        ]
+      },
+      "motorcycle": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -1.9690415060308333,
+        "generated": -0.3620794711670394,
+        "supported_candidates": 192,
+        "diff_ci": [
+          0.991288324444468,
+          2.26230866800272
+        ]
+      },
+      "private_car": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.6488770490642515,
+        "generated": -0.35130678859077724,
+        "supported_candidates": 187,
+        "diff_ci": [
+          1.9000126523657446,
+          2.697787523222447
+        ]
+      },
+      "bycicle": {
+        "requests": 23,
+        "episodes": 8,
+        "reference": -0.46222882910597,
+        "generated": -0.07459795425381378,
+        "supported_candidates": 184,
+        "diff_ci": [
+          0.18159842084421898,
+          0.586595728035247
+        ]
+      },
+      "taxi_or_uber": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.533571847475796,
+        "generated": -0.24672236677288517,
+        "supported_candidates": 192,
+        "diff_ci": [
+          1.7852646555872071,
+          2.815459039403074
+        ]
+      }
+    },
+    "B": {
+      "bus": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.403931823521233,
+        "generated": -0.3784065162363726,
+        "supported_candidates": 188,
+        "diff_ci": [
+          1.4500049386965668,
+          2.6783335624540996
+        ]
+      },
+      "motorcycle": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -1.9690415060308333,
+        "generated": -0.305979442966414,
+        "supported_candidates": 192,
+        "diff_ci": [
+          0.967697395781456,
+          2.3503533887432573
+        ]
+      },
+      "private_car": {
+        "requests": 23,
+        "episodes": 8,
+        "reference": -2.370087681193525,
+        "generated": -0.2481826458251,
+        "supported_candidates": 184,
+        "diff_ci": [
+          1.7243561236769818,
+          2.553541263958326
+        ]
+      },
+      "bycicle": {
+        "requests": 23,
+        "episodes": 8,
+        "reference": -0.46222882910597,
+        "generated": -0.06361749820399326,
+        "supported_candidates": 184,
+        "diff_ci": [
+          0.1758565428307659,
+          0.612235951773
+        ]
+      },
+      "taxi_or_uber": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.533571847475796,
+        "generated": -0.2316948355624265,
+        "supported_candidates": 192,
+        "diff_ci": [
+          1.8470398920503026,
+          2.7285854604729662
+        ]
+      }
+    },
+    "C": {
+      "bus": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.403931823521233,
+        "generated": -0.3900976482231746,
+        "supported_candidates": 184,
+        "diff_ci": [
+          1.3929614806385837,
+          2.6852242607599535
+        ]
+      },
+      "motorcycle": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -1.9690415060308333,
+        "generated": -0.2573045960307339,
+        "supported_candidates": 192,
+        "diff_ci": [
+          1.0828395410586,
+          2.370620057616967
+        ]
+      },
+      "private_car": {
+        "requests": 23,
+        "episodes": 8,
+        "reference": -2.370087681193525,
+        "generated": -0.23989567281823843,
+        "supported_candidates": 183,
+        "diff_ci": [
+          1.7432282910445678,
+          2.5625250343605086
+        ]
+      },
+      "bycicle": {
+        "requests": 23,
+        "episodes": 8,
+        "reference": -0.46222882910597,
+        "generated": -0.03868830052013838,
+        "supported_candidates": 184,
+        "diff_ci": [
+          0.21870487757369653,
+          0.6171213710915532
+        ]
+      },
+      "taxi_or_uber": {
+        "requests": 24,
+        "episodes": 8,
+        "reference": -2.533571847475796,
+        "generated": -0.16530015072645832,
+        "supported_candidates": 192,
+        "diff_ci": [
+          1.8568951528159423,
+          2.8931629303418176
+        ]
+      }
+    }
+  },
+  "g15": {
+    "C": {
+      "pedestrian": {
+        "requests": 12,
+        "episodes": 9,
+        "reference": -0.0018353239308028513,
+        "generated": -0.0004719667231972216,
+        "supported_candidates": 96,
+        "diff_ci": [
+          -0.011726024833871602,
+          0.014590863129144437
+        ]
+      },
+      "bus": {
+        "requests": 22,
+        "episodes": 11,
+        "reference": -3.4232855512657494,
+        "generated": -0.5650993563833718,
+        "supported_candidates": 174,
+        "diff_ci": [
+          2.2019078670202794,
+          3.575512536474719
+        ]
+      },
+      "motorcycle": {
+        "requests": 22,
+        "episodes": 11,
+        "reference": -1.9320195277543306,
+        "generated": -0.12522833290201396,
+        "supported_candidates": 176,
+        "diff_ci": [
+          1.0057446951864273,
+          2.8190232534245045
+        ]
+      },
+      "private_car": {
+        "requests": 22,
+        "episodes": 11,
+        "reference": -2.932055278118837,
+        "generated": -0.21167078297198605,
+        "supported_candidates": 176,
+        "diff_ci": [
+          2.221625936189011,
+          3.3895496733946686
+        ]
+      },
+      "bycicle": {
+        "requests": 22,
+        "episodes": 11,
+        "reference": -0.537565693812538,
+        "generated": -0.14065011821133575,
+        "supported_candidates": 176,
+        "diff_ci": [
+          0.21346648546577238,
+          0.5822511161525387
+        ]
+      },
+      "taxi_or_uber": {
+        "requests": 22,
+        "episodes": 11,
+        "reference": -2.36346809020899,
+        "generated": -0.30799460169706966,
+        "supported_candidates": 176,
+        "diff_ci": [
+          1.1926461755249709,
+          2.901981094669694
+        ]
+      },
+      "truck": {
+        "requests": 21,
+        "episodes": 11,
+        "reference": -2.3937524963728456,
+        "generated": -0.16541674582645294,
+        "supported_candidates": 168,
+        "diff_ci": [
+          1.53142448889569,
+          2.9965711437291667
+        ]
+      },
+      "delivery": {
+        "requests": 21,
+        "episodes": 11,
+        "reference": -2.627990103930857,
+        "generated": -0.33995653970013917,
+        "supported_candidates": 168,
+        "diff_ci": [
+          1.3969648435764397,
+          3.238792403163187
+        ]
+      }
+    }
+  }
+}
