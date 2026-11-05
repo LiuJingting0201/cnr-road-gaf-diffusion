@@ -1,0 +1,335 @@
+{
+ "episodes": [
+  {
+   "seed": 260301,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "219d7982812cdb7d8b18f062ea07885a8eebfe7e9817d1bec818ba76c8956994",
+   "fcd": "4533776bcdc88048e62db7c050a4a8062329e883c3a65e362cb7eb1ea5eea9e8",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260301/demand.xml",
+    "--seed",
+    "260301",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260301/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 51,
+   "rejections": {
+    "reconstruction": 49
+   },
+   "attempts": {
+    "1": 27,
+    "2": 24,
+    "3": 169,
+    "4": 79,
+    "5": 23
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260302,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "b97ecc09f428372955a4f84be04dc466258930eec973e0d2c2d9f2a2055444ec",
+   "fcd": "d5d6faf8de30fa1d581dc42b8884d09534fcf7ea9abc1e329cc6ed9f947c3a09",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260302/demand.xml",
+    "--seed",
+    "260302",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260302/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 44,
+   "rejections": {
+    "reconstruction": 56
+   },
+   "attempts": {
+    "1": 21,
+    "2": 28,
+    "3": 180,
+    "4": 69,
+    "5": 29
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260303,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "f3008f2eec19cd3e1b23b4cd09bc259a58af30e30af0c4ba17ee9e559cd026cb",
+   "fcd": "565607e157f72d118b0d261052842fd68af1c9c87c29a914f02577a391efd3db",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260303/demand.xml",
+    "--seed",
+    "260303",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260303/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 46,
+   "rejections": {
+    "reconstruction": 54
+   },
+   "attempts": {
+    "1": 28,
+    "2": 22,
+    "3": 175,
+    "4": 64,
+    "5": 29
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260304,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "45975caefbfcbd728cbb9c01f4ca52804cdfd18280f637382a6dcb3f187ba42e",
+   "fcd": "dc878e00ce6b24f69592cc851e97acb980c9f75688444c7c3cb0b8110aeb7569",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260304/demand.xml",
+    "--seed",
+    "260304",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260304/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 45,
+   "rejections": {
+    "reconstruction": 55
+   },
+   "attempts": {
+    "1": 23,
+    "2": 28,
+    "3": 169,
+    "4": 85,
+    "5": 23
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260305,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "00174149148efd0a47026ccfd16ba0be066ef6a74394d2bcccccd61ddb92521c",
+   "fcd": "be30f5b089076bad48fbacbf252ca7f758ff41a6d6a9a1f13a7bce36afb66e5c",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260305/demand.xml",
+    "--seed",
+    "260305",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260305/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 45,
+   "rejections": {
+    "reconstruction": 55
+   },
+   "attempts": {
+    "1": 22,
+    "2": 22,
+    "3": 172,
+    "4": 84,
+    "5": 26
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260306,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "ac68828ee2eb5a4c4fe312bdc0d8bf3e2c0d601f71776ae5245c10f28e89d8fe",
+   "fcd": "167c226dca87fd3d9d6ce27eedd7f8ccc78d991b8f967836707d272f77e7eeb9",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260306/demand.xml",
+    "--seed",
+    "260306",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260306/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 50,
+   "rejections": {
+    "reconstruction": 50
+   },
+   "attempts": {
+    "1": 27,
+    "2": 25,
+    "3": 180,
+    "4": 77,
+    "5": 28
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260307,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "3dbd0eb8cc523375f024c56e500218c517c7e10de6d201b9838c0f8e9f7748fa",
+   "fcd": "84d84e8fcf846d8ecd942b315b2073d4b4067762fc6d77b198108c46089ade3b",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260307/demand.xml",
+    "--seed",
+    "260307",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260307/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 53,
+   "rejections": {
+    "reconstruction": 47
+   },
+   "attempts": {
+    "1": 25,
+    "2": 24,
+    "3": 168,
+    "4": 79,
+    "5": 26
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260308,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "eab73ba5ef66062bdec7793f242056a5cc9c60d34f430fbb9e018c6e1f38cf1e",
+   "fcd": "7ad6c3f5a47b887602fb9433c3a0f87ef5bbeae34a47790b955d051543fca2a6",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g12-data/260308/demand.xml",
+    "--seed",
+    "260308",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g12-data/260308/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 49,
+   "rejections": {
+    "reconstruction": 51
+   },
+   "attempts": {
+    "1": 26,
+    "2": 24,
+    "3": 182,
+    "4": 58,
+    "5": 26
+   },
+   "inserted_test": 100
+  }
+ ],
+ "sha256": {
+  "requests.npz": "33c7014adf46e59489e8f1dba69599344ba1cbaf932f16bf346b02ffeb85dd28",
+  "references.npz": "275b92bcc11550de89b87e807502219240b38e0809869221c91f58c10a01baf5",
+  "rank.npz": "ee1f47675c6794aeaa6930394067c4b14a504910a5a0f62a40b2eae32110cba2",
+  "scorer42.pt": "71c790f9a3b17de574e09cc2880112060377af0ac4e3072a1c0986edae9d2f44",
+  "reg-scorer42.pt": "835be6230c371496db46af8e63a375ec6c77320f44fd769132761afb849f1e81",
+  "scorer43.pt": "425c57b0e2ab8449904facd7b05bbd5b7e455d8edfab4a601da51a143ce7b6d8",
+  "reg-scorer43.pt": "0e0ea5e58755a73f7434c1f0e1e46782b3f419e5165328d17a3b43959c9ca876",
+  "scorer44.pt": "1e8fc322dae4a3a49c73ade2dbd3e1eeed158fc3488ccf6755d4f46a4c3c769d",
+  "reg-scorer44.pt": "d260604dba375f61178f12f11bf3279ee6e80ad8421c38aeb0c2babc7e230162"
+ }
+}

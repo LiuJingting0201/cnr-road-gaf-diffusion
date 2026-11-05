@@ -1,6 +1,6 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft v5. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
+English thesis research draft v6. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
 
 ## Open in Overleaf
 
@@ -26,3 +26,5 @@ G9 timing and motion-quality results are archived in docs/results/g9-timing.
 Independent SUMO replication: docs/results/g10-independent and docs/G10_PROTOCOL.md. The original test was not reopened.
 
 G11 state-trigger experiment: docs/G11_PROTOCOL.md and docs/results/g11-state. Fixed-time analyses and the first independent SUMO replication are now in the appendix.
+
+The scoring-network audit in docs/results/g12-scorer separates training-internal model selection, confidence calibration and ranking utility.
