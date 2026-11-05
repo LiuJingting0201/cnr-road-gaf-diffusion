@@ -1,0 +1,35 @@
+{
+  "42": {
+    "samples_sha256": "8555145283a0bd4fadbef908c6b999099288437563b6f0612b1e150c59a87954",
+    "weights_sha256": "4baeb3033554a0cb755759208187b1b74cb777288b06a6b7f014af52086d18cc",
+    "high_n": 120,
+    "high_mean_paired_separation_m": 17.350515365600586,
+    "high_share_mean_separation_below_one_cm": 0.4777777777777778,
+    "encoding_failures": [
+      0,
+      0
+    ]
+  },
+  "43": {
+    "samples_sha256": "d52aa3777cf48149130d9c59c643e5d89480f3a1586a1b80693d64748e28efa5",
+    "weights_sha256": "929945c589a58b4ee4ceb16d6bbff200e78ae9437293d5fcdf9345ccb8ee0302",
+    "high_n": 120,
+    "high_mean_paired_separation_m": 21.198509216308594,
+    "high_share_mean_separation_below_one_cm": 0.44722222222222224,
+    "encoding_failures": [
+      0,
+      0
+    ]
+  },
+  "44": {
+    "samples_sha256": "0221ea0b3df5742b762fe6c89cbb3bfb65113ea0b607d0743e2bbe95dd137df6",
+    "weights_sha256": "f72b29c674a127a10c83ae38c528d936fc9e4ab86e4807cf1a6b4a6d9fbc7bda",
+    "high_n": 120,
+    "high_mean_paired_separation_m": 16.461122512817383,
+    "high_share_mean_separation_below_one_cm": 0.4583333333333333,
+    "encoding_failures": [
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "episodes": [
+    {
+      "seed": 260101,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "609ee4ef17e161f4117d1e87c0604836053f88d763d01a27d4b7369c5e46c52b",
+      "fcd": "ef28b05dcf5b3d98659721b226c572ddb840a6a5cc42de8f790d952ec01fc402",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260101/demand.xml",
+        "--seed",
+        "260101",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260101/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 47,
+      "rejections": {
+        "reconstruction": 53
+      },
+      "attempts": {
+        "1": 29,
+        "2": 23,
+        "3": 195,
+        "4": 59,
+        "5": 26
+      },
+      "inserted_test": 100,
+      "warnings": [
+        "Warning: Vehicle '260101_1_015' performs emergency braking on lane ':143389_1_0' with decel=7.00, wished=4.00, severity=1.00, time=434.75."
+      ],
+      "warning_count": 1
+    },
+    {
+      "seed": 260102,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "c5a30ac8608dd1610d4dcc2c7637c40b06a78b02e286b48e37e145259bf5f06d",
+      "fcd": "c9d70544906ace6c92f8ab0d028be07ae81340b6e4855d4074a8eb375299f547",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260102/demand.xml",
+        "--seed",
+        "260102",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260102/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 48,
+      "rejections": {
+        "reconstruction": 52
+      },
+      "attempts": {
+        "1": 26,
+        "2": 23,
+        "3": 186,
+        "4": 80,
+        "5": 28
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260103,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "086d0a23090d86da0edb9d63c5ab5a4561d0db756188a3e6ff1dc8166bae44d9",
+      "fcd": "24c4b740038b8cca7d23a9d7d264899d1d1380abe74dc22a2244f03ac021ec23",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260103/demand.xml",
+        "--seed",
+        "260103",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260103/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 48,
+      "rejections": {
+        "reconstruction": 52
+      },
+      "attempts": {
+        "1": 23,
+        "2": 25,
+        "3": 181,
+        "4": 74,
+        "5": 24
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260104,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "209ccb244dc09048372ac4ed1137d4d30ba6575399782cb20cfe3180c33d4227",
+      "fcd": "33d345e076698015f32c1b35f4fcfdb338bf86689670ba86e6ff07ff515cb167",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260104/demand.xml",
+        "--seed",
+        "260104",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260104/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 43,
+      "rejections": {
+        "reconstruction": 57
+      },
+      "attempts": {
+        "1": 25,
+        "2": 21,
+        "3": 168,
+        "4": 63,
+        "5": 24
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260105,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "0e15ff0abdac8f0fa238119481e5bc10c8f422356d5b7119ff68c888191128fa",
+      "fcd": "003aa51a157ddfdc022130a68cecdcecb32a0eda2e3569d5ea10d7c781085bde",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260105/demand.xml",
+        "--seed",
+        "260105",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260105/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 55,
+      "rejections": {
+        "reconstruction": 45
+      },
+      "attempts": {
+        "1": 24,
+        "2": 26,
+        "3": 183,
+        "4": 105,
+        "5": 31
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260106,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "7a9a755ed708ee509e9e327c71a63a34f01d026536eece37407c1a8bcd035393",
+      "fcd": "f20fb73e5d479c93063cbd71bc440690779ed41c80f3788c20a685ed6c1d959d",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260106/demand.xml",
+        "--seed",
+        "260106",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260106/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 57,
+      "rejections": {
+        "reconstruction": 43
+      },
+      "attempts": {
+        "1": 20,
+        "2": 26,
+        "3": 176,
+        "4": 69,
+        "5": 27
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260107,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "46d3a0705e10f48895e021726f55e19e51eac4ec653a36b483fbe35f59a3be0f",
+      "fcd": "b10311b461fd5e075250133f1df8e23443d5580300426a0ae2a4cf5e3a689bc6",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260107/demand.xml",
+        "--seed",
+        "260107",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260107/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 54,
+      "rejections": {
+        "reconstruction": 46
+      },
+      "attempts": {
+        "1": 26,
+        "2": 30,
+        "3": 180,
+        "4": 96,
+        "5": 23
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    },
+    {
+      "seed": 260108,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "9242626b9ef19c5acce3a022ac573287642b4d4b42bbdc573dc054e5d475e2ae",
+      "fcd": "37f2ff2c711a398b0ed52affcaed8d4505bae30440ee6f35daadfed1e920879f",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g10-data/260108/demand.xml",
+        "--seed",
+        "260108",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g10-data/260108/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 52,
+      "rejections": {
+        "reconstruction": 48
+      },
+      "attempts": {
+        "1": 29,
+        "2": 22,
+        "3": 170,
+        "4": 56,
+        "5": 28
+      },
+      "inserted_test": 100,
+      "warnings": [],
+      "warning_count": 0
+    }
+  ],
+  "coverage": {
+    "260101": {
+      "selected": {
+        "1": 5,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260102": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260103": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260104": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260105": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260106": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260107": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260108": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    }
+  },
+  "requests_sha256": "f33034c46709c201b063cde28995ba8351d18d34624ace279087687bd155335e",
+  "references_sha256": "41598aef9684de09b1dda2934d2825e88ecdaad4811dc017713da01bf1e8d330"
+}
