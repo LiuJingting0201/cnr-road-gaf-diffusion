@@ -1,6 +1,6 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft v8. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
+English thesis research draft v9. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
 
 ## Open in Overleaf
 
@@ -32,3 +32,5 @@ The scoring-network audit in docs/results/g12-scorer separates training-internal
 G13 replicates shared-road class control on fresh episodes. See docs/results/g13-shared-road. First paired example, all-route effect plot and simplified framework figure are included in the source package.
 
 G14--G17 add the separate balanced SUMO corpus and matched data-volume experiments. See docs/G16_PROTOCOL.md, docs/G17_PROTOCOL.md and the respective result directories.
+
+Draft 9 adds the G18 motion-pattern audit and G19 road-conditioned diffusion / eight-class original-encoding feedback experiment. See docs/G19_PROTOCOL.md and docs/results/g19-motion-diffusion.

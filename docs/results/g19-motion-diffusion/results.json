@@ -1,0 +1,349 @@
+{
+  "g14": {
+    "metrics": {
+      "bend_gap_mps": {
+        "road_vs_plain": {
+          "first": 1.7666170401169932,
+          "second": 0.41913981119835464,
+          "delta": -1.3474772289186385,
+          "ci": [
+            -1.630136783653347,
+            -0.9890122704986287
+          ],
+          "supported_draws": 2000,
+          "requests": {
+            "bus": 24,
+            "motorcycle": 24,
+            "private_car": 23,
+            "bycicle": 23,
+            "taxi_or_uber": 24
+          }
+        },
+        "gaf_vs_uniform": {
+          "plain": {
+            "first": 1.7242087972709417,
+            "second": 1.8923527695161577,
+            "delta": 0.16814397224521604,
+            "ci": [
+              -0.04270369561899397,
+              0.39647305154976437
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "bus": 24,
+              "motorcycle": 24,
+              "private_car": 23,
+              "bycicle": 23,
+              "taxi_or_uber": 24
+            }
+          },
+          "road": {
+            "first": 0.48256619176108806,
+            "second": 0.5029022902693426,
+            "delta": 0.020336098508254574,
+            "ci": [
+              -0.16989191134722145,
+              0.22163985695220906
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "bus": 24,
+              "motorcycle": 24,
+              "private_car": 24,
+              "bycicle": 23,
+              "taxi_or_uber": 24
+            }
+          }
+        }
+      },
+      "longest_steady_s": {
+        "road_vs_plain": {
+          "first": 18.226041666666667,
+          "second": 37.55,
+          "delta": 19.32395833333333,
+          "ci": [
+            18.022864583333327,
+            20.33020833333333
+          ],
+          "supported_draws": 2000,
+          "requests": {
+            "bus": 24,
+            "motorcycle": 24,
+            "private_car": 24,
+            "bycicle": 24,
+            "taxi_or_uber": 24
+          }
+        },
+        "gaf_vs_uniform": {
+          "plain": {
+            "first": 16.75,
+            "second": 17.637499999999996,
+            "delta": 0.8874999999999957,
+            "ci": [
+              -0.9839583333333324,
+              2.787604166666671
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "bus": 24,
+              "motorcycle": 24,
+              "private_car": 24,
+              "bycicle": 24,
+              "taxi_or_uber": 24
+            }
+          },
+          "road": {
+            "first": 37.47083333333333,
+            "second": 38.02916666666667,
+            "delta": 0.5583333333333371,
+            "ci": [
+              -1.1876041666666668,
+              2.5501041666666704
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "bus": 24,
+              "motorcycle": 24,
+              "private_car": 24,
+              "bycicle": 24,
+              "taxi_or_uber": 24
+            }
+          }
+        }
+      }
+    },
+    "pools": {
+      "plain": {
+        "failed": 0,
+        "caps": 0,
+        "changed": 171,
+        "candidates": 960,
+        "macro_travel_w1": 160.6558341822345
+      },
+      "road": {
+        "failed": 0,
+        "caps": 0,
+        "changed": 180,
+        "candidates": 960,
+        "macro_travel_w1": 173.96898489447395
+      }
+    },
+    "class_bend_ref_plain_road": {
+      "bus": [
+        -2.403931823521233,
+        -0.3742263347500034,
+        -2.7551010517359997
+      ],
+      "motorcycle": [
+        -1.9690415060308333,
+        -0.1532015612645443,
+        -2.679862545528435
+      ],
+      "private_car": [
+        -2.370087681193525,
+        -0.09267005382679086,
+        -2.7533667966588387
+      ],
+      "bycicle": [
+        -0.46222882910597,
+        -0.017223855083231116,
+        -0.5812697941900123
+      ],
+      "taxi_or_uber": [
+        -2.533571847475796,
+        -0.2684546818178217,
+        -3.0649605552058454
+      ]
+    }
+  },
+  "g15": {
+    "metrics": {
+      "bend_gap_mps": {
+        "road_vs_plain": {
+          "first": 1.7806997606441832,
+          "second": 0.4482373677913478,
+          "delta": -1.3324623928528354,
+          "ci": [
+            -1.502334993253563,
+            -1.021677461456321
+          ],
+          "supported_draws": 2000,
+          "requests": {
+            "pedestrian": 12,
+            "bus": 22,
+            "motorcycle": 22,
+            "private_car": 22,
+            "bycicle": 22,
+            "taxi_or_uber": 22,
+            "truck": 21,
+            "delivery": 21
+          }
+        },
+        "gaf_vs_uniform": {
+          "plain": {
+            "first": 1.820153165996219,
+            "second": 1.7510916886961854,
+            "delta": -0.06906147730003354,
+            "ci": [
+              -0.2275772806995494,
+              0.09945028385393406
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "pedestrian": 12,
+              "bus": 22,
+              "motorcycle": 22,
+              "private_car": 22,
+              "bycicle": 22,
+              "taxi_or_uber": 22,
+              "truck": 21,
+              "delivery": 21
+            }
+          },
+          "road": {
+            "first": 0.5230364819519276,
+            "second": 0.4943560261602227,
+            "delta": -0.028680455791704973,
+            "ci": [
+              -0.1667761192060673,
+              0.13461675244470292
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "pedestrian": 12,
+              "bus": 22,
+              "motorcycle": 22,
+              "private_car": 22,
+              "bycicle": 22,
+              "taxi_or_uber": 22,
+              "truck": 21,
+              "delivery": 21
+            }
+          }
+        }
+      },
+      "longest_steady_s": {
+        "road_vs_plain": {
+          "first": 7.565577651515152,
+          "second": 23.96607819264069,
+          "delta": 16.40050054112554,
+          "ci": [
+            12.972180228625538,
+            18.331598572069378
+          ],
+          "supported_draws": 2000,
+          "requests": {
+            "pedestrian": 21,
+            "bus": 22,
+            "motorcycle": 22,
+            "private_car": 22,
+            "bycicle": 22,
+            "taxi_or_uber": 22,
+            "truck": 22,
+            "delivery": 22
+          }
+        },
+        "gaf_vs_uniform": {
+          "plain": {
+            "first": 7.046672077922079,
+            "second": 7.589962121212121,
+            "delta": 0.5432900432900425,
+            "ci": [
+              -2.977343750000001,
+              3.567288961038959
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "pedestrian": 21,
+              "bus": 22,
+              "motorcycle": 22,
+              "private_car": 22,
+              "bycicle": 22,
+              "taxi_or_uber": 22,
+              "truck": 22,
+              "delivery": 22
+            }
+          },
+          "road": {
+            "first": 24.1780303030303,
+            "second": 24.44534632034632,
+            "delta": 0.26731601731601984,
+            "ci": [
+              -0.8641943993506404,
+              1.5610156250000002
+            ],
+            "supported_draws": 2000,
+            "requests": {
+              "pedestrian": 21,
+              "bus": 22,
+              "motorcycle": 22,
+              "private_car": 22,
+              "bycicle": 22,
+              "taxi_or_uber": 22,
+              "truck": 22,
+              "delivery": 22
+            }
+          }
+        }
+      }
+    },
+    "pools": {
+      "plain": {
+        "failed": 0,
+        "caps": 8,
+        "changed": 272,
+        "candidates": 1400,
+        "macro_travel_w1": 77.88195906513076
+      },
+      "road": {
+        "failed": 0,
+        "caps": 4,
+        "changed": 266,
+        "candidates": 1400,
+        "macro_travel_w1": 87.70687312980573
+      }
+    },
+    "class_bend_ref_plain_road": {
+      "pedestrian": [
+        -0.0018353239308028513,
+        0.0005445381780694812,
+        0.00306368054685853
+      ],
+      "bus": [
+        -3.4232855512657494,
+        -0.34892253525363326,
+        -3.616966694844298
+      ],
+      "motorcycle": [
+        -1.9320195277543306,
+        -0.07587941110376058,
+        -2.7799265012538585
+      ],
+      "private_car": [
+        -2.932055278118837,
+        -0.2839200282743434,
+        -2.9636330497682963
+      ],
+      "bycicle": [
+        -0.537565693812538,
+        -0.1125480203063168,
+        -0.786031990455836
+      ],
+      "taxi_or_uber": [
+        -2.36346809020899,
+        -0.4267213022239613,
+        -3.2075224406499343
+      ],
+      "truck": [
+        -2.3937524963728456,
+        -0.3273650087364679,
+        -3.179769237830647
+      ],
+      "delivery": [
+        -2.627990103930857,
+        -0.39156221252107287,
+        -3.257286764514401
+      ]
+    }
+  }
+}

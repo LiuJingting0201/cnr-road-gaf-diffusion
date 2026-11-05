@@ -1,0 +1,226 @@
+{
+  "plain-42-g14": {
+    "bus": [
+      96,
+      96
+    ],
+    "motorcycle": [
+      96,
+      96
+    ],
+    "private_car": [
+      96,
+      96
+    ],
+    "bycicle": [
+      96,
+      96
+    ],
+    "taxi_or_uber": [
+      96,
+      96
+    ]
+  },
+  "plain-42-g15": {
+    "pedestrian": [
+      84,
+      84
+    ],
+    "bus": [
+      88,
+      88
+    ],
+    "motorcycle": [
+      88,
+      88
+    ],
+    "private_car": [
+      88,
+      88
+    ],
+    "bycicle": [
+      88,
+      88
+    ],
+    "taxi_or_uber": [
+      88,
+      88
+    ],
+    "truck": [
+      88,
+      88
+    ],
+    "delivery": [
+      88,
+      88
+    ]
+  },
+  "plain-43-g14": {
+    "bus": [
+      96,
+      96
+    ],
+    "motorcycle": [
+      96,
+      96
+    ],
+    "private_car": [
+      96,
+      96
+    ],
+    "bycicle": [
+      96,
+      96
+    ],
+    "taxi_or_uber": [
+      96,
+      96
+    ]
+  },
+  "plain-43-g15": {
+    "pedestrian": [
+      84,
+      84
+    ],
+    "bus": [
+      88,
+      88
+    ],
+    "motorcycle": [
+      88,
+      88
+    ],
+    "private_car": [
+      88,
+      88
+    ],
+    "bycicle": [
+      88,
+      88
+    ],
+    "taxi_or_uber": [
+      88,
+      88
+    ],
+    "truck": [
+      88,
+      88
+    ],
+    "delivery": [
+      88,
+      88
+    ]
+  },
+  "road-42-g14": {
+    "bus": [
+      96,
+      96
+    ],
+    "motorcycle": [
+      96,
+      96
+    ],
+    "private_car": [
+      96,
+      96
+    ],
+    "bycicle": [
+      96,
+      96
+    ],
+    "taxi_or_uber": [
+      96,
+      96
+    ]
+  },
+  "road-42-g15": {
+    "pedestrian": [
+      84,
+      84
+    ],
+    "bus": [
+      88,
+      88
+    ],
+    "motorcycle": [
+      88,
+      88
+    ],
+    "private_car": [
+      88,
+      88
+    ],
+    "bycicle": [
+      88,
+      88
+    ],
+    "taxi_or_uber": [
+      88,
+      88
+    ],
+    "truck": [
+      88,
+      88
+    ],
+    "delivery": [
+      88,
+      88
+    ]
+  },
+  "road-43-g14": {
+    "bus": [
+      96,
+      96
+    ],
+    "motorcycle": [
+      96,
+      96
+    ],
+    "private_car": [
+      96,
+      96
+    ],
+    "bycicle": [
+      96,
+      96
+    ],
+    "taxi_or_uber": [
+      96,
+      96
+    ]
+  },
+  "road-43-g15": {
+    "pedestrian": [
+      84,
+      84
+    ],
+    "bus": [
+      88,
+      88
+    ],
+    "motorcycle": [
+      88,
+      88
+    ],
+    "private_car": [
+      88,
+      88
+    ],
+    "bycicle": [
+      88,
+      88
+    ],
+    "taxi_or_uber": [
+      88,
+      88
+    ],
+    "truck": [
+      88,
+      88
+    ],
+    "delivery": [
+      88,
+      88
+    ]
+  }
+}
