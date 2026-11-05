@@ -18,24 +18,28 @@ def turn(path,L):
     v=v[np.linalg.norm(v,axis=1)>1e-6]
     return float(abs(np.diff(np.unwrap(np.arctan2(v[:,1],v[:,0])))).sum())
 @torch.no_grad()
-def run(seed):
+def run(seed,inputs=None,stages=(40,76,91),outdir=OUT,noise_offset=0):
     torch.set_num_threads(2)
-    cfg,meta,d=assets();sc=Scores(meta);model=PathDenoiser().cuda().eval()
+    if inputs is None:
+        cfg,meta,d=assets()
+    else:
+        cfg,meta,d=inputs
+    sc=Scores(meta);model=PathDenoiser().cuda().eval()
     model.load_state_dict(torch.load(f'runs/long-path-e3/seed{seed}/latest.pt',weights_only=True)['ema'])
     times=torch.linspace(999,0,100).long().tolist()
     alpha=torch.cumprod(1-torch.linspace(1e-4,.02,1000,device='cuda'),0)
     turn_burden=[turn(r,l) for r,l in zip(d['route'],d['route_length'])]
-    for stage in [40,76,91]:
-        dest=OUT/f'{seed}-{stage}.npz'
+    for stage in stages:
+        dest=outdir/f'{seed}-{stage}.npz'
         if dest.exists():raise FileExistsError(dest)
         rows={k:[] for k in ['mid','terminal','maximum','identity']}
         cap={k:[] for k in rows};fails=[0,0]
         for i,label in enumerate(d['labels']):
             start=tensor(d['xy'][i,0]).expand(24,2);route=tensor(d['route'][i]).expand(24,-1,-1)
             length=tensor(d['route_length'][i]).expand(24);cond=((route[:,::8]-start[:,None])/128).transpose(1,2)
-            lab=torch.full((24,),int(label),device='cuda');rng=np.random.default_rng(92237+i)
+            lab=torch.full((24,),int(label),device='cuda');rng=np.random.default_rng(92237+noise_offset+i)
             grid=(np.arange(8)[None,:]+rng.random((3,1)))/8;slot=rng.integers(0,8,3)
-            gen=torch.Generator(device='cuda').manual_seed(93711+i)
+            gen=torch.Generator(device='cuda').manual_seed(93711+noise_offset+i)
             z=torch.randn(24,1,511,device='cuda',generator=gen);innov=torch.randn(z.shape,device='cuda',generator=gen)
             def predict(x,j):
                 t=times[j];eps=model(x,torch.full_like(lab,t),lab,(start-tensor(cfg['dataset']['mean']))/tensor(cfg['dataset']['std']),cond)
