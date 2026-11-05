@@ -1,6 +1,6 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft v12. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
+English thesis research draft v13. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
 
 ## Open in Overleaf
 
@@ -40,3 +40,5 @@ Draft 10 leads with the complete-trip generator. G21 compares short-window CNNs 
 Draft 11 separates position-Hilbert trajectory images for class recognition from whole-speed angular images for mode recognition. The first results chapter compares their terminal feedback on eight new simulator episodes.
 
 Draft 12 adds G24 speed-mode gradients during denoising and the independent spatial-score transfer check.
+
+Draft 13 audits the independent spatial classification head, latent distribution distances, and the direction of speed guidance relative to a bus/car denoiser intervention (G25).
