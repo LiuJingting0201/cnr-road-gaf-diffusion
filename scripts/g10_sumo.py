@@ -56,8 +56,8 @@ def simulate(seed,binary):
         trace=matcher.trace(xy,CLASSES[c])
         rec=matcher.reconstruct(trace,CLASSES[c]) if trace is not None else None
         if rec is None or rec['progress'][-1]>=4084:reject['reconstruction']+=1;continue
-        kept.append((ident,c,xy))
-    np.savez_compressed(out/'eligible.npz',ids=[k[0] for k in kept],labels=[k[1] for k in kept],xy=[k[2] for k in kept])
+        kept.append((ident,c,xy,s[0,0]))
+    np.savez_compressed(out/'eligible.npz',ids=[k[0] for k in kept],labels=[k[1] for k in kept],xy=[k[2] for k in kept],start_time=[k[3] for k in kept])
     sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     (out/'manifest.json').write_text(json.dumps(dict(seed=seed,version=subprocess.check_output([binary,'--version'],text=True).splitlines()[0],net=sha(network),demand=sha(routes),fcd=sha(fcd),cmd=cmd,eligible=len(kept),rejections=reject,attempts=stats,inserted_test=len(tracks)),indent=2))
 if __name__=='__main__':
