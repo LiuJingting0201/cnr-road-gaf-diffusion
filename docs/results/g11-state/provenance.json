@@ -1,0 +1,410 @@
+{
+  "episodes": [
+    {
+      "seed": 260201,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "04b40ca8f69363b76b232053d31435aa0648fbecf9329f75d1a9301840b60add",
+      "fcd": "5a00578a8de50bc5ede0a7556744e13d951a45099cbb1510c05e6033afc52385",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260201/demand.xml",
+        "--seed",
+        "260201",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260201/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 51,
+      "rejections": {
+        "reconstruction": 49
+      },
+      "attempts": {
+        "1": 26,
+        "2": 24,
+        "3": 174,
+        "4": 80,
+        "5": 27
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260202,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "25a8a55b43ccc95afff11fef25d3568996704195ebf649de9efa50bd272f3db8",
+      "fcd": "c306bc6aef538e7cd58b9ac73f3b50a11fd4047e40497caf690d3d81e1354c93",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260202/demand.xml",
+        "--seed",
+        "260202",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260202/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 41,
+      "rejections": {
+        "reconstruction": 59
+      },
+      "attempts": {
+        "1": 21,
+        "2": 27,
+        "3": 166,
+        "4": 74,
+        "5": 30
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260203,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "3bf6459c981c24d1e76c71c077b5cc1d35cb36140c3ebc33189866a45cf75c36",
+      "fcd": "91852d5d71c6c7abcc2f2b243375d39825533b3befe574e6a1942aa6c46e1c02",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260203/demand.xml",
+        "--seed",
+        "260203",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260203/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 51,
+      "rejections": {
+        "reconstruction": 49
+      },
+      "attempts": {
+        "1": 25,
+        "2": 24,
+        "3": 174,
+        "4": 85,
+        "5": 26
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260204,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "af94327c4bfcc4062ba2e5f5317854553262eca1b6cb59ad1ad50c78513c497f",
+      "fcd": "6b4e3ca2c1914173e6ecf9ae94426be76e7f0a9c547907780903131b96047198",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260204/demand.xml",
+        "--seed",
+        "260204",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260204/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 49,
+      "rejections": {
+        "reconstruction": 51
+      },
+      "attempts": {
+        "1": 28,
+        "2": 29,
+        "3": 193,
+        "4": 70,
+        "5": 24
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260205,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "11a358dee67f0748e6f3541fd9e36f5171b5f73cc10a889db8d3b4e1786aa3f4",
+      "fcd": "94f1ab99f48b802138acaf6a8fca0676cb4697fe37584a4d5394b70b3b99d53b",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260205/demand.xml",
+        "--seed",
+        "260205",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260205/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 53,
+      "rejections": {
+        "reconstruction": 47
+      },
+      "attempts": {
+        "1": 22,
+        "2": 28,
+        "3": 167,
+        "4": 71,
+        "5": 26
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260206,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "260d8d9e60ef59ef1e6dab84616321dcea668f41dfef6b53d688f68f6a2d2c2f",
+      "fcd": "50b391e0a5bc6d09a31eb51f2d768f34b053e31bf8b860121bedce62ae93c64a",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260206/demand.xml",
+        "--seed",
+        "260206",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260206/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 57,
+      "rejections": {
+        "reconstruction": 43
+      },
+      "attempts": {
+        "1": 22,
+        "2": 23,
+        "3": 173,
+        "4": 52,
+        "5": 29
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260207,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "965ea37ab0151e9d1bddb0b8e9367fcb7dfd6103f205962b090376f00c1a6224",
+      "fcd": "93da63bfbd7bd24e17972e811b2e2039db19b067650f057bc9398e087c614d68",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260207/demand.xml",
+        "--seed",
+        "260207",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260207/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 56,
+      "rejections": {
+        "reconstruction": 44
+      },
+      "attempts": {
+        "1": 24,
+        "2": 24,
+        "3": 187,
+        "4": 67,
+        "5": 24
+      },
+      "inserted_test": 100
+    },
+    {
+      "seed": 260208,
+      "version": "Eclipse SUMO sumo 1.28.0",
+      "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "demand": "4f28d517e731a7d604e4c30120f6a889fd6e976c01c8273d636061cd98ea6146",
+      "fcd": "02d2221b31e4bd34da19870be6b13e75a71ad19d05ac3efe201023c45ff55761",
+      "cmd": [
+        "g10-env/sumo/bin/sumo",
+        "-n",
+        "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+        "-r",
+        "g11-data/260208/demand.xml",
+        "--seed",
+        "260208",
+        "--step-length",
+        ".25",
+        "--end",
+        "650",
+        "--time-to-teleport",
+        "-1",
+        "--fcd-output",
+        "g11-data/260208/fcd.xml",
+        "--no-step-log",
+        "true",
+        "--duration-log.disable",
+        "true"
+      ],
+      "eligible": 58,
+      "rejections": {
+        "reconstruction": 42
+      },
+      "attempts": {
+        "1": 23,
+        "2": 23,
+        "3": 167,
+        "4": 58,
+        "5": 25
+      },
+      "inserted_test": 100
+    }
+  ],
+  "coverage": {
+    "260201": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260202": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260203": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260204": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260205": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260206": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260207": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    },
+    "260208": {
+      "selected": {
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "planning_failures_before_quota": 0
+    }
+  },
+  "hashes": {
+    "requests.npz": "b6ea83f164f92aea27512fd046a0e358ec8b49ad6b47ce93c1d4d8a3da983615",
+    "references.npz": "3bf48597dbf82385f42c82b9ca4bdd7bec1baa022c197dbadbaa3cc94b56bd1a"
+  }
+}
