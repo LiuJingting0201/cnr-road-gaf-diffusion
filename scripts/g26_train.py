@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import time
@@ -10,10 +11,12 @@ import numpy as np
 import torch
 from torch import nn
 from cnr.path_diffusion import PathDenoiser
-from g22_diffusion import K, STEPS, inputs, load, physical_stats
+from g22_diffusion import K, STEPS, inputs, load, physical_stats, targets as flat_targets
 from g23_select import targets as requested_modes
 
-OUT=Path("g26-data")
+LAYOUT=os.getenv("CNR_G26_LAYOUT","hierarchical")
+if LAYOUT not in ("hierarchical","flat"):raise ValueError(f"Unknown progress layout: {LAYOUT}")
+OUT=Path("g27-data" if LAYOUT=="flat" else "g26-data")
 SPEED=Path("../g23-job/g23-data")
 ARMS=("H","HM","HV","HG")
 
@@ -33,6 +36,9 @@ class Denoiser(PathDenoiser):
 
 def pack(d):
     stats=physical_stats(d)
+    stats["layout"]=LAYOUT
+    if LAYOUT=="flat":
+        return flat_targets(d,stats),stats
     middle=np.maximum(0,np.diff(d["progress"].astype(float),axis=1)).reshape(-1,16,16)
     coarse=middle.sum(-1)
     fine=np.divide(middle,coarse[:,:,None],out=np.zeros_like(middle),where=coarse[:,:,None]>1e-12)
@@ -57,10 +63,13 @@ def unpack(z,L,labels,stats):
     T=L/z.new_tensor(stats["median_speed"])[labels]*torch.exp((z[:,0]*stats["duration_sd"]+stats["duration_mean"]).clamp(-8,8))
     capped=(T<cap_low)|(T>7200)
     T=torch.minimum(torch.maximum(T,cap_low),T.new_tensor(7200))
-    body=z[:,1:].reshape(-1,16,17)
-    coarse=normalize_fractions(torch.expm1((body[:,:,0]*stats["coarse_sd"]+stats["coarse_mean"]).clamp(0,5)))
-    fine=normalize_fractions(torch.expm1((body[:,:,1:]*stats["fine_sd"]+stats["fine_mean"]).clamp(0,5)))
-    delta=(coarse[:,:,None]*fine).reshape(-1,256)
+    if stats.get("layout","hierarchical")=="flat":
+        delta=normalize_fractions(torch.expm1((z[:,1:]*stats["increment_sd"]+stats["increment_mean"]).clamp(0,5)))
+    else:
+        body=z[:,1:].reshape(-1,16,17)
+        coarse=normalize_fractions(torch.expm1((body[:,:,0]*stats["coarse_sd"]+stats["coarse_mean"]).clamp(0,5)))
+        fine=normalize_fractions(torch.expm1((body[:,:,1:]*stats["fine_sd"]+stats["fine_mean"]).clamp(0,5)))
+        delta=(coarse[:,:,None]*fine).reshape(-1,256)
     progress=nn.functional.pad(delta.cumsum(1),(1,0))
     progress=progress/progress[:,-1:].clamp_min(1e-8)
     return T,progress,capped
@@ -128,8 +137,11 @@ def fit(arm,seed,out):
             noisy=a.sqrt()*target+(1-a).sqrt()*noise
             pred=net(noisy[:,None],t,y[ix],start[ix],path[ix],mode[ix] if arm!="H" else None)[:,0]
             err=(pred-noise).square()
-            groups=err[:,1:].reshape(-1,16,17)
-            loss=.5*err[:,0].mean()+.5*groups[:,:,0].mean()+groups[:,:,1:].mean()
+            if LAYOUT=="flat":
+                loss=.5*err[:,0].mean()+err[:,1:].mean()
+            else:
+                groups=err[:,1:].reshape(-1,16,17)
+                loss=.5*err[:,0].mean()+.5*groups[:,:,0].mean()+groups[:,:,1:].mean()
             if arm in ("HV","HG"):
                 estimate=(noisy-(1-a).sqrt()*pred)/a.sqrt()
                 T,P,_=unpack(estimate,L[ix],y[ix],stats)
@@ -164,8 +176,11 @@ def sample(model,arm,req,stats,seed,requested=None):
         key=int.from_bytes(hashlib.sha256(f"G22:{ident}:{seed}".encode()).digest()[:4],"little")
         rng=torch.Generator(device="cuda").manual_seed(key)
         basic=torch.randn(K,257,device="cuda",generator=rng)
-        coarse=torch.randn(K,16,1,device="cuda",generator=rng)
-        noise.append(torch.cat([basic[:,:1],torch.cat([coarse,basic[:,1:].reshape(K,16,16)],2).reshape(K,-1)],1))
+        if stats.get("layout","hierarchical")=="flat":
+            noise.append(basic)
+        else:
+            coarse=torch.randn(K,16,1,device="cuda",generator=rng)
+            noise.append(torch.cat([basic[:,:1],torch.cat([coarse,basic[:,1:].reshape(K,16,16)],2).reshape(K,-1)],1))
     noise=torch.cat(noise)
     ab=torch.cumprod(1-torch.linspace(.0001,.02,1000,device="cuda"),0)
     times=torch.linspace(999,0,100).long().tolist()

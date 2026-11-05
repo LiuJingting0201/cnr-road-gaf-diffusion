@@ -9,7 +9,7 @@ import sys
 from zipfile import ZIP_DEFLATED,ZipFile
 
 import numpy as np
-from g26_train import ARMS,OUT
+from g26_train import ARMS,OUT,LAYOUT
 
 
 def make():
@@ -41,9 +41,10 @@ def make():
     shutil.copyfile(test/"g26-example.csv",kit/"g26-example.csv")
     (kit/"g26-example.json").write_text(proc.stdout)
     cmd[-1]="new-trips.csv"
-    (kit/"README-training-arms.md").write_text("# 完整行程分层进度扩散\n解压到 G22 完整行程模型包根目录，CUDA/PyTorch 环境执行：\n\n    PYTHONPATH=src python "+" ".join(cmd)+
-        "\n\n输出四条独立完整候选。H=多尺度；HM=再加模式条件；HV=再加直接速度曲线训练损失；HG=改用速度角场训练损失。可指定 --motion-mode，或从同类训练分布采样。第42种子固定，不按验证成绩挑权重。")
-    out=OUT/"multiscale-training-addon.zip"
+    base_name="连续全程进度" if LAYOUT=="flat" else "分层进度"
+    (kit/"README-training-arms.md").write_text("# 完整行程"+base_name+"扩散\n解压到 G22 完整行程模型包根目录，CUDA/PyTorch 环境执行：\n\n    PYTHONPATH=src python "+" ".join(cmd)+
+        "\n\n输出四条独立完整候选。H=基础表示；HM=再加模式条件；HV=再加直接速度曲线训练损失；HG=改用速度角场训练损失。可指定 --motion-mode，或从同类训练分布采样。第42种子固定，不按验证成绩挑权重。")
+    out=OUT/("continuous-mode-addon.zip" if LAYOUT=="flat" else "multiscale-training-addon.zip")
     with ZipFile(out,"w",compression=ZIP_DEFLATED) as z:
         for f in sorted(kit.rglob("*")):
             if f.is_file():z.write(f,f.relative_to(kit))

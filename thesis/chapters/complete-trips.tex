@@ -22,4 +22,29 @@ On the complete-trip population the original image classifier was trained again 
 
 The complete-trip sampling interface exposes all candidates and reports the inherited GAF score alongside the temporal classifier score. The two values need not agree. In the fixed bus example the spatial scorer preferred the 280-second trip and the temporal scorer preferred the 242-second trip. Here the temporal class recognizer is only a diagnostic. The distinct speed-mode reader used for generation feedback is defined in Section~\ref{sec:two-gafs}. A higher class score does not identify the correct arrival time. In the one-second full-image feedback comparison, selecting by GAF increased rather than reduced the travel-time discrepancy for both generator seeds. The candidate pool and the observed references were fixed before selection. These outcomes keep recognition and synthesis fidelity as separate, independently checkable claims.
 
+\section{Learning to control motion within a participant class}
+A participant label leaves some of the trip unspecified. Two buses may follow the same permitted route and still spend different amounts of time cruising. We expose this variation as a second input to the diffusion denoiser. During training, each complete observed journey is assigned to one of three bands of mean speed and to a steadier or more variable mode within its band, using the four-second speed change. During generation, the caller can request a supported mode or sample one using the 64 nearest same-class training trips by route length. The model jointly samples the arrival time and forward progress along the prescribed path.
+
+We trained two layouts on the same 6,033 trips, with two seeds and 12,000 updates for each of four arms per layout. One layout jointly denoises 16 coarse distance shares and 16 local shares per block. The other normalizes all 256 increments over the full trip. Each layout includes a plain generator, a generator conditioned on the requested mode, and two versions of the conditioned generator with auxiliary supervision on the estimated clean trip. One compares predicted and observed speed curves. The other compares their speed Gramian summation and difference fields. These fields encode relations between speeds at pairs of times. The inherited spatial Hilbert classifier plays no part in assigning the motion modes.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Training objective & Mode hit (\%) & Cruise (s) & Duration (s) & $\Delta v_4$ (m/s)\\
+\midrule
+Plain & 37.7 & 9.21 & 12.54 & 0.259\\
+Mode condition & 71.1 & 8.79 & 13.38 & 0.256\\
+Mode + speed curve & 70.9 & 8.87 & 13.41 & 0.254\\
+Mode + speed fields & 70.7 & 9.02 & 13.37 & 0.252\\
+\bottomrule
+\end{tabular}
+\caption{Continuous layout on 384 requests across eight fresh SUMO episodes, with 3,072 samples per arm. Mode hit measures agreement with the requested physical mode. The last three columns are class-macro Wasserstein discrepancies against observed journeys. Cruise is the longest steady-moving interval.}
+\label{tab:mode-training}
+\end{table}
+
+On 336 requests spanning seven classes with training support for both modes, we held the route, participant class, model and initial noise fixed. Switching from steady to variable within a speed band shortened the longest cruise by 24.3 seconds on average with mode conditioning alone (95\% episode-bootstrap interval 22.1 to 26.3 seconds). The four-second speed change increased by 0.67 m/s (0.64 to 0.70). For buses specifically, cruise shortened by 6.4 seconds. The requested band was fixed, but realized mean speed also shifted by $-0.33$ m/s across classes. These paired draws measure control over synthetic trips. An observed counterfactual journey for a given seed is unavailable.
+
+The block layout exposed a cost to imposing local distance budgets. In its first evaluation, speeds changed 2.8 times as much at block boundaries as in block interiors, against a ratio of 1.0 in SUMO. On the second cohort, with the same speed-field objective, switching to continuous progress reduced the cruise discrepancy from 22.43 to 9.02 seconds (paired reduction 13.40 seconds, interval 10.46 to 14.26). Conversely, the additional speed-field loss had a cruise discrepancy 0.15 seconds higher than direct speed supervision (interval $-0.58$ to 0.60), and the intervals for duration and speed-change differences also included zero. Table~\ref{tab:mode-training} supports within-class controllability on new traffic episodes from this map. It leaves open whether speed-field supervision improves physical fidelity over direct speed supervision.
+
 \input{chapters/two-gafs}

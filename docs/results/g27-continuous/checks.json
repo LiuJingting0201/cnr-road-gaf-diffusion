@@ -1,0 +1,252 @@
+{
+  "G22": {
+    "pedestrian": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.9318227279388035,
+      "encoded": 48
+    },
+    "bus": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.13817584084730092,
+      "encoded": 48
+    },
+    "motorcycle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.11373207242165033,
+      "encoded": 48
+    },
+    "private_car": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.15751522695624467,
+      "encoded": 48
+    },
+    "bycicle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.2051436360537385,
+      "encoded": 48
+    },
+    "taxi_or_uber": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.18496330834265487,
+      "encoded": 48
+    },
+    "truck": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.10663388557441067,
+      "encoded": 48
+    },
+    "delivery": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1458799344381987,
+      "encoded": 48
+    }
+  },
+  "H": {
+    "pedestrian": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.9320438760720814,
+      "encoded": 48
+    },
+    "bus": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1380994247580626,
+      "encoded": 48
+    },
+    "motorcycle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1091108839827939,
+      "encoded": 48
+    },
+    "private_car": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1697394356034844,
+      "encoded": 48
+    },
+    "bycicle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.20207933536342657,
+      "encoded": 48
+    },
+    "taxi_or_uber": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.18581638772351047,
+      "encoded": 48
+    },
+    "truck": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.11996861023362726,
+      "encoded": 48
+    },
+    "delivery": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1512107750998742,
+      "encoded": 48
+    }
+  },
+  "HM": {
+    "pedestrian": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.93275080252594,
+      "encoded": 48
+    },
+    "bus": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1581448064680444,
+      "encoded": 48
+    },
+    "motorcycle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.09165200378417164,
+      "encoded": 48
+    },
+    "private_car": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1820705821555748,
+      "encoded": 48
+    },
+    "bycicle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.18254522934815517,
+      "encoded": 48
+    },
+    "taxi_or_uber": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1632639278783851,
+      "encoded": 48
+    },
+    "truck": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.13437321074889041,
+      "encoded": 48
+    },
+    "delivery": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1427826989480915,
+      "encoded": 48
+    }
+  },
+  "HV": {
+    "pedestrian": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.9312529127346352,
+      "encoded": 48
+    },
+    "bus": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1235700123403755,
+      "encoded": 48
+    },
+    "motorcycle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.09326077643466608,
+      "encoded": 48
+    },
+    "private_car": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.16920605409965597,
+      "encoded": 48
+    },
+    "bycicle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.17822067071150136,
+      "encoded": 48
+    },
+    "taxi_or_uber": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.159008594811894,
+      "encoded": 48
+    },
+    "truck": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1298034709161584,
+      "encoded": 48
+    },
+    "delivery": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.12166766875210062,
+      "encoded": 48
+    }
+  },
+  "HG": {
+    "pedestrian": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.9294229238682116,
+      "encoded": 48
+    },
+    "bus": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.17661879794225874,
+      "encoded": 48
+    },
+    "motorcycle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.09166349537539038,
+      "encoded": 48
+    },
+    "private_car": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.1639755205314941,
+      "encoded": 48
+    },
+    "bycicle": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.16201031136370148,
+      "encoded": 48
+    },
+    "taxi_or_uber": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.17447359475772828,
+      "encoded": 48
+    },
+    "truck": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.12154916312041071,
+      "encoded": 48
+    },
+    "delivery": {
+      "graph_or_ped_pass": 48,
+      "attempts": 48,
+      "spatial_score": 0.14641020736659507,
+      "encoded": 48
+    }
+  }
+}
