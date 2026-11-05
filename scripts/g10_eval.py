@@ -12,7 +12,7 @@ ep=q['episode']-260101;y=q['labels'];bur=ds[0]['burden'];high=np.zeros(len(y),bo
 for c in np.unique(y):
     ix=np.where(y==c)[0];high[ix[np.argsort(bur[ix],kind='stable')[len(ix)//2:]]]=True
 # One row per bootstrap draw, each column the multiplicity of a complete episode.
-cnt=np.vstack([np.ones(8),np.random.default_rng(34176).multinomial(8,np.ones(8)/8,2000)])
+cnt=np.vstack([np.ones(8),np.random.default_rng(34176).multinomial(8,np.ones(8)/8,2000),1-np.eye(8)])
 def metrics(x):
     v=np.linalg.norm(np.diff(x,axis=-2),axis=-1)/.25
     return [v,np.diff(v,axis=-1)/.25,v.sum(-1)*.25,(v<.1).mean(-1)]
@@ -51,16 +51,17 @@ for arm in variants:
                 valid+=int(cache[k])
     out[arm]={'graph_pass':valid,'denominator':len(y)*9,'caps':caps,'diversity':float(np.mean(div))}
     for group,mask in [('high',high),('low',~high),('all',np.ones(len(y),bool))]:
-        est=np.zeros((len(cnt),4))
+        est=np.zeros((len(cnt),4));class_scores={}
         for c in np.unique(y):
-            ix=(y==c)&mask;n=sum(ix)
+            ix=(y==c)&mask;n=sum(ix);class_est=np.zeros_like(est)
             for v in vs:
                 for j in range(4):
-                    est[:,j]+=episode_w1(v[j][ix].reshape(n,-1),truth[j][ix].reshape(n,-1),ep[ix],j==3)/(3*len(np.unique(y)))
-        out[arm][group]=est[0].tolist();draws[arm,group]=est
+                    class_est[:,j]+=episode_w1(v[j][ix].reshape(n,-1),truth[j][ix].reshape(n,-1),ep[ix],j==3)/3
+            class_scores[CLASSES[int(c)]]=class_est[0].tolist();est+=class_est/len(np.unique(y))
+        out[arm][group+'_by_class']=class_scores;out[arm][group]=est[0].tolist();draws[arm,group]=est
 for name in ['high','low','all','interaction']:
     def delta(g):return draws['mid',g]-draws['terminal',g]
     diff=delta(name) if name!='interaction' else delta('high')-delta('low')
-    out[name]={'delta':diff[0].tolist(),'CI':np.percentile(diff[1:],[2.5,97.5],axis=0).T.tolist()}
+    out[name]={'delta':diff[0].tolist(),'CI':np.percentile(diff[1:2001],[2.5,97.5],axis=0).T.tolist(),'leave_one_episode_out':diff[-8:].tolist()}
 out['encoding_failures']=[d['encoding_failures'].tolist() for d in ds]
 (root/'results.json').write_text(json.dumps(out,indent=2))
