@@ -1,0 +1,739 @@
+{
+  "classifiers": {
+    "full": {
+      "arm": "full",
+      "selected": 2,
+      "fit": 6033,
+      "monitor": 1126,
+      "evaluated": 1516,
+      "results": {
+        "accuracy": 0.2895778364116095,
+        "macro_f1": 0.2705977052319346,
+        "weighted_f1": 0.2724952429801925,
+        "cm": [
+          [
+            184,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            29,
+            49,
+            32,
+            34,
+            21,
+            17,
+            8
+          ],
+          [
+            1,
+            20,
+            54,
+            27,
+            42,
+            22,
+            9,
+            15
+          ],
+          [
+            2,
+            27,
+            45,
+            28,
+            37,
+            24,
+            9,
+            14
+          ],
+          [
+            3,
+            9,
+            38,
+            23,
+            94,
+            11,
+            3,
+            11
+          ],
+          [
+            1,
+            24,
+            50,
+            26,
+            42,
+            27,
+            7,
+            14
+          ],
+          [
+            2,
+            24,
+            44,
+            34,
+            40,
+            21,
+            12,
+            13
+          ],
+          [
+            1,
+            19,
+            52,
+            30,
+            38,
+            26,
+            8,
+            11
+          ]
+        ]
+      }
+    },
+    "motion": {
+      "arm": "motion",
+      "selected": 8,
+      "fit": 6033,
+      "monitor": 1126,
+      "evaluated": 1516,
+      "results": {
+        "accuracy": 0.7229551451187335,
+        "macro_f1": 0.7193832173023978,
+        "weighted_f1": 0.7220005842873524,
+        "cm": [
+          [
+            192,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            176,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            185,
+            1,
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            3,
+            70,
+            1,
+            50,
+            0,
+            61
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            191,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            62,
+            0,
+            66,
+            0,
+            60
+          ],
+          [
+            0,
+            40,
+            0,
+            0,
+            0,
+            2,
+            148,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            64,
+            0,
+            50,
+            0,
+            68
+          ]
+        ]
+      }
+    },
+    "full-paired": {
+      "arm": "full-paired",
+      "selected": 2,
+      "fit": 4332,
+      "monitor": 823,
+      "evaluated": 1071,
+      "results": {
+        "accuracy": 0.2334267040149393,
+        "macro_f1": 0.2653141024794753,
+        "weighted_f1": 0.21730971080124958,
+        "cm": [
+          [
+            44,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            26,
+            26,
+            14,
+            31,
+            14,
+            26,
+            10
+          ],
+          [
+            0,
+            19,
+            21,
+            17,
+            30,
+            14,
+            15,
+            17
+          ],
+          [
+            2,
+            17,
+            15,
+            17,
+            38,
+            18,
+            15,
+            11
+          ],
+          [
+            2,
+            18,
+            24,
+            20,
+            98,
+            10,
+            10,
+            9
+          ],
+          [
+            0,
+            12,
+            21,
+            13,
+            36,
+            21,
+            19,
+            16
+          ],
+          [
+            1,
+            14,
+            23,
+            19,
+            45,
+            22,
+            15,
+            8
+          ],
+          [
+            0,
+            15,
+            17,
+            25,
+            37,
+            18,
+            14,
+            8
+          ]
+        ]
+      }
+    },
+    "short-paired": {
+      "arm": "short-paired",
+      "selected": 6,
+      "fit": 4332,
+      "monitor": 823,
+      "evaluated": 1071,
+      "results": {
+        "accuracy": 0.2698412698412698,
+        "macro_f1": 0.30889715248565813,
+        "weighted_f1": 0.2683588276787178,
+        "cm": [
+          [
+            46,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            18,
+            19,
+            15,
+            21,
+            33,
+            20
+          ],
+          [
+            0,
+            22,
+            19,
+            25,
+            11,
+            14,
+            18,
+            24
+          ],
+          [
+            0,
+            25,
+            17,
+            18,
+            13,
+            15,
+            19,
+            26
+          ],
+          [
+            2,
+            14,
+            11,
+            8,
+            118,
+            14,
+            14,
+            10
+          ],
+          [
+            0,
+            20,
+            20,
+            16,
+            7,
+            27,
+            21,
+            27
+          ],
+          [
+            0,
+            17,
+            16,
+            21,
+            20,
+            22,
+            20,
+            31
+          ],
+          [
+            0,
+            16,
+            19,
+            21,
+            13,
+            21,
+            24,
+            20
+          ]
+        ]
+      }
+    },
+    "fusion": {
+      "weight_full_gaf": 0.5,
+      "results": {
+        "accuracy": 0.724934036939314,
+        "macro_f1": 0.7210518856730559,
+        "weighted_f1": 0.7236427932534145,
+        "cm": [
+          [
+            192,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            176,
+            0,
+            0,
+            0,
+            0,
+            13,
+            1
+          ],
+          [
+            0,
+            0,
+            185,
+            1,
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            2,
+            3,
+            69,
+            1,
+            50,
+            0,
+            61
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            191,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            61,
+            0,
+            68,
+            0,
+            59
+          ],
+          [
+            0,
+            40,
+            0,
+            0,
+            0,
+            2,
+            148,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            61,
+            3,
+            49,
+            0,
+            70
+          ]
+        ]
+      }
+    }
+  },
+  "arms": {
+    "empirical": [
+      {
+        "classes": {
+          "pedestrian": {
+            "requests": 192,
+            "observed_median_s": 86.875,
+            "generated_median_s": 86.61835371862058,
+            "duration_w1_s": 4.0772138830146
+          },
+          "bus": {
+            "requests": 190,
+            "observed_median_s": 208.75,
+            "generated_median_s": 208.4720104170504,
+            "duration_w1_s": 6.973553071301847
+          },
+          "motorcycle": {
+            "requests": 190,
+            "observed_median_s": 174.375,
+            "generated_median_s": 172.06132318532184,
+            "duration_w1_s": 4.317749868661364
+          },
+          "private_car": {
+            "requests": 186,
+            "observed_median_s": 181.5,
+            "generated_median_s": 170.28348167299418,
+            "duration_w1_s": 6.790601323820919
+          },
+          "bycicle": {
+            "requests": 192,
+            "observed_median_s": 348.125,
+            "generated_median_s": 348.33903319324855,
+            "duration_w1_s": 7.5197360195863014
+          },
+          "taxi_or_uber": {
+            "requests": 191,
+            "observed_median_s": 180.0,
+            "generated_median_s": 185.4528019720887,
+            "duration_w1_s": 5.355052334436889
+          },
+          "truck": {
+            "requests": 190,
+            "observed_median_s": 208.0,
+            "generated_median_s": 206.1154392061933,
+            "duration_w1_s": 5.792665210596828
+          },
+          "delivery": {
+            "requests": 185,
+            "observed_median_s": 201.75,
+            "generated_median_s": 190.18510670175777,
+            "duration_w1_s": 9.580423336998013
+          }
+        },
+        "macro_w1_s": 6.300874381052096,
+        "bound_count": 0,
+        "flat": 0,
+        "max_endpoint_m": 0.0,
+        "motion_w1": [
+          0.40692253146656715,
+          0.07790130589585595,
+          0.0031288179023097632
+        ]
+      },
+      {
+        "classes": {
+          "pedestrian": {
+            "requests": 192,
+            "observed_median_s": 86.875,
+            "generated_median_s": 85.98458561714975,
+            "duration_w1_s": 3.8953920605592764
+          },
+          "bus": {
+            "requests": 190,
+            "observed_median_s": 208.75,
+            "generated_median_s": 212.7227290398323,
+            "duration_w1_s": 7.452167458378471
+          },
+          "motorcycle": {
+            "requests": 190,
+            "observed_median_s": 174.375,
+            "generated_median_s": 183.2788945937113,
+            "duration_w1_s": 6.309307778240446
+          },
+          "private_car": {
+            "requests": 186,
+            "observed_median_s": 181.5,
+            "generated_median_s": 172.9569262422653,
+            "duration_w1_s": 6.385999183555696
+          },
+          "bycicle": {
+            "requests": 192,
+            "observed_median_s": 348.125,
+            "generated_median_s": 347.28785197927886,
+            "duration_w1_s": 8.81812350051053
+          },
+          "taxi_or_uber": {
+            "requests": 191,
+            "observed_median_s": 180.0,
+            "generated_median_s": 181.8280749643813,
+            "duration_w1_s": 4.7431026007801105
+          },
+          "truck": {
+            "requests": 190,
+            "observed_median_s": 208.0,
+            "generated_median_s": 210.5780964855097,
+            "duration_w1_s": 6.560038161737959
+          },
+          "delivery": {
+            "requests": 185,
+            "observed_median_s": 201.75,
+            "generated_median_s": 195.71137662001075,
+            "duration_w1_s": 9.361059504775868
+          }
+        },
+        "macro_w1_s": 6.690648781067295,
+        "bound_count": 0,
+        "flat": 0,
+        "max_endpoint_m": 0.0,
+        "motion_w1": [
+          0.3987673223928778,
+          0.06774987632580363,
+          0.0036032024795162594
+        ]
+      }
+    ],
+    "diffusion": [
+      {
+        "classes": {
+          "pedestrian": {
+            "requests": 192,
+            "observed_median_s": 86.875,
+            "generated_median_s": 86.53474942502467,
+            "duration_w1_s": 3.600281666487801
+          },
+          "bus": {
+            "requests": 190,
+            "observed_median_s": 208.75,
+            "generated_median_s": 202.18337992521077,
+            "duration_w1_s": 6.734878178773018
+          },
+          "motorcycle": {
+            "requests": 190,
+            "observed_median_s": 174.375,
+            "generated_median_s": 166.53155458597612,
+            "duration_w1_s": 5.668910168365807
+          },
+          "private_car": {
+            "requests": 186,
+            "observed_median_s": 181.5,
+            "generated_median_s": 173.87450955232896,
+            "duration_w1_s": 9.979224833849345
+          },
+          "bycicle": {
+            "requests": 192,
+            "observed_median_s": 348.125,
+            "generated_median_s": 353.77247552900724,
+            "duration_w1_s": 10.997168980034067
+          },
+          "taxi_or_uber": {
+            "requests": 191,
+            "observed_median_s": 180.0,
+            "generated_median_s": 179.1084324767241,
+            "duration_w1_s": 5.977301291634095
+          },
+          "truck": {
+            "requests": 190,
+            "observed_median_s": 208.0,
+            "generated_median_s": 204.26771154990672,
+            "duration_w1_s": 8.958708801833618
+          },
+          "delivery": {
+            "requests": 185,
+            "observed_median_s": 201.75,
+            "generated_median_s": 191.3661386042446,
+            "duration_w1_s": 8.159416744652924
+          }
+        },
+        "macro_w1_s": 7.509486333203835,
+        "bound_count": 0,
+        "flat": 0,
+        "max_endpoint_m": 0.0,
+        "motion_w1": [
+          0.4318394756574367,
+          0.1433593035689822,
+          0.0034565914084297546
+        ],
+        "encoding_failures": 0,
+        "selected_duration_w1": {
+          "uniform": 7.801506249125681,
+          "full_gaf": 8.693449064478004,
+          "fusion": 8.49325610758086
+        }
+      },
+      {
+        "classes": {
+          "pedestrian": {
+            "requests": 192,
+            "observed_median_s": 86.875,
+            "generated_median_s": 85.07415228273003,
+            "duration_w1_s": 3.9820232744490496
+          },
+          "bus": {
+            "requests": 190,
+            "observed_median_s": 208.75,
+            "generated_median_s": 197.9572255079891,
+            "duration_w1_s": 8.499746056626444
+          },
+          "motorcycle": {
+            "requests": 190,
+            "observed_median_s": 174.375,
+            "generated_median_s": 164.7524580330665,
+            "duration_w1_s": 9.987012165191814
+          },
+          "private_car": {
+            "requests": 186,
+            "observed_median_s": 181.5,
+            "generated_median_s": 175.40661411937242,
+            "duration_w1_s": 11.520609905864756
+          },
+          "bycicle": {
+            "requests": 192,
+            "observed_median_s": 348.125,
+            "generated_median_s": 351.544378034814,
+            "duration_w1_s": 10.908883729072674
+          },
+          "taxi_or_uber": {
+            "requests": 191,
+            "observed_median_s": 180.0,
+            "generated_median_s": 179.85231456376806,
+            "duration_w1_s": 6.317412136194239
+          },
+          "truck": {
+            "requests": 190,
+            "observed_median_s": 208.0,
+            "generated_median_s": 199.80150487553794,
+            "duration_w1_s": 9.892538957754365
+          },
+          "delivery": {
+            "requests": 185,
+            "observed_median_s": 201.75,
+            "generated_median_s": 179.76379851469792,
+            "duration_w1_s": 9.659852278036663
+          }
+        },
+        "macro_w1_s": 8.84600981289875,
+        "bound_count": 0,
+        "flat": 0,
+        "max_endpoint_m": 0.0,
+        "motion_w1": [
+          0.37146171202923756,
+          0.1280384688634681,
+          0.0035613528867023065
+        ],
+        "encoding_failures": 0,
+        "selected_duration_w1": {
+          "uniform": 9.56589526880049,
+          "full_gaf": 10.7195396433189,
+          "fusion": 10.233309184987753
+        }
+      }
+    ]
+  },
+  "duration_delta_vs_empirical": {
+    "mean": 1.6819864919915988,
+    "ci": [
+      -0.31344838265488306,
+      1.6819864919915988
+    ]
+  }
+}

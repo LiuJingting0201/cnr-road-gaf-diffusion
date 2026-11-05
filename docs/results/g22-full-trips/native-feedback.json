@@ -1,0 +1,14 @@
+{
+  "42": {
+    "enc_failures": 0,
+    "pools": 1516,
+    "changed_vs_uniform": 1125,
+    "duration_w1": 7.535591983442163
+  },
+  "43": {
+    "enc_failures": 0,
+    "pools": 1516,
+    "changed_vs_uniform": 1140,
+    "duration_w1": 9.510866728938863
+  }
+}
