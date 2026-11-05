@@ -1,0 +1,410 @@
+{
+ "episodes": [
+  {
+   "seed": 260401,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "47ff5403ba519110bb262b364058f105ddf2012d250dc45ea7dc62338ef484b4",
+   "fcd": "2c62b67ca44ac41784c67ef629e62472f85d670d1b62ca4fa8da307a4ef85cf5",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260401/demand.xml",
+    "--seed",
+    "260401",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260401/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 51,
+   "rejections": {
+    "reconstruction": 49
+   },
+   "attempts": {
+    "1": 27,
+    "2": 28,
+    "3": 180,
+    "4": 84,
+    "5": 24
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260402,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "4543c8bc8a3355a1a931d3db28f873c7cf214f6c537fc39bcb884b6657b4c911",
+   "fcd": "5fe72e9b8ec57ce068e7f157e90e1b4545cdc1b25e784cb3a72aae9d8d880df4",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260402/demand.xml",
+    "--seed",
+    "260402",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260402/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 51,
+   "rejections": {
+    "reconstruction": 49
+   },
+   "attempts": {
+    "1": 26,
+    "2": 23,
+    "3": 171,
+    "4": 103,
+    "5": 25
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260403,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "53d7192f6d55045854adeb310cddb980d9bc4c1767d5875e7807adf05dc04566",
+   "fcd": "88ed68fd1398d8acd9e9238fafe9399f13bbfc9d4938ba5ee63408c6e1471afa",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260403/demand.xml",
+    "--seed",
+    "260403",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260403/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 54,
+   "rejections": {
+    "reconstruction": 46
+   },
+   "attempts": {
+    "1": 25,
+    "2": 26,
+    "3": 184,
+    "4": 65,
+    "5": 22
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260404,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "18eb09f73d33e3aaa40906bbb5d6deefee742ad208e7525887b9afbd42d99f42",
+   "fcd": "d14c4130947947f2787b824a3ddc8c27db52075c61c3fb59b3fd078d0e0316e6",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260404/demand.xml",
+    "--seed",
+    "260404",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260404/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 52,
+   "rejections": {
+    "reconstruction": 48
+   },
+   "attempts": {
+    "1": 23,
+    "2": 23,
+    "3": 191,
+    "4": 69,
+    "5": 24
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260405,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "2ee8ad53b04abff23bafe112b6eb5074ae49e64c79180a0a877ab1bb59fe8844",
+   "fcd": "252f3b8374d5dba201903d1a3d6c2e2a83cadd90be24c10cfa18b5bf0ad755de",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260405/demand.xml",
+    "--seed",
+    "260405",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260405/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 45,
+   "rejections": {
+    "reconstruction": 55
+   },
+   "attempts": {
+    "1": 27,
+    "2": 26,
+    "3": 176,
+    "4": 76,
+    "5": 20
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260406,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "c3f0c445ced13bf23e98b41459e48aba74145ca195fc30e305ab352134aae8db",
+   "fcd": "dea7c5df99d324b616712b7822a42ee3b4953cef3dc6514742e58cd4624ed8ef",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260406/demand.xml",
+    "--seed",
+    "260406",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260406/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 41,
+   "rejections": {
+    "reconstruction": 59
+   },
+   "attempts": {
+    "1": 26,
+    "2": 26,
+    "3": 166,
+    "4": 72,
+    "5": 22
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260407,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "c645066c7b9287d8df73707276142e899b1bb9f961e814da5113466e4541123c",
+   "fcd": "bb2707e35866518c2ff474ef191ac7d2feb272f916c9731d6450c112b4eb0172",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260407/demand.xml",
+    "--seed",
+    "260407",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260407/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 57,
+   "rejections": {
+    "reconstruction": 43
+   },
+   "attempts": {
+    "1": 30,
+    "2": 25,
+    "3": 186,
+    "4": 76,
+    "5": 25
+   },
+   "inserted_test": 100
+  },
+  {
+   "seed": 260408,
+   "version": "Eclipse SUMO sumo 1.28.0",
+   "net": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+   "demand": "ffca7da2bdd096e3c70faf2af65ff48e2eefa3b4bde59c66ccf9cb5da322f252",
+   "fcd": "ee129d426c4ececc6ff512f3743cffcedd40ce81403e1865e1f663798b74b2ad",
+   "cmd": [
+    "g10-env/sumo/bin/sumo",
+    "-n",
+    "/workspace/cnr-road-gaf-diffusion/data/maps/most.net.xml",
+    "-r",
+    "g13-data/260408/demand.xml",
+    "--seed",
+    "260408",
+    "--step-length",
+    ".25",
+    "--end",
+    "650",
+    "--time-to-teleport",
+    "-1",
+    "--fcd-output",
+    "g13-data/260408/fcd.xml",
+    "--no-step-log",
+    "true",
+    "--duration-log.disable",
+    "true"
+   ],
+   "eligible": 41,
+   "rejections": {
+    "reconstruction": 59
+   },
+   "attempts": {
+    "1": 24,
+    "2": 25,
+    "3": 165,
+    "4": 69,
+    "5": 26
+   },
+   "inserted_test": 100
+  }
+ ],
+ "coverage": {
+  "260401": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260402": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260403": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260404": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260405": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260406": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260407": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  },
+  "260408": {
+   "selected": {
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 6,
+    "5": 6
+   },
+   "planning_failures_before_quota": 0
+  }
+ },
+ "hashes": {
+  "requests.npz": "61eb75e357b22174cb9927141547008f197161a5b7811e6a1e6276105721c858",
+  "references.npz": "c743de2a1900e66fe1f6a18c2e1f49fb4164f955e7f9ee491cad194e2ef01468"
+ }
+}

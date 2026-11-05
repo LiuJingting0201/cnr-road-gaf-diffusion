@@ -42,6 +42,11 @@ The 512-point training cohort has a median of 13 distinct Hilbert values per adj
 
 Longer windows provide more opportunity to see location changes and recurring movement. They also remove participants whose traces are short. The common-cohort analysis controls the identity of the evaluation participants across durations but does not equalize the corresponding training sets. We select the 512-point horizon as an operational compromise between class information and the feasibility of reconstructing a two-minute path. Its coverage is measured on the held-out data.
 
+\subsection{A like-for-like comparison with the earlier thesis}
+Salvadori's Table 6.2 reports a weighted F1 of 74.1\% and accuracy of 74.9\% on the test set for the pretrained MobileNetV2 using 4,096 Hilbert cells, squeeze and the three-channel image. The pretrained ResNet18 in the corresponding row has 71.0\% weighted F1 and 74.3\% accuracy \cite{salvadori}. On full vehicle tracks our validation ResNet18 has 74.29\% weighted F1 and 75.71\% accuracy, averaging the three final seeds. Its macro-F1 is 60.09\%. The magnitude of full-track recognition is therefore comparable across the two studies, although the splits and evaluation sets differ. At the fixed 512-point generation horizon our validation weighted F1 drops to 67.14\%. A reported drop from 74.1\% weighted F1 to 59.12\% macro-F1 would conflate both the averaging rule and the observation horizon.
+
+The best full-track model's overall score also hides class differences. In Salvadori's Figure 6.4 about 89\% of pedestrians and 87\% of private cars are correctly recognized, versus 39\% of buses and 28\% of taxis. The diagonal entries are recall, not F1. These differences matter when the same interface is used as feedback for all requested classes: a recognizer's average performance on whole journeys does not determine its ability to rank short synthetic candidates within a class.
+
 \section{Selecting among eight decoded candidates}
 For each request the generator returns $K=8$ candidates. Define a common mask $m_k$ that requires a successful graph audit, no truncated lane search, no route-end cap and an encodable GAF image. A fixed random priority resolves ties. The image selector chooses
 \begin{equation}
