@@ -1,0 +1,532 @@
+{
+  "g14": {
+    "A": {
+      "42": {
+        "five_macro": 145.74674942471498,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 954.2657717678518,
+            "travel_w1": 394.17062527551144
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1356.4563080997796,
+            "travel_w1": 85.7912536979793
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1468.5645623742357,
+            "travel_w1": 70.52097761915147
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 734.4335093422903,
+            "travel_w1": 67.32730648724966
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1401.3900146740039,
+            "travel_w1": 110.92358404368304
+          }
+        }
+      },
+      "43": {
+        "five_macro": 195.04484816267376,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 889.3606182277134,
+            "travel_w1": 416.1926584375179
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1393.5870313627406,
+            "travel_w1": 89.58201658737477
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1429.3655464769538,
+            "travel_w1": 67.04374386796408
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 873.562009730899,
+            "travel_w1": 303.15916670486405
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1436.71459572704,
+            "travel_w1": 99.2466552156481
+          }
+        }
+      }
+    },
+    "D": {
+      "42": {
+        "five_macro": 148.97906139074433,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1078.9086680283206,
+            "travel_w1": 292.531901693903
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1332.2900626973424,
+            "travel_w1": 146.56256345506526
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1369.411214478299,
+            "travel_w1": 107.09229696489714
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 641.0998374778641,
+            "travel_w1": 48.884950248979635
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1329.2918188733972,
+            "travel_w1": 149.82359459087652
+          }
+        }
+      },
+      "43": {
+        "five_macro": 158.88248644254037,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1048.6441566737064,
+            "travel_w1": 306.8596973568316
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1340.8578751953255,
+            "travel_w1": 146.91592177675724
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1354.4816726213942,
+            "travel_w1": 111.02346217875387
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 638.622236706804,
+            "travel_w1": 52.830513226953464
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1282.626548014799,
+            "travel_w1": 176.78283767340562
+          }
+        }
+      }
+    },
+    "B": {
+      "42": {
+        "five_macro": 147.47300264810966,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1063.7413389010624,
+            "travel_w1": 287.7324734943856
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1385.4637280126803,
+            "travel_w1": 84.76311338683524
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1347.7560783070317,
+            "travel_w1": 139.6002599062852
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 670.4246908939415,
+            "travel_w1": 48.80930919686338
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1248.064885004077,
+            "travel_w1": 176.45985725617882
+          }
+        }
+      },
+      "43": {
+        "five_macro": 146.24102707470314,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1064.8568456839578,
+            "travel_w1": 285.7078180363232
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1341.2568906806723,
+            "travel_w1": 83.42498234516084
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1346.0802696179128,
+            "travel_w1": 140.42180480984896
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 658.0754961130797,
+            "travel_w1": 50.462875283586875
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1278.7286680264533,
+            "travel_w1": 171.18765489859572
+          }
+        }
+      }
+    },
+    "C": {
+      "42": {
+        "five_macro": 157.6733119829142,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1013.1840245776455,
+            "travel_w1": 327.4723563324279
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1360.3196551229914,
+            "travel_w1": 82.68281920786039
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1338.6476753389898,
+            "travel_w1": 132.16190252851698
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 638.7698735286208,
+            "travel_w1": 63.23918797901391
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1271.7670055122799,
+            "travel_w1": 182.8102938667519
+          }
+        }
+      },
+      "43": {
+        "five_macro": 155.57312117754822,
+        "classes": {
+          "bus": {
+            "reference_median": 1428.616855643641,
+            "generated_median": 1016.237098875544,
+            "travel_w1": 320.0280377524968
+          },
+          "motorcycle": {
+            "reference_median": 1449.7888235602222,
+            "generated_median": 1359.8735934350723,
+            "travel_w1": 88.21643272937347
+          },
+          "private_car": {
+            "reference_median": 1477.0989551089453,
+            "generated_median": 1319.863352150489,
+            "travel_w1": 136.64659290597632
+          },
+          "bycicle": {
+            "reference_median": 691.2272836726909,
+            "generated_median": 656.76724298682,
+            "travel_w1": 52.81906377896385
+          },
+          "taxi_or_uber": {
+            "reference_median": 1516.0660104173276,
+            "generated_median": 1268.1951978459097,
+            "travel_w1": 180.15547872093066
+          }
+        }
+      }
+    }
+  },
+  "g15": {
+    "A": {
+      "42": {
+        "five_macro": 161.44301110353996,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 728.9328008900513,
+            "travel_w1": 299.20906460072143
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1280.5467425480851,
+            "travel_w1": 56.712050386264266
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1411.6020528200227,
+            "travel_w1": 189.863726024702
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 625.9455443725118,
+            "travel_w1": 47.454434614166296
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1402.253433038429,
+            "travel_w1": 213.9757798918457
+          }
+        }
+      },
+      "43": {
+        "five_macro": 192.97762656153236,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 694.6342425741752,
+            "travel_w1": 306.1945840624552
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1260.4715424111018,
+            "travel_w1": 52.48248195946792
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1338.42546076715,
+            "travel_w1": 141.95290908410993
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 673.3229776001642,
+            "travel_w1": 127.37707571494013
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1495.4787253214076,
+            "travel_w1": 336.8810819866887
+          }
+        }
+      }
+    },
+    "D": {
+      "42": {
+        "five_macro": 130.26866492948812,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 974.310824048483,
+            "travel_w1": 185.0394116583582
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1190.916963842897,
+            "travel_w1": 194.9549108267908
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1371.0610585648487,
+            "travel_w1": 84.58417197008445
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 631.0059544529765,
+            "travel_w1": 40.20899261963847
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1393.2239738853732,
+            "travel_w1": 146.5558375725686
+          }
+        }
+      },
+      "43": {
+        "five_macro": 127.52011824543304,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 959.5286778233199,
+            "travel_w1": 207.74807054059315
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1211.9392964702508,
+            "travel_w1": 195.12810228349107
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1335.819367054868,
+            "travel_w1": 87.37771897657649
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 628.5854485131715,
+            "travel_w1": 36.29303663506199
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1354.9360001768025,
+            "travel_w1": 111.0536627914424
+          }
+        }
+      }
+    },
+    "B": {
+      "42": {
+        "five_macro": 107.08558620530202,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 966.235458131267,
+            "travel_w1": 179.21976906274418
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1319.4971158771223,
+            "travel_w1": 120.95077749268762
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1284.6785781582903,
+            "travel_w1": 80.79361829241141
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 617.7107923467435,
+            "travel_w1": 45.71731614376166
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1392.305747720945,
+            "travel_w1": 108.7464500349053
+          }
+        }
+      },
+      "43": {
+        "five_macro": 108.9484524240185,
+        "classes": {
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 964.0474836669473,
+            "travel_w1": 193.5921660851553
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1316.2592483998928,
+            "travel_w1": 128.74684560269927
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1305.0664619231513,
+            "travel_w1": 73.46694652870512
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 628.9156372435335,
+            "travel_w1": 41.27814849282842
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1399.986782335608,
+            "travel_w1": 107.6581554107044
+          }
+        }
+      }
+    },
+    "C": {
+      "42": {
+        "five_macro": 103.51602920655584,
+        "classes": {
+          "pedestrian": {
+            "reference_median": 156.89624814235148,
+            "generated_median": 162.80323133557224,
+            "travel_w1": 7.7955549500977845
+          },
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 1000.79245095021,
+            "travel_w1": 198.99724827379367
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1299.286469273151,
+            "travel_w1": 97.05027690348447
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1319.67418093255,
+            "travel_w1": 71.66550302490901
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 620.7419585440354,
+            "travel_w1": 48.45972688120389
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1362.4443609475552,
+            "travel_w1": 101.40739094938822
+          },
+          "truck": {
+            "reference_median": 1249.3427041755303,
+            "generated_median": 1241.8369595748409,
+            "travel_w1": 47.26565629784449
+          },
+          "delivery": {
+            "reference_median": 1212.0379708826167,
+            "generated_median": 1121.1184955730744,
+            "travel_w1": 121.04394501655162
+          }
+        }
+      },
+      "43": {
+        "five_macro": 105.58671229303123,
+        "classes": {
+          "pedestrian": {
+            "reference_median": 156.89624814235148,
+            "generated_median": 161.81789709025244,
+            "travel_w1": 8.409569687003897
+          },
+          "bus": {
+            "reference_median": 1117.8793955061265,
+            "generated_median": 963.37247516351,
+            "travel_w1": 196.8604637238845
+          },
+          "motorcycle": {
+            "reference_median": 1225.3889565811044,
+            "generated_median": 1323.9317932910258,
+            "travel_w1": 99.53318409954075
+          },
+          "private_car": {
+            "reference_median": 1252.1303628253831,
+            "generated_median": 1330.1935229562118,
+            "travel_w1": 70.73567334883883
+          },
+          "bycicle": {
+            "reference_median": 669.1164975926615,
+            "generated_median": 618.5235790700533,
+            "travel_w1": 46.105343051887886
+          },
+          "taxi_or_uber": {
+            "reference_median": 1378.1058271893767,
+            "generated_median": 1370.728540454512,
+            "travel_w1": 114.69889724100416
+          },
+          "truck": {
+            "reference_median": 1249.3427041755303,
+            "generated_median": 1235.9030981226379,
+            "travel_w1": 45.75712572913349
+          },
+          "delivery": {
+            "reference_median": 1212.0379708826167,
+            "generated_median": 1125.710533447412,
+            "travel_w1": 135.00877071924205
+          }
+        }
+      }
+    }
+  }
+}

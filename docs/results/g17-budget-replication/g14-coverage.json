@@ -1,0 +1,11 @@
+{
+  "conditions": 120,
+  "failures": {},
+  "counts": {
+    "bus": 24,
+    "motorcycle": 24,
+    "private_car": 24,
+    "bycicle": 24,
+    "taxi_or_uber": 24
+  }
+}
