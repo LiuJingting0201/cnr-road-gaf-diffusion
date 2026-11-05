@@ -1,0 +1,42 @@
+{
+  "splits": {
+    "train": {
+      "classes": {
+        "bus": 1280,
+        "motorcycle": 1280,
+        "private_car": 1280,
+        "bycicle": 1280,
+        "taxi_or_uber": 1280
+      },
+      "tracks": 6400,
+      "rows": 11762565,
+      "tracks_with_time_gaps": 0
+    },
+    "validation": {
+      "classes": {
+        "bus": 160,
+        "motorcycle": 160,
+        "private_car": 160,
+        "bycicle": 160,
+        "taxi_or_uber": 160
+      },
+      "tracks": 800,
+      "rows": 1465930,
+      "tracks_with_time_gaps": 0
+    },
+    "holdout": {
+      "classes": {
+        "bus": 160,
+        "motorcycle": 160,
+        "private_car": 160,
+        "bycicle": 160,
+        "taxi_or_uber": 160
+      },
+      "tracks": 800,
+      "rows": 1478854,
+      "tracks_with_time_gaps": 0
+    }
+  },
+  "package_bytes": 149632399,
+  "package_sha256": "3073d5b9dbe3d776b3a3e6853da8f6da33fad0bda2d0abcaadfefd4418ff25aa"
+}

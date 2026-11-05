@@ -1,0 +1,9 @@
+{
+  "matched_points": {
+    "train": 32768000,
+    "validation": 4096000,
+    "holdout": 4096000
+  },
+  "package_sha256": "15cdfc0e863386be882032738aa1cf0d2048d7d8a9ccc052b460283939e26df9",
+  "trajectories_sha256": "fab6677c67dea5ceb9a13244c88632e1237e39d097ca4489d340f69f67cd3162"
+}

@@ -1,0 +1,255 @@
+{
+  "sumo": "Eclipse SUMO sumo 1.28.0",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "splits": {
+    "train": {
+      "episodes": 86,
+      "requested": {
+        "pedestrian": 8600,
+        "bus": 8600,
+        "motorcycle": 8600,
+        "private_car": 8600,
+        "bycicle": 8600,
+        "taxi_or_uber": 8600,
+        "truck": 8600,
+        "delivery": 8600
+      },
+      "eligible": {
+        "pedestrian": 8259,
+        "bus": 8530,
+        "motorcycle": 8544,
+        "private_car": 8557,
+        "bycicle": 8552,
+        "taxi_or_uber": 8560,
+        "truck": 8553,
+        "delivery": 8539
+      },
+      "rejected": {
+        "pedestrian": {
+          "unreachable_walking_od": 191,
+          "position_jump": 131,
+          "time_or_road_reference": 7,
+          "stationary": 12
+        },
+        "bus": {
+          "stationary": 47,
+          "position_jump": 22,
+          "short_or_absent": 1
+        },
+        "motorcycle": {
+          "position_jump": 39,
+          "stationary": 15,
+          "short_or_absent": 2
+        },
+        "private_car": {
+          "position_jump": 19,
+          "stationary": 24
+        },
+        "bycicle": {
+          "position_jump": 40,
+          "stationary": 8
+        },
+        "taxi_or_uber": {
+          "position_jump": 24,
+          "short_or_absent": 2,
+          "stationary": 14
+        },
+        "truck": {
+          "position_jump": 20,
+          "stationary": 25,
+          "short_or_absent": 2
+        },
+        "delivery": {
+          "stationary": 36,
+          "position_jump": 23,
+          "short_or_absent": 2
+        }
+      },
+      "duplicates": {},
+      "delivered": {
+        "pedestrian": 8000,
+        "bus": 8000,
+        "motorcycle": 8000,
+        "private_car": 8000,
+        "bycicle": 8000,
+        "taxi_or_uber": 8000,
+        "truck": 8000,
+        "delivery": 8000
+      },
+      "rows": 32768000,
+      "distinct_delivered_od_pairs": {
+        "pedestrian": 7994,
+        "bus": 7998,
+        "motorcycle": 7998,
+        "private_car": 7997,
+        "bycicle": 7988,
+        "taxi_or_uber": 7995,
+        "truck": 7998,
+        "delivery": 7999
+      }
+    },
+    "validation": {
+      "episodes": 11,
+      "requested": {
+        "pedestrian": 1100,
+        "bus": 1100,
+        "motorcycle": 1100,
+        "private_car": 1100,
+        "bycicle": 1100,
+        "taxi_or_uber": 1100,
+        "truck": 1100,
+        "delivery": 1100
+      },
+      "eligible": {
+        "pedestrian": 1070,
+        "bus": 1093,
+        "motorcycle": 1093,
+        "private_car": 1091,
+        "bycicle": 1093,
+        "taxi_or_uber": 1094,
+        "truck": 1096,
+        "delivery": 1093
+      },
+      "rejected": {
+        "pedestrian": {
+          "unreachable_walking_od": 17,
+          "position_jump": 12,
+          "time_or_road_reference": 1
+        },
+        "bus": {
+          "position_jump": 5,
+          "stationary": 2
+        },
+        "motorcycle": {
+          "position_jump": 6,
+          "stationary": 1
+        },
+        "private_car": {
+          "position_jump": 4,
+          "stationary": 5
+        },
+        "bycicle": {
+          "position_jump": 5,
+          "stationary": 2
+        },
+        "taxi_or_uber": {
+          "stationary": 5,
+          "position_jump": 1
+        },
+        "truck": {
+          "position_jump": 2,
+          "stationary": 2
+        },
+        "delivery": {
+          "stationary": 4,
+          "position_jump": 3
+        }
+      },
+      "duplicates": {},
+      "delivered": {
+        "pedestrian": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "private_car": 1000,
+        "bycicle": 1000,
+        "taxi_or_uber": 1000,
+        "truck": 1000,
+        "delivery": 1000
+      },
+      "rows": 4096000,
+      "distinct_delivered_od_pairs": {
+        "pedestrian": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "private_car": 1000,
+        "bycicle": 1000,
+        "taxi_or_uber": 1000,
+        "truck": 1000,
+        "delivery": 1000
+      }
+    },
+    "holdout": {
+      "episodes": 11,
+      "requested": {
+        "pedestrian": 1100,
+        "bus": 1100,
+        "motorcycle": 1100,
+        "private_car": 1100,
+        "bycicle": 1100,
+        "taxi_or_uber": 1100,
+        "truck": 1100,
+        "delivery": 1100
+      },
+      "eligible": {
+        "pedestrian": 1061,
+        "bus": 1087,
+        "motorcycle": 1097,
+        "private_car": 1094,
+        "bycicle": 1095,
+        "taxi_or_uber": 1090,
+        "truck": 1096,
+        "delivery": 1099
+      },
+      "rejected": {
+        "pedestrian": {
+          "position_jump": 19,
+          "unreachable_walking_od": 19,
+          "time_or_road_reference": 1
+        },
+        "bus": {
+          "position_jump": 3,
+          "stationary": 10
+        },
+        "motorcycle": {
+          "short_or_absent": 1,
+          "stationary": 1,
+          "position_jump": 1
+        },
+        "private_car": {
+          "position_jump": 3,
+          "stationary": 3
+        },
+        "bycicle": {
+          "position_jump": 4,
+          "stationary": 1
+        },
+        "taxi_or_uber": {
+          "stationary": 5,
+          "position_jump": 5
+        },
+        "truck": {
+          "short_or_absent": 1,
+          "position_jump": 2,
+          "stationary": 1
+        },
+        "delivery": {
+          "position_jump": 1
+        }
+      },
+      "duplicates": {},
+      "delivered": {
+        "pedestrian": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "private_car": 1000,
+        "bycicle": 1000,
+        "taxi_or_uber": 1000,
+        "truck": 1000,
+        "delivery": 1000
+      },
+      "rows": 4096000,
+      "distinct_delivered_od_pairs": {
+        "pedestrian": 1000,
+        "bus": 1000,
+        "motorcycle": 999,
+        "private_car": 1000,
+        "bycicle": 1000,
+        "taxi_or_uber": 1000,
+        "truck": 1000,
+        "delivery": 1000
+      }
+    }
+  },
+  "package_bytes": 445348085,
+  "package_sha256": "fab6677c67dea5ceb9a13244c88632e1237e39d097ca4489d340f69f67cd3162"
+}

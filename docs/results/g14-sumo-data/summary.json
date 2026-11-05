@@ -1,0 +1,55 @@
+{
+  "splits": {
+    "train": {
+      "episodes": 64,
+      "target": 6400,
+      "counts": {
+        "bus": 635,
+        "motorcycle": 599,
+        "private_car": 617,
+        "bycicle": 689,
+        "taxi_or_uber": 584
+      },
+      "tracks": 3124,
+      "rows": 1599488,
+      "rejections": {
+        "reconstruction": 3273,
+        "stationary": 3
+      }
+    },
+    "validation": {
+      "episodes": 8,
+      "target": 800,
+      "counts": {
+        "bus": 87,
+        "motorcycle": 72,
+        "private_car": 81,
+        "bycicle": 73,
+        "taxi_or_uber": 67
+      },
+      "tracks": 380,
+      "rows": 194560,
+      "rejections": {
+        "reconstruction": 420
+      }
+    },
+    "holdout": {
+      "episodes": 8,
+      "target": 800,
+      "counts": {
+        "bus": 76,
+        "motorcycle": 76,
+        "private_car": 76,
+        "bycicle": 86,
+        "taxi_or_uber": 76
+      },
+      "tracks": 390,
+      "rows": 199680,
+      "rejections": {
+        "reconstruction": 410
+      }
+    }
+  },
+  "package_sha256": "8881834e2c27f4e3f2caf4cb0c0eaa83a69a4789a80a951efa64de3dcfe6600e",
+  "package_bytes": 20529121
+}
