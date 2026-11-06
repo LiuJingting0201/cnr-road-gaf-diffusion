@@ -1,0 +1,52 @@
+{
+  "complete": true,
+  "scope": "read_only_completion_config_and_source_verification",
+  "models": [
+    {
+      "name": "native_0_25s-42",
+      "steps": 10000,
+      "elapsed_s": 1520.0445882081985,
+      "valid_tokens_seen": 1356315346,
+      "config_sha256_verified": true,
+      "model_source_sha256_verified": true,
+      "train_source_sha256_verified": true,
+      "complete_receipt_sha256": "4878b0afa769f20bbd91b9bcf1bed6902d75e60a619bcf3ee83057072a7a6775"
+    },
+    {
+      "name": "native_0_25s-43",
+      "steps": 10000,
+      "elapsed_s": 1529.419797629118,
+      "valid_tokens_seen": 1356725586,
+      "config_sha256_verified": true,
+      "model_source_sha256_verified": true,
+      "train_source_sha256_verified": true,
+      "complete_receipt_sha256": "ec97c787b789cf18f4bbf426bea76e30e3bb62314e64c07ceabf06dd87babddf"
+    },
+    {
+      "name": "relative_257-42",
+      "steps": 10000,
+      "elapsed_s": 300.63525469601154,
+      "valid_tokens_seen": 163840000,
+      "config_sha256_verified": true,
+      "model_source_sha256_verified": true,
+      "train_source_sha256_verified": true,
+      "complete_receipt_sha256": "f9084de06e531187b96a89a5176bccf823ae2a5f1a8d316b2f286cb77b65d7b5"
+    },
+    {
+      "name": "relative_257-43",
+      "steps": 10000,
+      "elapsed_s": 318.8385730832815,
+      "valid_tokens_seen": 163840000,
+      "config_sha256_verified": true,
+      "model_source_sha256_verified": true,
+      "train_source_sha256_verified": true,
+      "complete_receipt_sha256": "da2548bf8ad6c960603292b44c84284e604272b1bd0434e1bfb3cba047d4a507"
+    }
+  ],
+  "model_weight_hash_recomputed_here": false,
+  "limits": [
+    "Only complete/config aggregate receipts retrieved; no model weights, statistics, raw IDs or frozen tests read.",
+    "10,000 updates are matched update count, not matched compute or token exposure.",
+    "Training completion is separate from prospective generation and evaluation completion."
+  ]
+}

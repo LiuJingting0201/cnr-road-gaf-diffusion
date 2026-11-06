@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "training_completed": true,
+  "generation_evaluated": false,
+  "seed": 42,
+  "arm": "native_0_25s",
+  "steps": 10000,
+  "elapsed_s": 1520.0445882081985,
+  "valid_tokens_seen": 1356315346,
+  "parameters": 891969,
+  "model_sha256": "fc9260d2e2f0a9e18e409a32c7f3b6fb03fa6456d008aecad06e117480d61b5f",
+  "config_sha256": "697664e3fe77f85cf1ba28ca9c534614571453fd1ce9a9fdc8d95d3528824297",
+  "stats_sha256": "235ea7255d51a327d3ee39b4b1b4d57890cf725496c9a956035e451d9ba2f7b7"
+}

@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "script_sha256": "727ec0ea392574ba1d79800d9f9c28f1e23e06fb10650e584546a280a126352a",
+  "checks": [
+    "real_relative42_receipt_parse",
+    "denominator_rejected",
+    "missing_class_false_macro_rejected",
+    "wrong_arm_rejected",
+    "missing_class_remains_NA",
+    "partial_reports_13_pending",
+    "strict_incomplete_rejected_before_write"
+  ],
+  "no_new_model_or_evaluation_run": true
+}

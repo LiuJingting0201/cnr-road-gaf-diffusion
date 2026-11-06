@@ -1,0 +1,41 @@
+{
+  "data": "g33-data/direct-legs/dataset.npz",
+  "output": "g33-data/models/native_0_25s-42",
+  "arm": "native_0_25s",
+  "seed": 42,
+  "steps": 10000,
+  "batch_size": 64,
+  "microbatch": 32,
+  "token_budget": 32768,
+  "width": 64,
+  "device": "cuda",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "training_rows": 925,
+  "training_parents": 925,
+  "training_class_counts": [
+    81,
+    226,
+    457,
+    92,
+    69
+  ],
+  "data_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+  "model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+  "train_source_sha256": "4a68a862e0dddf2f8d67c66b3c00244c90db365d2f673bb596cc81d81aa90f01",
+  "parameters": 891969,
+  "fixed_final_ema_only": true,
+  "validation_used_for_selection": false,
+  "duration_source": "training_classwise_loglength_ridge_empirical_residual_shared_between_arms",
+  "route_condition_source": "observed_training_routes; not an allowed final evaluation route source",
+  "loss": "noise_mse_physical_time_weighted_within_trajectory_then_equal_trajectory_mean",
+  "effective_batch": 64,
+  "learning_rate": 0.0002,
+  "ema_update": 0.001,
+  "note": "Matched clock baseline, not bitwise historical G22 joint-duration architecture"
+}
