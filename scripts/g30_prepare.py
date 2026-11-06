@@ -69,13 +69,16 @@ def rows_from_archive(path, indices=None, native=False, episode=None):
                 "duration", "core_start", "core_end", "break_count", "eligible_512")}
         if native:
             data.update({key: archive[key] for key in EXTRA_FIELDS})
+            for key in ("native_speed", "full_native_speed"):
+                if key in archive:
+                    data[key] = archive[key]
             if episode is None:
                 data["episodes"] = archive["episodes"]
     identifiers = data["ids"]
     if len(set(identifiers.tolist())) != len(identifiers):
         raise ValueError("Duplicate saved observation IDs")
     for key, array in data.items():
-        if key not in ("txy", "full_txy", "offset", "full_offset") and len(array) != len(identifiers):
+        if key not in ("txy", "full_txy", "offset", "full_offset", "native_speed", "full_native_speed") and len(array) != len(identifiers):
             raise ValueError(f"Misaligned observation metadata: {key}")
     for offset_key, value_key in (("offset", "txy"), ("full_offset", "full_txy")):
         offset = data[offset_key]
@@ -106,6 +109,13 @@ def rows_from_archive(path, indices=None, native=False, episode=None):
         if native:
             row["extra"] = {key: data[key][i].item() for key in EXTRA_FIELDS}
             row["extra"]["episodes"] = int(data["episodes"][i]) if episode is None else int(episode)
+            for field, offset, points in (("native_speed", "offset", "txy"),
+                                          ("full_native_speed", "full_offset", "full_txy")):
+                if field in data:
+                    if data[field].shape != (len(data[points]),):
+                        raise ValueError("Native speed is not aligned with saved coordinates")
+                    a, b = data[offset][i:i+2]
+                    row[field] = data[field][a:b].copy()
         rows.append(row)
     return rows
 
@@ -211,6 +221,9 @@ def write_cohort(path, rows, native=False):
             arrays = {key: archive[key] for key in archive.files}
         for key in (*EXTRA_FIELDS, "episodes"):
             arrays[key] = np.asarray([row["extra"][key] for row in rows])
+        for key in ("native_speed", "full_native_speed"):
+            if all(key in row for row in rows):
+                arrays[key] = np.concatenate([row[key] for row in rows])
         temporary = path.with_name(path.stem + ".meta.tmp.npz")
         np.savez_compressed(temporary, **arrays)
         temporary.replace(path)
