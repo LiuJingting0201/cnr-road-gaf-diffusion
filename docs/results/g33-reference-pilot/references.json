@@ -1,0 +1,63 @@
+{
+  "complete": true,
+  "phase": "references_extracted",
+  "denominator": 100,
+  "accepted": 97,
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "status_counts": {
+    "reference_complete": 97,
+    "planned_stop_count_mismatch": 1,
+    "coordinate_jump_over_100mps": 1,
+    "invalid_or_discontinuous": 1
+  },
+  "by_class": {
+    "bus": {
+      "reference_complete": 22,
+      "planned_stop_count_mismatch": 1,
+      "coordinate_jump_over_100mps": 1
+    },
+    "motorcycle": {
+      "reference_complete": 18,
+      "invalid_or_discontinuous": 1
+    },
+    "private_car": {
+      "reference_complete": 19
+    },
+    "bycicle": {
+      "reference_complete": 19
+    },
+    "taxi_or_uber": {
+      "reference_complete": 19
+    }
+  },
+  "planned_actual_route_matches": 100,
+  "observed_target_records": 253267,
+  "unknown_fcd_records": 0,
+  "source_sha256": {
+    "script": "70c03844d26620e87adbf3c69ddfc0328f22940db8cd6b24421a653747463c6b",
+    "requests": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+    "simulation_receipt": "fe6844ebb8fdffaffa1cbca2d147c28bf4da5fd14f7c3d88255acfcbb36f51ac"
+  },
+  "artifacts": {
+    "references.npz": {
+      "bytes": 1837582,
+      "sha256": "1d14fef83f4c2cb66a567e0b10567bfc4ede91275fcbf4ddb91bf275ddf6d021"
+    },
+    "reference-metadata.json": {
+      "bytes": 46208,
+      "sha256": "dff8a0be0fe0da57359cab8b950e08837a572783e8066dbe7fecda59afe138dc"
+    }
+  },
+  "limits": [
+    "Reference SUMO trajectory completion is distinct from diffusion or map-decoder success.",
+    "Same map and public route templates; new departures/RNG, not unseen-city or unseen-line generalization.",
+    "Target rerouting disabled, native background and public bus stop schedules retained.",
+    "No G32 geometry filter; all 100 original requests remain in the denominator."
+  ]
+}

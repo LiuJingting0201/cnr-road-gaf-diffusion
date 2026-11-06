@@ -1,0 +1,31 @@
+{
+  "complete": true,
+  "phase": "simulation",
+  "seconds": 413.7165558338165,
+  "seed": 330201,
+  "denominator": 100,
+  "files": {
+    "fcd.xml.gz": {
+      "bytes": 3829715,
+      "sha256": "c8f79f2469c3a03fbf5adabde6277709f8b0268cde2ce0c029666595f82abd59"
+    },
+    "tripinfo.xml": {
+      "bytes": 9396578,
+      "sha256": "dec6010ce27de922a6357eef8be318c4fbba01ea00e9f6c93cf93b4e048f5db0"
+    },
+    "vehroute.xml.gz": {
+      "bytes": 2486560,
+      "sha256": "93562c9ac363c285f43067f4aa07fc6170ec824ee5c90be40b9a677b3f3dbe3d"
+    },
+    "stops.xml": {
+      "bytes": 888007,
+      "sha256": "06f6f7eb57eb80f1aaadf29afc95f7ad88d7b2f3292b3e15047460ced12733a4"
+    },
+    "summary.xml": {
+      "bytes": 9673007,
+      "sha256": "12d1308296c6c7ba79b3c26d25f4b613c5fe1c5ca47ba448043f5dc8cf32f3af"
+    }
+  },
+  "reference_extraction_complete": false,
+  "config_sha256": "a6f42b0535f15777e50c2b6a513846e2ec178610b7392ea0932d1cb95643f42d"
+}

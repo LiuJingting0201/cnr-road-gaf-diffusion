@@ -1,0 +1,37 @@
+{
+  "complete": true,
+  "phase": "requests_frozen",
+  "denominator": 100,
+  "ready": 100,
+  "class_counts": {
+    "bus": 24,
+    "motorcycle": 19,
+    "private_car": 19,
+    "bycicle": 19,
+    "taxi_or_uber": 19
+  },
+  "status_counts": {
+    "request_ready": 100
+  },
+  "eligible_source_counts": {
+    "ptw/train": 4886,
+    "passenger/test": 51,
+    "bicycle/test": 18,
+    "passenger/not_single_no_activity_stop_leg": 13010,
+    "ptw/not_single_no_activity_stop_leg": 5100,
+    "passenger/train": 7701,
+    "bicycle/train": 2765,
+    "bicycle/val": 672,
+    "on-demand/train": 1555,
+    "ptw/test": 17,
+    "on-demand/val": 382,
+    "ptw/val": 1172,
+    "on-demand/test": 10,
+    "passenger/val": 1923
+  },
+  "simulation_started": false,
+  "requests_sha256": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+  "targets_sha256": "6aea8f00679a7c7a73e758369d8e65449b922fe79944ee0ea6db063faf7c47ee",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "script_sha256": "70c03844d26620e87adbf3c69ddfc0328f22940db8cd6b24421a653747463c6b"
+}

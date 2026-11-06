@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "check": "synthetic exact target-ID, background exclusion, completed-status join and summary-teleport reconciliation",
+  "script_sha256": "558bd57e32a6a86103cae3bab174089193ae861e5fd0825e0b02717afbfc6796",
+  "first_local_attempt": "local Python lacks hashlib.file_digest; failed before writing synthetic output",
+  "recovery": "construct-only compatibility shim implementing equivalent SHA256 streaming; production script and server results unchanged"
+}

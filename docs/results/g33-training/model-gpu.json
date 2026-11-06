@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "scope": "synthetic_gpu_construct_check_only_no_real_data",
+  "gpu": "NVIDIA L20",
+  "torch": "2.5.1+cu121",
+  "cases": [
+    {
+      "batch": 32,
+      "valid_intervals": 256,
+      "padded_intervals": 256,
+      "seconds_per_forward_backward_update": [
+        0.6573910266160965,
+        0.01667734980583191
+      ],
+      "peak_allocated_bytes": 159954944,
+      "peak_reserved_bytes": 188743680,
+      "parameters": 891969,
+      "finite_loss_and_gradients": true,
+      "padding_output_zero": true
+    },
+    {
+      "batch": 8,
+      "valid_intervals": 2048,
+      "padded_intervals": 2048,
+      "seconds_per_forward_backward_update": [
+        0.07689536362886429,
+        0.014504559338092804
+      ],
+      "peak_allocated_bytes": 278089216,
+      "peak_reserved_bytes": 291504128,
+      "parameters": 891969,
+      "finite_loss_and_gradients": true,
+      "padding_output_zero": true
+    },
+    {
+      "batch": 2,
+      "valid_intervals": 9418,
+      "padded_intervals": 9420,
+      "seconds_per_forward_backward_update": [
+        0.05913451313972473,
+        0.014470234513282776
+      ],
+      "peak_allocated_bytes": 310521344,
+      "peak_reserved_bytes": 354418688,
+      "parameters": 891969,
+      "finite_loss_and_gradients": true,
+      "padding_output_zero": true
+    }
+  ],
+  "model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075"
+}

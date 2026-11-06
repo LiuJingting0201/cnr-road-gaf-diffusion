@@ -1,0 +1,42 @@
+{
+  "complete": true,
+  "scope": "read_only_frozen_target_log_join_no_cohort_changes",
+  "request_denominator": 100,
+  "counts": {
+    "emergency_stop_all_lines": 1,
+    "emergency_stop_target_lines": 1,
+    "teleport_keyword_lines": 51,
+    "teleport_start_all_lines": 24,
+    "teleport_start_target_lines": 1
+  },
+  "summary_teleports_all_traffic": 24,
+  "teleport_start_count_matches_summary": true,
+  "affected_target_counts": {
+    "emergency_stop": 1,
+    "teleport_start": 1
+  },
+  "affected_completed_reference_counts": {
+    "emergency_stop": 1
+  },
+  "by_class_target_event_participations": {
+    "taxi_or_uber": {
+      "emergency_stop": 1
+    },
+    "bus": {
+      "teleport_start": 1
+    }
+  },
+  "hashes": {
+    "requests": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+    "simulation_receipt": "fe6844ebb8fdffaffa1cbca2d147c28bf4da5fd14f7c3d88255acfcbb36f51ac",
+    "extraction_receipt": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+    "console_log": "75c01a77a50073e97364c2c2c2db451615e3679cf62da1eaf259f0bccc212bfe",
+    "script": "558bd57e32a6a86103cae3bab174089193ae861e5fd0825e0b02717afbfc6796"
+  },
+  "limits": [
+    "No trajectory was removed, replaced, sliced or resimulated using these warnings.",
+    "Completion and continuity do not alone establish physical normality; affected complete references are reported explicitly.",
+    "Absence of direct target warnings does not exclude effects of background congestion or unlogged abnormalities.",
+    "Collision event-participation counts may exceed event-line counts when both participants are targets."
+  ]
+}
