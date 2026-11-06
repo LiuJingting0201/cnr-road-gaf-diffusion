@@ -1,0 +1,49 @@
+{
+  "complete": true,
+  "scope": "read-only real G33 metadata preflight and synthetic CPU checks; no real generation",
+  "finished_unix": 1793962423.4105377,
+  "reference_data_opened": false,
+  "teacher_scores_opened": false,
+  "model_weights_loaded": false,
+  "model_source_file": "g33_model.py",
+  "actual_model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+  "corrected_script_sha256": "8611722a064fe6373b7af3d6bcf950078e5e66a3d25dce59221ddabb0a22f571",
+  "synthetic_checks": {
+    "complete": true,
+    "scope": "synthetic in-memory tests only; no real generation",
+    "checks": [
+      "shared_T_all_eight_slots",
+      "deterministic_Uniform_slot",
+      "two_seed_noise_key_pairing",
+      "G33_prior_draw_exact",
+      "G33_Uniform_motion_bitwise_equal_synthetic_CPU",
+      "no_input_file_reads_in_planning_sampling",
+      "reference_score_and_supplied_duration_rejected",
+      "model_class_and_unwrapped_sampler_source_agree"
+    ]
+  },
+  "seeds": [
+    {
+      "seed": 42,
+      "configured_model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+      "baseline_model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+      "model_source_match": true,
+      "baseline_contract_match": true,
+      "model_config_sha256": "697664e3fe77f85cf1ba28ca9c534614571453fd1ce9a9fdc8d95d3528824297",
+      "model_receipt_sha256": "4878b0afa769f20bbd91b9bcf1bed6902d75e60a619bcf3ee83057072a7a6775",
+      "baseline_receipt_sha256": "0a229014e47837ee980ccb0113f7b1b7a5e2704771c7e3b4839901668de646b5",
+      "preserved_first_failure_sha256": "cce1c1456a19acd66422f2b85cad2eac5a001b1d0ae7a5a7f764ca271b0920fe"
+    },
+    {
+      "seed": 43,
+      "configured_model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+      "baseline_model_source_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+      "model_source_match": true,
+      "baseline_contract_match": true,
+      "model_config_sha256": "5e41cc14b57d2a22e1b985e0b9da80df8e1730098cfd31c1eded64dd500efd73",
+      "model_receipt_sha256": "ec97c787b789cf18f4bbf426bea76e30e3bb62314e64c07ceabf06dd87babddf",
+      "baseline_receipt_sha256": "8f02fc4c49d78eb21c59c32cb6bcaab2de84ff179b82287ad9e8ca3ddd556606",
+      "preserved_first_failure_sha256": "ff21098097861dc7ac30b20570c1e6cc1be60b8ab52e21624c30936da59883cb"
+    }
+  ]
+}

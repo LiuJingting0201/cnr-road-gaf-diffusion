@@ -96,7 +96,7 @@ def sample_fixed(model, request, stats, plan, seed, device="cuda", ddim_steps=DD
 
 def source_hashes():
     return {"g34_fixed_duration.py": digest(__file__),
-            "g33_model.py": digest(inspect.getsourcefile(sample)),
+            "g33_model.py": digest(inspect.getsourcefile(MotionDenoiser)),
             "g33_evaluate.py": digest(inspect.getsourcefile(curve_xy)),
             "g33_feedback.py": digest(inspect.getsourcefile(permutation))}
 
@@ -113,7 +113,7 @@ def verify_baseline(baseline, maps, model, seed, prior):
             or old.get("map_receipt_sha256") != digest(maps/"complete.json")
             or old.get("training_model_receipt_sha256") != digest(model/"complete.json")
             or old.get("duration_prior_sha256") != json_hash(prior)
-            or old.get("model_code_sha256") != digest(inspect.getsourcefile(sample))
+            or old.get("model_code_sha256") != digest(inspect.getsourcefile(MotionDenoiser))
             or old.get("script_sha256") != digest(inspect.getsourcefile(curve_xy))):
         raise ValueError("Frozen G33 baseline receipt/model/map/prior/protocol differs")
     return old
@@ -136,7 +136,7 @@ def generate(maps, model_folder, baseline, output, seed, device):
                 or digest(model_folder/"config.json") != model_receipt["config_sha256"]):
             raise ValueError("Unchanged completed G33 native model required")
         config = json.loads((model_folder/"config.json").read_text())
-        if config["model_source_sha256"] != digest(inspect.getsourcefile(sample)):
+        if config["model_source_sha256"] != digest(inspect.getsourcefile(MotionDenoiser)):
             raise ValueError("G33 model implementation changed")
         state = torch.load(model_folder/"model.pt", weights_only=False, map_location="cpu")
         stats = json.loads((model_folder/"stats.json").read_text())
@@ -217,7 +217,7 @@ def generate(maps, model_folder, baseline, output, seed, device):
                   "training_model_receipt_sha256": digest(model_folder/"complete.json"),
                   "g33_baseline_receipt_sha256": digest(baseline/"complete.json"),
                   "duration_prior_sha256": json_hash(stats["duration_prior"]), "script_sha256": digest(__file__),
-                  "model_code_sha256": digest(inspect.getsourcefile(sample)), "source_code_sha256": source_hashes(),
+                  "model_code_sha256": digest(inspect.getsourcefile(MotionDenoiser)), "source_code_sha256": source_hashes(),
                   "artifacts": {n: artifact(output/n) for n in ("samples.npz", "generated.csv.gz", "candidate-status.json", "duration-plan.json")},
                   "limits": ["Post-G33 mechanism diagnostic on already inspected development references, not a new blind test.",
                              "One duration is sampled from the unchanged train prior per request and model seed; no reference duration is supplied.",
@@ -237,6 +237,11 @@ def self_test():
     """Synthetic in-memory contracts; never open datasets, models or references."""
     from unittest.mock import patch
     torch.set_num_threads(1)
+    # @torch.no_grad wraps sample in a torch context-manager source file.
+    # Hash the model class's file, and cross-check the unwrapped sampler.
+    model_source = Path(inspect.getsourcefile(MotionDenoiser)).resolve()
+    assert model_source.name == "g33_model.py"
+    assert model_source == Path(inspect.getsourcefile(inspect.unwrap(sample))).resolve()
     class NoiseReader(torch.nn.Module):
         def forward(self, x, timestep, labels, context, route, clock_features, mask):
             return (.1*x+.01*clock_features[:, :1])*mask
@@ -291,7 +296,8 @@ def self_test():
                 raise AssertionError("Target/score/supplied duration accepted")
     checks.extend(["shared_T_all_eight_slots", "deterministic_Uniform_slot", "two_seed_noise_key_pairing",
                    "G33_prior_draw_exact", "G33_Uniform_motion_bitwise_equal_synthetic_CPU",
-                   "no_input_file_reads_in_planning_sampling", "reference_score_and_supplied_duration_rejected"])
+                   "no_input_file_reads_in_planning_sampling", "reference_score_and_supplied_duration_rejected",
+                   "model_class_and_unwrapped_sampler_source_agree"])
     result = {"complete": True, "scope": "synthetic in-memory tests only; no real generation", "checks": checks}
     print(json.dumps(result))
     return result
