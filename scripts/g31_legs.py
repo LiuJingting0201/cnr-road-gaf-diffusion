@@ -598,6 +598,7 @@ def extract(args):
                         "pedestrian": "Completed walk stage with tripinfo and enhanced stage-time agreement; riders excluded",
                         "coverage": "Native .25-second points, >=2 observations, event endpoints within .25s, no internal gaps or >100m/s coordinate jump",
                         "source_routes": "Public input plans only; repeated-edge ambiguity retained; realized paths are separate audit-only metadata",
+                        "flow_eligibility": "Flow namespace association is confirmed using emitted route or endpoints; this target-dependent audit cohort is not a future-independent generation request sampler",
                         "short_legs": "No minimum duration tuning; <5s legs counted separately, not silently removed"},
               "sources": {"public_source_manifest_sha256": digest(args.source/"complete.json"),
                           "replay_receipt_sha256": digest(args.replay/"simulation-complete.json"),
