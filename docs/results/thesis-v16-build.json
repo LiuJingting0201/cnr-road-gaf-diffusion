@@ -1,0 +1,173 @@
+{
+  "complete": true,
+  "version": "v16",
+  "date": "2026-11-06",
+  "main_chapters": 8,
+  "pdf_pages": 74,
+  "main_text_printed_pages": 49,
+  "bibliography_entries": 51,
+  "research_papers_or_preprints": 46,
+  "all_bibliography_entries_cited": true,
+  "latex_undefined_references": 0,
+  "latex_overfull_boxes": 0,
+  "fresh_packaged_source_build_passes": 3,
+  "packaged_pdf_page_text_equals_source_build": true,
+  "all_74_pages_rendered_and_contact_sheets_inspected": true,
+  "full_page_visual_checks": [
+    1,
+    2,
+    28,
+    44,
+    46,
+    49,
+    50,
+    51,
+    57,
+    63,
+    66,
+    68,
+    71,
+    74
+  ],
+  "numerical_source_tables": {
+    "G33": "docs/results/g33-generation/report/summary.json",
+    "G34": "docs/results/g34-fixed-duration/attempt2/report/summary.json"
+  },
+  "source_manifest": {
+    "version": "v16",
+    "files": {
+      "README.md": {
+        "sha256": "d67f4bbe62593647e5462f8498805a6e5902620e36f643d4f8966709a40d90e1",
+        "bytes": 6556
+      },
+      "TEMPLATE.md": {
+        "sha256": "b3eb0202983b9e7e01aa00a59e56496898819040b5d2d7b9de9daf933715fc95",
+        "bytes": 1092
+      },
+      "abstract.tex": {
+        "sha256": "bcf0e6ec2173015dadbd55ae2eddaa5c7929f85a87d103bcb0916a9260b1ef40",
+        "bytes": 2433
+      },
+      "chapters/02-background.tex": {
+        "sha256": "30b09b96d3a3758f1333e3adc39edc1168ec742bf8b021236250da6ced2560cf",
+        "bytes": 7968
+      },
+      "chapters/native-appendix.tex": {
+        "sha256": "ecd431fb8f0b5a09f0979f6f6a111f7cbf32b604cfa627cdb98817a24f8b00c4",
+        "bytes": 19226
+      },
+      "chapters/native-data.tex": {
+        "sha256": "29ffdb43344b4998410ccf642ecde2e92096174d7f987489fc3e16c1a5aa64f0",
+        "bytes": 18901
+      },
+      "chapters/native-discussion.tex": {
+        "sha256": "89f3e42cfd11624782a00b1c3b0c0a7cc4042fee0c8ba1fb4a46a2b5360d0821",
+        "bytes": 14095
+      },
+      "chapters/native-feedback.tex": {
+        "sha256": "653007f424fd7c3104ff48ba494b00677e5dcc5a4fcff9dbbc2cf258fee93a08",
+        "bytes": 7912
+      },
+      "chapters/native-introduction.tex": {
+        "sha256": "5d66d0341a45e324b106087b615141c2ee06d8c22cca6adffd8d847f99b01945",
+        "bytes": 12450
+      },
+      "chapters/native-method.tex": {
+        "sha256": "725ae7b34f2338f25fcc3c4f7fd0177f277b4191218989366364ff34c963797d",
+        "bytes": 10594
+      },
+      "chapters/native-protocol.tex": {
+        "sha256": "83044d4af99b7976b1ce5f5785bee99899fc3eaef9cace29a5328d1b5090c84a",
+        "bytes": 13616
+      },
+      "chapters/native-results.tex": {
+        "sha256": "4866b31ebaed1a8c91f131b594db0ffc0ab9f9d1b6f442124ce87d37205d32b7",
+        "bytes": 21902
+      },
+      "chapters/review-comparison.tex": {
+        "sha256": "3ef7f1bbdc28ef8c755c26c8b0523ef663590128c7ecf593591252b5f17b556e",
+        "bytes": 8721
+      },
+      "cover.tex": {
+        "sha256": "c8029a7deab183f4187914c3263a56077a8a3ed54543e3299a5e2ecad9144055",
+        "bytes": 691
+      },
+      "figures/g33-case-bus.pdf": {
+        "sha256": "992c111f8aa1f42078b156dc92b1cd096ba8da1dea7251ba674c512a135ee872",
+        "bytes": 68880
+      },
+      "figures/g33-case-bycicle.pdf": {
+        "sha256": "40e95c24b34b57224b9d8aee59d87fd694c93afc37baa9957f75a903ea3478ab",
+        "bytes": 34991
+      },
+      "figures/g33-case-motorcycle.pdf": {
+        "sha256": "245e1878d9feed8cba1b323f760cdc599be2c756676e7b9b34bf3bd452886ff2",
+        "bytes": 54491
+      },
+      "figures/g33-case-private_car.pdf": {
+        "sha256": "4f464f6eb3ffa573d4e63dd95ad88d036bc4e81aded3236b29382c7361634f64",
+        "bytes": 40094
+      },
+      "figures/g33-case-taxi_or_uber.pdf": {
+        "sha256": "12b549a1e896f9c12a03d33e0bcc021fd2820c20dd9b825b3d8b39ff0695f92e",
+        "bytes": 37018
+      },
+      "figures/g33-framework.pdf": {
+        "sha256": "f5f5a8875c83e19c85801475c605bd5b8f73600a1658bea3998974aff54aa8c4",
+        "bytes": 3459
+      },
+      "figures/g33-gaf-physical-effects.pdf": {
+        "sha256": "e0a042cc5b6bc6ac4caaa807b3c62ed87934fd094ffc8519069824e26b34545b",
+        "bytes": 18519
+      },
+      "figures/g33-generation-quality.pdf": {
+        "sha256": "da14932f03c18ee867b7b11312da45006679bb6817311cfc970a2f78e0051812",
+        "bytes": 19455
+      },
+      "figures/g33-native-motion.pdf": {
+        "sha256": "54673b4d3dc7dec4eead5e4b353f76139a14438ee0316632d87eb73f1201ad19",
+        "bytes": 15885
+      },
+      "figures/polito-logo.jpg": {
+        "sha256": "632842680635c3a69e00f725d22967ac9c63951480d346520ac43165e0492b78",
+        "bytes": 85132
+      },
+      "main.tex": {
+        "sha256": "d6a1386ac00bc8b15142338665e279600dd5fac7256fc37fcadc736cdf9daf2a",
+        "bytes": 1531
+      },
+      "metadata.tex": {
+        "sha256": "3a055caf3216e70df9229936ff34634f609f8d36b64b85783a46c4fbd116d086",
+        "bytes": 502
+      },
+      "references.tex": {
+        "sha256": "f5f5575a33c406134d14e82b3e9309054ea7f2da537916e4cd7b93a58909b9df",
+        "bytes": 11606
+      }
+    },
+    "no_raw_data_weights_or_credentials": true
+  },
+  "artifacts": {
+    "Road_Conditioned_Diffusion_Thesis_v16.pdf": {
+      "bytes": 1000616,
+      "sha256": "aa5a01e7db117ad5ac5160b7a88a39cade0cb278677c361dcd91629d80736257"
+    },
+    "PoliTo_Thesis_v16_Overleaf.zip": {
+      "bytes": 431121,
+      "sha256": "61a0bd0c6fb0a09cba4973c10bd4112f975a05ffb3120256985f1bbc3fc9f22c"
+    }
+  },
+  "administrative_placeholders_retained": [
+    "Candidate name",
+    "degree programme",
+    "supervisor",
+    "academic year",
+    "graduation session"
+  ],
+  "scientific_limits": [
+    "G33 uses one new same-map reference episode; known public route templates remain.",
+    "G34 reuses the already inspected G33 development reference.",
+    "Current native-demand GAF experiments are terminal selection, not in-loop guidance.",
+    "No current-cohort downstream augmentation benefit claimed."
+  ]
+}

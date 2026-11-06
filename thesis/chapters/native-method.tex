@@ -1,0 +1,87 @@
+\chapter{Road-conditioned synthesis of complete journeys}
+\label{ch:native-method}
+
+\section{The conditional generation task}
+The required output is a complete timed journey, rather than an image or a continuation of a short observed window. A request specifies a road network $M$, a participant class $c$, and a planned route $R$ with explicit starting and ending positions. For a scheduled bus service, the request also retains its public stop sequence. The generator returns a sequence $X=\{(t_i,x_i,y_i,c)\}_{i=0}^{n}$, which can be exported as \texttt{time,id,x,y,type}. The task is conditional synthesis: the planned route is available before generation, whereas the realised trajectory, travel time and intermediate speeds are not.
+
+Diffusion has been applied to geographic trajectories and road-constrained trajectory generation~\cite{difftraj,diffrn}. Here, the learned component models how a participant progresses along an already specified route. Geometry and timing are separated to make their contributions identifiable. Let $R(s)$ denote interpolation along the route at arc distance $s\in[0,L]$. The sampling program is
+\begin{equation}
+ T\sim p_{\mathrm{dur}}(\,\cdot\mid L,c),\qquad
+ p\sim p_\theta(\,\cdot\mid R,c,T),\qquad
+ X_i=R\bigl(Lp(t_i)\bigr).
+ \label{eq:native-factorization}
+\end{equation}
+The duration prior and motion diffusion together form the generator. Duration itself is not a diffusion output. The decoder supplies route adherence; the neural network must learn useful motion within that constraint. This design does not predict route choice, traffic signals, surrounding agents or collision avoidance.
+
+\fig{g33-framework.pdf}{1}{Implemented generation and feedback pipeline. Road geometry constrains coordinate decoding, diffusion produces motion, and the two self-trained image readers rank a completed candidate pool. No arrow sends reference future observations into generation. The present feedback is terminal selection, not a gradient inside denoising.}{g33-framework}
+
+Training and prospective evaluation use different sources of route information. An observed training journey supplies its paired spatial path and motion target, as in conditional supervised learning. Evaluation receives only a route assembled from the frozen public request and map. An observed validation path can support an explicitly labelled reconstruction diagnostic, but cannot replace the prospective route. In particular, a failed map construction is retained as a failed request rather than repaired with future reference coordinates.
+
+\section{Representing motion on physical time}
+For a training trajectory, let $\ell_i=\|X_i-X_{i-1}\|_2$, $s_i=\sum_{j\leq i}\ell_j$ and $p_i=s_i/L$, where $L=s_n>0$. Repeated positions give repeated progress values and therefore retain stopped intervals. All nonduplicate spatial vertices are stored for exact piecewise-linear reconstruction; a separate set of 129 equally spaced arc positions provides the network's route description. Compressing the conditioning input therefore does not compress the coordinate decoder.
+
+Two temporal representations are compared. The relative-clock version uses 257 points uniformly distributed over $[0,T]$. The physical-clock version uses $0,0.25,0.50,\ldots,T$, appending the exact final time when it is not a multiple of 0.25 seconds. Its number of intervals varies with duration. The distinction matters because a fixed number of controls gives a long trip much coarser physical resolution than a short one. Preserving fine resolution is a representation choice to be tested in generation, not proof of better generated motion.
+
+With $\Delta t_i=t_i-t_{i-1}$, define the dimensionless relative speed and its transformed target as
+\begin{equation}
+ r_i=\frac{p_i-p_{i-1}}{\Delta t_i/T},\qquad
+ u_i=\log(1+r_i),\qquad z_{0,i}=\frac{u_i-\mu}{\sigma}.
+ \label{eq:native-target}
+\end{equation}
+Thus $r_i=1$ is constant progress at the journey's average rate, and $r_i=0$ represents a stop. The logarithm moderates the upper tail without removing zero motion. Training-only $\mu$ and $\sigma$ assign equal mass to each trajectory and weight its intervals by $\Delta t_i/T$. Both clock versions use this target definition, with their own fitted normalization. They form a matched comparison on the current network, rather than a byte-for-byte reproduction of an earlier model.
+
+\section{Generating duration without future information}
+Within each class, a ridge regression relates log travel time to centred log route length. For training journey $j$ of class $c$,
+\begin{equation}
+ \log T_j=a_c+b_c(\log L_j-\bar\ell_c)+e_j,
+ \qquad
+ T^*=\exp\{a_c+b_c(\log L-\bar\ell_c)+e^*\},
+ \label{eq:native-duration}
+\end{equation}
+where $e^*$ is sampled uniformly from that class's training residuals. The slope has ridge penalty $10^{-3}$; the intercept is unpenalized. Residual sampling retains variation beyond the conditional mean without imposing a Gaussian residual law. A numerical lower bound gives $T=\max(T^*,0.25,L/55)$, with metres and seconds as the physical units. This is a broad duration guard, not a class-specific speed limit or a guarantee about instantaneous speed.
+
+The same prior and request-keyed random draws are used by both diffusion versions and the empirical comparator. Consequently their unselected duration distributions are paired by construction. Differences in generated speed variation can be attributed to the motion mechanisms under this shared prior, whereas a common duration result cannot establish a diffusion advantage. Terminal feedback may select different durations from the shared pool; that is a selection effect and is reported as such.
+
+\section{A masked temporal denoiser}
+The denoiser is a one-dimensional U-Net with channel widths 64, 96 and 128 and 891,969 trainable parameters. Two downsampling stages, skip connections and nearest-neighbour upsampling connect the resolutions. Residual convolutional blocks use dilations 1 and 2, with dilations 1, 2, 4 and 8 in the bottleneck. Each block also receives a masked global feature summary, allowing information to pass beyond its local receptive field.
+
+The conditioning vector adds a sinusoidal diffusion-step embedding, a learned class embedding, a convolutional route embedding and a five-component context embedding. The context contains normalized starting coordinates, log route length, log sampled duration and log mean travel speed. Route coordinates are expressed relative to the start and scaled by 1,500 metres. Three channels describe each interval's physical midpoint, relative midpoint and actual width. These allow the network to distinguish physical time from relative trip position. Bus stop times and background traffic states are not separate network inputs; geometric passage through a stop does not enforce a dwell there.
+
+Sequences are padded to a multiple of four. The mask is reapplied through the network, pooling divides by the number of valid entries, and normalization acts across channels at each position rather than across padded time. Padding therefore has no semantic role as a stationary suffix. Batches are sampled before length sorting; sorting and microbatching manage memory without removing long journeys.
+
+Following noise-prediction diffusion~\cite{ddpm}, a uniformly sampled noise index $k$ corrupts a target by
+\begin{equation}
+ z_k=\sqrt{\bar\alpha_k}z_0+\sqrt{1-\bar\alpha_k}\,\epsilon,
+ \qquad \epsilon\sim\mathcal N(0,I),
+ \label{eq:native-forward}
+\end{equation}
+on valid intervals. The 1,000-step schedule increases $\beta_k$ linearly from $10^{-4}$ to $0.02$, with $\bar\alpha_k=\prod_{j\leq k}(1-\beta_j)$. For an effective batch of $B$ trajectories, the loss is
+\begin{equation}
+ \mathcal L=\frac{1}{B}\sum_{b=1}^{B}\sum_i
+ \frac{\Delta t_{b,i}}{T_b}
+ \left[\epsilon_{b,i}-\epsilon_\theta(z_{b,k},k,R_b,c_b,T_b)_i\right]^2.
+ \label{eq:native-loss}
+\end{equation}
+Padding has zero weight. Physical-time weighting within a trajectory prevents the fractional final interval from receiving a full interval's influence; averaging trajectories prevents long trips from dominating merely through their larger point counts.
+
+\section{Sampling and coordinate decoding}
+Generation uses 100 deterministic DDIM updates~\cite{ddim} between equally spaced indices of the training schedule. At a current index $k$, the predicted clean target and next state at $j<k$ are
+\begin{align}
+ \hat z_0&=(z_k-\sqrt{1-\bar\alpha_k}\,\hat\epsilon)/\sqrt{\bar\alpha_k},\\
+ z_j&=\sqrt{\bar\alpha_j}\,\hat z_0+\sqrt{1-\bar\alpha_j}\,\hat\epsilon.
+ \label{eq:native-ddim}
+\end{align}
+The final update uses $\bar\alpha_j=1$. Different initial Gaussian draws produce candidates; paired request and candidate identifiers reproduce duration draws across methods. Different clock dimensions do not imply identical noise arrays.
+
+After undoing standardization, the decoder clips $u_i$ to $[0,8]$ and constructs nonnegative progress mass:
+\begin{equation}
+ m_i=\left[\exp\{\operatorname{clip}(\mu+\sigma\hat z_{0,i},0,8)\}-1\right]
+       \frac{\Delta t_i}{T},\qquad
+ \hat p_i=\frac{\sum_{j\leq i}m_j}{\sum_jm_j}.
+ \label{eq:native-decoder}
+\end{equation}
+The initial progress is zero and the final progress is one. If total mass is below $10^{-12}$, the decoder falls back to constant progress in physical time. Negative-value truncations, upper clipping and this fallback are counted rather than hidden. The normalization couples the whole journey: a local mass change can alter progress elsewhere. It guarantees endpoint completion for a decoded path, but does not guarantee realistic acceleration or stop timing.
+
+Coordinates are interpolated along all retained vertices of the constructed map path. For the relative-clock model, progress is first interpolated onto the same quarter-second output clock; the exact fractional endpoint remains. Thus both methods deliver comparable timestamped coordinates. Permitted lanes, directed connections and source stop anchors are handled by the route constructor. This geometric constraint is shared with the empirical baseline and all GAF selectors. It cannot be credited to diffusion or feedback, and it does not imply vehicle-body clearance, signal compliance or interactive traffic safety.
+
+The resulting generator is complete before any classifier is consulted. Its learned contribution is a distribution of whole-journey motion profiles under the declared conditions. The feedback module in Chapter~\ref{ch:native-feedback} subsequently tests whether image-based class information provides a useful preference among those generated profiles.

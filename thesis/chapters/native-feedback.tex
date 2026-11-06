@@ -1,0 +1,50 @@
+\chapter{Spatial and speed GAF feedback}
+\label{ch:native-feedback}
+
+\section{Two representations of the same journey}
+The inherited work represents trajectories as images for participant classification~\cite{salvadori,ferreira,original}. This thesis reuses that spatial encoding and trains its own classifiers; no group CNN weights were supplied. A second view represents the journey's speed sequence. Both views predict the same five participant classes. Their role is to test whether class information learned from source trajectories can improve synthetic data, rather than to generate images and invert them into coordinates.
+
+For a scalar sequence $a_1,\ldots,a_q$, let $u_i\in[0,1]$ be its normalized value and $\phi_i=\arccos u_i$. The two angular fields used here are
+\begin{equation}
+ G^{\mathrm{sum}}_{ij}=\cos(\phi_i+\phi_j),\qquad
+ G^{\mathrm{diff}}_{ij}=\sin(\phi_i-\phi_j).
+ \label{eq:native-gaf}
+\end{equation}
+A third channel is a Markov transition field. If $b_i$ denotes a sequence value's bin and $P_{ab}$ is the row-normalized count of adjacent transitions from bin $a$ to bin $b$, then $H_{ij}=P_{b_i b_j}$. The angular construction originates in time-series imaging~\cite{wang}; it is not a new transform proposed by this thesis. For brevity, ``GAF feedback'' refers to the implemented three-channel GASF/GADF/MTF representation, including the transition channel.
+
+\section{Inherited spatial encoding}
+The spatial input consists only of the ordered coordinate samples. Frozen coordinate bounds map them into the unit square, with out-of-range values clipped and counted. The inherited recursive Hilbert function assigns a scalar index to each point. Its precision parameter is $0.0009$, corresponding to a $64\times64$ spatial grid. The temporal order is preserved: points are not sorted by Hilbert index.
+
+The original squeeze procedure compresses repeated-index runs, followed by mirror duplication when necessary, to obtain 224 values. This is not uniform time resampling or a learned encoder. If the inherited procedure cannot reach the required length, the case is reported as an encoding failure. The scalar sequence is mapped to GASF, GADF and an eight-bin uniform MTF. The angular channels use per-sequence scaling to $[0,1]$, while the frozen channel bounds convert the three fields to an unsigned eight-bit RGB image. Coordinate and channel parameters are inherited from the earlier training-only encoding metadata; they are not refitted on the new references or generated candidates.
+
+This branch receives no additional velocity, acceleration, duration or participant feature. Nevertheless it is not invariant to motion. Different speeds change the number and order of sampled coordinates within quantized cells, and the run compression preserves some of that structure. Conversely, quantization and compression can map distinct motion profiles to the same image. On a fixed route, spatial feedback may therefore have little ability to rank the candidate pool even when it classifies trajectories from different routes well. Image hashes and the number of distinct spatial images in each pool make this limitation observable.
+
+\section{Speed encoding and its temporal limits}
+Speed is computed from the same coordinates and timestamps. Let $d(t)$ be the piecewise-linear interpolation of cumulative planar distance. At integer seconds, the speed summary is
+\begin{equation}
+ v_j=d(j+1)-d(j),\qquad j=0,\ldots,\lfloor T\rfloor-1.
+ \label{eq:native-speed-view}
+\end{equation}
+These one-second increments are expressed in metres per second and resampled to 128 equally spaced relative sequence positions. The encoder requires at least five one-second increments. Shorter candidates remain in the generation accounting and invoke the shared feedback failure rule; they are not silently removed to improve a classifier's coverage.
+
+The angular normalization is $u_i=\operatorname{clip}(v_i/35,0,1)$, with a common absolute scale across classes. Values above 35 metres per second are counted. The MTF uses eight fixed bins on this normalized interval. The two angular channels are mapped from $[-1,1]$ to $[0,1]$; the resulting image is resized from $128\times128$ to $224\times224$. Both representations then use the same ImageNet channel normalization before entering a ResNet18~\cite{resnet}.
+
+The speed image retains absolute speed scale but compresses temporal detail. One-second averaging and the 128-point summary do not preserve all quarter-second acceleration. Explicit duration and location are not supplied to this classifier. The representation is consequently a particular view of whole-trip motion, not a complete alternative encoding of the trajectory.
+
+\section{Frozen class readers and terminal selection}
+Two independent ResNet18 classifiers are fitted on identical training journeys and class labels, one per view. The fixed training protocol is given in Chapter~\ref{ch:native-protocol}. Neither reader is trained on synthetic candidates, and no classifier is used inside the current denoising process. Let $f_S(c\mid E_S(X))$ and $f_V(c\mid E_V(X))$ be their target-class probabilities. For each request, all methods receive the same $K=8$ generated candidates and use
+\begin{align}
+ s_k&=\log\max\{f_S(c\mid E_S(X_k)),10^{-8}\},\\
+ v_k&=\log\max\{f_V(c\mid E_V(X_k)),10^{-8}\}.
+ \label{eq:native-feedback-scores}
+\end{align}
+Uniform selects the first candidate in a fixed request-keyed random permutation. The S and V strategies maximize $s_k$ and $v_k$, respectively; SV maximizes $(s_k+v_k)/2$. Exact score ties use that same permutation. Equal weights are fixed before evaluation rather than selected to favor the better validation reader. The probabilities are not temperature-calibrated, so equal log weights should not be interpreted as equal reliability~\cite{calibration}.
+
+Every requested candidate slot is retained. If a pool contains a failed candidate or an unsuccessful encoding in either view, all four strategies use the same predetermined Uniform slot. A failed selected slot remains a failure. There is no replacement sampling, alternate classifier or method-specific exclusion. Nonfinite logits and inconsistent model or data hashes are implementation errors that stop scoring. This policy keeps scoring failures from becoming a hidden selection advantage.
+
+\section{What would demonstrate useful feedback?}
+Three kinds of evidence must remain separate. Classification measures whether the source representation contains information about participant labels. Ranking measures whether its scores vary meaningfully among candidates for one fixed request. Generation utility measures whether the selected trajectories improve under independent physical evaluation, with coverage and diversity retained. A stronger classification result alone establishes neither ranking nor utility.
+
+The two views have common physical origins but different losses of information. Their predictions may be complementary, redundant or jointly biased by the simulator's route and vehicle distributions. An SV advantage over Uniform is insufficient to establish complementarity if one branch already explains the entire improvement; comparison with the better single-view selector is also required. Conversely, a constant spatial image within a fixed-route pool limits this experiment's ability to test spatial feedback, rather than proving that spatial GAF is generally uninformative.
+
+These experiments evaluate terminal feedback. Classifier guidance during denoising is a distinct intervention~\cite{cg,univ}: it changes the sampling trajectory and its computational budget. The present implementation does neither, and no in-loop guidance benefit is claimed. Likewise, without a matched non-GAF class reader, a positive result supports this implemented feedback mechanism but cannot isolate the superiority of angular encoding over generic class-based selection.

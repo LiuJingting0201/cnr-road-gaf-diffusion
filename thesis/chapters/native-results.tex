@@ -1,0 +1,117 @@
+\chapter{Complete-trip generation results}
+\label{ch:native-results}
+
+The complete-trip experiment establishes two different findings. First, learning motion on the native physical clock substantially improves the generated acceleration distribution relative to the matched 257-point diffusion model, and also improves it relative to empirical motion transfer. Second, both GAF readers recognize classes and change candidate selection, but higher class confidence does not translate into a uniform improvement of the selected trajectory distribution. This chapter presents these findings together with their costs and coverage. Every quality comparison uses the independently simulated reference episode introduced in Chapter~\ref{ch:native-data}; no reference path or duration is an input to generation.
+
+\section{Completed runs and evaluation population}
+
+All four fixed diffusion fits completed 10,000 optimization steps: the relative-time and native-time models, each with seeds 42 and 43. Each model contains 891,969 parameters and is evaluated using its final exponential-moving-average weights. The relative-time runs took 300.6 and 318.8 seconds; the native-time runs took 1,520.0 and 1,529.4 seconds on the available L20 setup. The native runs processed approximately 1.36 billion valid temporal values, compared with 163.84 million for each relative-time run. These are measured execution costs for this implementation and concurrent workload, not a hardware-independent benchmark or an equal-compute comparison.
+
+Generating and exporting 776 candidates took 322.4/309.7 seconds for the relative-clock model and 335.9/324.9 seconds for the native-clock model; each used 77,600 measured denoiser forward calls. Empirical transfer took 16.6/16.4 seconds with no denoiser calls. Encoding and scoring both GAF views for each native pool added approximately 12 seconds. These timings include this implementation's sequential candidate processing and export work. They distinguish computational cost from fidelity and do not establish a general speed advantage over SUMO or a batched alternative.
+
+The prospective request denominator remains 100. The map interface supports 97 requests and the reference extraction accepts 97; their intersection contains 94. Every full-pool method produces eight candidates for each supported map request, giving 776 generated trajectories, including 752 associated with the paired quality population. This gives 3,104 exported diffusion trajectories across the four model runs and another 1,552 empirical-transfer trajectories across the two corresponding baseline runs. Each terminal policy delivers one of the same eight candidates for all 97 generated requests. It neither changes the geometric coverage nor removes the requests without an accepted simulator reference.
+
+The paired population contains 19 buses, 18 motorcycles and 19 participants in each of the other three classes. All reported physical measures have support from these same class counts. The tables use five-class macro Wasserstein distances, with equal request weight inside a class and equal candidate weight inside a request. Native-interval distributions additionally weight observations by their represented time interval. A lower distance means closer distributions; it is not a time-aligned error against the unique future of a particular vehicle. Both model seeds are shown separately. They are two fitted models evaluated against one reference episode, not two independent simulator replications.
+
+\section{Native-time diffusion improves local motion distributions}
+
+The clearest improvement is in native-interval acceleration. Its macro $W_1$ decreases from 0.8397 to 0.1492~m/s$^2$ for seed 42, and from 0.8319 to 0.1575~m/s$^2$ for seed 43. These correspond to reductions of 82.2\% and 81.1\% relative to the matched relative-time model. The native model also improves over empirical transfer, whose distances are 0.3245 and 0.3588~m/s$^2$. The reduction relative to empirical transfer is 54.0\% and 56.1\%. These percentages describe the measured distances in this experiment; no significance level or cross-episode uncertainty is inferred from them.
+
+\fig{g33-native-motion.pdf}{1.0}{Native-interval speed and acceleration distribution distances for the two diffusion clocks and empirical transfer. Both seeds use the same prospective requests and their corresponding shared duration draws. Lower values indicate closer distributions, not pointwise prediction accuracy.}{g33-native-motion}
+
+The class-wise acceleration result is consistent with the macro result: the native model has lower $W_1$ than both comparators for each of the five classes in both seeds. For example, bus acceleration distances decrease from 0.6174/0.5955 to 0.0837/0.0746~m/s$^2$, while motorcycle distances decrease from 1.4987/1.5061 to 0.1833/0.2199~m/s$^2$. The common direction across these classes makes the macro improvement more informative than a result driven only by the largest class. Class-balanced aggregation also prevents the much larger private-car training cohort from determining the headline number by sample count alone.
+
+Native-speed distances improve more modestly. The 257-point values are 0.6794 and 0.8238~m/s; native-time diffusion gives 0.6093 and 0.7437~m/s. Empirical transfer gives 0.8373 and 0.9691~m/s. Unlike acceleration, not every class-level speed comparison improves. Seed-42 motorcycle speed distance, for example, rises from 0.5157 to 0.6876~m/s. Thus the acceleration finding should not be expanded into a claim that every feature of every class is closer to the simulator.
+
+\tab{Representative full-pool quality measures. Each cell gives seed 42 / seed 43; lower $W_1$ is better. The native speed and acceleration rows compare interval distributions. Other motion rows compare distributions of per-trip summaries on the one-second clock. All rows have 94 paired requests and all five classes.}{g33-full-quality}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
+Measure and unit & 257-point & Native 0.25 s & Empirical\\\midrule
+Native speed (m/s) &0.679 / 0.824&0.609 / 0.744&0.837 / 0.969\\
+Native acceleration (m/s$^2$) &0.840 / 0.832&0.149 / 0.158&0.325 / 0.359\\
+Mean absolute acceleration (m/s$^2$)&0.113 / 0.113&0.066 / 0.056&0.197 / 0.206\\
+Stopped fraction &0.0278 / 0.0268&0.0179 / 0.0171&0.0156 / 0.0128\\
+Longest stop (s)&4.69 / 4.89&7.75 / 7.66&4.73 / 4.15\\
+Longest steady movement (s)&20.42 / 19.26&21.54 / 20.43&22.54 / 20.73\\
+Four-second speed change (m/s)&0.233 / 0.220&0.238 / 0.193&0.581 / 0.595\\
+Duration (s)&48.28 / 46.39&48.28 / 46.39&48.28 / 46.39\\\bottomrule
+\end{tabularx}}
+
+The lower-frequency summaries provide a related but distinct result. The distance for per-trip mean absolute acceleration falls from approximately 0.113~m/s$^2$ in both relative-time seeds to 0.0661/0.0560~m/s$^2$ in the native model. This is not the same metric as native acceleration $W_1$: one compares a summary value per trip after one-second processing, whereas the other compares the distribution of acceleration intervals. Agreement in direction supports an improvement at both resolutions, without making their numerical values interchangeable.
+
+\section{Long-duration structure and diversity retain important tradeoffs}
+
+The finer clock does not solve the whole motion problem. Stopped-fraction distance improves relative to the 257-point model, but longest-stop distance becomes worse in both seeds. The difference is especially visible for buses: their longest-stop $W_1$ rises from 12.03/11.76 to 26.37/25.66 seconds. A closer total proportion of stopped time can therefore coexist with a less accurate distribution of sustained stops. Stop amount and stop arrangement are separate properties of a synthetic journey.
+
+Longest steady-movement distance also increases modestly in the five-class macro. The class breakdown reveals a larger private-car change: 22.57/30.12 seconds becomes 54.82/54.31 seconds. Motorcycle steady-movement distance, by contrast, falls to 9.40/4.81 seconds from 24.47/20.56 seconds. Four-second speed-change distance improves for seed 43 but is slightly worse for seed 42. These patterns show why a single temporal summary would be insufficient to describe the learned motion. Empirical transfer remains competitive on stopped fraction and longest stops, despite its worse native acceleration distribution.
+
+\fig{g33-generation-quality.pdf}{1.0}{Six representative per-trip physical summaries for the complete candidate pools; all ten are tabulated in the appendix. Circles and squares denote seeds 42 and 43. Stop amount, the longest contiguous stop, and sustained steady movement expose different properties of the generated motion. Shared duration and route conditions are accounted for separately in the tables.}{g33-generation-quality}
+
+The equality of duration distances is an intended control. For a given seed, the three full-pool methods receive identical duration draws: their macro duration distances are exactly 48.2841 or 46.3904 seconds. This equality does not show that the diffusion models have learned duration equally well; duration is provided by the common training-side prior. Mean-speed distances are correspondingly close because the methods traverse the same prescribed route over those same durations. Their differences in stopping and acceleration describe how movement is arranged within that shared constraint.
+
+The native model retains variation among its candidates. Across all 97 generated requests, mean pairwise position separation at corresponding fractions of trip time is 147.27/145.95~m, compared with 129.90/132.85~m for the relative-time model and 133.07/134.04~m for empirical transfer. The corresponding normalized-progress differences are 0.0402/0.0404, 0.0343/0.0351 and 0.0346/0.0348. Candidate-pair differences are averaged within each request before averaging requests. These are descriptive measures of variation, not objectives to maximize: larger separation can reflect either useful diversity or less accurate movement.
+
+The mean normalized-progress distance to the nearest training shape is about 0.015 for native diffusion and 0.0126 for relative-time diffusion, compared with approximately 0.00013 for the transfer baseline. The empirical result is consistent with explicitly transferring a training progress profile. The diffusion results indicate a different relationship to that reference library under this particular shape measure. They do not prove absence of memorization or a privacy guarantee. The full metric matrix and class-specific values are retained in the appendix and machine-readable experiment tables, rather than reduced to a single cross-unit quality score.
+
+\section{GAF readers distinguish classes and candidate realizations}
+
+The frozen spatial reader achieves 69.80\% macro F1 on 126 observed development legs; the velocity reader achieves 84.99\%. Their accuracies are 75.40\% and 84.13\%, respectively. Both fit the training labels perfectly, and their development probability estimates retain calibration error: fixed-bin ECE is 0.1788 for spatial images and 0.1303 for velocity images. These are single-reader-seed results on the current five-class complete-trip cohort. They cannot be compared by subtraction with the six-class source-diagnosis results as if only the network had changed.
+
+The generated candidate pools also show genuine score variation. Among the 194 request--model-seed pools, 193 contain eight distinct spatial RGB images and one contains seven. Neither reader has an exactly constant floored target-class log score in any pool, and no pool uses the shared encoding-failure fallback. Spatial selection differs from Uniform in 177/194 pools, velocity selection in 172/194, and joint selection in 174/194. Spatial and velocity selectors choose the same candidate in only 31/194 pools. These counts describe paired pools from the same 97 map requests, not 194 independent traffic episodes.
+
+It would therefore be incorrect to explain this experiment by saying that a fixed route makes all spatial GAF images identical. The route is shared, but its sampled traversal and the resulting encoding can vary. Image differences and score changes establish that the feedback can act on the candidate set. They do not establish that the changes represent better movement: spatial differences may include effects of sampling density or skipped grid cells, while confidence can reward a class-distinctive but distributionally atypical realization.
+
+\section{Independent quality after terminal selection}
+
+Table~\ref{tab:g33-terminal-quality} compares the delivered samples under the four policies. All policies see the same eight candidates, use the same frozen readers, and return one sample for each of the 97 supported requests. The quality comparison uses the same 94 paired references. Comparing a selected set directly with the entire eight-sample pool would mix selection with sample count; Uniform is the relevant equal-output-size control.
+
+\tab{Physical quality after selecting one trajectory per request. Values are five-class macro $W_1$; lower is better. Speed and acceleration use native intervals. The complete per-trip and class-specific matrix is retained in the appendix.}{g33-terminal-quality}{\begin{tabularx}{\linewidth}{Xrrrrrr}\toprule
+Policy & Seed & Duration & Speed & Acceleration & Steady & Longest stop\\
+ & &s&m/s&m/s$^2$&s&s\\\midrule
+Uniform &42&57.78&0.733&0.1245&20.56&9.28\\
+Spatial &42&58.40&0.578&0.1362&25.48&7.65\\
+Velocity &42&74.42&1.060&0.1233&25.31&7.71\\
+Joint &42&59.01&0.721&0.1280&24.19&8.92\\\midrule
+Uniform &43&51.59&0.583&0.1597&21.62&8.18\\
+Spatial &43&51.49&0.762&0.1500&19.12&7.90\\
+Velocity &43&77.68&1.008&0.1314&30.77&9.63\\
+Joint &43&68.06&0.862&0.1373&23.02&10.80\\\bottomrule
+\end{tabularx}}
+
+Spatial selection has some consistent, specific benefits: stopped-fraction, longest-stop and 95th-percentile-speed distances are lower than Uniform in both seeds. For example, longest-stop distance changes from 9.28/8.18 to 7.65/7.90 seconds. Other effects depend on the model seed. Native-speed distance improves from 0.733 to 0.578~m/s for seed 42 but worsens from 0.583 to 0.762~m/s for seed 43. Steady-movement and four-second-change distances also change in opposite directions across the two seeds. This supports a differentiated result, rather than either a universal spatial-feedback improvement or a claim of no effect.
+
+Velocity selection illustrates the gap between recognition and generative quality particularly clearly. It slightly lowers native-acceleration distance in both seeds, from 0.1245/0.1597 to 0.1233/0.1314~m/s$^2$. At the same time, duration distance increases by 16.64/26.09 seconds and native-speed distance by 0.327/0.425~m/s. Steady-movement distance increases by 4.75/9.16 seconds. Mean target-class probability under the selecting velocity reader rises from 0.754/0.778 to 0.986/0.992 across all generated requests. That increase confirms successful optimization of the selection score; it is not evidence that the selected dataset better matches the reference.
+
+\fig{g33-gaf-physical-effects.pdf}{1.0}{Changes in four representative physical distances relative to Uniform for spatial, velocity and joint selection: duration, native speed, native acceleration and longest stop. Negative values favour the GAF policy. Seeds are displayed separately, and every policy uses the same candidate budget. The figure shows criterion-dependent effects rather than a single overall ranking.}{g33-gaf-effects}
+
+Joint selection does not consistently resolve these tradeoffs. Its native-speed distance is close to Uniform for seed 42 and worse for seed 43, while duration and steady-movement distances are worse in both. Averaging two class log scores is therefore not sufficient evidence of useful complementary feedback. Each candidate in the pool has its own duration draw, so all three GAF policies can change the delivered duration distribution despite sharing a duration prior at the pool level. The present comparison measures that whole selection policy. It does not isolate motion-shape preference at fixed duration.
+
+\fig{g33-case-bus.pdf}{1.0}{The first paired bus request in lexicographic order for seed 42, showing the independent reference and the four selected complete trajectories. The common route, normalized progress and physical-time speed are displayed separately. The example is selected by request order, not by quality, and is not a pointwise forecasting comparison.}{g33-bus-case}
+
+The bus example makes the output interpretation concrete: the curves share a declared route but differ in duration and in the placement of movement and stops. A matching map trace alone cannot decide which output distribution is useful. Likewise, a case in which one selector looks closer to the reference cannot overturn the aggregate comparison. In this original variable-duration comparison, native-clock diffusion improves an important component of generated motion, whereas GAF terminal feedback has selective benefits and measurable costs. A general improvement from spatial, velocity or joint class scoring has not been established on this reference episode.
+
+\section{A fixed-duration mechanism check}
+\label{sec:native-fixed-duration}
+
+The preceding result leaves an ambiguity: a selector changes both the duration and the motion shape of the delivered trip. A subsequent diagnostic, recorded as G34, removes the first freedom. It was designed after inspecting G33 and reuses the same already-viewed development reference; it is not a new blind evaluation. The diffusion models, GAF readers, prior and selection weights are unchanged, with eight candidates and 100 DDIM steps retained. For each request and model seed, all candidates use the training-prior duration of the previously predetermined G33 Uniform candidate. No reference duration is used and no model is retrained.
+
+This construction also retains a particularly strong baseline check. The old and new Uniform time and coordinate arrays are bitwise identical for all 97 generated requests in each seed. All eight candidates and all four selected outputs share that request's fixed duration. The other candidates retain their noise keys, but their sequence lengths can change when their original duration draw is replaced; the procedure is not a post-hoc rescaling of existing coordinates. The paired quality population remains the same 94 requests, with the same five-class support.
+
+\tab{Fixed-duration terminal selection in the G34 mechanism diagnostic. Within each request and seed, every policy uses the same training-prior duration. Values are five-class macro $W_1$ on the reused 94-request reference intersection; lower is better. Uniform is bitwise unchanged from G33.}{g34-fixed-duration}{\begin{tabularx}{\linewidth}{Xrrrrr}\toprule
+Policy & Seed & Native acceleration & Longest stop & Steady & Native speed\\
+ & &m/s$^2$&s&s&m/s\\\midrule
+Uniform &42&0.1245&9.280&20.556&0.733\\
+Spatial &42&0.1372&9.287&22.488&0.812\\
+Velocity &42&0.1124&7.193&23.536&0.745\\
+Joint &42&0.1430&8.797&22.756&0.797\\\midrule
+Uniform &43&0.1597&8.181&21.616&0.583\\
+Spatial &43&0.1650&6.459&19.526&0.542\\
+Velocity &43&0.1322&7.647&23.118&0.526\\
+Joint &43&0.1412&7.290&22.025&0.588\\\bottomrule
+\end{tabularx}}
+
+With duration fixed, velocity selection reduces native-acceleration distance from 0.1245/0.1597 to 0.1124/0.1322~m/s$^2$, reductions of 9.73\%/17.22\%. Longest-stop distance also decreases, from 9.280/8.181 to 7.193/7.647 seconds. These macro improvements are not universal across classes: acceleration distance improves for only two of five classes in seed 42 and four of five in seed 43; taxi/ride-hailing is the only class that improves in both. The result identifies a conditional aggregate benefit, rather than a claim of uniformly better class-specific motion.
+
+The tradeoffs remain visible. Velocity selection increases longest steady-movement distance by 2.980/1.501 seconds and the 95th-percentile-speed distance by 0.236/0.294~m/s. Native-speed distance is slightly worse for seed 42 and better for seed 43. Spatial selection does not reproduce the acceleration improvement, while its longest-stop and steady-movement results differ across seeds. Joint selection improves longest-stop distance in both seeds but has mixed acceleration effects and worsens steady-movement distance in both. The full ten-summary and class-specific native-interval matrices appear in Tables~\ref{tab:g34-all-physical-a}--\ref{tab:g34-class-native}; source checks remain in the G34 archive.\footnote{The completed record is under \texttt{docs/results/g34-fixed-duration/attempt2/}; its \texttt{report/macro.csv}, \texttt{report/per-class.csv} and \texttt{report/summary.json} retain the full results and provenance.}
+
+Duration distances are now exactly equal across the four policies: 57.7782 seconds for seed 42 and 51.5908 seconds for seed 43. This equality is imposed by the diagnostic, not an improved duration model. It prevents feedback from changing the request's allotted travel time and shows that the measured acceleration and longest-stop gains can occur through selection among motion realizations under that fixed constraint. The remaining adverse metrics show that feedback tradeoffs can persist when duration is held fixed. Because this is a post-G33 diagnostic on the same episode, the repeated directions across model seeds are descriptive evidence and not independent statistical confirmation.
+
+The fixed-duration runs take 381.6 and 331.2 seconds for generation and export, with 77,600 network forward calls per seed. Encoding, scoring and selection add 12.6 and 12.3 seconds. These measured costs preserve the declared candidate and DDIM budgets while recording the actual consequences of changing the duration plan; they do not constitute an equal-wall-time comparison.

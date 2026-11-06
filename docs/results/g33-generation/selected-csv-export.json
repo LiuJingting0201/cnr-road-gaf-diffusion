@@ -1,0 +1,245 @@
+{
+  "complete": true,
+  "phase": "lossless_existing_selection_csv_export",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "schema": [
+    "time",
+    "id",
+    "x",
+    "y",
+    "type"
+  ],
+  "float_format": ".17g",
+  "gzip_mtime": 0,
+  "selection_recomputed": false,
+  "model_weights_opened": false,
+  "reference_trajectories_opened": false,
+  "code_sha256": "c7e54f3c35b7f2fd402d8f878bce3aa64a9ebb38981e1216e035372e143e4755",
+  "exports": [
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-42/Uniform",
+      "seed": 42,
+      "selection_method": "Uniform",
+      "source_receipt_sha256": "fe09af74baf55f733106694d4ef189d3eb7ab569f5e80d0370d1363e4820f99e",
+      "source_samples_npz_sha256": "9d9c79ab15ed28973e698ee3857db51fd3c20036bc436e5f049aec5b7f935600",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 229444,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-42-Uniform.csv.gz",
+      "bytes": 4676808,
+      "sha256": "0336bdb343cc5df365fcce34562aed02772e21daabca1671c85245e83211f94f",
+      "streamed_readback": {
+        "all_points_checked": 229444,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-42/S",
+      "seed": 42,
+      "selection_method": "S",
+      "source_receipt_sha256": "06496a5e481ca3692e517a5b3cceadda7db63014bed85b6923b1fff2c3524e22",
+      "source_samples_npz_sha256": "56814ec21b67a19500d9eae04e89c21bc2b7046f3856734349564bce6393f7d9",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 227947,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-42-S.csv.gz",
+      "bytes": 4609165,
+      "sha256": "c496d4811f812f186b85b8fdc91785f825bb02dd3baccf8b698a8989c57cfede",
+      "streamed_readback": {
+        "all_points_checked": 227947,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-42/V",
+      "seed": 42,
+      "selection_method": "V",
+      "source_receipt_sha256": "d904bf3414272b44f74c4e3da3a0008fb2080cb5a75fe04c17d033540d9e624d",
+      "source_samples_npz_sha256": "5e6a5ba203c71eb706488e61e1e7e68d83a28a127a88319821da0cedcdc56b78",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 240641,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-42-V.csv.gz",
+      "bytes": 4792023,
+      "sha256": "cf26dc9b51c82c5c903e4a78803c61f3a40a507ac0887bcaca8253105a021ba8",
+      "streamed_readback": {
+        "all_points_checked": 240641,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-42/SV",
+      "seed": 42,
+      "selection_method": "SV",
+      "source_receipt_sha256": "6c72c7ce5b0115c4490ec295c71368458dfd0f7af4937a35130588526c75e791",
+      "source_samples_npz_sha256": "a23662681589fcad0d8cd85740f95ab20636acfe98950ce64067fe6c5c6dfe89",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 231509,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-42-SV.csv.gz",
+      "bytes": 4652919,
+      "sha256": "68bbeb96e62022917746a20c6cff4e1a3c1448030991a7ab809ad88397aa3972",
+      "streamed_readback": {
+        "all_points_checked": 231509,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-43/Uniform",
+      "seed": 43,
+      "selection_method": "Uniform",
+      "source_receipt_sha256": "a1ac7c625ae8cd266dc370ae3aa0cd9964842513551be12a8e969c378d2eabce",
+      "source_samples_npz_sha256": "0f2dca8ac4f6e17362aecad661443326c8fb3822cfc392f50a17e5fb5a585210",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 227181,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-43-Uniform.csv.gz",
+      "bytes": 4657730,
+      "sha256": "b831d37234567e627c758cedd934455654fbaab0bac062ec89acb3c80581ede9",
+      "streamed_readback": {
+        "all_points_checked": 227181,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-43/S",
+      "seed": 43,
+      "selection_method": "S",
+      "source_receipt_sha256": "53d0f88387ed25e95810b3c6236754302c2498a477445163716127b3a186fb38",
+      "source_samples_npz_sha256": "21919f1861df4d122ed39de627667fb09a9cfd79b55162dde00191697e09d73f",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 228983,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-43-S.csv.gz",
+      "bytes": 4725126,
+      "sha256": "cb35b4a1383c38d810609acc81b3f8fd4fecfe551d2af64e3359a0aec7da5ef9",
+      "streamed_readback": {
+        "all_points_checked": 228983,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-43/V",
+      "seed": 43,
+      "selection_method": "V",
+      "source_receipt_sha256": "be7d0e1bf03aeca09c6bb5a97e6d3d17a63481e37a505cd1e0789aa22fb394eb",
+      "source_samples_npz_sha256": "c946f2c3f72bef360a0a8abf090c13f34772938fd2d9db7c24278d46ab09155f",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 245326,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-43-V.csv.gz",
+      "bytes": 4868054,
+      "sha256": "1ca784398b2fa6358b5eba2af989e773f393176c93c853bd1a7210acd248bcb8",
+      "streamed_readback": {
+        "all_points_checked": 245326,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    },
+    {
+      "source_directory": "/workspace/cnr-experiments/gaf-inloop-v1/g33-job/g33-data/selected/native_0_25s-43/SV",
+      "seed": 43,
+      "selection_method": "SV",
+      "source_receipt_sha256": "3730e4566fef8b6d9f67c252a2ecc9e9775017aac111ab8967427c3cd4dd972b",
+      "source_samples_npz_sha256": "c8132fe75bdabf78c4bc0f7fc97834cf178ddc5b25d6cda023c4ef27aafdd180",
+      "requested_conditions": 100,
+      "map_ready_conditions": 97,
+      "trajectories": 97,
+      "points": 248053,
+      "class_counts": {
+        "bus": 21,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "filename": "native_0_25s-43-SV.csv.gz",
+      "bytes": 4983356,
+      "sha256": "bd7b56505414a367987951970a5a2b8d701e3f18c5a1eeba123e7f64c0957c99",
+      "streamed_readback": {
+        "all_points_checked": 248053,
+        "all_trajectories_checked": 97,
+        "float64_bitwise_equal": true,
+        "ids_and_types_exact": true
+      }
+    }
+  ],
+  "datasets": 8,
+  "trajectories": 776,
+  "points": 1879084
+}

@@ -1,48 +1,32 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft v15. The chapter on interventions is a validation-only follow-up carried out after the locked test. Three frozen model seeds and sixteen compatible bus/car routes provide a controlled class comparison. Main file: main.tex. Compile with pdfLaTeX.
+English thesis research draft **v16**, centered on complete road-conditioned trajectory generation and spatial/velocity GAF feedback. The main evidence is the completed G33 native-demand experiment and the subsequent G34 fixed-duration development control. Main document: `main.tex`; compiler: pdfLaTeX. The final build has **74 PDF pages**, including 49 pages of main text, an appendix and the bibliography. The 51 bibliography entries are all cited; a fresh build of the packaged source is checked against the delivered PDF.
 
-## Open in Overleaf
+## Document structure
 
-Upload the ZIP as a new project, select `main.tex` as the main document and pdfLaTeX as the compiler. Use a recent TeX Live release. All text, tables, images and bibliography are included. No external data connection or shell escape is required. For a local build, run `latexmk -pdf main.tex` or run `pdflatex main.tex` three times. The packaged PDF was built and checked with TeX Live 2026.
+The main text has eight chapters: introduction, related work, data, complete-journey diffusion, GAF feedback, experimental protocol, results, and discussion/conclusions. The appendix retains the full G33 physical metric matrix, class-wise native-resolution distances, five cases selected by a fixed request-order rule, and the scope of earlier evidence. The source files included by `main.tex` define the current manuscript; retained historical chapter files are not all part of this build.
 
-Edit the administrative fields in `metadata.tex` before distribution. The working title and subtitle are editable. The candidate name, programme, supervisor, academic year and graduation session still require confirmation. `cover.tex` is an English adaptation of the referenced PoliTo layout. See `TEMPLATE.md` for attribution and the length comparison.
+The bibliography contains **51 entries**: 46 research papers or preprints, one master's thesis, two code repositories and two official documentation entries. This count does not mean 51 peer-reviewed papers. The related-work chapter organizes their relevance to trajectory generation, temporal representation, feedback and evaluation.
 
-## Evidence and scope
+## Open in Overleaf or build locally
 
-The main text comprises eleven chapters. Four appendices document the frozen run and schema, five fixed synthesis cases, detailed class and downstream results, and the fixed-time guidance experiments with their independent replication. The empirical claims use the 6031e3f experiment snapshot. The group classifier weights were unavailable. The inherited encoding was reused and a new classifier was trained. The formal test covers 53 eligible requests out of 270 participants. Performance on the TS export, a new city or a joint traffic simulation was not evaluated. Draft v5 additionally reports newly run sampling interventions on development participants with frozen model weights; see docs/results/g8-development in this research branch.
+Upload the thesis source package as a new Overleaf project, choose `main.tex` as the main document and pdfLaTeX as compiler, and use a recent TeX Live release with `toptesi`. No shell escape or runtime data connection is required to compile the supplied manuscript and figures. From this directory, use `latexmk -pdf main.tex`, or run `pdflatex main.tex` three times to resolve references.
 
-The canonical figures are packaged already. Optionally, `tools/build_result_assets.py <experiment docs/results directory> <final_test_synthetic_trajectories.zip>` rebuilds the appendix tables, case plots and confusion plot from the archived metrics and synthetic export. It uses NumPy and ReportLab and is separate from the LaTeX build.
+Before submission, replace the administrative placeholders in `metadata.tex`: candidate name, degree programme, supervisor, academic year and graduation session. Check the working title and subtitle as well. These fields are intentionally unconfirmed; this is a research draft rather than a submission-ready administrative record. `cover.tex` adapts the referenced PoliTo layout; see [TEMPLATE.md](TEMPLATE.md) for attribution. The earlier same-school thesis length is a comparison, not a university page-count requirement.
 
-### Figure provenance
+## Current evidence and its scope
 
-- The map overlay uses the original map-alignment audit (every thousandth input row), unchanged coordinates and public MoST lane geometry. The cover mark comes from the referenced template.
-- The framework, fixed map examples, paired motion intervals and augmentation effects come from the project's locked final report. The case curves use the identical five seed-42 requests as the archived map examples.
-- The encoding example comes from saved diffusion candidate 4, seed 42, for the first bus request. The original adapter ran with the frozen coordinate and channel extrema and the archived 512-point horizon. It illustrates the exact three-channel classifier input.
-- All appendix aggregates use saved predictions or metrics. The cases were fixed by rule; no additional outcome-dependent filtering was performed.
+- **G33:** 925 native SUMO vehicle legs for training and 126 for development; two temporal representations, two model seeds and four completed diffusion fits. Six full candidate pools each contain 776 trajectories. The two native-clock models also support Uniform, spatial, velocity and joint selection, giving eight selected-set evaluations. The original denominator is 100 requests, map support and reference acceptance are each 97, and independent physical quality is paired on their 94-request intersection. The native-clock generator improves acceleration distributions while retaining stopping and computation tradeoffs. See the [completed report](../docs/results/g33-generation/REPORT.md) and [complete numerical summary](../docs/results/g33-generation/report/summary.json).
+- **G34:** a completed post-G33 mechanism control fixes each request's duration to its predetermined old-Uniform training-prior draw. Two native model seeds generate K=8 candidates without retraining diffusion, the prior or either CNN. The old and new Uniform trajectories are verified bitwise identical for all 97 requests per seed. The same 94 paired references are reused, so this is development evidence, not a new blind evaluation. Velocity-GAF selection improves native acceleration and longest-stop distances in both seeds, with worse steady-movement and p95-speed distances; no universal feedback benefit is claimed. See the [fixed protocol](../docs/G34_PROTOCOL.md) and [completed attempt2 summary](../docs/results/g34-fixed-duration/attempt2/report/summary.json).
+- Both GAF readers are trained within this project. Spatial images inherit the original Hilbert/GASF/GADF/MTF construction; velocity images are a separate transform of speeds derived from timestamps and positions. There are no supplied group CNN weights. The current comparisons use **terminal selection**, not in-loop guidance, and do not establish a new downstream augmentation benefit.
+- The training pilot and evaluation reference use the same public MoST map and demand families. New simulation randomness does not demonstrate unseen-city or unseen-line generalization. Simulator observations are not physical-road measurements; the system does not model interacting agents jointly.
 
-G9 timing and motion-quality results are archived in docs/results/g9-timing.
+Earlier findings remain available with their original populations. The [locked E7 report](../docs/results/final-test-e7/REPORT.md) concerns 53 eligible moving-window requests out of 270 held-out IDs. The [G28 paired-latent study](../docs/results/g28-paired-latents/REPORT.md) records the earlier eight-class supervision comparison, including its inconclusive physical gains. Neither population is pooled with G33/G34, and the old test is not used to select the current method.
 
-Independent SUMO replication: docs/results/g10-independent and docs/G10_PROTOCOL.md. The original test was not reopened.
+## Tables, figures and reproduction
 
-G11 state-trigger experiment: docs/G11_PROTOCOL.md and docs/results/g11-state. Fixed-time analyses and the first independent SUMO replication are now in the appendix.
+G33 numerical tables derive from the completed JSON summaries; figure provenance and the unchanged case-selection rule are recorded in [the paper-figure receipt](../docs/results/g33-generation/paper-figures/complete.json). The five cases use model seed 42 and the first lexicographic request in each class jointly supported by the reference and all four policies. They are not selected for visual quality. Case speed curves summarize complete one-second intervals and omit the final partial second; native-resolution distribution measures are reported separately.
 
-The scoring-network audit in docs/results/g12-scorer separates training-internal model selection, confidence calibration and ranking utility.
+G34's [summary](../docs/results/g34-fixed-duration/attempt2/report/summary.json) records the shared-duration and exact-Uniform checks, per-class support, source hashes and all ten completed evaluations. Protocols, failures and completed attempts remain in the experiment records; the successful attempt does not overwrite the preceding record.
 
-G13 replicates shared-road class control on fresh episodes. See docs/results/g13-shared-road. First paired example, all-route effect plot and simplified framework figure are included in the source package.
-
-G14--G17 add the separate balanced SUMO corpus and matched data-volume experiments. See docs/G16_PROTOCOL.md, docs/G17_PROTOCOL.md and the respective result directories.
-
-Draft 9 adds the G18 motion-pattern audit and G19 road-conditioned diffusion / eight-class original-encoding feedback experiment. See docs/G19_PROTOCOL.md and docs/results/g19-motion-diffusion.
-
-Draft 10 leads with the complete-trip generator. G21 compares short-window CNNs and G22 fits a variable-duration OD model and complete-journey scorers. See docs/G22_FULL_TRIPS.md and docs/results/g22-full-trips.
-
-Draft 11 separates position-Hilbert trajectory images for class recognition from whole-speed angular images for mode recognition. The first results chapter compares their terminal feedback on eight new simulator episodes.
-
-Draft 12 adds G24 speed-mode gradients during denoising and the independent spatial-score transfer check.
-
-Draft 13 audits the independent spatial classification head, latent distribution distances, and the direction of speed guidance relative to a bus/car denoiser intervention (G25).
-
-Draft 14 reports training-side control of complete-trip motion, matched speed-curve and speed-field objectives, and the hard-block layout diagnosis (G26–G27).
-
-Draft 15 adds a matched-label paired-representation chapter, twelve diffusion fits, independent fresh probes, full-candidate physical comparison, route audit and the strong empirical baseline. Positive classification evidence is distinguished from inconclusive generation gains. Bibliography contains 51 entries.
+The experiment scripts and versioned manifests are in the repository. Re-running experiments requires the corresponding source observations, public SUMO scenario and model artifacts, which are separate from the manuscript package. Raw participant data, model weights and access credentials are not embedded in the thesis ZIP or committed as thesis assets. The manuscript build uses prepared tables and figures and does not require a live training server.
