@@ -107,6 +107,6 @@ native 两个 GAF 种子为55.56%、61.82%；原 CNR平均准确率74.12%，rand
 
 协议：`docs/G30_PROTOCOL.md`。代码：`scripts/g30_native.py`、`g30_extract.py`、`g30_demand_audit.py`、`g30_prepare.py`、`g30_quality.py`、`g30_fit.py`、`g30_summarize.py`、`g30_figure.py` 与有限队列 `g30_run.sh`。服务器隔离目录 `/workspace/cnr-experiments/gaf-inloop-v1/g30-job`；最终队列标记 `g30-data/cohort-complete.txt` 已核验。模型执行代码以聚合 `execution-receipts.json` 文件哈希为准；图表代码另见Git记录。
 
-首次服务器获取公开源文件超时发生在仿真前，原 `pilot-queue.log` 保留；改本机按固定提交获取、逐文件大小/哈希核验后传入，第二次pilot成功，正式九场均完成。正式场次summary共记8次teleport，日志关键词计数3/5/7是行数而非事件数。原生teleport/重路由配置未更改；连续段提取既按时间缺口，也按坐标速度超过100m/s断段，但没有按teleport事件剔除整个实体，也不检查逐段道路连接，不能保证保留队列完全无异常影响。原日志及回执保留，成功退出不等于每个实体都无异常。G30不覆盖旧输出或旧工作树。
+首次服务器获取公开源文件超时发生在仿真前，原 `pilot-queue.log` 保留；改本机按固定提交获取、逐文件大小/哈希核验后传入，第二次pilot成功，正式九场均完成。正式场次summary共记8次teleport，日志关键词计数3/5/7是行数而非事件数。原生teleport/重路由配置未更改；连续段提取既按时间缺口，也按坐标速度超过100m/s断段，但没有按teleport事件剔除整个实体，也不检查逐段道路连接，不能保证保留队列完全无异常影响。完成后只读事件审计将8次开始事件逐一按(episode,baseID)关联，全部发生在未入选的随机实现；最终队列直接匹配事件为0（见`teleport-audit.json`）。这不排除交通相互作用及未检测到的其他异常。原日志及回执保留，成功退出不等于每个实体都无异常。G30不覆盖旧输出或旧工作树。
 
 本目录仅保存代码相关引用、聚合指标、混淆矩阵、来源和输出哈希、图表。原数据、完整轨迹、ID清单、逐样本预测及权重保留服务器/本机隔离目录，不推Git。`prepared.json`含选择和覆盖，`demand-audit.json`含公开需求结构，`quality.json`含全物理分布/区间，`summary.json`和`transfer.json`含全部模型指标。

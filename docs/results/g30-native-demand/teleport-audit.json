@@ -1,0 +1,105 @@
+{
+  "complete": true,
+  "scope": "post-completion read-only audit of native matched G30 cohorts; no exclusions, refits or metric changes",
+  "input_cohort_hashes": {
+    "native-train.npz": "ccbb83ae6e43b2128f3e63a7753fd923f67b9470ce5a4f89ebe2b8bcf523019e",
+    "native-val.npz": "5e0fb3939daa193f768f3c6ee9bb2738816d2828b6a527b07f14b68bc283974d"
+  },
+  "script_sha256": "1ae9268210ea4f51b86f7ff0ea9aaf444bb01b06f18388c7251f1801c0a3e65a",
+  "method": "Parse SUMO teleport-start warnings, join exact (episode,base ID) to already selected native train/val rows, inspect retained core interval and displacement rate; no identifiers are exported",
+  "continuity_rule": "Inherited g29_prepare.record -> cnr.data.continuous_ranges: split when delta time differs from .25s or displacement/delta-time >100m/s; keep longest segment >=5s",
+  "coverage": {
+    "summary_teleports": 8,
+    "teleport_keyword_lines": 21,
+    "teleport_start_lines": 8,
+    "parsed_start_events": 8,
+    "same_base_in_any_selected_realisation": 8,
+    "start_events_not_in_selected_realisation": 8
+  },
+  "parsed_start_count_equals_summary_teleports": true,
+  "by_episode": {
+    "train/300101": {
+      "summary_teleports": 1,
+      "teleport_keyword_lines": 3,
+      "teleport_start_lines": 1,
+      "parsed_start_events": 1,
+      "same_base_in_any_selected_realisation": 1,
+      "start_events_not_in_selected_realisation": 1,
+      "console_sha256": "98831aea4d592a1a236d466734237b95b8123ea3b77593d4c0940c1b512a3006",
+      "simulation_receipt_sha256": "9398dde7962bbeb9b92109cb81332d8ab9c3d44c16e5d1aae1e5c86481949c66"
+    },
+    "train/300102": {
+      "summary_teleports": 0,
+      "teleport_keyword_lines": 0,
+      "console_sha256": "3605e6d4f7d90d8044bb2678c7985f2523c46fc058c4e64f289d35b8fa9de5d0",
+      "simulation_receipt_sha256": "ed83097e7cfd43aa8b315c3ea78e3d262c6826c81710bfebd225e45fca5547e8"
+    },
+    "train/300103": {
+      "summary_teleports": 0,
+      "teleport_keyword_lines": 0,
+      "console_sha256": "28e45fff0c6f7dd3521be7c44aedec41fdbb2c8fe78a8ca4d9a1ab6cf4e19561",
+      "simulation_receipt_sha256": "0a1bc10f92b3e98009c0f1f96b67457bb2ee4b4d4087d668a99ab542413a7d21"
+    },
+    "train/300104": {
+      "summary_teleports": 2,
+      "teleport_keyword_lines": 5,
+      "teleport_start_lines": 2,
+      "parsed_start_events": 2,
+      "same_base_in_any_selected_realisation": 2,
+      "start_events_not_in_selected_realisation": 2,
+      "console_sha256": "2100cd1db028aace9663abae44cd1c8f82f1355ba6d3f3110e3bea846fcdab76",
+      "simulation_receipt_sha256": "801dfbebdf7a762dc9be6c3d76f0efeb9f195e0c29367da9d6c05d15d39e7155"
+    },
+    "train/300105": {
+      "summary_teleports": 3,
+      "teleport_keyword_lines": 7,
+      "teleport_start_lines": 3,
+      "parsed_start_events": 3,
+      "same_base_in_any_selected_realisation": 3,
+      "start_events_not_in_selected_realisation": 3,
+      "console_sha256": "7a2a4443162c881d6d200e6b4920e2c1fe7636be1448086408434e13ff65c877",
+      "simulation_receipt_sha256": "70e99027db065bc7cce456d6365c30febdc75fa595280c96533699de97566bd1"
+    },
+    "train/300106": {
+      "summary_teleports": 0,
+      "teleport_keyword_lines": 0,
+      "console_sha256": "13e5e06749b6b6f998385ae7112ff1184384678ffb65f96589336800af0eadd6",
+      "simulation_receipt_sha256": "cdff96212717d53976de8a4e9195901b3157e0a796aa9abfa74487d9397a29c3"
+    },
+    "val/300201": {
+      "summary_teleports": 0,
+      "teleport_keyword_lines": 0,
+      "console_sha256": "4992c1f3899ec2c2fc9e3990a0953079c1d47c96468c859a8fd04a407f5c651f",
+      "simulation_receipt_sha256": "63234e299cc96ad2295375ac857003b26063690caf0de7805ff588dcb036f22c"
+    },
+    "val/300202": {
+      "summary_teleports": 1,
+      "teleport_keyword_lines": 3,
+      "teleport_start_lines": 1,
+      "parsed_start_events": 1,
+      "same_base_in_any_selected_realisation": 1,
+      "start_events_not_in_selected_realisation": 1,
+      "console_sha256": "a2616825a9ad036c4612138daf6ffbb43adbc6cfc758f276a0fef2462aec6f63",
+      "simulation_receipt_sha256": "15ae80decfe067ce53d3a88b8e9f418cec617523668d08ac5c9f5ef07b7dc9df"
+    },
+    "val/300203": {
+      "summary_teleports": 1,
+      "teleport_keyword_lines": 3,
+      "teleport_start_lines": 1,
+      "parsed_start_events": 1,
+      "same_base_in_any_selected_realisation": 1,
+      "start_events_not_in_selected_realisation": 1,
+      "console_sha256": "e85912a389b99cb979059747183005a00309a5bd2323b7d67e3c8691ee247ba9",
+      "simulation_receipt_sha256": "3a2c997aec5826632d7ac66f43e28d699d8abea6519933d96bafc2f0e99b7ce3"
+    }
+  },
+  "selected_event_groups": {},
+  "limits": [
+    "Teleport keyword lines are not teleport event counts.",
+    "No entity-wide exclusion based on teleport warnings was used to form the frozen cohort.",
+    "Time gaps and jumps above 25m per .25s are split; smaller single-step discontinuities are not guaranteed removed.",
+    "This audit does not test graph connectivity or all forms of abnormal motion.",
+    "An event time outside a retained core does not prove the preceding congestion or subsequent reinsertion had no influence.",
+    "The same base entity teleporting under a different seed is separate from the realisation selected for this cohort."
+  ]
+}
