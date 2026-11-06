@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "finished_unix": 1793961182.7401793,
+  "source_sha256": {
+    "g33_report.py": "727ec0ea392574ba1d79800d9f9c28f1e23e06fb10650e584546a280a126352a",
+    "g33_ranking_diagnostic.py": "51794d8a586173ab2c53ab6220f5280cc0ab8b30f4165e2b45c147a7b2de51b3",
+    "g33_plots.py": "302193ec06999cdca60a37cc953cd729f5f7ebfa0ade5658d45275c31db9eb43",
+    "g33_postprocess.sh": "3404672b48b25a88ac9f85d11e503d51140c30e31cad15486de57fd0709b0186"
+  },
+  "scope": "read-only aggregation and figures; scientific evaluation unchanged"
+}

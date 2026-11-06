@@ -1,0 +1,110 @@
+{
+  "complete": true,
+  "scope": "descriptive G33 figures; no new fitting or selection",
+  "code_sha256": "302193ec06999cdca60a37cc953cd729f5f7ebfa0ade5658d45275c31db9eb43",
+  "sources": {
+    "evaluation_receipts": {
+      "empirical-42": "ff657939b3c67723985e3683e089003d71e4b5d788d564aa1aa0bd3df5033ac6",
+      "empirical-43": "208d6f011c7fea1bcfae65673f14065863757ee049dfcacf323d1fc3b7b02276",
+      "relative_257-42": "67cd73937cae4497dea1de41d8e05514ae6760e172b5b6fac15cd7854a2d6863",
+      "relative_257-43": "aeafed1233fb1d3d0175d410a5dd3edaeeb1bbd4d166939f96e8cc5cc45f3a0f",
+      "native_0_25s-42": "c00721f82bd4e5e71174b0a1e276020ae17a6ed3988b16df71f555002090c230",
+      "native_0_25s-43": "628704c5e80d3896620167af3fc2682a093d16c4334f622678c5f21c7462dd9e"
+    },
+    "selection_evaluation_receipts": {
+      "42": "4727a03516c0b15fd46112d663dde7ff7147cb6e2da4df814bbe8fafbb04ba09",
+      "43": "24f83483d8982cf41d50bf1e7a02145a5eebfaa2a2287bd79eba849c5b866ab1"
+    }
+  },
+  "case_rule": "First lexicographic reference-and-four-selection paired request per class, seed42",
+  "cases": [
+    {
+      "class": "bus",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "9ec84037ff7df4bc1f4bc9cfef9124c0ac8b4908f37b7cd3313a5494814d54a5"
+    },
+    {
+      "class": "motorcycle",
+      "supported": true,
+      "eligible_requests": 18,
+      "request_sha256": "6b112f0b8048929535393670aad36ad7f077228a55c81194e4ed708b5e0ab4c1"
+    },
+    {
+      "class": "private_car",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "08838e2e943e6f7baa436b27091a0b226e530a748f2cdb3596e3e44f9e63375c"
+    },
+    {
+      "class": "bycicle",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "b3bbe731a291cfd92c70fb0d5a4c63a08e0f4f7d6e0fd46969667c5289d5733f"
+    },
+    {
+      "class": "taxi_or_uber",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "07f5e0372a4bf5f992cda37c6162108e5a1c8c83ff18daea9c1ae0295c91762f"
+    }
+  ],
+  "artifacts": {
+    "case-bus.pdf": {
+      "sha256": "dd6ab30c80c36658e372fcd8b734956258f423c3049d857035bb56efb0426f0b",
+      "bytes": 76416
+    },
+    "case-bus.png": {
+      "sha256": "d65dfc01186a1f1d0517c09ac08d6aaf2d28baf365aa90e8a85db69df502be5e",
+      "bytes": 412020
+    },
+    "case-bycicle.pdf": {
+      "sha256": "68e9f8c8acbeed6f47ceb426615cad9007d6bd263181585a311f57f55e3760cd",
+      "bytes": 41042
+    },
+    "case-bycicle.png": {
+      "sha256": "fc21b6bbe0ca7189b7947cadf63b46f9300240367e81fa2cba03c21fa9ee56f7",
+      "bytes": 315527
+    },
+    "case-motorcycle.pdf": {
+      "sha256": "d79965e4ab6c4b0fcc62c6137ef7a179f6122491f49a323805e34a0920e37157",
+      "bytes": 60891
+    },
+    "case-motorcycle.png": {
+      "sha256": "a63774a6dd2185008714fdfca5e86c9028d13d68e944a6f610239187c82b2a79",
+      "bytes": 397590
+    },
+    "case-private_car.pdf": {
+      "sha256": "90d58bce4495f00380a376af6a5f7331f7eee2e70ee2279fb61139f90716a55c",
+      "bytes": 46337
+    },
+    "case-private_car.png": {
+      "sha256": "77b2beb2d9d98d9448f08d84d612143f0e8973e50a41df85631b9ec514cbe6c2",
+      "bytes": 301313
+    },
+    "case-taxi_or_uber.pdf": {
+      "sha256": "8d8b8f4d8e61d90b7f3b942817c3bb012dbc6fd4252a6cc8c8654ca856bf87b8",
+      "bytes": 43652
+    },
+    "case-taxi_or_uber.png": {
+      "sha256": "ffd07bb36f83b8e067071bb3b30a1f15fece17ec02a25c9468d9952c74795cca",
+      "bytes": 371987
+    },
+    "gaf-physical-effects.pdf": {
+      "sha256": "41541cea284e407214b2b692c3c9480f66725b30230fe8356edb16c8d13f92ac",
+      "bytes": 29428
+    },
+    "gaf-physical-effects.png": {
+      "sha256": "fa930c04254f9e849ddee91e36c049782db960c25a5b163abe39752e11090e6b",
+      "bytes": 236683
+    },
+    "generation-quality.pdf": {
+      "sha256": "d693fc993532f7c4f215ea2fce45438621ad12610752c86dc438bcc52deef006",
+      "bytes": 27441
+    },
+    "generation-quality.png": {
+      "sha256": "42e61f131660e99cb51480173cf1a3be68231f2654642fd48099d2b97374bea2",
+      "bytes": 224808
+    }
+  }
+}
