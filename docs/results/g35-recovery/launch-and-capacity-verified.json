@@ -1,0 +1,163 @@
+{
+  "checked_unix": 1793989149.8522131,
+  "launch": {
+    "launched_unix": 1793988975.8733664,
+    "pids": {
+      "data": 220392,
+      "training": 220393
+    },
+    "code_commit": "8a0a496",
+    "scope": "Two interrupted training scenes rerun; completed validation reused; models automatically queued"
+  },
+  "runtime_guard": {
+    "budget_root_bytes": 16320825575,
+    "roots": {
+      "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+      "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 161281847
+    },
+    "free_bytes": 39995142144
+  },
+  "progress": {
+    "g35-data/data-progress.json": {
+      "status": "running",
+      "seconds": 170.08855865895748,
+      "active": {
+        "simulate-350101": 220395,
+        "simulate-350102": 220396,
+        "extract-350201": 220409
+      },
+      "validating_simulations": [],
+      "ready_simulations": [
+        350201
+      ],
+      "extracted_seeds": [],
+      "storage": {
+        "budget_root_bytes": 16316700963,
+        "roots": {
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 157157235
+        },
+        "free_bytes": 39999393792
+      }
+    },
+    "g35-data/training-progress.json": {
+      "stage": "waiting_for_full_day_data",
+      "seconds": 170.06535809487104,
+      "storage": {
+        "budget_root_bytes": 16316700963,
+        "roots": {
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 157157235
+        },
+        "free_bytes": 39999393792
+      },
+      "model_fits_started": 0
+    },
+    "g35-data/native/train/350101/simulation-progress.json": {
+      "status": "running",
+      "complete": false,
+      "pid": 220407,
+      "runner_pid": 220395,
+      "seed": 350101,
+      "split": "train",
+      "seconds": 171.46245804429054,
+      "last_summary": {
+        "time": "20383.00",
+        "loaded": "3906",
+        "inserted": "3850",
+        "running": "2074",
+        "waiting": "1",
+        "ended": "1780",
+        "arrived": "1776",
+        "collisions": "0",
+        "teleports": "5",
+        "halting": "57",
+        "stopped": "1053",
+        "meanWaitingTime": "0.43",
+        "meanTravelTime": "532.40",
+        "meanSpeed": "11.51",
+        "meanSpeedRelative": "0.76",
+        "discarded": "4",
+        "duration": "21"
+      },
+      "storage": {
+        "budget_root_bytes": 16318283559,
+        "roots": {
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 158739831
+        },
+        "free_bytes": 39997816832
+      },
+      "config_sha256": "d0daf7ce0ea6eba22d549fb967874400c8f8de336332d61e2012f01002812120"
+    },
+    "g35-data/native/train/350102/simulation-progress.json": {
+      "status": "running",
+      "complete": false,
+      "pid": 220408,
+      "runner_pid": 220396,
+      "seed": 350102,
+      "split": "train",
+      "seconds": 171.4622525125742,
+      "last_summary": {
+        "time": "20197.75",
+        "loaded": "3558",
+        "inserted": "3524",
+        "running": "1931",
+        "waiting": "1",
+        "ended": "1597",
+        "arrived": "1593",
+        "collisions": "0",
+        "teleports": "4",
+        "halting": "46",
+        "stopped": "930",
+        "meanWaitingTime": "0.43",
+        "meanTravelTime": "525.77",
+        "meanSpeed": "11.39",
+        "meanSpeedRelative": "0.74",
+        "discarded": "4",
+        "duration": "20"
+      },
+      "storage": {
+        "budget_root_bytes": 16318283559,
+        "roots": {
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 158739831
+        },
+        "free_bytes": 39997816832
+      },
+      "config_sha256": "be777b7544fb4e6f1a6b1f3922cc157a48e7dccd966d271b95a6f906bd7796c5"
+    }
+  },
+  "failures": {},
+  "cache_compression": {
+    "complete": true,
+    "seconds": 49.23003339767456,
+    "archives": [
+      {
+        "source": "/workspace/cnr-experiments/gaf-inloop-v1/g21-job/g21-data/train/images.npy",
+        "archive": "/workspace/cnr-experiments/gaf-inloop-v1/g21-job/g21-data/train/images.npy.gz",
+        "original_bytes": 9633792128,
+        "archive_bytes": 184803090,
+        "original_sha256": "6378f2c9beeac45a992300638054650de33064a74603330ee8794969dda85745",
+        "verified_decompressed_sha256": "6378f2c9beeac45a992300638054650de33064a74603330ee8794969dda85745",
+        "complete": true,
+        "restore": "Decompress gzip into original filename, then verify original_sha256.",
+        "unix": 1793988836.5114894
+      },
+      {
+        "source": "/workspace/cnr-experiments/gaf-inloop-v1/g21-job/g21-fine/train/images.npy",
+        "archive": "/workspace/cnr-experiments/gaf-inloop-v1/g21-job/g21-fine/train/images.npy.gz",
+        "original_bytes": 9633792128,
+        "archive_bytes": 339720122,
+        "original_sha256": "9f4492fcf8d2316bc88cdf50e35b317ec821a1eac9e5b45ce7bd1440acf68b62",
+        "verified_decompressed_sha256": "9f4492fcf8d2316bc88cdf50e35b317ec821a1eac9e5b45ce7bd1440acf68b62",
+        "complete": true,
+        "restore": "Decompress gzip into original filename, then verify original_sha256.",
+        "unix": 1793988845.29907
+      }
+    ],
+    "free_bytes": 40159182848,
+    "scope": "Lossless verified compression of inactive historical derived training image caches; all original contents retained, no raw trajectories/weights modified"
+  },
+  "filesystem_free_bytes": 39995142144
+}

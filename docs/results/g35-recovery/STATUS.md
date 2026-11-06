@@ -1,0 +1,9 @@
+# G35d recovery: capacity policy active
+
+Verified 2026-11-07 02:19 Beijing. Runtime commit `8a0a496` launched detached cloud data/training queues at 02:16:15. Two original training seeds are rerunning in parallel; observed simulation clocks advanced from 19948.00/19798.25 to 20383.00/20197.75. Validation350201 is preserved and its extraction is active. No G35d failure receipt exists at this checkpoint. The four diffusion fits and two GAF teachers remain automatically queued; zero fits have started.
+
+The 40 GiB policy counts the original G35b and recovery G35d data roots jointly, with an independent 8 GiB minimum free-space guard. Runtime guard passed with 16,320,825,575 bytes counted and 39,995,142,144 bytes free. Read-only review confirms the same policy covers simulations, data preparation, diffusion training and GAF teachers; importing the old storage-size helper does not invoke its obsolete 15 GiB guard.
+
+Two inactive G21 image caches were compressed losslessly on the cloud server. Their distinct original SHA256 values each match a complete decompression of the new gzip archive. Combined size decreased from 19,267,584,256 to 524,523,212 bytes, releasing 18,743,061,044 bytes. Original contents remain recoverable; historical raw trajectories and model weights were not removed. Restore the original `.npy` filename from its `.npy.gz` before rerunning those historical G21 jobs. Receipts are included in the adjacent JSON snapshot.
+
+The prior cap interrupted both original training simulations before the planned handoff; their failures and partial outputs remain preserved and counted. This recovery does not erase that failure or imply dataset/model completion. The old training-start estimate has been withdrawn. No GAF or trajectory-quality conclusion and no thesis result is changed. Data preparation and subsequent training run on the cloud independently of local connectivity.
