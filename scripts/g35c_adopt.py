@@ -152,22 +152,38 @@ def validate_manifest(manifest, output, roots):
         raise ValueError("Exactly the three frozen SUMO episodes are required")
     pids = []
     for entry in manifest["supervisors"]:
-        ident = entry["identity"]; check_identity(ident, states={"R", "S", "D"})
+        ident = entry["identity"]; check_identity(ident, states={"R", "S", "D", "T"})
         cmd = Path("/proc", str(ident["pid"]), "cmdline").read_bytes().split(b"\0")
         script = b"scripts/g35b_data_run.py" if entry["role"] == "data" else b"scripts/g35_train_run.py"
         if ident["cwd"] != str(old) or script not in cmd:
             raise ValueError("Wrong old Python supervisor")
         pids.append(ident["pid"])
     data_pid = next(x["identity"]["pid"] for x in manifest["supervisors"] if x["role"] == "data")
+    for entry in manifest.get("old_workers", []):
+        ident = entry["identity"]; check_identity(ident, states={"R", "S", "D", "T"})
+        cmd = Path("/proc", str(ident["pid"]), "cmdline").read_bytes().split(b"\0")
+        if (entry.get("role") != "extraction" or ident["cwd"] != str(old)
+                or ident["ppid"] != data_pid or b"scripts/g35b_extract.py" not in cmd):
+            raise ValueError("Wrong optional old extraction worker")
+        pids.append(ident["pid"])
     import g35b_simulate as original
+    verified_completed = {}
     for episode in manifest["episodes"]:
         folder = Path(episode["simulation_path"])
         if folder != old/"g35-data/native"/episode["split"]/str(episode["seed"]):
             raise ValueError("Simulation folder differs from declared episode")
+        if "original_receipt_sha256" in episode:
+            if "runner" in episode or "sumo" in episode:
+                raise ValueError("Completed episode cannot also declare live process identities")
+            if digest(folder/"simulation-complete.json") != episode["original_receipt_sha256"]:
+                raise ValueError("Completed original receipt changed")
+            config, original_receipt = original.verify_receipt(folder)
+            verified_completed[episode["seed"]] = (config, original_receipt)
+            continue
         if (folder/"simulation-failed.json").exists() or (folder/"simulation-complete.json").exists():
             raise ValueError("Only currently incomplete unfailed episodes can be handed off")
         runner, sumo = episode["runner"], episode["sumo"]
-        check_identity(runner, states={"R", "S", "D"}); check_identity(sumo, states={"R", "S", "D"})
+        check_identity(runner, states={"R", "S", "D", "T"}); check_identity(sumo, states={"R", "S", "D", "Z"}, zombie_ok=True)
         rcmd = Path("/proc", str(runner["pid"]), "cmdline").read_bytes().split(b"\0")
         config = json.loads((folder/"config.json").read_text())
         original.validate_config(config); original.verify_recording(folder, config)
@@ -185,6 +201,7 @@ def validate_manifest(manifest, output, roots):
         raise ValueError("Duplicate or self process in handoff manifest")
     # All scenes share one source: full source verification once before signals.
     original.verify_source(Path(config["source"]))
+    return verified_completed
 
 
 def verify_source(source):
@@ -200,11 +217,24 @@ def verify_adopted_receipt(folder):
     if (receipt.get("schema") != RECEIPT_SCHEMA or receipt.get("complete") is not True
             or receipt.get("returncode") != 0 or (folder/"failed.json").exists()):
         raise ValueError("Unclean adoption completion")
+    if digest(folder.parent/"manifest.json") != receipt["manifest_sha256"]:
+        raise ValueError("Adoption manifest snapshot changed")
+    kind = receipt.get("completion_kind", "kernel_wait_status")
+    if kind == "original_runner":
+        source = Path(receipt["simulation_path"])
+        if digest(source/"simulation-complete.json") != receipt["original_receipt_sha256"]:
+            raise ValueError("Original completed receipt changed")
+        config, original_receipt = original.verify_receipt(source)
+        if (config != receipt["config"] or original_receipt["files"] != receipt["files"]
+                or original_receipt["config_sha256"] != receipt["config_sha256"]
+                or original_receipt["last_summary"] != receipt["last_summary"]):
+            raise ValueError("Imported original receipt fields differ")
+        return config, receipt
+    if kind != "kernel_wait_status":
+        raise ValueError("Unknown completion evidence kind")
     proof = receipt["kernel_exit_proof"]
     if parse_proc_stat(proof["raw_stat"]) != proof:
         raise ValueError("Structured kernel proof differs from the preserved raw /proc stat")
-    if digest(folder.parent/"manifest.json") != receipt["manifest_sha256"]:
-        raise ValueError("Adoption manifest snapshot changed")
     if (proof["state"] != "Z" or os.waitstatus_to_exitcode(proof["wait_status"]) != receipt["returncode"]
             or proof["pid"] != receipt["sumo_identity"]["pid"]
             or proof["start_ticks"] != receipt["sumo_identity"]["start_ticks"]
@@ -244,7 +274,7 @@ def run(args):
         raise ValueError("Launch adoption monitor with start_new_session=True")
     # Creating the new budget parent is allowed before validation; no old file is changed.
     roots[1].mkdir(parents=True, exist_ok=True)
-    validate_manifest(manifest, output, roots)
+    verified_completed = validate_manifest(manifest, output, roots)
     output.mkdir(parents=True, exist_ok=False)
     manifest_hash = digest(manifest_path)
     (output/"manifest.json").write_bytes(manifest_path.read_bytes())
@@ -279,12 +309,28 @@ def run(args):
             handed_off = True
             for entry in manifest["supervisors"]:
                 stop_python(entry["identity"]); stopped.append(entry["identity"])
+            for entry in manifest.get("old_workers", []):
+                stop_python(entry["identity"]); stopped.append(entry["identity"])
+                kill_stopped_python(entry["identity"]); killed.append(entry["identity"]["pid"])
             for episode in manifest["episodes"]:
+                seed = episode["seed"]; folder = Path(episode["simulation_path"])
+                dest = output/str(seed); dest.mkdir()
+                if seed in verified_completed:
+                    config, old_receipt = verified_completed[seed]
+                    if digest(folder/"simulation-complete.json") != episode["original_receipt_sha256"]:
+                        raise ValueError("Completed original receipt changed after preflight")
+                    imported = {**old_receipt, "schema": RECEIPT_SCHEMA, "completion_kind": "original_runner",
+                        "config": config, "simulation_path": str(folder),
+                        "original_receipt_sha256": episode["original_receipt_sha256"],
+                        "manifest_sha256": manifest_hash, "resource_amendment": limits,
+                        "adoption_script_sha256": script_hash,
+                        "scope": "Original runner completed before handoff; its true returncode and hashed outputs are preserved"}
+                    save(dest/"complete.json", imported)
+                    completed[seed] = digest(dest/"complete.json")
+                    continue
                 stop_python(episode["runner"]); stopped.append(episode["runner"])
                 check_identity(episode["sumo"], states={"R", "S", "D", "Z"}, zombie_ok=True)
-                folder = Path(episode["simulation_path"])
-                configs[episode["seed"]] = (json.loads((folder/"config.json").read_text()), digest(folder/"config.json"))
-                (output/str(episode["seed"])).mkdir()
+                configs[seed] = (json.loads((folder/"config.json").read_text()), digest(folder/"config.json"))
             save(output/"handoff.json", {"stopped_python_processes": stopped, "sumo_signals_sent": [],
                  "manifest_sha256": manifest_hash, "unix": time.time()})
             while len(completed) != len(manifest["episodes"]):
@@ -349,7 +395,7 @@ def run(args):
             frozen, freeze_errors = [], []
             if handed_off:
                 for episode in manifest["episodes"]:
-                    if episode["seed"] in completed:
+                    if episode["seed"] in completed or "sumo" not in episode:
                         continue
                     try:
                         row = check_identity(episode["sumo"], zombie_ok=True)
@@ -389,6 +435,8 @@ def self_test():
                 ident = process_identity(parent.pid); child = process_identity(int((folder/"child").read_text()))
                 if child["ppid"] != parent.pid:raise AssertionError("Wrong mock ancestry")
                 stop_python(ident)
+                stop_python(ident)
+                checks.append("pre_frozen_python_accepted_"+str(code))
                 (folder/"release").touch()
                 until = time.monotonic()+10
                 while True:
@@ -420,6 +468,26 @@ def self_test():
         try:xml_integrity(bad)
         except (EOFError,OSError):checks.append("truncated_gzip_rejected")
         else:raise AssertionError("Truncated gzip accepted")
+        from unittest.mock import patch
+        import g35b_simulate as original
+        adopted=root/"adopted";dest=adopted/"350201";dest.mkdir(parents=True)
+        source=root/"source-completed";source.mkdir()
+        (adopted/"manifest.json").write_text('{"fixture":true}')
+        config={"seed":350201,"split":"val"}
+        old_receipt={"complete":True,"returncode":0,"files":{},"config_sha256":"fixture","last_summary":{"time":"50399.75"}}
+        save(source/"simulation-complete.json",old_receipt)
+        imported={**old_receipt,"schema":RECEIPT_SCHEMA,"completion_kind":"original_runner",
+                  "simulation_path":str(source),"config":config,
+                  "manifest_sha256":digest(adopted/"manifest.json"),
+                  "original_receipt_sha256":digest(source/"simulation-complete.json")}
+        save(dest/"complete.json",imported)
+        with patch.object(original,"verify_receipt",return_value=(config,old_receipt)):
+            assert verify_adopted_receipt(dest)==(config,imported)
+            checks.append("previously_completed_original_receipt_accepted")
+            (source/"simulation-complete.json").write_text('{}')
+            try:verify_adopted_receipt(dest)
+            except ValueError:checks.append("changed_original_completion_rejected")
+            else:raise AssertionError("Changed original receipt accepted")
         badxml=root/"bad.xml";badxml.write_text('<root>')
         try:xml_integrity(badxml)
         except xml.parsers.expat.ExpatError:checks.append("partial_xml_rejected")

@@ -42,7 +42,8 @@ def run():
                 state = guard()
                 if hashes != {name: digest(Path('scripts') / name) for name in NAMES}:
                     raise ValueError('Frozen continuation code changed')
-                if (ROOT / 'adopted/failed.json').exists():
+                if ((ROOT / 'adopted/failed.json').exists()
+                        or (ROOT / 'adoption-launch-failed.json').exists()):
                     raise RuntimeError('SUMO handoff monitor failed; preserve all artifacts')
                 if time.monotonic() - started > 12*3600:
                     raise TimeoutError('Finite data continuation exceeded twelve hours')
