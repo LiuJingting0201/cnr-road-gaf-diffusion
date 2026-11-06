@@ -1,0 +1,171 @@
+{
+  "complete": true,
+  "view": "spatial",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "selected_epoch": 50,
+  "train": {
+    "n": 925,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class_f1": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "per_class_precision": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "per_class_recall": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "confusion": [
+      [
+        81,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        226,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        457,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        92,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        69
+      ]
+    ],
+    "nll": 0.00010234705649872779,
+    "brier_multiclass_sum": 2.3620778350381596e-08,
+    "ece_15_equal_width": 0.00010233846625873344,
+    "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+  },
+  "val": {
+    "n": 126,
+    "accuracy": 0.753968253968254,
+    "macro_f1": 0.6979687351605979,
+    "weighted_f1": 0.7480713262125309,
+    "per_class_f1": [
+      1.0,
+      0.6376811594202898,
+      0.8807339449541285,
+      0.5714285714285714,
+      0.4
+    ],
+    "per_class_precision": [
+      1.0,
+      0.8461538461538461,
+      0.8135593220338984,
+      0.47619047619047616,
+      0.375
+    ],
+    "per_class_recall": [
+      1.0,
+      0.5116279069767442,
+      0.96,
+      0.7142857142857143,
+      0.42857142857142855
+    ],
+    "confusion": [
+      [
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        22,
+        9,
+        9,
+        3
+      ],
+      [
+        0,
+        2,
+        48,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        10,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        3
+      ]
+    ],
+    "nll": 1.2068469333749348,
+    "brier_multiclass_sum": 0.43773429432157024,
+    "ece_15_equal_width": 0.17877333435242865,
+    "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+  },
+  "seconds": 27.478181540966034,
+  "peak_cuda_memory_bytes": 1650785792,
+  "config_sha256": "a056c7e2e791e668836040f2f2a98dc87d0395459ea232c94df1ba3b9691fb63",
+  "artifacts": {
+    "model.pt": {
+      "sha256": "ebbfe42af34158ed9228a35ccd3dacc670fe5ac8279a719c3e97c3d9e129f044",
+      "bytes": 44788418
+    },
+    "train-predictions.npz": {
+      "sha256": "13d48100f6af9b6fe9136037264e87e8eb6b367a05bc11453b126d11a7fe22c6",
+      "bytes": 1742170
+    },
+    "val-predictions.npz": {
+      "sha256": "46b1ec67194776de8511b7848045c84887d8a9d6ec9be6a114185e828c746a11",
+      "bytes": 237995
+    }
+  },
+  "limits": [
+    "Single-episode parent holdout, not independent-city or unseen-route validation.",
+    "This CNN is self-trained, not supplied by the CNR group.",
+    "Teacher classification and calibration do not establish GAF generation benefit.",
+    "Spatial original encoding and speed angular encoding remain distinct."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "view": "speed",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "seed": 42,
+  "epochs": 50,
+  "batch_size": 64,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0001,
+  "scheduler": "constant",
+  "class_weight": "inverse_sqrt_training_counts_normalized_mean_one",
+  "class_counts": [
+    81,
+    226,
+    457,
+    92,
+    69
+  ],
+  "class_weights": [
+    1.2371763949529273,
+    0.7406617467207463,
+    0.5208540369556218,
+    1.160860999854842,
+    1.3404468215158623
+  ],
+  "checkpoint": "final_epoch_50_only",
+  "cache_receipt_sha256": "f2d20f2d51040a721e0572b68536bad92198902c6c9d38e8903c8b4c4423ffc0",
+  "pretrained_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "code_sha256": {
+    "g29_encode.py": "8e9a6fc60d6cb07fe4bc22dc19b44e242af88409c806f00dab441cd63c1dd210",
+    "original_gaf.py": "0f3c56aed8208c828ab80107de984c2b33e6b5a06aaa58b93799aff7b8565305",
+    "hilbert.py": "80d40b879b3c7d997e738274a71af914c461f2f22ed081618e3c49bc8f04af53",
+    "representations.py": "e4328c4f9e0d68b4d16d716b57aae720ef720ccf0623e48f658395cccabd2040",
+    "sequence.py": "096ea10df30a02ea4c7609459f83a463c8289461a6b7a2258f52802c4b76cc97",
+    "g23_modes.py": "d89f6477f6f06df85ca9dd0b0b92839598057b0d3bc6311363a3e7d89b2afcfc",
+    "g28_teachers.py": "58ed6f4b7c51c003c9c643ce34adfcf7753a272b9299e17bcccabda12d16f515",
+    "g33_prepare.py": "c9556ad60cd1862289ddff6d85c6057cfe0d222a94bcfa26a21fa863d3632328",
+    "g33_teachers.py": "76a3c6920ba0754cc536e05480e16ad25b5a40c753eb7b25053a73ef3b7126a9"
+  },
+  "device": "NVIDIA L20",
+  "precision": "float32",
+  "torch_version": "2.5.1+cu121",
+  "label": "five participant classes",
+  "scope": "self-trained feedback component, not generation-quality result"
+}

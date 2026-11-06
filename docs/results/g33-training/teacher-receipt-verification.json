@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "original_file_sha256": {
+    "spatial": {
+      "complete.json": "2f012b1ce3baa5fe141ff2b57277d6da14821950f04ce6826f53b6b41816f73c",
+      "config.json": "a056c7e2e791e668836040f2f2a98dc87d0395459ea232c94df1ba3b9691fb63"
+    },
+    "speed": {
+      "complete.json": "866397a129fa835a1add2b489358fa5629f3a94e86efc4bad28271f4d8dbefad",
+      "config.json": "848555c3faf10e0121a92b3a4d0826dbe4a35cd1d04b08da4634d491a1a1bcee"
+    }
+  },
+  "byte_exact_receipt_reconstruction_verified": true,
+  "saved_predictions_checked_on_server": {
+    "complete": true,
+    "checks": {
+      "spatial": {
+        "splits": {
+          "train": {
+            "saved_prediction_metrics_exactly_reproduced": true,
+            "n": 925,
+            "prediction_sha256_matches": true
+          },
+          "val": {
+            "saved_prediction_metrics_exactly_reproduced": true,
+            "n": 126,
+            "prediction_sha256_matches": true
+          }
+        },
+        "known_parent_overlap": 0
+      },
+      "speed": {
+        "splits": {
+          "train": {
+            "saved_prediction_metrics_exactly_reproduced": true,
+            "n": 925,
+            "prediction_sha256_matches": true
+          },
+          "val": {
+            "saved_prediction_metrics_exactly_reproduced": true,
+            "n": 126,
+            "prediction_sha256_matches": true
+          }
+        },
+        "known_parent_overlap": 0
+      }
+    },
+    "raw_predictions_or_ids_exported": false
+  },
+  "raw_predictions_ids_or_weights_downloaded": false
+}
