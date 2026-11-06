@@ -1,0 +1,29 @@
+\section{Results and the limits of the representation hypothesis}
+All twelve diffusion fits completed. The new simulation retained 3,018 of 3,072 attempted journeys before the fixed request selection. The eight-class fixed-probe macro F1 on the 384 fresh references was 23.7\% for spatial features, 60.8\% for speed features and 56.1\% for their concatenation. A route-geometry probe reached 24.9\%. On the separately fitted six-motor-vehicle task, spatial, speed and concatenated features reached 17.9\%, 47.7\% and 43.1\%. The concatenated eight-class probe was 4.70 percentage points below speed alone, with an episode interval from 1.77 to 7.62 points below. Its larger input dimension and fixed regularization can affect this comparison. The results establish decodable class information in speed features and leave additional spatial information unestablished under this readout.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Arm & Cruise W1 (s) & Clock W1 (s) & $\Delta v_4$ W1 (m/s) & Diversity (m/s)\\
+\midrule
+B & 11.44 & 12.09 & 0.245 & 4.793\\
+P & 10.94 & 12.14 & 0.244 & 4.812\\
+S & 11.12 & 12.15 & 0.244 & 4.800\\
+V & 11.03 & 12.05 & 0.242 & 4.818\\
+SV & 11.00 & 12.11 & 0.243 & 4.809\\
+SH & 11.11 & 12.13 & 0.244 & 4.806\\
+Empirical & 10.84 & 11.73 & 0.149 & 5.394\\
+\bottomrule
+\end{tabular}
+\caption{All-candidate complete-trip evaluation on new traffic. Diversity is the class-macro mean pairwise RMS difference between full-trip speed profiles within the same request and model seed. Each arm contributes 3,072 candidates.}
+\label{tab:paired-results}
+\end{table}
+
+For the prespecified SV--B contrast, the longest-cruise discrepancy changed by $-0.441$ seconds (95\% interval $-0.776$ to $+0.295$) and duration discrepancy by $+0.023$ seconds ($-0.086$ to $+0.232$). Neither co-primary outcome established an improvement. Comparisons with the single-view, class-centroid and shuffled-pair controls likewise failed to establish an additional physical benefit. The six-motor-vehicle analysis gave the same qualitative conclusion. Diversity remained close across learned arms. Against empirical transfer, SV had a four-second speed-change discrepancy higher by 0.094 m/s, with an interval from 0.021 to 0.131. This baseline remains a strong comparator for the learned temporal distribution.
+
+\fig{paired-representations.pdf}{1.0}{Matched physical discrepancies, paired effect intervals and within-request diversity. The highlighted contrast is the prespecified paired-teacher model against denoising alone. All intervals condition on two trained seeds.}{paired-results}
+
+The separate seed-43 speed reader classified generated first draws with macro F1 of 50.0\% for B and 53.0\% for SV. SH also reached 52.6\%. Those score changes did not establish improved physical fidelity. On real fresh references the same reader achieved 60.4\%, while its spatial counterpart achieved 21.7\%. Directed-road or sidewalk audits passed 384 of 384 first draws for V and 383 of 384 for each other learned arm, each retaining a private-car failure. Endpoint arrival was exact by construction for all candidates, which is distinct from passing the discrete lane audit.
+
+This experiment supports a narrower claim than universal semantic guidance. A useful speed representation is present, but the tested global hidden-feature loss has yet to turn it into a more faithful complete-trip distribution. Its particular pooled teacher vectors, midpoint alignment, noise weighting and fixed strength delimit this result. The weak spatial probe and comparable route-only probe also suggest that much of the recoverable spatial information is already supplied by the route condition. These observations motivate studying class-internal temporal information beyond the known route and label. They do not establish that every form of dual-view supervision will fail. The fresh data follow the explicit random-route and default-vehicle protocol, so their class separability cannot be assumed to reproduce the original CNR exports.

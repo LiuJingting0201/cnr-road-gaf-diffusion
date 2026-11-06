@@ -6,12 +6,14 @@ import numpy as np
 import torch
 from cnr.episode_w1 import episode_w1
 from g16_data import NAMES
-from g22_diffusion import decode, sample
+from g22_diffusion import decode, sample, load
+from g22_eval import empirical
 from g23_eval import phys
 from g23_modes import speed_series
 from g28_train import ARMS, Denoiser
 
 ROOT = Path('g28-data')
+EVALUATED = (*ARMS, 'E')
 COLUMNS = ['longest_steady_W1_s', 'duration_W1_s', 'lag4_W1_mps',
            'mean_speed_W1_mps', 'mean_abs_acceleration_W1_mps2',
            'stopped_fraction_W1', 'speed_p95_W1_mps']
@@ -29,6 +31,11 @@ def physical(t, xy):
 
 def draw(arm, seed, request):
     root = ROOT / 'models' / f'{arm}-{seed}'
+    if arm == 'E':
+        root.mkdir(parents=True, exist_ok=True)
+        times, profiles = empirical(load('train'), request, seed)
+        return dict(ids=request['ids'],duration=times,progress=profiles,
+                    bounded=np.zeros_like(times,dtype=bool),flat=np.zeros_like(times,dtype=bool))
     if not (root / 'complete.json').exists():
         raise RuntimeError(f'Incomplete training {root}')
     out = root / 'samples.npz'
@@ -51,7 +58,7 @@ def run():
     with np.load(ROOT/'requests.npz') as d:
         request = {k:d[k] for k in d.files}
     # Save all pools before reading observed outcomes.
-    for arm in ARMS:
+    for arm in EVALUATED:
         for seed in (42,43):
             draw(arm, seed, request)
     with np.load(ROOT/'references.npz') as ref:
@@ -65,7 +72,7 @@ def run():
     assert len(np.unique(episode)) == 8
     weights = np.vstack([np.ones(8), np.random.default_rng(280133).multinomial(8, np.ones(8)/8, 2000)])
     curves, tables = {}, {}
-    for arm in ARMS:
+    for arm in EVALUATED:
         seed_curves, seed_tables, diversity = [], [], []
         caps = flats = 0
         endpoint = 0.
@@ -105,7 +112,7 @@ def run():
                        'diversity_macro':np.mean(diversity,axis=(0,1)).tolist(),
                        'duration_clips':caps,'flat_fallbacks':flats,'endpoint_max_m':endpoint}
     differences = {}
-    for a,b in [('SV','B'),('S','B'),('V','B'),('P','B'),('SV','S'),('SV','V'),('SV','P'),('SV','SH')]:
+    for a,b in [('SV','B'),('SV','E'),('B','E'),('S','B'),('V','B'),('P','B'),('SV','S'),('SV','V'),('SV','P'),('SV','SH')]:
         differences[a+'-'+b] = {}
         for population in ('all','motor'):
             delta = curves[a][population] - curves[b][population]

@@ -29,3 +29,7 @@ Primary intervals condition on the two trained seeds. Two seeds cannot character
 REPA (Yu et al., https://arxiv.org/abs/2410.06940) motivates noisy-denoiser alignment to frozen clean representations. Its image results supply a mechanism to test in trajectories. GAF (Wang and Oates, https://arxiv.org/abs/1506.00327) motivates time-series image representations. Neither establishes the effectiveness of the present two-view road-conditioned generator.
 
 Interpretation notes fixed before outcomes. Monitor probes share the teacher checkpoint-selection partition and are developmental. Fresh references supply independent classifier checks. SH disrupts exact route/location alongside within-trip motion, so SV-SH identifies paired-trip information and cannot alone isolate motion causality.
+
+Before generation outcomes, add existing G22 empirical whole-trip transfer E on the same requests and K=4 for both seeds. The 32 nearest training routes within class supply normalized profiles and length-scaled time. Report SV-E and B-E as supporting comparisons. No baseline retuning.
+
+Independent information check. Refit the already fixed training-only PCA/scaler/logistic probes on the same train features and evaluate on fresh 279001–279008 references using seed-42 frozen features. Include spatial, speed, concatenated, route-only, two raw physical statistics and route-plus-physics. This adds no hyperparameter search and cannot select a generation arm. It addresses the checkpoint-selected status of monitor scores.

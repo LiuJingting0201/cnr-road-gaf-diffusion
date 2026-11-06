@@ -1,0 +1,61 @@
+\chapter{Learning from paired spatial and speed representations}
+\label{ch:paired}
+\section{A hypothesis about information transfer}
+A timestamped trajectory determines a speed sequence. The two sequences offer different inputs to a learned representation. Ordered positions describe the itinerary and its time-dependent occupancy, while speeds describe how motion changes over the trip. Their encoded images may preserve class-associated information in different forms. The question for synthesis is whether this information improves the distribution of generated journeys after the requested class and route have already been supplied.
+
+Three empirical statements must be tested separately. A representation can make participant classes distinguishable. A second view can add information beyond the first. Transferring either representation to a denoiser can improve generated motion. A high classification accuracy establishes the first statement in its evaluated population. It leaves the other two open. In particular, a route-conditioned generator already receives information about road geometry and the desired participant. A teacher that largely recovers those conditions may provide little additional supervision.
+
+The original spatial pipeline has a further limitation. It quantizes positions into Hilbert cells, compresses cell-residence runs and normalizes the resulting series before image construction. Consider a cell sequence with 90 observations in cell 0, 40 in cell 1 and 70 in cell 2. Repeating each observation twice doubles the traversal time at a fixed sampling interval. The inherited squeeze and duplicate operations produce exactly the same length-32 sequence for these two inputs. Thus absolute speed can be lost by this encoding even though the original timestamps and positions determine it. The speed image uses a shared physical scale of 35 m/s and preserves this particular difference. This construction motivates measuring the information that survives each transformation.
+
+\section{Correcting the comparison}
+Earlier experiments used a spatial teacher trained for eight participant classes and a speed teacher trained for six motion modes. The subsequent angular-field training objective compared field values directly. Those experiments addressed candidate feedback, mode guidance and image reconstruction. Here both teachers learn the same participant-class task, and the generator receives supervision from their hidden representations.
+
+A preprocessing audit also found that earlier native spatial training appended the prescribed endpoints to the recorded observations, whereas later reference scoring used the recorded positions directly. For the new fits both spatial training and reference evaluation encode raw quarter-second positions consistently. On 96 prespecified monitor journeys, the earlier frozen reader classified 30.2\% correctly from raw observations and 31.3\% with appended endpoints. This small audit identifies a real preprocessing difference without explaining the overall recognition difficulty by itself.
+
+We also passed the true training targets through the progress representation and route decoder. On the monitor population, mean speed-profile reconstruction errors ranged from 0.02 m/s for pedestrians to 0.26 m/s for motorcycles. Values for buses, private cars and trucks were approximately 0.16, 0.21 and 0.19 m/s. These errors arise before fitting a denoiser. The observed quarter-second path, the one-second progress target and the prescribed route polyline are distinct approximations. The new latent loss compares learned representations of complete observations to noisy denoiser states, while independent physical evaluation remains on decoded positions.
+
+\section{Matched teachers and the information available to the sampler}
+Both teachers are ResNet18 networks initialized from ImageNet, trained for 18 epochs on the same 6,033 complete journeys, with 1,126 journeys from three separate traffic episodes for checkpoint selection. We fit seeds 42 and 43. The spatial teacher reads the inherited Hilbert GASF, GADF and MTF channels only. The speed teacher reads GASF, GADF and MTF computed from a 128-point full-trip speed sequence. Its images are resized to the same 224-pixel input size. Both predict the eight participant labels. The 512-dimensional vectors before the classification heads are the transferred features.
+
+A fixed linear-probe diagnostic uses training-fitted principal components and standardization, with the regularization coefficient fixed at one. On the monitor set, spatial and speed feature macro F1 were 26.4\% and 61.0\%, and their concatenation reached 57.0\%. Because the same monitor episodes selected teacher checkpoints, this is a developmental diagnosis. A separate fresh cohort evaluates the frozen teachers after training. Full confusion matrices distinguish strong pedestrian or bicycle separation from the harder motor-vehicle task.
+
+The simulator creates vehicle types using their default SUMO vehicle classes. Private cars and taxis share several motion parameters, including nominal acceleration, deceleration and maximum speed, while their speed-deviation defaults differ. The current demand specifies no taxi pickup or delivery-stop tasks. Statistical class overlap is consequently plausible \cite{sumovtypes}. Classification here measures the simulated parameter and route-permission families. It does not establish recognition of all real-world operational uses of vehicles.
+
+\section{Supervising the denoiser's intermediate state}
+Representation alignment has improved image diffusion training by projecting noisy denoiser states toward representations of clean examples from frozen encoders \cite{repa}. We adapt this principle to complete trajectories. The two trajectory teachers are trained within the available simulation corpus, so the quality of their features is an additional empirical question.
+
+Let $z_0$ contain the normalized log-duration and 256 forward-progress increments of a complete journey. The diffusion process produces $z_t$ at noise level $t$. The denoiser receives $z_t$, the permitted route $r$ and the participant class $c$. We pool the output of its fifth residual block over the sequence to obtain $h_\theta(z_t,t,c,r)$. Two projection heads $g_s$ and $g_v$ map that state to the spatial and speed feature spaces. Frozen teacher targets $e_s$ and $e_v$ are globally centered using training features and normalized to unit length.
+
+For a selected set of views $\mathcal{V}$, the training objective is
+\begin{equation}
+\mathcal{L} = \mathcal{L}_{\mathrm{denoise}} +
+\frac{0.1}{|\mathcal{V}|}\sum_{j\in\mathcal{V}}\mathbb{E}\left[
+\bar\alpha_t\left(1-\left\langle\frac{g_j(h_\theta)}{\|g_j(h_\theta)\|},e_j\right\rangle\right)\right].
+\end{equation}
+The two-view loss averages the terms to keep the total coefficient fixed. No gradient through the discrete Hilbert transform is required. The clean real-trip features serve as loss targets during training. At generation time the input contains the planned route, class and random noise. No real future speed, arrival time, image or teacher feature is supplied.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lll}
+\toprule
+Arm & Additional supervision & Question\\
+\midrule
+B & None & Denoising baseline\\
+P & Class centroids in both spaces & Repeated class supervision\\
+S & Paired spatial feature & Spatial contribution\\
+V & Paired speed feature & Speed contribution\\
+SV & Both paired features & Joint contribution\\
+SH & Features from another matched trip & Pairing contribution\\
+\bottomrule
+\end{tabular}
+\caption{Matched training controls. SH permutes trips within participant class and route-length quartile. All arms contain identical projection heads and start from identical denoiser weights within each seed.}
+\end{table}
+
+Each arm uses two training seeds, 12,000 updates and the same class-balanced batches. SH disrupts both exact route information and individual motion, so its contrast identifies paired-trip information rather than isolating a causal motion effect. The six-mode condition studied previously is excluded from this comparison. An existing empirical transfer comparator samples normalized profiles from 32 nearby training routes of the requested class and rescales duration by route length.
+
+\section{Independent assessment of the generated dataset}
+The primary population uses eight new SUMO demand seeds on the same map. We select six admitted requests per participant class and episode by ID, giving 384 requests. Each generator seed supplies four draws per request. All candidates enter the physical comparison. The main contrast is SV against B, with class-macro Wasserstein discrepancies in arrival time and the longest steady-moving interval as co-primary outcomes. Supporting measures include four-second speed changes, absolute acceleration, stopped-time fraction, upper-tail speed and within-request diversity. The paired uncertainty calculation resamples whole simulation episodes and conditions on the two fitted seeds.
+
+A seed-43 teacher readout supplies secondary classification evidence. Its fitting run is separate from the seed-42 teachers that supervise diffusion, but it shares their architecture and training population. The independent physical measurements carry the main synthesis claim. Directed lane checks cover the prespecified seed-42 first draw for each request, with a separate sidewalk-distance check for pedestrians. This population tests new traffic on a familiar map. Geographic transfer and real-world deployment require additional evidence.
+
+\input{tables/g28-results}

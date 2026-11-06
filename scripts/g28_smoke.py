@@ -25,7 +25,9 @@ assert torch.equal(out,base(x,t,y,s,r))
 feature = model.hidden
 averaged(x+1,t,y,s,r)
 assert model.hidden is feature and averaged.hidden is not feature
-loss = model.projected('speed').square().sum() + out.square().mean()
+target = torch.nn.functional.normalize(torch.randn(2,512,device='cuda'),dim=1)
+loss = 1 - (model.projected('speed') * target).sum(1).mean()
 loss.backward()
 assert model.backbone.blocks[4].conv.weight.grad is not None
+assert model.backbone.blocks[4].conv.weight.grad.norm() > 0
 print(json.dumps({'same_backbone_and_rng':True,'same_forward':True,'ema_hook_independent':True,'gradient_path':True}))
