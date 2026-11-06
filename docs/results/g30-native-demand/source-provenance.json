@@ -1,0 +1,74 @@
+{
+  "complete": true,
+  "repository": "https://github.com/lcodeca/MoSTScenario",
+  "commit": "b29b2f65f1096a9c69a601ec62a724815cb4a43f",
+  "files": {
+    "scenario/most.sumocfg": {
+      "sha256": "93f6a259bcb8705d217b08c41c57a0adfe567e61df86ae19c1ba16b94f4ac42f",
+      "bytes": 2737,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/most.sumocfg"
+    },
+    "scenario/in/most.net.xml": {
+      "sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "bytes": 13898821,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/most.net.xml"
+    },
+    "scenario/in/route/most.buses.flows.xml": {
+      "sha256": "55320ab0a282af6941b12fa9968245a91fd2e268cf72e4b4a41c7715142f621a",
+      "bytes": 44215,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.buses.flows.xml"
+    },
+    "scenario/in/route/most.trains.flows.xml": {
+      "sha256": "7c5ff76fb9bd9432eabacf0fd9586431e2f4e829ed349dd696cab33bbeff67c9",
+      "bytes": 2170,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.trains.flows.xml"
+    },
+    "scenario/in/route/most.pedestrian.rou.xml": {
+      "sha256": "6a3edbf2fab689b0a1b348f6443977979bc17be2a8c85459821df8541999c69a",
+      "bytes": 33757898,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.pedestrian.rou.xml"
+    },
+    "scenario/in/route/most.commercial.rou.xml": {
+      "sha256": "c2e65853d2ce9960dcb28c3770554815845d3f78e02bec83b01499e6e4d4f97c",
+      "bytes": 2028711,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.commercial.rou.xml"
+    },
+    "scenario/in/route/most.special.rou.xml": {
+      "sha256": "f937f2c29adc2963636a7474291d988ffc70e3894ef8809ed74da1b71c81723f",
+      "bytes": 809767,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.special.rou.xml"
+    },
+    "scenario/in/route/most.highway.flows.xml": {
+      "sha256": "b45cf0a5ec3bc2af829b2f456a3bdad7042b9a6f4d1e60353cea96f54220fa10",
+      "bytes": 2048,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/route/most.highway.flows.xml"
+    },
+    "scenario/in/add/most.poly.xml": {
+      "sha256": "1a3e03c4e2499fd2240b8e77b7cbfdeb9f0b6feca5f6206d0bfd83c2e6bc97b3",
+      "bytes": 4449835,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/add/most.poly.xml"
+    },
+    "scenario/in/add/most.busstops.add.xml": {
+      "sha256": "bfb1a1fe08434006b437d43f7a4ba543d651f844f59b17bc378abf528481cf16",
+      "bytes": 32246,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/add/most.busstops.add.xml"
+    },
+    "scenario/in/add/most.trainstops.add.xml": {
+      "sha256": "dd418d487b6718a94eb15ae2d07f2be70c3042dbe2fcc8c5fe6baefa7b9cc4fa",
+      "bytes": 3130,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/add/most.trainstops.add.xml"
+    },
+    "scenario/in/add/most.parking.allvisible.add.xml": {
+      "sha256": "ea80318e236e2801cde7eb6c838257777e3135cd78d4dbcdb8a3d93966d0c0ad",
+      "bytes": 136868,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/add/most.parking.allvisible.add.xml"
+    },
+    "scenario/in/add/basic.vType.xml": {
+      "sha256": "b54319b25b8d8c638f0e6c66c5012ccdf274878b756394d162f1a88c54ca91f2",
+      "bytes": 4846,
+      "url": "https://raw.githubusercontent.com/lcodeca/MoSTScenario/b29b2f65f1096a9c69a601ec62a724815cb4a43f/scenario/in/add/basic.vType.xml"
+    }
+  },
+  "license": "Upstream GPL-3.0; cached only, not republished in this repository",
+  "scope": "Same public map, native demand; not a claim of reproducing the CNR historical run"
+}

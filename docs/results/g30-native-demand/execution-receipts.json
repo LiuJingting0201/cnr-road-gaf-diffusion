@@ -1,0 +1,559 @@
+{
+  "complete": true,
+  "simulations": {
+    "pilot/300001": {
+      "complete": true,
+      "seconds": 141.64307766407728,
+      "seed": 300001,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "70cdffae60af1e880da6c6938b83d9a4fb8f9dd25b4a5d2805ac337a408643fe",
+          "bytes": 192402707
+        },
+        "tripinfo.xml": {
+          "sha256": "2f0b0332697118c58b9768a0f35332044964a9362582fee7c5d1a0c127a92781",
+          "bytes": 2533206
+        },
+        "vehroute.xml.gz": {
+          "sha256": "da69e65f5d71ecb733b67a71f362705b186418d5675e5e35aa554e29ea91342b",
+          "bytes": 240648
+        },
+        "stops.xml": {
+          "sha256": "8c4b3ef3aa95c11252293d845786074dde6afdb0cda77775d48fc8c2fa364092",
+          "bytes": 443358
+        },
+        "summary.xml": {
+          "sha256": "9457d4bbd6e9839683df079787c7b187de39d845e8cd9632a48e4e287de142a1",
+          "bytes": 5645408
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1452",
+        "waiting": "2",
+        "ended": "951",
+        "arrived": "948",
+        "collisions": "0",
+        "teleports": "0",
+        "halting": "54",
+        "stopped": "513",
+        "meanWaitingTime": "0.31",
+        "meanTravelTime": "512.53",
+        "meanSpeed": "11.63",
+        "meanSpeedRelative": "0.76",
+        "discarded": "3",
+        "duration": "17"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 0,
+        "collision": 0,
+        "warning:": 34,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "7ff0eb1748f8c0bb835c7cc558701f53e280a3a840d1c2181fbb46aa95e9b60d"
+    },
+    "train/300101": {
+      "complete": true,
+      "seconds": 144.81263898313046,
+      "seed": 300101,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "15f2b8899eb287f5bcb67e6db8181cf33eb111306e5731db63ebf9637fae647b",
+          "bytes": 192469666
+        },
+        "tripinfo.xml": {
+          "sha256": "d036b1566e977cf8a42859c9e8d29a2fa95b080e585cd79ef122919d7c754a74",
+          "bytes": 2533863
+        },
+        "vehroute.xml.gz": {
+          "sha256": "8afb2475639405f1c1e2ded044b7a56605f705298419b1c2860d16be55f98ea9",
+          "bytes": 239978
+        },
+        "stops.xml": {
+          "sha256": "556500405df43c29f4fffee4fe5c650b4c49d13959f396e040e9bf49afa65893",
+          "bytes": 441891
+        },
+        "summary.xml": {
+          "sha256": "e61b9fe9ec2ea33e2468c5397174e914ca2434c3cfa149f559e9bcb3d8b80bd5",
+          "bytes": 5644261
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1451",
+        "waiting": "2",
+        "ended": "952",
+        "arrived": "949",
+        "collisions": "0",
+        "teleports": "1",
+        "halting": "69",
+        "stopped": "516",
+        "meanWaitingTime": "0.38",
+        "meanTravelTime": "515.91",
+        "meanSpeed": "11.49",
+        "meanSpeedRelative": "0.75",
+        "discarded": "3",
+        "duration": "17"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 3,
+        "collision": 0,
+        "warning:": 41,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "eca4b395a186eae16a9da03d31ba12855644c4b1207bc3c5e3ebe328bc988665"
+    },
+    "train/300102": {
+      "complete": true,
+      "seconds": 142.47134353220463,
+      "seed": 300102,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "722bed4b769af67b636d9446c7b15f753d0ddf3d3bbe28cdce16cf538ea31e6f",
+          "bytes": 192294286
+        },
+        "tripinfo.xml": {
+          "sha256": "29664242c07f6aa042482dca4dc1e13eca738fb4f3d8e1ddb77d2dc3d498e6ff",
+          "bytes": 2533596
+        },
+        "vehroute.xml.gz": {
+          "sha256": "6b230bf8e9f4f2fd0a66fd6c25f612a73049bca9d99ea2db9a89fc82a6806675",
+          "bytes": 238566
+        },
+        "stops.xml": {
+          "sha256": "7a881756b03e9c2a8d345d0e5ca16aadb75c9c53f0c27b24ef40c6fc0e7b28c9",
+          "bytes": 442444
+        },
+        "summary.xml": {
+          "sha256": "5d16962aae5e38e224f3c18fd4a47c1a0ce9596b96af578e47d687cc1cdb3f45",
+          "bytes": 5645587
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1451",
+        "waiting": "2",
+        "ended": "952",
+        "arrived": "949",
+        "collisions": "0",
+        "teleports": "0",
+        "halting": "79",
+        "stopped": "521",
+        "meanWaitingTime": "0.35",
+        "meanTravelTime": "510.21",
+        "meanSpeed": "11.40",
+        "meanSpeedRelative": "0.75",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 0,
+        "collision": 0,
+        "warning:": 31,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "6d87a3796204f535c9cc6bb6004d95c516e73b53d2d5a7d3145f9cc776bc9b31"
+    },
+    "train/300103": {
+      "complete": true,
+      "seconds": 145.2112923413515,
+      "seed": 300103,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "b9301e48fb2c78cbe6f0fade78a5dcff270f3e6b3ac7bd1c271d93ce8abfe84f",
+          "bytes": 193241012
+        },
+        "tripinfo.xml": {
+          "sha256": "3e816c1d077f49f3bf5b2a8f9555201ab7698892ba55106320dc65dff4857212",
+          "bytes": 2532454
+        },
+        "vehroute.xml.gz": {
+          "sha256": "46f258ea155922c26bf7f092715acc5da495076d89825f6d320d7301b269ea1f",
+          "bytes": 239644
+        },
+        "stops.xml": {
+          "sha256": "33af766cc98ec9b27375272a1afdc9218e59d37f6925e45a77c4d39fbf723ba7",
+          "bytes": 440265
+        },
+        "summary.xml": {
+          "sha256": "1f30eefe73dd2b6182cfe265152e126a20c7aaa091ebb910d139822f2c5f8fc6",
+          "bytes": 5645345
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2399",
+        "running": "1465",
+        "waiting": "3",
+        "ended": "937",
+        "arrived": "934",
+        "collisions": "0",
+        "teleports": "0",
+        "halting": "46",
+        "stopped": "514",
+        "meanWaitingTime": "0.35",
+        "meanTravelTime": "517.12",
+        "meanSpeed": "11.77",
+        "meanSpeedRelative": "0.77",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 0,
+        "collision": 0,
+        "warning:": 46,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "dacaa92b021a5b32ce64b97b4a0e829d46893b76f736e0f22c49106009f5fd18"
+    },
+    "train/300104": {
+      "complete": true,
+      "seconds": 142.64622478932142,
+      "seed": 300104,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "f153b0f9e8c91d2ed5b0b134dba10fc0216830161074f7bce0695a2f9959a10d",
+          "bytes": 192700476
+        },
+        "tripinfo.xml": {
+          "sha256": "74f9d4b9caf8e2a3e5c8ca0d6c2ed6da38c96a36b53463cc093bf97fb71ba435",
+          "bytes": 2533659
+        },
+        "vehroute.xml.gz": {
+          "sha256": "a9a87d58e7e0d23e65a093d52e56e15dd63ffa8c617f8ba94dc9e71eaecb7b3d",
+          "bytes": 240467
+        },
+        "stops.xml": {
+          "sha256": "33e583fa6ec1282853fc3469709113edc718c0e48861d34b21fb138207fdea50",
+          "bytes": 442719
+        },
+        "summary.xml": {
+          "sha256": "f3f4b415a1c2e382c7bc51bfc51df21e7183434340ed8e1ee1a82bcbdbf518b6",
+          "bytes": 5644614
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1450",
+        "waiting": "2",
+        "ended": "953",
+        "arrived": "950",
+        "collisions": "0",
+        "teleports": "2",
+        "halting": "68",
+        "stopped": "521",
+        "meanWaitingTime": "0.34",
+        "meanTravelTime": "515.18",
+        "meanSpeed": "11.44",
+        "meanSpeedRelative": "0.75",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 5,
+        "collision": 0,
+        "warning:": 33,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "2dfc5345efd5b178791ab2b099db15271d84fe4f63411e44c626d4ebbad8bf8b"
+    },
+    "train/300105": {
+      "complete": true,
+      "seconds": 143.75241520255804,
+      "seed": 300105,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "d6b5164a7b22a4a334eccc0996a68541cf5d0fd8974dc16aba66b9815bb6c93f",
+          "bytes": 193130100
+        },
+        "tripinfo.xml": {
+          "sha256": "b330f434f9b7ae99d37e395be3d217528ab37e094a1eebf52b1f0e938300d934",
+          "bytes": 2532308
+        },
+        "vehroute.xml.gz": {
+          "sha256": "0113709892fb8de180a4a39ffcb20fa27d175335253032f66fee08a2341c7af5",
+          "bytes": 238562
+        },
+        "stops.xml": {
+          "sha256": "f48ac13e189dc7f7b64a5a229db2108354b88001273ffdc4554408c8a6ec0437",
+          "bytes": 441797
+        },
+        "summary.xml": {
+          "sha256": "ee3e86ec0d11669b3b67c3a73511ec579af0b68f10dc6265752b76b8ec3ec034",
+          "bytes": 5644787
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1461",
+        "waiting": "2",
+        "ended": "942",
+        "arrived": "939",
+        "collisions": "0",
+        "teleports": "3",
+        "halting": "71",
+        "stopped": "504",
+        "meanWaitingTime": "0.37",
+        "meanTravelTime": "516.58",
+        "meanSpeed": "11.31",
+        "meanSpeedRelative": "0.74",
+        "discarded": "3",
+        "duration": "17"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 7,
+        "collision": 0,
+        "warning:": 43,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "37373e4130d003b9a01e96ca9a68a387f3ffa446da5686701ff2dfec46cc6984"
+    },
+    "train/300106": {
+      "complete": true,
+      "seconds": 145.22057357430458,
+      "seed": 300106,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "bec88b5150ad8a5ebfa9e2a2e79a372ed6a315f7d3921cdee24d6418603b9dee",
+          "bytes": 192558341
+        },
+        "tripinfo.xml": {
+          "sha256": "0a2a6e4da633cbe87dfa6782cc645d31685fc80425448541015e13e34ffa9e76",
+          "bytes": 2533179
+        },
+        "vehroute.xml.gz": {
+          "sha256": "056f7b461b537b074b9f7cf6894804fdf32c2a699106882220e72148066e4ba0",
+          "bytes": 238740
+        },
+        "stops.xml": {
+          "sha256": "7b737b4e48d8d14cbfc2a484fa79a4155afef768f012041d8d331f51df873bb9",
+          "bytes": 442108
+        },
+        "summary.xml": {
+          "sha256": "514daacd80992ccecc28ce829ac3181a07c32602302ae22ef93f5ce1ffa4043f",
+          "bytes": 5645487
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1463",
+        "waiting": "2",
+        "ended": "940",
+        "arrived": "937",
+        "collisions": "0",
+        "teleports": "0",
+        "halting": "48",
+        "stopped": "517",
+        "meanWaitingTime": "0.34",
+        "meanTravelTime": "510.67",
+        "meanSpeed": "11.84",
+        "meanSpeedRelative": "0.77",
+        "discarded": "3",
+        "duration": "17"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 0,
+        "collision": 0,
+        "warning:": 31,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "fda5dbd5beceb499f2e023f1a9a315b2917405cc3125e6bc9530165e65e29b5d"
+    },
+    "val/300201": {
+      "complete": true,
+      "seconds": 143.8911845460534,
+      "seed": 300201,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "4ce5a2301f49d88abc0f7e3f9af1de53957274977e3ebeb71204c91bedd547c1",
+          "bytes": 192933197
+        },
+        "tripinfo.xml": {
+          "sha256": "203fb6b13a7e19d708bc043f335977420d88f2135db26d017e5adb4f84b93bef",
+          "bytes": 2533828
+        },
+        "vehroute.xml.gz": {
+          "sha256": "ae15ed8be0f59ba49a63c195b56eaca69eb207e57797b8a6ba8d7ba795cb9b9a",
+          "bytes": 239750
+        },
+        "stops.xml": {
+          "sha256": "39e9e6f31df9cd6f4ec3f451c189520b39c7176dee4c40111c326394441e59c7",
+          "bytes": 441522
+        },
+        "summary.xml": {
+          "sha256": "8ee7e59030676201a154bf9a82e11d94a77048240a522d80a6d6ba61f5654fa5",
+          "bytes": 5645486
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1455",
+        "waiting": "2",
+        "ended": "948",
+        "arrived": "945",
+        "collisions": "0",
+        "teleports": "0",
+        "halting": "83",
+        "stopped": "516",
+        "meanWaitingTime": "0.36",
+        "meanTravelTime": "516.35",
+        "meanSpeed": "11.23",
+        "meanSpeedRelative": "0.74",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 0,
+        "collision": 0,
+        "warning:": 31,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "5d694dab5b7e94c983b193c6f1bda34049b61b629421117374c2b0eacf28d142"
+    },
+    "val/300202": {
+      "complete": true,
+      "seconds": 142.05260817706585,
+      "seed": 300202,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "1f3a77e83a049360f6545d0539512a9381b6b1e47a200f902fcdb157693b6bab",
+          "bytes": 192732074
+        },
+        "tripinfo.xml": {
+          "sha256": "12b71fa213887a5b92781d2e543561a0f83921579c044e968253cc28fee40396",
+          "bytes": 2533834
+        },
+        "vehroute.xml.gz": {
+          "sha256": "b097600da17d2010dd9605521fea10878b9009ea15cde049fec7c2b8730fe9e8",
+          "bytes": 239096
+        },
+        "stops.xml": {
+          "sha256": "49b8370f3c9d4f86f7a986485e74cc92de92b671a63bc0fc7a7dde339282b41d",
+          "bytes": 442681
+        },
+        "summary.xml": {
+          "sha256": "f14f9b8ca9f2bc0ffc7a26e21ab3a050b2f4353fde7216b7fa08ca79c975e328",
+          "bytes": 5644642
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1452",
+        "waiting": "2",
+        "ended": "951",
+        "arrived": "948",
+        "collisions": "0",
+        "teleports": "1",
+        "halting": "63",
+        "stopped": "519",
+        "meanWaitingTime": "0.35",
+        "meanTravelTime": "514.09",
+        "meanSpeed": "11.28",
+        "meanSpeedRelative": "0.74",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 3,
+        "collision": 0,
+        "warning:": 41,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "e3569c102671e6b89ffc7cf9f228a7234b8853a9c98d0a4487b57604b645515b"
+    },
+    "val/300203": {
+      "complete": true,
+      "seconds": 151.95176573842764,
+      "seed": 300203,
+      "files": {
+        "fcd.xml.gz": {
+          "sha256": "e42d8c1e0c86a64ebc515ccfa53774857679a168c62bec3f82071b31d503048b",
+          "bytes": 192509466
+        },
+        "tripinfo.xml": {
+          "sha256": "46a718e7832cdc6718b5d487b98985703f542d8f5bdb6e2ad94dc3df5b4eee07",
+          "bytes": 2533776
+        },
+        "vehroute.xml.gz": {
+          "sha256": "ecc87d0848648c7ec94981a031aa574338e9cba8771ab5c48a1beb3e061cae69",
+          "bytes": 239225
+        },
+        "stops.xml": {
+          "sha256": "8a4782747c0bf18d8c9d018f6d895a89c0b237bec839d61545481f10caf9b3af",
+          "bytes": 440292
+        },
+        "summary.xml": {
+          "sha256": "92a65a9a90a51b71ef676bf50d3be1a0c6bc229cb3d7f5cf9bd0ec2e010b02be",
+          "bytes": 5645540
+        }
+      },
+      "last_summary": {
+        "time": "19515.75",
+        "loaded": "2554",
+        "inserted": "2400",
+        "running": "1464",
+        "waiting": "2",
+        "ended": "939",
+        "arrived": "936",
+        "collisions": "0",
+        "teleports": "1",
+        "halting": "92",
+        "stopped": "529",
+        "meanWaitingTime": "0.35",
+        "meanTravelTime": "514.26",
+        "meanSpeed": "11.29",
+        "meanSpeedRelative": "0.74",
+        "discarded": "3",
+        "duration": "16"
+      },
+      "log_keyword_line_counts": {
+        "teleport": 3,
+        "collision": 0,
+        "warning:": 44,
+        "error:": 0,
+        "discard": 0
+      },
+      "config_sha256": "ea3b93cb33abe98042ce430f5f29849a55e3db7e90b52f04443d1554146ce81b"
+    }
+  },
+  "execution_script_hashes": {
+    "g30_demand_audit.py": "1cbb24bdb2f9d505e4502e3b20c1e69c702edc384d0a1b7507258bdd34dbee98",
+    "g30_extract.py": "e310405bb6dab584a57604c852135128abe76462a4a9fc5121741c5ba4600fb8",
+    "g30_figure.py": "6bbd96a10d662cd756d2949e1f455ef719e8e23469aee12ca44cfaa6cff67f6f",
+    "g30_fit.py": "a0506b89739b5ff739d99640174b053ccc3e954cbf19a7dce95cfd4338902cd7",
+    "g30_native.py": "bdca92617e2b2787b746918b6df1330338164b970b7568b3db6a6a770c3590a5",
+    "g30_pilot.sh": "e46ed32157a5abb4fefa6033bd382883aeca491fde9e1736ff3e2bad7e0973f6",
+    "g30_prepare.py": "b89f28a81f877158f229e3b3c0cd442ccc898700fcb3c023f938b513448d8eba",
+    "g30_quality.py": "6c190453a0e55dffaa5e7e1532560c85164c5444e611395bc625fa02c1f674cd",
+    "g30_run.sh": "c52462a78da94aa57f1d80fb1d1f6f1aa51ca599aeadbe8154c8e5021f24e016",
+    "g30_summarize.py": "604e51f786630f978adaeaceb4a659991923fe24862962e8159bec663228f3e1"
+  },
+  "cohort_marker": "complete",
+  "formal_failure_marker_present": false
+}

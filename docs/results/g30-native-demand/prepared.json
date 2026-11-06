@@ -1,0 +1,1164 @@
+{
+  "scope": "Fixed three-source development diagnosis; no pilot or frozen test trajectories/labels, and no generation; original ID/split manifest used only for entity isolation",
+  "classes": [
+    "pedestrian",
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "seed": 30042,
+  "encoding": {
+    "source": {
+      "raw_source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+      "source_name": "midimost_with_class2.csv",
+      "rows": 4840789,
+      "classes": [
+        "pedestrian",
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "coordinate_scale": 100,
+      "time_scale": 4,
+      "note": "Canonical columns only; speed stays in original CSV. Float32 XY and times verified unchanged.",
+      "max_coordinate_decimal_roundoff": 0.0
+    },
+    "source_package_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+    "source_commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+    "git_commit": "b54b769f1bbe3ff6078817662539f2c20946aa23",
+    "summary": {
+      "train": {
+        "vehicles": 2146,
+        "class_counts": {
+          "pedestrian": 631,
+          "bus": 111,
+          "motorcycle": 296,
+          "private_car": 893,
+          "bycicle": 141,
+          "taxi_or_uber": 74
+        },
+        "coordinate_clipped_points": 0,
+        "channel_clipped_values": 0
+      },
+      "val": {
+        "vehicles": 269,
+        "class_counts": {
+          "pedestrian": 79,
+          "bus": 14,
+          "motorcycle": 37,
+          "private_car": 112,
+          "bycicle": 18,
+          "taxi_or_uber": 9
+        },
+        "coordinate_clipped_points": 1,
+        "channel_clipped_values": 0
+      }
+    },
+    "xy_min": [
+      -0.17,
+      117.18
+    ],
+    "xy_max": [
+      9977.97,
+      6356.52
+    ],
+    "channel_min": [
+      -1.0,
+      -1.0000000000000036,
+      0.0
+    ],
+    "channel_max": [
+      1.000000000000007,
+      1.0000000000000036,
+      1.0
+    ],
+    "hilbert_eps": 0.0009,
+    "length": 224,
+    "mtf_bins": 8,
+    "scope": "Full vehicle trajectory, original squeeze and mirror duplication, RGB GASF/GADF/MTF; newly trained CNN, not original classifier reproduction. Test neither encoded nor evaluated.",
+    "adaptations": [
+      "Canonical time ordering verified by packer",
+      "local SUMO x/y used in original normalized coordinate slots, not claimed GPS",
+      "train-only coordinate and channel extrema frozen for deployment; clip out of bounds and count",
+      "keep previous vehicle split; no claim to original group classification accuracy"
+    ],
+    "elapsed_s": 40.7240402251482
+  },
+  "minimum_continuous_span_s": 5.0,
+  "continuity": "Saved longest continuous .25-second core is retained exactly",
+  "sources": {
+    "encoding_metadata_sha256": "ab50cc574fa2c72772a230576517aa8b0e6399f2dccc0419f2759e20fc7016e1",
+    "g29_raw_files": {
+      "cnr-train": {
+        "sha256": "5769a6e65f0bb95635c7d78391274ac97fa1a16daa9083e06b26478915776b83"
+      },
+      "cnr-val": {
+        "sha256": "c8adeb7108acd75705994d6762a0382361441c42e95f18c52bc7b28d461a0142"
+      },
+      "sumo-train": {
+        "sha256": "dde57255a7396c0f44befd25d13698220513c0f3e590967f2721995c139e065b"
+      },
+      "sumo-val": {
+        "sha256": "e7cd3a686d43634fb0338bb2c188e5194bf96b1d11295c450bbdb6b4d8c7ecb4"
+      }
+    },
+    "cnr_split_manifest_sha256": "33ed1e378bae16a72a5bf2c441c45284eec6de480a91438884101a5a6651ee71",
+    "native_extractions": {
+      "train/300101": {
+        "raw_sha256": "893175b0c27edbfa5fcb343ef2f909be4e32d69da897db2631d289a783e92d66",
+        "extraction_manifest_sha256": "36a542ddaaf012c49ebc8705d95d28635f1fb7db25636fddbdc5a56c039aed14"
+      },
+      "train/300102": {
+        "raw_sha256": "6c9b1693acfd499bd5ee1dff60b53878f1154e29df80c01a79692ad9905836ee",
+        "extraction_manifest_sha256": "a924e001e2a4c3b679ba4ff640447715653123095c8ad5081daf683ce42dba69"
+      },
+      "train/300103": {
+        "raw_sha256": "2957b0c5b00528440ee22e72a5b262ad17687c9e67f5a2a9adb4fc6c278d4ea3",
+        "extraction_manifest_sha256": "b433f6919bab0d572868d9ae9738c8403a1840d0c6da85ffc24d870834741eda"
+      },
+      "train/300104": {
+        "raw_sha256": "44f3ae6ef2218a1a244bbc40ceefec8ab2bc1e55e7122a9695a7d10d6c4e62a0",
+        "extraction_manifest_sha256": "9f564265f7dbaa80aa3a88f98779e2bf3c0a13fa25de2128f2f95c42657aa5e7"
+      },
+      "train/300105": {
+        "raw_sha256": "73f24f083f269d45d740e10d08465e1a93dcf891a7da061b9445abc0ce6b2c81",
+        "extraction_manifest_sha256": "932006bdd7e815b79296dabf043bd20a871c82b33b9841a350b66f78b1b33252"
+      },
+      "train/300106": {
+        "raw_sha256": "ca9f80b9ebfe17aea1da25f25ef8c7ead598c45f04e65245384d7fb7159df392",
+        "extraction_manifest_sha256": "bc6165a53860ca38e848e808cd567456ca4fdfa95a442423c73d1b63b37159cd"
+      },
+      "val/300201": {
+        "raw_sha256": "9e17d4c56640d56091bf07e127fc580a178e097c24c71acadd036da615b4ae0b",
+        "extraction_manifest_sha256": "60e57b6dbadc8e10da29662407cecbaf2581ae641900f7e4c5c060c72347c09b"
+      },
+      "val/300202": {
+        "raw_sha256": "788eb572ebd030acb772ad8cf198cfb885bcb146655ee70ee8f3fe64e8cc3f74",
+        "extraction_manifest_sha256": "a245dc9344e89e371ef86c07b42c34d4a0d4c7758fbe442110cc4962c5fc26ca"
+      },
+      "val/300203": {
+        "raw_sha256": "4d43a29f3635e8c72266b2ddf2152612ee4018df9b26a36e1476f397b285755e",
+        "extraction_manifest_sha256": "caa0927823e0aea28303c32cf7894fe7eb2aab681596d2d7de45b95fd301b337"
+      }
+    }
+  },
+  "available": {
+    "cnr-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ]
+    },
+    "cnr-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ]
+    },
+    "sumo-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ]
+    },
+    "sumo-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ]
+    },
+    "native-train": {
+      "rows": 2428,
+      "class_counts": [
+        703,
+        111,
+        438,
+        961,
+        141,
+        74
+      ]
+    },
+    "native-val": {
+      "rows": 340,
+      "class_counts": [
+        101,
+        14,
+        74,
+        124,
+        18,
+        9
+      ]
+    }
+  },
+  "count_matched": {
+    "cnr-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "5769a6e65f0bb95635c7d78391274ac97fa1a16daa9083e06b26478915776b83",
+      "eligible_512_by_class": [
+        82,
+        107,
+        268,
+        678,
+        119,
+        63
+      ]
+    },
+    "cnr-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "c8adeb7108acd75705994d6762a0382361441c42e95f18c52bc7b28d461a0142",
+      "eligible_512_by_class": [
+        6,
+        14,
+        31,
+        93,
+        16,
+        4
+      ]
+    },
+    "sumo-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "dde57255a7396c0f44befd25d13698220513c0f3e590967f2721995c139e065b",
+      "eligible_512_by_class": [
+        153,
+        89,
+        216,
+        557,
+        141,
+        57
+      ]
+    },
+    "sumo-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "e7cd3a686d43634fb0338bb2c188e5194bf96b1d11295c450bbdb6b4d8c7ecb4",
+      "eligible_512_by_class": [
+        15,
+        13,
+        30,
+        78,
+        18,
+        8
+      ]
+    },
+    "native-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "ccbb83ae6e43b2128f3e63a7753fd923f67b9470ce5a4f89ebe2b8bcf523019e",
+      "eligible_512_by_class": [
+        371,
+        107,
+        267,
+        679,
+        120,
+        64
+      ]
+    },
+    "native-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "5e0fb3939daa193f768f3c6ee9bb2738816d2828b6a527b07f14b68bc283974d",
+      "eligible_512_by_class": [
+        40,
+        14,
+        32,
+        95,
+        16,
+        4
+      ]
+    }
+  },
+  "native": {
+    "extraction_aggregates": {
+      "train/300101": {
+        "rows": 2781,
+        "class_counts": [
+          840,
+          139,
+          383,
+          1149,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5516894,
+          "direct_rider_observations_excluded": 3559514,
+          "missing_native_speed_observations": 1735,
+          "entities_excluded:longest_continuous_span_below_5s": 17
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "truck": 33931,
+          "delivery": 231394,
+          "moped": 383216,
+          "coach": 52567,
+          "emergency": 66830,
+          "authority": 40845,
+          "trailer": 29080
+        },
+        "arrival_complete_counts": [
+          506,
+          109,
+          143,
+          266,
+          120,
+          83
+        ],
+        "observation_complete_counts": [
+          53,
+          104,
+          143,
+          265,
+          120,
+          83
+        ],
+        "eligible_512_counts": [
+          524,
+          134,
+          347,
+          1030,
+          149,
+          74
+        ]
+      },
+      "train/300102": {
+        "rows": 2801,
+        "class_counts": [
+          845,
+          139,
+          377,
+          1170,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5549294,
+          "direct_rider_observations_excluded": 3527529,
+          "missing_native_speed_observations": 1740,
+          "entities_excluded:longest_continuous_span_below_5s": 15
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "delivery": 215909,
+          "moped": 386280,
+          "trailer": 39717,
+          "truck": 26470,
+          "emergency": 64133,
+          "coach": 37989,
+          "authority": 40247
+        },
+        "arrival_complete_counts": [
+          498,
+          108,
+          135,
+          278,
+          121,
+          83
+        ],
+        "observation_complete_counts": [
+          43,
+          103,
+          135,
+          277,
+          121,
+          83
+        ],
+        "eligible_512_counts": [
+          539,
+          134,
+          339,
+          1050,
+          150,
+          72
+        ]
+      },
+      "train/300103": {
+        "rows": 2793,
+        "class_counts": [
+          838,
+          139,
+          387,
+          1159,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5587866,
+          "direct_rider_observations_excluded": 3567343,
+          "missing_native_speed_observations": 1573,
+          "entities_excluded:longest_continuous_span_below_5s": 18
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "truck": 30542,
+          "delivery": 219860,
+          "coach": 45279,
+          "trailer": 38586,
+          "moped": 347191,
+          "emergency": 71358,
+          "authority": 35612
+        },
+        "arrival_complete_counts": [
+          505,
+          108,
+          137,
+          265,
+          118,
+          82
+        ],
+        "observation_complete_counts": [
+          48,
+          103,
+          137,
+          263,
+          118,
+          82
+        ],
+        "eligible_512_counts": [
+          540,
+          134,
+          349,
+          1039,
+          150,
+          74
+        ]
+      },
+      "train/300104": {
+        "rows": 2791,
+        "class_counts": [
+          846,
+          139,
+          375,
+          1161,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5528002,
+          "direct_rider_observations_excluded": 3539534,
+          "missing_native_speed_observations": 1422,
+          "entities_excluded:longest_continuous_span_below_5s": 14
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "trailer": 33513,
+          "moped": 412645,
+          "coach": 51528,
+          "delivery": 230801,
+          "truck": 14273,
+          "authority": 31897,
+          "emergency": 70131,
+          "army": 3596
+        },
+        "arrival_complete_counts": [
+          507,
+          109,
+          138,
+          271,
+          120,
+          84
+        ],
+        "observation_complete_counts": [
+          49,
+          104,
+          138,
+          269,
+          120,
+          84
+        ],
+        "eligible_512_counts": [
+          534,
+          134,
+          334,
+          1042,
+          151,
+          74
+        ]
+      },
+      "train/300105": {
+        "rows": 2771,
+        "class_counts": [
+          828,
+          139,
+          388,
+          1146,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5589421,
+          "direct_rider_observations_excluded": 3562754,
+          "missing_native_speed_observations": 1745,
+          "entities_excluded:longest_continuous_span_below_5s": 14
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "delivery": 238813,
+          "trailer": 42606,
+          "moped": 331613,
+          "emergency": 64150,
+          "coach": 41505,
+          "truck": 27514,
+          "authority": 42960
+        },
+        "arrival_complete_counts": [
+          491,
+          107,
+          150,
+          258,
+          116,
+          81
+        ],
+        "observation_complete_counts": [
+          48,
+          102,
+          149,
+          256,
+          116,
+          81
+        ],
+        "eligible_512_counts": [
+          539,
+          134,
+          357,
+          1026,
+          154,
+          73
+        ]
+      },
+      "train/300106": {
+        "rows": 2797,
+        "class_counts": [
+          841,
+          138,
+          393,
+          1155,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5580338,
+          "direct_rider_observations_excluded": 3541788,
+          "missing_native_speed_observations": 1377,
+          "entities_excluded:longest_continuous_span_below_5s": 16
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "truck": 36109,
+          "moped": 341298,
+          "delivery": 219903,
+          "coach": 39608,
+          "trailer": 40040,
+          "emergency": 71742,
+          "authority": 34851,
+          "army": 356
+        },
+        "arrival_complete_counts": [
+          503,
+          108,
+          148,
+          266,
+          116,
+          82
+        ],
+        "observation_complete_counts": [
+          44,
+          103,
+          148,
+          265,
+          116,
+          82
+        ],
+        "eligible_512_counts": [
+          541,
+          134,
+          360,
+          1036,
+          153,
+          77
+        ]
+      },
+      "val/300201": {
+        "rows": 2815,
+        "class_counts": [
+          845,
+          139,
+          400,
+          1161,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5588529,
+          "direct_rider_observations_excluded": 3562432,
+          "missing_native_speed_observations": 1524,
+          "entities_excluded:longest_continuous_span_below_5s": 12
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "delivery": 220097,
+          "moped": 347237,
+          "coach": 59494,
+          "truck": 24387,
+          "authority": 45961,
+          "emergency": 59125,
+          "trailer": 22752,
+          "army": 1072
+        },
+        "arrival_complete_counts": [
+          505,
+          108,
+          147,
+          277,
+          119,
+          81
+        ],
+        "observation_complete_counts": [
+          42,
+          103,
+          147,
+          275,
+          119,
+          81
+        ],
+        "eligible_512_counts": [
+          541,
+          134,
+          362,
+          1042,
+          152,
+          73
+        ]
+      },
+      "val/300202": {
+        "rows": 2816,
+        "class_counts": [
+          846,
+          139,
+          397,
+          1164,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5589938,
+          "direct_rider_observations_excluded": 3559392,
+          "missing_native_speed_observations": 1663,
+          "entities_excluded:longest_continuous_span_below_5s": 15
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "trailer": 56060,
+          "moped": 327787,
+          "delivery": 199999,
+          "coach": 45283,
+          "emergency": 71671,
+          "truck": 28357,
+          "authority": 32177,
+          "army": 4088
+        },
+        "arrival_complete_counts": [
+          504,
+          109,
+          152,
+          278,
+          120,
+          83
+        ],
+        "observation_complete_counts": [
+          41,
+          104,
+          152,
+          276,
+          120,
+          83
+        ],
+        "eligible_512_counts": [
+          531,
+          134,
+          363,
+          1046,
+          155,
+          75
+        ]
+      },
+      "val/300203": {
+        "rows": 2820,
+        "class_counts": [
+          853,
+          139,
+          392,
+          1166,
+          177,
+          93
+        ],
+        "observed_time_range_s": [
+          14400.0,
+          19515.75
+        ],
+        "counts": {
+          "timesteps": 20464,
+          "nested_rider_observations_excluded": 0,
+          "mapped_observations": 5594919,
+          "direct_rider_observations_excluded": 3544812,
+          "missing_native_speed_observations": 1393,
+          "entities_excluded:longest_continuous_span_below_5s": 12
+        },
+        "unknown_vtype_observations_excluded": {},
+        "unsupported_vclass_observations_excluded": {
+          "rail": 37740,
+          "truck": 26626,
+          "moped": 340459,
+          "delivery": 205062,
+          "coach": 42432,
+          "emergency": 62800,
+          "authority": 41743,
+          "trailer": 50463,
+          "army": 2440
+        },
+        "arrival_complete_counts": [
+          501,
+          107,
+          144,
+          275,
+          111,
+          83
+        ],
+        "observation_complete_counts": [
+          48,
+          102,
+          144,
+          273,
+          111,
+          83
+        ],
+        "eligible_512_counts": [
+          549,
+          134,
+          360,
+          1043,
+          153,
+          74
+        ]
+      }
+    },
+    "entity_selection": {
+      "unique_base_entities": 3054,
+      "entities_inheriting_cnr_train_membership": 2140,
+      "entities_observed_in_multiple_episodes": 2766,
+      "entities_with_eligible_label_changes": 62,
+      "entities_with_eligible_vtype_changes": 2132,
+      "entities_with_entity_tag_changes": 0,
+      "observations_removed_by_entity_partition": 8587,
+      "redundant_eligible_realisations_removed": 11540,
+      "original_test_entities_excluded": 269,
+      "original_test_eligible_observations_excluded": 2290,
+      "entities_inheriting_cnr_val_membership": 267,
+      "unknown_entities_assigned_train_by_hash": 298,
+      "unknown_entities_assigned_val_by_hash": 80,
+      "entities_without_eligible_observation_in_assigned_episode_partition": 17,
+      "eligible_observation_rows_before_grouping": 25185,
+      "selected_entities_before_class_matching": 2768,
+      "selection_scope": "One hash-ranked eligible observation per base ID; no score, label, type or duration in the ranking.",
+      "label_change_scope": "Changes among mapped eligible observations only; excluded vTypes remain counted in extraction receipts.",
+      "source_identity_scope": "Exact base-ID matches only, shared across person/vehicle tags; no guessed aliases or prefix stripping."
+    },
+    "base_entity_overlap": 0,
+    "cross_source_excluded_partition_overlap": {
+      "native_train_with_cnr_val": 0,
+      "native_val_with_cnr_train": 0,
+      "native_any_with_cnr_test": 0
+    },
+    "cross_source_same_partition_overlap": {
+      "native_train_with_cnr_train": 2137,
+      "native_val_with_cnr_val": 267
+    },
+    "independence_limit": "Same-partition shared base IDs and route/line families are correlated demand templates; native versus CNR is not an independent-entity replication.",
+    "route_metadata_scope": "Final emitted route fingerprints and lines for audits only; not pre-simulation planned routes or generation conditions",
+    "matched_route_overlap": {
+      "route_hashes": {
+        "train_unique_nonempty": 1098,
+        "val_unique_nonempty": 169,
+        "shared_unique_nonempty": 29,
+        "train_rows_with_metadata": 1372,
+        "val_rows_with_metadata": 187,
+        "val_rows_seen_in_train": 44,
+        "val_by_class": {
+          "0": {
+            "rows": 70,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "1": {
+            "rows": 14,
+            "metadata_present": 14,
+            "seen_in_training": 14,
+            "not_seen_in_training": 0
+          },
+          "2": {
+            "rows": 37,
+            "metadata_present": 37,
+            "seen_in_training": 1,
+            "not_seen_in_training": 36
+          },
+          "3": {
+            "rows": 109,
+            "metadata_present": 109,
+            "seen_in_training": 28,
+            "not_seen_in_training": 81
+          },
+          "4": {
+            "rows": 18,
+            "metadata_present": 18,
+            "seen_in_training": 1,
+            "not_seen_in_training": 17
+          },
+          "5": {
+            "rows": 9,
+            "metadata_present": 9,
+            "seen_in_training": 0,
+            "not_seen_in_training": 9
+          }
+        }
+      },
+      "lines": {
+        "train_unique_nonempty": 24,
+        "val_unique_nonempty": 12,
+        "shared_unique_nonempty": 12,
+        "train_rows_with_metadata": 111,
+        "val_rows_with_metadata": 14,
+        "val_rows_seen_in_train": 14,
+        "val_by_class": {
+          "0": {
+            "rows": 70,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "1": {
+            "rows": 14,
+            "metadata_present": 14,
+            "seen_in_training": 14,
+            "not_seen_in_training": 0
+          },
+          "2": {
+            "rows": 37,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "3": {
+            "rows": 109,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "4": {
+            "rows": 18,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "5": {
+            "rows": 9,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          }
+        }
+      }
+    },
+    "available_route_overlap": {
+      "route_hashes": {
+        "train_unique_nonempty": 1369,
+        "val_unique_nonempty": 216,
+        "shared_unique_nonempty": 34,
+        "train_rows_with_metadata": 1725,
+        "val_rows_with_metadata": 239,
+        "val_rows_seen_in_train": 54,
+        "val_by_class": {
+          "0": {
+            "rows": 101,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "1": {
+            "rows": 14,
+            "metadata_present": 14,
+            "seen_in_training": 14,
+            "not_seen_in_training": 0
+          },
+          "2": {
+            "rows": 74,
+            "metadata_present": 74,
+            "seen_in_training": 6,
+            "not_seen_in_training": 68
+          },
+          "3": {
+            "rows": 124,
+            "metadata_present": 124,
+            "seen_in_training": 33,
+            "not_seen_in_training": 91
+          },
+          "4": {
+            "rows": 18,
+            "metadata_present": 18,
+            "seen_in_training": 1,
+            "not_seen_in_training": 17
+          },
+          "5": {
+            "rows": 9,
+            "metadata_present": 9,
+            "seen_in_training": 0,
+            "not_seen_in_training": 9
+          }
+        }
+      },
+      "lines": {
+        "train_unique_nonempty": 24,
+        "val_unique_nonempty": 12,
+        "shared_unique_nonempty": 12,
+        "train_rows_with_metadata": 111,
+        "val_rows_with_metadata": 14,
+        "val_rows_seen_in_train": 14,
+        "val_by_class": {
+          "0": {
+            "rows": 101,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "1": {
+            "rows": 14,
+            "metadata_present": 14,
+            "seen_in_training": 14,
+            "not_seen_in_training": 0
+          },
+          "2": {
+            "rows": 74,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "3": {
+            "rows": 124,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "4": {
+            "rows": 18,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          },
+          "5": {
+            "rows": 9,
+            "metadata_present": 0,
+            "seen_in_training": 0,
+            "not_seen_in_training": 0
+          }
+        }
+      }
+    }
+  },
+  "label_semantics": {
+    "native": "Declared vClass; source vType uber maps to taxi_or_uber; moped excluded",
+    "cnr_correspondence": "Original class2 and native source taxonomy are not proven identical"
+  },
+  "selection": {
+    "entity_partition": "Exact CNR test IDs excluded; known CNR train/val IDs inherit original membership; unknown IDs use SHA256([30042,entity-partition,base_id]) below 2^256/5 for val, otherwise train",
+    "episode_partitions": {
+      "train": [
+        300101,
+        300102,
+        300103,
+        300104,
+        300105,
+        300106
+      ],
+      "val": [
+        300201,
+        300202,
+        300203
+      ]
+    },
+    "representative": "Lowest SHA256([30042,representative,base_id,episode,entity_tag]) within assigned episode partition",
+    "matched_sampling": "Lowest SHA256([30042,cohort,domain,split,observation_id]) separately within each class",
+    "class_caps": {
+      "train": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "val": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ]
+    }
+  },
+  "interpretation": "Common demand files across native seeds; one eligible base entity per cohort, not new OD demand.",
+  "matched_class_counts": {
+    "train": [
+      611,
+      111,
+      295,
+      751,
+      141,
+      74
+    ],
+    "val": [
+      70,
+      14,
+      37,
+      109,
+      18,
+      9
+    ]
+  },
+  "g29_population_unchanged": {
+    "cnr": {
+      "train": true,
+      "val": true
+    },
+    "sumo": {
+      "train": true,
+      "val": true
+    }
+  },
+  "complete": true,
+  "script_sha256": "b89f28a81f877158f229e3b3c0cd442ccc898700fcb3c023f938b513448d8eba"
+}

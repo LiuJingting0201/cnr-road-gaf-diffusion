@@ -1,0 +1,321 @@
+{
+  "complete": true,
+  "episode": "300001",
+  "classes": [
+    "pedestrian",
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "scope": "native observations; longest continuous .25-second segment >=5s per entity; not necessarily a complete trip",
+  "pedestrian_scope": "direct FCD persons outside vehicles: on-foot/unboarded walking or waiting observations, with riding gaps retained; not complete multimodal person chains",
+  "sources": {
+    "fcd": {
+      "sha256": "70cdffae60af1e880da6c6938b83d9a4fb8f9dd25b4a5d2805ac337a408643fe"
+    },
+    "tripinfo": {
+      "sha256": "2f0b0332697118c58b9768a0f35332044964a9362582fee7c5d1a0c127a92781"
+    },
+    "types": [
+      {
+        "filename": "basic.vType.xml",
+        "sha256": "b54319b25b8d8c638f0e6c66c5012ccdf274878b756394d162f1a88c54ca91f2"
+      },
+      {
+        "filename": "most.buses.flows.xml",
+        "sha256": "55320ab0a282af6941b12fa9968245a91fd2e268cf72e4b4a41c7715142f621a"
+      },
+      {
+        "filename": "most.commercial.rou.xml",
+        "sha256": "c2e65853d2ce9960dcb28c3770554815845d3f78e02bec83b01499e6e4d4f97c"
+      },
+      {
+        "filename": "most.highway.flows.xml",
+        "sha256": "b45cf0a5ec3bc2af829b2f456a3bdad7042b9a6f4d1e60353cea96f54220fa10"
+      },
+      {
+        "filename": "most.pedestrian.rou.xml",
+        "sha256": "6a3edbf2fab689b0a1b348f6443977979bc17be2a8c85459821df8541999c69a"
+      },
+      {
+        "filename": "most.special.rou.xml",
+        "sha256": "f937f2c29adc2963636a7474291d988ffc70e3894ef8809ed74da1b71c81723f"
+      },
+      {
+        "filename": "most.trains.flows.xml",
+        "sha256": "7c5ff76fb9bd9432eabacf0fd9586431e2f4e829ed349dd696cab33bbeff67c9"
+      }
+    ],
+    "routes": {
+      "sha256": "da69e65f5d71ecb733b67a71f362705b186418d5675e5e35aa554e29ea91342b"
+    }
+  },
+  "raw_sha256": "7db182263349f6a5a18e1b99c6815d3b4958c472e2a28998dccae2613afb097d",
+  "script_sha256": "e310405bb6dab584a57604c852135128abe76462a4a9fc5121741c5ba4600fb8",
+  "rows": 2803,
+  "class_counts": [
+    839,
+    139,
+    389,
+    1166,
+    177,
+    93
+  ],
+  "observed_time_range_s": [
+    14400.0,
+    19515.75
+  ],
+  "timestep_intervals": {
+    "0.25000000": 20463
+  },
+  "counts": {
+    "timesteps": 20464,
+    "nested_rider_observations_excluded": 0,
+    "mapped_observations": 5572928,
+    "direct_rider_observations_excluded": 3542199,
+    "missing_native_speed_observations": 1600,
+    "entities_excluded:longest_continuous_span_below_5s": 15
+  },
+  "entities_with_vtype_changes": 0,
+  "unknown_vtype_observations_excluded": {},
+  "unknown_vtype_entity_counts": {},
+  "unsupported_vclass_observations_excluded": {
+    "rail": 37740,
+    "delivery": 246099,
+    "coach": 30451,
+    "truck": 22604,
+    "moped": 348494,
+    "emergency": 67147,
+    "authority": 41176,
+    "trailer": 30571
+  },
+  "unsupported_vclass_entity_counts": {
+    "rail": 4,
+    "delivery": 138,
+    "coach": 19,
+    "truck": 16,
+    "moped": 156,
+    "emergency": 44,
+    "authority": 28,
+    "trailer": 23
+  },
+  "actual_vtype_observations": {
+    "bus": 516738,
+    "train": 37740,
+    "hw_delivery": 11632,
+    "hw_passenger2b": 12167,
+    "motorcycle": 825386,
+    "passenger2b": 620567,
+    "slowpedestrian": 405698,
+    "avgbicycle": 91221,
+    "passenger1": 581347,
+    "passenger2a": 609495,
+    "coach": 18451,
+    "delivery": 234467,
+    "truck": 9642,
+    "passenger3": 522483,
+    "moped": 348494,
+    "slowbicycle": 78646,
+    "passenger4": 512663,
+    "avgpedestrian": 314514,
+    "fastbicycle": 71676,
+    "hw_passenger2a": 16895,
+    "hw_truck": 12962,
+    "taxi": 52008,
+    "emergency": 67147,
+    "authority": 41176,
+    "uber": 39832,
+    "fastpedestrian": 259529,
+    "hw_passenger1": 10168,
+    "hw_trailer": 10303,
+    "trailer": 20268,
+    "hw_passenger4": 12161,
+    "hw_coach": 12000,
+    "hw_motorcycle": 7969,
+    "hw_passenger3": 11765
+  },
+  "type_to_vclass": {
+    "DEFAULT_VEHTYPE": "passenger",
+    "DEFAULT_PEDTYPE": "pedestrian",
+    "DEFAULT_BIKETYPE": "bicycle",
+    "bus": "bus",
+    "train": "rail",
+    "taxi": "taxi",
+    "uber": "passenger",
+    "slowpedestrian": "pedestrian",
+    "avgpedestrian": "pedestrian",
+    "fastpedestrian": "pedestrian",
+    "slowbicycle": "bicycle",
+    "avgbicycle": "bicycle",
+    "fastbicycle": "bicycle",
+    "motorcycle": "motorcycle",
+    "moped": "moped",
+    "passenger1": "passenger",
+    "passenger2a": "passenger",
+    "passenger2b": "passenger",
+    "passenger3": "passenger",
+    "passenger4": "passenger",
+    "emergency": "emergency",
+    "authority": "authority",
+    "army": "army",
+    "delivery": "delivery",
+    "truck": "truck",
+    "trailer": "trailer",
+    "coach": "coach",
+    "evehicle": "evehicle",
+    "hw_passenger1": "passenger",
+    "hw_passenger2a": "passenger",
+    "hw_passenger2b": "passenger",
+    "hw_passenger3": "passenger",
+    "hw_passenger4": "passenger",
+    "hw_motorcycle": "motorcycle",
+    "hw_delivery": "delivery",
+    "hw_truck": "truck",
+    "hw_trailer": "trailer",
+    "hw_coach": "coach"
+  },
+  "source_type_label_overrides": {
+    "uber": 5
+  },
+  "distribution_ids": [
+    "bicycle",
+    "commercial",
+    "highway",
+    "on-demand",
+    "passenger",
+    "pedestrian",
+    "ptw",
+    "special"
+  ],
+  "moped_policy": "excluded: vClass moped is not silently equated with original motorcycle class",
+  "class_label_scope": "declared SUMO vClass with source type uber override; original CNR class2 correspondence is not proven",
+  "arrival_complete_counts": [
+    495,
+    109,
+    156,
+    271,
+    120,
+    83
+  ],
+  "observation_complete_counts": [
+    45,
+    104,
+    156,
+    270,
+    120,
+    83
+  ],
+  "eligible_512_counts": [
+    544,
+    134,
+    358,
+    1045,
+    151,
+    74
+  ],
+  "xy_speed_vs_native_midpoint_mae_mps_per_track": {
+    "0": {
+      "count": 839,
+      "mean": 0.08020542298007896,
+      "median": 0.07454858336858021,
+      "p05": 0.03837042591188182,
+      "p95": 0.1371372766757316,
+      "max": 0.4644083621358861
+    },
+    "1": {
+      "count": 139,
+      "mean": 0.08953796096959799,
+      "median": 0.08826838807086873,
+      "p05": 0.06931117993912365,
+      "p95": 0.11827684177637607,
+      "max": 0.28473129833014044
+    },
+    "2": {
+      "count": 389,
+      "mean": 0.274102243387928,
+      "median": 0.2859038481045593,
+      "p05": 0.07342336084807909,
+      "p95": 0.4360983147990058,
+      "max": 1.1087639592294682
+    },
+    "3": {
+      "count": 1166,
+      "mean": 0.16531660855059424,
+      "median": 0.14179531740300372,
+      "p05": 0.0642180476639041,
+      "p95": 0.3277631644896211,
+      "max": 3.5746307829631534
+    },
+    "4": {
+      "count": 177,
+      "mean": 0.15118949845702767,
+      "median": 0.14284609895511066,
+      "p05": 0.07739904152184143,
+      "p95": 0.26374972245918593,
+      "max": 0.34195250475328304
+    },
+    "5": {
+      "count": 93,
+      "mean": 0.20303222010569194,
+      "median": 0.19474394804315334,
+      "p05": 0.13526687293980696,
+      "p95": 0.31899173650196394,
+      "max": 0.44112516021012266
+    }
+  },
+  "native_track_mean_speed_mps": {
+    "0": {
+      "count": 839,
+      "mean": 1.197008250170553,
+      "median": 1.1928525641025642,
+      "p05": 0.5747595081797204,
+      "p95": 1.8919127906976743,
+      "max": 2.2280132450331127
+    },
+    "1": {
+      "count": 139,
+      "mean": 6.069917003652859,
+      "median": 5.084067135050741,
+      "p05": 3.7477894539353143,
+      "p95": 10.24997984877409,
+      "max": 10.284725343320847
+    },
+    "2": {
+      "count": 389,
+      "mean": 9.360443675530991,
+      "median": 10.044150417827298,
+      "p05": 2.106471774059597,
+      "p95": 14.087743273808309,
+      "max": 33.05358090185676
+    },
+    "3": {
+      "count": 1166,
+      "mean": 12.30941486024322,
+      "median": 12.095694153186187,
+      "p05": 6.004491777201457,
+      "p95": 20.214072066326533,
+      "max": 38.1621875
+    },
+    "4": {
+      "count": 177,
+      "mean": 4.766867540067222,
+      "median": 4.806742979242979,
+      "p05": 3.685588181401741,
+      "p95": 6.092502232854862,
+      "max": 6.820272108843537
+    },
+    "5": {
+      "count": 93,
+      "mean": 9.917675566774285,
+      "median": 9.847058823529412,
+      "p05": 7.396434148434149,
+      "p95": 13.197234609950454,
+      "max": 14.472098765432095
+    }
+  },
+  "arrival_flag_definition": "tripinfo vehicle arrival or last person-stage arrival >= departure; does not imply all stages were observed",
+  "observation_complete_definition": "arrival flag plus no retained-observation continuity breaks and observed endpoints within .25s of declared departure/arrival",
+  "route_metadata_scope": "final emitted route fingerprint and line for grouping/audit only; not a predictive generation input"
+}

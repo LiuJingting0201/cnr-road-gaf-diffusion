@@ -1,0 +1,1360 @@
+{
+  "complete": true,
+  "commit": "b29b2f65f1096a9c69a601ec62a724815cb4a43f",
+  "source_manifest_sha256": "04223d586569aa4368e6a7e3a0108b28395c951c05da036d73e9ea843bd78d07",
+  "scope": "Aggregate inventory of public native input demand; not a replay identity claim for the historical CNR export",
+  "script_sha256": "1cbb24bdb2f9d505e4502e3b20c1e69c702edc384d0a1b7507258bdd34dbee98",
+  "native_configuration": {
+    "input": {
+      "net-file": "in/most.net.xml",
+      "route-files": "in/route/most.buses.flows.xml,in/route/most.trains.flows.xml,in/route/most.pedestrian.rou.xml,in/route/most.commercial.rou.xml,in/route/most.special.rou.xml,in/route/most.highway.flows.xml",
+      "additional-files": "in/add/most.poly.xml,in/add/most.busstops.add.xml,in/add/most.trainstops.add.xml,in/add/most.parking.allvisible.add.xml,in/add/basic.vType.xml"
+    },
+    "output": {
+      "output-prefix": "most."
+    },
+    "time": {
+      "begin": "14400",
+      "step-length": ".25",
+      "end": "50400"
+    },
+    "processing": {
+      "ignore-route-errors": "true",
+      "lateral-resolution": "0.3",
+      "ignore-junction-blocker": "30",
+      "collision.action": "none",
+      "time-to-teleport": "120",
+      "max-depart-delay": "900",
+      "time-to-impatience": "30",
+      "pedestrian.model": "striping",
+      "pedestrian.striping.stripe-width": "0.55",
+      "pedestrian.striping.jamtime": "30",
+      "emergencydecel.warning-threshold": "1.1",
+      "default.emergencydecel": "decel"
+    },
+    "routing": {
+      "persontrip.transfer.car-walk": "parkingAreas,ptStops",
+      "device.rerouting.probability": "1",
+      "device.rerouting.period": "300",
+      "device.rerouting.pre-period": "300"
+    },
+    "report": {
+      "verbose": "true",
+      "duration-log.statistics": "true",
+      "log": "sim.log"
+    },
+    "random_number": {
+      "seed": "42"
+    }
+  },
+  "file_summaries": {
+    "most.poly.xml": {
+      "top_level_tag_counts": {
+        "location": 1,
+        "poly": 13206,
+        "poi": 1121
+      },
+      "entity_type_or_distribution_counts": {},
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.busstops.add.xml": {
+      "top_level_tag_counts": {
+        "busStop": 181
+      },
+      "entity_type_or_distribution_counts": {},
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.trainstops.add.xml": {
+      "top_level_tag_counts": {
+        "busStop": 12
+      },
+      "entity_type_or_distribution_counts": {},
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.parking.allvisible.add.xml": {
+      "top_level_tag_counts": {
+        "parkingArea": 127,
+        "rerouter": 127
+      },
+      "entity_type_or_distribution_counts": {},
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "basic.vType.xml": {
+      "top_level_tag_counts": {
+        "vType": 3,
+        "vTypeDistribution": 7
+      },
+      "entity_type_or_distribution_counts": {},
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.buses.flows.xml": {
+      "top_level_tag_counts": {
+        "route": 24,
+        "flow": 24
+      },
+      "entity_type_or_distribution_counts": {
+        "bus": 24
+      },
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 24,
+        "min": 14405.0,
+        "max": 15202.0
+      },
+      "numeric_flow_end_times_s": {
+        "count": 24,
+        "min": 50405.0,
+        "max": 51202.0
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.trains.flows.xml": {
+      "top_level_tag_counts": {
+        "route": 2,
+        "flow": 2
+      },
+      "entity_type_or_distribution_counts": {
+        "train": 2
+      },
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 2,
+        "min": 14430.0,
+        "max": 15167.0
+      },
+      "numeric_flow_end_times_s": {
+        "count": 2,
+        "min": 50430.0,
+        "max": 51167.0
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.pedestrian.rou.xml": {
+      "top_level_tag_counts": {
+        "person": 45000,
+        "vehicle": 39262
+      },
+      "entity_type_or_distribution_counts": {
+        "pedestrian": 45000,
+        "ptw": 11175,
+        "passenger": 22685,
+        "bicycle": 3455,
+        "on-demand": 1947
+      },
+      "activity_or_stop_stage_counts": {
+        "walk": 31462,
+        "ride": 45244,
+        "stop": 18110
+      },
+      "numeric_departure_times_s": {
+        "count": 45000,
+        "min": 18001.0,
+        "max": 41399.0
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {
+        "triggered": 39262
+      }
+    },
+    "most.commercial.rou.xml": {
+      "top_level_tag_counts": {
+        "vehicle": 3500
+      },
+      "entity_type_or_distribution_counts": {
+        "commercial": 3500
+      },
+      "activity_or_stop_stage_counts": {
+        "stop": 76
+      },
+      "numeric_departure_times_s": {
+        "count": 3500,
+        "min": 18006.0,
+        "max": 41400.0
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.special.rou.xml": {
+      "top_level_tag_counts": {
+        "vehicle": 1500
+      },
+      "entity_type_or_distribution_counts": {
+        "special": 1500
+      },
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 1500,
+        "min": 18036.0,
+        "max": 41363.0
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_end_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "nonnumeric_departure_counts": {}
+    },
+    "most.highway.flows.xml": {
+      "top_level_tag_counts": {
+        "vTypeDistribution": 1,
+        "flow": 2
+      },
+      "entity_type_or_distribution_counts": {
+        "highway": 2
+      },
+      "activity_or_stop_stage_counts": {},
+      "numeric_departure_times_s": {
+        "count": 0,
+        "min": null,
+        "max": null
+      },
+      "numeric_flow_begin_times_s": {
+        "count": 2,
+        "min": 18000.0,
+        "max": 18000.0
+      },
+      "numeric_flow_end_times_s": {
+        "count": 2,
+        "min": 41400.0,
+        "max": 41400.0
+      },
+      "nonnumeric_departure_counts": {}
+    }
+  },
+  "vtype_taxonomy": {
+    "bus": {
+      "vClass": "bus",
+      "attributes": {
+        "vClass": "bus",
+        "id": "bus",
+        "personCapacity": "50",
+        "latAlignment": "center",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "lcCooperative": "0.0"
+      },
+      "parameters": {
+        "has.rerouting.device": "false"
+      },
+      "source_file": "basic.vType.xml"
+    },
+    "train": {
+      "vClass": "rail",
+      "attributes": {
+        "vClass": "rail",
+        "id": "train",
+        "personCapacity": "500"
+      },
+      "parameters": {
+        "has.rerouting.device": "false"
+      },
+      "source_file": "basic.vType.xml"
+    },
+    "taxi": {
+      "vClass": "taxi",
+      "attributes": {
+        "vClass": "taxi",
+        "id": "taxi",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "probability": ".50",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "uber": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "uber",
+        "personCapacity": "8",
+        "latAlignment": "center",
+        "probability": ".50",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "slowpedestrian": {
+      "vClass": "pedestrian",
+      "attributes": {
+        "vClass": "pedestrian",
+        "id": "slowpedestrian",
+        "maxSpeed": "1.0",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "avgpedestrian": {
+      "vClass": "pedestrian",
+      "attributes": {
+        "vClass": "pedestrian",
+        "id": "avgpedestrian",
+        "maxSpeed": "1.5",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "fastpedestrian": {
+      "vClass": "pedestrian",
+      "attributes": {
+        "vClass": "pedestrian",
+        "id": "fastpedestrian",
+        "maxSpeed": "2.0",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "slowbicycle": {
+      "vClass": "bicycle",
+      "attributes": {
+        "vClass": "bicycle",
+        "id": "slowbicycle",
+        "maxSpeed": "4.2",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "avgbicycle": {
+      "vClass": "bicycle",
+      "attributes": {
+        "vClass": "bicycle",
+        "id": "avgbicycle",
+        "maxSpeed": "5.5",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "fastbicycle": {
+      "vClass": "bicycle",
+      "attributes": {
+        "vClass": "bicycle",
+        "id": "fastbicycle",
+        "maxSpeed": "6.9",
+        "latAlignment": "compact",
+        "probability": ".33"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "motorcycle": {
+      "vClass": "motorcycle",
+      "attributes": {
+        "vClass": "motorcycle",
+        "id": "motorcycle",
+        "personCapacity": "2",
+        "latAlignment": "arbitrary",
+        "lcPushy": "1.0",
+        "minGapLat": "0.5",
+        "probability": ".70",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "moped": {
+      "vClass": "moped",
+      "attributes": {
+        "vClass": "moped",
+        "id": "moped",
+        "personCapacity": "1",
+        "latAlignment": "arbitrary",
+        "lcPushy": "1.0",
+        "minGapLat": "0.5",
+        "probability": ".30",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "passenger1": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "passenger1",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.25",
+        "probability": ".20",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "guiShape": "passenger"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "passenger2a": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "passenger2a",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.30",
+        "probability": ".20",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "guiShape": "passenger/sedan"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "passenger2b": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "passenger2b",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.35",
+        "probability": ".20",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "guiShape": "passenger/hatchback"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "passenger3": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "passenger3",
+        "personCapacity": "6",
+        "latAlignment": "center",
+        "sigma": "0.40",
+        "probability": ".20",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "guiShape": "passenger/wagon"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "passenger4": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "passenger4",
+        "personCapacity": "6",
+        "latAlignment": "center",
+        "sigma": "0.50",
+        "probability": ".20",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "guiShape": "passenger/van"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "emergency": {
+      "vClass": "emergency",
+      "attributes": {
+        "vClass": "emergency",
+        "id": "emergency",
+        "latAlignment": "center",
+        "probability": ".60",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "authority": {
+      "vClass": "authority",
+      "attributes": {
+        "vClass": "authority",
+        "id": "authority",
+        "latAlignment": "center",
+        "probability": ".39",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "army": {
+      "vClass": "army",
+      "attributes": {
+        "vClass": "army",
+        "id": "army",
+        "latAlignment": "center",
+        "probability": ".01",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "delivery": {
+      "vClass": "delivery",
+      "attributes": {
+        "vClass": "delivery",
+        "id": "delivery",
+        "containerCapacity": "15",
+        "latAlignment": "center",
+        "probability": ".75",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "lcCooperative": "0.0"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "truck": {
+      "vClass": "truck",
+      "attributes": {
+        "vClass": "truck",
+        "id": "truck",
+        "containerCapacity": "5",
+        "latAlignment": "center",
+        "probability": ".05",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "lcCooperative": "0.0"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "trailer": {
+      "vClass": "trailer",
+      "attributes": {
+        "vClass": "trailer",
+        "id": "trailer",
+        "containerCapacity": "5",
+        "latAlignment": "center",
+        "probability": ".10",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "lcCooperative": "0.0"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "coach": {
+      "vClass": "coach",
+      "attributes": {
+        "vClass": "coach",
+        "id": "coach",
+        "containerCapacity": "50",
+        "latAlignment": "center",
+        "probability": ".10",
+        "tau": "0.5",
+        "speedDev": "0.1",
+        "lcCooperative": "0.0"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "evehicle": {
+      "vClass": "evehicle",
+      "attributes": {
+        "vClass": "evehicle",
+        "id": "evehicle",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "tau": "0.5",
+        "speedDev": "0.1"
+      },
+      "parameters": {},
+      "source_file": "basic.vType.xml"
+    },
+    "hw_passenger1": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "hw_passenger1",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.25",
+        "probability": ".1",
+        "speedDev": "0.1",
+        "guiShape": "passenger"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_passenger2a": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "hw_passenger2a",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.30",
+        "probability": ".1",
+        "speedDev": "0.1",
+        "guiShape": "passenger/sedan"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_passenger2b": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "hw_passenger2b",
+        "personCapacity": "4",
+        "latAlignment": "center",
+        "sigma": "0.35",
+        "probability": ".1",
+        "speedDev": "0.1",
+        "guiShape": "passenger/hatchback"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_passenger3": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "hw_passenger3",
+        "personCapacity": "6",
+        "latAlignment": "center",
+        "sigma": "0.40",
+        "probability": ".1",
+        "speedDev": "0.1",
+        "guiShape": "passenger/wagon"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_passenger4": {
+      "vClass": "passenger",
+      "attributes": {
+        "vClass": "passenger",
+        "id": "hw_passenger4",
+        "personCapacity": "6",
+        "latAlignment": "center",
+        "sigma": "0.50",
+        "probability": ".1",
+        "speedDev": "0.1",
+        "guiShape": "passenger/van"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_motorcycle": {
+      "vClass": "motorcycle",
+      "attributes": {
+        "vClass": "motorcycle",
+        "id": "hw_motorcycle",
+        "latAlignment": "compact",
+        "probability": ".1"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_delivery": {
+      "vClass": "delivery",
+      "attributes": {
+        "vClass": "delivery",
+        "id": "hw_delivery",
+        "containerCapacity": "15",
+        "latAlignment": "center",
+        "probability": ".1"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_truck": {
+      "vClass": "truck",
+      "attributes": {
+        "vClass": "truck",
+        "id": "hw_truck",
+        "containerCapacity": "5",
+        "latAlignment": "center",
+        "probability": ".1"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_trailer": {
+      "vClass": "trailer",
+      "attributes": {
+        "vClass": "trailer",
+        "id": "hw_trailer",
+        "containerCapacity": "5",
+        "latAlignment": "center",
+        "probability": ".1"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    },
+    "hw_coach": {
+      "vClass": "coach",
+      "attributes": {
+        "vClass": "coach",
+        "id": "hw_coach",
+        "containerCapacity": "50",
+        "latAlignment": "center",
+        "probability": ".1"
+      },
+      "parameters": {},
+      "source_file": "most.highway.flows.xml"
+    }
+  },
+  "vtype_distributions": {
+    "on-demand": [
+      {
+        "id": "taxi",
+        "probability": ".50"
+      },
+      {
+        "id": "uber",
+        "probability": ".50"
+      }
+    ],
+    "pedestrian": [
+      {
+        "id": "slowpedestrian",
+        "probability": ".33"
+      },
+      {
+        "id": "avgpedestrian",
+        "probability": ".33"
+      },
+      {
+        "id": "fastpedestrian",
+        "probability": ".33"
+      }
+    ],
+    "bicycle": [
+      {
+        "id": "slowbicycle",
+        "probability": ".33"
+      },
+      {
+        "id": "avgbicycle",
+        "probability": ".33"
+      },
+      {
+        "id": "fastbicycle",
+        "probability": ".33"
+      }
+    ],
+    "ptw": [
+      {
+        "id": "motorcycle",
+        "probability": ".70"
+      },
+      {
+        "id": "moped",
+        "probability": ".30"
+      }
+    ],
+    "passenger": [
+      {
+        "id": "passenger1",
+        "probability": ".20"
+      },
+      {
+        "id": "passenger2a",
+        "probability": ".20"
+      },
+      {
+        "id": "passenger2b",
+        "probability": ".20"
+      },
+      {
+        "id": "passenger3",
+        "probability": ".20"
+      },
+      {
+        "id": "passenger4",
+        "probability": ".20"
+      }
+    ],
+    "special": [
+      {
+        "id": "emergency",
+        "probability": ".60"
+      },
+      {
+        "id": "authority",
+        "probability": ".39"
+      },
+      {
+        "id": "army",
+        "probability": ".01"
+      }
+    ],
+    "commercial": [
+      {
+        "id": "delivery",
+        "probability": ".75"
+      },
+      {
+        "id": "truck",
+        "probability": ".05"
+      },
+      {
+        "id": "trailer",
+        "probability": ".10"
+      },
+      {
+        "id": "coach",
+        "probability": ".10"
+      }
+    ],
+    "highway": [
+      {
+        "id": "hw_passenger1",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_passenger2a",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_passenger2b",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_passenger3",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_passenger4",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_motorcycle",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_delivery",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_truck",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_trailer",
+        "probability": ".1"
+      },
+      {
+        "id": "hw_coach",
+        "probability": ".1"
+      }
+    ]
+  },
+  "standalone_route_count": 26,
+  "declared_entity_count": 89262,
+  "flow_count": 28,
+  "line_flows": {
+    "M2:France": {
+      "type_or_distribution": "bus",
+      "begin": "14423.0",
+      "end": "50423.0",
+      "period": "900",
+      "planned_edge_count": 14,
+      "planned_stop_count": 2
+    },
+    "M4:Train": {
+      "type_or_distribution": "bus",
+      "begin": "14598.0",
+      "end": "50598.0",
+      "period": "900",
+      "planned_edge_count": 13,
+      "planned_stop_count": 4
+    },
+    "M4:HotelVille": {
+      "type_or_distribution": "bus",
+      "begin": "14600.0",
+      "end": "50600.0",
+      "period": "900",
+      "planned_edge_count": 12,
+      "planned_stop_count": 5
+    },
+    "M2:Turbie": {
+      "type_or_distribution": "bus",
+      "begin": "14596.0",
+      "end": "50596.0",
+      "period": "900",
+      "planned_edge_count": 13,
+      "planned_stop_count": 2
+    },
+    "M1:France": {
+      "type_or_distribution": "bus",
+      "begin": "14405.0",
+      "end": "50405.0",
+      "period": "900",
+      "planned_edge_count": 8,
+      "planned_stop_count": 3
+    },
+    "M1:Eze": {
+      "type_or_distribution": "bus",
+      "begin": "14422.0",
+      "end": "50422.0",
+      "period": "900",
+      "planned_edge_count": 8,
+      "planned_stop_count": 3
+    },
+    "M5:PontUnion": {
+      "type_or_distribution": "bus",
+      "begin": "14426.0",
+      "end": "50426.0",
+      "period": "900",
+      "planned_edge_count": 9,
+      "planned_stop_count": 8
+    },
+    "M5:Ramingao": {
+      "type_or_distribution": "bus",
+      "begin": "14478.0",
+      "end": "50478.0",
+      "period": "900",
+      "planned_edge_count": 9,
+      "planned_stop_count": 7
+    },
+    "M3:Turbie": {
+      "type_or_distribution": "bus",
+      "begin": "14539.0",
+      "end": "50539.0",
+      "period": "900",
+      "planned_edge_count": 24,
+      "planned_stop_count": 7
+    },
+    "M3:Hospital": {
+      "type_or_distribution": "bus",
+      "begin": "14578.0",
+      "end": "50578.0",
+      "period": "900",
+      "planned_edge_count": 31,
+      "planned_stop_count": 7
+    },
+    "1:Monaco": {
+      "type_or_distribution": "bus",
+      "begin": "14706.0",
+      "end": "50706.0",
+      "period": "900",
+      "planned_edge_count": 79,
+      "planned_stop_count": 12
+    },
+    "2:Monaco": {
+      "type_or_distribution": "bus",
+      "begin": "14854.0",
+      "end": "50854.0",
+      "period": "900",
+      "planned_edge_count": 61,
+      "planned_stop_count": 14
+    },
+    "5:Larvotto": {
+      "type_or_distribution": "bus",
+      "begin": "14984.0",
+      "end": "50984.0",
+      "period": "900",
+      "planned_edge_count": 47,
+      "planned_stop_count": 15
+    },
+    "1:SaintRoman": {
+      "type_or_distribution": "bus",
+      "begin": "14647.0",
+      "end": "50647.0",
+      "period": "900",
+      "planned_edge_count": 90,
+      "planned_stop_count": 17
+    },
+    "2:Jardin": {
+      "type_or_distribution": "bus",
+      "begin": "14779.0",
+      "end": "50779.0",
+      "period": "900",
+      "planned_edge_count": 86,
+      "planned_stop_count": 16
+    },
+    "6:Fontvieille": {
+      "type_or_distribution": "bus",
+      "begin": "15028.0",
+      "end": "51028.0",
+      "period": "900",
+      "planned_edge_count": 61,
+      "planned_stop_count": 16
+    },
+    "4:Fontvieille": {
+      "type_or_distribution": "bus",
+      "begin": "14930.0",
+      "end": "50930.0",
+      "period": "900",
+      "planned_edge_count": 86,
+      "planned_stop_count": 16
+    },
+    "6:Larvotto": {
+      "type_or_distribution": "bus",
+      "begin": "15009.0",
+      "end": "51009.0",
+      "period": "900",
+      "planned_edge_count": 68,
+      "planned_stop_count": 19
+    },
+    "4:SaintRoman": {
+      "type_or_distribution": "bus",
+      "begin": "14890.0",
+      "end": "50890.0",
+      "period": "900",
+      "planned_edge_count": 108,
+      "planned_stop_count": 17
+    },
+    "3:Fontvieille": {
+      "type_or_distribution": "bus",
+      "begin": "15128.0",
+      "end": "51128.0",
+      "period": "900",
+      "planned_edge_count": 81,
+      "planned_stop_count": 15
+    },
+    "5:Hopital": {
+      "type_or_distribution": "bus",
+      "begin": "14975.0",
+      "end": "50975.0",
+      "period": "900",
+      "planned_edge_count": 66,
+      "planned_stop_count": 18
+    },
+    "3:Otto": {
+      "type_or_distribution": "bus",
+      "begin": "15202.0",
+      "end": "51202.0",
+      "period": "900",
+      "planned_edge_count": 65,
+      "planned_stop_count": 19
+    },
+    "100:Menton": {
+      "type_or_distribution": "bus",
+      "begin": "15062.0",
+      "end": "51062.0",
+      "period": "900",
+      "planned_edge_count": 106,
+      "planned_stop_count": 28
+    },
+    "100:Nice": {
+      "type_or_distribution": "bus",
+      "begin": "15125.0",
+      "end": "51125.0",
+      "period": "900",
+      "planned_edge_count": 112,
+      "planned_stop_count": 28
+    },
+    "M0:Italy": {
+      "type_or_distribution": "train",
+      "begin": "14430.0",
+      "end": "50430.0",
+      "period": "1200",
+      "planned_edge_count": 1,
+      "planned_stop_count": 6
+    },
+    "M0:France": {
+      "type_or_distribution": "train",
+      "begin": "15167.0",
+      "end": "51167.0",
+      "period": "1200",
+      "planned_edge_count": 1,
+      "planned_stop_count": 6
+    }
+  },
+  "bus_stop_locations": 181,
+  "train_stop_locations": 12,
+  "parking_area_count": 127,
+  "standalone_route_stop_count": 310,
+  "standalone_route_stop_duration_values": {
+    "30.00": 298,
+    "300.00": 12
+  },
+  "standalone_route_stop_until_values_s": {
+    "count": 310,
+    "min": 38.0,
+    "max": 2671.0
+  },
+  "explicit_entity_planned_route_count": 44262,
+  "explicit_entity_unique_route_fingerprints": 25796,
+  "unresolved_standalone_route_references": 0,
+  "observed_source_mapping": {
+    "status": "checked",
+    "observed_direct_entities": 3246,
+    "mapping_counts": {
+      "flow_verified_by_emitted_line_and_route": 143,
+      "flow_verified_by_emitted_endpoints": 102,
+      "exact_declared_entity": 3001
+    },
+    "mapping_by_actual_type": {
+      "authority": {
+        "exact_declared_entity": 28
+      },
+      "avgbicycle": {
+        "exact_declared_entity": 66
+      },
+      "avgpedestrian": {
+        "exact_declared_entity": 290
+      },
+      "bus": {
+        "flow_verified_by_emitted_line_and_route": 139
+      },
+      "coach": {
+        "exact_declared_entity": 9
+      },
+      "delivery": {
+        "exact_declared_entity": 128
+      },
+      "emergency": {
+        "exact_declared_entity": 44
+      },
+      "fastbicycle": {
+        "exact_declared_entity": 58
+      },
+      "fastpedestrian": {
+        "exact_declared_entity": 260
+      },
+      "hw_coach": {
+        "flow_verified_by_emitted_endpoints": 10
+      },
+      "hw_delivery": {
+        "flow_verified_by_emitted_endpoints": 10
+      },
+      "hw_motorcycle": {
+        "flow_verified_by_emitted_endpoints": 7
+      },
+      "hw_passenger1": {
+        "flow_verified_by_emitted_endpoints": 8
+      },
+      "hw_passenger2a": {
+        "flow_verified_by_emitted_endpoints": 15
+      },
+      "hw_passenger2b": {
+        "flow_verified_by_emitted_endpoints": 11
+      },
+      "hw_passenger3": {
+        "flow_verified_by_emitted_endpoints": 9
+      },
+      "hw_passenger4": {
+        "flow_verified_by_emitted_endpoints": 12
+      },
+      "hw_trailer": {
+        "flow_verified_by_emitted_endpoints": 8
+      },
+      "hw_truck": {
+        "flow_verified_by_emitted_endpoints": 12
+      },
+      "moped": {
+        "exact_declared_entity": 156
+      },
+      "motorcycle": {
+        "exact_declared_entity": 384
+      },
+      "passenger1": {
+        "exact_declared_entity": 233
+      },
+      "passenger2a": {
+        "exact_declared_entity": 231
+      },
+      "passenger2b": {
+        "exact_declared_entity": 247
+      },
+      "passenger3": {
+        "exact_declared_entity": 214
+      },
+      "passenger4": {
+        "exact_declared_entity": 192
+      },
+      "slowbicycle": {
+        "exact_declared_entity": 53
+      },
+      "slowpedestrian": {
+        "exact_declared_entity": 296
+      },
+      "taxi": {
+        "exact_declared_entity": 53
+      },
+      "trailer": {
+        "exact_declared_entity": 15
+      },
+      "train": {
+        "flow_verified_by_emitted_line_and_route": 4
+      },
+      "truck": {
+        "exact_declared_entity": 4
+      },
+      "uber": {
+        "exact_declared_entity": 40
+      }
+    },
+    "source_lines_observed_verified_mapping": {
+      "100:Menton": 5,
+      "100:Nice": 5,
+      "1:Monaco": 6,
+      "1:SaintRoman": 6,
+      "2:Jardin": 6,
+      "2:Monaco": 6,
+      "3:Fontvieille": 5,
+      "3:Otto": 5,
+      "4:Fontvieille": 6,
+      "4:SaintRoman": 6,
+      "5:Hopital": 6,
+      "5:Larvotto": 6,
+      "6:Fontvieille": 5,
+      "6:Larvotto": 6,
+      "M0:France": 2,
+      "M0:Italy": 2,
+      "M1:Eze": 6,
+      "M1:France": 6,
+      "M2:France": 6,
+      "M2:Turbie": 6,
+      "M3:Hospital": 6,
+      "M3:Turbie": 6,
+      "M4:HotelVille": 6,
+      "M4:Train": 6,
+      "M5:PontUnion": 6,
+      "M5:Ramingao": 6
+    },
+    "unique_input_route_fingerprints_observed": 1869,
+    "unique_emitted_route_fingerprints_observed": 1935,
+    "input_vs_emitted_route_comparisons": 2298,
+    "same_input_and_emitted_route": 1951,
+    "different_input_and_emitted_route": 347,
+    "nested_rider_observations_ignored": 0,
+    "scope": "Observed namespace matching is audited empirically. A changed emitted route is not a new input demand. Person activities are not single walking trips.",
+    "fcd_sha256": "70cdffae60af1e880da6c6938b83d9a4fb8f9dd25b4a5d2805ac337a408643fe",
+    "emitted_routes_sha256": "da69e65f5d71ecb733b67a71f362705b186418d5675e5e35aa554e29ea91342b"
+  },
+  "interpretation": [
+    "Basic vehicle definitions alone omit highway-specific vTypes; all route files were scanned.",
+    "The same public base entity can recur under different simulation seeds; a different final rerouted path does not create an independent input demand.",
+    "Bus line coverage describes shared operating lines, not unseen-line validation.",
+    "An input person can contain multiple walk and ride stages; its endpoints are not one continuous walking trip.",
+    "Stops inside stand-alone referenced routes use until times relative to vehicle departure; the native schedules were not rewritten.",
+    "Native type uber has passenger vClass but denotes on-demand transport; taxonomy overrides must use explicit source types."
+  ],
+  "isolated_plan_index": {
+    "sha256": "68bf2acafbad2cc314a84a84bfe66836603bc9c3cd0085793e90b21ead586e2e",
+    "bytes": 5621195,
+    "scope": "Contains public source IDs; server/local only, not committed"
+  }
+}
