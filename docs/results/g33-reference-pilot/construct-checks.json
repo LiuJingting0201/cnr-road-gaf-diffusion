@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "scope": "synthetic_requests_and_extraction_checks",
+  "checks": [
+    "repeated_edge_stops_bind_distinct_forward_instances",
+    "contradictory_source_stop_order_rejected",
+    "explicit_type_draw_preserves_on_demand_family_and_motorcycle_request",
+    "unfinished_reference_keeps_denominator",
+    "route_mismatch_reported_without_future_condition_repair",
+    "missing_final_event_sample_not_fabricated",
+    "finished_output_not_overwritten",
+    "changed_simulation_artifact_rejected_and_failure_saved"
+  ],
+  "checks_passed": 8,
+  "real_simulation_executed": false,
+  "script_sha256": "70c03844d26620e87adbf3c69ddfc0328f22940db8cd6b24421a653747463c6b",
+  "original_split_metadata_exists": true,
+  "execution": "existing g31-job/.venv Python, temporary /tmp script, synthetic temporary XML only",
+  "first_tool_attempt": "automatic approval review timed out before command creation; permitted once retry succeeded"
+}
