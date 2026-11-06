@@ -39,6 +39,7 @@ class FcdStream:
         self.hash = hashlib.sha256()
         self.counts = Counter()
         self.fields = defaultdict(Counter)
+        self.auxiliary_numeric_states = defaultdict(Counter)
         self.dt = Counter()
         self.first = self.last = None
         self.maximum_records_per_step = 0
@@ -68,12 +69,29 @@ class FcdStream:
                 if key in records:
                     raise ValueError("Duplicate (tag, ID) inside a single FCD timestep")
                 attrs = dict(node.attrib)
-                for name in ("x", "y", "speed", "pos"):
-                    if name in attrs and not math.isfinite(float(attrs[name])):
-                        raise ValueError("FCD has a non-finite numeric attribute")
                 for required in ("x", "y"):
                     if required not in attrs:
                         raise ValueError("FCD entity lacks coordinates")
+                    if not math.isfinite(float(attrs[required])):
+                        raise ValueError("FCD has a non-finite coordinate")
+                # Native auxiliary observations may be missing or non-finite.
+                # Preserve their exact strings: COMMON comparison must still
+                # detect a changed speed, including a NaN being replaced by 0.
+                for name in ("speed", "pos"):
+                    if name not in attrs:
+                        state = "missing"
+                    else:
+                        try:
+                            value = float(attrs[name])
+                            if math.isnan(value):
+                                state = "nan"
+                            elif math.isinf(value):
+                                state = "positive_infinity" if value > 0 else "negative_infinity"
+                            else:
+                                state = "finite"
+                        except ValueError:
+                            state = "non_numeric"
+                    self.auxiliary_numeric_states[node.tag + "/" + name][state] += 1
                 records[key] = (attrs, ancestry)
                 self.counts[node.tag] += 1
                 self.counts["nested_" + node.tag] += bool(ancestry)
@@ -94,6 +112,7 @@ class FcdStream:
 
     def summary(self):
         return {"counts": dict(self.counts), "attribute_counts": dict(self.fields),
+                "auxiliary_numeric_states": dict(self.auxiliary_numeric_states),
                 "time_min": self.first, "time_max": self.last, "dt_counts": dict(self.dt),
                 "maximum_records_per_step": self.maximum_records_per_step,
                 "common_fields_sha256": self.hash.hexdigest()}

@@ -1,4 +1,4 @@
-"""Seven synthetic G31 interface checks; no real data, SUMO run or training.
+"""Synthetic G31 interface checks; no real data, SUMO run or training.
 
 Run directly with ``python scripts/g31_interface_checks.py``. Fixtures and
 receipts live in automatically removed temporary directories. The full-clock
@@ -100,6 +100,24 @@ class G31InterfaceChecks(unittest.TestCase):
         self.assertFalse(result["equal"])
         self.assertEqual(result["counts"]["changed_records"], 2)
         self.assertEqual(result["changed_field_counts"], {"XML_parent_entity": 1, "y": 1})
+
+    def test_auxiliary_nonfinite_is_preserved(self):
+        left = (
+            '<fcd-export><timestep time="0"><vehicle id="v" x="1" y="2" speed="nan"/>'
+            '<person id="p" x="3" y="4"/></timestep></fcd-export>'
+        )
+        right = left.replace('speed="nan"', 'speed="nan" pos="inf"')
+        result = self.pair(left, right)
+        self.assertTrue(result["equal"])
+        self.assertEqual(result["replay"]["auxiliary_numeric_states"]["vehicle/speed"], {"nan": 1})
+        self.assertEqual(result["replay"]["auxiliary_numeric_states"]["vehicle/pos"], {"positive_infinity": 1})
+        self.assertEqual(result["replay"]["auxiliary_numeric_states"]["person/speed"], {"missing": 1})
+        changed = self.pair(left, right.replace('speed="nan"', 'speed="0"'))
+        self.assertFalse(changed["equal"])
+        self.assertEqual(changed["changed_field_counts"], {"speed": 1})
+        for attribute in ('x="1"', 'y="2"'):
+            with self.assertRaises(ValueError):
+                self.pair(left, right.replace(attribute, attribute[:3] + 'nan"'))
 
     def test_missing_records_and_empty_timesteps(self):
         left = (
