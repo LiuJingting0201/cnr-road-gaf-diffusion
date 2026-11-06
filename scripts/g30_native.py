@@ -11,6 +11,12 @@ import xml.etree.ElementTree as ET
 
 COMMIT = "b29b2f65f1096a9c69a601ec62a724815cb4a43f"
 NETWORK_SHA = "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0"
+EXPECTED_BYTES = {"most.net.xml": 13898821, "most.buses.flows.xml": 44215,
+                  "most.trains.flows.xml": 2170, "most.pedestrian.rou.xml": 33757898,
+                  "most.commercial.rou.xml": 2028711, "most.special.rou.xml": 809767,
+                  "most.highway.flows.xml": 2048, "most.poly.xml": 4449835,
+                  "most.busstops.add.xml": 32246, "most.trainstops.add.xml": 3130,
+                  "most.parking.allvisible.add.xml": 136868, "basic.vType.xml": 4846}
 FILES = ["scenario/most.sumocfg", "scenario/in/most.net.xml",
          *[f"scenario/in/route/most.{name}.xml" for name in
            ("buses.flows", "trains.flows", "pedestrian.rou", "commercial.rou", "special.rou", "highway.flows")],
@@ -36,6 +42,8 @@ def fetch(root):
         assert manifest["commit"] == COMMIT
         for name, row in manifest["files"].items():
             assert digest(root/name) == row["sha256"], name
+            if Path(name).name in EXPECTED_BYTES:
+                assert (root/name).stat().st_size == EXPECTED_BYTES[Path(name).name], name
         return
     files = {}
     for name in FILES:
@@ -55,6 +63,8 @@ def fetch(root):
                     target.write(chunk)
             temporary.replace(destination)
         files[name] = {"sha256": digest(destination), "bytes": destination.stat().st_size, "url": url}
+        if destination.name in EXPECTED_BYTES and files[name]["bytes"] != EXPECTED_BYTES[destination.name]:
+            raise ValueError(f"Pinned upstream byte size mismatch: {name}")
         print("source", name, files[name]["bytes"], flush=True)
     config = ET.parse(root/"scenario/most.sumocfg").getroot()
     for field in ("net-file", "route-files", "additional-files"):
@@ -71,7 +81,17 @@ def run(task):
     output = root/split/str(seed)
     output.mkdir(parents=True, exist_ok=True)
     if (output/"simulation-complete.json").exists():
+        config = json.loads((output/"config.json").read_text())
+        if (config["end"] != end or config["seed"] != seed or config["split"] != split
+                or config["source_manifest_sha256"] != digest(source/"complete.json")):
+            raise ValueError("Existing simulation has different frozen settings")
+        receipt = json.loads((output/"simulation-complete.json").read_text())
+        for name, record in receipt["files"].items():
+            if digest(output/name) != record["sha256"]:
+                raise ValueError(f"Existing simulation output changed: {name}")
         return
+    if any((output/name).exists() for name in ("simulation-failed.json", "config.json", "console.log")):
+        raise FileExistsError("Existing unfinished/failed run is preserved; inspect it and use a new attempt directory")
     sumo = Path("g10-env/sumo/bin/sumo").resolve()
     cmd = [str(sumo), "-c", str((source/"scenario/most.sumocfg").resolve()),
            "--seed", str(seed), "--begin", "14400", "--end", str(end), "--step-length", ".25",
