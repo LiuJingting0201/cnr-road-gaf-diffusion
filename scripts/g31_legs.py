@@ -290,7 +290,10 @@ def candidate_legs(parent, source):
         return candidates, rejected
     if depart < 0:
         return candidates, Counter({"vehicle_not_departed": 1})
-    if info.get("vaporized", ""):
+    # SUMO marks still-active vehicles at the observation cutoff as "end".
+    # That is not destruction: a previous source activity arrival may already
+    # define a completed leg, even when the parent activity chain is unfinished.
+    if info.get("vaporized", "") not in ("", "end"):
         return candidates, Counter({"vehicle_vaporized": 1})
     if parent["label"] == 1:
         if arrival < depart:
@@ -594,6 +597,7 @@ def extract(args):
                          "baseline_output_invariance_passed": True, "original_test_templates_excluded": True,
                          "same_parent_same_partition": True, "topology_and_reconstruction_verified": False},
               "rules": {"ordinary_vehicle": "Actual depart/previous source activity parking end to next activity parking start or final arrival; low speed does not define activity boundaries",
+                        "vaporized": "SUMO end means observation cutoff, not destruction; completed earlier activity legs remain eligible, while unfinished bus services remain excluded",
                         "bus": "One completed scheduled service, keeping all intermediate stops",
                         "pedestrian": "Completed walk stage with tripinfo and enhanced stage-time agreement; riders excluded",
                         "coverage": "Native .25-second points, >=2 observations, event endpoints within .25s, no internal gaps or >100m/s coordinate jump",

@@ -46,6 +46,28 @@ class LegBoundaryChecks(unittest.TestCase):
         self.assertEqual(rows[0]["source_plan"]["edges"], ["a", "b"])
         self.assertEqual(rejected["activity_stop_still_ongoing_no_following_departure"], 1)
 
+    def test_simulation_end_parent_keeps_completed_activity_leg(self):
+        parent, source = fixture('<vehicle id="synthetic"><route edges="a b c"/>'
+                                 '<stop parkingArea="p" duration="100"/></vehicle>', arrival="-1")
+        parent["tripinfo"]["vaporized"] = "end"
+        parent["stop_events"] = [{"parkingArea": "p", "started": "1", "ended": "-1"}]
+        rows, rejected = legs.candidate_legs(parent, source)
+        self.assertEqual([(x["event_start"], x["event_end"]) for x in rows], [(0, 1)])
+        self.assertNotIn("vehicle_vaporized", rejected)
+        parent["stop_events"][0]["ended"] = "1.5"
+        rows, rejected = legs.candidate_legs(parent, source)
+        self.assertEqual([(x["event_start"], x["event_end"]) for x in rows], [(0, 1)])
+        self.assertEqual(rejected["final_activity_leg_not_completed"], 1)
+
+    def test_genuine_vaporization_still_excluded(self):
+        parent, source = fixture('<vehicle id="synthetic"><route edges="a b c"/>'
+                                 '<stop parkingArea="p" duration="100"/></vehicle>', arrival="-1")
+        parent["tripinfo"]["vaporized"] = "true"
+        parent["stop_events"] = [{"parkingArea": "p", "started": "1", "ended": "1.5"}]
+        rows, rejected = legs.candidate_legs(parent, source)
+        self.assertFalse(rows)
+        self.assertEqual(rejected["vehicle_vaporized"], 1)
+
     def test_completed_activity_splits_parent_without_cross_partition(self):
         parent, source = fixture('<vehicle id="synthetic"><route edges="a b c"/>'
                                  '<stop parkingArea="p" duration="100"/></vehicle>', arrival="3")
@@ -81,6 +103,7 @@ class LegBoundaryChecks(unittest.TestCase):
         self.assertEqual(rows[0]["intermediate_stop_events"], parent["stop_events"])
         self.assertEqual(rows[0]["source_plan"]["edges"], ["a", "b", "c"])
         parent["tripinfo"]["arrival"] = "-1"
+        parent["tripinfo"]["vaporized"] = "end"
         rows, rejected = legs.candidate_legs(parent, source)
         self.assertFalse(rows)
         self.assertEqual(rejected["bus_service_unfinished"], 1)

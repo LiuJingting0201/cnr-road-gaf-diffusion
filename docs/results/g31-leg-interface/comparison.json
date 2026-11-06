@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "checks": {
+    "common_fcd_exactly_equal": true,
+    "full_expected_time_support": true,
+    "vehicle_pos_present": true,
+    "exit_times_present_and_consistent": true,
+    "stop_event_times_present": true,
+    "stop_prior_edges_present": true
+  },
+  "seconds": 275.08958399295807,
+  "script_sha256": "02e3c0bd298fa2378ec60135a46eb4842864ac819843e69430d77bf954621421",
+  "baseline_receipt_sha256": "d2794f0d5b2192a6bf8c062b9358b1aab762cf51558bdd8fa139efd68b49e480",
+  "replay_receipt_sha256": "c42b7ff5a58d5337273c276ffd068f1a0a25b6d1d1b6a446d98bc700a409918f",
+  "report_files": {
+    "fcd-comparison.json": {
+      "sha256": "b77c147322048251af05a63855967d8079aea249d8594580f7dc1f629cbe6fa3"
+    },
+    "field-audit.json": {
+      "sha256": "a2a886eebed558d05bb40e37e38b86b8a427fd54d824da1234c3c768eb3b8bd8"
+    }
+  },
+  "scope": "Output invariance and XML fields only; no leg completeness, generation or GAF efficacy claim"
+}

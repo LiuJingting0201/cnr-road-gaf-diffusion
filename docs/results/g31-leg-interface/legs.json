@@ -1,0 +1,335 @@
+{
+  "complete": true,
+  "episode": "300001",
+  "generation_ready": false,
+  "scope": "Pilot event/coverage interface audit only; no fitting or held-out generation evaluation",
+  "classes": [
+    "pedestrian",
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "parent_counts_after_test_and_taxonomy_filter": {
+    "bus": 125,
+    "pedestrian": 2271,
+    "taxi_or_uber": 83,
+    "motorcycle": 367,
+    "bycicle": 159,
+    "private_car": 1060
+  },
+  "type_exclusions": {
+    "train": 4,
+    "authority": 28,
+    "moped": 143,
+    "delivery": 128,
+    "hw_delivery": 10,
+    "trailer": 15,
+    "hw_truck": 12,
+    "hw_trailer": 8,
+    "emergency": 44,
+    "coach": 9,
+    "hw_coach": 10,
+    "truck": 4
+  },
+  "exclusions": {
+    "original_test_templates_excluded_before_leg_extraction": 270,
+    "pedestrian:walk_stage_not_completed": 964,
+    "bus:vehicle_vaporized": 26,
+    "private_car:activity_stop_still_ongoing_no_following_departure": 280,
+    "motorcycle:activity_stop_still_ongoing_no_following_departure": 122,
+    "private_car:vehicle_vaporized": 533,
+    "private_car:final_activity_leg_not_completed": 9,
+    "motorcycle:final_activity_leg_not_completed": 2,
+    "bycicle:vehicle_vaporized": 53,
+    "motorcycle:vehicle_vaporized": 96,
+    "bus:bus_service_unfinished": 2,
+    "taxi_or_uber:final_activity_leg_not_completed": 1,
+    "taxi_or_uber:vehicle_vaporized": 6
+  },
+  "boundary_exclusions": {
+    "walk_stage_not_completed": 964,
+    "vehicle_vaporized": 714,
+    "activity_stop_still_ongoing_no_following_departure": 402,
+    "final_activity_leg_not_completed": 12,
+    "bus_service_unfinished": 2
+  },
+  "coverage_exclusions": {
+    "bus:FCD_position_jump_above_100mps": 4,
+    "private_car:FCD_position_jump_above_100mps": 11
+  },
+  "source_link_counts": {
+    "source_flow_confirmed_by_line_and_route": 125,
+    "exact_source_entity": 3878,
+    "source_flow_confirmed_by_endpoints": 62
+  },
+  "source_plan_status_counts": {
+    "complete_scheduled_source_service": 93,
+    "unique_source_activity_leg_slice": 909,
+    "explicit_source_walk": 593,
+    "source_od_or_ambiguous_route_only": 49
+  },
+  "realized_route_status_counts": {
+    "complete_emitted_service": 93,
+    "event_and_FCD_edge_instance_slice": 958,
+    "complete_emitted_walk_stage": 593
+  },
+  "source_realized_edges_equal_counts": {
+    "True": 1507,
+    "None": 49,
+    "False": 88
+  },
+  "candidate_legs": 1659,
+  "accepted_legs": 1644,
+  "per_class": {
+    "pedestrian": {
+      "accepted_legs": 593,
+      "parents": 541,
+      "event_duration_s": {
+        "count": 593,
+        "min": 1.0,
+        "median": 161.25,
+        "p95": 597.4499999999999,
+        "max": 1070.5
+      },
+      "observed_span_s": {
+        "count": 593,
+        "min": 0.75,
+        "median": 161.0,
+        "p95": 597.3,
+        "max": 1070.5
+      },
+      "xy_arc_length_m": {
+        "count": 593,
+        "min": 1.5133049248671067,
+        "median": 197.86020728273394,
+        "p95": 720.2288020182505,
+        "max": 1619.4611991056827
+      },
+      "under_5_seconds": 3,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "train": 522,
+        "val": 71
+      },
+      "kind_counts": {
+        "walk_stage": 593
+      }
+    },
+    "bus": {
+      "accepted_legs": 93,
+      "parents": 93,
+      "event_duration_s": {
+        "count": 93,
+        "min": 320.25,
+        "median": 1054.75,
+        "p95": 1835.8999999999937,
+        "max": 2354.75
+      },
+      "observed_span_s": {
+        "count": 93,
+        "min": 320.0,
+        "median": 1054.5,
+        "p95": 1835.6499999999937,
+        "max": 2354.5
+      },
+      "xy_arc_length_m": {
+        "count": 93,
+        "min": 1377.0530409585685,
+        "median": 5478.724832052301,
+        "p95": 10294.746639231415,
+        "max": 14231.606887935843
+      },
+      "under_5_seconds": 0,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "train": 81,
+        "val": 12
+      },
+      "kind_counts": {
+        "bus_service": 93
+      }
+    },
+    "motorcycle": {
+      "accepted_legs": 269,
+      "parents": 269,
+      "event_duration_s": {
+        "count": 269,
+        "min": 76.25,
+        "median": 335.5,
+        "p95": 708.15,
+        "max": 1073.75
+      },
+      "observed_span_s": {
+        "count": 269,
+        "min": 76.25,
+        "median": 335.25,
+        "p95": 707.9999999999999,
+        "max": 1073.5
+      },
+      "xy_arc_length_m": {
+        "count": 269,
+        "min": 661.4492835849721,
+        "median": 3655.465921548509,
+        "p95": 8952.453420319122,
+        "max": 12232.446164698704
+      },
+      "under_5_seconds": 0,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "train": 226,
+        "val": 43
+      },
+      "kind_counts": {
+        "vehicle_activity_leg": 269
+      }
+    },
+    "private_car": {
+      "accepted_legs": 507,
+      "parents": 507,
+      "event_duration_s": {
+        "count": 507,
+        "min": 267.0,
+        "median": 636.0,
+        "p95": 948.7249999999999,
+        "max": 1162.5
+      },
+      "observed_span_s": {
+        "count": 507,
+        "min": 266.75,
+        "median": 636.0,
+        "p95": 948.7249999999999,
+        "max": 1162.5
+      },
+      "xy_arc_length_m": {
+        "count": 507,
+        "min": 3790.4386115070915,
+        "median": 8286.280207922728,
+        "p95": 10649.779141632369,
+        "max": 15109.57373501969
+      },
+      "under_5_seconds": 0,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "train": 457,
+        "val": 50
+      },
+      "kind_counts": {
+        "vehicle_activity_leg": 507
+      }
+    },
+    "bycicle": {
+      "accepted_legs": 106,
+      "parents": 106,
+      "event_duration_s": {
+        "count": 106,
+        "min": 25.75,
+        "median": 370.5,
+        "p95": 726.6875,
+        "max": 1091.5
+      },
+      "observed_span_s": {
+        "count": 106,
+        "min": 25.5,
+        "median": 370.25,
+        "p95": 726.4375,
+        "max": 1091.25
+      },
+      "xy_arc_length_m": {
+        "count": 106,
+        "min": 98.66371760328433,
+        "median": 1743.882760443412,
+        "p95": 3524.786573343321,
+        "max": 4562.835408320356
+      },
+      "under_5_seconds": 0,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "train": 92,
+        "val": 14
+      },
+      "kind_counts": {
+        "vehicle_activity_leg": 106
+      }
+    },
+    "taxi_or_uber": {
+      "accepted_legs": 76,
+      "parents": 76,
+      "event_duration_s": {
+        "count": 76,
+        "min": 20.25,
+        "median": 227.875,
+        "p95": 538.0625,
+        "max": 608.25
+      },
+      "observed_span_s": {
+        "count": 76,
+        "min": 20.0,
+        "median": 227.625,
+        "p95": 537.8125,
+        "max": 608.0
+      },
+      "xy_arc_length_m": {
+        "count": 76,
+        "min": 173.52690199825275,
+        "median": 2338.8861360096994,
+        "p95": 5382.89792525347,
+        "max": 6535.703860796557
+      },
+      "under_5_seconds": 0,
+      "missing_native_speed_points": 0,
+      "missing_position_on_lane_points": 0,
+      "split_counts": {
+        "val": 7,
+        "train": 69
+      },
+      "kind_counts": {
+        "vehicle_activity_leg": 76
+      }
+    }
+  },
+  "parent_partition_overlap": 0,
+  "fcd_counts": {
+    "direct_rider_observations_ignored": 900223
+  },
+  "checks": {
+    "source_hashes_verified": true,
+    "replay_hashes_verified": true,
+    "baseline_output_invariance_passed": true,
+    "original_test_templates_excluded": true,
+    "same_parent_same_partition": true,
+    "topology_and_reconstruction_verified": false
+  },
+  "rules": {
+    "ordinary_vehicle": "Actual depart/previous source activity parking end to next activity parking start or final arrival; low speed does not define activity boundaries",
+    "bus": "One completed scheduled service, keeping all intermediate stops",
+    "pedestrian": "Completed walk stage with tripinfo and enhanced stage-time agreement; riders excluded",
+    "coverage": "Native .25-second points, >=2 observations, event endpoints within .25s, no internal gaps or >100m/s coordinate jump",
+    "source_routes": "Public input plans only; repeated-edge ambiguity retained; realized paths are separate audit-only metadata",
+    "flow_eligibility": "Flow namespace association is confirmed using emitted route or endpoints; this target-dependent audit cohort is not a future-independent generation request sampler",
+    "short_legs": "No minimum duration tuning; <5s legs counted separately, not silently removed"
+  },
+  "sources": {
+    "public_source_manifest_sha256": "04223d586569aa4368e6a7e3a0108b28395c951c05da036d73e9ea843bd78d07",
+    "replay_receipt_sha256": "c42b7ff5a58d5337273c276ffd068f1a0a25b6d1d1b6a446d98bc700a409918f",
+    "comparison_receipt_sha256": "4bf73c1a10d1e69fa10e11a4cfc37cd96445edeb80134d731fe0f487d5723357",
+    "original_split_manifest_sha256": "33ed1e378bae16a72a5bf2c441c45284eec6de480a91438884101a5a6651ee71",
+    "script_sha256": "1d63ba0aab148b6e46932fef4c54012401f025404f2687b69c4bfc5a493f1fc4"
+  },
+  "artifacts": {
+    "legs.npz": {
+      "sha256": "59b4fc29923e9f14b4e4202babc4b3ed268d64283ec8b9cbcea586620282f32f",
+      "bytes": 35612451
+    },
+    "leg-metadata.json.gz": {
+      "sha256": "2b1138282c3cbc421a600463a4a2a33958463586deb2ce956d52bda12e5b5c29",
+      "bytes": 1486428
+    }
+  }
+}

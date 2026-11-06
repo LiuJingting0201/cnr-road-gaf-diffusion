@@ -1,0 +1,74 @@
+{
+  "complete": true,
+  "generation_ready": false,
+  "legs": 1644,
+  "scope": "Public-input static edge/lane graph audit only, not SUMO validity or trajectory reconstruction",
+  "status_counts": {
+    "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 415,
+    "pairwise_valid_but_lateral_lane_change_adapter_required": 587,
+    "pedestrian_direction_walkingarea_and_endpoint_adapter_required": 593,
+    "requires_source_disambiguation_or_prior_planning": 49
+  },
+  "per_class": {
+    "pedestrian": {
+      "pedestrian_direction_walkingarea_and_endpoint_adapter_required": 593
+    },
+    "bus": {
+      "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 35,
+      "pairwise_valid_but_lateral_lane_change_adapter_required": 58
+    },
+    "motorcycle": {
+      "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 110,
+      "pairwise_valid_but_lateral_lane_change_adapter_required": 154,
+      "requires_source_disambiguation_or_prior_planning": 5
+    },
+    "private_car": {
+      "requires_source_disambiguation_or_prior_planning": 44,
+      "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 158,
+      "pairwise_valid_but_lateral_lane_change_adapter_required": 305
+    },
+    "bycicle": {
+      "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 75,
+      "pairwise_valid_but_lateral_lane_change_adapter_required": 31
+    },
+    "taxi_or_uber": {
+      "static_lane_chain_supported_endpoints_stops_and_reconstruction_unchecked": 37,
+      "pairwise_valid_but_lateral_lane_change_adapter_required": 39
+    }
+  },
+  "source_status_counts": {
+    "complete_scheduled_source_service": 93,
+    "unique_source_activity_leg_slice": 909,
+    "explicit_source_walk": 593,
+    "source_od_or_ambiguous_route_only": 49
+  },
+  "actual_vclass_counts": {
+    "bus": 93,
+    "passenger": 535,
+    "pedestrian": 593,
+    "motorcycle": 269,
+    "bicycle": 106,
+    "taxi": 48
+  },
+  "unresolved_network_connections": 0,
+  "sources": {
+    "public_source_manifest_sha256": "04223d586569aa4368e6a7e3a0108b28395c951c05da036d73e9ea843bd78d07",
+    "leg_receipt_sha256": "7f7c5db92f1ae690d5581a39a2a4e009c0b1dc729b33d0aeb8cf5fbd809e7c99",
+    "leg_metadata_sha256": "2b1138282c3cbc421a600463a4a2a33958463586deb2ce956d52bda12e5b5c29",
+    "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+    "script_sha256": "1116226fe21effa83471b9ce603121671ae3f21d92099ca277c79528f9bb16fe"
+  },
+  "artifacts": {
+    "path-audit.json.gz": {
+      "sha256": "93ad9e5b4d13f2a16086eea0629725f78075b3faa751153701df241eb65f3667"
+    }
+  },
+  "limitations": [
+    "Only source_plan fields are used; no realized route or future FCD is a condition",
+    "Actual vType selects SUMO vClass; uber remains passenger permission, not taxi by label",
+    "Pairwise edge connectivity does not imply one lane chain without lateral changes",
+    "Pedestrian bidirectionality/walking areas are not tested by vehicle connections",
+    "Stop-lane order, source endpoint positions, lane changes and target reconstruction remain unchecked",
+    "No all-day activity-chain or repeated-edge ambiguity is resolved from a future trajectory"
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "vehroute.xml.gz": {
+    "baseline": {
+      "element_counts": {
+        "vehicle": 2400,
+        "vehicle/route": 2024,
+        "vehicle/stop": 1960,
+        "vehicle/param": 143,
+        "person": 2350,
+        "person/ride": 2349,
+        "person/walk": 1654,
+        "vehicle/routeDistribution": 376,
+        "vehicle/routeDistribution/route": 812
+      },
+      "attribute_counts": {
+        "vehicle": {
+          "id": 2400,
+          "type": 2400,
+          "depart": 2400,
+          "line": 143,
+          "arrival": 948,
+          "departLane": 2155,
+          "arrivalPos": 2155
+        },
+        "vehicle/route": {
+          "edges": 2024
+        },
+        "vehicle/stop": {
+          "busStop": 1461,
+          "duration": 1461,
+          "until": 1960,
+          "parkingArea": 499
+        },
+        "vehicle/param": {
+          "key": 143,
+          "value": 143
+        },
+        "person": {
+          "id": 2350,
+          "type": 2350,
+          "depart": 2350,
+          "arrival": 1055
+        },
+        "person/ride": {
+          "from": 2227,
+          "to": 2349,
+          "arrivalPos": 1117,
+          "lines": 2349,
+          "busStop": 296,
+          "intended": 296,
+          "depart": 296
+        },
+        "person/walk": {
+          "edges": 1654,
+          "busStop": 271
+        },
+        "vehicle/routeDistribution": {},
+        "vehicle/routeDistribution/route": {
+          "replacedOnEdge": 436,
+          "reason": 436,
+          "replacedAtTime": 436,
+          "probability": 436,
+          "edges": 812,
+          "replacedOnIndex": 144
+        }
+      },
+      "numeric_states": {
+        "vehicle/arrival": {
+          "nonnegative": 948
+        },
+        "vehicle/depart": {
+          "nonnegative": 473,
+          "non_numeric": 1927
+        },
+        "vehicle/stop/duration": {
+          "nonnegative": 1461
+        },
+        "person/arrival": {
+          "nonnegative": 1055
+        },
+        "person/depart": {
+          "nonnegative": 2350
+        },
+        "person/ride/depart": {
+          "nonnegative": 296
+        }
+      },
+      "structure": {
+        "nodes_with_edges": 4490,
+        "nodes_with_repeated_edge": 56,
+        "stop_nodes_with_both_times": 0,
+        "stop_nodes_with_priorEdges": 0
+      },
+      "parking_boolean_counts": {}
+    },
+    "replay": {
+      "element_counts": {
+        "vehicle": 2400,
+        "vehicle/route": 2024,
+        "vehicle/stop": 1960,
+        "vehicle/param": 143,
+        "person": 2350,
+        "person/ride": 2349,
+        "person/walk": 1654,
+        "vehicle/routeDistribution": 376,
+        "vehicle/routeDistribution/route": 812
+      },
+      "attribute_counts": {
+        "vehicle": {
+          "id": 2400,
+          "type": 2400,
+          "depart": 2400,
+          "line": 143,
+          "arrival": 948,
+          "routeLength": 2400,
+          "departLane": 2155,
+          "arrivalPos": 2155
+        },
+        "vehicle/route": {
+          "edges": 2024,
+          "exitTimes": 2024
+        },
+        "vehicle/stop": {
+          "busStop": 1461,
+          "duration": 1461,
+          "until": 1960,
+          "priorEdges": 1960,
+          "priorEdgesLength": 1960,
+          "started": 1960,
+          "ended": 1960,
+          "parkingArea": 499
+        },
+        "vehicle/param": {
+          "key": 143,
+          "value": 143
+        },
+        "person": {
+          "id": 2350,
+          "type": 2350,
+          "depart": 2350,
+          "arrival": 1055
+        },
+        "person/ride": {
+          "from": 2227,
+          "to": 2349,
+          "arrivalPos": 1117,
+          "lines": 2349,
+          "routeLength": 2349,
+          "vehicle": 2349,
+          "started": 2349,
+          "ended": 2349,
+          "busStop": 296,
+          "intended": 296,
+          "depart": 296
+        },
+        "person/walk": {
+          "edges": 1654,
+          "routeLength": 1654,
+          "exitTimes": 932,
+          "started": 1654,
+          "ended": 1654,
+          "busStop": 271
+        },
+        "vehicle/routeDistribution": {},
+        "vehicle/routeDistribution/route": {
+          "replacedOnEdge": 436,
+          "reason": 436,
+          "replacedAtTime": 436,
+          "probability": 436,
+          "edges": 812,
+          "routeLength": 436,
+          "exitTimes": 376,
+          "replacedOnIndex": 144
+        }
+      },
+      "numeric_states": {
+        "vehicle/arrival": {
+          "nonnegative": 948
+        },
+        "vehicle/routeLength": {
+          "nonnegative": 2400
+        },
+        "vehicle/depart": {
+          "nonnegative": 473,
+          "non_numeric": 1927
+        },
+        "vehicle/stop/ended": {
+          "nonnegative": 1447,
+          "negative": 513
+        },
+        "vehicle/stop/duration": {
+          "nonnegative": 1461
+        },
+        "vehicle/stop/started": {
+          "nonnegative": 1960
+        },
+        "vehicle/stop/priorEdgesLength": {
+          "nonnegative": 1960
+        },
+        "person/arrival": {
+          "nonnegative": 1055
+        },
+        "person/depart": {
+          "nonnegative": 2350
+        },
+        "person/ride/started": {
+          "nonnegative": 2051,
+          "negative": 298
+        },
+        "person/ride/routeLength": {
+          "nonnegative": 2062,
+          "negative": 287
+        },
+        "person/ride/ended": {
+          "nonnegative": 1215,
+          "negative": 1134
+        },
+        "person/walk/started": {
+          "nonnegative": 932,
+          "negative": 722
+        },
+        "person/walk/routeLength": {
+          "nonnegative": 931,
+          "non_finite": 1,
+          "negative": 722
+        },
+        "person/walk/ended": {
+          "nonnegative": 660,
+          "negative": 994
+        },
+        "vehicle/routeDistribution/route/routeLength": {
+          "nonnegative": 436
+        },
+        "person/ride/depart": {
+          "nonnegative": 296
+        }
+      },
+      "structure": {
+        "nodes_with_edges": 4490,
+        "nodes_with_repeated_edge": 56,
+        "nodes_with_exitTimes": 3332,
+        "exitTimes_edge_count_mismatches": 0,
+        "exitTimes_negative_values": 31469,
+        "exitTimes_nonfinite_values": 0,
+        "exitTimes_decreasing_nodes": 0,
+        "stop_nodes_with_both_times": 1960,
+        "stop_nodes_with_priorEdges": 1960
+      },
+      "parking_boolean_counts": {}
+    }
+  },
+  "tripinfo.xml": {
+    "baseline": {
+      "element_counts": {
+        "tripinfo": 2400,
+        "personinfo": 2350,
+        "personinfo/ride": 2349,
+        "personinfo/walk": 1654
+      },
+      "attribute_counts": {
+        "tripinfo": {
+          "id": 2400,
+          "depart": 2400,
+          "departLane": 2400,
+          "departPos": 2400,
+          "departPosLat": 2400,
+          "departSpeed": 2400,
+          "departDelay": 2400,
+          "arrival": 2400,
+          "arrivalLane": 2400,
+          "arrivalPos": 2400,
+          "arrivalPosLat": 2400,
+          "arrivalSpeed": 2400,
+          "duration": 2400,
+          "routeLength": 2400,
+          "waitingTime": 2400,
+          "waitingCount": 2400,
+          "stopTime": 2400,
+          "timeLoss": 2400,
+          "rerouteNo": 2400,
+          "devices": 2400,
+          "vType": 2400,
+          "speedFactor": 2400,
+          "vaporized": 2400
+        },
+        "personinfo": {
+          "id": 2350,
+          "depart": 2350,
+          "type": 2350,
+          "speedFactor": 2350,
+          "duration": 2350,
+          "waitingTime": 2350,
+          "timeLoss": 2350,
+          "traveltime": 2350
+        },
+        "personinfo/ride": {
+          "waitingTime": 2349,
+          "vehicle": 2349,
+          "depart": 2349,
+          "arrival": 2349,
+          "arrivalPos": 2349,
+          "duration": 2349,
+          "routeLength": 2349,
+          "timeLoss": 2349
+        },
+        "personinfo/walk": {
+          "depart": 1654,
+          "departPos": 1654,
+          "arrival": 1654,
+          "arrivalPos": 1654,
+          "duration": 1654,
+          "routeLength": 1654,
+          "timeLoss": 1654,
+          "maxSpeed": 1654,
+          "waitingTime": 1654
+        }
+      },
+      "numeric_states": {
+        "tripinfo/arrival": {
+          "nonnegative": 948,
+          "negative": 1452
+        },
+        "tripinfo/routeLength": {
+          "nonnegative": 2400
+        },
+        "tripinfo/depart": {
+          "nonnegative": 2400
+        },
+        "tripinfo/duration": {
+          "nonnegative": 2400
+        },
+        "personinfo/duration": {
+          "nonnegative": 1055,
+          "negative": 1295
+        },
+        "personinfo/depart": {
+          "nonnegative": 2213,
+          "negative": 137
+        },
+        "personinfo/ride/arrival": {
+          "nonnegative": 1215,
+          "negative": 1134
+        },
+        "personinfo/ride/routeLength": {
+          "nonnegative": 2062,
+          "negative": 287
+        },
+        "personinfo/ride/depart": {
+          "nonnegative": 2051,
+          "negative": 298
+        },
+        "personinfo/ride/duration": {
+          "nonnegative": 2051,
+          "negative": 298
+        },
+        "personinfo/walk/arrival": {
+          "nonnegative": 660,
+          "negative": 994
+        },
+        "personinfo/walk/routeLength": {
+          "nonnegative": 660,
+          "negative": 994
+        },
+        "personinfo/walk/depart": {
+          "nonnegative": 932,
+          "negative": 722
+        },
+        "personinfo/walk/duration": {
+          "nonnegative": 932,
+          "negative": 722
+        }
+      },
+      "structure": {},
+      "parking_boolean_counts": {}
+    },
+    "replay": {
+      "element_counts": {
+        "tripinfo": 2400,
+        "personinfo": 2350,
+        "personinfo/ride": 2349,
+        "personinfo/walk": 1654
+      },
+      "attribute_counts": {
+        "tripinfo": {
+          "id": 2400,
+          "depart": 2400,
+          "departLane": 2400,
+          "departPos": 2400,
+          "departPosLat": 2400,
+          "departSpeed": 2400,
+          "departDelay": 2400,
+          "arrival": 2400,
+          "arrivalLane": 2400,
+          "arrivalPos": 2400,
+          "arrivalPosLat": 2400,
+          "arrivalSpeed": 2400,
+          "duration": 2400,
+          "routeLength": 2400,
+          "waitingTime": 2400,
+          "waitingCount": 2400,
+          "stopTime": 2400,
+          "timeLoss": 2400,
+          "rerouteNo": 2400,
+          "devices": 2400,
+          "vType": 2400,
+          "speedFactor": 2400,
+          "vaporized": 2400
+        },
+        "personinfo": {
+          "id": 2350,
+          "depart": 2350,
+          "type": 2350,
+          "speedFactor": 2350,
+          "duration": 2350,
+          "waitingTime": 2350,
+          "timeLoss": 2350,
+          "traveltime": 2350
+        },
+        "personinfo/ride": {
+          "waitingTime": 2349,
+          "vehicle": 2349,
+          "depart": 2349,
+          "arrival": 2349,
+          "arrivalPos": 2349,
+          "duration": 2349,
+          "routeLength": 2349,
+          "timeLoss": 2349
+        },
+        "personinfo/walk": {
+          "depart": 1654,
+          "departPos": 1654,
+          "arrival": 1654,
+          "arrivalPos": 1654,
+          "duration": 1654,
+          "routeLength": 1654,
+          "timeLoss": 1654,
+          "maxSpeed": 1654,
+          "waitingTime": 1654
+        }
+      },
+      "numeric_states": {
+        "tripinfo/arrival": {
+          "nonnegative": 948,
+          "negative": 1452
+        },
+        "tripinfo/routeLength": {
+          "nonnegative": 2400
+        },
+        "tripinfo/depart": {
+          "nonnegative": 2400
+        },
+        "tripinfo/duration": {
+          "nonnegative": 2400
+        },
+        "personinfo/duration": {
+          "nonnegative": 1055,
+          "negative": 1295
+        },
+        "personinfo/depart": {
+          "nonnegative": 2213,
+          "negative": 137
+        },
+        "personinfo/ride/arrival": {
+          "nonnegative": 1215,
+          "negative": 1134
+        },
+        "personinfo/ride/routeLength": {
+          "nonnegative": 2062,
+          "negative": 287
+        },
+        "personinfo/ride/depart": {
+          "nonnegative": 2051,
+          "negative": 298
+        },
+        "personinfo/ride/duration": {
+          "nonnegative": 2051,
+          "negative": 298
+        },
+        "personinfo/walk/arrival": {
+          "nonnegative": 660,
+          "negative": 994
+        },
+        "personinfo/walk/routeLength": {
+          "nonnegative": 660,
+          "negative": 994
+        },
+        "personinfo/walk/depart": {
+          "nonnegative": 932,
+          "negative": 722
+        },
+        "personinfo/walk/duration": {
+          "nonnegative": 932,
+          "negative": 722
+        }
+      },
+      "structure": {},
+      "parking_boolean_counts": {}
+    }
+  },
+  "stops.xml": {
+    "baseline": {
+      "element_counts": {
+        "stopinfo": 1447
+      },
+      "attribute_counts": {
+        "stopinfo": {
+          "id": 1447,
+          "type": 1447,
+          "lane": 1447,
+          "pos": 1447,
+          "parking": 1447,
+          "started": 1447,
+          "ended": 1447,
+          "delay": 1447,
+          "busStop": 1447,
+          "initialPersons": 1447,
+          "loadedPersons": 1447,
+          "unloadedPersons": 1447,
+          "initialContainers": 1447,
+          "loadedContainers": 1447,
+          "unloadedContainers": 1447,
+          "blockedDuration": 1447
+        }
+      },
+      "numeric_states": {
+        "stopinfo/started": {
+          "nonnegative": 1447
+        },
+        "stopinfo/ended": {
+          "nonnegative": 1447
+        }
+      },
+      "structure": {
+        "stop_nodes_with_both_times": 1447,
+        "stop_nodes_with_priorEdges": 0
+      },
+      "parking_boolean_counts": {
+        "false": 1447
+      }
+    },
+    "replay": {
+      "element_counts": {
+        "stopinfo": 1960
+      },
+      "attribute_counts": {
+        "stopinfo": {
+          "id": 1960,
+          "type": 1960,
+          "lane": 1960,
+          "pos": 1960,
+          "parking": 1960,
+          "started": 1960,
+          "ended": 1960,
+          "delay": 1960,
+          "busStop": 1461,
+          "initialPersons": 1960,
+          "loadedPersons": 1960,
+          "unloadedPersons": 1960,
+          "initialContainers": 1960,
+          "loadedContainers": 1960,
+          "unloadedContainers": 1960,
+          "blockedDuration": 1960,
+          "parkingArea": 499
+        }
+      },
+      "numeric_states": {
+        "stopinfo/started": {
+          "nonnegative": 1960
+        },
+        "stopinfo/ended": {
+          "nonnegative": 1447,
+          "negative": 513
+        }
+      },
+      "structure": {
+        "stop_nodes_with_both_times": 1960,
+        "stop_nodes_with_priorEdges": 0
+      },
+      "parking_boolean_counts": {
+        "false": 1461,
+        "true": 499
+      }
+    }
+  }
+}

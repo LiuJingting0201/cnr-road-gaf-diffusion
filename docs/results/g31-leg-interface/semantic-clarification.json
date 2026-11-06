@@ -1,0 +1,115 @@
+{
+  "complete": true,
+  "scope": "Read-only post-hoc semantic and coverage clarification of the saved pilot; no extraction rerun, model fit, simulation, or FCD rescan",
+  "date": "2026-11-06",
+  "receipt_hashes": {
+    "legs_receipt_sha256": "7f7c5db92f1ae690d5581a39a2a4e009c0b1dc729b33d0aeb8cf5fbd809e7c99",
+    "replay_receipt_sha256": "c42b7ff5a58d5337273c276ffd068f1a0a25b6d1d1b6a446d98bc700a409918f",
+    "comparison_receipt_sha256": "4bf73c1a10d1e69fa10e11a4cfc37cd96445edeb80134d731fe0f487d5723357"
+  },
+  "inspected_artifact_hashes": {
+    "tripinfo.xml": "642e0eaad14872da6c467371da03c79a8e1f18a6f426fb15c8c1bd906ef55e12",
+    "stops.xml": "1c5b8c037dfcc3dca0807e0eff4d4323b7b94ab43c5b41dc74db60b1f619ae2b",
+    "legs.npz": "59b4fc29923e9f14b4e4202babc4b3ed268d64283ec8b9cbcea586620282f32f",
+    "leg-metadata.json.gz": "2b1138282c3cbc421a600463a4a2a33958463586deb2ce956d52bda12e5b5c29"
+  },
+  "executed_legs_script_sha256": "1d63ba0aab148b6e46932fef4c54012401f025404f2687b69c4bfc5a493f1fc4",
+  "future_fix": {
+    "script_sha256": "7c2eaf249ff710f01b78b4c378dec72e2d3f500cd7740b195749f72ec8e5942b",
+    "check_script_sha256": "a5daae212cf5ab67c6e2f66fbc75f8ae44964024d25e8e6a9b6ad6c0c2998deb",
+    "synthetic_tests_passed": 15,
+    "real_data_rerun": false,
+    "saved_pilot_script_overwritten": false,
+    "validation_directory": "g31-job/future-semantics-checks",
+    "change": "Treat vaporized=end as observation cutoff; retain previously completed source activity legs if any, retain unfinished bus exclusion, still reject other nonempty vaporized reasons"
+  },
+  "methods": [
+    "Read saved complete.json and compressed leg metadata; recompute saved artifact SHA256 and aggregate accepted count, distinct parent identity, source status, edge equality, endpoint delay, and rejection counters. No FCD parsing.",
+    "Parse only the small enhanced tripinfo.xml and stops.xml. Count literal vaporized values crossed with arrival<0. Restrict end-marked vehicles to original-test-excluded and saved taxonomy-supported parents to reproduce the 714-parent exclusion.",
+    "Associate stopinfo with those end-marked parent IDs internally. Count started/ended activity parking events and bus stops, then emit aggregates only. No raw IDs retained in this file.",
+    "Future code is verified only on synthetic fixtures in a separate server directory. The saved real extraction and its original script hash remain unchanged."
+  ],
+  "saved_metadata_checks": {
+    "artifact_hashes_match": true,
+    "accepted_count_matches": true,
+    "source_plans_all_public_input_only": true,
+    "source_plans_all_condition_ready_false": true,
+    "no_accepted_original_test": true,
+    "same_parent_one_partition": true,
+    "coverage_rejection_counters_match": true
+  },
+  "vaporized_literal_values_all_tripinfo": [
+    {
+      "value": "",
+      "arrival_negative": false,
+      "count": 948
+    },
+    {
+      "value": "",
+      "arrival_negative": true,
+      "count": 521
+    },
+    {
+      "value": "end",
+      "arrival_negative": true,
+      "count": 931
+    }
+  ],
+  "saved_vehicle_vaporized_counter_clarification": {
+    "saved_counter": 714,
+    "all_have_value_end": true,
+    "genuine_non_end_vaporization_reasons": 0,
+    "bus_parents_with_station_stop": 26,
+    "nonbus_parents": 688,
+    "nonbus_parents_with_activity_stop_started": 0,
+    "nonbus_parents_with_activity_stop_ended": 0,
+    "potential_completed_ordinary_activity_prelegs": 0,
+    "interpretation": "The saved counter means simulation-cutoff unfinished parents, not 714 destroyed or anomalous vehicles. No completed ordinary activity preleg was identified as lost by this conservative rule in this pilot; unfinished bus services remain ineligible."
+  },
+  "accepted_unit_counts": {
+    "legs": 1644,
+    "distinct_parent_base_ids": 1592,
+    "distinct_tagged_parent_ids": 1592,
+    "parents_with_1_leg": 1541,
+    "parents_with_2_legs": 50,
+    "parents_with_3_legs": 1,
+    "pedestrian_legs": 593,
+    "pedestrian_parents": 541,
+    "caveat": "Distinct parent IDs are not a claim of statistical independence within one shared simulation and repeated demand templates."
+  },
+  "source_plan_coverage": {
+    "explicit_source_walk": 593,
+    "complete_scheduled_source_service": 93,
+    "unique_source_activity_leg_slice": 909,
+    "source_od_without_complete_planned_edges": 49,
+    "source_od_by_class": {
+      "motorcycle": 5,
+      "private_car": 44
+    },
+    "ambiguous_source_activity_leg_slice": 0,
+    "source_and_realized_edges_equal": 1507,
+    "source_and_realized_edges_different": 88,
+    "source_and_realized_comparison_unavailable": 49,
+    "different_edges_with_positive_parent_rerouteNo": 78,
+    "different_edges_without_positive_parent_rerouteNo": 10,
+    "caveat": "The 49 OD-only flows are not demonstrated repeated-edge ambiguity. Edge-sequence disagreement does not by itself identify rerouting. Flow eligibility was confirmed against emitted routes/endpoints and is target-dependent."
+  },
+  "observed_event_endpoint_alignment": {
+    "all_starts_equal": 1644,
+    "observation_ends_equal_event": 521,
+    "observation_ends_0_25s_before_event": 1123,
+    "interpolation_used": false,
+    "caveat": "Observed txy span differs from event duration for 1123 legs; reconstruction uses observed span."
+  },
+  "coverage_rejected": {
+    "total": 15,
+    "bus_coordinate_jump_above_100mps": 4,
+    "private_car_coordinate_jump_above_100mps": 11
+  },
+  "generation_ready": false,
+  "limitations": [
+    "This is a single-pilot event/coverage interface audit, not a training cohort or generation evaluation.",
+    "Planned lane-connectivity checks and target-path oracle reconstruction do not jointly prove planned-map trajectory decoding.",
+    "Saved real results were produced by the executed script hash above, not the later semantic fix."
+  ]
+}

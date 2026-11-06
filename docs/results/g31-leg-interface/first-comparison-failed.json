@@ -1,0 +1,5 @@
+{
+  "complete": false,
+  "seconds": 158.61208306252956,
+  "error": "ValueError('FCD has a non-finite numeric attribute')"
+}

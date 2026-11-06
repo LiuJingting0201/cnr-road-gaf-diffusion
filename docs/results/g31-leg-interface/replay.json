@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "returncode": 0,
+  "seed": 300001,
+  "seconds": 152.3100686520338,
+  "files": {
+    "fcd.xml.gz": {
+      "sha256": "600b9970c3bf1a07bd47fd5d0846870d267c277974d93bde16f72194cb03b014",
+      "bytes": 222440919
+    },
+    "tripinfo.xml": {
+      "sha256": "642e0eaad14872da6c467371da03c79a8e1f18a6f426fb15c8c1bd906ef55e12",
+      "bytes": 2533470
+    },
+    "vehroute.xml.gz": {
+      "sha256": "9d145da3476134ef0a5644a9ba8c6327bc55d3a21fcffb88904ffd333d775ce1",
+      "bytes": 743911
+    },
+    "stops.xml": {
+      "sha256": "1c5b8c037dfcc3dca0807e0eff4d4323b7b94ab43c5b41dc74db60b1f619ae2b",
+      "bytes": 604114
+    },
+    "summary.xml": {
+      "sha256": "1dfabe9dc7c0de91a9d9bfaaf792a21fcffc9a87e53a0615f03770c1ddc335e9",
+      "bytes": 5645674
+    }
+  },
+  "last_summary": {
+    "time": "19515.75",
+    "loaded": "2554",
+    "inserted": "2400",
+    "running": "1452",
+    "waiting": "2",
+    "ended": "951",
+    "arrived": "948",
+    "collisions": "0",
+    "teleports": "0",
+    "halting": "54",
+    "stopped": "513",
+    "meanWaitingTime": "0.31",
+    "meanTravelTime": "512.53",
+    "meanSpeed": "11.63",
+    "meanSpeedRelative": "0.76",
+    "discarded": "3",
+    "duration": "17"
+  },
+  "log_keyword_line_counts": {
+    "teleport": 0,
+    "collision": 0,
+    "warning:": 50,
+    "error:": 0,
+    "discard": 0
+  },
+  "config_sha256": "7030931b1de104dc4117f6ab68fff4f3c9bdb078838f5a083546dff85b0bb597",
+  "comparison_status": "not_run; simulation completion does not imply FCD equality"
+}

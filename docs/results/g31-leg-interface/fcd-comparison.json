@@ -1,0 +1,115 @@
+{
+  "complete": true,
+  "equal": true,
+  "counts": {
+    "matched_timesteps": 20464,
+    "matched_records": 9939409
+  },
+  "changed_field_counts": {},
+  "first_mismatch_summaries": [],
+  "baseline": {
+    "counts": {
+      "timesteps": 20464,
+      "vehicle": 5417469,
+      "nested_vehicle": 0,
+      "person": 4521940,
+      "nested_person": 0
+    },
+    "attribute_counts": {
+      "vehicle": {
+        "id": 5417469,
+        "x": 5417469,
+        "y": 5417469,
+        "type": 5417469,
+        "speed": 5417469,
+        "lane": 5417469
+      },
+      "person": {
+        "id": 4521940,
+        "x": 4521940,
+        "y": 4521940,
+        "type": 4521940,
+        "speed": 4521940,
+        "edge": 4521940,
+        "vehicle": 4521940
+      }
+    },
+    "auxiliary_numeric_states": {
+      "vehicle/speed": {
+        "finite": 5417469
+      },
+      "vehicle/pos": {
+        "missing": 5417469
+      },
+      "person/speed": {
+        "finite": 4520340,
+        "nan": 1600
+      },
+      "person/pos": {
+        "missing": 4521940
+      }
+    },
+    "time_min": 14400.0,
+    "time_max": 19515.75,
+    "dt_counts": {
+      "0.25000000": 20463
+    },
+    "maximum_records_per_step": 2611,
+    "common_fields_sha256": "584e9ac0a9026a134e0d7be8175f8b5a52495ceb80a35c64a512392dc28d150b"
+  },
+  "replay": {
+    "counts": {
+      "timesteps": 20464,
+      "vehicle": 5417469,
+      "nested_vehicle": 0,
+      "person": 4521940,
+      "nested_person": 0
+    },
+    "attribute_counts": {
+      "vehicle": {
+        "id": 5417469,
+        "x": 5417469,
+        "y": 5417469,
+        "type": 5417469,
+        "speed": 5417469,
+        "pos": 5417469,
+        "lane": 5417469
+      },
+      "person": {
+        "id": 4521940,
+        "x": 4521940,
+        "y": 4521940,
+        "type": 4521940,
+        "speed": 4521940,
+        "pos": 4521940,
+        "edge": 4521940,
+        "vehicle": 4521940
+      }
+    },
+    "auxiliary_numeric_states": {
+      "vehicle/speed": {
+        "finite": 5417469
+      },
+      "vehicle/pos": {
+        "finite": 5417469
+      },
+      "person/speed": {
+        "finite": 4520340,
+        "nan": 1600
+      },
+      "person/pos": {
+        "finite": 4520339,
+        "nan": 1601
+      }
+    },
+    "time_min": 14400.0,
+    "time_max": 19515.75,
+    "dt_counts": {
+      "0.25000000": 20463
+    },
+    "maximum_records_per_step": 2611,
+    "common_fields_sha256": "584e9ac0a9026a134e0d7be8175f8b5a52495ceb80a35c64a512392dc28d150b"
+  },
+  "policy": "Exact XML attribute strings for common fields; order-independent within timestep; parent relation included",
+  "memory": "One timestep per input; no whole-file trajectory or ID collection"
+}
