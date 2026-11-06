@@ -1,0 +1,7 @@
+{
+  "complete": true,
+  "scope": "Synthetic paired classification-statistics and provenance checks only",
+  "checks_passed": 10,
+  "real_model_inference_tested": false,
+  "script_sha256": "3727caf058e28e977f035a2c8ea46e1ec300717133a62bb53f9d709e813bf498"
+}
