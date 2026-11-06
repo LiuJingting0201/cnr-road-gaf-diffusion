@@ -104,8 +104,12 @@ def storage_state(root):
                 raise ValueError(f"Budget root must not contain symlinks: {path}")
         for name in names:
             path = Path(directory) / name
-            if path.is_file():
-                total += path.stat().st_size
+            try:
+                if path.is_file():
+                    total += path.stat().st_size
+            except FileNotFoundError:
+                # Workers publish JSON by atomically renaming temporary files.
+                continue
     return {"budget_root_bytes": total, "free_bytes": shutil.disk_usage(root).free}
 
 

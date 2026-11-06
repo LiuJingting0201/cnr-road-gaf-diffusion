@@ -35,3 +35,6 @@ G33 的925训练/126验证完整车辆leg来自一个 `14400–19516s` pilot，�
 只写新隔离目录`g35-job`。服务器旧输出/权重/工作树不删除不覆盖。顺序完成仿真与提取，避免三份大FCD同时增长。仿真监测剩余磁盘不少于8GiB、新G35数据总占用不超过12GiB；后续准备/训练保留8GiB余量、总新数据上限15GiB。触发边界只终止本轮自有任务，保留失败日志，不自动删旧文件重试。
 
 保存源、二进制、代码、配置和输出哈希及完成/失败标记；新仿真有自己的来源契约，不伪造G31 pilot重放一致性。每轮推送协议、代码、小型指标与文字记录；原始轨迹、逐样本ID、图片、权重和凭据不推Git。论文在新生成结果验证后更新。
+
+
+2026-11-07 G35b: execution amendment fixed before launch in docs/G35B_EXECUTION.md. Three CPU SUMO scenes run concurrently with predeclared FCD identity lists; native background demand, split, time and model budgets remain. The v1 partial attempt is preserved; no completed data or speedup claim yet. New isolated g35b-job only.

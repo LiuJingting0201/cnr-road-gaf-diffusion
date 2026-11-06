@@ -235,3 +235,6 @@ G32地图接口完成有限构造验证：五车辆class实现显式事前路线
 G35现已实际启动数据扩容队列，并登记数据完成后自动执行的训练队列（执行版本ecfb7a7）。首次进度确认第一场仿真在推进；模型尚等待新数据，不冒称已训练。当前阶段是全日扩容，不再停留在925条pilot。
 
 2026-11-06 用户继续授权G35训练后自主分析与迭代，优先同新验证集上的GAF识别和独立生成质量，结果复核后更新论文；按ETA节点查看，不持续刷新。分类分析先锁docs/G35_ANALYSIS_PROTOCOL.md，G35正在运行的四扩散/两教师训练配置不改。后续G36另锁新请求/参考/同预算生成协议，旧测试不回流，不以分类高分代替生成收益。
+
+
+2026-11-07 G35b: execution amendment fixed before launch in docs/G35B_EXECUTION.md. Three CPU SUMO scenes run concurrently with predeclared FCD identity lists; native background demand, split, time and model budgets remain. The v1 partial attempt is preserved; no completed data or speedup claim yet. New isolated g35b-job only.

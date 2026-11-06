@@ -486,3 +486,6 @@ G34补齐协议要求的辅助分数诊断：复用既有只读ranking脚本，�
 G35启动更新：ecfb7a7已先提交推送；隔离服务器随后核对8个新脚本哈希并启动有限数据队列和等待数据的训练队列。10项教师缓存/短轨/分区构造检查及固定公开源清单核验通过。首次实际进度检查：seed350101已运行30秒，仿真推进至18532秒，已插入870辆、到达185辆；此时无collision/teleport，后续全场仍需检查。数据/训练队列和SUMO子进程均有进度，当前模型拟合数为0，训练明确等待全三场数据与合并检查，不能写成四卡已经开训。目标≥10000个独立训练parent尚未达成或计数；没有新增质量结论。启动与阶段快照保存docs/results/g35-full-day，后续进度以服务器标记为准。
 
 用户继续授权G35完成后自主分析、迭代并在有效生成结果后更新论文，要求按ETA节点查看。先固定共享新验证集的旧/新GAF比较，增加只读g35_teacher_audit.py；10项配对统计/parent隔离/缓存来源构造检查在服务器通过，没有提前读取未完成预测或新训练。报告leg等权及parent等权、每类支持和2000次配对parent区间；50轮新旧CNN更新数不同，明确为数据/训练规模联合变化。G36独立参考与生成比较另锁协议，未启动也未更新论文。
+
+
+2026-11-07 G35b: execution amendment fixed before launch in docs/G35B_EXECUTION.md. Three CPU SUMO scenes run concurrently with predeclared FCD identity lists; native background demand, split, time and model budgets remain. The v1 partial attempt is preserved; no completed data or speedup claim yet. New isolated g35b-job only.
