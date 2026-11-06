@@ -1,0 +1,68 @@
+{
+  "scope": "primary full CNR/SUMO cohorts only, exact existing IDs and labels",
+  "transform": "shared unitXY bounds, exact inherited Hilbert-index inverse to 64x64 cell centres, then observation-index interpolation to224",
+  "interpretation": "XY versus gridXY holds the two-channel readout architecture fixed and isolates coordinate quantization before interpolation",
+  "boundary_policy": "inherited recursion, including reflected dyadic-boundary ties",
+  "reports": {
+    "cnr/full/train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "native_points": 3408399,
+      "global_floor_mismatch_points": 0,
+      "global_floor_mismatch_fraction": 0.0,
+      "global_floor_mismatch_tracks": 0
+    },
+    "cnr/full/val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "native_points": 440107,
+      "global_floor_mismatch_points": 0,
+      "global_floor_mismatch_fraction": 0.0,
+      "global_floor_mismatch_tracks": 0
+    },
+    "sumo/full/train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "native_points": 1607474,
+      "global_floor_mismatch_points": 0,
+      "global_floor_mismatch_fraction": 0.0,
+      "global_floor_mismatch_tracks": 0
+    },
+    "sumo/full/val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "native_points": 209411,
+      "global_floor_mismatch_points": 0,
+      "global_floor_mismatch_fraction": 0.0,
+      "global_floor_mismatch_tracks": 0
+    }
+  }
+}

@@ -1,0 +1,6094 @@
+{
+  "scope": "existing CNR train/val and SUMO train/monitor only, common first six classes",
+  "classes": [
+    "pedestrian",
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "minimum_continuous_span_s": 5.0,
+  "continuity": "dt=.25 seconds, maximum coordinate-derived speed 100 m/s, longest segment, earliest tie",
+  "encoding": {
+    "source": {
+      "raw_source_sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+      "source_name": "midimost_with_class2.csv",
+      "rows": 4840789,
+      "classes": [
+        "pedestrian",
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "coordinate_scale": 100,
+      "time_scale": 4,
+      "note": "Canonical columns only; speed stays in original CSV. Float32 XY and times verified unchanged.",
+      "max_coordinate_decimal_roundoff": 0.0
+    },
+    "source_package_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+    "source_commit": "4773ad65bce88d38b8b108ef5e4773fd99883c94",
+    "git_commit": "b54b769f1bbe3ff6078817662539f2c20946aa23",
+    "summary": {
+      "train": {
+        "vehicles": 2146,
+        "class_counts": {
+          "pedestrian": 631,
+          "bus": 111,
+          "motorcycle": 296,
+          "private_car": 893,
+          "bycicle": 141,
+          "taxi_or_uber": 74
+        },
+        "coordinate_clipped_points": 0,
+        "channel_clipped_values": 0
+      },
+      "val": {
+        "vehicles": 269,
+        "class_counts": {
+          "pedestrian": 79,
+          "bus": 14,
+          "motorcycle": 37,
+          "private_car": 112,
+          "bycicle": 18,
+          "taxi_or_uber": 9
+        },
+        "coordinate_clipped_points": 1,
+        "channel_clipped_values": 0
+      }
+    },
+    "xy_min": [
+      -0.17,
+      117.18
+    ],
+    "xy_max": [
+      9977.97,
+      6356.52
+    ],
+    "channel_min": [
+      -1.0,
+      -1.0000000000000036,
+      0.0
+    ],
+    "channel_max": [
+      1.000000000000007,
+      1.0000000000000036,
+      1.0
+    ],
+    "hilbert_eps": 0.0009,
+    "length": 224,
+    "mtf_bins": 8,
+    "scope": "Full vehicle trajectory, original squeeze and mirror duplication, RGB GASF/GADF/MTF; newly trained CNN, not original classifier reproduction. Test neither encoded nor evaluated.",
+    "adaptations": [
+      "Canonical time ordering verified by packer",
+      "local SUMO x/y used in original normalized coordinate slots, not claimed GPS",
+      "train-only coordinate and channel extrema frozen for deployment; clip out of bounds and count",
+      "keep previous vehicle split; no claim to original group classification accuracy"
+    ],
+    "elapsed_s": 40.7240402251482
+  },
+  "seed": 29042,
+  "sources": {
+    "canonical_sha256": "9e733b8e97ab9d0bfb3e8f101c8ce2bae65daaa308cc626be447544c838e9d3a",
+    "split_manifest_sha256": "33ed1e378bae16a72a5bf2c441c45284eec6de480a91438884101a5a6651ee71",
+    "encoding_metadata_sha256": "ab50cc574fa2c72772a230576517aa8b0e6399f2dccc0419f2759e20fc7016e1",
+    "sumo_quarter_hashes": {
+      "../g22-job/g22-data/train/272001/quarter.npz": "ad0e1e8b14dc1e2bb2176437f692f4b0d166aa478ab7124e8c056609265e49f5",
+      "../g22-job/g22-data/train/272002/quarter.npz": "852c608f7453775cf3f123ad0eb193c9a747a0607f80c9bfd0c97d437df9fb24",
+      "../g22-job/g22-data/train/272003/quarter.npz": "886431bd4e9c29c3f563aee9ce6e236d70cba54d9f272bab79b2d788b4011c20",
+      "../g22-job/g22-data/train/272004/quarter.npz": "113ba06169155820a362f8136726e42432e45305a0841bcb06388614fc3f0c70",
+      "../g22-job/g22-data/train/272005/quarter.npz": "baf52894f375a91d48a1d9ed2d3eb3f62c2be61f3d3eb0c069a6ddcff5b3effc",
+      "../g22-job/g22-data/train/272006/quarter.npz": "266c6a0f291e308ec096b0fee416519f23c6a32f805d4131ad44a39f0e03df4e",
+      "../g22-job/g22-data/train/272007/quarter.npz": "d3ce76dda02add7e844689dfd61f8c343507b966cb677ccc2147f7012d933a5b",
+      "../g22-job/g22-data/train/272008/quarter.npz": "8674eb3e50d997c66da01425af7a359a49cfb3f9beadb182ea9b7f956d611636",
+      "../g22-job/g22-data/train/272009/quarter.npz": "1d7e565a690f64a2e71400edd5dbc34e317b55ee6b4dda77b18aec4845956c21",
+      "../g22-job/g22-data/train/272010/quarter.npz": "911a79784cb838e3557e9c9643244713e43e9761f1ad0c87f6302f75a162f8a4",
+      "../g22-job/g22-data/train/272011/quarter.npz": "487d0ba2c5c490be2b97368ce487ad93e9dce961a837369dc834e76b5be6f83a",
+      "../g22-job/g22-data/train/272012/quarter.npz": "8b976f49dfbda2a778299068461eff125d6df01941ab3b4d1722e0a60c5d8f5a",
+      "../g22-job/g22-data/train/272013/quarter.npz": "c96e4026498f5c509999ed40a6588eb406f20d64a48c1239725f627850a329f4",
+      "../g22-job/g22-data/train/272014/quarter.npz": "42319e5dd29a201aea2f87e95fac8b9bf83732c09a91cc0641c37c625a30557a",
+      "../g22-job/g22-data/train/272015/quarter.npz": "75455e94345a69ea0902944f2e8ba003e2f9a869bff4071b37f3c9b5e98466cc",
+      "../g22-job/g22-data/train/272016/quarter.npz": "72ca4667dfbecb08209422841b6e29ddd8942dc3562de1a07dc89503dac3a28f",
+      "../g22-job/g22-data/monitor/273001/quarter.npz": "40e034b399c1809610554762c135da04a856f1b47619f2ab6ecbe0edeadd3a33",
+      "../g22-job/g22-data/monitor/273002/quarter.npz": "ecfe6cde6871b2d367b14803b41394fec39c1e0c2a2555918bf90bebf9e0052e",
+      "../g22-job/g22-data/monitor/273003/quarter.npz": "d49ec644e7ed5cf090b747549091a332ee71f04715c71d39c78c29eede1c34c9"
+    }
+  },
+  "available": {
+    "cnr-train": {
+      "rows": 2146,
+      "class_counts": [
+        631,
+        111,
+        296,
+        893,
+        141,
+        74
+      ],
+      "sha256": "984ce46b558796cb9b3da50eee437144761fc1520f99127e3550ad20ce154a51",
+      "eligible_512_by_class": [
+        82,
+        107,
+        268,
+        798,
+        119,
+        63
+      ]
+    },
+    "cnr-val": {
+      "rows": 269,
+      "class_counts": [
+        79,
+        14,
+        37,
+        112,
+        18,
+        9
+      ],
+      "sha256": "d1bc1d9201811fda7e6054d3ccf2caf468304cd81e7dc661780eee18c46bc688",
+      "eligible_512_by_class": [
+        6,
+        14,
+        31,
+        93,
+        16,
+        4
+      ]
+    },
+    "sumo-train": {
+      "rows": 4533,
+      "class_counts": [
+        768,
+        756,
+        752,
+        751,
+        762,
+        744
+      ],
+      "sha256": "9cbbb767d4511c9a01e41309c1384c4eae250d0e18d8ebff17ad0b579430c9e2",
+      "eligible_512_by_class": [
+        193,
+        569,
+        564,
+        557,
+        762,
+        544
+      ]
+    },
+    "sumo-val": {
+      "rows": 846,
+      "class_counts": [
+        144,
+        141,
+        139,
+        138,
+        144,
+        140
+      ],
+      "sha256": "80ca00e47de9285b2ba89e3463e24154e19037e38dc03f1b5120a86dcf1fc86e",
+      "eligible_512_by_class": [
+        30,
+        119,
+        106,
+        102,
+        144,
+        104
+      ]
+    }
+  },
+  "count_matched": {
+    "cnr-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "5769a6e65f0bb95635c7d78391274ac97fa1a16daa9083e06b26478915776b83",
+      "eligible_512_by_class": [
+        82,
+        107,
+        268,
+        678,
+        119,
+        63
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 611,
+            "mean": 238.42225859247137,
+            "p05": 9.875,
+            "median": 129.5,
+            "p95": 871.25,
+            "max": 1345.5
+          },
+          "continuous_span_s": {
+            "count": 611,
+            "mean": 68.18780687397708,
+            "p05": 7.0,
+            "median": 43.5,
+            "p95": 251.875,
+            "max": 576.0
+          },
+          "continuous_arc_m": {
+            "count": 611,
+            "mean": 71.80634859093965,
+            "p05": 10.8408162787395,
+            "median": 38.517092839691,
+            "p95": 244.2817209407373,
+            "max": 478.7522541076447
+          },
+          "speed_mean_mps": {
+            "count": 611,
+            "mean": 1.1798082300505837,
+            "p05": 0.549993100552601,
+            "median": 1.1662125907542102,
+            "p95": 1.8907279809811883,
+            "max": 2.462055307852903
+          },
+          "speed_p95_mps": {
+            "count": 611,
+            "mean": 1.5269410910334609,
+            "p05": 0.8868049880962763,
+            "median": 1.4886235252747262,
+            "p95": 2.295907485581269,
+            "max": 3.843755832418692
+          },
+          "stopped_fraction": {
+            "count": 611,
+            "mean": 0.08937259086801168,
+            "p05": 0.0,
+            "median": 0.0006369426751592356,
+            "p95": 0.5595928611266034,
+            "max": 1.0
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 611,
+            "mean": 0.6601390677530652,
+            "p05": 0.29119770195652533,
+            "median": 0.5855103058636216,
+            "p95": 1.304241763166221,
+            "max": 2.502289388431002
+          },
+          "unique_grid64_cells": {
+            "count": 611,
+            "mean": 1.613747954173486,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 3.0,
+            "max": 6.0
+          },
+          "clipped_point_fraction": {
+            "count": 611,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 611,
+            "mean": 0.708221161102832,
+            "p05": 0.3246690946115288,
+            "median": 0.7155887230514096,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 611,
+            "mean": 2.7774140752864156,
+            "p05": 0.0,
+            "median": 2.0,
+            "p95": 10.0,
+            "max": 22.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 111,
+            "mean": 929.5427927927927,
+            "p05": 273.0,
+            "median": 931.5,
+            "p95": 1599.125,
+            "max": 2346.75
+          },
+          "continuous_span_s": {
+            "count": 111,
+            "mean": 917.0585585585585,
+            "p05": 273.0,
+            "median": 906.5,
+            "p95": 1599.125,
+            "max": 2346.75
+          },
+          "continuous_arc_m": {
+            "count": 111,
+            "mean": 5089.993806481638,
+            "p05": 1269.1230537605393,
+            "median": 4831.6530326000775,
+            "p95": 9040.436937092965,
+            "max": 14235.376018164397
+          },
+          "speed_mean_mps": {
+            "count": 111,
+            "mean": 5.958133806272978,
+            "p05": 3.646940226776368,
+            "median": 5.043491243493099,
+            "p95": 10.26345970789243,
+            "max": 10.577056352501774
+          },
+          "speed_p95_mps": {
+            "count": 111,
+            "mean": 13.812892331835785,
+            "p05": 11.300304592539476,
+            "median": 14.07477168909214,
+            "p95": 15.920359289338315,
+            "max": 16.800633321342563
+          },
+          "stopped_fraction": {
+            "count": 111,
+            "mean": 0.37259019369910684,
+            "p05": 0.15595738070239346,
+            "median": 0.39754928076718166,
+            "p95": 0.5142852378093523,
+            "max": 0.654320987654321
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 111,
+            "mean": 0.594363211596906,
+            "p05": 0.4485174329134222,
+            "median": 0.6096864498340525,
+            "p95": 0.7224061025634717,
+            "max": 0.8916649319557962
+          },
+          "unique_grid64_cells": {
+            "count": 111,
+            "mean": 44.153153153153156,
+            "p05": 9.0,
+            "median": 43.0,
+            "p95": 88.5,
+            "max": 143.0
+          },
+          "clipped_point_fraction": {
+            "count": 111,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 111,
+            "mean": 0.9862469929559232,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 111,
+            "mean": 0.036036036036036036,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 295,
+            "mean": 561.3135593220339,
+            "p05": 88.22500000000001,
+            "median": 458.75,
+            "p95": 1370.0000000000002,
+            "max": 1511.5
+          },
+          "continuous_span_s": {
+            "count": 295,
+            "mean": 560.4033898305084,
+            "p05": 88.22500000000001,
+            "median": 456.5,
+            "p95": 1370.0000000000002,
+            "max": 1511.5
+          },
+          "continuous_arc_m": {
+            "count": 295,
+            "mean": 3948.197214313478,
+            "p05": 874.407788347823,
+            "median": 3460.5206039796826,
+            "p95": 8310.094452445417,
+            "max": 13887.246599065962
+          },
+          "speed_mean_mps": {
+            "count": 295,
+            "mean": 8.715457302921623,
+            "p05": 2.08424972282144,
+            "median": 9.70141433512106,
+            "p95": 13.243194329130267,
+            "max": 15.922498966529611
+          },
+          "speed_p95_mps": {
+            "count": 295,
+            "mean": 15.163158432909764,
+            "p05": 11.63852475528737,
+            "median": 14.066937461012976,
+            "p95": 25.806008262616615,
+            "max": 31.397186965288178
+          },
+          "stopped_fraction": {
+            "count": 295,
+            "mean": 0.23863977982901724,
+            "p05": 0.0,
+            "median": 0.07436182019977802,
+            "p95": 0.8144633888138867,
+            "max": 0.9330004161464835
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 295,
+            "mean": 1.7246776082313369,
+            "p05": 0.4419902656447836,
+            "median": 1.8995947317454833,
+            "p95": 2.633562118993587,
+            "max": 3.2387202545442175
+          },
+          "unique_grid64_cells": {
+            "count": 295,
+            "mean": 36.122033898305084,
+            "p05": 8.0,
+            "median": 31.0,
+            "p95": 81.0,
+            "max": 105.0
+          },
+          "clipped_point_fraction": {
+            "count": 295,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 295,
+            "mean": 0.9986098976838101,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 295,
+            "mean": 0.003389830508474576,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 751,
+            "mean": 640.7017310252996,
+            "p05": 64.375,
+            "median": 604.5,
+            "p95": 1369.5,
+            "max": 1509.5
+          },
+          "continuous_span_s": {
+            "count": 751,
+            "mean": 632.1401464713715,
+            "p05": 64.375,
+            "median": 597.25,
+            "p95": 1354.875,
+            "max": 1509.5
+          },
+          "continuous_arc_m": {
+            "count": 751,
+            "mean": 6362.917205958636,
+            "p05": 794.6482672924672,
+            "median": 6909.28139804541,
+            "p95": 10265.168940507941,
+            "max": 15034.942838508705
+          },
+          "speed_mean_mps": {
+            "count": 751,
+            "mean": 11.310034354987325,
+            "p05": 5.964231461586348,
+            "median": 11.914619315019896,
+            "p95": 15.23111426301532,
+            "max": 21.142790175735072
+          },
+          "speed_p95_mps": {
+            "count": 751,
+            "mean": 18.61065499506813,
+            "p05": 12.006121814562155,
+            "median": 15.486251967469935,
+            "p95": 30.25791766320136,
+            "max": 36.169451143154234
+          },
+          "stopped_fraction": {
+            "count": 751,
+            "mean": 0.11867292844331612,
+            "p05": 0.0,
+            "median": 0.02815622161671208,
+            "p95": 0.5319608662235347,
+            "max": 0.7489177489177489
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 751,
+            "mean": 0.8560172507214213,
+            "p05": 0.45175363184068446,
+            "median": 0.8397091022264755,
+            "p95": 1.3999373717336798,
+            "max": 2.1009916588340656
+          },
+          "unique_grid64_cells": {
+            "count": 751,
+            "mean": 58.636484687083886,
+            "p05": 8.0,
+            "median": 64.0,
+            "p95": 96.0,
+            "max": 121.0
+          },
+          "clipped_point_fraction": {
+            "count": 751,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 751,
+            "mean": 0.9906172597354787,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 751,
+            "mean": 0.03595206391478029,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 141,
+            "mean": 345.7429078014184,
+            "p05": 64.75,
+            "median": 316.0,
+            "p95": 732.75,
+            "max": 955.5
+          },
+          "continuous_span_s": {
+            "count": 141,
+            "mean": 345.7429078014184,
+            "p05": 64.75,
+            "median": 316.0,
+            "p95": 732.75,
+            "max": 955.5
+          },
+          "continuous_arc_m": {
+            "count": 141,
+            "mean": 1619.7279224319625,
+            "p05": 275.9860907633601,
+            "median": 1466.3762309448566,
+            "p95": 3486.51844454205,
+            "max": 4466.49286999754
+          },
+          "speed_mean_mps": {
+            "count": 141,
+            "mean": 4.740973830901855,
+            "p05": 3.64144510834942,
+            "median": 4.72340385685219,
+            "p95": 6.250098468593936,
+            "max": 6.663837225419414
+          },
+          "speed_p95_mps": {
+            "count": 141,
+            "mean": 5.497676548730293,
+            "p05": 4.214451328465124,
+            "median": 5.522455975290084,
+            "p95": 6.971484777290146,
+            "max": 7.414234545705293
+          },
+          "stopped_fraction": {
+            "count": 141,
+            "mean": 0.037153904873765464,
+            "p05": 0.0,
+            "median": 0.009032943676939426,
+            "p95": 0.1399055489964581,
+            "max": 0.36720867208672087
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 141,
+            "mean": 0.9947475320500642,
+            "p05": 0.5064132773127252,
+            "median": 0.9292205616736535,
+            "p95": 1.711763322986058,
+            "max": 2.143081851265595
+          },
+          "unique_grid64_cells": {
+            "count": 141,
+            "mean": 14.709219858156029,
+            "p05": 4.0,
+            "median": 13.0,
+            "p95": 30.0,
+            "max": 48.0
+          },
+          "clipped_point_fraction": {
+            "count": 141,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 141,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 141,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 74,
+            "mean": 261.375,
+            "p05": 72.675,
+            "median": 236.375,
+            "p95": 534.8999999999999,
+            "max": 653.5
+          },
+          "continuous_span_s": {
+            "count": 74,
+            "mean": 261.375,
+            "p05": 72.675,
+            "median": 236.375,
+            "p95": 534.8999999999999,
+            "max": 653.5
+          },
+          "continuous_arc_m": {
+            "count": 74,
+            "mean": 2612.3433327349585,
+            "p05": 676.7770529076316,
+            "median": 2356.5649377689915,
+            "p95": 5332.898173896999,
+            "max": 6543.776990599509
+          },
+          "speed_mean_mps": {
+            "count": 74,
+            "mean": 9.922462120178722,
+            "p05": 7.689775415197734,
+            "median": 9.861902341051373,
+            "p95": 12.264712218116841,
+            "max": 13.318471790187337
+          },
+          "speed_p95_mps": {
+            "count": 74,
+            "mean": 14.7438119078369,
+            "p05": 11.761360438144587,
+            "median": 14.07277529220537,
+            "p95": 21.685567553835025,
+            "max": 26.74761848447414
+          },
+          "stopped_fraction": {
+            "count": 74,
+            "mean": 0.03201832497368777,
+            "p05": 0.0,
+            "median": 0.01871801033381868,
+            "p95": 0.09184936350777931,
+            "max": 0.16666666666666666
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 74,
+            "mean": 1.2161941964895746,
+            "p05": 0.8820823925542367,
+            "median": 1.2189477933172155,
+            "p95": 1.6044293991372003,
+            "max": 1.8575532802598766
+          },
+          "unique_grid64_cells": {
+            "count": 74,
+            "mean": 23.41891891891892,
+            "p05": 6.0,
+            "median": 20.5,
+            "p95": 49.0,
+            "max": 65.0
+          },
+          "clipped_point_fraction": {
+            "count": 74,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 74,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 74,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "sumo-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "dde57255a7396c0f44befd25d13698220513c0f3e590967f2721995c139e065b",
+      "eligible_512_by_class": [
+        153,
+        89,
+        216,
+        557,
+        141,
+        57
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 611,
+            "mean": 139.4357610474632,
+            "p05": 49.875,
+            "median": 87.0,
+            "p95": 404.875,
+            "max": 1811.25
+          },
+          "continuous_span_s": {
+            "count": 611,
+            "mean": 139.4357610474632,
+            "p05": 49.875,
+            "median": 87.0,
+            "p95": 404.875,
+            "max": 1811.25
+          },
+          "continuous_arc_m": {
+            "count": 611,
+            "mean": 170.50665304302402,
+            "p05": 63.28791564390072,
+            "median": 105.46376957330497,
+            "p95": 492.5777878009478,
+            "max": 1978.5393801002165
+          },
+          "speed_mean_mps": {
+            "count": 611,
+            "mean": 1.2459810754948217,
+            "p05": 1.0399843216614162,
+            "median": 1.2510476037083167,
+            "p95": 1.4320395387554763,
+            "max": 1.6231994143459012
+          },
+          "speed_p95_mps": {
+            "count": 611,
+            "mean": 1.3751686098654994,
+            "p05": 1.1577702696884273,
+            "median": 1.380702992932431,
+            "p95": 1.575841417794927,
+            "max": 1.7992736728516023
+          },
+          "stopped_fraction": {
+            "count": 611,
+            "mean": 0.00035132735090305793,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.1550632911392405
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 611,
+            "mean": 0.3988213658273643,
+            "p05": 0.32553373099038874,
+            "median": 0.3963387864614894,
+            "p95": 0.48011000071538384,
+            "max": 0.6266832499930933
+          },
+          "unique_grid64_cells": {
+            "count": 611,
+            "mean": 2.6563011456628476,
+            "p05": 1.0,
+            "median": 2.0,
+            "p95": 6.0,
+            "max": 19.0
+          },
+          "clipped_point_fraction": {
+            "count": 611,
+            "mean": 0.003915098026895193,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.7819905213270142
+          },
+          "retained_point_fraction": {
+            "count": 611,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 611,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 111,
+            "mean": 217.1509009009009,
+            "p05": 79.625,
+            "median": 201.0,
+            "p95": 404.625,
+            "max": 448.25
+          },
+          "continuous_span_s": {
+            "count": 111,
+            "mean": 217.1509009009009,
+            "p05": 79.625,
+            "median": 201.0,
+            "p95": 404.625,
+            "max": 448.25
+          },
+          "continuous_arc_m": {
+            "count": 111,
+            "mean": 2406.7817543127726,
+            "p05": 911.7674298382867,
+            "median": 2296.835878431804,
+            "p95": 4235.944694195987,
+            "max": 4544.037062127387
+          },
+          "speed_mean_mps": {
+            "count": 111,
+            "mean": 12.088251712081506,
+            "p05": 7.655603260492441,
+            "median": 10.30428394068613,
+            "p95": 27.609193162143058,
+            "max": 27.68500146599372
+          },
+          "speed_p95_mps": {
+            "count": 111,
+            "mean": 16.519518104017514,
+            "p05": 13.806983002558624,
+            "median": 13.88177118606243,
+            "p95": 27.75563066819499,
+            "max": 27.89304494894718
+          },
+          "stopped_fraction": {
+            "count": 111,
+            "mean": 0.011390538027888385,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.07787375018257625,
+            "max": 0.21987315010570824
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 111,
+            "mean": 0.7834537328348797,
+            "p05": 0.3535677846070876,
+            "median": 0.8107870363777482,
+            "p95": 1.1292314445615692,
+            "max": 1.3322226625119122
+          },
+          "unique_grid64_cells": {
+            "count": 111,
+            "mean": 19.594594594594593,
+            "p05": 6.0,
+            "median": 18.0,
+            "p95": 40.0,
+            "max": 46.0
+          },
+          "clipped_point_fraction": {
+            "count": 111,
+            "mean": 0.0003392513852764899,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.03765690376569038
+          },
+          "retained_point_fraction": {
+            "count": 111,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 111,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 295,
+            "mean": 203.31440677966103,
+            "p05": 70.425,
+            "median": 188.0,
+            "p95": 374.725,
+            "max": 481.5
+          },
+          "continuous_span_s": {
+            "count": 295,
+            "mean": 203.31440677966103,
+            "p05": 70.425,
+            "median": 188.0,
+            "p95": 374.725,
+            "max": 481.5
+          },
+          "continuous_arc_m": {
+            "count": 295,
+            "mean": 2351.9574573055074,
+            "p05": 879.4136993834426,
+            "median": 2228.2185954079505,
+            "p95": 4153.677141741301,
+            "max": 4526.989041645818
+          },
+          "speed_mean_mps": {
+            "count": 295,
+            "mean": 12.224132750161846,
+            "p05": 8.506271676919686,
+            "median": 11.481010722018908,
+            "p95": 18.441150622484955,
+            "max": 39.514059851973975
+          },
+          "speed_p95_mps": {
+            "count": 295,
+            "mean": 16.054537376307085,
+            "p05": 11.516526627854368,
+            "median": 14.20227435237077,
+            "p95": 30.30394578115651,
+            "max": 49.394594729075834
+          },
+          "stopped_fraction": {
+            "count": 295,
+            "mean": 0.01035863626324097,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.07041369767145948,
+            "max": 0.1931166347992352
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 295,
+            "mean": 1.6664723669904595,
+            "p05": 1.171509590633012,
+            "median": 1.602916411628898,
+            "p95": 2.3117133828719205,
+            "max": 3.3301717091610312
+          },
+          "unique_grid64_cells": {
+            "count": 295,
+            "mean": 18.366101694915255,
+            "p05": 6.0,
+            "median": 17.0,
+            "p95": 34.30000000000001,
+            "max": 43.0
+          },
+          "clipped_point_fraction": {
+            "count": 295,
+            "mean": 0.00022407354208560758,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.06610169491525424
+          },
+          "retained_point_fraction": {
+            "count": 295,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 295,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 751,
+            "mean": 207.0356191744341,
+            "p05": 71.875,
+            "median": 190.75,
+            "p95": 392.375,
+            "max": 537.0
+          },
+          "continuous_span_s": {
+            "count": 751,
+            "mean": 207.02862849533955,
+            "p05": 71.875,
+            "median": 190.75,
+            "p95": 392.375,
+            "max": 537.0
+          },
+          "continuous_arc_m": {
+            "count": 751,
+            "mean": 2303.632449480837,
+            "p05": 877.0220518674453,
+            "median": 2215.6015012787375,
+            "p95": 4126.504655402012,
+            "max": 4692.942376137799
+          },
+          "speed_mean_mps": {
+            "count": 751,
+            "mean": 11.884714781955845,
+            "p05": 7.999342367814816,
+            "median": 10.861665691973583,
+            "p95": 20.59068912299152,
+            "max": 34.927903242251965
+          },
+          "speed_p95_mps": {
+            "count": 751,
+            "mean": 15.775922511505588,
+            "p05": 11.67946745226454,
+            "median": 14.128929493999262,
+            "p95": 30.26797346098738,
+            "max": 48.165441990807025
+          },
+          "stopped_fraction": {
+            "count": 751,
+            "mean": 0.008766785518448141,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.06073093573093573,
+            "max": 0.2670299727520436
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 751,
+            "mean": 1.1317463720637808,
+            "p05": 0.6707731822043393,
+            "median": 1.1189201055851354,
+            "p95": 1.6081867050493943,
+            "max": 3.1037534343365487
+          },
+          "unique_grid64_cells": {
+            "count": 751,
+            "mean": 17.768308921438084,
+            "p05": 7.0,
+            "median": 16.0,
+            "p95": 33.0,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 751,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 751,
+            "mean": 0.9999854056803871,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 751,
+            "mean": 0.0013315579227696406,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 141,
+            "mean": 423.0744680851064,
+            "p05": 164.0,
+            "median": 368.5,
+            "p95": 807.0,
+            "max": 924.0
+          },
+          "continuous_span_s": {
+            "count": 141,
+            "mean": 422.65070921985813,
+            "p05": 164.0,
+            "median": 368.5,
+            "p95": 807.0,
+            "max": 924.0
+          },
+          "continuous_arc_m": {
+            "count": 141,
+            "mean": 2157.9362595199023,
+            "p05": 840.1215768469594,
+            "median": 1962.2534366475866,
+            "p95": 4045.3873623716163,
+            "max": 4733.815859961458
+          },
+          "speed_mean_mps": {
+            "count": 141,
+            "mean": 5.147674657010418,
+            "p05": 4.207712733497481,
+            "median": 5.1450462911938315,
+            "p95": 6.105629560546344,
+            "max": 6.844405124800977
+          },
+          "speed_p95_mps": {
+            "count": 141,
+            "mean": 5.591057135207591,
+            "p05": 4.660331688110569,
+            "median": 5.564323157961031,
+            "p95": 6.624335170172261,
+            "max": 7.45290863874672
+          },
+          "stopped_fraction": {
+            "count": 141,
+            "mean": 0.0040677874657081324,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.03594351732991014,
+            "max": 0.08666100254885302
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 141,
+            "mean": 0.35241617756454724,
+            "p05": 0.2512148822926959,
+            "median": 0.3333740031768538,
+            "p95": 0.489033125278899,
+            "max": 0.6006930651011394
+          },
+          "unique_grid64_cells": {
+            "count": 141,
+            "mean": 15.879432624113475,
+            "p05": 7.0,
+            "median": 14.0,
+            "p95": 31.0,
+            "max": 42.0
+          },
+          "clipped_point_fraction": {
+            "count": 141,
+            "mean": 0.0011391747540359701,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.16062364031907178
+          },
+          "retained_point_fraction": {
+            "count": 141,
+            "mean": 0.9985475274541621,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 141,
+            "mean": 0.0070921985815602835,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 74,
+            "mean": 230.05067567567568,
+            "p05": 65.775,
+            "median": 199.125,
+            "p95": 429.29999999999995,
+            "max": 487.0
+          },
+          "continuous_span_s": {
+            "count": 74,
+            "mean": 230.05067567567568,
+            "p05": 65.775,
+            "median": 199.125,
+            "p95": 429.29999999999995,
+            "max": 487.0
+          },
+          "continuous_arc_m": {
+            "count": 74,
+            "mean": 2516.965369051575,
+            "p05": 942.4863092458227,
+            "median": 2354.7084276150563,
+            "p95": 4396.920088696453,
+            "max": 4482.203005605085
+          },
+          "speed_mean_mps": {
+            "count": 74,
+            "mean": 12.39487984886369,
+            "p05": 8.127427881718143,
+            "median": 10.710717757108982,
+            "p95": 27.527064825133685,
+            "max": 38.07835021737808
+          },
+          "speed_p95_mps": {
+            "count": 74,
+            "mean": 16.343955582047496,
+            "p05": 12.714104759089754,
+            "median": 13.934130908656975,
+            "p95": 33.03754002419153,
+            "max": 45.79269975765419
+          },
+          "stopped_fraction": {
+            "count": 74,
+            "mean": 0.00960142380785965,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.061831452685656596,
+            "max": 0.20028818443804033
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 74,
+            "mean": 1.1118122080557231,
+            "p05": 0.6705292664945938,
+            "median": 1.1427578907773321,
+            "p95": 1.5215278635780354,
+            "max": 1.7236364892484268
+          },
+          "unique_grid64_cells": {
+            "count": 74,
+            "mean": 17.87837837837838,
+            "p05": 6.65,
+            "median": 17.0,
+            "p95": 32.0,
+            "max": 37.0
+          },
+          "clipped_point_fraction": {
+            "count": 74,
+            "mean": 0.0003993784219469335,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.02955400322407308
+          },
+          "retained_point_fraction": {
+            "count": 74,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 74,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "train_random_pairs": [
+      {
+        "class": 0,
+        "count": 611,
+        "absolute_log_span_ratio": {
+          "count": 611,
+          "mean": 1.2610723221199538,
+          "p05": 0.10920450711604923,
+          "median": 1.0588719600185952,
+          "p95": 2.937379477170225,
+          "max": 5.635276497603927
+        }
+      },
+      {
+        "class": 1,
+        "count": 111,
+        "absolute_log_span_ratio": {
+          "count": 111,
+          "mean": 1.5099037429462265,
+          "p05": 0.15774076197316722,
+          "median": 1.6375814486945846,
+          "p95": 2.6709719496074,
+          "max": 4.23354893558365
+        }
+      },
+      {
+        "class": 2,
+        "count": 295,
+        "absolute_log_span_ratio": {
+          "count": 295,
+          "mean": 1.1240231109107546,
+          "p05": 0.1147210282009957,
+          "median": 1.057604264940733,
+          "p95": 2.3721586115180124,
+          "max": 3.3595401872148343
+        }
+      },
+      {
+        "class": 3,
+        "count": 751,
+        "absolute_log_span_ratio": {
+          "count": 751,
+          "mean": 1.2496083785622452,
+          "p05": 0.14452737813187655,
+          "median": 1.203972804325936,
+          "p95": 2.5096020485388495,
+          "max": 3.706432821694837
+        }
+      },
+      {
+        "class": 4,
+        "count": 141,
+        "absolute_log_span_ratio": {
+          "count": 141,
+          "mean": 0.666251158887329,
+          "p05": 0.06400532997591224,
+          "median": 0.47831695649415984,
+          "p95": 1.8961542677659224,
+          "max": 2.832066774085394
+        }
+      },
+      {
+        "class": 5,
+        "count": 74,
+        "absolute_log_span_ratio": {
+          "count": 74,
+          "mean": 0.7153352496725527,
+          "p05": 0.021503404847865906,
+          "median": 0.5860332418586736,
+          "p95": 1.5876451911598997,
+          "max": 2.8202835960477985
+        }
+      }
+    ],
+    "cnr-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "c8adeb7108acd75705994d6762a0382361441c42e95f18c52bc7b28d461a0142",
+      "eligible_512_by_class": [
+        6,
+        14,
+        31,
+        93,
+        16,
+        4
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 70,
+            "mean": 222.29285714285714,
+            "p05": 20.375,
+            "median": 101.125,
+            "p95": 817.8499999999999,
+            "max": 1064.0
+          },
+          "continuous_span_s": {
+            "count": 70,
+            "mean": 53.35,
+            "p05": 8.25,
+            "median": 38.25,
+            "p95": 154.95,
+            "max": 291.5
+          },
+          "continuous_arc_m": {
+            "count": 70,
+            "mean": 59.60309378212729,
+            "p05": 11.270712973400308,
+            "median": 36.51291547852598,
+            "p95": 177.0671273550945,
+            "max": 380.1693528229709
+          },
+          "speed_mean_mps": {
+            "count": 70,
+            "mean": 1.2019782205250256,
+            "p05": 0.5767184968723775,
+            "median": 1.1746830072888232,
+            "p95": 1.8151924821040333,
+            "max": 1.8940121618866865
+          },
+          "speed_p95_mps": {
+            "count": 70,
+            "mean": 1.576693074473681,
+            "p05": 0.9037553375294755,
+            "median": 1.6143041408104128,
+            "p95": 2.1558663490028382,
+            "max": 2.68923781023707
+          },
+          "stopped_fraction": {
+            "count": 70,
+            "mean": 0.09492952577216714,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.5576539894308238,
+            "max": 0.6987951807228916
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 70,
+            "mean": 0.702197888638918,
+            "p05": 0.33390197553872747,
+            "median": 0.6565345401251916,
+            "p95": 1.2515107145425701,
+            "max": 1.7170865808423363
+          },
+          "unique_grid64_cells": {
+            "count": 70,
+            "mean": 1.5571428571428572,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 3.0,
+            "max": 5.0
+          },
+          "clipped_point_fraction": {
+            "count": 70,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 70,
+            "mean": 0.6592291658641869,
+            "p05": 0.31290541622212836,
+            "median": 0.6467438573602957,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 70,
+            "mean": 2.9285714285714284,
+            "p05": 0.0,
+            "median": 2.0,
+            "p95": 8.549999999999997,
+            "max": 11.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 14,
+            "mean": 957.9642857142857,
+            "p05": 385.0,
+            "median": 718.5,
+            "p95": 1742.0999999999997,
+            "max": 2282.25
+          },
+          "continuous_span_s": {
+            "count": 14,
+            "mean": 957.9642857142857,
+            "p05": 385.0,
+            "median": 718.5,
+            "p95": 1742.0999999999997,
+            "max": 2282.25
+          },
+          "continuous_arc_m": {
+            "count": 14,
+            "mean": 5465.32481176362,
+            "p05": 2575.0753950251647,
+            "median": 4995.604433354889,
+            "p95": 9304.221410979875,
+            "max": 13928.17488042977
+          },
+          "speed_mean_mps": {
+            "count": 14,
+            "mean": 6.179552552386525,
+            "p05": 3.869241895517118,
+            "median": 5.575247923491263,
+            "p95": 9.735923130351528,
+            "max": 10.176230557317327
+          },
+          "speed_p95_mps": {
+            "count": 14,
+            "mean": 13.364659477190198,
+            "p05": 11.283212482314838,
+            "median": 13.609537769818543,
+            "p95": 15.29160439378174,
+            "max": 15.763908144873547
+          },
+          "stopped_fraction": {
+            "count": 14,
+            "mean": 0.35724275519165616,
+            "p05": 0.1355183385485618,
+            "median": 0.4040138587852483,
+            "p95": 0.4830268399208884,
+            "max": 0.4905482041587902
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 14,
+            "mean": 0.5584796600203809,
+            "p05": 0.3849495851545639,
+            "median": 0.567264552394036,
+            "p95": 0.6729256605384069,
+            "max": 0.6920428851787928
+          },
+          "unique_grid64_cells": {
+            "count": 14,
+            "mean": 48.42857142857143,
+            "p05": 20.05,
+            "median": 43.5,
+            "p95": 84.44999999999996,
+            "max": 141.0
+          },
+          "clipped_point_fraction": {
+            "count": 14,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 14,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 14,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 37,
+            "mean": 481.1756756756757,
+            "p05": 42.5,
+            "median": 413.5,
+            "p95": 1132.0999999999995,
+            "max": 1315.5
+          },
+          "continuous_span_s": {
+            "count": 37,
+            "mean": 481.1756756756757,
+            "p05": 42.5,
+            "median": 413.5,
+            "p95": 1132.0999999999995,
+            "max": 1315.5
+          },
+          "continuous_arc_m": {
+            "count": 37,
+            "mean": 3289.7757556981674,
+            "p05": 357.45729033838046,
+            "median": 2924.011962831849,
+            "p95": 6897.736105192155,
+            "max": 10106.473524328143
+          },
+          "speed_mean_mps": {
+            "count": 37,
+            "mean": 8.530427758977853,
+            "p05": 2.3917958850159797,
+            "median": 9.42455366751949,
+            "p95": 12.486921648728053,
+            "max": 13.186074240504391
+          },
+          "speed_p95_mps": {
+            "count": 37,
+            "mean": 14.813647397993316,
+            "p05": 12.284161032081062,
+            "median": 14.058221793669926,
+            "p95": 20.178460868416447,
+            "max": 22.525796270102752
+          },
+          "stopped_fraction": {
+            "count": 37,
+            "mean": 0.2298381575457645,
+            "p05": 0.0,
+            "median": 0.08695652173913043,
+            "p95": 0.7772582609173846,
+            "max": 0.8790884718498659
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 37,
+            "mean": 1.7918340766578222,
+            "p05": 0.4976454797901336,
+            "median": 1.9502691845200673,
+            "p95": 2.6345824049574804,
+            "max": 3.2962147389231906
+          },
+          "unique_grid64_cells": {
+            "count": 37,
+            "mean": 31.27027027027027,
+            "p05": 3.0,
+            "median": 26.0,
+            "p95": 65.79999999999993,
+            "max": 97.0
+          },
+          "clipped_point_fraction": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 37,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 109,
+            "mean": 637.0183486238532,
+            "p05": 55.50000000000001,
+            "median": 581.5,
+            "p95": 1388.4999999999998,
+            "max": 1505.5
+          },
+          "continuous_span_s": {
+            "count": 109,
+            "mean": 619.3073394495412,
+            "p05": 55.50000000000001,
+            "median": 575.75,
+            "p95": 1359.6999999999998,
+            "max": 1505.5
+          },
+          "continuous_arc_m": {
+            "count": 109,
+            "mean": 6110.898148193656,
+            "p05": 645.8525271234088,
+            "median": 6631.5711688351485,
+            "p95": 10423.802926899505,
+            "max": 11452.48650157674
+          },
+          "speed_mean_mps": {
+            "count": 109,
+            "mean": 11.041937586441335,
+            "p05": 5.8783110632441735,
+            "median": 11.787172073718915,
+            "p95": 14.973604933111988,
+            "max": 16.59670819854322
+          },
+          "speed_p95_mps": {
+            "count": 109,
+            "mean": 17.354425435364018,
+            "p05": 11.815090452529224,
+            "median": 14.667973234353397,
+            "p95": 28.286978917504552,
+            "max": 33.14424230510775
+          },
+          "stopped_fraction": {
+            "count": 109,
+            "mean": 0.11235797017064639,
+            "p05": 0.0,
+            "median": 0.02394567548248749,
+            "p95": 0.5287197038114901,
+            "max": 0.6255396878113584
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 109,
+            "mean": 0.8401815046871411,
+            "p05": 0.4733972342186955,
+            "median": 0.8166101630532546,
+            "p95": 1.4305262280194013,
+            "max": 1.6446523070594017
+          },
+          "unique_grid64_cells": {
+            "count": 109,
+            "mean": 55.678899082568805,
+            "p05": 6.0,
+            "median": 60.0,
+            "p95": 93.6,
+            "max": 103.0
+          },
+          "clipped_point_fraction": {
+            "count": 109,
+            "mean": 3.6076727985078666e-06,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.00039323633503735744
+          },
+          "retained_point_fraction": {
+            "count": 109,
+            "mean": 0.9824138339588254,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 109,
+            "mean": 0.05504587155963303,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 2.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 18,
+            "mean": 330.7638888888889,
+            "p05": 120.9875,
+            "median": 318.625,
+            "p95": 579.9499999999998,
+            "max": 663.25
+          },
+          "continuous_span_s": {
+            "count": 18,
+            "mean": 330.7638888888889,
+            "p05": 120.9875,
+            "median": 318.625,
+            "p95": 579.9499999999998,
+            "max": 663.25
+          },
+          "continuous_arc_m": {
+            "count": 18,
+            "mean": 1560.188890743676,
+            "p05": 479.46788631594984,
+            "median": 1444.0532064205554,
+            "p95": 2566.250952659283,
+            "max": 3791.2067399582165
+          },
+          "speed_mean_mps": {
+            "count": 18,
+            "mean": 4.743559640801434,
+            "p05": 3.937390884724418,
+            "median": 4.674141235393247,
+            "p95": 6.0062921247723375,
+            "max": 6.149617391297805
+          },
+          "speed_p95_mps": {
+            "count": 18,
+            "mean": 5.320685024092454,
+            "p05": 4.210062732225148,
+            "median": 5.395040672424416,
+            "p95": 6.939288124106448,
+            "max": 6.954365432627812
+          },
+          "stopped_fraction": {
+            "count": 18,
+            "mean": 0.017286771628559038,
+            "p05": 0.0,
+            "median": 0.008996929479021473,
+            "p95": 0.08526243917898621,
+            "max": 0.09192439862542956
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 18,
+            "mean": 0.910424776736459,
+            "p05": 0.5943104159632782,
+            "median": 0.8816458725798633,
+            "p95": 1.2656587792465335,
+            "max": 1.4407066988855586
+          },
+          "unique_grid64_cells": {
+            "count": 18,
+            "mean": 14.944444444444445,
+            "p05": 4.85,
+            "median": 15.0,
+            "p95": 24.649999999999984,
+            "max": 34.0
+          },
+          "clipped_point_fraction": {
+            "count": 18,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 18,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 18,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 9,
+            "mean": 172.75,
+            "p05": 37.05,
+            "median": 118.0,
+            "p95": 415.09999999999997,
+            "max": 456.0
+          },
+          "continuous_span_s": {
+            "count": 9,
+            "mean": 172.75,
+            "p05": 37.05,
+            "median": 118.0,
+            "p95": 415.09999999999997,
+            "max": 456.0
+          },
+          "continuous_arc_m": {
+            "count": 9,
+            "mean": 1516.620514900108,
+            "p05": 295.6548359321998,
+            "median": 1032.3317292176755,
+            "p95": 3833.647484963969,
+            "max": 4179.448798765552
+          },
+          "speed_mean_mps": {
+            "count": 9,
+            "mean": 8.345203616649039,
+            "p05": 5.881603842196096,
+            "median": 8.748573976420978,
+            "p95": 9.685814337013564,
+            "max": 9.895776753893568
+          },
+          "speed_p95_mps": {
+            "count": 9,
+            "mean": 13.934423727960226,
+            "p05": 11.840582815580099,
+            "median": 14.450803647347646,
+            "p95": 15.965352722599608,
+            "max": 16.021280687930776
+          },
+          "stopped_fraction": {
+            "count": 9,
+            "mean": 0.05623208441050066,
+            "p05": 0.0,
+            "median": 0.0625,
+            "p95": 0.1483694733877781,
+            "max": 0.15671641791044777
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 9,
+            "mean": 1.291615731899766,
+            "p05": 0.9593206735658647,
+            "median": 1.208639707654182,
+            "p95": 1.6037199753169809,
+            "max": 1.640158638063672
+          },
+          "unique_grid64_cells": {
+            "count": 9,
+            "mean": 14.88888888888889,
+            "p05": 3.2,
+            "median": 10.0,
+            "p95": 39.0,
+            "max": 43.0
+          },
+          "clipped_point_fraction": {
+            "count": 9,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 9,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 9,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "sumo-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "e7cd3a686d43634fb0338bb2c188e5194bf96b1d11295c450bbdb6b4d8c7ecb4",
+      "eligible_512_by_class": [
+        15,
+        13,
+        30,
+        78,
+        18,
+        8
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 70,
+            "mean": 116.37142857142857,
+            "p05": 49.725,
+            "median": 86.125,
+            "p95": 294.2125,
+            "max": 601.25
+          },
+          "continuous_span_s": {
+            "count": 70,
+            "mean": 116.37142857142857,
+            "p05": 49.725,
+            "median": 86.125,
+            "p95": 294.2125,
+            "max": 601.25
+          },
+          "continuous_arc_m": {
+            "count": 70,
+            "mean": 143.01034475498355,
+            "p05": 63.392672644561486,
+            "median": 108.6050694571862,
+            "p95": 396.9205050435968,
+            "max": 646.4690774377133
+          },
+          "speed_mean_mps": {
+            "count": 70,
+            "mean": 1.2439741259298314,
+            "p05": 1.017209013673867,
+            "median": 1.226819044889003,
+            "p95": 1.507750322977192,
+            "max": 1.6196936769519943
+          },
+          "speed_p95_mps": {
+            "count": 70,
+            "mean": 1.375616729064785,
+            "p05": 1.149529391836944,
+            "median": 1.3606892094797276,
+            "p95": 1.6679627930847396,
+            "max": 1.7754599971761404
+          },
+          "stopped_fraction": {
+            "count": 70,
+            "mean": 0.0003986739676284185,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.002765804597701147,
+            "max": 0.008771929824561403
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 70,
+            "mean": 0.41050438005919626,
+            "p05": 0.3299532956048641,
+            "median": 0.40511941928783646,
+            "p95": 0.483176689798979,
+            "max": 0.7449963405331305
+          },
+          "unique_grid64_cells": {
+            "count": 70,
+            "mean": 2.3142857142857145,
+            "p05": 1.0,
+            "median": 2.0,
+            "p95": 4.549999999999997,
+            "max": 9.0
+          },
+          "clipped_point_fraction": {
+            "count": 70,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 70,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 70,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 14,
+            "mean": 250.76785714285714,
+            "p05": 111.125,
+            "median": 243.375,
+            "p95": 423.61249999999995,
+            "max": 564.5
+          },
+          "continuous_span_s": {
+            "count": 14,
+            "mean": 250.76785714285714,
+            "p05": 111.125,
+            "median": 243.375,
+            "p95": 423.61249999999995,
+            "max": 564.5
+          },
+          "continuous_arc_m": {
+            "count": 14,
+            "mean": 2842.2654114258453,
+            "p05": 1157.7458607938636,
+            "median": 2925.200764084575,
+            "p95": 4100.294595700061,
+            "max": 4215.849362992121
+          },
+          "speed_mean_mps": {
+            "count": 14,
+            "mean": 12.905123401138562,
+            "p05": 6.762173295783259,
+            "median": 11.776566969467677,
+            "p95": 27.62613210909554,
+            "max": 27.65803286251653
+          },
+          "speed_p95_mps": {
+            "count": 14,
+            "mean": 15.87160341371717,
+            "p05": 13.811857369454748,
+            "median": 13.8856724117638,
+            "p95": 27.79929285649352,
+            "max": 27.817008757146063
+          },
+          "stopped_fraction": {
+            "count": 14,
+            "mean": 5.554321261941791e-05,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0002721617418351475,
+            "max": 0.0007776049766718507
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 14,
+            "mean": 0.6888598719804551,
+            "p05": 0.3481194953568106,
+            "median": 0.6715880474140661,
+            "p95": 1.0171156522298685,
+            "max": 1.0439552388814364
+          },
+          "unique_grid64_cells": {
+            "count": 14,
+            "mean": 24.142857142857142,
+            "p05": 11.0,
+            "median": 20.0,
+            "p95": 42.4,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 14,
+            "mean": 0.0033855033855033855,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.016588966588966574,
+            "max": 0.0473970473970474
+          },
+          "retained_point_fraction": {
+            "count": 14,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 14,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 37,
+            "mean": 222.27702702702703,
+            "p05": 72.0,
+            "median": 208.0,
+            "p95": 360.8499999999995,
+            "max": 507.0
+          },
+          "continuous_span_s": {
+            "count": 37,
+            "mean": 222.27702702702703,
+            "p05": 72.0,
+            "median": 208.0,
+            "p95": 360.8499999999995,
+            "max": 507.0
+          },
+          "continuous_arc_m": {
+            "count": 37,
+            "mean": 2535.3502751141014,
+            "p05": 1064.2012483585552,
+            "median": 2300.1084195299745,
+            "p95": 4177.140304545984,
+            "max": 4346.006897036988
+          },
+          "speed_mean_mps": {
+            "count": 37,
+            "mean": 12.163363799962708,
+            "p05": 8.527812611257957,
+            "median": 11.391469107594066,
+            "p95": 18.53325294558802,
+            "max": 27.3434347598565
+          },
+          "speed_p95_mps": {
+            "count": 37,
+            "mean": 15.400925795726671,
+            "p05": 11.651631442904497,
+            "median": 14.190665771478802,
+            "p95": 26.70054280081945,
+            "max": 35.58748701441148
+          },
+          "stopped_fraction": {
+            "count": 37,
+            "mean": 0.010989810748542826,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.05909897537189037,
+            "max": 0.13863636363636364
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 37,
+            "mean": 1.5747346379935356,
+            "p05": 1.1928118629865898,
+            "median": 1.5379543509401619,
+            "p95": 1.9566870981957998,
+            "max": 2.2387486790359015
+          },
+          "unique_grid64_cells": {
+            "count": 37,
+            "mean": 18.972972972972972,
+            "p05": 6.8,
+            "median": 17.0,
+            "p95": 33.199999999999996,
+            "max": 43.0
+          },
+          "clipped_point_fraction": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 37,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 109,
+            "mean": 216.13532110091742,
+            "p05": 64.05000000000001,
+            "median": 200.25,
+            "p95": 399.84999999999997,
+            "max": 515.0
+          },
+          "continuous_span_s": {
+            "count": 109,
+            "mean": 216.13532110091742,
+            "p05": 64.05000000000001,
+            "median": 200.25,
+            "p95": 399.84999999999997,
+            "max": 515.0
+          },
+          "continuous_arc_m": {
+            "count": 109,
+            "mean": 2383.378290123423,
+            "p05": 885.6919007361369,
+            "median": 2149.861379177715,
+            "p95": 4164.408558459702,
+            "max": 4371.292396850741
+          },
+          "speed_mean_mps": {
+            "count": 109,
+            "mean": 12.495247208897428,
+            "p05": 7.895790733903399,
+            "median": 10.752319576452534,
+            "p95": 27.823064524896374,
+            "max": 34.378338590465276
+          },
+          "speed_p95_mps": {
+            "count": 109,
+            "mean": 16.589091592149597,
+            "p05": 11.558048838002493,
+            "median": 14.27950725314351,
+            "p95": 34.75067215568134,
+            "max": 46.8551617997281
+          },
+          "stopped_fraction": {
+            "count": 109,
+            "mean": 0.008100388106700275,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.04862606843990796,
+            "max": 0.13702928870292888
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 109,
+            "mean": 1.1715080268458906,
+            "p05": 0.7502514695446786,
+            "median": 1.1635997655250534,
+            "p95": 1.6374610406023076,
+            "max": 2.1802742707257656
+          },
+          "unique_grid64_cells": {
+            "count": 109,
+            "mean": 18.357798165137616,
+            "p05": 7.0,
+            "median": 17.0,
+            "p95": 34.0,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 109,
+            "mean": 0.0003641555038911501,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.03871829105473965
+          },
+          "retained_point_fraction": {
+            "count": 109,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 109,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 18,
+            "mean": 410.7083333333333,
+            "p05": 182.375,
+            "median": 397.75,
+            "p95": 724.5,
+            "max": 750.0
+          },
+          "continuous_span_s": {
+            "count": 18,
+            "mean": 397.18055555555554,
+            "p05": 182.375,
+            "median": 330.875,
+            "p95": 724.5,
+            "max": 750.0
+          },
+          "continuous_arc_m": {
+            "count": 18,
+            "mean": 2042.9111020778644,
+            "p05": 800.552021884981,
+            "median": 1777.891286426653,
+            "p95": 3736.3795927419815,
+            "max": 4179.448409031616
+          },
+          "speed_mean_mps": {
+            "count": 18,
+            "mean": 5.168019191985825,
+            "p05": 4.135255282368928,
+            "median": 5.095795025439429,
+            "p95": 6.304969114955173,
+            "max": 6.393972856230143
+          },
+          "speed_p95_mps": {
+            "count": 18,
+            "mean": 5.609400749175183,
+            "p05": 4.838457376243269,
+            "median": 5.575052652044725,
+            "p95": 6.624498566394847,
+            "max": 6.797301699506551
+          },
+          "stopped_fraction": {
+            "count": 18,
+            "mean": 0.005051137781629498,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.029321291448516543,
+            "max": 0.051919720767888304
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 18,
+            "mean": 0.35042106306353754,
+            "p05": 0.21764645410392644,
+            "median": 0.34060676549440394,
+            "p95": 0.4876814876765373,
+            "max": 0.6419902903613977
+          },
+          "unique_grid64_cells": {
+            "count": 18,
+            "mean": 15.88888888888889,
+            "p05": 7.4,
+            "median": 16.0,
+            "p95": 29.449999999999996,
+            "max": 32.0
+          },
+          "clipped_point_fraction": {
+            "count": 18,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 18,
+            "mean": 0.976605658836528,
+            "p05": 0.9368352788586252,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 18,
+            "mean": 0.05555555555555555,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.14999999999999858,
+            "max": 1.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 9,
+            "mean": 188.83333333333334,
+            "p05": 119.55,
+            "median": 160.5,
+            "p95": 323.9,
+            "max": 369.5
+          },
+          "continuous_span_s": {
+            "count": 9,
+            "mean": 188.83333333333334,
+            "p05": 119.55,
+            "median": 160.5,
+            "p95": 323.9,
+            "max": 369.5
+          },
+          "continuous_arc_m": {
+            "count": 9,
+            "mean": 2155.2426013512427,
+            "p05": 1175.1621692448548,
+            "median": 1501.064789460769,
+            "p95": 3995.575847474384,
+            "max": 4319.887927956966
+          },
+          "speed_mean_mps": {
+            "count": 9,
+            "mean": 12.331184865012242,
+            "p05": 7.658004774064437,
+            "median": 9.49690859743034,
+            "p95": 25.394276081308174,
+            "max": 33.487503317495865
+          },
+          "speed_p95_mps": {
+            "count": 9,
+            "mean": 17.59479128693422,
+            "p05": 12.446705692236828,
+            "median": 14.294742828721775,
+            "p95": 34.864716436900395,
+            "max": 47.557063184090424
+          },
+          "stopped_fraction": {
+            "count": 9,
+            "mean": 0.017316620431811983,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.09232815658092484,
+            "max": 0.1526479750778816
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 9,
+            "mean": 1.2638740274914428,
+            "p05": 0.842200623174111,
+            "median": 1.2928369084555413,
+            "p95": 1.732161395512791,
+            "max": 1.8369594654719523
+          },
+          "unique_grid64_cells": {
+            "count": 9,
+            "mean": 17.555555555555557,
+            "p05": 7.8,
+            "median": 13.0,
+            "p95": 33.8,
+            "max": 37.0
+          },
+          "clipped_point_fraction": {
+            "count": 9,
+            "mean": 0.010084033613445377,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.05445378151260501,
+            "max": 0.0907563025210084
+          },
+          "retained_point_fraction": {
+            "count": 9,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 9,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "val_random_pairs": [
+      {
+        "class": 0,
+        "count": 70,
+        "absolute_log_span_ratio": {
+          "count": 70,
+          "mean": 1.1773665726501803,
+          "p05": 0.13301157544574518,
+          "median": 1.0599553135513011,
+          "p95": 2.707577529882625,
+          "max": 3.796321135975587
+        }
+      },
+      {
+        "class": 1,
+        "count": 14,
+        "absolute_log_span_ratio": {
+          "count": 14,
+          "mean": 1.3370776293146596,
+          "p05": 0.14023496296901236,
+          "median": 1.4150955489451662,
+          "p95": 2.500415658329943,
+          "max": 2.7579089609920855
+        }
+      },
+      {
+        "class": 2,
+        "count": 37,
+        "absolute_log_span_ratio": {
+          "count": 37,
+          "mean": 1.12826081884266,
+          "p05": 0.16975375309573143,
+          "median": 1.0137688036512165,
+          "p95": 2.405558343340559,
+          "max": 2.697651493881312
+        }
+      },
+      {
+        "class": 3,
+        "count": 109,
+        "absolute_log_span_ratio": {
+          "count": 109,
+          "mean": 1.3148882576691587,
+          "p05": 0.17054643583438925,
+          "median": 1.2737773960496517,
+          "p95": 2.720127850177669,
+          "max": 3.4965075614664802
+        }
+      },
+      {
+        "class": 4,
+        "count": 18,
+        "absolute_log_span_ratio": {
+          "count": 18,
+          "mean": 0.6430478376791724,
+          "p05": 0.06927958781063169,
+          "median": 0.5827445185796707,
+          "p95": 1.549417785307993,
+          "max": 1.6683940795672196
+        }
+      },
+      {
+        "class": 5,
+        "count": 9,
+        "absolute_log_span_ratio": {
+          "count": 9,
+          "mean": 0.6232359127283873,
+          "p05": 0.08071229216285564,
+          "median": 0.39042723074362407,
+          "p95": 1.5305069271191545,
+          "max": 1.6509869153469725
+        }
+      }
+    ]
+  },
+  "duration_matched": {
+    "sumo-duration-train": {
+      "rows": 1983,
+      "class_counts": [
+        611,
+        111,
+        295,
+        751,
+        141,
+        74
+      ],
+      "sha256": "d3559d3a30466dc7e9bedca299b0a60163ca6fc7bb2cd511c7ff072723a497b4",
+      "eligible_512_by_class": [
+        82,
+        107,
+        268,
+        557,
+        141,
+        63
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 611,
+            "mean": 94.43739770867431,
+            "p05": 49.5,
+            "median": 73.75,
+            "p95": 243.25,
+            "max": 580.25
+          },
+          "continuous_span_s": {
+            "count": 611,
+            "mean": 94.43739770867431,
+            "p05": 49.5,
+            "median": 73.75,
+            "p95": 243.25,
+            "max": 580.25
+          },
+          "continuous_arc_m": {
+            "count": 611,
+            "mean": 116.05085680946499,
+            "p05": 62.83585611983597,
+            "median": 91.00171019677887,
+            "p95": 307.6858927380473,
+            "max": 673.5570094263928
+          },
+          "speed_mean_mps": {
+            "count": 611,
+            "mean": 1.2482132471809322,
+            "p05": 1.0441255852529987,
+            "median": 1.2528689834829094,
+            "p95": 1.4304254173130655,
+            "max": 1.6231994143459012
+          },
+          "speed_p95_mps": {
+            "count": 611,
+            "mean": 1.3772251955902082,
+            "p05": 1.1644530286600276,
+            "median": 1.3820010416681425,
+            "p95": 1.5716969534359833,
+            "max": 1.7992736728516023
+          },
+          "stopped_fraction": {
+            "count": 611,
+            "mean": 0.0003624959335900501,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.1550632911392405
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 611,
+            "mean": 0.40053347154114854,
+            "p05": 0.3295628385185847,
+            "median": 0.39754662442471744,
+            "p95": 0.4813569525128165,
+            "max": 0.6266832499930933
+          },
+          "unique_grid64_cells": {
+            "count": 611,
+            "mean": 2.155482815057283,
+            "p05": 1.0,
+            "median": 2.0,
+            "p95": 4.0,
+            "max": 7.0
+          },
+          "clipped_point_fraction": {
+            "count": 611,
+            "mean": 0.004591297527282824,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.7819905213270142
+          },
+          "retained_point_fraction": {
+            "count": 611,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 611,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 111,
+            "mean": 374.19144144144144,
+            "p05": 273.125,
+            "median": 382.0,
+            "p95": 455.625,
+            "max": 511.0
+          },
+          "continuous_span_s": {
+            "count": 111,
+            "mean": 374.19144144144144,
+            "p05": 273.125,
+            "median": 382.0,
+            "p95": 455.625,
+            "max": 511.0
+          },
+          "continuous_arc_m": {
+            "count": 111,
+            "mean": 3655.967343783242,
+            "p05": 2155.731480278335,
+            "median": 3793.631668965245,
+            "p95": 4474.040137443901,
+            "max": 4782.272433696797
+          },
+          "speed_mean_mps": {
+            "count": 111,
+            "mean": 10.246240422133567,
+            "p05": 7.462687922170922,
+            "median": 9.754804783421397,
+            "p95": 12.759399399216829,
+            "max": 27.592802534601724
+          },
+          "speed_p95_mps": {
+            "count": 111,
+            "mean": 14.504192129375273,
+            "p05": 13.811151379663736,
+            "median": 13.876817605604092,
+            "p95": 16.780691439611648,
+            "max": 27.811747527539325
+          },
+          "stopped_fraction": {
+            "count": 111,
+            "mean": 0.012229652326832501,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.06543704681711844,
+            "max": 0.11177644710578842
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 111,
+            "mean": 0.838723618131031,
+            "p05": 0.4775914853696708,
+            "median": 0.8710305784190054,
+            "p95": 1.0775707480273464,
+            "max": 1.1131030761313363
+          },
+          "unique_grid64_cells": {
+            "count": 111,
+            "mean": 25.153153153153152,
+            "p05": 16.0,
+            "median": 24.0,
+            "p95": 39.0,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 111,
+            "mean": 0.0003392513852764899,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.03765690376569038
+          },
+          "retained_point_fraction": {
+            "count": 111,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 111,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 295,
+            "mean": 286.821186440678,
+            "p05": 87.80000000000001,
+            "median": 301.25,
+            "p95": 408.07500000000005,
+            "max": 481.5
+          },
+          "continuous_span_s": {
+            "count": 295,
+            "mean": 286.79237288135596,
+            "p05": 87.80000000000001,
+            "median": 301.25,
+            "p95": 408.07500000000005,
+            "max": 481.5
+          },
+          "continuous_arc_m": {
+            "count": 295,
+            "mean": 3203.2282376008675,
+            "p05": 1204.8434950912315,
+            "median": 3437.9796320925907,
+            "p95": 4392.725772632472,
+            "max": 4526.989041645818
+          },
+          "speed_mean_mps": {
+            "count": 295,
+            "mean": 11.822047400913291,
+            "p05": 8.539183182224981,
+            "median": 11.104480618587857,
+            "p95": 15.233474840622605,
+            "max": 42.57057630736379
+          },
+          "speed_p95_mps": {
+            "count": 295,
+            "mean": 15.066943098638312,
+            "p05": 11.541806925447123,
+            "median": 13.749805866570046,
+            "p95": 26.277715322418487,
+            "max": 51.95649090681859
+          },
+          "stopped_fraction": {
+            "count": 295,
+            "mean": 0.011882715150584401,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.06950806606169938,
+            "max": 0.14650283553875237
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 295,
+            "mean": 1.639630725077656,
+            "p05": 1.2195376861324365,
+            "median": 1.615708122593937,
+            "p95": 2.1801846384052674,
+            "max": 2.802199355327106
+          },
+          "unique_grid64_cells": {
+            "count": 295,
+            "mean": 22.776271186440677,
+            "p05": 9.700000000000001,
+            "median": 23.0,
+            "p95": 37.0,
+            "max": 48.0
+          },
+          "clipped_point_fraction": {
+            "count": 295,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 295,
+            "mean": 0.9998016278187812,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 295,
+            "mean": 0.003389830508474576,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 751,
+            "mean": 207.0356191744341,
+            "p05": 71.875,
+            "median": 190.75,
+            "p95": 392.375,
+            "max": 537.0
+          },
+          "continuous_span_s": {
+            "count": 751,
+            "mean": 207.02862849533955,
+            "p05": 71.875,
+            "median": 190.75,
+            "p95": 392.375,
+            "max": 537.0
+          },
+          "continuous_arc_m": {
+            "count": 751,
+            "mean": 2303.632449480837,
+            "p05": 877.0220518674453,
+            "median": 2215.6015012787375,
+            "p95": 4126.504655402012,
+            "max": 4692.942376137799
+          },
+          "speed_mean_mps": {
+            "count": 751,
+            "mean": 11.884714781955845,
+            "p05": 7.999342367814816,
+            "median": 10.861665691973583,
+            "p95": 20.59068912299152,
+            "max": 34.927903242251965
+          },
+          "speed_p95_mps": {
+            "count": 751,
+            "mean": 15.77592251150559,
+            "p05": 11.67946745226454,
+            "median": 14.128929493999262,
+            "p95": 30.26797346098738,
+            "max": 48.165441990807025
+          },
+          "stopped_fraction": {
+            "count": 751,
+            "mean": 0.008766785518448141,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.06073093573093573,
+            "max": 0.2670299727520436
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 751,
+            "mean": 1.1317463720637808,
+            "p05": 0.6707731822043393,
+            "median": 1.1189201055851354,
+            "p95": 1.6081867050493943,
+            "max": 3.1037534343365487
+          },
+          "unique_grid64_cells": {
+            "count": 751,
+            "mean": 17.768308921438084,
+            "p05": 7.0,
+            "median": 16.0,
+            "p95": 33.0,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 751,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 751,
+            "mean": 0.9999854056803871,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 751,
+            "mean": 0.0013315579227696406,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 1.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 141,
+            "mean": 359.1968085106383,
+            "p05": 144.0,
+            "median": 321.5,
+            "p95": 733.25,
+            "max": 969.0
+          },
+          "continuous_span_s": {
+            "count": 141,
+            "mean": 356.4468085106383,
+            "p05": 144.0,
+            "median": 315.5,
+            "p95": 733.25,
+            "max": 969.0
+          },
+          "continuous_arc_m": {
+            "count": 141,
+            "mean": 1839.5320736688445,
+            "p05": 779.8330680998974,
+            "median": 1634.3240906194096,
+            "p95": 3909.3376649063694,
+            "max": 4384.4665880006505
+          },
+          "speed_mean_mps": {
+            "count": 141,
+            "mean": 5.2368693594262385,
+            "p05": 4.239857504406509,
+            "median": 5.2134973944654535,
+            "p95": 6.03631350169546,
+            "max": 6.746888855675641
+          },
+          "speed_p95_mps": {
+            "count": 141,
+            "mean": 5.6802462490316135,
+            "p05": 4.802602164987874,
+            "median": 5.647595521187374,
+            "p95": 6.633813493713,
+            "max": 6.884191586205785
+          },
+          "stopped_fraction": {
+            "count": 141,
+            "mean": 0.002236465211236547,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.02014846235418876,
+            "max": 0.045304777594728174
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 141,
+            "mean": 0.35552251232378523,
+            "p05": 0.2536263521096882,
+            "median": 0.3440795009374009,
+            "p95": 0.5093003643279106,
+            "max": 0.6688034851910208
+          },
+          "unique_grid64_cells": {
+            "count": 141,
+            "mean": 14.049645390070921,
+            "p05": 6.0,
+            "median": 12.0,
+            "p95": 29.0,
+            "max": 35.0
+          },
+          "clipped_point_fraction": {
+            "count": 141,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 141,
+            "mean": 0.9934513360660859,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 141,
+            "mean": 0.02127659574468085,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 2.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 74,
+            "mean": 252.4189189189189,
+            "p05": 73.8125,
+            "median": 236.5,
+            "p95": 465.525,
+            "max": 509.5
+          },
+          "continuous_span_s": {
+            "count": 74,
+            "mean": 252.4189189189189,
+            "p05": 73.8125,
+            "median": 236.5,
+            "p95": 465.525,
+            "max": 509.5
+          },
+          "continuous_arc_m": {
+            "count": 74,
+            "mean": 2747.7841416281894,
+            "p05": 967.4276419068941,
+            "median": 2721.9623195895,
+            "p95": 4407.89760686089,
+            "max": 4816.106548039628
+          },
+          "speed_mean_mps": {
+            "count": 74,
+            "mean": 11.65854039803264,
+            "p05": 8.563310812412691,
+            "median": 10.98759216876978,
+            "p95": 15.400641582236107,
+            "max": 31.541699831507774
+          },
+          "speed_p95_mps": {
+            "count": 74,
+            "mean": 15.554467014578861,
+            "p05": 13.087442107790373,
+            "median": 14.145698512967957,
+            "p95": 27.653805904915956,
+            "max": 44.8506365842744
+          },
+          "stopped_fraction": {
+            "count": 74,
+            "mean": 0.006327588164314094,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.04221784523842315,
+            "max": 0.09075907590759076
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 74,
+            "mean": 1.1113337836390778,
+            "p05": 0.7304161211898574,
+            "median": 1.0970282317365516,
+            "p95": 1.5261210319585148,
+            "max": 1.8369264355232122
+          },
+          "unique_grid64_cells": {
+            "count": 74,
+            "mean": 20.27027027027027,
+            "p05": 9.0,
+            "median": 18.5,
+            "p95": 36.0,
+            "max": 41.0
+          },
+          "clipped_point_fraction": {
+            "count": 74,
+            "mean": 0.0003993784219469335,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.02955400322407308
+          },
+          "retained_point_fraction": {
+            "count": 74,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 74,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "train_matching": [
+      {
+        "class": 0,
+        "count": 611,
+        "absolute_log_span_ratio": {
+          "count": 611,
+          "mean": 0.7123310930270107,
+          "p05": 0.0,
+          "median": 0.3337731796520478,
+          "p95": 2.121315999172751,
+          "max": 2.7568403652716422
+        },
+        "cnr_median_span_s": 43.5,
+        "sumo_median_span_s": 73.75
+      },
+      {
+        "class": 1,
+        "count": 111,
+        "absolute_log_span_ratio": {
+          "count": 111,
+          "mean": 0.7381503186119025,
+          "p05": 0.0007131599364411656,
+          "median": 0.7806781730458079,
+          "p95": 1.4081605472483938,
+          "max": 1.8823655610058152
+        },
+        "cnr_median_span_s": 906.5,
+        "sumo_median_span_s": 382.0
+      },
+      {
+        "class": 2,
+        "count": 295,
+        "absolute_log_span_ratio": {
+          "count": 295,
+          "mean": 0.47701522128817175,
+          "p05": 0.0,
+          "median": 0.3124430985333193,
+          "p95": 1.4350317964741375,
+          "max": 1.724047309722299
+        },
+        "cnr_median_span_s": 456.5,
+        "sumo_median_span_s": 301.25
+      },
+      {
+        "class": 3,
+        "count": 751,
+        "absolute_log_span_ratio": {
+          "count": 751,
+          "mean": 1.0195937562020756,
+          "p05": 0.0011672078966737942,
+          "median": 0.9906275544369931,
+          "p95": 2.199628412669809,
+          "max": 2.9960666657992068
+        },
+        "cnr_median_span_s": 597.25,
+        "sumo_median_span_s": 190.75
+      },
+      {
+        "class": 4,
+        "count": 141,
+        "absolute_log_span_ratio": {
+          "count": 141,
+          "mean": 0.10712620222517731,
+          "p05": 0.0,
+          "median": 0.0014673516939494036,
+          "p95": 0.7994914641279047,
+          "max": 1.8452666232756259
+        },
+        "cnr_median_span_s": 316.0,
+        "sumo_median_span_s": 315.5
+      },
+      {
+        "class": 5,
+        "count": 74,
+        "absolute_log_span_ratio": {
+          "count": 74,
+          "mean": 0.02307792915933038,
+          "p05": 0.0,
+          "median": 0.0011090266116462466,
+          "p95": 0.21227357655258228,
+          "max": 0.3456959761117968
+        },
+        "cnr_median_span_s": 236.375,
+        "sumo_median_span_s": 236.5
+      }
+    ],
+    "sumo-duration-val": {
+      "rows": 257,
+      "class_counts": [
+        70,
+        14,
+        37,
+        109,
+        18,
+        9
+      ],
+      "sha256": "8675ef5f27d6771eb8c7816c1e194d68c10ac344d38d7d8568e1f37120d764e0",
+      "eligible_512_by_class": [
+        6,
+        14,
+        31,
+        93,
+        18,
+        4
+      ],
+      "diagnostics": {
+        "0": {
+          "full_span_s": {
+            "count": 70,
+            "mean": 75.88214285714285,
+            "p05": 49.0875,
+            "median": 63.25,
+            "p95": 153.55,
+            "max": 285.0
+          },
+          "continuous_span_s": {
+            "count": 70,
+            "mean": 75.88214285714285,
+            "p05": 49.0875,
+            "median": 63.25,
+            "p95": 153.55,
+            "max": 285.0
+          },
+          "continuous_arc_m": {
+            "count": 70,
+            "mean": 93.25653780351473,
+            "p05": 61.367354711731636,
+            "median": 78.27477234540625,
+            "p95": 177.2063239537165,
+            "max": 340.3794184229633
+          },
+          "speed_mean_mps": {
+            "count": 70,
+            "mean": 1.2470389387652743,
+            "p05": 1.0586310948767825,
+            "median": 1.2320424865905761,
+            "p95": 1.4874251032435386,
+            "max": 1.6075832651750706
+          },
+          "speed_p95_mps": {
+            "count": 70,
+            "mean": 1.3785655654048472,
+            "p05": 1.171354835542415,
+            "median": 1.3601009016517098,
+            "p95": 1.6422869432350367,
+            "max": 1.7754599971761404
+          },
+          "stopped_fraction": {
+            "count": 70,
+            "mean": 0.00037059838912030366,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.001916376306620199,
+            "max": 0.008771929824561403
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 70,
+            "mean": 0.42349056254022754,
+            "p05": 0.33939285110462153,
+            "median": 0.4006479613989512,
+            "p95": 0.5795186278261443,
+            "max": 1.0370230460283385
+          },
+          "unique_grid64_cells": {
+            "count": 70,
+            "mean": 1.8142857142857143,
+            "p05": 1.0,
+            "median": 2.0,
+            "p95": 3.0,
+            "max": 6.0
+          },
+          "clipped_point_fraction": {
+            "count": 70,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 70,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 70,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "1": {
+          "full_span_s": {
+            "count": 14,
+            "mean": 453.8392857142857,
+            "p05": 384.35,
+            "median": 446.5,
+            "p95": 545.4875,
+            "max": 564.5
+          },
+          "continuous_span_s": {
+            "count": 14,
+            "mean": 453.8392857142857,
+            "p05": 384.35,
+            "median": 446.5,
+            "p95": 545.4875,
+            "max": 564.5
+          },
+          "continuous_arc_m": {
+            "count": 14,
+            "mean": 3695.6359332891047,
+            "p05": 2937.9189947801215,
+            "median": 3713.5440901231336,
+            "p95": 4319.279220295471,
+            "max": 4410.293764110005
+          },
+          "speed_mean_mps": {
+            "count": 14,
+            "mean": 8.200706388386223,
+            "p05": 6.59733068462349,
+            "median": 8.188901950085114,
+            "p95": 9.619370125442426,
+            "max": 9.822360871790044
+          },
+          "speed_p95_mps": {
+            "count": 14,
+            "mean": 13.854164612805132,
+            "p05": 13.809201883989696,
+            "median": 13.846663238118058,
+            "p95": 13.894712713626271,
+            "max": 13.897736109789824
+          },
+          "stopped_fraction": {
+            "count": 14,
+            "mean": 0.007941979221781036,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.03037178994596202,
+            "max": 0.03933865450399088
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 14,
+            "mean": 0.8617873287249934,
+            "p05": 0.5399241169709621,
+            "median": 0.9350361691459083,
+            "p95": 1.069398240893018,
+            "max": 1.0726007299262963
+          },
+          "unique_grid64_cells": {
+            "count": 14,
+            "mean": 21.071428571428573,
+            "p05": 14.65,
+            "median": 20.0,
+            "p95": 29.049999999999997,
+            "max": 31.0
+          },
+          "clipped_point_fraction": {
+            "count": 14,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 14,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 14,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "2": {
+          "full_span_s": {
+            "count": 37,
+            "mean": 286.0,
+            "p05": 49.95,
+            "median": 337.5,
+            "p95": 444.65,
+            "max": 507.0
+          },
+          "continuous_span_s": {
+            "count": 37,
+            "mean": 286.0,
+            "p05": 49.95,
+            "median": 337.5,
+            "p95": 444.65,
+            "max": 507.0
+          },
+          "continuous_arc_m": {
+            "count": 37,
+            "mean": 3063.782881119297,
+            "p05": 876.1502009539246,
+            "median": 3470.6284097240787,
+            "p95": 4404.348356568963,
+            "max": 4487.410455007061
+          },
+          "speed_mean_mps": {
+            "count": 37,
+            "mean": 12.164885067056503,
+            "p05": 8.448571585340131,
+            "median": 10.589004460133214,
+            "p95": 28.072841442636882,
+            "max": 31.94945520199747
+          },
+          "speed_p95_mps": {
+            "count": 37,
+            "mean": 15.22162007964437,
+            "p05": 11.382367557655384,
+            "median": 13.209752710862547,
+            "p95": 32.19574136677456,
+            "max": 45.596623192511515
+          },
+          "stopped_fraction": {
+            "count": 37,
+            "mean": 0.02057320811891425,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.13774298472903684,
+            "max": 0.16576819407008087
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 37,
+            "mean": 1.5726865005323885,
+            "p05": 1.2271083106271932,
+            "median": 1.5379543509401619,
+            "p95": 1.9831978586341412,
+            "max": 2.2387486790359015
+          },
+          "unique_grid64_cells": {
+            "count": 37,
+            "mean": 22.56756756756757,
+            "p05": 7.6,
+            "median": 23.0,
+            "p95": 35.199999999999996,
+            "max": 42.0
+          },
+          "clipped_point_fraction": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 37,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 37,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "3": {
+          "full_span_s": {
+            "count": 109,
+            "mean": 248.37155963302752,
+            "p05": 59.45,
+            "median": 251.5,
+            "p95": 399.84999999999997,
+            "max": 515.0
+          },
+          "continuous_span_s": {
+            "count": 109,
+            "mean": 248.37155963302752,
+            "p05": 59.45,
+            "median": 251.5,
+            "p95": 399.84999999999997,
+            "max": 515.0
+          },
+          "continuous_arc_m": {
+            "count": 109,
+            "mean": 2670.8823226074664,
+            "p05": 911.7654666212887,
+            "median": 2648.7975209205124,
+            "p95": 4267.66560542836,
+            "max": 4371.292396850741
+          },
+          "speed_mean_mps": {
+            "count": 109,
+            "mean": 11.938124419504701,
+            "p05": 7.768325208321925,
+            "median": 10.64362742772819,
+            "p95": 26.895718590726872,
+            "max": 31.055567817431093
+          },
+          "speed_p95_mps": {
+            "count": 109,
+            "mean": 15.838944802412948,
+            "p05": 11.529790416841397,
+            "median": 14.056795259922342,
+            "p95": 31.06167760921952,
+            "max": 39.34166787860126
+          },
+          "stopped_fraction": {
+            "count": 109,
+            "mean": 0.008584370627277967,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.04835582085737819,
+            "max": 0.13702928870292888
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 109,
+            "mean": 1.1434384853999602,
+            "p05": 0.644694363726626,
+            "median": 1.121160555459784,
+            "p95": 1.5776028555420036,
+            "max": 1.9014231514777953
+          },
+          "unique_grid64_cells": {
+            "count": 109,
+            "mean": 19.81651376146789,
+            "p05": 7.4,
+            "median": 18.0,
+            "p95": 35.19999999999999,
+            "max": 45.0
+          },
+          "clipped_point_fraction": {
+            "count": 109,
+            "mean": 0.0003641555038911501,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.03871829105473965
+          },
+          "retained_point_fraction": {
+            "count": 109,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 109,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "4": {
+          "full_span_s": {
+            "count": 18,
+            "mean": 335.7638888888889,
+            "p05": 147.225,
+            "median": 320.25,
+            "p95": 578.0874999999999,
+            "max": 660.75
+          },
+          "continuous_span_s": {
+            "count": 18,
+            "mean": 335.7638888888889,
+            "p05": 147.225,
+            "median": 320.25,
+            "p95": 578.0874999999999,
+            "max": 660.75
+          },
+          "continuous_arc_m": {
+            "count": 18,
+            "mean": 1756.9748556484276,
+            "p05": 779.6282539444272,
+            "median": 1505.0781204977807,
+            "p95": 2787.1054198031493,
+            "max": 3059.600634769239
+          },
+          "speed_mean_mps": {
+            "count": 18,
+            "mean": 5.2666520689413225,
+            "p05": 4.222849724527924,
+            "median": 5.177487496221733,
+            "p95": 6.250337288302855,
+            "max": 6.296593169946623
+          },
+          "speed_p95_mps": {
+            "count": 18,
+            "mean": 5.714671498337599,
+            "p05": 4.851203554762294,
+            "median": 5.653291627925788,
+            "p95": 6.691191635282957,
+            "max": 7.197302557664082
+          },
+          "stopped_fraction": {
+            "count": 18,
+            "mean": 0.005027642279220441,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.023592408527727784,
+            "max": 0.06073752711496746
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 18,
+            "mean": 0.33573319239149174,
+            "p05": 0.2647935683012113,
+            "median": 0.3373483896456493,
+            "p95": 0.40318202523755664,
+            "max": 0.4544737863286168
+          },
+          "unique_grid64_cells": {
+            "count": 18,
+            "mean": 12.666666666666666,
+            "p05": 4.85,
+            "median": 14.0,
+            "p95": 19.04999999999999,
+            "max": 25.0
+          },
+          "clipped_point_fraction": {
+            "count": 18,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 18,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 18,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        },
+        "5": {
+          "full_span_s": {
+            "count": 9,
+            "mean": 172.30555555555554,
+            "p05": 54.0,
+            "median": 117.0,
+            "p95": 397.5,
+            "max": 428.0
+          },
+          "continuous_span_s": {
+            "count": 9,
+            "mean": 172.30555555555554,
+            "p05": 54.0,
+            "median": 117.0,
+            "p95": 397.5,
+            "max": 428.0
+          },
+          "continuous_arc_m": {
+            "count": 9,
+            "mean": 2195.5792677189847,
+            "p05": 896.6186531661322,
+            "median": 1543.915475111984,
+            "p95": 4165.783085160868,
+            "max": 4319.887927956966
+          },
+          "speed_mean_mps": {
+            "count": 9,
+            "mean": 16.445232627776406,
+            "p05": 8.671072984386885,
+            "median": 10.50857760413605,
+            "p95": 31.071456480182736,
+            "max": 33.487503317495865
+          },
+          "speed_p95_mps": {
+            "count": 9,
+            "mean": 21.371849696420824,
+            "p05": 13.169042666213665,
+            "median": 14.371289833277887,
+            "p95": 42.30959788936749,
+            "max": 47.557063184090424
+          },
+          "stopped_fraction": {
+            "count": 9,
+            "mean": 0.0015004343362552317,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.008102345415778246,
+            "max": 0.013503909026297086
+          },
+          "absolute_acceleration_mean_mps2": {
+            "count": 9,
+            "mean": 1.1905289011341282,
+            "p05": 0.6669290256222586,
+            "median": 1.3485756672025933,
+            "p95": 1.4838540168055816,
+            "max": 1.4959871378431917
+          },
+          "unique_grid64_cells": {
+            "count": 9,
+            "mean": 16.333333333333332,
+            "p05": 6.8,
+            "median": 16.0,
+            "p95": 30.599999999999994,
+            "max": 37.0
+          },
+          "clipped_point_fraction": {
+            "count": 9,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "retained_point_fraction": {
+            "count": 9,
+            "mean": 1.0,
+            "p05": 1.0,
+            "median": 1.0,
+            "p95": 1.0,
+            "max": 1.0
+          },
+          "break_count": {
+            "count": 9,
+            "mean": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          }
+        }
+      }
+    },
+    "val_matching": [
+      {
+        "class": 0,
+        "count": 70,
+        "absolute_log_span_ratio": {
+          "count": 70,
+          "mean": 0.6665103649542851,
+          "p05": 0.0,
+          "median": 0.4711188103163373,
+          "p95": 2.061612124459705,
+          "max": 2.4264104431063913
+        },
+        "cnr_median_span_s": 38.25,
+        "sumo_median_span_s": 63.25
+      },
+      {
+        "class": 1,
+        "count": 14,
+        "absolute_log_span_ratio": {
+          "count": 14,
+          "mean": 0.6248735637157763,
+          "p05": 0.0015494643809296884,
+          "median": 0.43932077059458585,
+          "p95": 1.2709645444471973,
+          "max": 1.396976693855474
+        },
+        "cnr_median_span_s": 718.5,
+        "sumo_median_span_s": 446.5
+      },
+      {
+        "class": 2,
+        "count": 37,
+        "absolute_log_span_ratio": {
+          "count": 37,
+          "mean": 0.4103612754921247,
+          "p05": 0.0037754890448011835,
+          "median": 0.20484379414277676,
+          "p95": 1.219328587976238,
+          "max": 1.661884387806643
+        },
+        "cnr_median_span_s": 413.5,
+        "sumo_median_span_s": 337.5
+      },
+      {
+        "class": 3,
+        "count": 109,
+        "absolute_log_span_ratio": {
+          "count": 109,
+          "mean": 0.7434818573351438,
+          "p05": 0.0032134401848805897,
+          "median": 0.7476268823169034,
+          "p95": 1.7583196550431313,
+          "max": 2.2400869444163725
+        },
+        "cnr_median_span_s": 575.75,
+        "sumo_median_span_s": 251.5
+      },
+      {
+        "class": 4,
+        "count": 18,
+        "absolute_log_span_ratio": {
+          "count": 18,
+          "mean": 0.04413855907747714,
+          "p05": 0.0,
+          "median": 0.006664960981136225,
+          "p95": 0.2515420781369635,
+          "max": 0.3713212594559714
+        },
+        "cnr_median_span_s": 318.625,
+        "sumo_median_span_s": 320.25
+      },
+      {
+        "class": 5,
+        "count": 9,
+        "absolute_log_span_ratio": {
+          "count": 9,
+          "mean": 0.10638622548710804,
+          "p05": 0.0022679011851796105,
+          "median": 0.013474698583360478,
+          "p95": 0.4830935642590867,
+          "max": 0.7519876805828787
+        },
+        "cnr_median_span_s": 118.0,
+        "sumo_median_span_s": 117.0
+      }
+    ]
+  },
+  "source_diagnostics": {
+    "cnr-train": {
+      "0": {
+        "full_span_s": {
+          "count": 631,
+          "mean": 231.90847860538827,
+          "p05": 7.625,
+          "median": 122.75,
+          "p95": 863.875,
+          "max": 1345.5
+        },
+        "continuous_span_s": {
+          "count": 631,
+          "mean": 66.13153724247226,
+          "p05": 6.0,
+          "median": 42.0,
+          "p95": 250.625,
+          "max": 576.0
+        },
+        "continuous_arc_m": {
+          "count": 631,
+          "mean": 69.70542808561248,
+          "p05": 8.693464497928227,
+          "median": 36.526644393373026,
+          "p95": 237.66790716186983,
+          "max": 478.7522541076447
+        },
+        "speed_mean_mps": {
+          "count": 631,
+          "mean": 1.1975644446351543,
+          "p05": 0.5568028712072848,
+          "median": 1.1883223979579196,
+          "p95": 1.932851584842851,
+          "max": 2.94924974062668
+        },
+        "speed_p95_mps": {
+          "count": 631,
+          "mean": 1.5541523420118994,
+          "p05": 0.8912856617245375,
+          "median": 1.505722417979085,
+          "p95": 2.3945874557726854,
+          "max": 4.910683568970013
+        },
+        "stopped_fraction": {
+          "count": 631,
+          "mean": 0.08653986215587185,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.5345134764732755,
+          "max": 1.0
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 631,
+          "mean": 0.6867042254966722,
+          "p05": 0.2925369307631323,
+          "median": 0.587500711175641,
+          "p95": 1.3613945589062197,
+          "max": 5.4828353774440926
+        },
+        "unique_grid64_cells": {
+          "count": 631,
+          "mean": 1.5958795562599049,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 3.0,
+          "max": 6.0
+        },
+        "clipped_point_fraction": {
+          "count": 631,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 631,
+          "mean": 0.7121385315557279,
+          "p05": 0.32713493663594473,
+          "median": 0.7192982456140351,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 631,
+          "mean": 2.705229793977813,
+          "p05": 0.0,
+          "median": 2.0,
+          "p95": 10.0,
+          "max": 22.0
+        }
+      },
+      "1": {
+        "full_span_s": {
+          "count": 111,
+          "mean": 929.5427927927927,
+          "p05": 273.0,
+          "median": 931.5,
+          "p95": 1599.125,
+          "max": 2346.75
+        },
+        "continuous_span_s": {
+          "count": 111,
+          "mean": 917.0585585585585,
+          "p05": 273.0,
+          "median": 906.5,
+          "p95": 1599.125,
+          "max": 2346.75
+        },
+        "continuous_arc_m": {
+          "count": 111,
+          "mean": 5089.993806481636,
+          "p05": 1269.1230537605393,
+          "median": 4831.6530326000775,
+          "p95": 9040.436937092965,
+          "max": 14235.376018164397
+        },
+        "speed_mean_mps": {
+          "count": 111,
+          "mean": 5.958133806272978,
+          "p05": 3.646940226776368,
+          "median": 5.043491243493099,
+          "p95": 10.26345970789243,
+          "max": 10.577056352501774
+        },
+        "speed_p95_mps": {
+          "count": 111,
+          "mean": 13.812892331835782,
+          "p05": 11.300304592539476,
+          "median": 14.07477168909214,
+          "p95": 15.920359289338315,
+          "max": 16.800633321342563
+        },
+        "stopped_fraction": {
+          "count": 111,
+          "mean": 0.3725901936991068,
+          "p05": 0.15595738070239346,
+          "median": 0.39754928076718166,
+          "p95": 0.5142852378093523,
+          "max": 0.654320987654321
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 111,
+          "mean": 0.594363211596906,
+          "p05": 0.4485174329134222,
+          "median": 0.6096864498340525,
+          "p95": 0.7224061025634717,
+          "max": 0.8916649319557962
+        },
+        "unique_grid64_cells": {
+          "count": 111,
+          "mean": 44.153153153153156,
+          "p05": 9.0,
+          "median": 43.0,
+          "p95": 88.5,
+          "max": 143.0
+        },
+        "clipped_point_fraction": {
+          "count": 111,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 111,
+          "mean": 0.9862469929559232,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 111,
+          "mean": 0.036036036036036036,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "2": {
+        "full_span_s": {
+          "count": 296,
+          "mean": 559.4222972972973,
+          "p05": 84.8125,
+          "median": 457.625,
+          "p95": 1369.25,
+          "max": 1511.5
+        },
+        "continuous_span_s": {
+          "count": 296,
+          "mean": 558.5152027027027,
+          "p05": 84.8125,
+          "median": 455.875,
+          "p95": 1369.25,
+          "max": 1511.5
+        },
+        "continuous_arc_m": {
+          "count": 296,
+          "mean": 3934.8803936190134,
+          "p05": 862.0115831126617,
+          "median": 3441.1119731811204,
+          "p95": 8303.87959652578,
+          "max": 13887.246599065962
+        },
+        "speed_mean_mps": {
+          "count": 296,
+          "mean": 8.70046879570838,
+          "p05": 2.084290515713401,
+          "median": 9.688245569530853,
+          "p95": 13.242472066629782,
+          "max": 15.922498966529611
+        },
+        "speed_p95_mps": {
+          "count": 296,
+          "mean": 15.133974741687776,
+          "p05": 11.574115426419528,
+          "median": 14.063855632028151,
+          "p95": 25.79295379734848,
+          "max": 31.397186965288178
+        },
+        "stopped_fraction": {
+          "count": 296,
+          "mean": 0.23783356435662192,
+          "p05": 0.0,
+          "median": 0.07424654716552608,
+          "p95": 0.8143544539596288,
+          "max": 0.9330004161464835
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 296,
+          "mean": 1.7331937817166327,
+          "p05": 0.4422414221020653,
+          "median": 1.901569380677454,
+          "p95": 2.6455414960790264,
+          "max": 4.245464959878957
+        },
+        "unique_grid64_cells": {
+          "count": 296,
+          "mean": 36.00337837837838,
+          "p05": 7.75,
+          "median": 31.0,
+          "p95": 81.0,
+          "max": 105.0
+        },
+        "clipped_point_fraction": {
+          "count": 296,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 296,
+          "mean": 0.9986145939754189,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 296,
+          "mean": 0.0033783783783783786,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "3": {
+        "full_span_s": {
+          "count": 893,
+          "mean": 638.8213885778275,
+          "p05": 49.1,
+          "median": 600.5,
+          "p95": 1370.9,
+          "max": 1512.5
+        },
+        "continuous_span_s": {
+          "count": 893,
+          "mean": 631.3695408734602,
+          "p05": 49.1,
+          "median": 596.5,
+          "p95": 1363.3,
+          "max": 1512.5
+        },
+        "continuous_arc_m": {
+          "count": 893,
+          "mean": 6312.815720147647,
+          "p05": 566.7295765944,
+          "median": 6884.618349032991,
+          "p95": 10269.180963983938,
+          "max": 15034.942838508705
+        },
+        "speed_mean_mps": {
+          "count": 893,
+          "mean": 11.221339100863045,
+          "p05": 5.8374767816982445,
+          "median": 11.835285547665432,
+          "p95": 15.178716288629738,
+          "max": 21.142790175735072
+        },
+        "speed_p95_mps": {
+          "count": 893,
+          "mean": 18.344310902973284,
+          "p05": 11.837586179621578,
+          "median": 15.36092443768994,
+          "p95": 30.096332572306032,
+          "max": 36.169451143154234
+        },
+        "stopped_fraction": {
+          "count": 893,
+          "mean": 0.12079641858227497,
+          "p05": 0.0,
+          "median": 0.028918692372170998,
+          "p95": 0.5344057939091901,
+          "max": 0.7489177489177489
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 893,
+          "mean": 0.8602918624104685,
+          "p05": 0.4422188594719953,
+          "median": 0.8357306066214759,
+          "p95": 1.4251548338833084,
+          "max": 3.287896975663737
+        },
+        "unique_grid64_cells": {
+          "count": 893,
+          "mean": 58.254199328107504,
+          "p05": 6.600000000000001,
+          "median": 64.0,
+          "p95": 96.0,
+          "max": 121.0
+        },
+        "clipped_point_fraction": {
+          "count": 893,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 893,
+          "mean": 0.9916146745748184,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 893,
+          "mean": 0.032474804031354984,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "4": {
+        "full_span_s": {
+          "count": 141,
+          "mean": 345.7429078014184,
+          "p05": 64.75,
+          "median": 316.0,
+          "p95": 732.75,
+          "max": 955.5
+        },
+        "continuous_span_s": {
+          "count": 141,
+          "mean": 345.7429078014184,
+          "p05": 64.75,
+          "median": 316.0,
+          "p95": 732.75,
+          "max": 955.5
+        },
+        "continuous_arc_m": {
+          "count": 141,
+          "mean": 1619.7279224319625,
+          "p05": 275.9860907633601,
+          "median": 1466.3762309448566,
+          "p95": 3486.51844454205,
+          "max": 4466.49286999754
+        },
+        "speed_mean_mps": {
+          "count": 141,
+          "mean": 4.740973830901856,
+          "p05": 3.64144510834942,
+          "median": 4.72340385685219,
+          "p95": 6.250098468593936,
+          "max": 6.663837225419414
+        },
+        "speed_p95_mps": {
+          "count": 141,
+          "mean": 5.4976765487302925,
+          "p05": 4.214451328465124,
+          "median": 5.522455975290084,
+          "p95": 6.971484777290146,
+          "max": 7.414234545705293
+        },
+        "stopped_fraction": {
+          "count": 141,
+          "mean": 0.03715390487376546,
+          "p05": 0.0,
+          "median": 0.009032943676939426,
+          "p95": 0.1399055489964581,
+          "max": 0.36720867208672087
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 141,
+          "mean": 0.9947475320500638,
+          "p05": 0.5064132773127252,
+          "median": 0.9292205616736535,
+          "p95": 1.711763322986058,
+          "max": 2.143081851265595
+        },
+        "unique_grid64_cells": {
+          "count": 141,
+          "mean": 14.709219858156029,
+          "p05": 4.0,
+          "median": 13.0,
+          "p95": 30.0,
+          "max": 48.0
+        },
+        "clipped_point_fraction": {
+          "count": 141,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 141,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 141,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "5": {
+        "full_span_s": {
+          "count": 74,
+          "mean": 261.375,
+          "p05": 72.675,
+          "median": 236.375,
+          "p95": 534.8999999999999,
+          "max": 653.5
+        },
+        "continuous_span_s": {
+          "count": 74,
+          "mean": 261.375,
+          "p05": 72.675,
+          "median": 236.375,
+          "p95": 534.8999999999999,
+          "max": 653.5
+        },
+        "continuous_arc_m": {
+          "count": 74,
+          "mean": 2612.3433327349585,
+          "p05": 676.7770529076316,
+          "median": 2356.5649377689915,
+          "p95": 5332.898173896999,
+          "max": 6543.776990599509
+        },
+        "speed_mean_mps": {
+          "count": 74,
+          "mean": 9.922462120178722,
+          "p05": 7.689775415197734,
+          "median": 9.861902341051373,
+          "p95": 12.264712218116841,
+          "max": 13.318471790187337
+        },
+        "speed_p95_mps": {
+          "count": 74,
+          "mean": 14.7438119078369,
+          "p05": 11.761360438144587,
+          "median": 14.07277529220537,
+          "p95": 21.685567553835025,
+          "max": 26.74761848447414
+        },
+        "stopped_fraction": {
+          "count": 74,
+          "mean": 0.03201832497368776,
+          "p05": 0.0,
+          "median": 0.01871801033381868,
+          "p95": 0.09184936350777931,
+          "max": 0.16666666666666666
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 74,
+          "mean": 1.2161941964895746,
+          "p05": 0.8820823925542367,
+          "median": 1.2189477933172155,
+          "p95": 1.6044293991372003,
+          "max": 1.8575532802598766
+        },
+        "unique_grid64_cells": {
+          "count": 74,
+          "mean": 23.41891891891892,
+          "p05": 6.0,
+          "median": 20.5,
+          "p95": 49.0,
+          "max": 65.0
+        },
+        "clipped_point_fraction": {
+          "count": 74,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 74,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 74,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "cnr-val": {
+      "0": {
+        "full_span_s": {
+          "count": 79,
+          "mean": 199.86075949367088,
+          "p05": 13.100000000000001,
+          "median": 80.25,
+          "p95": 796.6999999999997,
+          "max": 1064.0
+        },
+        "continuous_span_s": {
+          "count": 79,
+          "mean": 47.686708860759495,
+          "p05": 3.5,
+          "median": 32.0,
+          "p95": 153.14999999999998,
+          "max": 291.5
+        },
+        "continuous_arc_m": {
+          "count": 79,
+          "mean": 53.51612148055789,
+          "p05": 5.354672817157739,
+          "median": 32.715098448015944,
+          "p95": 167.19847691343975,
+          "max": 380.1693528229709
+        },
+        "speed_mean_mps": {
+          "count": 79,
+          "mean": 1.2570351976106555,
+          "p05": 0.5942045416419184,
+          "median": 1.2749730132215038,
+          "p95": 1.8743724635572592,
+          "max": 2.057510569619718
+        },
+        "speed_p95_mps": {
+          "count": 79,
+          "mean": 1.6404313252688896,
+          "p05": 0.9050695412444051,
+          "median": 1.6804027136099324,
+          "p95": 2.3077726080313528,
+          "max": 3.4082529811123674
+        },
+        "stopped_fraction": {
+          "count": 79,
+          "mean": 0.08411476967154051,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.5482976695832971,
+          "max": 0.6987951807228916
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 79,
+          "mean": 0.7542370855667911,
+          "p05": 0.34420664769503306,
+          "median": 0.6657834174797839,
+          "p95": 1.5567793863269515,
+          "max": 2.649091765209328
+        },
+        "unique_grid64_cells": {
+          "count": 79,
+          "mean": 1.518987341772152,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 3.0,
+          "max": 5.0
+        },
+        "clipped_point_fraction": {
+          "count": 79,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 79,
+          "mean": 0.6598699252560901,
+          "p05": 0.3235333997320415,
+          "median": 0.6304347826086957,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 79,
+          "mean": 2.6962025316455698,
+          "p05": 0.0,
+          "median": 2.0,
+          "p95": 8.099999999999994,
+          "max": 11.0
+        }
+      },
+      "1": {
+        "full_span_s": {
+          "count": 14,
+          "mean": 957.9642857142857,
+          "p05": 385.0,
+          "median": 718.5,
+          "p95": 1742.0999999999997,
+          "max": 2282.25
+        },
+        "continuous_span_s": {
+          "count": 14,
+          "mean": 957.9642857142857,
+          "p05": 385.0,
+          "median": 718.5,
+          "p95": 1742.0999999999997,
+          "max": 2282.25
+        },
+        "continuous_arc_m": {
+          "count": 14,
+          "mean": 5465.324811763622,
+          "p05": 2575.0753950251647,
+          "median": 4995.604433354889,
+          "p95": 9304.221410979875,
+          "max": 13928.17488042977
+        },
+        "speed_mean_mps": {
+          "count": 14,
+          "mean": 6.179552552386525,
+          "p05": 3.869241895517118,
+          "median": 5.575247923491263,
+          "p95": 9.735923130351528,
+          "max": 10.176230557317327
+        },
+        "speed_p95_mps": {
+          "count": 14,
+          "mean": 13.364659477190198,
+          "p05": 11.283212482314838,
+          "median": 13.609537769818543,
+          "p95": 15.29160439378174,
+          "max": 15.763908144873547
+        },
+        "stopped_fraction": {
+          "count": 14,
+          "mean": 0.35724275519165616,
+          "p05": 0.1355183385485618,
+          "median": 0.4040138587852483,
+          "p95": 0.4830268399208884,
+          "max": 0.4905482041587902
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 14,
+          "mean": 0.5584796600203809,
+          "p05": 0.3849495851545639,
+          "median": 0.567264552394036,
+          "p95": 0.6729256605384069,
+          "max": 0.6920428851787928
+        },
+        "unique_grid64_cells": {
+          "count": 14,
+          "mean": 48.42857142857143,
+          "p05": 20.05,
+          "median": 43.5,
+          "p95": 84.44999999999996,
+          "max": 141.0
+        },
+        "clipped_point_fraction": {
+          "count": 14,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 14,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 14,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "2": {
+        "full_span_s": {
+          "count": 37,
+          "mean": 481.1756756756757,
+          "p05": 42.5,
+          "median": 413.5,
+          "p95": 1132.0999999999995,
+          "max": 1315.5
+        },
+        "continuous_span_s": {
+          "count": 37,
+          "mean": 481.1756756756757,
+          "p05": 42.5,
+          "median": 413.5,
+          "p95": 1132.0999999999995,
+          "max": 1315.5
+        },
+        "continuous_arc_m": {
+          "count": 37,
+          "mean": 3289.775755698168,
+          "p05": 357.45729033838046,
+          "median": 2924.011962831849,
+          "p95": 6897.736105192155,
+          "max": 10106.473524328143
+        },
+        "speed_mean_mps": {
+          "count": 37,
+          "mean": 8.530427758977849,
+          "p05": 2.3917958850159797,
+          "median": 9.42455366751949,
+          "p95": 12.486921648728053,
+          "max": 13.186074240504391
+        },
+        "speed_p95_mps": {
+          "count": 37,
+          "mean": 14.813647397993316,
+          "p05": 12.284161032081062,
+          "median": 14.058221793669926,
+          "p95": 20.178460868416447,
+          "max": 22.525796270102752
+        },
+        "stopped_fraction": {
+          "count": 37,
+          "mean": 0.2298381575457645,
+          "p05": 0.0,
+          "median": 0.08695652173913043,
+          "p95": 0.7772582609173846,
+          "max": 0.8790884718498659
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 37,
+          "mean": 1.7918340766578222,
+          "p05": 0.4976454797901336,
+          "median": 1.9502691845200673,
+          "p95": 2.6345824049574804,
+          "max": 3.2962147389231906
+        },
+        "unique_grid64_cells": {
+          "count": 37,
+          "mean": 31.27027027027027,
+          "p05": 3.0,
+          "median": 26.0,
+          "p95": 65.79999999999993,
+          "max": 97.0
+        },
+        "clipped_point_fraction": {
+          "count": 37,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 37,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 37,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "3": {
+        "full_span_s": {
+          "count": 112,
+          "mean": 620.0178571428571,
+          "p05": 39.30000000000001,
+          "median": 576.375,
+          "p95": 1382.4999999999995,
+          "max": 1505.5
+        },
+        "continuous_span_s": {
+          "count": 112,
+          "mean": 602.78125,
+          "p05": 39.30000000000001,
+          "median": 564.375,
+          "p95": 1357.8999999999999,
+          "max": 1505.5
+        },
+        "continuous_arc_m": {
+          "count": 112,
+          "mean": 5947.461505401008,
+          "p05": 381.35757329715216,
+          "median": 6516.222554756978,
+          "p95": 10396.723041410422,
+          "max": 11452.48650157674
+        },
+        "speed_mean_mps": {
+          "count": 112,
+          "mean": 10.825828474075765,
+          "p05": 5.30500457178385,
+          "median": 11.442683045144264,
+          "p95": 14.948170218478902,
+          "max": 16.59670819854322
+        },
+        "speed_p95_mps": {
+          "count": 112,
+          "mean": 17.022986396589666,
+          "p05": 11.173081489633264,
+          "median": 14.543957096886993,
+          "p95": 28.212417881745953,
+          "max": 33.14424230510775
+        },
+        "stopped_fraction": {
+          "count": 112,
+          "mean": 0.10934838168393266,
+          "p05": 0.0,
+          "median": 0.023683994805441345,
+          "p95": 0.5207073207958763,
+          "max": 0.6255396878113584
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 112,
+          "mean": 0.8788243641359899,
+          "p05": 0.47367840296924313,
+          "median": 0.8331761461210407,
+          "p95": 1.5035729638822821,
+          "max": 2.4838679514015416
+        },
+        "unique_grid64_cells": {
+          "count": 112,
+          "mean": 54.223214285714285,
+          "p05": 5.100000000000001,
+          "median": 59.5,
+          "p95": 93.44999999999999,
+          "max": 103.0
+        },
+        "clipped_point_fraction": {
+          "count": 112,
+          "mean": 3.5110387056906915e-06,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.00039323633503735744
+        },
+        "retained_point_fraction": {
+          "count": 112,
+          "mean": 0.9828848919777853,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 112,
+          "mean": 0.05357142857142857,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 2.0
+        }
+      },
+      "4": {
+        "full_span_s": {
+          "count": 18,
+          "mean": 330.7638888888889,
+          "p05": 120.9875,
+          "median": 318.625,
+          "p95": 579.9499999999998,
+          "max": 663.25
+        },
+        "continuous_span_s": {
+          "count": 18,
+          "mean": 330.7638888888889,
+          "p05": 120.9875,
+          "median": 318.625,
+          "p95": 579.9499999999998,
+          "max": 663.25
+        },
+        "continuous_arc_m": {
+          "count": 18,
+          "mean": 1560.188890743676,
+          "p05": 479.46788631594984,
+          "median": 1444.0532064205554,
+          "p95": 2566.250952659283,
+          "max": 3791.2067399582165
+        },
+        "speed_mean_mps": {
+          "count": 18,
+          "mean": 4.7435596408014336,
+          "p05": 3.937390884724418,
+          "median": 4.674141235393247,
+          "p95": 6.0062921247723375,
+          "max": 6.149617391297805
+        },
+        "speed_p95_mps": {
+          "count": 18,
+          "mean": 5.320685024092454,
+          "p05": 4.210062732225148,
+          "median": 5.395040672424416,
+          "p95": 6.939288124106448,
+          "max": 6.954365432627812
+        },
+        "stopped_fraction": {
+          "count": 18,
+          "mean": 0.01728677162855904,
+          "p05": 0.0,
+          "median": 0.008996929479021473,
+          "p95": 0.08526243917898621,
+          "max": 0.09192439862542956
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 18,
+          "mean": 0.910424776736459,
+          "p05": 0.5943104159632782,
+          "median": 0.8816458725798633,
+          "p95": 1.2656587792465335,
+          "max": 1.4407066988855586
+        },
+        "unique_grid64_cells": {
+          "count": 18,
+          "mean": 14.944444444444445,
+          "p05": 4.85,
+          "median": 15.0,
+          "p95": 24.649999999999984,
+          "max": 34.0
+        },
+        "clipped_point_fraction": {
+          "count": 18,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 18,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 18,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "5": {
+        "full_span_s": {
+          "count": 9,
+          "mean": 172.75,
+          "p05": 37.05,
+          "median": 118.0,
+          "p95": 415.09999999999997,
+          "max": 456.0
+        },
+        "continuous_span_s": {
+          "count": 9,
+          "mean": 172.75,
+          "p05": 37.05,
+          "median": 118.0,
+          "p95": 415.09999999999997,
+          "max": 456.0
+        },
+        "continuous_arc_m": {
+          "count": 9,
+          "mean": 1516.620514900108,
+          "p05": 295.6548359321998,
+          "median": 1032.3317292176755,
+          "p95": 3833.647484963969,
+          "max": 4179.448798765552
+        },
+        "speed_mean_mps": {
+          "count": 9,
+          "mean": 8.345203616649039,
+          "p05": 5.881603842196096,
+          "median": 8.748573976420978,
+          "p95": 9.685814337013564,
+          "max": 9.895776753893568
+        },
+        "speed_p95_mps": {
+          "count": 9,
+          "mean": 13.934423727960226,
+          "p05": 11.840582815580099,
+          "median": 14.450803647347646,
+          "p95": 15.965352722599608,
+          "max": 16.021280687930776
+        },
+        "stopped_fraction": {
+          "count": 9,
+          "mean": 0.05623208441050066,
+          "p05": 0.0,
+          "median": 0.0625,
+          "p95": 0.1483694733877781,
+          "max": 0.15671641791044777
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 9,
+          "mean": 1.2916157318997659,
+          "p05": 0.9593206735658647,
+          "median": 1.208639707654182,
+          "p95": 1.6037199753169809,
+          "max": 1.640158638063672
+        },
+        "unique_grid64_cells": {
+          "count": 9,
+          "mean": 14.88888888888889,
+          "p05": 3.2,
+          "median": 10.0,
+          "p95": 39.0,
+          "max": 43.0
+        },
+        "clipped_point_fraction": {
+          "count": 9,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 9,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 9,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "sumo-train": {
+      "0": {
+        "full_span_s": {
+          "count": 768,
+          "mean": 135.71158854166666,
+          "p05": 50.0875,
+          "median": 85.875,
+          "p95": 406.0374999999998,
+          "max": 1811.25
+        },
+        "continuous_span_s": {
+          "count": 768,
+          "mean": 135.71158854166666,
+          "p05": 50.0875,
+          "median": 85.875,
+          "p95": 406.0374999999998,
+          "max": 1811.25
+        },
+        "continuous_arc_m": {
+          "count": 768,
+          "mean": 165.7090309951674,
+          "p05": 63.31297526450133,
+          "median": 104.48992277205166,
+          "p95": 486.80728052443783,
+          "max": 1978.5393801002165
+        },
+        "speed_mean_mps": {
+          "count": 768,
+          "mean": 1.241829361410878,
+          "p05": 1.0372232148969756,
+          "median": 1.2480536866471927,
+          "p95": 1.427011897115652,
+          "max": 1.6231994143459012
+        },
+        "speed_p95_mps": {
+          "count": 768,
+          "mean": 1.3707416239352634,
+          "p05": 1.1484199569393914,
+          "median": 1.3778439995637162,
+          "p95": 1.5683706751597546,
+          "max": 1.7992736728516023
+        },
+        "stopped_fraction": {
+          "count": 768,
+          "mean": 0.00031651335248759465,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.1550632911392405
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 768,
+          "mean": 0.3987160548457189,
+          "p05": 0.32543788576240734,
+          "median": 0.39561332266974114,
+          "p95": 0.4801240249467803,
+          "max": 0.6266832499930933
+        },
+        "unique_grid64_cells": {
+          "count": 768,
+          "mean": 2.6028645833333335,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 6.0,
+          "max": 19.0
+        },
+        "clipped_point_fraction": {
+          "count": 768,
+          "mean": 0.003652711965064851,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.7819905213270142
+        },
+        "retained_point_fraction": {
+          "count": 768,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 768,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "1": {
+        "full_span_s": {
+          "count": 756,
+          "mean": 215.80654761904762,
+          "p05": 73.0,
+          "median": 204.25,
+          "p95": 403.125,
+          "max": 511.0
+        },
+        "continuous_span_s": {
+          "count": 756,
+          "mean": 215.79960317460316,
+          "p05": 73.0,
+          "median": 204.25,
+          "p95": 403.125,
+          "max": 511.0
+        },
+        "continuous_arc_m": {
+          "count": 756,
+          "mean": 2283.964455874136,
+          "p05": 879.5721526865946,
+          "median": 2104.427680663983,
+          "p95": 4130.818105894955,
+          "max": 4782.272433696797
+        },
+        "speed_mean_mps": {
+          "count": 756,
+          "mean": 11.284863397972165,
+          "p05": 7.373344002906984,
+          "median": 10.290618748692614,
+          "p95": 22.555148524315356,
+          "max": 27.749320865680456
+        },
+        "speed_p95_mps": {
+          "count": 756,
+          "mean": 15.35800285732427,
+          "p05": 13.790081530558508,
+          "median": 13.878871624963363,
+          "p95": 27.74043371068307,
+          "max": 27.89304494894718
+        },
+        "stopped_fraction": {
+          "count": 756,
+          "mean": 0.010644605632196734,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0690291742396433,
+          "max": 0.2447058823529412
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 756,
+          "mean": 0.8076229439517507,
+          "p05": 0.39045198079648724,
+          "median": 0.8376090466757873,
+          "p95": 1.1346133925756083,
+          "max": 2.1551366348384495
+        },
+        "unique_grid64_cells": {
+          "count": 756,
+          "mean": 17.79232804232804,
+          "p05": 7.0,
+          "median": 16.0,
+          "p95": 36.0,
+          "max": 46.0
+        },
+        "clipped_point_fraction": {
+          "count": 756,
+          "mean": 0.0001551625945301659,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.07964601769911504
+        },
+        "retained_point_fraction": {
+          "count": 756,
+          "mean": 0.9999770241705725,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 756,
+          "mean": 0.0013227513227513227,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "2": {
+        "full_span_s": {
+          "count": 752,
+          "mean": 205.07081117021278,
+          "p05": 71.8875,
+          "median": 192.5,
+          "p95": 376.48749999999984,
+          "max": 481.5
+        },
+        "continuous_span_s": {
+          "count": 752,
+          "mean": 205.05950797872342,
+          "p05": 71.8875,
+          "median": 192.5,
+          "p95": 376.48749999999984,
+          "max": 481.5
+        },
+        "continuous_arc_m": {
+          "count": 752,
+          "mean": 2367.594088641679,
+          "p05": 885.0913103054173,
+          "median": 2237.5248396696516,
+          "p95": 4197.616289224825,
+          "max": 4598.570175511371
+        },
+        "speed_mean_mps": {
+          "count": 752,
+          "mean": 12.231496203832087,
+          "p05": 8.505934032553194,
+          "median": 11.371754315605692,
+          "p95": 18.75954143446479,
+          "max": 42.57057630736379
+        },
+        "speed_p95_mps": {
+          "count": 752,
+          "mean": 15.88780598738493,
+          "p05": 11.674389590545102,
+          "median": 14.151399542327344,
+          "p95": 29.479970205869964,
+          "max": 54.7603982634646
+        },
+        "stopped_fraction": {
+          "count": 752,
+          "mean": 0.010126570445135064,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.06970771023499703,
+          "max": 0.1931166347992352
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 752,
+          "mean": 1.673637002734453,
+          "p05": 1.186479980991553,
+          "median": 1.633697249791754,
+          "p95": 2.2658307300544047,
+          "max": 3.3301717091610312
+        },
+        "unique_grid64_cells": {
+          "count": 752,
+          "mean": 18.10505319148936,
+          "p05": 7.0,
+          "median": 17.0,
+          "p95": 33.44999999999993,
+          "max": 48.0
+        },
+        "clipped_point_fraction": {
+          "count": 752,
+          "mean": 8.958873729820367e-05,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.06610169491525424
+        },
+        "retained_point_fraction": {
+          "count": 752,
+          "mean": 0.9999221811257187,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 752,
+          "mean": 0.0013297872340425532,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "3": {
+        "full_span_s": {
+          "count": 751,
+          "mean": 207.0356191744341,
+          "p05": 71.875,
+          "median": 190.75,
+          "p95": 392.375,
+          "max": 537.0
+        },
+        "continuous_span_s": {
+          "count": 751,
+          "mean": 207.02862849533955,
+          "p05": 71.875,
+          "median": 190.75,
+          "p95": 392.375,
+          "max": 537.0
+        },
+        "continuous_arc_m": {
+          "count": 751,
+          "mean": 2303.632449480837,
+          "p05": 877.0220518674453,
+          "median": 2215.6015012787375,
+          "p95": 4126.504655402012,
+          "max": 4692.942376137799
+        },
+        "speed_mean_mps": {
+          "count": 751,
+          "mean": 11.884714781955845,
+          "p05": 7.999342367814816,
+          "median": 10.861665691973583,
+          "p95": 20.59068912299152,
+          "max": 34.927903242251965
+        },
+        "speed_p95_mps": {
+          "count": 751,
+          "mean": 15.775922511505588,
+          "p05": 11.67946745226454,
+          "median": 14.128929493999262,
+          "p95": 30.26797346098738,
+          "max": 48.165441990807025
+        },
+        "stopped_fraction": {
+          "count": 751,
+          "mean": 0.008766785518448141,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.06073093573093573,
+          "max": 0.2670299727520436
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 751,
+          "mean": 1.1317463720637808,
+          "p05": 0.6707731822043393,
+          "median": 1.1189201055851354,
+          "p95": 1.6081867050493943,
+          "max": 3.1037534343365487
+        },
+        "unique_grid64_cells": {
+          "count": 751,
+          "mean": 17.768308921438084,
+          "p05": 7.0,
+          "median": 16.0,
+          "p95": 33.0,
+          "max": 45.0
+        },
+        "clipped_point_fraction": {
+          "count": 751,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 751,
+          "mean": 0.9999854056803871,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 751,
+          "mean": 0.0013315579227696406,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "4": {
+        "full_span_s": {
+          "count": 762,
+          "mean": 415.9498031496063,
+          "p05": 172.1125,
+          "median": 366.25,
+          "p95": 799.7874999999997,
+          "max": 1002.25
+        },
+        "continuous_span_s": {
+          "count": 762,
+          "mean": 413.2982283464567,
+          "p05": 171.7625,
+          "median": 364.125,
+          "p95": 795.7125,
+          "max": 1002.25
+        },
+        "continuous_arc_m": {
+          "count": 762,
+          "mean": 2105.3259811626217,
+          "p05": 863.6007194232816,
+          "median": 1888.7078630572107,
+          "p95": 3976.9960347556216,
+          "max": 4733.815859961458
+        },
+        "speed_mean_mps": {
+          "count": 762,
+          "mean": 5.144075057264996,
+          "p05": 4.200427209502812,
+          "median": 5.151250161284659,
+          "p95": 6.019404505031042,
+          "max": 7.065055542176063
+        },
+        "speed_p95_mps": {
+          "count": 762,
+          "mean": 5.5921292370147135,
+          "p05": 4.6607798025808975,
+          "median": 5.584018523354116,
+          "p95": 6.523680198819429,
+          "max": 7.453380574971727
+        },
+        "stopped_fraction": {
+          "count": 762,
+          "mean": 0.003996362182486064,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.027018141429100324,
+          "max": 0.12210796915167095
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 762,
+          "mean": 0.35434308925168256,
+          "p05": 0.24985044612550839,
+          "median": 0.3381847122152611,
+          "p95": 0.5092123652548244,
+          "max": 0.7624843661647867
+        },
+        "unique_grid64_cells": {
+          "count": 762,
+          "mean": 15.324146981627296,
+          "p05": 6.0,
+          "median": 14.0,
+          "p95": 29.0,
+          "max": 42.0
+        },
+        "clipped_point_fraction": {
+          "count": 762,
+          "mean": 0.0004298135418736684,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.16062364031907178
+        },
+        "retained_point_fraction": {
+          "count": 762,
+          "mean": 0.9953234225336344,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 762,
+          "mean": 0.01968503937007874,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 2.0
+        }
+      },
+      "5": {
+        "full_span_s": {
+          "count": 744,
+          "mean": 202.9361559139785,
+          "p05": 70.65,
+          "median": 187.75,
+          "p95": 385.20000000000005,
+          "max": 509.5
+        },
+        "continuous_span_s": {
+          "count": 744,
+          "mean": 202.9361559139785,
+          "p05": 70.65,
+          "median": 187.75,
+          "p95": 385.20000000000005,
+          "max": 509.5
+        },
+        "continuous_arc_m": {
+          "count": 744,
+          "mean": 2293.251702633711,
+          "p05": 898.8909510861012,
+          "median": 2156.7910941155124,
+          "p95": 4225.47889378262,
+          "max": 4816.106548039628
+        },
+        "speed_mean_mps": {
+          "count": 744,
+          "mean": 12.104144486970448,
+          "p05": 8.220261533612504,
+          "median": 10.960565496329151,
+          "p95": 26.405979379433994,
+          "max": 38.07835021737808
+        },
+        "speed_p95_mps": {
+          "count": 744,
+          "mean": 15.88982643545954,
+          "p05": 12.896552697958828,
+          "median": 14.055400215515487,
+          "p95": 30.396114011306217,
+          "max": 46.504895460854826
+        },
+        "stopped_fraction": {
+          "count": 744,
+          "mean": 0.01012806286182123,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.06708046326064505,
+          "max": 0.2864516129032258
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 744,
+          "mean": 1.1135657595358088,
+          "p05": 0.6843799029937004,
+          "median": 1.1054658422346662,
+          "p95": 1.552130982132512,
+          "max": 2.796655332153679
+        },
+        "unique_grid64_cells": {
+          "count": 744,
+          "mean": 17.698924731182796,
+          "p05": 7.0,
+          "median": 16.0,
+          "p95": 33.85000000000002,
+          "max": 45.0
+        },
+        "clipped_point_fraction": {
+          "count": 744,
+          "mean": 0.00020079553197410317,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.06405693950177936
+        },
+        "retained_point_fraction": {
+          "count": 744,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 744,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "sumo-val": {
+      "0": {
+        "full_span_s": {
+          "count": 144,
+          "mean": 110.95833333333333,
+          "p05": 50.5,
+          "median": 87.875,
+          "p95": 270.37499999999994,
+          "max": 601.25
+        },
+        "continuous_span_s": {
+          "count": 144,
+          "mean": 110.95833333333333,
+          "p05": 50.5,
+          "median": 87.875,
+          "p95": 270.37499999999994,
+          "max": 601.25
+        },
+        "continuous_arc_m": {
+          "count": 144,
+          "mean": 134.95615938816542,
+          "p05": 65.16419056757617,
+          "median": 108.15364488782984,
+          "p95": 341.88997664307607,
+          "max": 646.4690774377133
+        },
+        "speed_mean_mps": {
+          "count": 144,
+          "mean": 1.2331456105454086,
+          "p05": 1.0308520635117981,
+          "median": 1.2270748610233748,
+          "p95": 1.448779176916771,
+          "max": 1.6196936769519943
+        },
+        "speed_p95_mps": {
+          "count": 144,
+          "mean": 1.3633950868980167,
+          "p05": 1.146395067392814,
+          "median": 1.3600644702651754,
+          "p95": 1.5938714191853254,
+          "max": 1.7754599971761404
+        },
+        "stopped_fraction": {
+          "count": 144,
+          "mean": 0.0014209601112016588,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.002147664621404111,
+          "max": 0.16938775510204082
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 144,
+          "mean": 0.4066432180357323,
+          "p05": 0.32388201404368544,
+          "median": 0.39597884357560603,
+          "p95": 0.48454516246162094,
+          "max": 1.0370230460283385
+        },
+        "unique_grid64_cells": {
+          "count": 144,
+          "mean": 2.2430555555555554,
+          "p05": 1.0,
+          "median": 2.0,
+          "p95": 4.0,
+          "max": 9.0
+        },
+        "clipped_point_fraction": {
+          "count": 144,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 144,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 144,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "1": {
+        "full_span_s": {
+          "count": 141,
+          "mean": 247.28546099290782,
+          "p05": 78.75,
+          "median": 234.75,
+          "p95": 438.5,
+          "max": 564.5
+        },
+        "continuous_span_s": {
+          "count": 141,
+          "mean": 247.28546099290782,
+          "p05": 78.75,
+          "median": 234.75,
+          "p95": 438.5,
+          "max": 564.5
+        },
+        "continuous_arc_m": {
+          "count": 141,
+          "mean": 2576.5725042678587,
+          "p05": 1000.873277687204,
+          "median": 2440.705590162831,
+          "p95": 4165.225658973282,
+          "max": 4410.293764110005
+        },
+        "speed_mean_mps": {
+          "count": 141,
+          "mean": 11.34567608091141,
+          "p05": 7.260358361829151,
+          "median": 10.37666362077696,
+          "p95": 27.491408538042855,
+          "max": 27.65803286251653
+        },
+        "speed_p95_mps": {
+          "count": 141,
+          "mean": 14.917751231831604,
+          "p05": 13.817439293569873,
+          "median": 13.881794581711654,
+          "p95": 27.73801904857554,
+          "max": 27.85736328588418
+        },
+        "stopped_fraction": {
+          "count": 141,
+          "mean": 0.009477825832553534,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.056255247691015954,
+          "max": 0.10724808485562758
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 141,
+          "mean": 0.777476134759698,
+          "p05": 0.3635974172615601,
+          "median": 0.7957279732247452,
+          "p95": 1.0632950163000014,
+          "max": 2.041516679261732
+        },
+        "unique_grid64_cells": {
+          "count": 141,
+          "mean": 19.53191489361702,
+          "p05": 8.0,
+          "median": 17.0,
+          "p95": 38.0,
+          "max": 45.0
+        },
+        "clipped_point_fraction": {
+          "count": 141,
+          "mean": 0.0003361492723194851,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0473970473970474
+        },
+        "retained_point_fraction": {
+          "count": 141,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 141,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "2": {
+        "full_span_s": {
+          "count": 139,
+          "mean": 214.16726618705036,
+          "p05": 72.375,
+          "median": 206.75,
+          "p95": 375.325,
+          "max": 507.0
+        },
+        "continuous_span_s": {
+          "count": 139,
+          "mean": 214.16726618705036,
+          "p05": 72.375,
+          "median": 206.75,
+          "p95": 375.325,
+          "max": 507.0
+        },
+        "continuous_arc_m": {
+          "count": 139,
+          "mean": 2451.162159396174,
+          "p05": 953.3873980146424,
+          "median": 2309.6976247940347,
+          "p95": 4172.269910357851,
+          "max": 4487.410455007061
+        },
+        "speed_mean_mps": {
+          "count": 139,
+          "mean": 12.40318443161126,
+          "p05": 8.287392258939898,
+          "median": 11.080111618378066,
+          "p95": 26.602025116622627,
+          "max": 32.69460643802876
+        },
+        "speed_p95_mps": {
+          "count": 139,
+          "mean": 15.890727810958605,
+          "p05": 11.397825866986166,
+          "median": 13.776718651886455,
+          "p95": 35.59673011429606,
+          "max": 45.596623192511515
+        },
+        "stopped_fraction": {
+          "count": 139,
+          "mean": 0.010081333440292257,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.07417518516251441,
+          "max": 0.16576819407008087
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 139,
+          "mean": 1.5998980084138321,
+          "p05": 1.1691772042217445,
+          "median": 1.567032301855685,
+          "p95": 2.0010148895986237,
+          "max": 2.3482191098441136
+        },
+        "unique_grid64_cells": {
+          "count": 139,
+          "mean": 18.992805755395683,
+          "p05": 6.9,
+          "median": 17.0,
+          "p95": 35.099999999999994,
+          "max": 44.0
+        },
+        "clipped_point_fraction": {
+          "count": 139,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 139,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 139,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "3": {
+        "full_span_s": {
+          "count": 138,
+          "mean": 219.04528985507247,
+          "p05": 65.86250000000001,
+          "median": 214.375,
+          "p95": 395.5125,
+          "max": 515.0
+        },
+        "continuous_span_s": {
+          "count": 138,
+          "mean": 219.04528985507247,
+          "p05": 65.86250000000001,
+          "median": 214.375,
+          "p95": 395.5125,
+          "max": 515.0
+        },
+        "continuous_arc_m": {
+          "count": 138,
+          "mean": 2418.04981167831,
+          "p05": 891.0586562473922,
+          "median": 2338.3866424860107,
+          "p95": 4214.16943615488,
+          "max": 4371.292396850741
+        },
+        "speed_mean_mps": {
+          "count": 138,
+          "mean": 12.383740412434133,
+          "p05": 7.865750429996035,
+          "median": 10.873441331750113,
+          "p95": 27.568587242781085,
+          "max": 34.378338590465276
+        },
+        "speed_p95_mps": {
+          "count": 138,
+          "mean": 16.439758593966918,
+          "p05": 11.547872977559829,
+          "median": 14.355733382950298,
+          "p95": 33.948659305535024,
+          "max": 46.8551617997281
+        },
+        "stopped_fraction": {
+          "count": 138,
+          "mean": 0.008052043783612137,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.04716549377065924,
+          "max": 0.13702928870292888
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 138,
+          "mean": 1.1691296080276574,
+          "p05": 0.7112064747315188,
+          "median": 1.145339085725864,
+          "p95": 1.673146163929022,
+          "max": 2.1802742707257656
+        },
+        "unique_grid64_cells": {
+          "count": 138,
+          "mean": 18.579710144927535,
+          "p05": 7.0,
+          "median": 17.0,
+          "p95": 34.30000000000001,
+          "max": 45.0
+        },
+        "clipped_point_fraction": {
+          "count": 138,
+          "mean": 0.00028763007191402436,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.03871829105473965
+        },
+        "retained_point_fraction": {
+          "count": 138,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 138,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      },
+      "4": {
+        "full_span_s": {
+          "count": 144,
+          "mean": 424.27256944444446,
+          "p05": 165.4375,
+          "median": 389.5,
+          "p95": 800.7874999999999,
+          "max": 911.25
+        },
+        "continuous_span_s": {
+          "count": 144,
+          "mean": 421.15625,
+          "p05": 165.4375,
+          "median": 382.25,
+          "p95": 800.7874999999999,
+          "max": 911.25
+        },
+        "continuous_arc_m": {
+          "count": 144,
+          "mean": 2124.7835249097866,
+          "p05": 813.0001818348887,
+          "median": 1837.9698814460567,
+          "p95": 4079.6972103052613,
+          "max": 4394.308617337219
+        },
+        "speed_mean_mps": {
+          "count": 144,
+          "mean": 5.0841642038720956,
+          "p05": 4.196865324520122,
+          "median": 5.082714564395747,
+          "p95": 6.212935683312736,
+          "max": 6.393972856230143
+        },
+        "speed_p95_mps": {
+          "count": 144,
+          "mean": 5.517771674869344,
+          "p05": 4.749048808031129,
+          "median": 5.482676702155738,
+          "p95": 6.528360307474708,
+          "max": 7.197302557664082
+        },
+        "stopped_fraction": {
+          "count": 144,
+          "mean": 0.0036470830665478507,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.025244367474847432,
+          "max": 0.06073752711496746
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 144,
+          "mean": 0.34556613556645527,
+          "p05": 0.23838724616400842,
+          "median": 0.33747037646884387,
+          "p95": 0.4934222918136632,
+          "max": 0.6419902903613977
+        },
+        "unique_grid64_cells": {
+          "count": 144,
+          "mean": 15.38888888888889,
+          "p05": 6.15,
+          "median": 15.0,
+          "p95": 28.849999999999994,
+          "max": 35.0
+        },
+        "clipped_point_fraction": {
+          "count": 144,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        },
+        "retained_point_fraction": {
+          "count": 144,
+          "mean": 0.9947467086254448,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 144,
+          "mean": 0.013888888888888888,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 1.0
+        }
+      },
+      "5": {
+        "full_span_s": {
+          "count": 140,
+          "mean": 204.2625,
+          "p05": 89.1375,
+          "median": 184.625,
+          "p95": 383.0249999999999,
+          "max": 531.25
+        },
+        "continuous_span_s": {
+          "count": 140,
+          "mean": 204.2625,
+          "p05": 89.1375,
+          "median": 184.625,
+          "p95": 383.0249999999999,
+          "max": 531.25
+        },
+        "continuous_arc_m": {
+          "count": 140,
+          "mean": 2265.474699734681,
+          "p05": 895.5303309652152,
+          "median": 2072.8893556526104,
+          "p95": 4288.953480386956,
+          "max": 4820.465848839369
+        },
+        "speed_mean_mps": {
+          "count": 140,
+          "mean": 11.660208118114843,
+          "p05": 8.221236111305025,
+          "median": 10.357276359228116,
+          "p95": 25.532112062556973,
+          "max": 36.774383149776035
+        },
+        "speed_p95_mps": {
+          "count": 140,
+          "mean": 15.753381376984521,
+          "p05": 12.629371126808515,
+          "median": 14.064207816743263,
+          "p95": 28.150616091691152,
+          "max": 52.57405363683668
+        },
+        "stopped_fraction": {
+          "count": 140,
+          "mean": 0.009652444147993867,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.08815143019408804,
+          "max": 0.18207282913165265
+        },
+        "absolute_acceleration_mean_mps2": {
+          "count": 140,
+          "mean": 1.1846849692176327,
+          "p05": 0.7182449837421352,
+          "median": 1.1961830538812197,
+          "p95": 1.5770905936480133,
+          "max": 2.156256720679662
+        },
+        "unique_grid64_cells": {
+          "count": 140,
+          "mean": 16.535714285714285,
+          "p05": 7.0,
+          "median": 15.0,
+          "p95": 33.04999999999998,
+          "max": 44.0
+        },
+        "clipped_point_fraction": {
+          "count": 140,
+          "mean": 0.0006482593037214886,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0907563025210084
+        },
+        "retained_point_fraction": {
+          "count": 140,
+          "mean": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "break_count": {
+          "count": 140,
+          "mean": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "max": 0.0
+        }
+      }
+    }
+  },
+  "interpretation": "Count matching preserves the CNR class proportions subject to availability. Duration matching minimizes total absolute log-span discrepancy without replacement within class and partition. It preserves count and the same selected CNR IDs, but does not guarantee duration overlap. Available snapshots retain every allowed original ID including short traces for separate positive controls. No original test trajectories receive records, features, images or diagnostic statistics.",
+  "excluded_counts": {
+    "cnr-train": {
+      "rows": 25,
+      "by_class": {
+        "0": 20,
+        "2": 1,
+        "3": 4
+      }
+    },
+    "cnr-val": {
+      "rows": 12,
+      "by_class": {
+        "0": 9,
+        "3": 3
+      }
+    },
+    "sumo-train": {
+      "rows": 0,
+      "by_class": {}
+    },
+    "sumo-val": {
+      "rows": 0,
+      "by_class": {}
+    }
+  },
+  "exclusion_note": "Participant-level exclusion IDs remain in the isolated run; only counts are published."
+}
