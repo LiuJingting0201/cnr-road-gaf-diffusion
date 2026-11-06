@@ -1,0 +1,272 @@
+{
+  "complete": true,
+  "scope": "static_geometry_for_explicit_prospective_public_bus_requests",
+  "policy": {
+    "source_commit": "b29b2f65f1096a9c69a601ec62a724815cb4a43f",
+    "source_scope": "all_24_public_bus_services",
+    "departure_lane": "lowest_index_bus_permitted_lane_on_first_edge",
+    "departure_position_m": 20.0,
+    "arrival_lane": "lowest_index_bus_permitted_lane_on_last_edge",
+    "arrival_position": "declared_lane_length",
+    "stop_position": "public_busStop_endPos",
+    "stop_edge_occurrence": "earliest_forward_occurrence_after_previous_stop",
+    "geometry_policy": {
+      "min_change_length_m": 10.0,
+      "max_join_gap_m": 2.0,
+      "change_sample_spacing_m": 0.25,
+      "corridor_tolerance_m": 1e-06
+    },
+    "simulation_run": false,
+    "fcd_or_g31_leg_metadata_read": false
+  },
+  "denominator": 24,
+  "requests_frozen_before_construction": true,
+  "frozen_request_sha256": "f38fee3fc0190799a340c29ea81d54ea5c1d82dfbf125aa0b32fddddff7a570e",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "source_manifest_sha256": "04223d586569aa4368e6a7e3a0108b28395c951c05da036d73e9ea843bd78d07",
+  "construction_started_unix": 1793952349.2790759,
+  "status_counts": {
+    "static_geometry_constructed": 11,
+    "static_geometry_unsupported": 13
+  },
+  "routes": [
+    {
+      "public_route_id": "bus_100:Menton",
+      "edge_occurrences": 106,
+      "public_stop_count": 28,
+      "status": "static_geometry_constructed",
+      "length_m": 13932.805403954719,
+      "lane_changes": 0,
+      "vertex_count": 1055,
+      "retained_stops": 28,
+      "geometry_sha256": "d4446adc52cd0c5dacb0d40b3194c95118d84f2262b9031dc002e50eae33e5b8",
+      "elapsed_seconds": 1.23120828717947
+    },
+    {
+      "public_route_id": "bus_100:Nice",
+      "edge_occurrences": 112,
+      "public_stop_count": 28,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.06016752868890762
+    },
+    {
+      "public_route_id": "bus_1:Monaco",
+      "edge_occurrences": 79,
+      "public_stop_count": 12,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.1760256439447403
+    },
+    {
+      "public_route_id": "bus_1:SaintRoman",
+      "edge_occurrences": 90,
+      "public_stop_count": 17,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 34",
+      "elapsed_seconds": 0.07209190726280212
+    },
+    {
+      "public_route_id": "bus_2:Jardin",
+      "edge_occurrences": 86,
+      "public_stop_count": 16,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 34",
+      "elapsed_seconds": 0.04874736815690994
+    },
+    {
+      "public_route_id": "bus_2:Monaco",
+      "edge_occurrences": 61,
+      "public_stop_count": 14,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.21832172572612762
+    },
+    {
+      "public_route_id": "bus_3:Fontvieille",
+      "edge_occurrences": 81,
+      "public_stop_count": 15,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 67",
+      "elapsed_seconds": 0.15486399829387665
+    },
+    {
+      "public_route_id": "bus_3:Otto",
+      "edge_occurrences": 65,
+      "public_stop_count": 19,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.0513092577457428
+    },
+    {
+      "public_route_id": "bus_4:Fontvieille",
+      "edge_occurrences": 86,
+      "public_stop_count": 16,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 51",
+      "elapsed_seconds": 0.30239567160606384
+    },
+    {
+      "public_route_id": "bus_4:SaintRoman",
+      "edge_occurrences": 108,
+      "public_stop_count": 17,
+      "status": "static_geometry_constructed",
+      "length_m": 7661.745195541979,
+      "lane_changes": 5,
+      "vertex_count": 1659,
+      "retained_stops": 17,
+      "geometry_sha256": "0aed6ff1cddd66e18bfb09c99a35f78256ee0a76b7fd6f12db3a94b2e7b29294",
+      "elapsed_seconds": 0.43822046369314194
+    },
+    {
+      "public_route_id": "bus_5:Hopital",
+      "edge_occurrences": 66,
+      "public_stop_count": 18,
+      "status": "static_geometry_constructed",
+      "length_m": 6608.740504734457,
+      "lane_changes": 4,
+      "vertex_count": 1443,
+      "retained_stops": 18,
+      "geometry_sha256": "9e9afdf11e1f5328d27d1a3ee62b6a573ce27a516042882544e39adeb6381058",
+      "elapsed_seconds": 0.21162504702806473
+    },
+    {
+      "public_route_id": "bus_5:Larvotto",
+      "edge_occurrences": 47,
+      "public_stop_count": 15,
+      "status": "static_geometry_constructed",
+      "length_m": 3952.1691939941084,
+      "lane_changes": 3,
+      "vertex_count": 696,
+      "retained_stops": 15,
+      "geometry_sha256": "e8cf5e0150adc0f254dfd34f0a2a75d9bbabeb63fbe905a6ff9b1434443b0ac0",
+      "elapsed_seconds": 0.10743344575166702
+    },
+    {
+      "public_route_id": "bus_6:Fontvieille",
+      "edge_occurrences": 61,
+      "public_stop_count": 16,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.030898600816726685
+    },
+    {
+      "public_route_id": "bus_6:Larvotto",
+      "edge_occurrences": 68,
+      "public_stop_count": 19,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 40",
+      "elapsed_seconds": 0.08174226433038712
+    },
+    {
+      "public_route_id": "bus_M1:Eze",
+      "edge_occurrences": 8,
+      "public_stop_count": 3,
+      "status": "static_geometry_constructed",
+      "length_m": 6317.012372397484,
+      "lane_changes": 0,
+      "vertex_count": 416,
+      "retained_stops": 3,
+      "geometry_sha256": "032b56cc27ddde3c42e181ef502673ba265f9a5aa2ae9d350715cb6ca4cccb3f",
+      "elapsed_seconds": 0.2346208319067955
+    },
+    {
+      "public_route_id": "bus_M1:France",
+      "edge_occurrences": 8,
+      "public_stop_count": 3,
+      "status": "static_geometry_constructed",
+      "length_m": 6332.810857563656,
+      "lane_changes": 2,
+      "vertex_count": 1764,
+      "retained_stops": 3,
+      "geometry_sha256": "6508abe1768180fbaeb79a3358f4989f5585012cc90446dbbd10ad780751f62e",
+      "elapsed_seconds": 0.2338186576962471
+    },
+    {
+      "public_route_id": "bus_M2:France",
+      "edge_occurrences": 14,
+      "public_stop_count": 2,
+      "status": "static_geometry_constructed",
+      "length_m": 4106.694555272742,
+      "lane_changes": 2,
+      "vertex_count": 2770,
+      "retained_stops": 2,
+      "geometry_sha256": "5d5575f6e3cada65d2e48cf289a570d5d9e0348504d34aec28b5b87408309360",
+      "elapsed_seconds": 0.3954770117998123
+    },
+    {
+      "public_route_id": "bus_M2:Turbie",
+      "edge_occurrences": 13,
+      "public_stop_count": 2,
+      "status": "static_geometry_unsupported",
+      "reason": "No permitted internal connection at edge occurrence 2",
+      "elapsed_seconds": 0.025482438504695892
+    },
+    {
+      "public_route_id": "bus_M3:Hospital",
+      "edge_occurrences": 31,
+      "public_stop_count": 7,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.6265965104103088
+    },
+    {
+      "public_route_id": "bus_M3:Turbie",
+      "edge_occurrences": 24,
+      "public_stop_count": 7,
+      "status": "static_geometry_unsupported",
+      "reason": "Planned stop cannot be reached on its permitted lane",
+      "elapsed_seconds": 0.006446965038776398
+    },
+    {
+      "public_route_id": "bus_M4:HotelVille",
+      "edge_occurrences": 12,
+      "public_stop_count": 5,
+      "status": "static_geometry_constructed",
+      "length_m": 1372.1076670909076,
+      "lane_changes": 0,
+      "vertex_count": 108,
+      "retained_stops": 5,
+      "geometry_sha256": "1cbec3abf943046c27ee0a1da1b9fedc213f21f8602b48090fe5d3abe4c82640",
+      "elapsed_seconds": 0.0699586421251297
+    },
+    {
+      "public_route_id": "bus_M4:Train",
+      "edge_occurrences": 13,
+      "public_stop_count": 4,
+      "status": "static_geometry_constructed",
+      "length_m": 1613.4598317898428,
+      "lane_changes": 1,
+      "vertex_count": 281,
+      "retained_stops": 4,
+      "geometry_sha256": "d304b1952a6ce3cb6139e02430cb9d21d3c2947728375ebc834255d03959cac0",
+      "elapsed_seconds": 0.11872456222772598
+    },
+    {
+      "public_route_id": "bus_M5:PontUnion",
+      "edge_occurrences": 9,
+      "public_stop_count": 8,
+      "status": "static_geometry_constructed",
+      "length_m": 4828.281046027211,
+      "lane_changes": 0,
+      "vertex_count": 275,
+      "retained_stops": 8,
+      "geometry_sha256": "99f3298a114c5d501672393bd72f5888a281fcde3de5684aa13ba1976bf0a091",
+      "elapsed_seconds": 0.20750509947538376
+    },
+    {
+      "public_route_id": "bus_M5:Ramingao",
+      "edge_occurrences": 9,
+      "public_stop_count": 7,
+      "status": "static_geometry_constructed",
+      "length_m": 4826.257695501385,
+      "lane_changes": 2,
+      "vertex_count": 4806,
+      "retained_stops": 7,
+      "geometry_sha256": "1ea57607ebd327a231a36265dc44f4c4fb80ded85d227941f6110b713dd394aa",
+      "elapsed_seconds": 0.31945984065532684
+    }
+  ],
+  "generation_ready": false,
+  "simulation_dynamics_or_reference_alignment_validated": false
+}

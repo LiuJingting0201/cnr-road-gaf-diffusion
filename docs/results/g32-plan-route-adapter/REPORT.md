@@ -70,4 +70,5 @@ G33 尚须：冻结一批新需求（与训练/开发/留出 parent 隔离和存
 - 固定请求和原 proof：`/workspace/cnr-experiments/gaf-inloop-v1/g32-job/g32-data/public-bus-map-v1/frozen-public-requests.json`、`public-bus-proof.json`。
 - 同目录：`constructor-checks.json`、`first-failure-diagnosis.json`、`diagnosis-invocation-failure.json`。诊断首个调用错误使用不存在的 `g32-job/.venv`，在 Python 启动前退出 127，无写入；之后使用已有 `g31-job/.venv/bin/python`，仅在 g32 新目录写入。旧工作树未改动。
 - v2 单次结果：`g32-data/public-bus-map-v2/public-bus-proof-v2.json`、`constructor-checks-v2.json`、`implementation-receipt.json`。从当前源码逆向应用本目录的 `v1-to-v2.patch`，已实测逐字节恢复两个旧文件；Git 也可恢复旧实现，不依赖临时目录。
+- 本目录的 `public-bus-proof*.json` 是追加 `source_sha256` 脚本哈希元数据的本地版本；对应 `*.raw.json` 与服务器原回执逐字节一致。`receipt-provenance.json` 保存两者哈希及精确变换，已核验全部原有字段相同，未修改任何指标。
 - Git 只收代码、文字、无原始坐标的小型聚合回执。完整请求 manifest 与路径顶点留服务器，不作为论文结果图或数据泄露到仓库。

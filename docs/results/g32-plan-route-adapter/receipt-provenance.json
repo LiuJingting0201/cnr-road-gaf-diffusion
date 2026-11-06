@@ -1,0 +1,34 @@
+{
+  "complete": true,
+  "records": [
+    {
+      "server_path": "/workspace/cnr-experiments/gaf-inloop-v1/g32-job/g32-data/public-bus-map-v1/public-bus-proof.json",
+      "raw_local_file": "public-bus-proof.raw.json",
+      "raw_sha256": "174d09e04efbd510c7218f18a783a8595266ff9a959edb4fed6693ef4e967cda",
+      "annotated_local_file": "public-bus-proof.json",
+      "annotated_sha256": "2946dd7fd5cf8ec4c163ca89518c414a177f0b3f9b6bf04b95d1955baa67beae",
+      "exact_transform": "Parse raw JSON; append source_sha256 with implementation script digests; serialize json.dumps(indent=2) plus one trailing newline.",
+      "added_source_sha256": {
+        "g32_routes.py": "5283172dfc5cd9cb7d70aee16f7abd8ef5b5adbb6913879a15776f8d4b32f5dc",
+        "g32_route_checks.py": "aa2350d26fa8e1f7de9c3c0d1f6e8f79651535b9ae9a23e1a08da5445b562450"
+      },
+      "all_existing_fields_equal": true,
+      "raw_serialization_verified": true
+    },
+    {
+      "server_path": "/workspace/cnr-experiments/gaf-inloop-v1/g32-job/g32-data/public-bus-map-v2/public-bus-proof-v2.json",
+      "raw_local_file": "public-bus-proof-v2.raw.json",
+      "raw_sha256": "33533431966468bce3ca41e6890cba3810fa9fc7e012af1e3c3d16b329b4d620",
+      "annotated_local_file": "public-bus-proof-v2.json",
+      "annotated_sha256": "2914dcde749d52bbdcdf2242899e7e554b39406fcf3d3b90fe0cbb4333bbc4f9",
+      "exact_transform": "Parse raw JSON; append source_sha256 with implementation script digests; serialize json.dumps(indent=2) plus one trailing newline.",
+      "added_source_sha256": {
+        "g32_routes.py": "89b7dd17687b6b41d8ee15dd80511f0582e35670b9a7784e199fc5470b130107",
+        "g32_route_checks.py": "28812bbf9fc0512c566affa1eef64b15bb1366decdd5e446c5a36c64abcba5b8"
+      },
+      "all_existing_fields_equal": true,
+      "raw_serialization_verified": true
+    }
+  ],
+  "purpose": "Preserve byte-identical server receipts alongside local metadata-enriched copies; no metrics were changed."
+}
