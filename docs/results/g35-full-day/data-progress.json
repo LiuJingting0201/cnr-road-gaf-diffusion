@@ -1,0 +1,11 @@
+{
+  "stage": "simulate-350101",
+  "pid": 219016,
+  "completed_stages": [],
+  "elapsed_s": 140.017536111176,
+  "storage": {
+    "budget_root_bytes": 163440998,
+    "free_bytes": 24897998848
+  },
+  "status": "running"
+}

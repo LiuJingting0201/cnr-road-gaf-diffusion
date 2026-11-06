@@ -1,0 +1,9 @@
+{
+  "stage": "waiting_for_full_day_data",
+  "seconds": 150.01808615028858,
+  "storage": {
+    "budget_root_bytes": 176604801,
+    "free_bytes": 24884834304
+  },
+  "model_fits_started": 0
+}
