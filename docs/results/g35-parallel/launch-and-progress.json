@@ -1,0 +1,263 @@
+{
+  "checked_unix": 1793982596.0013282,
+  "complete": false,
+  "files": {
+    "launch.json": {
+      "launched_unix": 1793982426.110541,
+      "pids": {
+        "data": 219389,
+        "training": 219390
+      },
+      "code_commit": "307ec8d",
+      "parallel_sumo_scenes": 3,
+      "complete": false,
+      "scope": "Parallel data starts; model queue waits for verified full dataset"
+    },
+    "data-started.json": {
+      "pid": 219389,
+      "started_unix": 1793982426.1687875,
+      "status": "started",
+      "seeds": [
+        350101,
+        350102,
+        350201
+      ],
+      "parallel_branches": 3,
+      "code_sha256": {
+        "scripts/g35b_data_run.py": "94e2cca9a0dac3d963625064a898b2b4d1cba80221d2f5c6aeab505258a3e0a3",
+        "scripts/g35b_simulate.py": "6d48c71bf66948409a24d54b260606a0d2788adb857b9e871a1370d3587aea7a",
+        "scripts/g35b_extract.py": "e1792c8ec0600b4cd3e840d7875961b8ab998db4b214cf5e186662b8419c8298",
+        "scripts/g35_merge.py": "f74b897e21afcc3a46a50fc758dcb3cf031e5505979b7273f34fa87012346897",
+        "scripts/g35_simulate.py": "dcf0ca9717c5b8d76e53345a9c018e8a90a39a5b02a670738acf0b223dca0819",
+        "scripts/g35_extract.py": "027bf03beffed8faa3a566cf9e03f0e42fa9c8a183b4b22527612226691d7326",
+        "scripts/g31_legs.py": "7c2eaf249ff710f01b78b4c378dec72e2d3f500cd7740b195749f72ec8e5942b",
+        "scripts/g31_replay.py": "07caa5e88d771fc45e0ce0fd056239f0a4aac001186f853f576adc0565a1d908",
+        "scripts/g30_native.py": "bdca92617e2b2787b746918b6df1330338164b970b7568b3db6a6a770c3590a5",
+        "scripts/g30_extract.py": "e310405bb6dab584a57604c852135128abe76462a4a9fc5121741c5ba4600fb8",
+        "scripts/g30_prepare.py": "b89f28a81f877158f229e3b3c0cd442ccc898700fcb3c023f938b513448d8eba",
+        "scripts/g30_demand_audit.py": "1cbb24bdb2f9d505e4502e3b20c1e69c702edc384d0a1b7507258bdd34dbee98",
+        "scripts/g29_prepare.py": "004f7bf17e0de35b4e4e2cebfc7e0ed9d023eaba0441caffa6c506a30c741b52",
+        "scripts/g33_prepare.py": "c9556ad60cd1862289ddff6d85c6057cfe0d222a94bcfa26a21fa863d3632328",
+        "src/cnr/data.py": "5f8c6cb1aaefdcc5728a5286505df0198c6bc01c736aacb7cbc67541102e64e9"
+      },
+      "resource_limits": {
+        "minimum_free_bytes": 8589934592,
+        "maximum_budget_root_bytes": 16106127360,
+        "check_interval_seconds": 10
+      },
+      "training_started": false
+    },
+    "data-progress.json": {
+      "status": "running",
+      "active": {
+        "simulate-350101": {
+          "pid": 219391,
+          "pgid": 219391,
+          "phase": "running"
+        },
+        "simulate-350102": {
+          "pid": 219392,
+          "pgid": 219392,
+          "phase": "running"
+        },
+        "simulate-350201": {
+          "pid": 219393,
+          "pgid": 219393,
+          "phase": "running"
+        }
+      },
+      "completed_stages": [],
+      "elapsed_s": 160.0442694351077,
+      "storage": {
+        "budget_root_bytes": 176890694,
+        "free_bytes": 18183725056
+      }
+    },
+    "training-progress.json": {
+      "stage": "waiting_for_full_day_data",
+      "seconds": 160.03092694282532,
+      "storage": {
+        "budget_root_bytes": 176900506,
+        "free_bytes": 18183712768
+      },
+      "model_fits_started": 0
+    }
+  },
+  "simulations": [
+    {
+      "status": "running",
+      "complete": false,
+      "pid": 219408,
+      "runner_pid": 219391,
+      "seed": 350101,
+      "split": "train",
+      "seconds": 161.3485076278448,
+      "last_summary": {
+        "time": "20255.00",
+        "loaded": "3895",
+        "inserted": "3616",
+        "running": "1968",
+        "waiting": "1",
+        "ended": "1652",
+        "arrived": "1648",
+        "collisions": "0",
+        "teleports": "3",
+        "halting": "75",
+        "stopped": "960",
+        "meanWaitingTime": "0.45",
+        "meanTravelTime": "530.88",
+        "meanSpeed": "10.86",
+        "meanSpeedRelative": "0.72",
+        "discarded": "4",
+        "duration": "20"
+      },
+      "storage": {
+        "budget_root_bytes": 179285926,
+        "free_bytes": 18181316608
+      },
+      "config_sha256": "d3ac772e52aeb261b985480143261f12ac758f9d38eed2500594caee36355ef8",
+      "recorded_identity_count": 16599,
+      "recorded_family_counts": {
+        "bus": 380,
+        "passenger": 8959,
+        "ptw": 4500,
+        "bicycle": 1392,
+        "on-demand": 757,
+        "highway": 611
+      }
+    },
+    {
+      "status": "running",
+      "complete": false,
+      "pid": 219409,
+      "runner_pid": 219392,
+      "seed": 350102,
+      "split": "train",
+      "seconds": 161.36094331741333,
+      "last_summary": {
+        "time": "20283.75",
+        "loaded": "3897",
+        "inserted": "3668",
+        "running": "1989",
+        "waiting": "1",
+        "ended": "1683",
+        "arrived": "1679",
+        "collisions": "0",
+        "teleports": "5",
+        "halting": "53",
+        "stopped": "993",
+        "meanWaitingTime": "0.42",
+        "meanTravelTime": "530.68",
+        "meanSpeed": "11.33",
+        "meanSpeedRelative": "0.75",
+        "discarded": "4",
+        "duration": "17"
+      },
+      "storage": {
+        "budget_root_bytes": 179285925,
+        "free_bytes": 18181316608
+      },
+      "config_sha256": "dc7103e08fcdab5becb2925e729edd71885f5fe46b93779466776cf6a651d329",
+      "recorded_identity_count": 16906,
+      "recorded_family_counts": {
+        "bus": 394,
+        "ptw": 4458,
+        "passenger": 9219,
+        "bicycle": 1373,
+        "on-demand": 798,
+        "highway": 664
+      }
+    },
+    {
+      "status": "running",
+      "complete": false,
+      "pid": 219407,
+      "runner_pid": 219393,
+      "seed": 350201,
+      "split": "val",
+      "seconds": 161.29937153309584,
+      "last_summary": {
+        "time": "20404.50",
+        "loaded": "3909",
+        "inserted": "3885",
+        "running": "2090",
+        "waiting": "1",
+        "ended": "1799",
+        "arrived": "1795",
+        "collisions": "0",
+        "teleports": "13",
+        "halting": "53",
+        "stopped": "1070",
+        "meanWaitingTime": "0.42",
+        "meanTravelTime": "535.55",
+        "meanSpeed": "11.33",
+        "meanSpeedRelative": "0.75",
+        "discarded": "4",
+        "duration": "18"
+      },
+      "storage": {
+        "budget_root_bytes": 179129522,
+        "free_bytes": 18181476352
+      },
+      "config_sha256": "54631ead00cf25712b690e1f84afa12c6de55e1631e13fa922508e92ff20a1d9",
+      "recorded_identity_count": 8086,
+      "recorded_family_counts": {
+        "bus": 172,
+        "passenger": 4395,
+        "bicycle": 672,
+        "on-demand": 382,
+        "ptw": 2180,
+        "highway": 285
+      }
+    }
+  ],
+  "preflight": {
+    "simulation_checks": 13,
+    "extract_checks": 6,
+    "queue_checks": 9,
+    "old_helper_checks": 15
+  },
+  "gpu_status": "0, 0 %, 0 MiB\n1, 0 %, 0 MiB\n2, 0 %, 0 MiB\n3, 0 %, 0 MiB\n",
+  "code_sha256": {
+    "g35b_data_run.py": "94e2cca9a0dac3d963625064a898b2b4d1cba80221d2f5c6aeab505258a3e0a3",
+    "g35b_simulate.py": "6d48c71bf66948409a24d54b260606a0d2788adb857b9e871a1370d3587aea7a",
+    "g35b_extract.py": "e1792c8ec0600b4cd3e840d7875961b8ab998db4b214cf5e186662b8419c8298",
+    "g35b_simulation_checks.py": "41b86ecaae8494e036f0e8ff01cff025835c9c224a0f2e86af0ce7e644b47fbf",
+    "g35_simulate.py": "dcf0ca9717c5b8d76e53345a9c018e8a90a39a5b02a670738acf0b223dca0819"
+  },
+  "old_canceled_simulation": {
+    "status": "failed",
+    "complete": false,
+    "returncode": 0,
+    "seed": 350101,
+    "split": "train",
+    "seconds": 3776.787370659411,
+    "error": "InterruptedError('Runner received signal 15')",
+    "last_summary": {
+      "time": "31803.25",
+      "loaded": "29256",
+      "inserted": "29088",
+      "running": "12362",
+      "waiting": "3",
+      "ended": "16740",
+      "arrived": "16726",
+      "collisions": "0",
+      "teleports": "249",
+      "halting": "351",
+      "stopped": "10505",
+      "meanWaitingTime": "0.69",
+      "meanTravelTime": "611.11",
+      "meanSpeed": "8.95",
+      "meanSpeedRelative": "0.60",
+      "discarded": "14",
+      "duration": "40"
+    },
+    "log_keyword_line_counts": {
+      "teleport": 501,
+      "collision": 1,
+      "warning:": 3209,
+      "error:": 0,
+      "discard": 0
+    }
+  }
+}

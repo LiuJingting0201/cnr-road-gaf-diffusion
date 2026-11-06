@@ -489,3 +489,6 @@ G35启动更新：ecfb7a7已先提交推送；隔离服务器随后核对8个新
 
 
 2026-11-07 G35b: execution amendment fixed before launch in docs/G35B_EXECUTION.md. Three CPU SUMO scenes run concurrently with predeclared FCD identity lists; native background demand, split, time and model budgets remain. The v1 partial attempt is preserved; no completed data or speedup claim yet. New isolated g35b-job only.
+
+
+G35b launch confirmed after commit 307ec8d: three CPU SUMO branches are progressing concurrently; all 43 focused checks passed on server and runtime hashes match. The saved 160-second checkpoint is docs/results/g35-parallel/launch-and-progress.json. Shared-interval per-scene compute time is essentially unchanged under concurrency; summary timing excludes output I/O and no exact full-day speedup/ETA is claimed. Old partial v1 attempt was gracefully canceled and preserved, local archive is pending checksum completion. Four diffusion fits and two GAF teachers remain automatically queued after data readiness. No new model result or thesis change. Details and deployment/approval limitations: docs/results/g35-parallel/STATUS.md.
