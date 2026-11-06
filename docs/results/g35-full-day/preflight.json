@@ -1,0 +1,20 @@
+{
+  "status": "preflight_passed",
+  "simulation_synthetic_checks": 15,
+  "extraction_synthetic_checks": 7,
+  "merge_construct_checks": "passed; offsets, identity isolation, preassignment, semantic metadata, hashes, readiness",
+  "teacher_cache_synthetic_checks": 10,
+  "actual_simulation_started": false,
+  "actual_training_started": false,
+  "code_sha256": {
+    "g35_extract.py": "027bf03beffed8faa3a566cf9e03f0e42fa9c8a183b4b22527612226691d7326",
+    "g35_extract_checks.py": "4d3c2b2f3e53f17c281e4193b387aeb64e1f4accf2c274428988c17fefd8acef",
+    "g35_merge.py": "f74b897e21afcc3a46a50fc758dcb3cf031e5505979b7273f34fa87012346897",
+    "g35_simulation_checks.py": "9fd10dad89bf4d845e25037d4314ca119b19d461bd4c0be2a2b232097ab2b79c",
+    "g35_teachers.py": "ccb3dd7269fd55e877fb7512422a5682e9acb968a358b83c8c0cac9000243b8f",
+    "g35_train_run.py": "3618c4ba2d1c07c89e61434332e84b197fc42659fc0c2ddbb5956d57c813d458",
+    "g35_simulate.py": "8928fffd70a4326c2069dc62726b4a84be202ec281efd80a24a605158f7255c8",
+    "g35_data_run.py": "4a45ad9efed76488cf0eb3687d71ab24e4cb2857cecda5bdee64bd051ecd56cb"
+  },
+  "limits": "Synthetic checks and immutable source preflight; not full-day simulation or model results."
+}
