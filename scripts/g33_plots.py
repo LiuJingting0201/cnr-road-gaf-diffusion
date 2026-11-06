@@ -62,13 +62,30 @@ def aggregate(root, output):
         ax.set(title=title, ylabel="W1 ("+unit+")", xticks=range(3),
                xticklabels=["Empirical", "257 bins", "0.25 s"])
         ax.tick_params(axis="x", rotation=25)
-        ax.set_ylim(bottom=0)
+        ax.set_ylim(0, max(.001, ax.get_ylim()[1])*1.12)
         ax.grid(axis="y", alpha=.22)
     fig.suptitle("Complete-trip synthesis: independent SUMO comparison", fontsize=17)
     fig.text(.5, .012, "Five-class macro W1; lower is better. Circles: seed 42; squares: seed 43. "
              "Shared duration prior. One reference episode; no confidence intervals.", ha="center", fontsize=10)
     fig.tight_layout(rect=(0, .04, 1, .95))
     finish(fig, output, "generation-quality")
+
+    fig, axes = plt.subplots(1, 2, figsize=(9, 4.3))
+    for ax, key, title, unit in zip(axes, ("native_speed_w1_mps", "native_acceleration_w1_mps2"),
+                                  ("Native speed distribution", "Native acceleration distribution"), ("m/s", "m/s²")):
+        for i, name in enumerate(families):
+            for offset, seed, marker in ((-.07, 42, "o"), (.07, 43, "s")):
+                values = [rows[name, seed]["paired_by_class"][c][key] for c in CLASSES]
+                if all(v is not None for v in values):
+                    ax.scatter(i+offset, np.mean(values), s=55, marker=marker, color=COLORS[name], zorder=3)
+        ax.set(title=title, ylabel="Five-class macro W1 ("+unit+")", xticks=range(3), xticklabels=["Empirical", "257 bins", "0.25 s"])
+        ax.set_ylim(0, max(.001, ax.get_ylim()[1])*1.12)
+        ax.grid(axis="y", alpha=.22)
+    fig.suptitle("Motion at the original 0.25-second resolution", fontsize=14)
+    fig.text(.5, .015, "Equal request mass; then equal candidate mass; then physical-interval weights.\n"
+             "Circles: seed 42; squares: seed 43. Lower is better; no confidence intervals.", ha="center", fontsize=9)
+    fig.tight_layout(rect=(0, .10, 1, .93))
+    finish(fig, output, "native-motion")
 
     selected = {seed: receipt(evaluation/f"selected-native_0_25s-{seed}"/"complete.json") for seed in (42, 43)}
     fig, axes = plt.subplots(2, 5, figsize=(17, 7))
@@ -132,8 +149,8 @@ def cases(root, output):
             ax.grid(alpha=.2)
         axes[2].legend(fontsize=8, ncol=2)
         fig.suptitle(name+": first eligible request, seed 42", fontsize=15)
-        fig.text(.5, .01, "Case selected by request order, not quality. Samples may have different durations; "
-                 "this is synthesis, not pointwise prediction of the reference.", ha="center", fontsize=9)
+        fig.text(.5, .01, "Case selected by request order, not quality. Different durations are allowed. "
+                 "Speed summarizes complete one-second intervals; the final partial second is omitted.", ha="center", fontsize=9)
         fig.tight_layout(rect=(0, .04, 1, .94))
         finish(fig, output, "case-"+CLASSES[label])
         saved.append({"class": CLASSES[label], "supported": True, "eligible_requests": len(eligible),
