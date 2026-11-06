@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "g32_routes.py": "89b7dd17687b6b41d8ee15dd80511f0582e35670b9a7784e199fc5470b130107",
+    "g32_route_checks.py": "28812bbf9fc0512c566affa1eef64b15bb1366decdd5e446c5a36c64abcba5b8"
+  },
+  "v1_source_sha256": {
+    "g32_routes.py": "5283172dfc5cd9cb7d70aee16f7abd8ef5b5adbb6913879a15776f8d4b32f5dc",
+    "g32_route_checks.py": "aa2350d26fa8e1f7de9c3c0d1f6e8f79651535b9ae9a23e1a08da5445b562450"
+  },
+  "v1_source_archive": "/workspace/cnr-experiments/gaf-inloop-v1/g32-job/g32-data/public-bus-map-v1/source",
+  "v2_protocol_commit": "e0592b7"
+}

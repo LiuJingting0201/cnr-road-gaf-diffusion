@@ -1,0 +1,7 @@
+{
+  "complete": false,
+  "phase": "diagnosis_interpreter_start",
+  "reason": "g32-job/.venv/bin/python missing; shell exit 127 before Python executed",
+  "data_or_code_written_by_failed_invocation": false,
+  "recovery": "use existing g31-job/.venv/bin/python without editing old jobs"
+}

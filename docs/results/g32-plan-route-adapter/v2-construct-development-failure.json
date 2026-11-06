@@ -1,0 +1,7 @@
+{
+  "complete": false,
+  "phase": "synthetic_fixture_development",
+  "reason": "first constant-offset S fixture did not reproduce whole-edge blend failure; assertion failed before any real-request v2 run",
+  "fix": "use explicit curved lanes that are adjacent initially and have a 0.4m wider separation around the middle, so the defect and legal early change are both observable",
+  "geometry_policy_changed_in_response_to_failure": false
+}

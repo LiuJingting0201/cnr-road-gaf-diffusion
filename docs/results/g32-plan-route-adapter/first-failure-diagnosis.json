@@ -1,0 +1,128 @@
+{
+  "complete": true,
+  "scope": "same_frozen_requests_and_geometry_policy_first_failure_each_kind",
+  "parameter_sweep": false,
+  "fcd_read": false,
+  "rows": [
+    {
+      "public_route_id": "bus_100:Nice",
+      "error": "Planned stop cannot be reached on its permitted lane",
+      "edge_occurrence": 2,
+      "edge": "-153492",
+      "states": [
+        [
+          "-153492_2",
+          0.0
+        ]
+      ],
+      "goals": [
+        [
+          "-153492_1",
+          0.5932658955331792
+        ]
+      ],
+      "resulting_states": [],
+      "on_edge_checks": [
+        {
+          "source_lane": "-153492_2",
+          "target_lane": "-153492_1",
+          "start_position_m": 0.0,
+          "end_position_m": 295.76677955911117,
+          "lateral_lanes": [
+            "-153492_2",
+            "-153492_1"
+          ],
+          "available_declared_distance_m": 295.76677955911117,
+          "required_declared_distance_m": 10.0,
+          "constructed": false,
+          "corridor_failure": {
+            "lanes": [
+              "-153492_2",
+              "-153492_1"
+            ],
+            "outside_length_m": 0.2928580580573646
+          }
+        }
+      ]
+    },
+    {
+      "public_route_id": "bus_1:SaintRoman",
+      "error": "No permitted internal connection at edge occurrence 34",
+      "edge_occurrence": 34,
+      "edge": "152818#3",
+      "states": [
+        [
+          "152818#3_2",
+          0.0
+        ]
+      ],
+      "goals": [
+        [
+          "152818#3_1",
+          1.0
+        ],
+        [
+          "152818#3_2",
+          1.0
+        ]
+      ],
+      "resulting_states": [
+        [
+          "152818#3_2",
+          1.0
+        ]
+      ],
+      "on_edge_checks": [
+        {
+          "source_lane": "152818#3_2",
+          "target_lane": "152818#3_1",
+          "start_position_m": 0.0,
+          "end_position_m": 58.19,
+          "lateral_lanes": [
+            "152818#3_2",
+            "152818#3_1"
+          ],
+          "available_declared_distance_m": 58.19,
+          "required_declared_distance_m": 10.0,
+          "constructed": false,
+          "corridor_failure": {
+            "lanes": [
+              "152818#3_2",
+              "152818#3_1"
+            ],
+            "outside_length_m": 0.021670908730782437
+          }
+        },
+        {
+          "source_lane": "152818#3_2",
+          "target_lane": "152818#3_2",
+          "start_position_m": 0.0,
+          "end_position_m": 58.19,
+          "lateral_lanes": [
+            "152818#3_2"
+          ],
+          "available_declared_distance_m": 58.19,
+          "required_declared_distance_m": 0.0,
+          "constructed": true,
+          "corridor_failure": null
+        }
+      ],
+      "target_edge": "152389",
+      "raw_permitted_connections": {
+        "152818#3_1": [
+          "152389_1"
+        ],
+        "152818#3_2": []
+      },
+      "permitted_with_2m_joins": {
+        "152818#3_1": [
+          "152389_1"
+        ],
+        "152818#3_2": []
+      },
+      "current_state_connections": {
+        "152818#3_2": []
+      }
+    }
+  ]
+}

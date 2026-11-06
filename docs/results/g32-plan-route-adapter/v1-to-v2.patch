@@ -1,0 +1,202 @@
+--- a/scripts/g32_routes.py
++++ b/scripts/g32_routes.py
+@@ -158,6 +158,24 @@
+                 return None
+         return tuple(ids)
+ 
++    def lane_slice(self, lane, start, end):
++        shape = self.shapes[lane]
++        return _coordinates(substring(shape, start * shape.length, end * shape.length))
++
++    def blend(self, left, right, lo, hi):
++        length = max(self.shapes[left].length, self.shapes[right].length) * (hi - lo)
++        count = max(8, int(math.ceil(length / self.change_sample_spacing_m)))
++        coords = []
++        for sample in range(count + 1):
++            t = sample / count
++            blend = t * t * t * (10 + t * (-15 + 6 * t))
++            u = lo + (hi - lo) * t
++            a = self.shapes[left].interpolate(u, normalized=True)
++            b = self.shapes[right].interpolate(u, normalized=True)
++            _append(coords, [(a.x * (1 - blend) + b.x * blend,
++                              a.y * (1 - blend) + b.y * blend)])
++        return coords
++
+     def on_edge(self, source, target, start, end, vclass, occurrence):
+         if end < start - 1e-10:
+             return None
+@@ -165,32 +183,45 @@
+         if not lanes:
+             return None
+         changes = len(lanes) - 1
+-        if changes and (end - start) * min(self.length(lane) for lane in lanes) < changes * self.min_change_length_m:
+-            return None
+-        coords = []
++        spans = [self.min_change_length_m / min(self.shapes[a].length, self.shapes[b].length)
++                 for a, b in zip(lanes, lanes[1:])]
++        if sum(spans) > end - start + 1e-12:
++            return None
++        coords, windows = [], []
+         if not changes:
+-            shape = self.shapes[source]
+-            coords = _coordinates(substring(shape, start * shape.length, end * shape.length))
++            coords = self.lane_slice(source, start, end)
+         else:
++            current = start
+             for index, (left, right) in enumerate(zip(lanes, lanes[1:])):
+-                lo = start + (end - start) * index / changes
+-                hi = start + (end - start) * (index + 1) / changes
+-                length = max(self.shapes[left].length, self.shapes[right].length) * (hi - lo)
+-                count = max(8, int(math.ceil(length / self.change_sample_spacing_m)))
+-                for sample in range(count + 1):
+-                    t = sample / count
+-                    blend = t * t * t * (10 + t * (-15 + 6 * t))
+-                    u = lo + (hi - lo) * t
+-                    a = self.shapes[left].interpolate(u, normalized=True)
+-                    b = self.shapes[right].interpolate(u, normalized=True)
+-                    _append(coords, [(a.x * (1 - blend) + b.x * blend,
+-                                      a.y * (1 - blend) + b.y * blend)])
++                span = spans[index]
++                latest = end - span - sum(spans[index + 1:])
++                step = self.change_sample_spacing_m / max(self.shapes[left].length, self.shapes[right].length)
++                count = max(0, int(math.floor((latest - current) / step)))
++                starts = [current + item * step for item in range(count + 1)]
++                if latest > starts[-1] + 1e-12:
++                    starts.append(latest)
++                for lo in starts:
++                    hi = lo + span
++                    candidate = self.blend(left, right, lo, hi)
++                    if self.covered(candidate, (left, right)):
++                        _append(coords, self.lane_slice(left, current, lo))
++                        _append(coords, candidate)
++                        windows.append({"lanes": [left, right], "start_fraction": lo,
++                                        "end_fraction": hi,
++                                        "longitudinal_geometry_m": [(hi - lo) * self.shapes[lane].length
++                                                                    for lane in (left, right)]})
++                        current = hi
++                        break
++                else:
++                    return None
++            _append(coords, self.lane_slice(lanes[-1], current, end))
+         if not coords or not self.covered(coords, lanes):
+             return None
+         distance = LineString(coords).length if len(coords) > 1 else 0.
+         return {"kind": "lane_change" if changes else "lane_follow",
+                 "edge_occurrence": occurrence, "lanes": list(lanes),
+                 "start_fraction": start, "end_fraction": end,
++                "lane_change_windows": windows,
+                 "lane_changes": changes, "length_m": distance, "xy": coords}
+ 
+     @lru_cache(maxsize=32768)
+@@ -311,6 +342,8 @@
+         if len(vertices) < 2 or LineString(vertices).length <= 0:
+             raise UnsupportedRoute("Zero-length geometry has no motion decoder")
+         policy = {"min_change_length_m": self.min_change_length_m,
++                  "change_length_units": "actual_geometric_arclength_on_both_lanes",
++                  "lane_change_placement": "earliest_covered_local_window",
+                   "max_join_gap_m": self.max_join_gap_m,
+                   "change_sample_spacing_m": self.change_sample_spacing_m,
+                   "corridor_tolerance_m": self.corridor_tolerance_m,
+--- a/scripts/g32_route_checks.py
++++ b/scripts/g32_route_checks.py
+@@ -113,6 +113,28 @@
+         half = stretched.construct(request(stretched, edges=["a"], start={"lane": "a_0", "pos": 50.}, end={"lane": "a_0", "pos": 100.}))
+         assert half.vertices[0] == (25., 0.) and half.vertices[-1] == (50., 0.)
+         checks.append("declared_lane_position_differs_from_shape_arclength")
++        rejected("ten_declared_metres_are_not_ten_geometry_metres", lambda: stretched.construct(request(stretched, edges=["a"], start={"lane": "a_0", "pos": 50.}, end={"lane": "a_1", "pos": 60.})))
++        geometric = stretched.construct(request(stretched, edges=["a"], start={"lane": "a_0", "pos": 50.}, end={"lane": "a_1", "pos": 70.}))
++        assert all(min(window["longitudinal_geometry_m"]) >= 10. - 1e-10
++                   for piece in geometric.pieces for window in piece["lane_change_windows"])
++        checks.append("local_change_has_ten_actual_geometry_metres_on_both_lanes")
++        from shapely.geometry import LineString
++        curved = LineString([(0, 0), (30, 0), (50, 20), (80, 20), (100, 0), (130, 0)])
++        offset = curved.parallel_offset(3.2, "left", join_style=2)
++        # The lanes touch along their initial straight, then separate slightly
++        # around the middle curve. A change is legal early, not across that gap.
++        offset = LineString([(x, y + .4 if y > 20 else y) for x, y in offset.coords])
++        shapes = [curved, offset]
++        lanes = ''.join(f'<lane id="curve_{i}" index="{i}" length="{shape.length}" width="3.2" shape="' +
++                        ' '.join(f'{x},{y}' for x, y in shape.coords) + '"/>' for i, shape in enumerate(shapes))
++        curve_path = directory / "curve.net.xml"
++        curve_path.write_text('<net><edge id="curve">' + lanes + '</edge></net>')
++        curve_net = VehicleRouteNetwork(curve_path)
++        whole_blend = curve_net.blend("curve_0", "curve_1", 0., 1.)
++        assert not curve_net.covered(whole_blend, ("curve_0", "curve_1")), "Fixture must expose whole-edge blend failure"
++        curve_route = curve_net.construct(request(curve_net, edges=["curve"], start={"lane": "curve_0", "pos": 0.}, end={"lane": "curve_1", "pos": offset.length}))
++        assert curve_net.covered(curve_route.vertices, ("curve_0", "curve_1"))
++        checks.append("curved_lane_global_blend_fails_but_local_window_stays_in_corridor")
+         plan = {"provenance": "public_input_only", "status": "complete_scheduled_source_service",
+                 "kind": "vehicle", "edges": ["a", "b", "c"], "planned_stops": [{"busStop": "public-stop"}]}
+         locations = {"public-stop": {"lane": "b_0", "startPos": "10", "endPos": "20"}}
+@@ -245,11 +267,70 @@
+     return result
+ 
+ 
++def public_bus_proof_frozen(source, frozen_path, output):
++    """One v2 pass over the byte-identical v1 manifest; no endpoint refreezing."""
++    source, frozen_path, output = map(lambda value: Path(value).resolve(), (source, frozen_path, output))
++    if output.is_relative_to(source) or source.is_relative_to(output) or output == frozen_path.parent:
++        raise ValueError("A new isolated proof output is required")
++    output.mkdir(parents=True, exist_ok=False)
++    before = digest(frozen_path)
++    frozen = json.loads(frozen_path.read_text())
++    old = json.loads((frozen_path.parent / "public-bus-proof.json").read_text())
++    if before != old["frozen_request_sha256"] or len(frozen["requests"]) != 24:
++        raise ValueError("Frozen v1 request identity or denominator changed")
++    net_path, _ = source_inputs(source)
++    network = VehicleRouteNetwork(net_path)
++    if network.network_sha256 != old["network_sha256"]:
++        raise ValueError("Network changed between geometry implementations")
++    rows = []
++    for request in frozen["requests"]:
++        started = time.monotonic()
++        row = {"public_route_id": request["public_request_id"], "edge_occurrences": len(request["edges"]),
++               "public_stop_count": len(request["stops"])}
++        try:
++            geometry = network.construct(request)
++            manifest = geometry.manifest()
++            if len(manifest["stop_progress_m"]) != row["public_stop_count"]:
++                raise AssertionError("Constructor lost a source stop")
++            windows = [window for piece in geometry.pieces for window in piece.get("lane_change_windows", [])]
++            if any(min(window["longitudinal_geometry_m"]) < 10. - 1e-8 for window in windows):
++                raise AssertionError("Local window violated geometric distance policy")
++            encoded = json.dumps(geometry.vertices, separators=(",", ":")).encode()
++            row.update(status="static_geometry_constructed", length_m=geometry.length_m,
++                       lane_changes=geometry.lane_changes, vertex_count=len(geometry.vertices),
++                       retained_stops=len(manifest["stop_progress_m"]), geometry_sha256=hashlib.sha256(encoded).hexdigest())
++        except UnsupportedRoute as error:
++            row.update(status="static_geometry_unsupported", reason=str(error))
++        row["elapsed_seconds"] = time.monotonic() - started
++        rows.append(row)
++    if digest(frozen_path) != before:
++        raise AssertionError("Frozen v1 manifest changed")
++    result = {"complete": True, "scope": "static_geometry_same_24_frozen_public_bus_requests_v2",
++              "frozen_request_sha256": before, "network_sha256": network.network_sha256,
++              "source_manifest_sha256": digest(source / "complete.json"), "denominator": 24,
++              "same_frozen_v1_requests": True, "fcd_or_g31_leg_metadata_read": False,
++              "request_policy": frozen["policy"],
++              "geometry_policy": {"min_change_length_m": 10., "change_length_units": "actual_geometric_arclength_on_both_lanes",
++                                  "lane_change_placement": "earliest_covered_local_window",
++                                  "max_join_gap_m": 2., "change_sample_spacing_m": .25, "corridor_tolerance_m": 1e-6},
++              "status_counts": dict(Counter(row["status"] for row in rows)), "routes": rows,
++              "generation_ready": False, "simulation_dynamics_or_reference_alignment_validated": False}
++    (output / "public-bus-proof-v2.json").write_text(json.dumps(result, indent=2) + "\n")
++    return result
++
++
+ if __name__ == "__main__":
+     parser = argparse.ArgumentParser()
+     parser.add_argument("--public-source", type=Path)
+     parser.add_argument("--output", type=Path)
++    parser.add_argument("--frozen-requests", type=Path)
+     args = parser.parse_args()
+     if bool(args.public_source) != bool(args.output):
+         parser.error("--public-source and --output must be supplied together")
+-    print(json.dumps(public_bus_proof(args.public_source, args.output) if args.public_source else run(), indent=2))
++    if args.frozen_requests and not args.public_source:
++        parser.error("--frozen-requests requires --public-source and --output")
++    if args.frozen_requests:
++        result = public_bus_proof_frozen(args.public_source, args.frozen_requests, args.output)
++    else:
++        result = public_bus_proof(args.public_source, args.output) if args.public_source else run()
++    print(json.dumps(result, indent=2))
