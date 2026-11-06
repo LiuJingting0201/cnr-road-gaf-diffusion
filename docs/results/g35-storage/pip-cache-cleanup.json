@@ -1,0 +1,75 @@
+{
+  "cleanup": {
+    "started_unix": 1793984614.5169282,
+    "roots": [
+      "/root/.cache/pip/http",
+      "/root/.cache/pip/http-v2"
+    ],
+    "file_count": 882,
+    "logical_bytes": 11286313364,
+    "bytes_by_root": {
+      "/root/.cache/pip/http": 5464978474,
+      "/root/.cache/pip/http-v2": 5821334890
+    },
+    "free_before_bytes": 13713653760,
+    "scope": "Only unused pip HTTP download cache, not installed packages, weights, datasets or old worktrees",
+    "complete": true,
+    "finished_unix": 1793984615.7242203,
+    "free_after_bytes": 25009328128,
+    "observed_free_delta_bytes": 11295674368
+  },
+  "verification_unix": 1793984682.0586624,
+  "free_bytes": 24847630336,
+  "training": {
+    "stage": "waiting_for_full_day_data",
+    "seconds": 2250.4471603035927,
+    "storage": {
+      "budget_root_bytes": 4798511122,
+      "free_bytes": 24860516352
+    },
+    "model_fits_started": 0
+  },
+  "data": {
+    "status": "running",
+    "active": {
+      "simulate-350101": {
+        "pid": 219391,
+        "pgid": 219391,
+        "phase": "running"
+      },
+      "simulate-350102": {
+        "pid": 219392,
+        "pgid": 219392,
+        "phase": "running"
+      },
+      "simulate-350201": {
+        "pid": 219393,
+        "pgid": 219393,
+        "phase": "running"
+      }
+    },
+    "completed_stages": [],
+    "elapsed_s": 2250.5526324659586,
+    "storage": {
+      "budget_root_bytes": 4798636136,
+      "free_bytes": 24860393472
+    }
+  },
+  "failure_markers": [],
+  "preserved_imagenet_weight": {
+    "exists": true,
+    "bytes": 46830571,
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  },
+  "runtime_links": {
+    ".venv": "/workspace/cnr-road-gaf-diffusion/.venv",
+    "g10-env": "/workspace/cnr-experiments/gaf-inloop-v1/g10-env",
+    "src": "/workspace/cnr-experiments/gaf-inloop-v1/src"
+  },
+  "active_sumo_pids": [
+    219409,
+    219408,
+    219407
+  ],
+  "all_sumo_processes_exist": true
+}

@@ -1,0 +1,82 @@
+{
+  "checked_unix": 1793984750.8834894,
+  "free_bytes": 32598310912,
+  "mamba_cleanup": {
+    "started_unix": 1793984713.7793999,
+    "root": "/opt/simready/mamba/pkgs",
+    "patterns": [
+      "*.tar.bz2",
+      "*.conda"
+    ],
+    "file_count": 360,
+    "logical_bytes": 7919325539,
+    "free_before_bytes": 24769875968,
+    "scope": "Only inactive conda/mamba compressed installation downloads; extracted packages, installed environments and all experiment files preserved",
+    "complete": true,
+    "finished_unix": 1793984713.8180327,
+    "free_after_bytes": 32689954816,
+    "observed_free_delta_bytes": 7920078848
+  },
+  "data": {
+    "status": "running",
+    "active": {
+      "simulate-350101": {
+        "pid": 219391,
+        "pgid": 219391,
+        "phase": "running"
+      },
+      "simulate-350102": {
+        "pid": 219392,
+        "pgid": 219392,
+        "phase": "running"
+      },
+      "simulate-350201": {
+        "pid": 219393,
+        "pgid": 219393,
+        "phase": "running"
+      }
+    },
+    "completed_stages": [],
+    "elapsed_s": 2320.568860948086,
+    "storage": {
+      "budget_root_bytes": 4970286218,
+      "free_bytes": 32608829440
+    }
+  },
+  "training": {
+    "stage": "waiting_for_full_day_data",
+    "seconds": 2320.4607451483607,
+    "storage": {
+      "budget_root_bytes": 4970130841,
+      "free_bytes": 32608985088
+    },
+    "model_fits_started": 0
+  },
+  "failure_markers": [],
+  "simulations": [
+    {
+      "seed": 350102,
+      "pid": 219409,
+      "status": "running",
+      "seconds": 2322.0088316500187,
+      "virtual_time": "31640.25",
+      "alive": true
+    },
+    {
+      "seed": 350101,
+      "pid": 219408,
+      "status": "running",
+      "seconds": 2321.9871261268854,
+      "virtual_time": "30893.00",
+      "alive": true
+    },
+    {
+      "seed": 350201,
+      "pid": 219407,
+      "status": "running",
+      "seconds": 2321.9611399397254,
+      "virtual_time": "32909.75",
+      "alive": true
+    }
+  ]
+}
