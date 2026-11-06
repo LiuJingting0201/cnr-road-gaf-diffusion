@@ -23,6 +23,20 @@ def run():
             base = data["base_ids"] if domain == "native" else data["ids"]
             keys[domain] = [("random:" if domain == "sumo" else "source:")+str(x) for x in base]
         assert len(set(keys[domain])) == len(keys[domain])
+    expected = {f"{domain}-{seed}" for domain in DOMAINS for seed in (42,43)} | {
+        f"frozen-g29-cnr-{seed}" for seed in (42,43)}
+    assert set(transfer["models"]) == expected
+    for model in expected:
+        assert set(transfer["models"][model]) == set(DOMAINS)
+        for domain in DOMAINS:
+            with np.load(ROOT/"predictions"/f"{model}-on-{domain}.npz") as p:
+                assert np.array_equal(p["ids"],rows[domain]["ids"])
+                assert np.array_equal(p["labels"],rows[domain]["labels"])
+                assert np.isfinite(p["probabilities"]).all()
+                cm = np.bincount(6*p["labels"]+p["probabilities"].argmax(1), minlength=36).reshape(6,6)
+                saved = transfer["models"][model][domain]
+                assert np.array_equal(cm,saved["confusion"])
+                assert all(np.isclose(v,saved[k],atol=1e-7) for k,v in metrics(cm).items())
     union = sorted(set().union(*map(set, keys.values())))
     lookup = {key: i for i, key in enumerate(union)}
     weights = np.random.default_rng(30055).exponential(size=(2000, len(union)))
@@ -31,6 +45,8 @@ def run():
     result = {"complete": True, "model_slots": 6, "new_fitted_models": 6-reused,
               "reused_identical_cohort_models": reused, "frozen_teacher_models": 2,
               "scope": "Fixed final50 epochs, two seeds; no generation fit or thesis update",
+              "validation_checks": {"eight_transfer_models_and_24_prediction_sets": True,
+                  "fixed_fit_configs": True, "train_validation_prediction_metrics": True},
               "uncertainty": {"method": "shared-entity weighted Bayesian bootstrap, 2000 Exp(1) draws, seed30055",
                   "shared_cnr_native_validation_base_ids": len(set(keys["cnr"]) & set(keys["native"])),
                   "limitation": "Conditional on observed entities, fixed models and public demand; not confidence coverage for new routes, cities or training randomness"},
