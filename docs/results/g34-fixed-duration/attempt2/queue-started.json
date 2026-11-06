@@ -1,0 +1,23 @@
+{
+  "started_unix": 1793962572.5450187,
+  "experiment_phase": "G34_fixed_request_duration_development_diagnostic",
+  "gpu_slots": {
+    "42": 2,
+    "43": 3
+  },
+  "model_seeds": [
+    42,
+    43
+  ],
+  "K": 8,
+  "DDIM_steps": 100,
+  "source_sha256": {
+    "g34_fixed_duration.py": "8611722a064fe6373b7af3d6bcf950078e5e66a3d25dce59221ddabb0a22f571",
+    "g34_summary.py": "a7d4f01ade784f3b8d39a2df4162a6e3d39d7245d0974d73fd5d08973894478e",
+    "g34_run_attempt2.sh": "da94325ae57edd374c220d7babb89b91848a50bd75ade03f12692969caeedf57",
+    "g33_model.py": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+    "g33_evaluate.py": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff",
+    "g33_feedback.py": "7bcef0e0d56eb3298674507a6b50c2c0afeed719a19333f10bbb73ca3677bff7"
+  },
+  "scope": "Reuse inspected G33 development reference; no new training or simulation"
+}

@@ -1,0 +1,102 @@
+{
+  "complete": true,
+  "phase": "terminal_gaf_selection",
+  "methods": [
+    "Uniform",
+    "S",
+    "V",
+    "SV"
+  ],
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "family": "diffusion",
+  "arm": "native_0_25s",
+  "seed": 42,
+  "requested_conditions": 100,
+  "pools": 97,
+  "K": 8,
+  "source_candidates": 776,
+  "source_candidate_status_counts": {
+    "generated": 776
+  },
+  "shared_uniform_fallback_pools": 0,
+  "selected_counts": {
+    "Uniform": 97,
+    "S": 97,
+    "V": 97,
+    "SV": 97
+  },
+  "space_encoding_failures": 0,
+  "speed_encoding_failures": 0,
+  "spatial_unique_image_count_by_pool": {
+    "8": 96,
+    "7": 1
+  },
+  "selection_changes_from_uniform": {
+    "Uniform": 0,
+    "S": 86,
+    "V": 83,
+    "SV": 89
+  },
+  "policy": {
+    "uniform_seed": 33073,
+    "uniform": "first slot of request-ID-keyed fixed random permutation over all requested K slots",
+    "scores": "S=log(target_p_spatial),V=log(target_p_speed),SV=.5*S+.5*V",
+    "probability_floor": 1e-08,
+    "ties": "exact score ties use same permutation as Uniform; no tolerance",
+    "encoding_failure": "any missing/failed candidate/view makes all four selectors use same Uniform slot; no replacement",
+    "teacher_score_role": "auxiliary; independently evaluated physical quality determines synthesis benefit"
+  },
+  "teacher_candidate_evaluations": {
+    "spatial": 776,
+    "speed": 776
+  },
+  "seconds": 12.556452438235283,
+  "reference_data_opened": false,
+  "sources": {
+    "generation_receipt_sha256": "5e8a8a9d7ef213711dfab5a40585d1d2e098daac88fe70f71b6d233cc749e153",
+    "cache_receipt_sha256": "f2d20f2d51040a721e0572b68536bad92198902c6c9d38e8903c8b4c4423ffc0",
+    "teacher_receipts": {
+      "spatial": "2f012b1ce3baa5fe141ff2b57277d6da14821950f04ce6826f53b6b41816f73c",
+      "speed": "866397a129fa835a1add2b489358fa5629f3a94e86efc4bad28271f4d8dbefad"
+    },
+    "code_sha256": {
+      "g29_encode.py": "8e9a6fc60d6cb07fe4bc22dc19b44e242af88409c806f00dab441cd63c1dd210",
+      "original_gaf.py": "0f3c56aed8208c828ab80107de984c2b33e6b5a06aaa58b93799aff7b8565305",
+      "hilbert.py": "80d40b879b3c7d997e738274a71af914c461f2f22ed081618e3c49bc8f04af53",
+      "representations.py": "e4328c4f9e0d68b4d16d716b57aae720ef720ccf0623e48f658395cccabd2040",
+      "sequence.py": "096ea10df30a02ea4c7609459f83a463c8289461a6b7a2258f52802c4b76cc97",
+      "g23_modes.py": "d89f6477f6f06df85ca9dd0b0b92839598057b0d3bc6311363a3e7d89b2afcfc",
+      "g28_teachers.py": "58ed6f4b7c51c003c9c643ce34adfcf7753a272b9299e17bcccabda12d16f515",
+      "g33_prepare.py": "c9556ad60cd1862289ddff6d85c6057cfe0d222a94bcfa26a21fa863d3632328",
+      "g33_teachers.py": "76a3c6920ba0754cc536e05480e16ad25b5a40c753eb7b25053a73ef3b7126a9",
+      "g33_feedback.py": "7bcef0e0d56eb3298674507a6b50c2c0afeed719a19333f10bbb73ca3677bff7",
+      "g33_evaluate.py": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+    }
+  },
+  "artifacts": {
+    "scores.npz": {
+      "sha256": "f0644a9c4a7861b01852168983872aca6eb9f6182a635218ad6310167a355966",
+      "bytes": 38838
+    },
+    "encoding-status.json": {
+      "sha256": "1b1cfcf323a76261fc11ac97e1cea4c2f294b8960d62bcba8348f94bfbeb8cf5",
+      "bytes": 376227
+    },
+    "selection-status.json": {
+      "sha256": "013174e3c233b8eea2a833387e33e2be011a0835ff69490a932b79129edc3e3f",
+      "bytes": 154533
+    }
+  },
+  "limits": [
+    "This is terminal selection, not in-loop guidance; no denoising or extra candidate generation occurs.",
+    "Same-route candidates may have identical spatial images; exact ties keep Uniform selection.",
+    "Both selection teachers are self-trained; their own scores cannot establish independent quality gain.",
+    "One retained candidate per request has no within-request diversity estimate; retain all-pool baseline and across-request dispersion."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "complete": true,
+  "scope": "descriptive G33 figures; no new fitting or selection",
+  "code_sha256": "e9c7de4e8a0810b07fed6fa86450cde3d197299d86d807e49e2667eb87fc3f72",
+  "sources": {
+    "evaluation_receipts": {
+      "empirical-42": "ff657939b3c67723985e3683e089003d71e4b5d788d564aa1aa0bd3df5033ac6",
+      "empirical-43": "208d6f011c7fea1bcfae65673f14065863757ee049dfcacf323d1fc3b7b02276",
+      "relative_257-42": "67cd73937cae4497dea1de41d8e05514ae6760e172b5b6fac15cd7854a2d6863",
+      "relative_257-43": "aeafed1233fb1d3d0175d410a5dd3edaeeb1bbd4d166939f96e8cc5cc45f3a0f",
+      "native_0_25s-42": "c00721f82bd4e5e71174b0a1e276020ae17a6ed3988b16df71f555002090c230",
+      "native_0_25s-43": "628704c5e80d3896620167af3fc2682a093d16c4334f622678c5f21c7462dd9e"
+    },
+    "selection_evaluation_receipts": {
+      "42": "4727a03516c0b15fd46112d663dde7ff7147cb6e2da4df814bbe8fafbb04ba09",
+      "43": "24f83483d8982cf41d50bf1e7a02145a5eebfaa2a2287bd79eba849c5b866ab1"
+    }
+  },
+  "case_rule": "First lexicographic reference-and-four-selection paired request per class, seed42",
+  "cases": [
+    {
+      "class": "bus",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "9ec84037ff7df4bc1f4bc9cfef9124c0ac8b4908f37b7cd3313a5494814d54a5"
+    },
+    {
+      "class": "motorcycle",
+      "supported": true,
+      "eligible_requests": 18,
+      "request_sha256": "6b112f0b8048929535393670aad36ad7f077228a55c81194e4ed708b5e0ab4c1"
+    },
+    {
+      "class": "private_car",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "08838e2e943e6f7baa436b27091a0b226e530a748f2cdb3596e3e44f9e63375c"
+    },
+    {
+      "class": "bycicle",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "b3bbe731a291cfd92c70fb0d5a4c63a08e0f4f7d6e0fd46969667c5289d5733f"
+    },
+    {
+      "class": "taxi_or_uber",
+      "supported": true,
+      "eligible_requests": 19,
+      "request_sha256": "07f5e0372a4bf5f992cda37c6162108e5a1c8c83ff18daea9c1ae0295c91762f"
+    }
+  ],
+  "artifacts": {
+    "case-bus.pdf": {
+      "sha256": "b3020542385f78631def7649f04f0e5f577f05b81d2819239af0f8b11c557c33",
+      "bytes": 76437
+    },
+    "case-bus.png": {
+      "sha256": "c85d7a6cf9c54e394015d19000ae96c20cfde4a3abb8570254b987a366e3e3aa",
+      "bytes": 412387
+    },
+    "case-bycicle.pdf": {
+      "sha256": "95da5b5cc3d39eb34df55869cefde69354ff4f5b35b85bb0916f8b633bdaf98d",
+      "bytes": 41068
+    },
+    "case-bycicle.png": {
+      "sha256": "852cbdea3ecb4847dd5406f07b0d20d1538a3f5561a52cf013ed0286d6b9ba2f",
+      "bytes": 315914
+    },
+    "case-motorcycle.pdf": {
+      "sha256": "253aebe426f40103c2932526913abc347af8964538422b9d3131f21404070436",
+      "bytes": 60916
+    },
+    "case-motorcycle.png": {
+      "sha256": "abe19d840ebbe19862b3260f9659f59fdeb6ba5d28ed5c70933aaf02fd8ce545",
+      "bytes": 397983
+    },
+    "case-private_car.pdf": {
+      "sha256": "c2f6ec20ca3870e4acc3395439aa6dbfa328ef48ecc266fb4afb31d561516ed5",
+      "bytes": 46354
+    },
+    "case-private_car.png": {
+      "sha256": "89d302271beacf9268ee1f938dd79f6d0a87c486c86d46062ffe9489bb9a10a5",
+      "bytes": 301681
+    },
+    "case-taxi_or_uber.pdf": {
+      "sha256": "807567e87cfd9e2fe408cab261b4df6874fd56ac63a35c2b3e102d906c7915c7",
+      "bytes": 43674
+    },
+    "case-taxi_or_uber.png": {
+      "sha256": "22604ffeca4e32706234f99c3f91562d586f75be0bb18610b7d25b6782249712",
+      "bytes": 372395
+    },
+    "gaf-physical-effects.pdf": {
+      "sha256": "2a1dc1a8beed3cdd1df5cec316dbab727633f7cf932ff7b3885158b2dd2b0266",
+      "bytes": 29428
+    },
+    "gaf-physical-effects.png": {
+      "sha256": "fa930c04254f9e849ddee91e36c049782db960c25a5b163abe39752e11090e6b",
+      "bytes": 236683
+    },
+    "generation-quality.pdf": {
+      "sha256": "bd0006c2e277dcd16859a639890b288e17fefabcafeccd58ec3ca66c51f6e587",
+      "bytes": 27526
+    },
+    "generation-quality.png": {
+      "sha256": "21cc23070fcd9ece84322330099e3e9af1397c1e9ee8137b33f66389e9377ef4",
+      "bytes": 228962
+    },
+    "native-motion.pdf": {
+      "sha256": "c0a78ad15ea2e65596e00cced198ce2884c80eca0b54812b76663547538e242b",
+      "bytes": 18556
+    },
+    "native-motion.png": {
+      "sha256": "491647f78b1a3e83a62277c4bc347005b129bf7ac3a057e531c46cf813b00ce0",
+      "bytes": 92921
+    }
+  }
+}

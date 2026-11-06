@@ -1,0 +1,51 @@
+{
+  "complete": true,
+  "phase": "prospective_maps",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "denominator": 100,
+  "ready": 97,
+  "status_counts": {
+    "map_ready": 97,
+    "map_unsupported": 3
+  },
+  "by_class": {
+    "bus": {
+      "map_ready": 21,
+      "map_unsupported": 3
+    },
+    "motorcycle": {
+      "map_ready": 19
+    },
+    "private_car": {
+      "map_ready": 19
+    },
+    "bycicle": {
+      "map_ready": 19
+    },
+    "taxi_or_uber": {
+      "map_ready": 19
+    }
+  },
+  "request_sha256": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "constructor_sha256": "89b7dd17687b6b41d8ee15dd80511f0582e35670b9a7784e199fc5470b130107",
+  "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff",
+  "reference_data_opened": false,
+  "scope": "Static permitted route geometry only; no traffic/signal/collision or generated dynamics claim",
+  "artifacts": {
+    "maps.npz": {
+      "bytes": 374150,
+      "sha256": "80eaf15cbc19de3a5d4f3bd2bd7d53a641fe4cecd97ebf3e2b3e60eb97c3fd3d"
+    },
+    "request-status.json": {
+      "bytes": 22480,
+      "sha256": "c3eee81f7edc973cb911654dcf641b1abef9b7dbf590f6497a59e4f82a0de0f3"
+    }
+  }
+}

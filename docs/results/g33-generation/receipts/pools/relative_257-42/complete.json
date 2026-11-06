@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "phase": "prospective_generation",
+  "family": "diffusion",
+  "arm": "relative_257",
+  "seed": 42,
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "requested_conditions": 100,
+  "map_ready_conditions": 97,
+  "requested_candidates_per_condition": 8,
+  "candidate_denominator_all_requests": 800,
+  "attempted_candidates": 776,
+  "generated_candidates": 776,
+  "status_counts": {
+    "generated": 776
+  },
+  "ddim_steps": 100,
+  "network_forward_calls": 77600,
+  "teacher_calls": 0,
+  "nearest_training_pool": null,
+  "elapsed_s": 322.3841421306133,
+  "reference_data_opened": false,
+  "request_sha256": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+  "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+  "training_model_receipt_sha256": "f9084de06e531187b96a89a5176bccf823ae2a5f1a8d316b2f286cb77b65d7b5",
+  "duration_prior_sha256": "34943b532bc30d216b2cd894d74aa4a89e73549ca19bbba53e77c7f85df28224",
+  "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff",
+  "model_code_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+  "artifacts": {
+    "samples.npz": {
+      "bytes": 29830851,
+      "sha256": "f559a3dc9c9dee69d0f04fedebce2fced1b8bd9db9eedfb76214e632919875aa"
+    },
+    "generated.csv.gz": {
+      "bytes": 32206675,
+      "sha256": "302f00e492bf5cdb40ce707cf49794fbe56c2e214c04e1e82fab7877546fdc74"
+    },
+    "candidate-status.json": {
+      "bytes": 268710,
+      "sha256": "e474528a1312858a752528fa539625e0fddbeac9a54174877c991e9114d88897"
+    }
+  },
+  "limits": [
+    "Route legality is inherited from a static map constructor, not learned collision/signal compliance.",
+    "Both diffusion representations and empirical transfer share the same sampled duration prior; duration differences are not a diffusion benefit.",
+    "All outputs use independent pre-simulation route requests; no observed reference trajectory/time is passed to generation."
+  ]
+}

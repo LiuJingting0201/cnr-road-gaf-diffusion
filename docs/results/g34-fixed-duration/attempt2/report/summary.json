@@ -1,0 +1,3521 @@
+{
+  "complete": true,
+  "experiment_phase": "G34_fixed_request_duration_development_diagnostic",
+  "expected_evaluations": 10,
+  "completed_evaluations": 10,
+  "new_blind_reference": false,
+  "sampled_duration_source": "G33_train_prior_draw_keyed_by_predetermined_Uniform_candidate_ID",
+  "array_contract_checks": [
+    {
+      "requests": 97,
+      "all_pool_candidates_checked": 776,
+      "old_new_Uniform_bitwise_equal": true,
+      "old_new_Uniform_max_absolute_txy_error": 0.0,
+      "old_new_Uniform_requests_checked": 97,
+      "all_pool_duration_equal_to_G33_Uniform": true,
+      "all_four_selected_durations_equal_to_G33_Uniform": true,
+      "selected_trajectories_checked": 388,
+      "seed": 42,
+      "sources": {
+        "old_pool_receipt": "0a229014e47837ee980ccb0113f7b1b7a5e2704771c7e3b4839901668de646b5",
+        "new_pool_receipt": "5e8a8a9d7ef213711dfab5a40585d1d2e098daac88fe70f71b6d233cc749e153",
+        "duration_plan": "02662e3572068d1a168fabd75c4aa53e494fe862c9ccb92a0f3630abce438ac3",
+        "old_samples": "4deff78ac4d1a5f862b2a88b55b37e8b86a339dc8a4f31105a472614d17f3f2f",
+        "new_samples": "2d15e7f2a552eef2a183c4e1f1433cce78093ee80ca6b5d7d806458f1149cd46",
+        "selection_receipts": {
+          "Uniform": "25a7c3866e20695d87484ccd32578d34c3ddae7c78e3c2c4f502297e1b8ecf3a",
+          "S": "5f6c2a5ff0d774851a5e06211d9d417dcc70e61e8d409a5496c7c8796d303ab0",
+          "V": "d09bdb5b9be00e6a6b89e7159bbad3c62ecf4f58062f2d5e5578229e157eb2d8",
+          "SV": "a59bb0d5779d713f578461a5b543907fd14714ba445e5518b94e7b5f7df563d0"
+        }
+      }
+    },
+    {
+      "requests": 97,
+      "all_pool_candidates_checked": 776,
+      "old_new_Uniform_bitwise_equal": true,
+      "old_new_Uniform_max_absolute_txy_error": 0.0,
+      "old_new_Uniform_requests_checked": 97,
+      "all_pool_duration_equal_to_G33_Uniform": true,
+      "all_four_selected_durations_equal_to_G33_Uniform": true,
+      "selected_trajectories_checked": 388,
+      "seed": 43,
+      "sources": {
+        "old_pool_receipt": "8f02fc4c49d78eb21c59c32cb6bcaab2de84ff179b82287ad9e8ca3ddd556606",
+        "new_pool_receipt": "02fbcbf2943b0b0efa0695ce0bcf8d6354727d5637778c4c3e123e93050d927a",
+        "duration_plan": "23cd13b2eebc35018d7457a975f754916aafc9358fe6d82415aed75061cca390",
+        "old_samples": "1d5d373ae5fb1393fbb90ac0db5400479056571fddeba08782c0c4cbda33af21",
+        "new_samples": "61412ab9d0e327e459eac173616f3b3d8656b2eaf05869f756e6ff57e49a48ea",
+        "selection_receipts": {
+          "Uniform": "f4e8c8653228c3a54ccb511d0c9abe0d8c32552a2a1b26bc876c4c4f14e50e3b",
+          "S": "dfb79b657484a57047496f2743f340eb1a3d9e3080e15c5b5366eb7afbcdadfc",
+          "V": "f1e76cee14ae72a419197f2858857d0935c6d7fb63aeeae89333d90cd4bc631d",
+          "SV": "dac7376bb02180cbfe7aeb9b16821999af6be37935ada077e0bfd4cc5f2c36f6"
+        }
+      }
+    }
+  ],
+  "inputs_sha256": {
+    "native_0_25s-42/complete.json": "78bd825e922544256191e1bbcb9407af856836b25069be5131c2fa639fd4f854",
+    "G33/native_0_25s-42/complete.json": "c00721f82bd4e5e71174b0a1e276020ae17a6ed3988b16df71f555002090c230",
+    "selected-native_0_25s-42/Uniform/complete.json": "0c55817134c597cbf9dcfd7946b24d3dfa6a2b44d21d849ef10702505ad736d0",
+    "G33/selected-native_0_25s-42/Uniform/complete.json": "8bf73ecf44c4cc9a942d0e4176030ce2e24185077868a244f3697e03ab5b19cd",
+    "selected-native_0_25s-42/S/complete.json": "bb70878df584f4dcf176e5b6734df64b43aa031d9e946eb6fbbc4b7e4d6762ec",
+    "G33/selected-native_0_25s-42/S/complete.json": "f88b0aa911a000b01b82cada9743dd87365b67cee4d3a676a0b252508bf289c7",
+    "selected-native_0_25s-42/V/complete.json": "9677a8980611667f69811f10327deac3eee3037f298c68fc51a07664f1f4d8f8",
+    "G33/selected-native_0_25s-42/V/complete.json": "4b462496c934dc08300757efbc97b3665d3479a969d253793919f213255a266e",
+    "selected-native_0_25s-42/SV/complete.json": "08fbb9980b2ffbe6e243661ddfb563107a9951aae67dbb2d7794fb40ebc17878",
+    "G33/selected-native_0_25s-42/SV/complete.json": "3922f5d2b3527d9869a3b1628f32ee831b51e145fc612c6babf9fe93624849f5",
+    "native_0_25s-43/complete.json": "9314a4347ea664190645e97442f10b0e1d154fe99365b16827bb8da2c6f7b3c6",
+    "G33/native_0_25s-43/complete.json": "628704c5e80d3896620167af3fc2682a093d16c4334f622678c5f21c7462dd9e",
+    "selected-native_0_25s-43/Uniform/complete.json": "4417ca59ebea6082e61939fd2f8fe04a32401b8078f5f5632e66283a9f8e1a25",
+    "G33/selected-native_0_25s-43/Uniform/complete.json": "71efacd8b20ccee39ee96f4b5e420ecf80636adc7338b40009834d0d91c1d8f6",
+    "selected-native_0_25s-43/S/complete.json": "ff7366666be448b880d42ab513a33fed3f1740c094aa8d414b1f2cfd8712053d",
+    "G33/selected-native_0_25s-43/S/complete.json": "a063be936553ca318dd520d90673cdb428056b6e10328bbd3736f76bbbd14753",
+    "selected-native_0_25s-43/V/complete.json": "f51446d57bee986500ac03b56f39dec92a920f27428d280f512c117fcd0b09c0",
+    "G33/selected-native_0_25s-43/V/complete.json": "46035fa6c9ed3fc7b8874d13323ff2366fa286ec1f859b7b460e98adf80a7fd3",
+    "selected-native_0_25s-43/SV/complete.json": "54f5ac92ffcc4cb7fce6fdc9774b75e5ebdb6e5160548580c0a710d642ea15dd",
+    "G33/selected-native_0_25s-43/SV/complete.json": "ea75ac68209de65b67bb4193601773c2ad033193216e1cc522de113c1237dc89"
+  },
+  "common_sources": {
+    "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+    "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+    "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5"
+  },
+  "rows": [
+    {
+      "name": "native_0_25s-42",
+      "kind": "full_pool",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 42,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 776,
+      "generated_candidates_paired": 752,
+      "physical_w1": {
+        "duration_s": 57.77815690160401,
+        "arc_length_m": 4.529484311014945,
+        "longest_steady_s": 20.724342105263183,
+        "mean_absolute_lag4_speed_change_mps": 0.22120435013157755,
+        "mean_speed_mps": 0.607972941277429,
+        "mean_absolute_acceleration_mps2": 0.05914611842747741,
+        "stopped_fraction": 0.017968578725217656,
+        "speed_p95_mps": 1.919001567699554,
+        "longest_stop_s": 8.342543859649115,
+        "stop_episodes_per_minute": 0.10589556051753121
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.6964303206360517,
+        "native_acceleration_w1_mps2": 0.1448587546999343
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 174.6907215385781,
+            "arc_length_m": 4.349795165176138,
+            "longest_steady_s": 17.460526315789508,
+            "mean_absolute_lag4_speed_change_mps": 0.1551782854048715,
+            "mean_speed_mps": 0.5762049278207914,
+            "mean_absolute_acceleration_mps2": 0.03635139765761619,
+            "stopped_fraction": 0.02936375476930798,
+            "speed_p95_mps": 2.151706547354912,
+            "longest_stop_s": 28.9210526315789,
+            "stop_episodes_per_minute": 0.08573268836496041
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7411972863639446,
+            "native_acceleration_w1_mps2": 0.07784836428340446
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 144,
+          "physical_w1": {
+            "duration_s": 23.222064165565527,
+            "arc_length_m": 5.1990444733006935,
+            "longest_steady_s": 9.062500000000014,
+            "mean_absolute_lag4_speed_change_mps": 0.39975005221762444,
+            "mean_speed_mps": 0.49281438787743925,
+            "mean_absolute_acceleration_mps2": 0.08675569552142222,
+            "stopped_fraction": 0.014653813208734642,
+            "speed_p95_mps": 2.2387859008780233,
+            "longest_stop_s": 3.16666666666666,
+            "stop_episodes_per_minute": 0.13547498112964707
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7595118306031812,
+            "native_acceleration_w1_mps2": 0.18772146949617274
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 47.6723995044013,
+            "arc_length_m": 4.819932072030042,
+            "longest_steady_s": 52.50657894736847,
+            "mean_absolute_lag4_speed_change_mps": 0.19242128235080258,
+            "mean_speed_mps": 0.8362093947069988,
+            "mean_absolute_acceleration_mps2": 0.04970654146560964,
+            "stopped_fraction": 0.004223213517808813,
+            "speed_p95_mps": 3.762462557609744,
+            "longest_stop_s": 2.4736842105263275,
+            "stop_episodes_per_minute": 0.03470664094954471
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7589322759218212,
+            "native_acceleration_w1_mps2": 0.12084513762256549
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 24.711181214995598,
+            "arc_length_m": 5.607566908128888,
+            "longest_steady_s": 20.539473684210574,
+            "mean_absolute_lag4_speed_change_mps": 0.069374839044748,
+            "mean_speed_mps": 0.309724125847342,
+            "mean_absolute_acceleration_mps2": 0.029843842573054016,
+            "stopped_fraction": 0.00944725917433151,
+            "speed_p95_mps": 0.38787783871672604,
+            "longest_stop_s": 1.947368421052623,
+            "stop_episodes_per_minute": 0.04427532618718662
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.31073449480827176,
+            "native_acceleration_w1_mps2": 0.14340237770633932
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 18.59441808447951,
+            "arc_length_m": 2.6710829364389688,
+            "longest_steady_s": 4.052631578947361,
+            "mean_absolute_lag4_speed_change_mps": 0.2892972916398413,
+            "mean_speed_mps": 0.8249118701345736,
+            "mean_absolute_acceleration_mps2": 0.09307311491968503,
+            "stopped_fraction": 0.03215485295590532,
+            "speed_p95_mps": 1.054174993938364,
+            "longest_stop_s": 5.203947368421061,
+            "stop_episodes_per_minute": 0.22928816595631724
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.9117757154830399,
+            "native_acceleration_w1_mps2": 0.19447642439118948
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": 143.70432946707155,
+        "relative_progress_mean_separation": 0.04010421273490109,
+        "duration_difference_s": 0.0
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.01480092660610668,
+        "duration_difference_s_to_shape_nearest": 248.99848567922012
+      },
+      "sources": {
+        "generation_receipt_sha256": "5e8a8a9d7ef213711dfab5a40585d1d2e098daac88fe70f71b6d233cc749e153",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-42/Uniform",
+      "kind": "Uniform",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 42,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 57.77815690160389,
+        "arc_length_m": 4.572209398918212,
+        "longest_steady_s": 20.55614035087719,
+        "mean_absolute_lag4_speed_change_mps": 0.21550260506432345,
+        "mean_speed_mps": 0.6082076130253424,
+        "mean_absolute_acceleration_mps2": 0.05465730721471973,
+        "stopped_fraction": 0.022085269319650463,
+        "speed_p95_mps": 1.7913615911508611,
+        "longest_stop_s": 9.280116959064326,
+        "stop_episodes_per_minute": 0.11845546057491715
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.7329100882442072,
+        "native_acceleration_w1_mps2": 0.12446153656013217
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 174.69072153857778,
+            "arc_length_m": 4.253334046120088,
+            "longest_steady_s": 13.684210526315784,
+            "mean_absolute_lag4_speed_change_mps": 0.13587280151807207,
+            "mean_speed_mps": 0.5757655336828231,
+            "mean_absolute_acceleration_mps2": 0.02977532977379975,
+            "stopped_fraction": 0.03851369316121664,
+            "speed_p95_mps": 2.0140324560451752,
+            "longest_stop_s": 29.947368421052627,
+            "stop_episodes_per_minute": 0.08785906476332185
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7129198307360639,
+            "native_acceleration_w1_mps2": 0.07445821136151048
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 23.222064165565612,
+            "arc_length_m": 5.318054103830517,
+            "longest_steady_s": 9.833333333333332,
+            "mean_absolute_lag4_speed_change_mps": 0.34781251133252467,
+            "mean_speed_mps": 0.4910652441455664,
+            "mean_absolute_acceleration_mps2": 0.061290934844713575,
+            "stopped_fraction": 0.01921166961858662,
+            "speed_p95_mps": 1.8478023729403363,
+            "longest_stop_s": 5.611111111111111,
+            "stop_episodes_per_minute": 0.14899438069666548
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.939038378368198,
+            "native_acceleration_w1_mps2": 0.20726783127261178
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 47.67239950440123,
+            "arc_length_m": 4.969703438171059,
+            "longest_steady_s": 48.26315789473682,
+            "mean_absolute_lag4_speed_change_mps": 0.1968964463698054,
+            "mean_speed_mps": 0.8352793800947921,
+            "mean_absolute_acceleration_mps2": 0.046948886498660344,
+            "stopped_fraction": 0.006987718567981921,
+            "speed_p95_mps": 3.4694878892479664,
+            "longest_stop_s": 1.6315789473684204,
+            "stop_episodes_per_minute": 0.045684467475789955
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7597444590800089,
+            "native_acceleration_w1_mps2": 0.12174578293251463
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 24.71118121499545,
+            "arc_length_m": 5.6852620602157815,
+            "longest_steady_s": 27.84210526315789,
+            "mean_absolute_lag4_speed_change_mps": 0.15413356649931162,
+            "mean_speed_mps": 0.3106157785410206,
+            "mean_absolute_acceleration_mps2": 0.052684550687343804,
+            "stopped_fraction": 0.01594539445647366,
+            "speed_p95_mps": 0.48534565920713524,
+            "longest_stop_s": 3.8421052631578947,
+            "stop_episodes_per_minute": 0.12489694678499173
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.39343601669288714,
+            "native_acceleration_w1_mps2": 0.08719322650067546
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 18.59441808447938,
+            "arc_length_m": 2.634693346253616,
+            "longest_steady_s": 3.1578947368421053,
+            "mean_absolute_lag4_speed_change_mps": 0.24279769960190342,
+            "mean_speed_mps": 0.8283121286625098,
+            "mean_absolute_acceleration_mps2": 0.0825868342690812,
+            "stopped_fraction": 0.02976787079399348,
+            "speed_p95_mps": 1.1401395783136912,
+            "longest_stop_s": 5.368421052631577,
+            "stop_episodes_per_minute": 0.18484244315381676
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.8594117563438785,
+            "native_acceleration_w1_mps2": 0.1316426307333485
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.015856586089992002,
+        "duration_difference_s_to_shape_nearest": 226.334655748548
+      },
+      "sources": {
+        "generation_receipt_sha256": "25a7c3866e20695d87484ccd32578d34c3ddae7c78e3c2c4f502297e1b8ecf3a",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-42/S",
+      "kind": "S",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 42,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 57.77815690160389,
+        "arc_length_m": 4.4863699525833045,
+        "longest_steady_s": 22.488304093567244,
+        "mean_absolute_lag4_speed_change_mps": 0.3000579436815108,
+        "mean_speed_mps": 0.6079471151094092,
+        "mean_absolute_acceleration_mps2": 0.08683558728109572,
+        "stopped_fraction": 0.020143362960063298,
+        "speed_p95_mps": 2.0436489470853303,
+        "longest_stop_s": 9.286549707602337,
+        "stop_episodes_per_minute": 0.1141515023782318
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.8121213870788571,
+        "native_acceleration_w1_mps2": 0.137163554558687
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 174.69072153857778,
+            "arc_length_m": 4.234105249681762,
+            "longest_steady_s": 22.68421052631578,
+            "mean_absolute_lag4_speed_change_mps": 0.2878282596478225,
+            "mean_speed_mps": 0.5780212758938624,
+            "mean_absolute_acceleration_mps2": 0.07640074434676064,
+            "stopped_fraction": 0.03347381188516377,
+            "speed_p95_mps": 2.4524770472017656,
+            "longest_stop_s": 32.421052631578945,
+            "stop_episodes_per_minute": 0.07793942518042048
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.757858620105739,
+            "native_acceleration_w1_mps2": 0.0890206916899475
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 23.222064165565612,
+            "arc_length_m": 5.3728399312783495,
+            "longest_steady_s": 13.38888888888889,
+            "mean_absolute_lag4_speed_change_mps": 0.7870306111421158,
+            "mean_speed_mps": 0.49041819222090355,
+            "mean_absolute_acceleration_mps2": 0.2047212433106809,
+            "stopped_fraction": 0.01656787724420768,
+            "speed_p95_mps": 2.4664651739400214,
+            "longest_stop_s": 2.2222222222222214,
+            "stop_episodes_per_minute": 0.18399011872778462
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 1.145037021323339,
+            "native_acceleration_w1_mps2": 0.1356370070641884
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 47.67239950440123,
+            "arc_length_m": 4.557029846944307,
+            "longest_steady_s": 49.4736842105263,
+            "mean_absolute_lag4_speed_change_mps": 0.15769229956189404,
+            "mean_speed_mps": 0.8358653580339024,
+            "mean_absolute_acceleration_mps2": 0.04652585110720892,
+            "stopped_fraction": 0.008537018368053248,
+            "speed_p95_mps": 3.9757827483749275,
+            "longest_stop_s": 4.578947368421051,
+            "stop_episodes_per_minute": 0.07560907652752624
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.8357704936884414,
+            "native_acceleration_w1_mps2": 0.12571803002713539
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 24.71118121499545,
+            "arc_length_m": 5.587957936582375,
+            "longest_steady_s": 21.73684210526315,
+            "mean_absolute_lag4_speed_change_mps": 0.0667825026588371,
+            "mean_speed_mps": 0.30962312153014127,
+            "mean_absolute_acceleration_mps2": 0.0376204503272316,
+            "stopped_fraction": 0.009706223137012821,
+            "speed_p95_mps": 0.43168018236326483,
+            "longest_stop_s": 2.1578947368421035,
+            "stop_episodes_per_minute": 0.05748351595585474
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.41395054262243286,
+            "native_acceleration_w1_mps2": 0.18523461153506426
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 18.59441808447938,
+            "arc_length_m": 2.6799167984297303,
+            "longest_steady_s": 5.157894736842102,
+            "mean_absolute_lag4_speed_change_mps": 0.20095604539688428,
+            "mean_speed_mps": 0.8258076278682368,
+            "mean_absolute_acceleration_mps2": 0.06890964731359653,
+            "stopped_fraction": 0.03243188416587898,
+            "speed_p95_mps": 0.8918395835466738,
+            "longest_stop_s": 5.052631578947366,
+            "stop_episodes_per_minute": 0.1757353754995728
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.907990257654333,
+            "native_acceleration_w1_mps2": 0.1502074324770995
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.013917348023979167,
+        "duration_difference_s_to_shape_nearest": 268.8792140396804
+      },
+      "sources": {
+        "generation_receipt_sha256": "5f6c2a5ff0d774851a5e06211d9d417dcc70e61e8d409a5496c7c8796d303ab0",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-42/V",
+      "kind": "V",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 42,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 57.77815690160389,
+        "arc_length_m": 4.634003767022598,
+        "longest_steady_s": 23.53567251461988,
+        "mean_absolute_lag4_speed_change_mps": 0.26753919951185573,
+        "mean_speed_mps": 0.6069490337962115,
+        "mean_absolute_acceleration_mps2": 0.07104409826542687,
+        "stopped_fraction": 0.020447271052801676,
+        "speed_p95_mps": 2.0277595670698934,
+        "longest_stop_s": 7.192982456140349,
+        "stop_episodes_per_minute": 0.1124934013665688
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.7449819593668676,
+        "native_acceleration_w1_mps2": 0.11235674754656796
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 174.69072153857778,
+            "arc_length_m": 4.266408808190028,
+            "longest_steady_s": 25.63157894736841,
+            "mean_absolute_lag4_speed_change_mps": 0.21894667991991937,
+            "mean_speed_mps": 0.5770176781057191,
+            "mean_absolute_acceleration_mps2": 0.05406560583654378,
+            "stopped_fraction": 0.04274143089290619,
+            "speed_p95_mps": 2.237943969061763,
+            "longest_stop_s": 20.736842105263154,
+            "stop_episodes_per_minute": 0.12588620415004376
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.8729211702315502,
+            "native_acceleration_w1_mps2": 0.07966791380393975
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 23.222064165565612,
+            "arc_length_m": 5.418388203732598,
+            "longest_steady_s": 14.888888888888886,
+            "mean_absolute_lag4_speed_change_mps": 0.5446578999353174,
+            "mean_speed_mps": 0.4936723233611857,
+            "mean_absolute_acceleration_mps2": 0.1320327447713107,
+            "stopped_fraction": 0.00614385774013957,
+            "speed_p95_mps": 2.476018130092728,
+            "longest_stop_s": 1.3333333333333328,
+            "stop_episodes_per_minute": 0.10993948275488286
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7472480862661376,
+            "native_acceleration_w1_mps2": 0.14045828730696516
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 47.67239950440123,
+            "arc_length_m": 5.150452762101201,
+            "longest_steady_s": 42.52631578947367,
+            "mean_absolute_lag4_speed_change_mps": 0.2321824530223229,
+            "mean_speed_mps": 0.8345685738031244,
+            "mean_absolute_acceleration_mps2": 0.07355164101509279,
+            "stopped_fraction": 0.008517315325010287,
+            "speed_p95_mps": 3.6874982561060623,
+            "longest_stop_s": 4.473684210526315,
+            "stop_episodes_per_minute": 0.06121863859165994
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7719861743165578,
+            "native_acceleration_w1_mps2": 0.12695714404209307
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 24.71118121499545,
+            "arc_length_m": 5.665888611416433,
+            "longest_steady_s": 27.052631578947363,
+            "mean_absolute_lag4_speed_change_mps": 0.10661109413914521,
+            "mean_speed_mps": 0.3101892804934534,
+            "mean_absolute_acceleration_mps2": 0.023243932811460817,
+            "stopped_fraction": 0.01314652737444574,
+            "speed_p95_mps": 0.43941181878000846,
+            "longest_stop_s": 3.3157894736842115,
+            "stop_episodes_per_minute": 0.1014030658605216
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.41523646420015337,
+            "native_acceleration_w1_mps2": 0.10190462111201162
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 18.59441808447938,
+            "arc_length_m": 2.6688804496727294,
+            "longest_steady_s": 7.5789473684210495,
+            "mean_absolute_lag4_speed_change_mps": 0.23529787054257362,
+            "mean_speed_mps": 0.8192973132175746,
+            "mean_absolute_acceleration_mps2": 0.07232656689272632,
+            "stopped_fraction": 0.03168722393150658,
+            "speed_p95_mps": 1.2979256613089043,
+            "longest_stop_s": 6.1052631578947345,
+            "stop_episodes_per_minute": 0.16401961547573585
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.9175179018199391,
+            "native_acceleration_w1_mps2": 0.11279577146783026
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.013879278616803312,
+        "duration_difference_s_to_shape_nearest": 248.21507469901837
+      },
+      "sources": {
+        "generation_receipt_sha256": "d09bdb5b9be00e6a6b89e7159bbad3c62ecf4f58062f2d5e5578229e157eb2d8",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-42/SV",
+      "kind": "SV",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 42,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 57.77815690160389,
+        "arc_length_m": 4.518662864300558,
+        "longest_steady_s": 22.755555555555546,
+        "mean_absolute_lag4_speed_change_mps": 0.3144337753843518,
+        "mean_speed_mps": 0.6076257467469908,
+        "mean_absolute_acceleration_mps2": 0.08963299213217468,
+        "stopped_fraction": 0.01848238784824139,
+        "speed_p95_mps": 1.9873940031727613,
+        "longest_stop_s": 8.797076023391812,
+        "stop_episodes_per_minute": 0.10785008703381141
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.7969366304967993,
+        "native_acceleration_w1_mps2": 0.14298624623388304
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 174.69072153857778,
+            "arc_length_m": 4.307047559905521,
+            "longest_steady_s": 22.157894736842096,
+            "mean_absolute_lag4_speed_change_mps": 0.2532779297909426,
+            "mean_speed_mps": 0.57779029541815,
+            "mean_absolute_acceleration_mps2": 0.06617331421049223,
+            "stopped_fraction": 0.032987279410316664,
+            "speed_p95_mps": 2.504568310982059,
+            "longest_stop_s": 31.42105263157894,
+            "stop_episodes_per_minute": 0.09011410437339822
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.9038171702907635,
+            "native_acceleration_w1_mps2": 0.09268563275780105
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 23.222064165565612,
+            "arc_length_m": 5.290871645109089,
+            "longest_steady_s": 11.777777777777775,
+            "mean_absolute_lag4_speed_change_mps": 0.7584454537279091,
+            "mean_speed_mps": 0.48964693305076856,
+            "mean_absolute_acceleration_mps2": 0.19506475581780902,
+            "stopped_fraction": 0.015117821804081846,
+            "speed_p95_mps": 2.9165271857629134,
+            "longest_stop_s": 1.7222222222222219,
+            "stop_episodes_per_minute": 0.15799175272816893
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 1.1316927459659445,
+            "native_acceleration_w1_mps2": 0.1348114951204963
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 47.67239950440123,
+            "arc_length_m": 4.825344321137434,
+            "longest_steady_s": 49.894736842105246,
+            "mean_absolute_lag4_speed_change_mps": 0.22252330447489577,
+            "mean_speed_mps": 0.8363311831483504,
+            "mean_absolute_acceleration_mps2": 0.05945062272209008,
+            "stopped_fraction": 0.009131608985274688,
+            "speed_p95_mps": 2.928242561564254,
+            "longest_stop_s": 5.157894736842104,
+            "stop_episodes_per_minute": 0.06499153973083822
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6814150470821926,
+            "native_acceleration_w1_mps2": 0.12346125716418624
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 24.71118121499545,
+            "arc_length_m": 5.590177422600617,
+            "longest_steady_s": 24.210526315789465,
+            "mean_absolute_lag4_speed_change_mps": 0.08154099047906964,
+            "mean_speed_mps": 0.3096156242717126,
+            "mean_absolute_acceleration_mps2": 0.04367167877462724,
+            "stopped_fraction": 0.009152672324439424,
+            "speed_p95_mps": 0.4219697203462517,
+            "longest_stop_s": 1.684210526315789,
+            "stop_episodes_per_minute": 0.062175781538086686
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.4000447246821211,
+            "native_acceleration_w1_mps2": 0.20621272755977418
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 18.59441808447938,
+            "arc_length_m": 2.5798733727501313,
+            "longest_steady_s": 5.736842105263155,
+            "mean_absolute_lag4_speed_change_mps": 0.25638119844894186,
+            "mean_speed_mps": 0.8247446978459727,
+            "mean_absolute_acceleration_mps2": 0.08380458913585488,
+            "stopped_fraction": 0.026022556717094313,
+            "speed_p95_mps": 1.1656622372083296,
+            "longest_stop_s": 3.999999999999999,
+            "stop_episodes_per_minute": 0.16397725679856498
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.8677134644629749,
+            "native_acceleration_w1_mps2": 0.15776011856715733
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.014719607317526412,
+        "duration_difference_s_to_shape_nearest": 270.79648770554735
+      },
+      "sources": {
+        "generation_receipt_sha256": "a59bb0d5779d713f578461a5b543907fd14714ba445e5518b94e7b5f7df563d0",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-43",
+      "kind": "full_pool",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 43,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 776,
+      "generated_candidates_paired": 752,
+      "physical_w1": {
+        "duration_s": 51.590757300625434,
+        "arc_length_m": 4.487552389223073,
+        "longest_steady_s": 21.175292397660847,
+        "mean_absolute_lag4_speed_change_mps": 0.19556240778896877,
+        "mean_speed_mps": 0.3586311159036928,
+        "mean_absolute_acceleration_mps2": 0.05765791013353237,
+        "stopped_fraction": 0.015720960008738252,
+        "speed_p95_mps": 1.741813095594916,
+        "longest_stop_s": 8.099342105263148,
+        "stop_episodes_per_minute": 0.09006065419972589
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.5504077141278059,
+        "native_acceleration_w1_mps2": 0.15369871595052637
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 148.35961251404544,
+            "arc_length_m": 4.323909093128823,
+            "longest_steady_s": 19.190789473684248,
+            "mean_absolute_lag4_speed_change_mps": 0.22590851816909127,
+            "mean_speed_mps": 0.40432738745239144,
+            "mean_absolute_acceleration_mps2": 0.05791825653891163,
+            "stopped_fraction": 0.025963741871879623,
+            "speed_p95_mps": 1.74240132396001,
+            "longest_stop_s": 27.651315789473628,
+            "stop_episodes_per_minute": 0.07665854808782263
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6244942545679674,
+            "native_acceleration_w1_mps2": 0.08004699632908485
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 144,
+          "physical_w1": {
+            "duration_s": 20.168223773037827,
+            "arc_length_m": 5.015416349259602,
+            "longest_steady_s": 5.0277777777777874,
+            "mean_absolute_lag4_speed_change_mps": 0.2554417367624565,
+            "mean_speed_mps": 0.24208668301756756,
+            "mean_absolute_acceleration_mps2": 0.06438133256910851,
+            "stopped_fraction": 0.013115157716087773,
+            "speed_p95_mps": 2.5209483029187973,
+            "longest_stop_s": 2.9374999999999925,
+            "stop_episodes_per_minute": 0.07662446999043716
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7224054313786876,
+            "native_acceleration_w1_mps2": 0.20649281635804487
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 53.57904036784221,
+            "arc_length_m": 4.743565927883232,
+            "longest_steady_s": 50.86842105263163,
+            "mean_absolute_lag4_speed_change_mps": 0.09994846179805277,
+            "mean_speed_mps": 0.6339929970288873,
+            "mean_absolute_acceleration_mps2": 0.028366220855938568,
+            "stopped_fraction": 0.0065688277029038655,
+            "speed_p95_mps": 3.227186722703456,
+            "longest_stop_s": 3.2565789473684332,
+            "stop_episodes_per_minute": 0.05163096607318622
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6906406467684378,
+            "native_acceleration_w1_mps2": 0.11025993884434611
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 20.310296611935406,
+            "arc_length_m": 5.689265523954043,
+            "longest_steady_s": 24.51315789473689,
+            "mean_absolute_lag4_speed_change_mps": 0.06796519650262978,
+            "mean_speed_mps": 0.23101563934329025,
+            "mean_absolute_acceleration_mps2": 0.02629792192874722,
+            "stopped_fraction": 0.011344584581143624,
+            "speed_p95_mps": 0.2682086238650272,
+            "longest_stop_s": 2.8947368421052544,
+            "stop_episodes_per_minute": 0.07190920673630802
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.24915003667165866,
+            "native_acceleration_w1_mps2": 0.17784040691123135
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 152,
+          "physical_w1": {
+            "duration_s": 15.536613236266259,
+            "arc_length_m": 2.6656050518896652,
+            "longest_steady_s": 6.276315789473679,
+            "mean_absolute_lag4_speed_change_mps": 0.3285481257126136,
+            "mean_speed_mps": 0.2817328726763272,
+            "mean_absolute_acceleration_mps2": 0.11132581877495597,
+            "stopped_fraction": 0.02161248817167637,
+            "speed_p95_mps": 0.9503205045272886,
+            "longest_stop_s": 3.756578947368433,
+            "stop_episodes_per_minute": 0.17348008011087546
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.46534820125227816,
+            "native_acceleration_w1_mps2": 0.19385342130992472
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": 148.02356617992533,
+        "relative_progress_mean_separation": 0.04054025234202114,
+        "duration_difference_s": 0.0
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.014764914329814607,
+        "duration_difference_s_to_shape_nearest": 282.85006000271545
+      },
+      "sources": {
+        "generation_receipt_sha256": "02fbcbf2943b0b0efa0695ce0bcf8d6354727d5637778c4c3e123e93050d927a",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-43/Uniform",
+      "kind": "Uniform",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 43,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 51.590757300625356,
+        "arc_length_m": 4.551511211910002,
+        "longest_steady_s": 21.616374269005846,
+        "mean_absolute_lag4_speed_change_mps": 0.2415597235250702,
+        "mean_speed_mps": 0.35900112261534634,
+        "mean_absolute_acceleration_mps2": 0.06925271546120455,
+        "stopped_fraction": 0.01630057444494667,
+        "speed_p95_mps": 1.5543471597622125,
+        "longest_stop_s": 8.1812865497076,
+        "stop_episodes_per_minute": 0.08801633941525219
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.5828352762500763,
+        "native_acceleration_w1_mps2": 0.15969003313449165
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 148.35961251404544,
+            "arc_length_m": 4.413093469634723,
+            "longest_steady_s": 19.210526315789465,
+            "mean_absolute_lag4_speed_change_mps": 0.3371838150768237,
+            "mean_speed_mps": 0.40301911958495884,
+            "mean_absolute_acceleration_mps2": 0.08871170126498917,
+            "stopped_fraction": 0.023824085523597115,
+            "speed_p95_mps": 1.8830129619164842,
+            "longest_stop_s": 26.21052631578947,
+            "stop_episodes_per_minute": 0.07085755441070002
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.5769538418304723,
+            "native_acceleration_w1_mps2": 0.10487947922024835
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 20.168223773037766,
+            "arc_length_m": 5.217675788415944,
+            "longest_steady_s": 5.555555555555556,
+            "mean_absolute_lag4_speed_change_mps": 0.22573916078238487,
+            "mean_speed_mps": 0.24228762319527145,
+            "mean_absolute_acceleration_mps2": 0.05396470225891701,
+            "stopped_fraction": 0.006954348166781375,
+            "speed_p95_mps": 2.3131311929790614,
+            "longest_stop_s": 1.2222222222222223,
+            "stop_episodes_per_minute": 0.06541806473969547
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6701293558949464,
+            "native_acceleration_w1_mps2": 0.19680474676075824
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 53.57904036784215,
+            "arc_length_m": 4.540153455679213,
+            "longest_steady_s": 54.578947368421055,
+            "mean_absolute_lag4_speed_change_mps": 0.13000104855900405,
+            "mean_speed_mps": 0.6346088267805994,
+            "mean_absolute_acceleration_mps2": 0.03022877268369351,
+            "stopped_fraction": 0.010616106631670195,
+            "speed_p95_mps": 2.005791935047224,
+            "longest_stop_s": 5.31578947368421,
+            "stop_episodes_per_minute": 0.08684382355446973
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6441130561667626,
+            "native_acceleration_w1_mps2": 0.12230717748887188
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 20.310296611935325,
+            "arc_length_m": 5.703141324138623,
+            "longest_steady_s": 24.894736842105257,
+            "mean_absolute_lag4_speed_change_mps": 0.06068444024487851,
+            "mean_speed_mps": 0.2313041516645319,
+            "mean_absolute_acceleration_mps2": 0.016314812643822348,
+            "stopped_fraction": 0.013366022796696941,
+            "speed_p95_mps": 0.31683722377545986,
+            "longest_stop_s": 3.0526315789473673,
+            "stop_episodes_per_minute": 0.05525097920469789
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.2997876298308302,
+            "native_acceleration_w1_mps2": 0.1677627423462958
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 15.53661323626611,
+            "arc_length_m": 2.8834920216815045,
+            "longest_steady_s": 3.842105263157893,
+            "mean_absolute_lag4_speed_change_mps": 0.4541901529622599,
+            "mean_speed_mps": 0.2837858918513704,
+            "mean_absolute_acceleration_mps2": 0.15704358845460076,
+            "stopped_fraction": 0.02674230910598773,
+            "speed_p95_mps": 1.2529624850928327,
+            "longest_stop_s": 5.1052631578947345,
+            "stop_episodes_per_minute": 0.16171127516669784
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7231924975273698,
+            "native_acceleration_w1_mps2": 0.206696019856284
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.014016503736522436,
+        "duration_difference_s_to_shape_nearest": 312.2683896984256
+      },
+      "sources": {
+        "generation_receipt_sha256": "f4e8c8653228c3a54ccb511d0c9abe0d8c32552a2a1b26bc876c4c4f14e50e3b",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-43/S",
+      "kind": "S",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 43,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 51.590757300625356,
+        "arc_length_m": 4.440645030645255,
+        "longest_steady_s": 19.526315789473678,
+        "mean_absolute_lag4_speed_change_mps": 0.20628940776090357,
+        "mean_speed_mps": 0.35863559831049546,
+        "mean_absolute_acceleration_mps2": 0.05530415699852733,
+        "stopped_fraction": 0.017189796336470477,
+        "speed_p95_mps": 1.711237456135556,
+        "longest_stop_s": 6.459064327485379,
+        "stop_episodes_per_minute": 0.09525663704351865
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.5415673416328496,
+        "native_acceleration_w1_mps2": 0.16501548480921596
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 148.35961251404544,
+            "arc_length_m": 4.429595305525516,
+            "longest_steady_s": 12.736842105263154,
+            "mean_absolute_lag4_speed_change_mps": 0.17462431638469733,
+            "mean_speed_mps": 0.40409372930994536,
+            "mean_absolute_acceleration_mps2": 0.04614778146318394,
+            "stopped_fraction": 0.028499042137202606,
+            "speed_p95_mps": 1.824840747644035,
+            "longest_stop_s": 20.526315789473685,
+            "stop_episodes_per_minute": 0.05063189742799263
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6617780543878561,
+            "native_acceleration_w1_mps2": 0.07415441003600645
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 20.168223773037766,
+            "arc_length_m": 5.067236626933361,
+            "longest_steady_s": 4.0,
+            "mean_absolute_lag4_speed_change_mps": 0.24379709495269422,
+            "mean_speed_mps": 0.2415080063659599,
+            "mean_absolute_acceleration_mps2": 0.05736107103941777,
+            "stopped_fraction": 0.008065910044000863,
+            "speed_p95_mps": 3.574680724717614,
+            "longest_stop_s": 1.6111111111111112,
+            "stop_episodes_per_minute": 0.05824272193154738
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.759103604922563,
+            "native_acceleration_w1_mps2": 0.2524992433428238
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 53.57904036784215,
+            "arc_length_m": 4.32324569592959,
+            "longest_steady_s": 53.7894736842105,
+            "mean_absolute_lag4_speed_change_mps": 0.061908240992304416,
+            "mean_speed_mps": 0.6337464047510272,
+            "mean_absolute_acceleration_mps2": 0.018998051187454033,
+            "stopped_fraction": 0.00802689794060218,
+            "speed_p95_mps": 1.8082312475753644,
+            "longest_stop_s": 3.473684210526315,
+            "stop_episodes_per_minute": 0.06697867561467656
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6004780647963613,
+            "native_acceleration_w1_mps2": 0.11456723641670546
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 20.310296611935325,
+            "arc_length_m": 5.722705669871981,
+            "longest_steady_s": 20.473684210526304,
+            "mean_absolute_lag4_speed_change_mps": 0.10348098693597435,
+            "mean_speed_mps": 0.2310747677115412,
+            "mean_absolute_acceleration_mps2": 0.025446756785675713,
+            "stopped_fraction": 0.015947228422962013,
+            "speed_p95_mps": 0.26814192130126435,
+            "longest_stop_s": 3.3157894736842106,
+            "stop_episodes_per_minute": 0.11369878573192155
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.29411445511781986,
+            "native_acceleration_w1_mps2": 0.1688291356800783
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 15.53661323626611,
+            "arc_length_m": 2.6604418549658297,
+            "longest_steady_s": 6.631578947368419,
+            "mean_absolute_lag4_speed_change_mps": 0.44763639953884743,
+            "mean_speed_mps": 0.28275508341400357,
+            "mean_absolute_acceleration_mps2": 0.12856712451690522,
+            "stopped_fraction": 0.025409903137584712,
+            "speed_p95_mps": 1.0802926394395005,
+            "longest_stop_s": 3.368421052631578,
+            "stop_episodes_per_minute": 0.18673110451145516
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.3923625289396476,
+            "native_acceleration_w1_mps2": 0.2150273985704657
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.014673188743389017,
+        "duration_difference_s_to_shape_nearest": 285.557096826956
+      },
+      "sources": {
+        "generation_receipt_sha256": "dfb79b657484a57047496f2743f340eb1a3d9e3080e15c5b5366eb7afbcdadfc",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-43/V",
+      "kind": "V",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 43,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 51.590757300625356,
+        "arc_length_m": 4.413606833465527,
+        "longest_steady_s": 23.117543859649114,
+        "mean_absolute_lag4_speed_change_mps": 0.19984221383301284,
+        "mean_speed_mps": 0.3577029873290553,
+        "mean_absolute_acceleration_mps2": 0.05617402380072829,
+        "stopped_fraction": 0.015772246702493446,
+        "speed_p95_mps": 1.8482536975498007,
+        "longest_stop_s": 7.6473684210526285,
+        "stop_episodes_per_minute": 0.0860979711113337
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.5258923700988932,
+        "native_acceleration_w1_mps2": 0.13218449765641346
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 148.35961251404544,
+            "arc_length_m": 4.223757271910064,
+            "longest_steady_s": 21.052631578947363,
+            "mean_absolute_lag4_speed_change_mps": 0.2739524755457017,
+            "mean_speed_mps": 0.4043561696488468,
+            "mean_absolute_acceleration_mps2": 0.07523674158194996,
+            "stopped_fraction": 0.024707157547963977,
+            "speed_p95_mps": 1.932490342195522,
+            "longest_stop_s": 21.789473684210524,
+            "stop_episodes_per_minute": 0.06168456595044002
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.5972796843968677,
+            "native_acceleration_w1_mps2": 0.087761892982683
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 20.168223773037766,
+            "arc_length_m": 4.910446160160342,
+            "longest_steady_s": 8.166666666666666,
+            "mean_absolute_lag4_speed_change_mps": 0.23367558265379537,
+            "mean_speed_mps": 0.23985268087581618,
+            "mean_absolute_acceleration_mps2": 0.0542796630310125,
+            "stopped_fraction": 0.011745114580403978,
+            "speed_p95_mps": 3.820779537221878,
+            "longest_stop_s": 2.499999999999999,
+            "stop_episodes_per_minute": 0.08986339930715889
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7557446622066089,
+            "native_acceleration_w1_mps2": 0.21186421663579613
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 53.57904036784215,
+            "arc_length_m": 4.533981262003156,
+            "longest_steady_s": 47.368421052631554,
+            "mean_absolute_lag4_speed_change_mps": 0.10564480160337729,
+            "mean_speed_mps": 0.6350495197594668,
+            "mean_absolute_acceleration_mps2": 0.035207253779032235,
+            "stopped_fraction": 0.006190019629116391,
+            "speed_p95_mps": 2.0770904451341576,
+            "longest_stop_s": 4.052631578947367,
+            "stop_episodes_per_minute": 0.04785106329338105
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.5623047117592056,
+            "native_acceleration_w1_mps2": 0.11246927533815873
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 20.310296611935325,
+            "arc_length_m": 5.726494486438594,
+            "longest_steady_s": 31.421052631578938,
+            "mean_absolute_lag4_speed_change_mps": 0.08263908281555342,
+            "mean_speed_mps": 0.23114483029030766,
+            "mean_absolute_acceleration_mps2": 0.019994851309910334,
+            "stopped_fraction": 0.015719228267234514,
+            "speed_p95_mps": 0.2506784140952091,
+            "longest_stop_s": 5.842105263157894,
+            "stop_episodes_per_minute": 0.09867360451428439
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.2950079746619873,
+            "native_acceleration_w1_mps2": 0.1431679935230539
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 15.53661323626611,
+            "arc_length_m": 2.673354986815479,
+            "longest_steady_s": 7.5789473684210495,
+            "mean_absolute_lag4_speed_change_mps": 0.3032991265466364,
+            "mean_speed_mps": 0.2781117360708391,
+            "mean_absolute_acceleration_mps2": 0.09615160930173644,
+            "stopped_fraction": 0.020499713487748362,
+            "speed_p95_mps": 1.1602297491022364,
+            "longest_stop_s": 4.0526315789473655,
+            "stop_episodes_per_minute": 0.13241722249140422
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.4191248174697967,
+            "native_acceleration_w1_mps2": 0.10565910980237554
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.013890436263739937,
+        "duration_difference_s_to_shape_nearest": 249.68083207083865
+      },
+      "sources": {
+        "generation_receipt_sha256": "f1e76cee14ae72a419197f2858857d0935c6d7fb63aeeae89333d90cd4bc631d",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    },
+    {
+      "name": "native_0_25s-43/SV",
+      "kind": "SV",
+      "family": "diffusion",
+      "arm": "native_0_25s",
+      "seed": 43,
+      "requested": 100,
+      "map_ready": 97,
+      "reference_complete": 97,
+      "requests_with_generated_candidates": 97,
+      "paired_reference_and_generation": 94,
+      "generated_candidates_all": 97,
+      "generated_candidates_paired": 94,
+      "physical_w1": {
+        "duration_s": 51.590757300625356,
+        "arc_length_m": 4.490453563013788,
+        "longest_steady_s": 22.024561403508766,
+        "mean_absolute_lag4_speed_change_mps": 0.2114383170488002,
+        "mean_speed_mps": 0.3586991289175342,
+        "mean_absolute_acceleration_mps2": 0.06040064168271987,
+        "stopped_fraction": 0.016512415923997627,
+        "speed_p95_mps": 2.118224398229236,
+        "longest_stop_s": 7.290058479532162,
+        "stop_episodes_per_minute": 0.08830709188485616
+      },
+      "native_w1": {
+        "native_speed_w1_mps": 0.5878691632025725,
+        "native_acceleration_w1_mps2": 0.14115492962494705
+      },
+      "support": {
+        "duration_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "arc_length_m": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_steady_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_speed_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "mean_absolute_acceleration_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stopped_fraction": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "speed_p95_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "longest_stop_s": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "stop_episodes_per_minute": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_speed_w1_mps": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        },
+        "native_acceleration_w1_mps2": {
+          "bus": 19,
+          "motorcycle": 18,
+          "private_car": 19,
+          "bycicle": 19,
+          "taxi_or_uber": 19
+        }
+      },
+      "per_class": {
+        "bus": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 148.35961251404544,
+            "arc_length_m": 4.217567961634286,
+            "longest_steady_s": 17.21052631578947,
+            "mean_absolute_lag4_speed_change_mps": 0.22587503847650214,
+            "mean_speed_mps": 0.40377353908883756,
+            "mean_absolute_acceleration_mps2": 0.0595826992618804,
+            "stopped_fraction": 0.024259174563863298,
+            "speed_p95_mps": 1.9747340575280585,
+            "longest_stop_s": 20.84210526315789,
+            "stop_episodes_per_minute": 0.04270857183625584
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.6199919566915583,
+            "native_acceleration_w1_mps2": 0.08275536383557827
+          }
+        },
+        "motorcycle": {
+          "reference_requests": 18,
+          "generated_candidates": 18,
+          "physical_w1": {
+            "duration_s": 20.168223773037766,
+            "arc_length_m": 4.9903595325765515,
+            "longest_steady_s": 6.333333333333335,
+            "mean_absolute_lag4_speed_change_mps": 0.29352527033421194,
+            "mean_speed_mps": 0.24176156255061057,
+            "mean_absolute_acceleration_mps2": 0.08328818592481332,
+            "stopped_fraction": 0.018827636838768508,
+            "speed_p95_mps": 3.4363005387099252,
+            "longest_stop_s": 3.555555555555556,
+            "stop_episodes_per_minute": 0.10776195307648773
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.9856861576821838,
+            "native_acceleration_w1_mps2": 0.1879970256305536
+          }
+        },
+        "private_car": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 53.57904036784215,
+            "arc_length_m": 4.949041082814872,
+            "longest_steady_s": 55.894736842105246,
+            "mean_absolute_lag4_speed_change_mps": 0.14890899726019266,
+            "mean_speed_mps": 0.6340521282180771,
+            "mean_absolute_acceleration_mps2": 0.04705340944755325,
+            "stopped_fraction": 0.007939748993044815,
+            "speed_p95_mps": 3.693388410830244,
+            "longest_stop_s": 5.1578947368421035,
+            "stop_episodes_per_minute": 0.052643405017063966
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.7289054039700219,
+            "native_acceleration_w1_mps2": 0.11121908160686281
+          }
+        },
+        "bycicle": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 20.310296611935325,
+            "arc_length_m": 5.723526707625218,
+            "longest_steady_s": 23.3157894736842,
+            "mean_absolute_lag4_speed_change_mps": 0.10389762524335351,
+            "mean_speed_mps": 0.2310723930099341,
+            "mean_absolute_acceleration_mps2": 0.026238875424973412,
+            "stopped_fraction": 0.014021249626067399,
+            "speed_p95_mps": 0.263272974160898,
+            "longest_stop_s": 3.052631578947368,
+            "stop_episodes_per_minute": 0.10902734381351606
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.27895752649608024,
+            "native_acceleration_w1_mps2": 0.16596011224246096
+          }
+        },
+        "taxi_or_uber": {
+          "reference_requests": 19,
+          "generated_candidates": 19,
+          "physical_w1": {
+            "duration_s": 15.53661323626611,
+            "arc_length_m": 2.571772530418013,
+            "longest_steady_s": 7.368421052631577,
+            "mean_absolute_lag4_speed_change_mps": 0.2849846539297407,
+            "mean_speed_mps": 0.2828360217202114,
+            "mean_absolute_acceleration_mps2": 0.08584003835437896,
+            "stopped_fraction": 0.017514269598244123,
+            "speed_p95_mps": 1.2234260099170535,
+            "longest_stop_s": 3.842105263157893,
+            "stop_episodes_per_minute": 0.12939418568095726
+          },
+          "native_w1": {
+            "native_speed_w1_mps": 0.3258047711730188,
+            "native_acceleration_w1_mps2": 0.1578430648092796
+          }
+        }
+      },
+      "diversity": {
+        "position_mean_separation_m": null,
+        "relative_progress_mean_separation": null,
+        "duration_difference_s": null
+      },
+      "training_shape_nearest": {
+        "relative_progress_mae": 0.014205007606784316,
+        "duration_difference_s_to_shape_nearest": 230.15427089855356
+      },
+      "sources": {
+        "generation_receipt_sha256": "dac7376bb02180cbfe7aeb9b16821999af6be37935ada077e0bfd4cc5f2c36f6",
+        "reference_receipt_sha256": "6bd7284e08f02505a2b7d1c8c43e6525249c627c08ccb6e7f8a0b1ddc19d3b98",
+        "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+        "training_dataset_sha256": "a7b4b1c9aecb38549dacbe055d5dcc191821efe24dc1e1ddbd2ce45dcdd4aec5",
+        "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff"
+      }
+    }
+  ],
+  "differences": [
+    {
+      "name": "native_0_25s-42",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 1.1368683772161603e-13,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.04272508790326679,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.1682017543859935,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.005701745067254099,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.000234671747913473,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.004488811212757682,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.004116690594432808,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.12763997654869286,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.9375730994152107,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.012559900057385942,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.03647976760815552,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.020397218139802137,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 9.494090803989977,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.168515710239852,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -0.8154239766081908,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.016670766784619068,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.14781946216765146,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.006983614180310599,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.00011062537313388451,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": -0.06117673112336375,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.5886695906432768,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.005853943888686847,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.08710969603707319,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.0043401939624785335,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/Uniform",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/Uniform",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/S",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.0858394463349077,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 1.9321637426900544,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.08455533861718734,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.00026049791593318883,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.03217828006637599,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0019419063595871658,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.25228735593446916,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.006432748538010458,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.004303958196685359,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.07921129883464983,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.012702017998554832,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/S",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": -0.6257613791563799,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.0639061087205075,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -2.9964912280701768,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.02047173163381727,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.20946835181633056,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.00015442728413324336,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0034560086603234452,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.3235459781119381,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 1.6350877192982427,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.01064336200074674,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.23393343360857177,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0009853379864785405,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/V",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.06179436810438599,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 2.9795321637426895,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.05203659444753228,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0012585792291309739,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.016386791050707145,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0016379982668487877,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.23639797591903222,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -2.087134502923977,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.005962059208348358,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.012071871122660394,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.01210478901356421,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/V",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": -16.63810062284827,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.11501917528368377,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -1.7725146198830402,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.00466003863328962,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.3250754805892504,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.001053168629879045,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.00011965581628403665,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.2162375255627138,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.5216374269005843,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.018682491286095754,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.3148961429559003,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.010985380247222717,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/SV",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.05354653461765402,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 2.199415204678356,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.09893117032002835,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0005818662783516615,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.03497568491745495,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0036028814714090737,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.19603241202190014,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.4830409356725145,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.010605373541105745,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.06402654225259208,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.01852470967375086,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-42/SV",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": -1.2345530412845136,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.09722655708271244,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -1.4350877192982487,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.019415473375895442,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0911735402346554,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.01373998347131146,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0016043917389915903,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.3472390618329497,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.11988304093567237,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.0021097741185341634,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.07549373366441059,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.014960517870773099,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 7.815970093361102e-14,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.06395882268692876,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -0.44108187134499843,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.04599731573610144,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0003700067116535477,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.01159480532767218,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0005796144362084192,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.18746593583270355,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.08194444444445281,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.0020443147844736997,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.03242756212227038,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.0059913171839652835,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 5.200346786134787,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.21941251266110573,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.7431286549707607,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.0021064593305416546,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.30952879801068267,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.0016852056014513006,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0013752029580974476,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": -0.20765402715029024,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.4395467836257314,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.003843391374811239,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.19330033119187873,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.0038034132704343193,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/Uniform",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/Uniform",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/S",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.1108661812647469,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -2.0900584795321677,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.03527031576416664,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.00036552430485087273,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.013948558462677223,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0008892218915238052,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.1568902963733434,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -1.7222222222222214,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.007240297628266459,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.041267934617226665,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.005325451674724313,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/S",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.1009336477296543,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.16298197635171352,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.4017543859649102,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": 0.07088168392136904,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.38160633741865385,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.012149839050424827,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.0013071775926635672,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.24257263975948384,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -1.4456140350877194,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.008663275954009023,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.2203620480192212,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.01503360563377179,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/V",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.13790437844447467,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 1.5011695906432685,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.04171750969205737,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0012981352862910245,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.01307869166047626,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.000528327742453226,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.29390653778758824,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.5339181286549719,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.0019183683039184912,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.056942906151183026,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.027505535478078186,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/V",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": -26.092986447091434,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.10413563034764906,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -7.654385964912276,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.00892202918344312,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.5570574357096802,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.00011634878392981912,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.0076318841729170785,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": -0.06486506550659454,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -1.9847953216374288,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.034713421113611184,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.4819358859893973,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.0008195154008619476,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/SV",
+      "baseline": "G34_Uniform",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": 0.0,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": -0.06105764889621401,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": 0.40818713450292066,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.030121406476270013,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.0003019936978121418,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": -0.008852073778484681,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": 0.00021184147905095596,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.5638772384670234,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -0.8912280701754387,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": 0.00029075246960397205,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": 0.0050338869524962915,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": -0.018535103509544598,
+          "supported_request_counts_equal": true
+        }
+      }
+    },
+    {
+      "name": "native_0_25s-43/SV",
+      "baseline": "G33_same_method",
+      "metrics": {
+        "duration_s": {
+          "delta_lower_is_better": -16.467081328559928,
+          "supported_request_counts_equal": true
+        },
+        "arc_length_m": {
+          "delta_lower_is_better": 0.0016239076859960733,
+          "supported_request_counts_equal": true
+        },
+        "longest_steady_s": {
+          "delta_lower_is_better": -0.9923976608187068,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_lag4_speed_change_mps": {
+          "delta_lower_is_better": -0.0026377058543380627,
+          "supported_request_counts_equal": true
+        },
+        "mean_speed_mps": {
+          "delta_lower_is_better": -0.48289419798121824,
+          "supported_request_counts_equal": true
+        },
+        "mean_absolute_acceleration_mps2": {
+          "delta_lower_is_better": 0.004347923370490427,
+          "supported_request_counts_equal": true
+        },
+        "stopped_fraction": {
+          "delta_lower_is_better": -0.003323266730384862,
+          "supported_request_counts_equal": true
+        },
+        "speed_p95_mps": {
+          "delta_lower_is_better": 0.40429492875458495,
+          "supported_request_counts_equal": true
+        },
+        "longest_stop_s": {
+          "delta_lower_is_better": -3.5093567251461995,
+          "supported_request_counts_equal": true
+        },
+        "stop_episodes_per_minute": {
+          "delta_lower_is_better": -0.02855493528280284,
+          "supported_request_counts_equal": true
+        },
+        "native_speed_w1_mps": {
+          "delta_lower_is_better": -0.27405430084731575,
+          "supported_request_counts_equal": true
+        },
+        "native_acceleration_w1_mps2": {
+          "delta_lower_is_better": 0.003826439134429538,
+          "supported_request_counts_equal": true
+        }
+      }
+    }
+  ],
+  "code_sha256": "a7d4f01ade784f3b8d39a2df4162a6e3d39d7245d0974d73fd5d08973894478e",
+  "limits": [
+    "Mechanism diagnostic chosen after inspecting G33; the same development reference is reused, not a new blind test.",
+    "No CNN/diffusion retraining, prior fitting or extra strength/step tuning; K8/DDIM100 remains fixed.",
+    "Per-request shared T is the old predetermined Uniform training-prior draw, never the observed reference duration.",
+    "All four selectors have equal duration distributions by construction; this is a control, not a duration-quality improvement.",
+    "Old/new Uniform is checked bitwise on all map-ready requests; other candidates retain noise keys but may have different sequence lengths.",
+    "Equal candidate/DDIM budgets do not imply equal tensor-element compute or wall time.",
+    "Each seed is descriptive on one SUMO episode and known route templates; no confidence intervals or broad generalization claim.",
+    "Teacher target confidence is auxiliary; physical W1 and coverage determine reported quality.",
+    "Equal metric support counts are not a significance test; unsupported metrics remain NA."
+  ]
+}

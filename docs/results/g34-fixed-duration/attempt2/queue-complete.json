@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "finished_unix": 1793963001.6844904,
+  "experiment_phase": "G34_fixed_request_duration_development_diagnostic",
+  "expected_evaluations": 10,
+  "summary_sha256": "331066df7fc8130fa8f16c925a9aa0f067c71d8a6cf14a71b3e48ea87dfb8744",
+  "in_loop_guidance_evaluated": false,
+  "new_blind_reference": false
+}

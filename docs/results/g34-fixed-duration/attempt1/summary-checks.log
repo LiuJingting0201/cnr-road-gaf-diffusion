@@ -1,0 +1,1 @@
+{"complete": true, "scope": "synthetic array checks only", "rejections": ["Uniform_coordinate_change", "nonuniform_duration_change", "missing_candidate", "selected_source_change"]}

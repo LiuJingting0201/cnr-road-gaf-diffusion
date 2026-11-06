@@ -1,0 +1,1 @@
+{"complete": true, "scope": "synthetic in-memory tests only; no real generation", "checks": ["shared_T_all_eight_slots", "deterministic_Uniform_slot", "two_seed_noise_key_pairing", "G33_prior_draw_exact", "G33_Uniform_motion_bitwise_equal_synthetic_CPU", "no_input_file_reads_in_planning_sampling", "reference_score_and_supplied_duration_rejected"]}

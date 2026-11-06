@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "phase": "prospective_generation",
+  "experiment_phase": "G34_fixed_request_duration_development_diagnostic",
+  "sampled_duration_source": "G33_train_prior_draw_keyed_by_predetermined_Uniform_candidate_ID",
+  "duration_fixed_within_request": true,
+  "same_duration_across_model_seeds": false,
+  "duration_source_uniform_seed": 33073,
+  "family": "diffusion",
+  "arm": "native_0_25s",
+  "seed": 42,
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "requested_conditions": 100,
+  "map_ready_conditions": 97,
+  "requested_candidates_per_condition": 8,
+  "candidate_denominator_all_requests": 800,
+  "attempted_candidates": 776,
+  "generated_candidates": 776,
+  "status_counts": {
+    "generated": 776
+  },
+  "ddim_steps": 100,
+  "network_forward_calls": 77600,
+  "teacher_calls": 0,
+  "elapsed_s": 381.5972487702966,
+  "reference_data_opened": false,
+  "teacher_scores_opened": false,
+  "request_sha256": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+  "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+  "training_model_receipt_sha256": "4878b0afa769f20bbd91b9bcf1bed6902d75e60a619bcf3ee83057072a7a6775",
+  "g33_baseline_receipt_sha256": "0a229014e47837ee980ccb0113f7b1b7a5e2704771c7e3b4839901668de646b5",
+  "duration_prior_sha256": "34943b532bc30d216b2cd894d74aa4a89e73549ca19bbba53e77c7f85df28224",
+  "script_sha256": "8611722a064fe6373b7af3d6bcf950078e5e66a3d25dce59221ddabb0a22f571",
+  "model_code_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+  "source_code_sha256": {
+    "g34_fixed_duration.py": "8611722a064fe6373b7af3d6bcf950078e5e66a3d25dce59221ddabb0a22f571",
+    "g33_model.py": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+    "g33_evaluate.py": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff",
+    "g33_feedback.py": "7bcef0e0d56eb3298674507a6b50c2c0afeed719a19333f10bbb73ca3677bff7"
+  },
+  "artifacts": {
+    "samples.npz": {
+      "bytes": 28602302,
+      "sha256": "2d15e7f2a552eef2a183c4e1f1433cce78093ee80ca6b5d7d806458f1149cd46"
+    },
+    "generated.csv.gz": {
+      "bytes": 30976454,
+      "sha256": "35e2cb7032335848c2ff586547125a67b1738f7f373a861e868046540a2b90d3"
+    },
+    "candidate-status.json": {
+      "bytes": 414898,
+      "sha256": "674ea421cdcd819b82b7a278320beed6fa234904438dbf88ec8a02850c9f83f0"
+    },
+    "duration-plan.json": {
+      "bytes": 29598,
+      "sha256": "02662e3572068d1a168fabd75c4aa53e494fe862c9ccb92a0f3630abce438ac3"
+    }
+  },
+  "limits": [
+    "Post-G33 mechanism diagnostic on already inspected development references, not a new blind test.",
+    "One duration is sampled from the unchanged train prior per request and model seed; no reference duration is supplied.",
+    "G33 Uniform candidate ID, duration and noise key are preserved; other candidates retain their keys but change sequence length when duration changes.",
+    "Same number of candidates and DDIM steps does not imply identical runtime or tensor-element compute.",
+    "Fixed durations isolate ranking within a duration-conditioned pool; route geometry and endpoint legality do not imply collision or signal safety.",
+    "No feedback teacher participates in generation; use unchanged G33 terminal scoring and independent physical evaluation separately."
+  ]
+}

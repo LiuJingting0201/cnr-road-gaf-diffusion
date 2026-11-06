@@ -1,0 +1,54 @@
+{
+  "complete": true,
+  "phase": "prospective_generation",
+  "family": "empirical",
+  "arm": "training_motion_transfer",
+  "seed": 42,
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "requested_conditions": 100,
+  "map_ready_conditions": 97,
+  "requested_candidates_per_condition": 8,
+  "candidate_denominator_all_requests": 800,
+  "attempted_candidates": 776,
+  "generated_candidates": 776,
+  "status_counts": {
+    "generated": 776
+  },
+  "ddim_steps": 0,
+  "network_forward_calls": 0,
+  "teacher_calls": 0,
+  "nearest_training_pool": 8,
+  "elapsed_s": 16.557832434773445,
+  "reference_data_opened": false,
+  "request_sha256": "c580b313810bff5f586ac24d0101d98301e8ef92b0c849727ce8d599425a6f93",
+  "map_receipt_sha256": "84c361254958fd8556fa38f64a6fa21844bdb3695a9f3544cb66658dd4eb281a",
+  "training_model_receipt_sha256": "f9084de06e531187b96a89a5176bccf823ae2a5f1a8d316b2f286cb77b65d7b5",
+  "duration_prior_sha256": "34943b532bc30d216b2cd894d74aa4a89e73549ca19bbba53e77c7f85df28224",
+  "script_sha256": "ab1269b5bacda8abc1276d4945faee30485878bbdf5377640cfe8629be33e9ff",
+  "model_code_sha256": "2fba15667ae2b788ec498e226f10a058e4d3f3efe236d0eced44c32de3b97075",
+  "artifacts": {
+    "samples.npz": {
+      "bytes": 27284367,
+      "sha256": "d739f4104ab3cebf9a20906eb4268d7296f53712819f5c3696fa59c242f4679d"
+    },
+    "generated.csv.gz": {
+      "bytes": 29686394,
+      "sha256": "4183750b1f90234f3a9f51e813794e68d385f020a7355f8f8bc942d100c7650d"
+    },
+    "candidate-status.json": {
+      "bytes": 324665,
+      "sha256": "81934cf5d3ed32e9f260fad1467378797e8fc785b9d3fe1ec57a3f841ebb23cd"
+    }
+  },
+  "limits": [
+    "Route legality is inherited from a static map constructor, not learned collision/signal compliance.",
+    "Both diffusion representations and empirical transfer share the same sampled duration prior; duration differences are not a diffusion benefit.",
+    "All outputs use independent pre-simulation route requests; no observed reference trajectory/time is passed to generation."
+  ]
+}
