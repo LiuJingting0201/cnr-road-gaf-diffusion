@@ -522,3 +522,6 @@ Initial live verification: first100/100 requests frozen successfully; first pros
 
 
 G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Native expansion speedW1 worsens4.7/12.2% in morning, improves57.2/65.5% later; acceleration also mixed. Higher-accuracy GAF teachers do not consistently improve physical selection: new speed-GAF accelerationW1 delta+8.7,+0.9,-9.6,-4.7% versus Uniform. Full metrics and limits docs/results/g36-generation/STATUS.md. No overall-benefit thesis claim, no additional adaptive sweep started.
+
+
+2026-11-07 G36 post-hoc statistical audit: original W1 correctly uses class/request/candidate/time weights; retain it. Added complete endpoint MAE/W1 and class stratification, descriptive scene/seed-equal aggregation (no pseudoreplicate inference). Spatial GAF longest-stop paired MAE improves7.6% across four cells, bus20.7% but motorcycle worsens5.3%; adverse speed/stop-frequency distribution metrics retained. This is exploratory mechanism evidence, not overall benefit or significance. Code checks pass; docs/results/g36-statistics/INTERPRETATION.md locks interpretation and outlines independent replication; no new experiment or thesis claim yet.
