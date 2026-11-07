@@ -1,0 +1,23 @@
+# G36: does improved GAF classification improve synthesized motion?
+
+Locked before new request generation, references, candidate scores or physical results, 2026-11-07. User explicitly authorizes generation experiments after G35. The completed G35 teacher audit motivates this finite replication; it is not itself generation evidence.
+
+## Primary contrasts
+
+Two newly seeded native MoST background episodes360201/360202. Select100 public requests using seed36001: all24 public bus routes plus19 held-out public source parents per other vehicle family. Keep the same underlying request templates between episodes, but distinct request IDs, departure times and simulation seeds. Departures lie in18000–18600 and32400–33000 seconds; simulations run from14400 to23000/37400 at0.25seconds. Nonbus requests use existing single-leg no-activity-stop selection; bus service stops remain. This finite200-request experiment supersedes the provisional250×2/full-activity-chain suggestion in G35 analysis. It does NOT establish full-day activity-chain or unseen-route generalization. No success-based replacement. Map failures remain in100/episode denominators.
+
+Use completed G33 small-data and G35 expanded native diffusion models, seeds42/43, unchanged weights, DDIM100 andK8. Each request/model seed has one duration from that model's training-side prior, fixed across all eight candidates; no reference duration is read. Noise and Uniform slot rules are inherited from G34. Both generator eras run both episodes: eight pools, up to6,400 candidates. Old/new generator priors differ, so their contrast tests the complete factorized generator, not isolated denoiser weights.
+
+For each new-generator pool apply BOTH old and new fixed teacher pairs, yielding Uniform/S/V/SV selection under exactly the same candidate budget. This is the primary test of whether better real-data classification improves feedback. Old-generator pools additionally receive the old teacher pair as a baseline. Twelve scoring jobs,48 selected quality evaluations, eight full-pool evaluations. New/old teacher Uniform outputs must be identical for each common pool; differences in encoding failure or candidate availability must be reported, never silently removed. No additional CNN training, weight/threshold/seed sweep, or adaptive stopping on a favorable metric.
+
+## Quality and scope
+
+Inherited G33 evaluation reports every physical endpoint: native speed/acceleration W1, one-second stop ratio, stop/go rate, longest stop/cruise, p95speed, four-second speed changes, and other existing metrics. Duration and predominantly fixed length/T mean speed are controls, not GAF benefits. Report class-wise effects, macro effects only when all five classes have support, each episode/seed separately, failures and coverage. Report pool diversity, selected across-request dispersion (not conditional diversity), training-shape-nearest descriptions and selected probabilities only as auxiliary diagnostics. No arbitrary mixed-unit overall score. New reference extraction uses unchanged planned-versus-realized route, event and anomaly rules. Full simulation clock is verified separately from process exit status.
+
+Spatial feedback preserves original Hilbert/GASF/GADF/MTF preprocessing; speed feedback derives its sequence from generated coordinates/times. G36 scorer verifies the shared encoder-source hashes and exact teacher/cache/config bindings. It can read either old dense-cache or new sharded-cache metadata; scoring generated candidates does not need to load training images. No pixel transform, classifier architecture or selection formula changes.
+
+This stage tests terminal GAF selection, not in-loop guidance. It determines whether the now stronger teachers provide useful physical feedback before committing another in-loop intervention. No test-set access and no thesis claims until results are checked. Shared public map, bus lines, development-parent templates and two simulation realizations limit independence;200requests are not200independent traffic scenes.
+
+## Execution
+
+New isolatedg36-job, immutable old worktrees. Concurrent two CPU simulations and four GPU generator workers; each GPU worker serializes its sampling/scoring tasks. Quality evaluation runs sequentially to bound large training-array RAM. Maximum12hours,10GiB new artifacts, minimum8GiB free disk. Old data remain untouched. Every child has its own process group; failure stops only this queue's children. Completion/failure records and logs retained. Publish code/protocol before launch. Preflight uses inherited request/extraction, fixed-duration sampler, encoding/selection and physical evaluator checks; no real reference outcomes used for fixes or selection.

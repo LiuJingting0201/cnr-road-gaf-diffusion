@@ -510,3 +510,6 @@ G35b launch confirmed after commit 307ec8d: three CPU SUMO branches are progress
 
 
 Same-validation audit completed: both old/new models evaluated on identical7,230 legs/5,842 parents. Spatial accuracy60.65→86.17%, macroF1 50.10→76.47%; speed accuracy63.61→89.13%, macroF1 61.82→90.34%. Paired parent-bootstrap95% intervals for macroF1 gain are spatial[24.54,28.16]pp and speed[27.27,29.73]pp. This supports improved classifier generalization on this public-demand development cohort. Scale, full-day coverage and number of optimization updates changed together; it is not a pure data-size causal effect, unseen-city test or demonstrated generation benefit. Full fixed analysis: paired-teacher-audit.json.
+
+
+2026-11-07 G36 fixed before launch: two new SUMO episodes,100public conditions each, paired old/new native generators×seeds42/43. New pools scored by both old/new GAF pairs to isolate teacher improvement; all physical endpoints and coverage retained. Pending execution, no benefit claim. Scope narrows provisional250×2/activity-chain design to existing verified100-request interface across two time windows; limitations explicit in docs/G36_PROTOCOL.md. Local bytecode check initially failed only because Python cache path was sandbox-protected; in-memory syntax compilation passes.
