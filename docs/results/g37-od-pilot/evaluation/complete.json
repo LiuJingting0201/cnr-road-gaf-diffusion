@@ -1,0 +1,2380 @@
+{
+  "complete": true,
+  "scope": "20 OD development pilot, one reused G36 reference realization per OD; not route-choice frequency validation or confirmatory evidence",
+  "generation_sha256": "5c4b5b0b3ce44136e58377b8036c3d80473e442033a5c2d45d693fe04d985eb6",
+  "reference_sha256": "49ce8130921886369af6fc3f54a7c1ef5cf355955fd44a3302b4576337ba7881",
+  "results": {
+    "single": {
+      "Uniform": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.5898418023279381,
+            "native_acceleration_w1_mps2": 0.07342382386507018,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 661.1452778748829,
+                "mae": 661.1452778748828
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 107.76761787769374,
+                "mae": 107.76761787769374
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 47.75,
+                "mae": 55.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.12091821690384114,
+                "mae": 0.12091821690384114
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.7041117628124312,
+                "mae": 2.305114102190424
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.04421727030620867,
+                "mae": 0.04421727030620867
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.07766575954498006,
+                "mae": 0.11454191466919827
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.9375618402492787,
+                "mae": 0.9375618402492787
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 44.5,
+                "mae": 74.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1505645835827441,
+                "mae": 0.1505645835827441
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.9424186181788755,
+            "native_acceleration_w1_mps2": 0.21424181032311496,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 79.67705804335225,
+                "mae": 99.01787264044265
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 31.310433243411012,
+                "mae": 31.310433243411012
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 18.25,
+                "mae": 18.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.3478023674099411,
+                "mae": 0.7135658259700162
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.112638636017002,
+                "mae": 2.631923777203646
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.11374957570493399,
+                "mae": 0.2547607835108943
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.05635687938461177,
+                "mae": 0.05635687938461177
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 2.755702070791126,
+                "mae": 4.187350032873774
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 9.0,
+                "mae": 9.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.26969781931533965,
+                "mae": 0.26969781931533965
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.9290846606821449,
+            "native_acceleration_w1_mps2": 0.16950173756460538,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 30.08190857253132,
+                "mae": 41.9124141041257
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 480.3369843822388,
+                "mae": 480.3369843822388
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 58.25,
+                "mae": 58.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.25140213788833055,
+                "mae": 0.4946311074237315
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.6750149384426769,
+                "mae": 1.054162328598299
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.08887197740471874,
+                "mae": 0.15702694129073425
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.027289159332588075,
+                "mae": 0.04171143664386455
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.584298172879218,
+                "mae": 5.732593154886688
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 10.75,
+                "mae": 18.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1341527942831247,
+                "mae": 0.26822828865968085
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.8313648249670187,
+            "native_acceleration_w1_mps2": 0.2978423490616779,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 71.16004750788076,
+                "mae": 71.16004750788076
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.236807429762393,
+                "mae": 4.236807429762393
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 30.5,
+                "mae": 30.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2507006448739737,
+                "mae": 0.3000180419379741
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8307546555407879,
+                "mae": 0.8307546555407879
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.08179720591103838,
+                "mae": 0.09383711698375198
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.028574869234333715,
+                "mae": 0.028574869234333715
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.0467580673905288,
+                "mae": 1.1442104021593407
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 14.0,
+                "mae": 14.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.09379954312714299,
+                "mae": 0.09379954312714299
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.835800328672311,
+            "native_acceleration_w1_mps2": 0.18113163971832358,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 57.53225807972795,
+                "mae": 69.80474575201973
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 5.279057149416786,
+                "mae": 5.279057149416786
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 15.75,
+                "mae": 16.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.19924131079193735,
+                "mae": 0.877376098294461
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.8040862154570942,
+                "mae": 2.3447866249646134
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.07809248439039498,
+                "mae": 0.30043443913081747
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.04608785703515454,
+                "mae": 0.06048735803110911
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.2917820206449502,
+                "mae": 3.307196490164163
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 8.75,
+                "mae": 10.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.19752576110419634,
+                "mae": 0.5725257611041963
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.2257020469656577,
+        "macro_native_acceleration_w1_mps2": 0.1872282721065584
+      },
+      "S": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 2.1969085532803847,
+            "native_acceleration_w1_mps2": 0.0813602280932514,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 423.26443625280325,
+                "mae": 448.09627971924783
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 106.18131759526727,
+                "mae": 106.18131759526727
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 33.25,
+                "mae": 33.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.1066747280039777,
+                "mae": 0.23571620717759245
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 2.1947810062464583,
+                "mae": 2.257746784725676
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.02452245279865127,
+                "mae": 0.06033220562839202
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.06045303349854565,
+                "mae": 0.08210676312910921
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.8230025520927233,
+                "mae": 0.8230025520927233
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 52.5,
+                "mae": 66.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.12075283979289866,
+                "mae": 0.24367446412473495
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.7210497224489703,
+            "native_acceleration_w1_mps2": 0.18359265606245295,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 27.67724795063225,
+                "mae": 58.08937745907477
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 31.55466331149512,
+                "mae": 31.55466331149512
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 17.75,
+                "mae": 19.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2440510862011226,
+                "mae": 0.49661664410082207
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.4788420240167153,
+                "mae": 1.677021434190909
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06863128416788397,
+                "mae": 0.17048744852249118
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.04471077065381227,
+                "mae": 0.06680202409138253
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.924998328348757,
+                "mae": 2.6296036020803473
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 8.25,
+                "mae": 13.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.12916580282942605,
+                "mae": 0.23127654650955962
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.3760106806465338,
+            "native_acceleration_w1_mps2": 0.22178784035066218,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 14.397017627782816,
+                "mae": 52.12124983810804
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 480.50807148400986,
+                "mae": 480.50807148400986
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 59.25,
+                "mae": 59.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2907399471037417,
+                "mae": 0.5485166962897403
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.6798634105800829,
+                "mae": 0.7387047311895918
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.09771595547473068,
+                "mae": 0.18460155449941817
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.027521781322967162,
+                "mae": 0.03261053900311328
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.043607134793306,
+                "mae": 4.043607134793306
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 11.5,
+                "mae": 15.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.17068259736827615,
+                "mae": 0.17068259736827612
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.5664767740994096,
+            "native_acceleration_w1_mps2": 0.10443431502108486,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 57.50961406677598,
+                "mae": 63.95597669673978
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.34305959724918,
+                "mae": 4.34305959724918
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 13.75,
+                "mae": 29.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.1844808251009773,
+                "mae": 0.20035428232909605
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.4640516566463092,
+                "mae": 0.8561412909859863
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.037799734862088985,
+                "mae": 0.05540645018386052
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.008694240871939053,
+                "mae": 0.02103002338103862
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.7531091072980516,
+                "mae": 1.0050672507770582
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 2.25,
+                "mae": 4.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.15107965677012358,
+                "mae": 0.20935631062150983
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.9823813001954178,
+            "native_acceleration_w1_mps2": 0.2585452639990574,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 63.589199388414805,
+                "mae": 63.589199388414805
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.7624637474235385,
+                "mae": 4.7624637474235385
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 14.25,
+                "mae": 14.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.4648511507123364,
+                "mae": 0.6131856955255406
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.8925144605643451,
+                "mae": 1.9143933291353354
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.13552861348943102,
+                "mae": 0.21921523591201098
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.12802262967967645,
+                "mae": 0.14052262967967644
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.367476950059193,
+                "mae": 1.9598985531019135
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 20.25,
+                "mae": 21.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.39490983197301366,
+                "mae": 0.7699098319730138
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.368565406134143,
+        "macro_native_acceleration_w1_mps2": 0.16994406070530174
+      },
+      "V": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.3916416536326714,
+            "native_acceleration_w1_mps2": 0.08354666901305863,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 466.46181659665524,
+                "mae": 466.46181659665524
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 108.43292460858106,
+                "mae": 108.43292460858106
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 72.5,
+                "mae": 72.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.21092175429666238,
+                "mae": 0.21092175429666238
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.7865435135741891,
+                "mae": 0.9722420765917278
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06602020435796496,
+                "mae": 0.06602020435796496
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.013708918799749392,
+                "mae": 0.03943958325441688
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.2048168097310219,
+                "mae": 0.2048168097310219
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 55.25,
+                "mae": 78.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.2512135236536577,
+                "mae": 0.25522041180519706
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.3080529782845596,
+            "native_acceleration_w1_mps2": 0.3120101566547184,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 75.66774277589828,
+                "mae": 75.66774277589828
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 31.310710538901844,
+                "mae": 31.310710538901844
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 14.25,
+                "mae": 33.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.4875607801506585,
+                "mae": 0.5362749321186928
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.2750819559684363,
+                "mae": 2.4304129343134724
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.10885364900150273,
+                "mae": 0.1492418350460517
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.032650019028920715,
+                "mae": 0.06421659500226018
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.0031508860902836,
+                "mae": 1.608630351823833
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 3.25,
+                "mae": 12.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.2959503817368432,
+                "mae": 0.32152582930717566
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.7635263380944082,
+            "native_acceleration_w1_mps2": 0.18919625990574623,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 100.05558010859767,
+                "mae": 196.30558010859767
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 481.836544892702,
+                "mae": 481.836544892702
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 73.75,
+                "mae": 78.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.12988512294773252,
+                "mae": 0.5237365939819465
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 2.6246217653837247,
+                "mae": 2.6246217653837247
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.04225805077377612,
+                "mae": 0.14948833363322395
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.004456794885387429,
+                "mae": 0.06376755637553488
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.781952529413263,
+                "mae": 4.899390719383266
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 4.75,
+                "mae": 25.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.04060750775756512,
+                "mae": 0.4363262120418896
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.8930913008849501,
+            "native_acceleration_w1_mps2": 0.21547492606730606,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 74.78179054282825,
+                "mae": 74.78179054282825
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.239660887744549,
+                "mae": 4.239660887744549
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 26.0,
+                "mae": 26.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.1949253309705549,
+                "mae": 0.2442427280345553
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8916364115023172,
+                "mae": 0.8916364115023172
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.05897572995032917,
+                "mae": 0.0735985581120725
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.019684533834011676,
+                "mae": 0.030530431701806752
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.1038515565902074,
+                "mae": 1.2013038913590193
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 11.25,
+                "mae": 12.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.0918375154943574,
+                "mae": 0.09859587051074639
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.5964352465904927,
+            "native_acceleration_w1_mps2": 0.17458478748675335,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 65.4410397918752,
+                "mae": 65.4410397918752
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 5.0907180749728695,
+                "mae": 5.0907180749728695
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 12.5,
+                "mae": 13.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.5539601166772927,
+                "mae": 0.5539601166772927
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.5090238368984785,
+                "mae": 2.41068805529688
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.1791545485236388,
+                "mae": 0.1791545485236388
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.05716864146188631,
+                "mae": 0.06966864146188631
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.2064624042184602,
+                "mae": 2.2672013041942063
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 8.5,
+                "mae": 9.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.37055018479241364,
+                "mae": 0.7455501847924138
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.1905495034974165,
+        "macro_native_acceleration_w1_mps2": 0.19496255982551652
+      },
+      "SV": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.23151092364545836,
+            "native_acceleration_w1_mps2": 0.06833800727870605,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 244.90786584219245,
+                "mae": 244.90786584219245
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 108.03862727395358,
+                "mae": 108.03862727395358
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 67.0,
+                "mae": 67.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.1366802277906755,
+                "mae": 0.14961688561002234
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.571311074549114,
+                "mae": 0.571311074549114
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.040588625126741856,
+                "mae": 0.040588625126741856
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.008392761841337013,
+                "mae": 0.025979113402508566
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.346324216004962,
+                "mae": 0.346324216004962
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 61.5,
+                "mae": 75.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.12453049907419328,
+                "mae": 0.1371328417213527
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.1642637359199655,
+            "native_acceleration_w1_mps2": 0.17944219437081743,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 102.40505787303864,
+                "mae": 125.50585134231822
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 31.17503512179144,
+                "mae": 31.17503512179144
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 20.5,
+                "mae": 20.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.4335156392308128,
+                "mae": 0.7040903759090822
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8654876760901344,
+                "mae": 2.547502693336292
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.11241191741332368,
+                "mae": 0.24199201888518318
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.023047769191226905,
+                "mae": 0.109523776906299
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.9318825890141418,
+                "mae": 1.5485088280737123
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 6.25,
+                "mae": 15.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.336924359259144,
+                "mae": 0.5561756961575397
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 2.285156317672903,
+            "native_acceleration_w1_mps2": 0.19574563813089257,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 129.33410450300914,
+                "mae": 225.58410450300914
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 482.6313308356139,
+                "mae": 482.6313308356139
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 62.5,
+                "mae": 67.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2042407844494183,
+                "mae": 0.43245547498598674
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 3.295221374666037,
+                "mae": 3.2952213746660375
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.0729542641056813,
+                "mae": 0.1144545094152613
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.014057959013471304,
+                "mae": 0.053294438334786254
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.958479087508563,
+                "mae": 6.569906833262843
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 8.0,
+                "mae": 23.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.09153389341673965,
+                "mae": 0.3324977488384264
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.5664767740994096,
+            "native_acceleration_w1_mps2": 0.10443431502108486,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 57.50961406677598,
+                "mae": 63.95597669673978
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.34305959724918,
+                "mae": 4.34305959724918
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 13.75,
+                "mae": 29.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.1844808251009773,
+                "mae": 0.20035428232909605
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.4640516566463092,
+                "mae": 0.8561412909859863
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.037799734862088985,
+                "mae": 0.05540645018386052
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.008694240871939053,
+                "mae": 0.02103002338103862
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.7531091072980516,
+                "mae": 1.0050672507770582
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 2.25,
+                "mae": 4.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.15107965677012358,
+                "mae": 0.20935631062150983
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.1469536814390628,
+            "native_acceleration_w1_mps2": 0.15801088089744447,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 39.35046193355045,
+                "mae": 39.35046193355045
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 4.671712884700014,
+                "mae": 4.671712884700014
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 7.5,
+                "mae": 8.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.31027369703386165,
+                "mae": 0.32317940581475635
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8265981372095388,
+                "mae": 1.7282623556079402
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.10651985256912608,
+                "mae": 0.10651985256912608
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.09694106302498727,
+                "mae": 0.10944106302498728
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.2992381543517735,
+                "mae": 1.2992381543517735
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 17.75,
+                "mae": 18.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.26016315572436116,
+                "mae": 0.6351631557243611
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.07887228655536,
+        "macro_native_acceleration_w1_mps2": 0.14119420713978909
+      }
+    },
+    "multi": {
+      "Uniform": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.6204497896061993,
+            "native_acceleration_w1_mps2": 0.08619807958354296,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 712.3278515169145,
+                "mae": 712.3278515169145
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 843.8729849998599,
+                "mae": 843.8729849998599
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 52.25,
+                "mae": 59.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.10544200890422406,
+                "mae": 0.14602683610550715
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.7358623085878793,
+                "mae": 2.3176475193964414
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.04291895840131399,
+                "mae": 0.044966422259315575
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.07450901284953781,
+                "mae": 0.11248143405084948
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.0884769652728234,
+                "mae": 1.0884769652728234
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 44.75,
+                "mae": 74.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1401855155765294,
+                "mae": 0.14981199012275434
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.2289633490830694,
+            "native_acceleration_w1_mps2": 0.1837033925639711,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 98.65405968541687,
+                "mae": 98.65405968541687
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 638.7285671438827,
+                "mae": 638.7285671438827
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 18.5,
+                "mae": 18.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.20680143577984977,
+                "mae": 0.5725648943399249
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.3243460064540244,
+                "mae": 2.871439189232528
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06672396298780633,
+                "mae": 0.20773517079376666
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.039857784223091774,
+                "mae": 0.057057729293127475
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 3.304591209347582,
+                "mae": 4.42894530850278
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 7.5,
+                "mae": 8.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.16750886902097722,
+                "mae": 0.16750886902097722
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.8889570084696983,
+            "native_acceleration_w1_mps2": 0.17309849952308837,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 21.2066111225501,
+                "mae": 33.037116654144484
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 602.7588979717068,
+                "mae": 602.7588979717068
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 58.25,
+                "mae": 58.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2474558993018666,
+                "mae": 0.5199283340301754
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.6730423152572209,
+                "mae": 1.0967338145169139
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.08029529514824134,
+                "mae": 0.16560362354721164
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.026620081748365835,
+                "mae": 0.04104235905964231
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.631184208655865,
+                "mae": 5.685707119110042
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 10.75,
+                "mae": 18.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.12638286104699548,
+                "mae": 0.26045835542355156
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.8122191121446,
+            "native_acceleration_w1_mps2": 0.3366945432109363,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 127.19883708259596,
+                "mae": 127.19883708259596
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 284.7996782233223,
+                "mae": 284.7996782233223
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 32.75,
+                "mae": 32.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.2771375753828158,
+                "mae": 0.287866988028292
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8116153027753554,
+                "mae": 0.8116153027753554
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.09311641258398987,
+                "mae": 0.09311641258398987
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.022725335608247445,
+                "mae": 0.022725335608247445
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.1007634409517224,
+                "mae": 1.1758545093826527
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 14.0,
+                "mae": 14.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.07876715531010833,
+                "mae": 0.1266046530380885
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.799459022367933,
+            "native_acceleration_w1_mps2": 0.18897118065671542,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 71.65681005866945,
+                "mae": 83.92929773096122
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 106.31514243925042,
+                "mae": 106.31514243925042
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 15.75,
+                "mae": 16.25
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.14987417615517923,
+                "mae": 0.8276071026012268
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.771312470397266,
+                "mae": 2.3120128799047848
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06034664320800376,
+                "mae": 0.2826885979484262
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.05137409664810462,
+                "mae": 0.0657735976440592
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.35116794610283,
+                "mae": 3.273896143901533
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 11.0,
+                "mae": 12.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.16405582569474136,
+                "mae": 0.5390558256947413
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.2700096563343,
+        "macro_native_acceleration_w1_mps2": 0.19373313910765083
+      },
+      "S": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 2.817674662892268,
+            "native_acceleration_w1_mps2": 0.1052987892527647,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 528.8040360423522,
+                "mae": 594.9290360423522
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 432.69957687478745,
+                "mae": 432.69957687478745
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 48.0,
+                "mae": 48.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.07251105696617932,
+                "mae": 0.11619850167106838
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 2.8170249535544607,
+                "mae": 2.861669814674742
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.021405111985544123,
+                "mae": 0.024021737400269194
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.1171953364849953,
+                "mae": 0.13663139014162803
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.8935515343199061,
+                "mae": 0.8935515343199061
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 40.5,
+                "mae": 65.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.11610026376898666,
+                "mae": 0.19788323470607735
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.8010067286994573,
+            "native_acceleration_w1_mps2": 0.2152724030162399,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 38.17306801739926,
+                "mae": 50.50141127953157
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 371.1081000782382,
+                "mae": 371.1081000782382
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 18.5,
+                "mae": 18.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.3265118266448048,
+                "mae": 0.6922752852048799
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.7979185275458656,
+                "mae": 2.1532456506697004
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06361631532695164,
+                "mae": 0.18632809993971547
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.04281955602145382,
+                "mae": 0.054430848572640855
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 3.699788618244567,
+                "mae": 4.4126339718101395
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 5.75,
+                "mae": 11.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1572865705388542,
+                "mae": 0.1572865705388542
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.390597343576893,
+            "native_acceleration_w1_mps2": 0.14084451440298232,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 84.02246394447627,
+                "mae": 84.02246394447627
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 393.10646178872616,
+                "mae": 393.10646178872616
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 47.0,
+                "mae": 47.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.24390886746980897,
+                "mae": 0.31825868020094983
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.3571368313211285,
+                "mae": 1.3571368313211285
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.0855379112727203,
+                "mae": 0.1012830907109362
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.024891972843508317,
+                "mae": 0.035133194469421467
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 4.693228710597836,
+                "mae": 5.623662617168069
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 12.0,
+                "mae": 15.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.07590066697438512,
+                "mae": 0.10901232840069079
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.5085256191247203,
+            "native_acceleration_w1_mps2": 0.1221571301139226,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 56.87675126265127,
+                "mae": 127.68401111120643
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 126.92697574538028,
+                "mae": 126.92697574538028
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 14.25,
+                "mae": 15.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.15077133990467012,
+                "mae": 0.22808650332915373
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.5416396233076939,
+                "mae": 1.2596027456459056
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.03644662269893066,
+                "mae": 0.07560819912183284
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.024889707049390634,
+                "mae": 0.024889707049390634
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.6683559393375813,
+                "mae": 1.4829385426858963
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 4.5,
+                "mae": 7.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1623697896100859,
+                "mae": 0.1623697896100859
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.7077993236834978,
+            "native_acceleration_w1_mps2": 0.18110026205335317,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 33.82497179837029,
+                "mae": 33.82497179837029
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 122.48666031938498,
+                "mae": 122.48666031938498
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 18.0,
+                "mae": 18.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.22035783950777682,
+                "mae": 0.9559301854220248
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.9379104740876298,
+                "mae": 1.9379104740876298
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.10135258734666872,
+                "mae": 0.30533329484654836
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.07119348009843568,
+                "mae": 0.08369348009843568
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 2.411271754933345,
+                "mae": 3.5628268154713205
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 11.75,
+                "mae": 12.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.2171997517902798,
+                "mae": 0.5921997517902797
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.645120735595367,
+        "macro_native_acceleration_w1_mps2": 0.15293461976785255
+      },
+      "V": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.3992634981617348,
+            "native_acceleration_w1_mps2": 0.08979959044611177,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 534.3661160584486,
+                "mae": 534.3661160584486
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 582.1450795896424,
+                "mae": 582.1450795896424
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 77.0,
+                "mae": 77.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.20934114945267518,
+                "mae": 0.20934114945267518
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.7956340778088241,
+                "mae": 0.9673358142067322
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06727045127104242,
+                "mae": 0.06727045127104242
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.014445022298480298,
+                "mae": 0.041963073308817406
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.4524489699289078,
+                "mae": 0.4524489699289078
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 55.0,
+                "mae": 78.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.24235255868671118,
+                "mae": 0.2563139035721477
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 3.1453187379014746,
+            "native_acceleration_w1_mps2": 0.3265074429696417,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 245.33595697821113,
+                "mae": 245.33595697821113
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 487.2843818015424,
+                "mae": 487.2843818015424
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 22.75,
+                "mae": 22.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.13784537636714655,
+                "mae": 0.2879961146971133
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 3.1395394552078426,
+                "mae": 3.139539455207843
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.06427317501182808,
+                "mae": 0.13153611122247424
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.09559668557190854,
+                "mae": 0.09559668557190855
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.9910011491589876,
+                "mae": 1.3712342930590755
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 14.5,
+                "mae": 14.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.19611007244975218,
+                "mae": 0.37875220373236684
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.2019646906854478,
+            "native_acceleration_w1_mps2": 0.21842384728849346,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 61.657580088075406,
+                "mae": 73.48808561966979
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 317.523264893523,
+                "mae": 798.1934471359987
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 67.75,
+                "mae": 67.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.341281543613904,
+                "mae": 0.46510843003616953
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.1564747254018912,
+                "mae": 1.4238952479467035
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.09368596548590827,
+                "mae": 0.12972014193061862
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.00858820154147251,
+                "mae": 0.05767081958318329
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 3.676652540331183,
+                "mae": 4.486478277525989
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 8.0,
+                "mae": 22.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.0841626386272176,
+                "mae": 0.3591033952596153
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.8608857774061226,
+            "native_acceleration_w1_mps2": 0.24974261717188,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 153.9991190732594,
+                "mae": 153.9991190732594
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 401.3118066634069,
+                "mae": 401.3118066634069
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 23.0,
+                "mae": 23.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.22899127630271032,
+                "mae": 0.23972068894818654
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.8597421189407446,
+                "mae": 0.8597421189407446
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.07228771705792991,
+                "mae": 0.07228771705792991
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.017805594907522024,
+                "mae": 0.024198415888681067
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.1306745762592656,
+                "mae": 1.2057656446901959
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 12.25,
+                "mae": 12.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.06373251408581246,
+                "mae": 0.10322141488405237
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.5668933651721502,
+            "native_acceleration_w1_mps2": 0.16535007150455305,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 80.79309760819177,
+                "mae": 80.79309760819177
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 119.85971474285782,
+                "mae": 119.85971474285782
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 12.5,
+                "mae": 13.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.46232767610144815,
+                "mae": 0.46232767610144815
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.467965373081011,
+                "mae": 2.3696295914794123
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.1454076879319141,
+                "mae": 0.1454076879319141
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.062314601026695546,
+                "mae": 0.07481460102669554
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.3107827821331917,
+                "mae": 2.188966505474725
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 10.75,
+                "mae": 11.75
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.3346563343830808,
+                "mae": 0.7096563343830807
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.4348652138653857,
+        "macro_native_acceleration_w1_mps2": 0.20996471387613597
+      },
+      "SV": {
+        "by_class": {
+          "bus": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.4190704592610509,
+            "native_acceleration_w1_mps2": 0.08954066421235128,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 417.514320534019,
+                "mae": 417.514320534019
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 803.4091094563762,
+                "mae": 803.4091094563762
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 76.5,
+                "mae": 76.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.23957584993296727,
+                "mae": 0.2449650920748338
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.50784354417296,
+                "mae": 0.5581922821271866
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.07231344138558343,
+                "mae": 0.07231344138558343
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.0323712738547266,
+                "mae": 0.05988932486506371
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.7069259492488027,
+                "mae": 0.7069259492488027
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 67.0,
+                "mae": 80.5
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.2178529135411403,
+                "mae": 0.24108066386203988
+              }
+            }
+          },
+          "motorcycle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.440814594800727,
+            "native_acceleration_w1_mps2": 0.20197282694698038,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 40.049092499198366,
+                "mae": 40.049092499198366
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 493.3530448512075,
+                "mae": 493.3530448512075
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 23.0,
+                "mae": 23.0
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.21503984616522653,
+                "mae": 0.45124760418698084
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.4341058867996497,
+                "mae": 1.4456480559451512
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.039940738709006135,
+                "mae": 0.18095194651496646
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.05437217886930343,
+                "mae": 0.06845011796992856
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 2.0105600389992517,
+                "mae": 2.0105600389992517
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 7.0,
+                "mae": 13.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.2589294012920922,
+                "mae": 0.2589294012920922
+              }
+            }
+          },
+          "private_car": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 3.4201843871892197,
+            "native_acceleration_w1_mps2": 0.26429664388664054,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 139.68556895471175,
+                "mae": 151.51607448630614
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 318.7359073596972,
+                "mae": 799.4060896021729
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 71.5,
+                "mae": 71.5
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.38892896150265105,
+                "mae": 0.5127558479249166
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 3.9293645270436444,
+                "mae": 4.196785049588457
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.11714630029053541,
+                "mae": 0.15318047673524576
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.00820120463744774,
+                "mae": 0.058057816487208064
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 6.8224696916204515,
+                "mae": 7.632295428815257
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 7.75,
+                "mae": 22.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.06094282438573152,
+                "mae": 0.3823232095011014
+              }
+            }
+          },
+          "bycicle": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 0.5085256191247203,
+            "native_acceleration_w1_mps2": 0.1221571301139226,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 56.87675126265127,
+                "mae": 127.68401111120643
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 126.92697574538028,
+                "mae": 126.92697574538028
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 14.25,
+                "mae": 15.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.15077133990467012,
+                "mae": 0.22808650332915373
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 0.5416396233076939,
+                "mae": 1.2596027456459056
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.03644662269893066,
+                "mae": 0.07560819912183284
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.024889707049390634,
+                "mae": 0.024889707049390634
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 0.6683559393375813,
+                "mae": 1.4829385426858963
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 4.5,
+                "mae": 7.0
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.1623697896100859,
+                "mae": 0.1623697896100859
+              }
+            }
+          },
+          "taxi_or_uber": {
+            "requested": 4,
+            "paired": 4,
+            "native_speed_w1_mps": 1.1791881728539524,
+            "native_acceleration_w1_mps2": 0.1655886428759472,
+            "physical": {
+              "duration_s": {
+                "n": 4,
+                "w1": 46.93130413411047,
+                "mae": 46.93130413411047
+              },
+              "arc_length_m": {
+                "n": 4,
+                "w1": 114.30487547724681,
+                "mae": 114.30487547724681
+              },
+              "longest_steady_s": {
+                "n": 4,
+                "w1": 3.75,
+                "mae": 4.75
+              },
+              "mean_absolute_lag4_speed_change_mps": {
+                "n": 4,
+                "w1": 0.31483743802645164,
+                "mae": 0.31483743802645164
+              },
+              "mean_speed_mps": {
+                "n": 4,
+                "w1": 1.2636552133070447,
+                "mae": 1.7302378845493551
+              },
+              "mean_absolute_acceleration_mps2": {
+                "n": 4,
+                "w1": 0.0943043429207869,
+                "mae": 0.0943043429207869
+              },
+              "stopped_fraction": {
+                "n": 4,
+                "w1": 0.06792328082397525,
+                "mae": 0.08042328082397525
+              },
+              "speed_p95_mps": {
+                "n": 4,
+                "w1": 1.3525788598346007,
+                "mae": 1.3525788598346007
+              },
+              "longest_stop_s": {
+                "n": 4,
+                "w1": 14.25,
+                "mae": 15.25
+              },
+              "stop_episodes_per_minute": {
+                "n": 4,
+                "w1": 0.14343973310031743,
+                "mae": 0.5184397331003174
+              }
+            }
+          }
+        },
+        "macro_native_speed_w1_mps": 1.393556646645934,
+        "macro_native_acceleration_w1_mps2": 0.16871118160716841
+      }
+    }
+  }
+}

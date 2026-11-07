@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "case_rule": "first supported OD per class, all catalog routes and selectors",
+  "cases": [
+    {
+      "class": 0,
+      "request_sha256": "68c17a9bb5dda6f901769255e5def819e5be8ca0cc653de9651533afea5fd4ea",
+      "routes": 4
+    },
+    {
+      "class": 1,
+      "request_sha256": "aff542c569af38f244513a725875d86b04681a55bc984cedd9bd009a9819d83b",
+      "routes": 4
+    },
+    {
+      "class": 2,
+      "request_sha256": "4b8a21ffacefa3388a8b546b63025c82e0defd6b9e7534525de03992a0e1b4cb",
+      "routes": 4
+    },
+    {
+      "class": 3,
+      "request_sha256": "17eaee61f33a46314f13cf5a2a3996b4fba32b2e769b9f0b9089269d22fa8f23",
+      "routes": 4
+    },
+    {
+      "class": 4,
+      "request_sha256": "8da1752a19e638089482b6b71bbaaad015bf85eea013f75b83712c41da464bcf",
+      "routes": 2
+    }
+  ],
+  "script_sha256": "dac05866d9dd96dd74db7756ad7005d11aa72c19a3ff968bede1138e7365cb9e",
+  "generated_sha256": "5c4b5b0b3ce44136e58377b8036c3d80473e442033a5c2d45d693fe04d985eb6"
+}

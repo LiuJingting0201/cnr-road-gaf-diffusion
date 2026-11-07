@@ -1,0 +1,382 @@
+{
+  "complete": true,
+  "reference_opened": false,
+  "learned_route_choice": false,
+  "denominator": 20,
+  "candidates": 320,
+  "network_forward_calls": 32000,
+  "seconds": 143.59151285141706,
+  "model_sha256": "3a8e959397eed93fa7153e4499d00825f397a31f47cff34a937d8259e34e38fc",
+  "catalog_sha256": "052f56bfff3d76ca24f65c01b11051400bc1ac23df6a8987eed7c0ab5693b66c",
+  "cache_sha256": "05317df345b3bf6fe9977be1854ea0711d7ff7e12a3329b001d2a522acfc56ea",
+  "samples_sha256": "84dcd8657528002ae40eff9ecc4afdb40ece7eea0a38871dab2cabda553b3270",
+  "candidates_sha256": "71d3e946dd4d43815d24f7235c707bfb68d66932d80e8abc8010a79d39e1ff93",
+  "selections_sha256": "b6f19118b8a926b1f9f285219e63c065238c4fd53007970443501d22cd8860cf",
+  "script_sha256": "cfece9e227ae06654d5d744326626fe35a7afef3a5433cc53832b442dec636d8",
+  "mechanism": {
+    "single": {
+      "bus": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 10169.18978801252
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 10169.18978801252
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 10169.18978801252
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 10169.18978801252
+          }
+        }
+      },
+      "motorcycle": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 3580.0309527661843
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 3580.0309527661843
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 3580.0309527661843
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 3580.0309527661843
+          }
+        }
+      },
+      "private_car": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 8885.015323258474
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 8885.015323258474
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 8885.015323258474
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 8885.015323258474
+          }
+        }
+      },
+      "bycicle": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 2113.486009647902
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 2113.486009647902
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 2113.486009647902
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 2113.486009647902
+          }
+        }
+      },
+      "taxi_or_uber": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 1853.5324332001433
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 1853.5324332001433
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 1853.5324332001433
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0,
+            "mean_length_m": 1853.5324332001433
+          }
+        }
+      }
+    },
+    "multi": {
+      "bus": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.054953128526563,
+            "mean_length_m": 10908.362472663062
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 4,
+            "mean_detour": 1.0284436472697456,
+            "mean_length_m": 10498.754820410773
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.0401312050339269,
+            "mean_length_m": 10646.751155104608
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 3,
+            "mean_detour": 1.0529198901323067,
+            "mean_length_m": 10869.007447963215
+          }
+        }
+      },
+      "motorcycle": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.200715014459448,
+            "mean_length_m": 4252.652021806767
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.1401315649905754,
+            "mean_length_m": 3980.3099829338867
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.1150929394882416,
+            "mean_length_m": 4082.926329196553
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.1526617925580884,
+            "mean_length_m": 4066.5433202664017
+          }
+        }
+      },
+      "private_car": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0181488317148837,
+            "mean_length_m": 9019.921112068803
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.021801570737343,
+            "mean_length_m": 9073.619654715138
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 3,
+            "mean_detour": 1.0840456332128567,
+            "mean_length_m": 9663.17682449189
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.0372883238746695,
+            "mean_length_m": 9214.01356274477
+          }
+        }
+      },
+      "bycicle": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.117533756191785,
+            "mean_length_m": 2398.707026126842
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 4,
+            "mean_detour": 1.0569346931037948,
+            "mean_length_m": 2242.008648533599
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 1,
+            "mean_detour": 1.1966921851477537,
+            "mean_length_m": 2515.330289047779
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 4,
+            "mean_detour": 1.0569346931037948,
+            "mean_length_m": 2242.008648533599
+          }
+        }
+      },
+      "taxi_or_uber": {
+        "generated_requests": 4,
+        "candidates": 32,
+        "unique_spatial_images_per_pool": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "selection": {
+          "Uniform": {
+            "n": 4,
+            "route_changed_from_uniform": 0,
+            "mean_detour": 1.0434888590375888,
+            "mean_length_m": 1955.3154173131625
+          },
+          "S": {
+            "n": 4,
+            "route_changed_from_uniform": 2,
+            "mean_detour": 1.0515170313465716,
+            "mean_length_m": 1973.0943312342758
+          },
+          "V": {
+            "n": 4,
+            "route_changed_from_uniform": 1,
+            "mean_detour": 1.0493617294282727,
+            "mean_length_m": 1969.0661206394634
+          },
+          "SV": {
+            "n": 4,
+            "route_changed_from_uniform": 1,
+            "mean_detour": 1.0470207853785787,
+            "mean_length_m": 1963.5812238962615
+          }
+        }
+      }
+    }
+  }
+}

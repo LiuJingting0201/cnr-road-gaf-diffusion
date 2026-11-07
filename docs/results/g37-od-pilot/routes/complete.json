@@ -1,0 +1,63 @@
+{
+  "complete": true,
+  "denominator": 20,
+  "supported": 20,
+  "multiroute": 19,
+  "by_class": {
+    "bus": {
+      "requested": 4,
+      "supported": 4,
+      "route_counts": [
+        4,
+        3,
+        4,
+        4
+      ]
+    },
+    "motorcycle": {
+      "requested": 4,
+      "supported": 4,
+      "route_counts": [
+        4,
+        3,
+        4,
+        4
+      ]
+    },
+    "private_car": {
+      "requested": 4,
+      "supported": 4,
+      "route_counts": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "bycicle": {
+      "requested": 4,
+      "supported": 4,
+      "route_counts": [
+        4,
+        4,
+        4,
+        3
+      ]
+    },
+    "taxi_or_uber": {
+      "requested": 4,
+      "supported": 4,
+      "route_counts": [
+        2,
+        4,
+        4,
+        1
+      ]
+    }
+  },
+  "routes_sha256": "052f56bfff3d76ca24f65c01b11051400bc1ac23df6a8987eed7c0ab5693b66c",
+  "script_sha256": "025d7eaab9a50315190a06f5ef734939d0f81db668423f9a6ba0fa4b4b3f81a3",
+  "seconds": 150.77884780615568,
+  "reference_opened": false,
+  "learned_route_choice": false
+}
