@@ -1,0 +1,39 @@
+{
+  "version": "v18",
+  "pdf_pages": 103,
+  "main_text_pages": 69,
+  "figures": 30,
+  "tables": 20,
+  "cited_bibliography_entries": 52,
+  "new_figures": 12,
+  "all_pages_rendered": 103,
+  "qa": "All page contact sheets reviewed; generated-journey/GAF pages also inspected at high resolution. Zero overfull boxes or undefined citations/references. Fresh package compilation matches delivered PDF page text.",
+  "artifacts": {
+    "Road_Conditioned_Diffusion_Thesis_v18.pdf": {
+      "sha256": "f4193a208223c7d343383f69b9ed41f1e07b178245e0a16cd9217a0867295396",
+      "bytes": 9563907
+    },
+    "PoliTo_Thesis_v18_Overleaf.zip": {
+      "sha256": "6826834b198a7d6b6e6ba6ca77bf1923c8c27914faee6874130d51cdf43fbc4c",
+      "bytes": 8881518
+    }
+  },
+  "visual_provenance": "docs/results/thesis-v18-visuals.json",
+  "scope": "Presentation update from completed G36 artifacts; no new fitting, candidate generation, scoring, selection or frozen-test access.",
+  "limitations": "Illustrative fixed-order cases only; no universal GAF benefit. Cover administrative fields remain placeholders.",
+  "render_note": "First preview attempt failed due to fontconfig and concurrent draft replacement; discarded for verification. Stable final PDF rendered successfully with explicit fontconfig into qa-verified.",
+  "figure_sha256": {
+    "g36-journey-bus.pdf": "abd1f2c6732daf12758245ff3298a8b3889f33dab777dedbd749ce8e9ff4a2da",
+    "g36-gaf-bus.pdf": "e17249dc4071ab291e2ccf821cb5e4060043c667b45f1a8c3021e568b1881af2",
+    "g36-gaf-construction.pdf": "1671b9ae223ae970da9aa5436369701f9543da3118f45f21e721b308383be7aa",
+    "g36-eight-candidates.pdf": "1f755c087727a7a3d120741870cf5bfa4cec514fe89d42a521c6a558786be4a7",
+    "g36-journey-motorcycle.pdf": "396975cafd08299984d41c1b8f82c0effd6a23fd258f732e2f52a0f5538c251c",
+    "g36-gaf-motorcycle.pdf": "6b874ab9eb3a4d8f5c6ea99ab456d05babe780a780716450bbf95a17a519d905",
+    "g36-journey-private_car.pdf": "7a349f88a63304a3d6e929682306e93078afecacbcf3ca5a3237868b87c342bf",
+    "g36-gaf-private_car.pdf": "33ee5aca210f03b49f279b30268c189f04eb3b2549d0b8770bd4fe2bd660b912",
+    "g36-journey-bycicle.pdf": "8fb1fd53a21914f19a7c535c351cfd1af8715f72cc08d614788db881d7211b64",
+    "g36-gaf-bycicle.pdf": "a620852ad4b2712370143bbaf77b45f0361aa272317b1cb8f41453c9f9d19139",
+    "g36-journey-taxi_or_uber.pdf": "18f129c3f19c0fba46aa225a924491ab274e41e175093f4a12895b7b69dcaa71",
+    "g36-gaf-taxi_or_uber.pdf": "68a4d2d29daa468931895d1b8343e7b96cbe4553222406b10181473a4162f8d0"
+  }
+}

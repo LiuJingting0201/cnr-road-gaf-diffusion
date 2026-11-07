@@ -1,6 +1,10 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft **v17**, covering complete road-conditioned trajectory generation, native-demand expansion, and spatial/velocity GAF feedback. Main document: `main.tex`; compiler: pdfLaTeX. The checked layout has **87 PDF pages**, including **60 pages of main text**, **18 figures**, **20 tables**, an appendix and **52 cited bibliography entries**. New results extend G33/G34 with G35 training/classification and G36 independent generation replication.
+English thesis research draft **v18**, covering complete road-conditioned trajectory generation, native-demand expansion, and spatial/velocity GAF feedback. Main document: `main.tex`; compiler: pdfLaTeX. The checked layout has **103 PDF pages**, including **69 pages of main text**, **30 figures**, **20 tables**, an appendix and **52 cited bibliography entries**. New results extend G33/G34 with G35 training/classification and G36 independent generation replication.
+
+## Visual generation and GAF evidence in v18
+
+Twelve new multi-panel figures show actual completed G36 trajectories on the road network, their temporal progress and speed, the exact spatial and velocity GAF inputs, and all eight candidates for one request. The main text contains the bus and motorcycle pairs and the full candidate atlas; the appendix retains private car, bicycle and taxi/ride-hailing under the identical fixed first-request rule. Chapter 5 also decomposes both views into their GASF/GADF/MTF channels. Spatial image hashes match the scoring archive; velocity images use the actual preprocessing with ImageNet normalization reversed for display. Source hashes and fixed-case provenance are in `../docs/results/thesis-v18-visuals.json`; `../scripts/g36_visual_assets.py` reproduces the figures on the existing server artifacts. These are visual audits, not new generation experiments or new evidence of a universal GAF benefit.
 
 ## Document structure
 

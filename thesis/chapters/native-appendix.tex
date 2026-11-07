@@ -218,3 +218,20 @@ The paired-representation study G28 is also retained, at \path{docs/results/g28-
 For the current experiment, \path{docs/G33_PROTOCOL.md} fixes the conditions and budgets, and \path{docs/results/g33-generation/report/summary.json} contains the numerical source of the G33 tables, including per-class support and provenance hashes. The G34 tables use \path{docs/results/g34-fixed-duration/attempt2/report/summary.json} under the separate \path{docs/G34_PROTOCOL.md}. \path{docs/results/g33-generation/paper-figures/complete.json} records the fixed case rule and figure hashes. The entry scripts \path{scripts/g33_train.py}, \path{scripts/g33_evaluate.py}, \path{scripts/g33_feedback.py} and \path{scripts/g33_plots.py} separate fitting, generation, feedback, evaluation and presentation. Reproduction requires the corresponding versioned source observations, public scenario and saved model artifacts; the manuscript does not embed raw participant records or access credentials. These relative repository paths identify the required evidence without relying on a particular server layout.
 
 The original locked-result snapshot remains separately identified in the experiment repository~\cite{project}; its test population is not reused to select the present models.
+
+\FloatBarrier
+\section{Expanded generation: all remaining fixed visual cases}
+\label{sec:g36-visual-appendix}
+The main text shows the bus and motorcycle from the fixed G36 display rule. This section completes the five-class set using the first jointly supported request for private car, bicycle and taxi/ride-hailing in the same episode and model seed. The same route, clock, image normalization and stored-score conventions apply. None of these requests was chosen by physical error, classifier confidence or visual attractiveness.
+
+\fig{g36-journey-private_car.pdf}{1}{Private car: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-private_car}
+\fig{g36-gaf-private_car.pdf}{1}{Private car: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-private_car}
+\FloatBarrier
+
+\fig{g36-journey-bycicle.pdf}{1}{Bicycle: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-bycicle}
+\fig{g36-gaf-bycicle.pdf}{1}{Bicycle: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-bycicle}
+\FloatBarrier
+
+\fig{g36-journey-taxi_or_uber.pdf}{1}{Taxi/ride-hailing: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-taxi_or_uber}
+\fig{g36-gaf-taxi_or_uber.pdf}{1}{Taxi/ride-hailing: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-taxi_or_uber}
+\FloatBarrier

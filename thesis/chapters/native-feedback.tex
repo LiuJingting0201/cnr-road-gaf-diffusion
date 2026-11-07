@@ -31,6 +31,14 @@ The angular normalization is $u_i=\operatorname{clip}(v_i/35,0,1)$, with a commo
 
 The speed image retains absolute speed scale but compresses temporal detail. One-second averaging and the 128-point summary do not preserve all quarter-second acceleration. Explicit duration and location are not supplied to this classifier. The representation is consequently a particular view of whole-trip motion, not a complete alternative encoding of the trajectory.
 
+\FloatBarrier
+\section{From a generated journey to the two image views}
+Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row ends in the three channels that the corresponding class reader receives. The image is an analysis of a generated journey, not an object generated and then inverted into a journey.
+
+\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one generated bus journey from the expanded model. The spatial row uses original Hilbert compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion. These are channel intensities, not a common physical scale across the two encoders. No per-image contrast enhancement is applied.}{g36-gaf-construction}
+
+The two sequences have different coordinates on their horizontal axes. The spatial sequence index follows inherited compression, whereas the speed sequence index follows relative-time resampling. Their off-diagonal image patterns relate pairs of sequence positions. Consequently, a visible image difference need not imply a better trajectory: it first establishes that the representation distinguishes the inputs. The empirical question is whether the resulting class scores rank motion quality usefully. Chapter~\ref{ch:native-results} therefore links complete generated journeys, their exact image inputs and the selected candidate identities before presenting population-level quality statistics.
+
 \section{Frozen class readers and terminal selection}
 Two independent ResNet18 classifiers are fitted on identical training journeys and class labels, one per view. The fixed training protocol is given in Chapter~\ref{ch:native-protocol}. Neither reader is trained on synthetic candidates, and no classifier is used inside the current denoising process. Let $f_S(c\mid E_S(X))$ and $f_V(c\mid E_V(X))$ be their target-class probabilities. For each request, all methods receive the same $K=8$ generated candidates and use
 \begin{align}
