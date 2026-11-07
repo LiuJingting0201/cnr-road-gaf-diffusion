@@ -1,0 +1,61 @@
+{
+  "checked_unix": 1794024579.1186123,
+  "free_bytes": 21226926080,
+  "files": {
+    "g36-data/launch.json": {
+      "pid": 221228,
+      "launched_unix": 1794024506.0922463,
+      "commit": "5345f60",
+      "verified_code_sha256": {
+        "g36_requests.py": "73fd5a31b2a29f68ba298e5053af72adc0436dde0e80cace584031d22f342291",
+        "g36_run.py": "b9b64595d11fd9ef50b946539b56e22dcfc954e1c34550c37db8b2591068ee08",
+        "g36_feedback.py": "8672baa1312b7a8dd16c54e211fed84aba7718bedc1fcc864bc71419ae75448b",
+        "g36_generate.py": "e4784ff85569303c954f16e9e6c5f5322d7a6262a7d2ced89c334f387f4eca89"
+      },
+      "preflight_passed": true
+    },
+    "g36-data/360201/requests/prepare-complete.json": {
+      "complete": true,
+      "phase": "requests_frozen",
+      "denominator": 100,
+      "ready": 100,
+      "class_counts": {
+        "bus": 24,
+        "motorcycle": 19,
+        "private_car": 19,
+        "bycicle": 19,
+        "taxi_or_uber": 19
+      },
+      "status_counts": {
+        "request_ready": 100
+      },
+      "eligible_source_counts": {
+        "ptw/train": 4886,
+        "passenger/test": 51,
+        "bicycle/test": 18,
+        "passenger/not_single_no_activity_stop_leg": 13010,
+        "ptw/not_single_no_activity_stop_leg": 5100,
+        "passenger/train": 7701,
+        "bicycle/train": 2765,
+        "bicycle/val": 672,
+        "on-demand/train": 1555,
+        "ptw/test": 17,
+        "on-demand/val": 382,
+        "ptw/val": 1172,
+        "on-demand/test": 10,
+        "passenger/val": 1923
+      },
+      "simulation_started": false,
+      "requests_sha256": "ac585131517af5158616602fd295eb9b624a2e96094f5112f9d6238791435457",
+      "targets_sha256": "7549d99a4bd0bbf3e9047b40c8fbffc1f8d3cb866a885693e73b5e2f3eaf623f",
+      "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+      "script_sha256": "73fd5a31b2a29f68ba298e5053af72adc0436dde0e80cace584031d22f342291"
+    }
+  },
+  "logs": {
+    "prepare-360201.log": "{\n  \"complete\": true,\n  \"phase\": \"requests_frozen\",\n  \"denominator\": 100,\n  \"ready\": 100,\n  \"class_counts\": {\n    \"bus\": 24,\n    \"motorcycle\": 19,\n    \"private_car\": 19,\n    \"bycicle\": 19,\n    \"taxi_or_uber\": 19\n  },\n  \"status_counts\": {\n    \"request_ready\": 100\n  },\n  \"eligible_source_counts\": {\n    \"ptw/train\": 4886,\n    \"passenger/test\": 51,\n    \"bicycle/test\": 18,\n    \"passenger/not_single_no_activity_stop_leg\": 13010,\n    \"ptw/not_single_no_activity_stop_leg\": 5100,\n    \"passenger/train\": 7701,\n    \"bicycle/train\": 2765,\n    \"bicycle/val\": 672,\n    \"on-demand/train\": 1555,\n    \"ptw/test\": 17,\n    \"on-demand/val\": 382,\n    \"ptw/val\": 1172,\n    \"on-demand/test\": 10,\n    \"passenger/val\": 1923\n  },\n  \"simulation_started\": false,\n  \"requests_sha256\": \"ac585131517af5158616602fd295eb9b624a2e96094f5112f9d6238791435457\",\n  \"targets_sha256\": \"7549d99a4bd0bbf3e9047b40c8fbffc1f8d3cb866a885693e73b5e2f3eaf623f\",\n  \"network_sha256\": \"a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0\",\n  \"script_sha256\": \"73fd5a31b2a29f68ba298e5053af72adc0436dde0e80cace584031d22f342291\"\n}\n",
+    "maps-360201.log": "",
+    "queue.log": ""
+  },
+  "gpu": "0, 0 %, 0 MiB\n1, 0 %, 0 MiB\n2, 0 %, 0 MiB\n3, 0 %, 0 MiB\n"
+}

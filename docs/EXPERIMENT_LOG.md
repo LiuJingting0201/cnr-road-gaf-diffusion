@@ -513,3 +513,9 @@ Same-validation audit completed: both old/new models evaluated on identical7,230
 
 
 2026-11-07 G36 fixed before launch: two new SUMO episodes,100public conditions each, paired old/new native generators×seeds42/43. New pools scored by both old/new GAF pairs to isolate teacher improvement; all physical endpoints and coverage retained. Pending execution, no benefit claim. Scope narrows provisional250×2/activity-chain design to existing verified100-request interface across two time windows; limitations explicit in docs/G36_PROTOCOL.md. Local bytecode check initially failed only because Python cache path was sandbox-protected; in-memory syntax compilation passes.
+
+
+G36 cloud queue launched after all four preflight groups passed and source SHA checks; commits39f30fd/5345f60. First SCP disconnected before deployment; safe transfer retry succeeded. Reference requests freeze before outcomes, original worktrees unchanged. Launch receipt docs/results/g36-generation/launch.json. No new physical result yet; actual progress verification follows.
+
+
+Initial live verification: first100/100 requests frozen successfully; first prospective map preparation running with128seconds CPU over128seconds elapsed, approximately595MB RSS, cloud supervisor detached with PPID1. No failure marker; free21.23GB. GPU sampling has not yet begun at this checkpoint. Both map sets precede concurrent simulator/sampler work. No claim of completed simulation or generation is made.
