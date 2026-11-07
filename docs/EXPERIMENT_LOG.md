@@ -519,3 +519,6 @@ G36 cloud queue launched after all four preflight groups passed and source SHA c
 
 
 Initial live verification: first100/100 requests frozen successfully; first prospective map preparation running with128seconds CPU over128seconds elapsed, approximately595MB RSS, cloud supervisor detached with PPID1. No failure marker; free21.23GB. GPU sampling has not yet begun at this checkpoint. Both map sets precede concurrent simulator/sampler work. No claim of completed simulation or generation is made.
+
+
+G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Native expansion speedW1 worsens4.7/12.2% in morning, improves57.2/65.5% later; acceleration also mixed. Higher-accuracy GAF teachers do not consistently improve physical selection: new speed-GAF accelerationW1 delta+8.7,+0.9,-9.6,-4.7% versus Uniform. Full metrics and limits docs/results/g36-generation/STATUS.md. No overall-benefit thesis claim, no additional adaptive sweep started.

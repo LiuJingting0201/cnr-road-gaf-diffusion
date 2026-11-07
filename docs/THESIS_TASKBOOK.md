@@ -265,3 +265,6 @@ Same-validation audit completed: both old/new models evaluated on identical7,230
 
 
 G36 cloud queue launched after all four preflight groups passed and source SHA checks; commits39f30fd/5345f60. First SCP disconnected before deployment; safe transfer retry succeeded. Reference requests freeze before outcomes, original worktrees unchanged. Launch receipt docs/results/g36-generation/launch.json. No new physical result yet; actual progress verification follows.
+
+
+G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Native expansion speedW1 worsens4.7/12.2% in morning, improves57.2/65.5% later; acceleration also mixed. Higher-accuracy GAF teachers do not consistently improve physical selection: new speed-GAF accelerationW1 delta+8.7,+0.9,-9.6,-4.7% versus Uniform. Full metrics and limits docs/results/g36-generation/STATUS.md. No overall-benefit thesis claim, no additional adaptive sweep started.
