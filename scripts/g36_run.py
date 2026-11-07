@@ -67,6 +67,16 @@ def main():
      with LOCK:active={k:v.pid for k,v in ACTIVE.items()}
      save(R/'progress.json',{'stage':'reference_generation_scoring','active':active,'seconds':time.monotonic()-START,'storage':guard()})
    except BaseException:STOP.set();raise
+  # Teacher changes must never change the unscored Uniform control.
+  import numpy as np
+  for e in EPISODES:
+   for seed in (42,43):
+    a=scene(e)/'selected'/f'new-{seed}-old'/'Uniform'/'samples.npz'
+    b=scene(e)/'selected'/f'new-{seed}-new'/'Uniform'/'samples.npz'
+    with np.load(a,allow_pickle=False) as x,np.load(b,allow_pickle=False) as y:
+     if set(x.files)!=set(y.files) or any(not np.array_equal(x[k],y[k]) for k in x.files):
+      raise RuntimeError('Old/new teacher Uniform outputs differ')
+  save(R/'uniform-controls.json',{'complete':True,'paired_pools':4,'all_arrays_equal':True})
   results={}
   for e in EPISODES:
    b=scene(e)

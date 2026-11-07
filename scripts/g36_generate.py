@@ -1,11 +1,10 @@
 """G36: fixed-duration sampling for completed old/new native diffusion models.
 
-This is a mechanism diagnostic on the already inspected G33 development
-requests, not a new blind test. No fitting, reference access or teacher scoring
-occurs here. The G33 Uniform slot supplies the deterministic prior RNG key;
-every candidate retains its original G33 motion-noise key. Frozen G33 modules
-are imported without modification. Existing evaluation and terminal-selection
-commands can consume the resulting prospective_generation receipt.
+New public requests are frozen before independent SUMO reference simulation.
+No fitting, reference access or teacher scoring occurs here. The inherited
+Uniform slot supplies the training-prior duration RNG key, shared across K8.
+Old and expanded native models use identical sampling mathematics. No old
+candidate pool is needed or opened. Frozen inherited modules are unchanged.
 """
 import argparse
 from collections import Counter
