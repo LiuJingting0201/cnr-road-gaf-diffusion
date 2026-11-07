@@ -14,3 +14,6 @@ These scores use all7,230 development legs. Spatial per-class F1 is95.65/73.57/9
 Both native diffusion fits took approximately46 minutes each; both257-point controls approximately5.3 minutes each, parallelized over four GPUs. All are10,000 steps; generation evaluation is not yet performed for the expanded models. No new thesis quality claim is added.
 
 The preregistered same-development-cohort old/new teacher audit has been launched in the cloud, using original fixed weights and2,000 paired parent bootstrap replicates. This is analysis, with no refitting or test-set selection. G36 independent generation evaluation remains to be fixed and executed under the existing analysis protocol.
+
+
+Same-validation audit completed: both old/new models evaluated on identical7,230 legs/5,842 parents. Spatial accuracy60.65→86.17%, macroF1 50.10→76.47%; speed accuracy63.61→89.13%, macroF1 61.82→90.34%. Paired parent-bootstrap95% intervals for macroF1 gain are spatial[24.54,28.16]pp and speed[27.27,29.73]pp. This supports improved classifier generalization on this public-demand development cohort. Scale, full-day coverage and number of optimization updates changed together; it is not a pure data-size causal effect, unseen-city test or demonstrated generation benefit. Full fixed analysis: paired-teacher-audit.json.

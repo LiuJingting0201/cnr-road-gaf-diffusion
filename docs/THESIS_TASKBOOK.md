@@ -256,3 +256,6 @@ G35b launch confirmed after commit 307ec8d: three CPU SUMO branches are progress
 
 
 2026-11-07 11:58 Beijing: G35d data and all six training fits complete, artifact hashes verified. Train29895legs/24073parents; val7230legs/5842parents. Spatial GAF val accuracy86.17%,macroF1 76.47%; speed89.13%,90.34%. Spatial taxi/uber F1 remains45.85%; imbalance and train–val gap retained. Four diffusion fits each10000steps complete, but expanded generation quality not yet evaluated. Preregistered same-val old/new teacher audit launched; no new fitting/test access. Free disk21.23GB. Results docs/results/g35-training/STATUS.md; no thesis update until generation evidence. Initial read-only status query quoting failure corrected without affecting jobs.
+
+
+Same-validation audit completed: both old/new models evaluated on identical7,230 legs/5,842 parents. Spatial accuracy60.65→86.17%, macroF1 50.10→76.47%; speed accuracy63.61→89.13%, macroF1 61.82→90.34%. Paired parent-bootstrap95% intervals for macroF1 gain are spatial[24.54,28.16]pp and speed[27.27,29.73]pp. This supports improved classifier generalization on this public-demand development cohort. Scale, full-day coverage and number of optimization updates changed together; it is not a pure data-size causal effect, unseen-city test or demonstrated generation benefit. Full fixed analysis: paired-teacher-audit.json.
