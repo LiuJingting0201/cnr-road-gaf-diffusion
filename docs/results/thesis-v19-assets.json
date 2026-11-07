@@ -1,0 +1,8 @@
+{
+  "sources_sha256": {
+    "docs/results/g36-statistics/statistics.json": "f4bcf3dd9933b3e0f01a9d0bda5dc537dd29b5657489bc42f3be9cd0f3c202c0",
+    "docs/results/g35-training/paired-teacher-audit.json": "3d4f52cb560235ab946296000b6ead141ab4e30b65f32a2c82973f260225eb47"
+  },
+  "script_sha256": "8f753631396f2fd849f045a247e2cd2344170385574deec75ac881e9bece0035",
+  "scope": "Full five-class presentation of completed results, descriptive post-hoc cell aggregation; no new evaluation or experiment"
+}

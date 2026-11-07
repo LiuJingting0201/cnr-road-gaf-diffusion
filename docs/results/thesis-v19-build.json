@@ -1,0 +1,33 @@
+{
+  "version": "v19",
+  "pdf_pages": 109,
+  "main_text_pages": 75,
+  "figures": 31,
+  "tables": 22,
+  "cited_bibliography_entries": 52,
+  "changes": [
+    "all five fixed-case trajectory/GAF pairs in main results",
+    "five-class six-endpoint motion matrix and absolute native errors",
+    "per-class reader F1",
+    "old/new corpus and model comparisons moved to appendix",
+    "abstract/introduction/discussion focused on synthesis and GAF, no scaling-law claim"
+  ],
+  "qa": {
+    "rendered_pages": 109,
+    "review": "Page contact sheets checked across draft and final layout; final front matter and new motion matrix checked separately",
+    "overfull_or_undefined": 0,
+    "clean_zip_build_page_text_identical": true,
+    "key_class_claims_recomputed": true
+  },
+  "scope": "No new simulation, training, sampling, teacher scoring, selection or frozen-test access. New class aggregation is descriptive and post hoc.",
+  "outputs": {
+    "Road_Conditioned_Diffusion_Thesis_v19.pdf": {
+      "sha256": "91fce59a074fa88a610f1b11048a2687bd2860fe7dd8bad6a52ffeef6dda9ad7",
+      "bytes": 9608787
+    },
+    "PoliTo_Thesis_v19_Overleaf.zip": {
+      "sha256": "155fe4d7fa7b2b86dc3ca8c90a8ee575bd01cc4d559e5056e4d2a4359c737369",
+      "bytes": 8908685
+    }
+  }
+}

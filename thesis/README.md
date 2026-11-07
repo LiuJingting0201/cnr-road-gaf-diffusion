@@ -1,14 +1,18 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft **v18**, covering complete road-conditioned trajectory generation, native-demand expansion, and spatial/velocity GAF feedback. Main document: `main.tex`; compiler: pdfLaTeX. The checked layout has **103 PDF pages**, including **69 pages of main text**, **30 figures**, **20 tables**, an appendix and **52 cited bibliography entries**. New results extend G33/G34 with G35 training/classification and G36 independent generation replication.
+English thesis research draft **v19**. Main document: `main.tex`; compiler: pdfLaTeX. The checked build contains **109 PDF pages**, **75 pages of main text**, **31 figures**, **22 tables** and **52 cited bibliography entries**.
 
-## Visual generation and GAF evidence in v18
+## Five classes in the main results
 
-Twelve new multi-panel figures show actual completed G36 trajectories on the road network, their temporal progress and speed, the exact spatial and velocity GAF inputs, and all eight candidates for one request. The main text contains the bus and motorcycle pairs and the full candidate atlas; the appendix retains private car, bicycle and taxi/ride-hailing under the identical fixed first-request rule. Chapter 5 also decomposes both views into their GASF/GADF/MTF channels. Spatial image hashes match the scoring archive; velocity images use the actual preprocessing with ImageNet normalization reversed for display. Source hashes and fixed-case provenance are in `../docs/results/thesis-v18-visuals.json`; `../scripts/g36_visual_assets.py` reproduces the figures on the existing server artifacts. These are visual audits, not new generation experiments or new evidence of a universal GAF benefit.
+Bus, motorcycle, private car, bicycle and taxi/ride-hailing each receive a complete generated-journey panel and an exact spatial/velocity GAF panel in the main text, using the unchanged fixed first-request rule. The main results add a complete five-class, six-motion-endpoint figure and absolute native-speed/acceleration error table. Current-reader per-class F1 is shown separately from synthetic-trajectory quality. The discussion covers the representation-dependent gains and adverse outcomes for every class; it does not tune a different selector for each class after observing the results.
+
+Earlier/current corpus, generator and teacher comparisons move to the appendix as supporting diagnostics. They are not a scaling-law study. The matched native-clock versus 257-point pilot remains a central representation control. No new simulation, fitting, sampling, scoring or test access was performed for this manuscript revision.
+
+Visual provenance remains in `../docs/results/thesis-v18-visuals.json`; new complete-class tables and figure derive from `../docs/results/thesis-v19-assets.json` and `tools/build_five_class_assets.py`. The Overleaf package includes all referenced assets and needs no server connection. Future data priorities, explicitly not launched, are in `../docs/FIVE_CLASS_NEXT_STEPS.md`.
 
 ## Document structure
 
-The main text has eight chapters: introduction, related work, data, complete-journey diffusion, GAF feedback, experimental protocol, results, and discussion/conclusions. The appendix retains the full G33 physical metric matrix, class-wise native-resolution distances, five cases selected by a fixed request-order rule, and the scope of earlier evidence. The source files included by `main.tex` define the current manuscript; retained historical chapter files are not all part of this build.
+The main text has eight chapters: introduction, related work, data, complete-journey diffusion, GAF feedback, experimental protocol, results, and discussion/conclusions. The appendix retains the full G33 physical metric matrix, class-wise native-resolution distances, five pilot cases selected by a fixed request-order rule, old/new corpus diagnostics, and the scope of earlier evidence. The source files included by `main.tex` define the current manuscript; retained historical chapter files are not all part of this build.
 
 The bibliography contains **52 entries**: 47 research papers or preprints, one master's thesis, two code repositories and two official documentation entries. This count does not mean 52 peer-reviewed papers. The related-work chapter organizes their relevance to trajectory generation, temporal representation, feedback and evaluation.
 

@@ -219,19 +219,60 @@ For the current experiment, \path{docs/G33_PROTOCOL.md} fixes the conditions and
 
 The original locked-result snapshot remains separately identified in the experiment repository~\cite{project}; its test population is not reused to select the present models.
 
-\FloatBarrier
-\section{Expanded generation: all remaining fixed visual cases}
-\label{sec:g36-visual-appendix}
-The main text shows the bus and motorcycle from the fixed G36 display rule. This section completes the five-class set using the first jointly supported request for private car, bicycle and taxi/ride-hailing in the same episode and model seed. The same route, clock, image normalization and stored-score conventions apply. None of these requests was chosen by physical error, classifier confidence or visual attractiveness.
 
-\fig{g36-journey-private_car.pdf}{1}{Private car: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-private_car}
-\fig{g36-gaf-private_car.pdf}{1}{Private car: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-private_car}
+\FloatBarrier
+\section{Expanded recognition on a common development population}
+\label{sec:corpus-reader-supplement}
+
+The full-day expansion completed all four 10,000-step diffusion fits and both fixed 50-epoch GAF readers. The native models took 2,771.9 and 2,750.8 seconds, approximately 46 minutes each; the 257-point controls took approximately 319 seconds each. Model capacity remains 891,969 parameters. The larger corpus and longer native sequences change data exposure and computational cost, so equal update counts alone do not imply equal computation. No new 257-point generation-quality claim follows merely from completing those fits.
+
+The paired reader comparison is stronger evidence than comparing the pilot's small development set with the expanded set. Both old and new checkpoints see the same 7,230 complete development legs, and the original training populations remain separate from that cohort. Table~\ref{tab:g35-readers} and Figure~\ref{fig:g35-teacher-comparison} show a substantial recognition improvement in both representations.
+
+\input{tables/g35-readers}
+\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded readers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better.}{g35-teacher-comparison}
+
+Spatial macro F1 increases by 26.37 percentage points, with a paired parent-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. These intervals condition on the available public-demand cohort and fixed model fits; they do not quantify uncertainty over cities or training recipes. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. It does not identify a pure causal effect of sample count because the time coverage and number of CNN optimizer updates also changed.
+
+
+
+The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these readers from simulator observations to generated candidates.
+
 \FloatBarrier
 
-\fig{g36-journey-bycicle.pdf}{1}{Bicycle: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-bycicle}
-\fig{g36-gaf-bycicle.pdf}{1}{Bicycle: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-bycicle}
+\FloatBarrier
+\section{Supporting old/new generator comparison}
+\label{sec:corpus-generator-supplement}
+\input{tables/g36-generator}
+\fig{g36-generator-context.pdf}{1}{Expanded versus pilot native-time generation on two new SUMO scenes. Bars show changes in full-pool five-class macro distances; negative is better. Each model uses its own training-side duration prior. The reversal across scenes prevents a universal expansion claim.}{g36-generator-context}
+
+Expansion changes the generator's applicability across the observed contexts. In the later scene, native-speed distribution error falls by 57.2\% and 65.5\% for the two model seeds, while acceleration error falls by 15.7\% and 5.6\%. In the morning scene, speed error instead rises by 4.7\% and 12.2\%, and acceleration error rises by 22.0\% and 34.4\%. The signs agree across seeds within each scene, but there are only two simulator realizations and the underlying public plans are shared.
+
+This contrast is consistent with sensitivity to demand and temporal coverage, but it does not isolate that cause. Expanded and pilot models differ in training data and duration prior, and neither receives the instantaneous background traffic state. Departure context and simulator random seed change together between scenes. The result establishes a scene-dependent change in the delivered system, not that the diffusion network has learned an explicit time-of-day controller.
+
 \FloatBarrier
 
-\fig{g36-journey-taxi_or_uber.pdf}{1}{Taxi/ride-hailing: complete independent reference and generated journeys, all eight progress curves and four recorded selections. Same fixed-case rule as the main visual results.}{g36-journey-taxi_or_uber}
-\fig{g36-gaf-taxi_or_uber.pdf}{1}{Taxi/ride-hailing: exact spatial and speed GAF images of the corresponding reference and selected outputs, with motion and auxiliary reader probabilities. Repeated selections are retained.}{g36-gaf-taxi_or_uber}
 \FloatBarrier
+\section{Does a more accurate GAF reader improve selection?}
+\label{sec:corpus-teacher-supplement}
+
+The central comparison applies old and expanded readers to the same expanded-generator candidates. Duration, geometry, candidate noise and the requested class are unchanged by the teacher contrast. Uniform controls are verified identical array by array. The experiment therefore distinguishes improving the generator from improving the criterion used to select its outputs.
+
+\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded reader. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix.}{g36-teacher-effects}
+
+A higher recognition score does not induce a uniformly better physical ordering. For example, the expanded spatial reader reduces longest-stop request error by 6.4\% relative to the pilot spatial reader on these same pools, but raises stopped-fraction error by 1.1\% and stop-frequency error by 2.8\%. The expanded velocity reader reduces mean-absolute-acceleration request error by 2.8\% but increases longest-stop error by 4.1\% relative to the pilot velocity reader. These comparisons concern the selector with a fixed generator; they do not reuse the classifier's own target probability as a quality label.
+
+
+\FloatBarrier
+\section{Exploratory evidence for class-specific stopping feedback}
+\label{sec:exploratory-stopping-supplement}
+
+The post-hoc request-level analysis suggests a more precise mechanism to test. Spatial feedback reduces longest-stop MAE in all four scene/seed cells, with an aggregate reduction of 7.6\%. This differs from its class-marginal longest-stop W1, which improves in three cells and decreases by 4.6\% in the aggregate. The distinction matters: the first statement concerns correspondence to the same request's reference, while the second concerns the distribution of that scalar over requests.
+
+\fig{g36-class-stopping.pdf}{1}{Class-specific longest-stop request error after expanded GAF selection. The same five classes and all three policies are retained. The bus improvement coexists with a motorcycle cost; percentage reductions across classes are not a single common-unit effect size.}{g36-class-stopping}
+\fig{g36-stopping-blocks.pdf}{1}{Expanded spatial feedback versus Uniform for buses and motorcycles, shown separately in every scene/seed cell. The two classes illustrate opposing directions found in the complete class table. Connecting lines aid reading only; the four cells are not a time series or four independent traffic scenes.}{g36-stopping-blocks}
+
+For buses, the spatial longest-stop request error falls by 20.7\%, with all four cells improving. For motorcycles it rises by 5.3\%, with all four cells worsening. The dual policy's corresponding bus reduction is 21.1\%; that small difference from spatial-only feedback is not evidence of representation synergy. These observations motivate class-sensitive stopping analysis, but the metric does not determine whether the longest stop occurs at the correct bus station. It also does not distinguish a service stop from waiting in traffic.
+
+A mechanism claim therefore requires a fresh, fixed comparison of stop location, service-stop coverage and non-service waiting, alongside the complete class matrix. The present finding was identified after inspecting results, and its consistency over two generator seeds cannot supply an independent confirmatory test. It is valuable as a specific link between the spatial trajectory representation and an output motion property, not as proof that the group encoding has become a universal realism objective.
+
+Full-pool pair diversity describes the variation available before selection. With one retained sample per request, conditional pair diversity is undefined, not zero; across-request dispersion cannot replace it. The common 97-request map coverage is unchanged by selection and belongs to the geometric interface.

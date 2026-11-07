@@ -274,3 +274,5 @@ G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Nati
 
 
 2026-11-07 thesis v17 completed under explicit user request: integrates G35/G36 and post-hoc audit into abstract, introduction, data, protocol, results and rewritten discussion.87PDF pages/60main text,18figures/20tables/52cited references (47papers/preprints).8new vector figures and7new tables; all generated numerical assets trace frozen aggregate receipts. All87pages rendered/contact-reviewed; heatmap/confusion/class figures checked full-size. No overfull/undefined references; clean Overleaf ZIP build matches delivered PDF page text. Administrative fields remain placeholders. Exploratory stopping effects and adverse endpoints shown together, no universal GAF/in-loop claim. Build/assets receipts docs/results/thesis-v17-*.json; delivered locally under outputs/thesis-v17.
+
+2026-11-07 用户范围调整：论文主线是五类参与者的路网条件扩散轨迹合成，以及空间/速度GAF对生成运动的作用。公交、摩托车、私家车、自行车、出租/网约车均须正文展示轨迹、GAF和独立质量；公交停车不得代表全部成果。小样本/扩容及旧新教师比较降为附录支持诊断，不宣称scaling law。既有完整结果不删除；类/运动特征分层为事后描述，不据此暗中切换最优策略。后续更多SUMO数据优先独立场次、少数类与服务/路网覆盖；新增车型须具备可追溯仿真定义与道路权限，并与原CNR标签明确区分，禁止只改ID/速度参数制造容易分类的新类别。本轮先完成已有五类正文；新数据队列尚未启动。
