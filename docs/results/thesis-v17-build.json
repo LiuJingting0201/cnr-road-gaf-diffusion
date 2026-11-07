@@ -1,0 +1,208 @@
+{
+  "complete": true,
+  "version": "v17",
+  "date": "2026-11-07",
+  "pdf_pages": 87,
+  "main_text_printed_pages": 60,
+  "figures": 18,
+  "tables": 20,
+  "new_figures": 8,
+  "new_tables": 7,
+  "bibliography_entries": 52,
+  "research_papers_or_preprints": 47,
+  "all_entries_cited": true,
+  "undefined_references": 0,
+  "overfull_boxes": 0,
+  "all_pages_rendered_and_contact_sheets_inspected": true,
+  "full_size_new_figure_pages_inspected": [
+    59,
+    63,
+    64
+  ],
+  "packaged_source_rebuild_passes": 3,
+  "packaged_pdf_page_text_matches": true,
+  "source_manifest": {
+    "version": "v17",
+    "files": {
+      "README.md": {
+        "sha256": "96a94c382912803785a7bc83244adf1579ef16a66b810976214b1998cca59c73",
+        "bytes": 7852
+      },
+      "TEMPLATE.md": {
+        "sha256": "b3eb0202983b9e7e01aa00a59e56496898819040b5d2d7b9de9daf933715fc95",
+        "bytes": 1092
+      },
+      "abstract.tex": {
+        "sha256": "573f1d1a1e0dbaf2eb1179aa768dde32e91f6779b22fdbb93b39df8ec2c480e9",
+        "bytes": 2294
+      },
+      "chapters/02-background.tex": {
+        "sha256": "30b09b96d3a3758f1333e3adc39edc1168ec742bf8b021236250da6ced2560cf",
+        "bytes": 7968
+      },
+      "chapters/native-appendix.tex": {
+        "sha256": "ecd431fb8f0b5a09f0979f6f6a111f7cbf32b604cfa627cdb98817a24f8b00c4",
+        "bytes": 19226
+      },
+      "chapters/native-data.tex": {
+        "sha256": "add701a7f40e41730b7b3d2ac8c950c906b01abc99aafffb57196bac7442133f",
+        "bytes": 22289
+      },
+      "chapters/native-discussion.tex": {
+        "sha256": "968161758e1210509c337c91556ecdbaf7052e273cbe41a2cd809e4eda75d783",
+        "bytes": 12422
+      },
+      "chapters/native-feedback.tex": {
+        "sha256": "653007f424fd7c3104ff48ba494b00677e5dcc5a4fcff9dbbc2cf258fee93a08",
+        "bytes": 7912
+      },
+      "chapters/native-introduction.tex": {
+        "sha256": "f15c9dbb23b3198cee2252251be1d34a5cf7488eb2f513f0d21784fa0878b346",
+        "bytes": 12719
+      },
+      "chapters/native-method.tex": {
+        "sha256": "725ae7b34f2338f25fcc3c4f7fd0177f277b4191218989366364ff34c963797d",
+        "bytes": 10594
+      },
+      "chapters/native-protocol.tex": {
+        "sha256": "073bdc48441459fcee1a9b7deb5daad109a20bf7a6c75e91a770296ec3cb65a4",
+        "bytes": 18155
+      },
+      "chapters/native-results.tex": {
+        "sha256": "3f05ceb558ad149695b5821d6f700a7a522f4920d2d847b12dd039601cf51e6b",
+        "bytes": 22147
+      },
+      "chapters/review-comparison.tex": {
+        "sha256": "3ef7f1bbdc28ef8c755c26c8b0523ef663590128c7ecf593591252b5f17b556e",
+        "bytes": 8721
+      },
+      "chapters/scale-results.tex": {
+        "sha256": "aac33614139002939400ecf2959d5ac2619cdb1ac43f9169fa694521894c7115",
+        "bytes": 11411
+      },
+      "cover.tex": {
+        "sha256": "c8029a7deab183f4187914c3263a56077a8a3ed54543e3299a5e2ecad9144055",
+        "bytes": 691
+      },
+      "figures/g33-case-bus.pdf": {
+        "sha256": "992c111f8aa1f42078b156dc92b1cd096ba8da1dea7251ba674c512a135ee872",
+        "bytes": 68880
+      },
+      "figures/g33-case-bycicle.pdf": {
+        "sha256": "40e95c24b34b57224b9d8aee59d87fd694c93afc37baa9957f75a903ea3478ab",
+        "bytes": 34991
+      },
+      "figures/g33-case-motorcycle.pdf": {
+        "sha256": "245e1878d9feed8cba1b323f760cdc599be2c756676e7b9b34bf3bd452886ff2",
+        "bytes": 54491
+      },
+      "figures/g33-case-private_car.pdf": {
+        "sha256": "4f464f6eb3ffa573d4e63dd95ad88d036bc4e81aded3236b29382c7361634f64",
+        "bytes": 40094
+      },
+      "figures/g33-case-taxi_or_uber.pdf": {
+        "sha256": "12b549a1e896f9c12a03d33e0bcc021fd2820c20dd9b825b3d8b39ff0695f92e",
+        "bytes": 37018
+      },
+      "figures/g33-framework.pdf": {
+        "sha256": "f5f5a8875c83e19c85801475c605bd5b8f73600a1658bea3998974aff54aa8c4",
+        "bytes": 3459
+      },
+      "figures/g33-gaf-physical-effects.pdf": {
+        "sha256": "e0a042cc5b6bc6ac4caaa807b3c62ed87934fd094ffc8519069824e26b34545b",
+        "bytes": 18519
+      },
+      "figures/g33-generation-quality.pdf": {
+        "sha256": "da14932f03c18ee867b7b11312da45006679bb6817311cfc970a2f78e0051812",
+        "bytes": 19455
+      },
+      "figures/g33-native-motion.pdf": {
+        "sha256": "54673b4d3dc7dec4eead5e4b353f76139a14438ee0316632d87eb73f1201ad19",
+        "bytes": 15885
+      },
+      "figures/g35-confusion.pdf": {
+        "sha256": "936f1b0a69b47ab31d1cae3152f0c092e151b6dd0a244bbbd16c9a12a44206cc",
+        "bytes": 23494
+      },
+      "figures/g35-corpus.pdf": {
+        "sha256": "630764b72c8527e33797bc038f4666a88781794ec18b26f19b2dea15ff18ea08",
+        "bytes": 12246
+      },
+      "figures/g35-teacher-comparison.pdf": {
+        "sha256": "eb12eaf6df54c6f37ac22b29540236c6929cdf001215b8cfd883e107939c636f",
+        "bytes": 17301
+      },
+      "figures/g36-class-stopping.pdf": {
+        "sha256": "3f995ceb1c3273db4368af772f7f3917842810e57eb0700022020489f5e2d6f5",
+        "bytes": 17867
+      },
+      "figures/g36-generator-context.pdf": {
+        "sha256": "cbfb0bc59540a3458d7a2cf501c556f100bfb1b8467a6e694932219e3cbc134f",
+        "bytes": 22405
+      },
+      "figures/g36-metric-audit.pdf": {
+        "sha256": "9dff369d2b6d1be2fae8d052c6980cdac9f5d5599bb444d350ec75dcab2b2d6f",
+        "bytes": 19115
+      },
+      "figures/g36-stopping-blocks.pdf": {
+        "sha256": "4b1189a34cc8376d15a40b33314b6d0de152e1d83a945bfc6f309838d7abaffb",
+        "bytes": 27509
+      },
+      "figures/g36-teacher-effects.pdf": {
+        "sha256": "743c4dae0193909cf7b8ec70229d7307f0bca9176959e74719a75a47df1c3760",
+        "bytes": 17999
+      },
+      "figures/polito-logo.jpg": {
+        "sha256": "632842680635c3a69e00f725d22967ac9c63951480d346520ac43165e0492b78",
+        "bytes": 85132
+      },
+      "main.tex": {
+        "sha256": "d6a1386ac00bc8b15142338665e279600dd5fac7256fc37fcadc736cdf9daf2a",
+        "bytes": 1531
+      },
+      "metadata.tex": {
+        "sha256": "3a055caf3216e70df9229936ff34634f609f8d36b64b85783a46c4fbd116d086",
+        "bytes": 502
+      },
+      "references.tex": {
+        "sha256": "5f5188fd4060072d86cd4374a52921f184df881ddc6d423deb875c621ffbb72a",
+        "bytes": 11884
+      },
+      "tables/g35-cohort.tex": {
+        "sha256": "d2e40cdc99ac1d0475f9ad57ed20b389d80135947f5f6ad3a7576518ec7cd9c9",
+        "bytes": 425
+      },
+      "tables/g35-readers.tex": {
+        "sha256": "28b6f732713eee5c6b3cceb7c8a90a3d924b342dda035e1ae6f07d3c1a14a43c",
+        "bytes": 374
+      },
+      "tables/g36-generator.tex": {
+        "sha256": "0a1146db35e487131797355f33d7780fd13c07d366ac4c064f25a18b4b737b8f",
+        "bytes": 415
+      },
+      "tables/g36-mae.tex": {
+        "sha256": "57c171fb4c86943314dee40188cc3c6957e88eb64892ffb319ab509d2fed9a0b",
+        "bytes": 926
+      },
+      "tables/g36-w1.tex": {
+        "sha256": "243a5576ea05afd74647764545d67c317e616843edf104db75b29603e4bed57f",
+        "bytes": 1068
+      }
+    }
+  },
+  "outputs": {
+    "Road_Conditioned_Diffusion_Thesis_v17.pdf": {
+      "bytes": 1177003,
+      "sha256": "5da57a718cbfed0210bcf22dea5bedd32f31f5b6edc8f39d666fb3cea694f4f5"
+    },
+    "PoliTo_Thesis_v17_Overleaf.zip": {
+      "bytes": 578960,
+      "sha256": "5c7aa80ff1876e1e051cc0b6e3b900ffbdaca1d3b100af20720982462600995c"
+    }
+  },
+  "limits": [
+    "Administrative cover fields remain unconfirmed placeholders.",
+    "G36 post-hoc movement analysis explicitly exploratory; no universal GAF or in-loop benefit claim.",
+    "Generated new plots use completed aggregate receipts; fixed G33 trajectory cases retained as pilot examples."
+  ]
+}

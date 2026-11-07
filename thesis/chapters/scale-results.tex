@@ -1,0 +1,72 @@
+\FloatBarrier
+\section{Expanded recognition on a common development population}
+\label{sec:expanded-recognition}
+
+The full-day expansion completed all four 10,000-step diffusion fits and both fixed 50-epoch GAF readers. The native models took 2,771.9 and 2,750.8 seconds, approximately 46 minutes each; the 257-point controls took approximately 319 seconds each. Model capacity remains 891,969 parameters. The larger corpus and longer native sequences change data exposure and computational cost, so equal update counts alone do not imply equal computation. No new 257-point generation-quality claim follows merely from completing those fits.
+
+The paired reader comparison is stronger evidence than comparing the pilot's small development set with the expanded set. Both old and new checkpoints see the same 7,230 complete development legs, and the original training populations remain separate from that cohort. Table~\ref{tab:g35-readers} and Figure~\ref{fig:g35-teacher-comparison} show a substantial recognition improvement in both representations.
+
+\input{tables/g35-readers}
+\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded readers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better.}{g35-teacher-comparison}
+
+Spatial macro F1 increases by 26.37 percentage points, with a paired parent-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. These intervals condition on the available public-demand cohort and fixed model fits; they do not quantify uncertainty over cities or training recipes. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. It does not identify a pure causal effect of sample count because the time coverage and number of CNN optimizer updates also changed.
+
+\fig{g35-confusion.pdf}{1}{Expanded-reader development confusion matrices, normalized within each true class. The common five-class labels allow direct comparison. Spatial taxi/ride-hailing recognition remains weak despite high overall accuracy; speed-based recognition also retains confusion among motorized classes.}{g35-confusion}
+
+The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these readers from simulator observations to generated candidates.
+
+\FloatBarrier
+\section{Independent generation replication after expansion}
+\label{sec:expanded-generation}
+
+Both new reference simulations, all eight candidate pools and all 48 selected-set evaluations completed. Each scene has 100 predeclared requests and 97 map-supported conditions, with the three unsupported bus routes retained in its denominator. The intersections with accepted reference trajectories contain 95 requests in the morning scene and 94 in the later scene. The eight full pools contain 6,208 generated trajectories in total. They are repeated conditional realizations, not 6,208 independent road environments. The finite cloud queue, including reference simulation, generation, scoring and evaluation, took approximately 64.9 minutes.
+
+\tab{Prospective replication coverage. Requests are shared public templates across scenes; paired reference support is reported separately from geometric support.}{g36-coverage}{\begin{tabular}{lrrr}\toprule
+Scene & Requested & Map supported & Quality intersection \\
+\midrule
+Morning &100&97&95\\
+Later &100&97&94\\
+\bottomrule\end{tabular}}
+
+\input{tables/g36-generator}
+\fig{g36-generator-context.pdf}{1}{Expanded versus pilot native-time generation on two new SUMO scenes. Bars show changes in full-pool five-class macro distances; negative is better. Each model uses its own training-side duration prior. The reversal across scenes prevents a universal expansion claim.}{g36-generator-context}
+
+Expansion changes the generator's applicability across the observed contexts. In the later scene, native-speed distribution error falls by 57.2\% and 65.5\% for the two model seeds, while acceleration error falls by 15.7\% and 5.6\%. In the morning scene, speed error instead rises by 4.7\% and 12.2\%, and acceleration error rises by 22.0\% and 34.4\%. The signs agree across seeds within each scene, but there are only two simulator realizations and the underlying public plans are shared.
+
+This contrast is consistent with sensitivity to demand and temporal coverage, but it does not isolate that cause. Expanded and pilot models differ in training data and duration prior, and neither receives the instantaneous background traffic state. Departure context and simulator random seed change together between scenes. The result establishes a scene-dependent change in the delivered system, not that the diffusion network has learned an explicit time-of-day controller.
+
+\FloatBarrier
+\section{Does a more accurate GAF reader improve selection?}
+\label{sec:expanded-feedback}
+
+The central comparison applies old and expanded readers to the same expanded-generator candidates. Duration, geometry, candidate noise and the requested class are unchanged by the teacher contrast. Uniform controls are verified identical array by array. The experiment therefore distinguishes improving the generator from improving the criterion used to select its outputs.
+
+\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded reader. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix.}{g36-teacher-effects}
+
+A higher recognition score does not induce a uniformly better physical ordering. For example, the expanded spatial reader reduces longest-stop request error by 6.4\% relative to the pilot spatial reader on these same pools, but raises stopped-fraction error by 1.1\% and stop-frequency error by 2.8\%. The expanded velocity reader reduces mean-absolute-acceleration request error by 2.8\% but increases longest-stop error by 4.1\% relative to the pilot velocity reader. These comparisons concern the selector with a fixed generator; they do not reuse the classifier's own target probability as a quality label.
+
+The predeclared native-acceleration distribution comparison remains mixed. Expanded velocity feedback versus Uniform changes the four scene/seed errors by $+8.7$, $+0.9$, $-9.6$ and $-4.7\%$. Thus, the two-seed acceleration benefit in the earlier fixed-duration development diagnostic does not reproduce uniformly across the new scenes and expanded components. The replication provides evidence about the boundary of that finding rather than invalidating its original, narrower population.
+
+\fig{g36-metric-audit.pdf}{1}{Complete metric audit for expanded-teacher feedback relative to Uniform. Entries are percentage changes in equally weighted scene/seed mean errors; blue is lower and red is higher. W1 and request-level MAE address different targets. Controls are retained. This aggregate view is post hoc, with the individual cells and original protocol preserved.}{g36-metric-audit}
+
+\input{tables/g36-w1}
+\input{tables/g36-mae}
+
+Tables~\ref{tab:g36-w1} and \ref{tab:g36-mae} display all recorded scalar endpoints as well as the native distribution measures where defined. The mean errors are averaged before their ratio is taken; an average percentage change would answer a different weighting question. W1 is not removed when a paired error appears more favourable. Nor are nearly invariant travel time and mean speed counted as useful feedback wins. Small observed-arc differences arise from temporal coordinate sampling on a common route and do not establish improved route planning.
+
+The combined view identifies movement-specific effects. All three selectors reduce the equal-cell mean longest-stop and longest-steady-movement distribution errors. At the same time, all three increase mean stopped-fraction and stop-frequency distribution errors. Velocity feedback lowers longest-stop W1 by 6.3\% but raises stop-frequency W1 by 10.5\%. Spatial feedback lowers native-acceleration W1 by 2.0\% while raising native-speed W1 by 4.2\%. The equal-weight dual policy does not consistently dominate either single view. These paired benefits and costs belong together in the main interpretation.
+
+\FloatBarrier
+\section{Exploratory evidence for class-specific stopping feedback}
+\label{sec:exploratory-stopping}
+
+The post-hoc request-level analysis suggests a more precise mechanism to test. Spatial feedback reduces longest-stop MAE in all four scene/seed cells, with an aggregate reduction of 7.6\%. This differs from its class-marginal longest-stop W1, which improves in three cells and decreases by 4.6\% in the aggregate. The distinction matters: the first statement concerns correspondence to the same request's reference, while the second concerns the distribution of that scalar over requests.
+
+\fig{g36-class-stopping.pdf}{1}{Class-specific longest-stop request error after expanded GAF selection. The same five classes and all three policies are retained. The bus improvement coexists with a motorcycle cost; percentage reductions across classes are not a single common-unit effect size.}{g36-class-stopping}
+\fig{g36-stopping-blocks.pdf}{1}{Expanded spatial feedback versus Uniform for buses and motorcycles, shown separately in every scene/seed cell. The two classes illustrate opposing directions found in the complete class table. Connecting lines aid reading only; the four cells are not a time series or four independent traffic scenes.}{g36-stopping-blocks}
+
+For buses, the spatial longest-stop request error falls by 20.7\%, with all four cells improving. For motorcycles it rises by 5.3\%, with all four cells worsening. The dual policy's corresponding bus reduction is 21.1\%; that small difference from spatial-only feedback is not evidence of representation synergy. These observations motivate class-sensitive stopping analysis, but the metric does not determine whether the longest stop occurs at the correct bus station. It also does not distinguish a service stop from waiting in traffic.
+
+A mechanism claim therefore requires a fresh, fixed comparison of stop location, service-stop coverage and non-service waiting, alongside the complete class matrix. The present finding was identified after inspecting results, and its consistency over two generator seeds cannot supply an independent confirmatory test. It is valuable as a specific link between the spatial trajectory representation and an output motion property, not as proof that the group encoding has become a universal realism objective.
+
+Full-pool pair diversity describes the variation available before selection. With one retained sample per request, conditional pair diversity is undefined, not zero; across-request dispersion cannot replace it. The common 97-request map coverage is unchanged by selection and belongs to the geometric interface.

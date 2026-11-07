@@ -1,9 +1,11 @@
 \chapter{Complete-trip generation results}
 \label{ch:native-results}
 
-The complete-trip experiment establishes two different findings. First, learning motion on the native physical clock substantially improves the generated acceleration distribution relative to the matched 257-point diffusion model, and also improves it relative to empirical motion transfer. Second, both GAF readers recognize classes and change candidate selection, but higher class confidence does not translate into a uniform improvement of the selected trajectory distribution. This chapter presents these findings together with their costs and coverage. Every quality comparison uses the independently simulated reference episode introduced in Chapter~\ref{ch:native-data}; no reference path or duration is an input to generation.
+The initial complete-trip pilot establishes two findings. First, learning motion on the native physical clock substantially improves the generated acceleration distribution relative to the matched 257-point diffusion model, and also improves it relative to empirical motion transfer. Second, both GAF readers recognize classes and change candidate selection, but higher class confidence does not translate into a uniform improvement of the selected trajectory distribution. This chapter presents these findings together with their costs and coverage. The pilot comparisons use the independently simulated reference episode introduced in Chapter~\ref{ch:native-data}; no reference path or duration is an input to generation.
 
-\section{Completed runs and evaluation population}
+The chapter then follows the expanded corpus and the two-scene replication in Sections~\ref{sec:expanded-recognition}--\ref{sec:exploratory-stopping}, separating new evidence from the pilot and its reused-reference diagnostic.
+
+\section{Pilot runs and evaluation population}
 
 All four fixed diffusion fits completed 10,000 optimization steps: the relative-time and native-time models, each with seeds 42 and 43. Each model contains 891,969 parameters and is evaluated using its final exponential-moving-average weights. The relative-time runs took 300.6 and 318.8 seconds; the native-time runs took 1,520.0 and 1,529.4 seconds on the available L20 setup. The native runs processed approximately 1.36 billion valid temporal values, compared with 163.84 million for each relative-time run. These are measured execution costs for this implementation and concurrent workload, not a hardware-independent benchmark or an equal-compute comparison.
 
@@ -115,3 +117,5 @@ The tradeoffs remain visible. Velocity selection increases longest steady-moveme
 Duration distances are now exactly equal across the four policies: 57.7782 seconds for seed 42 and 51.5908 seconds for seed 43. This equality is imposed by the diagnostic, not an improved duration model. It prevents feedback from changing the request's allotted travel time and shows that the measured acceleration and longest-stop gains can occur through selection among motion realizations under that fixed constraint. The remaining adverse metrics show that feedback tradeoffs can persist when duration is held fixed. Because this is a post-G33 diagnostic on the same episode, the repeated directions across model seeds are descriptive evidence and not independent statistical confirmation.
 
 The fixed-duration runs take 381.6 and 331.2 seconds for generation and export, with 77,600 network forward calls per seed. Encoding, scoring and selection add 12.6 and 12.3 seconds. These measured costs preserve the declared candidate and DDIM budgets while recording the actual consequences of changing the duration plan; they do not constitute an equal-wall-time comparison.
+
+\input{chapters/scale-results}

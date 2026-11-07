@@ -1,8 +1,10 @@
 \chapter{Protocol for complete-journey generation}
 \label{ch:native-protocol}
 
-\section{Data, partitions and observation units}
-The experiment uses native trajectories from the public Monaco SUMO Traffic scenario~\cite{most}. These are simulator observations, not measurements from vehicles on physical roads. The source CNR data motivates the inherited representation and class definitions; the current complete-journey models are fitted on directly extracted SUMO vehicle legs. A bus leg is a completed scheduled service including intermediate stops. Ordinary vehicle legs are bounded by departure, arrival or activity events, rather than selected as the longest convenient moving segment.
+The protocol first defines the pilot and its fixed-duration control. Sections~\ref{sec:expanded-protocol} and \ref{sec:statistical-perspectives} then specify the expanded replication and distinguish its predeclared endpoints from the later exploratory audit.
+
+\section{Pilot data, partitions and observation units}
+The pilot experiment uses native trajectories from the public Monaco SUMO Traffic scenario~\cite{most}. These are simulator observations, not measurements from vehicles on physical roads. The source CNR data motivates the inherited representation and class definitions; the current complete-journey models are fitted on directly extracted SUMO vehicle legs. A bus leg is a completed scheduled service including intermediate stops. Ordinary vehicle legs are bounded by departure, arrival or activity events, rather than selected as the longest convenient moving segment.
 
 The retained vehicle cohort contains 1,051 legs: 925 for training and 126 for development. Each vehicle leg in this cohort has a different parent identity, and parent identities do not cross these partitions. All nevertheless originate from one traffic realization; distinct participants are not independent simulation episodes. Pedestrians are outside the declared five-class vehicle generation task. Table~\ref{tab:native-cohort} reports the actual imbalance instead of implying a balanced dataset.
 
@@ -88,3 +90,41 @@ After examining the G33 comparison, a bounded follow-up, G34, tests feedback whe
 The original Uniform slot provides an exact consistency control: its timestamp--coordinate array must remain bitwise identical to the corresponding G33 output. The completed run verifies this for all 97 map-ready requests in each seed, with zero maximum absolute difference. It also verifies that every candidate and each of the four selected outputs uses that request's common duration. No diffusion model, CNN or duration prior is refitted, and no scoring weight or guidance step is searched. Uniform, S, V and SV operate on the same new pool using the unchanged terminal-selection rule.
 
 The follow-up comprises two pools of 776 candidates and eight selected-set evaluations. All retain the original 100-request denominator, 97 generated requests and 94 paired references. The same physical metrics, support rules and diversity diagnostics apply; constant duration across strategies is a control, not a feedback improvement. Because the reference was already analyzed in G33 and motivated this question, G34 is a development mechanism comparison, not a new blind replication. It is reported alongside the original experiment rather than replacing it. Both comparisons concern terminal feedback; neither supplies an in-loop guidance or new downstream-augmentation result.
+
+\section{Expanded-model replication and fixed candidate controls}
+\label{sec:expanded-protocol}
+
+The expanded classification audit first evaluates pilot and expanded readers on exactly the same 7,230 development legs. Saved expanded-model predictions are verified against their checkpoint and input hashes; old readers only perform inference. Training parents of both reader versions are disjoint from these development parents. Some old development identities reappear as new stochastic realizations, so this is not a wholly unseen source-template population. Reported parent-bootstrap intervals condition on the existing public domain and fixed models, with 2,000 paired resamples. Leg-weighted results are accompanied by equal-parent sensitivity results.
+
+The generation replication freezes 100 requests per scene before simulator output is available: 24 public bus services and 19 held-out source plans for each other class. The same underlying plans appear in both scenes, with distinct target identities, independent simulator seeds and departure windows of 18,000--18,600 and 32,400--33,000 seconds. The scenes therefore vary traffic context and realization together; they are not an isolated intervention on clock time. Non-bus requests use complete single-leg plans without internal activity parking. The broader training activity-chain support must not be mistaken for a full activity-chain generation evaluation.
+
+Two pilot and two expanded native-time models generate eight candidates per supported request using 100 DDIM steps. One duration is sampled from the corresponding training-side prior and held fixed across the eight candidates. Each model era retains its own prior; the old/new generator comparison consequently tests the complete factorized system. A reference future path, duration or class score never enters sampling. Model seeds, selection rules and experiment limits are locked before outcomes.
+
+For each expanded-generator pool, both old and expanded teacher pairs apply Uniform, spatial S, velocity V and equal-weight SV selection to the exact same trajectories. This is the primary teacher contrast: it holds the generator, candidate budget and duration fixed. Pilot-generator pools additionally receive pilot-teacher selection as a baseline. The unchanged Uniform selections are checked array by array across teacher pairs. Eight full-pool and 48 selected-set quality evaluations result, with no success-based replacement of requests.
+
+\tab{Information and controls in the expanded replication.}{g36-controls}{\begin{tabularx}{\linewidth}{lX}\toprule
+Quantity & Fixed or varied \\
+\midrule
+Reference & Two new SUMO episodes; shared public plans and map \\
+Generators & Pilot/expanded native models; seeds 42 and 43 \\
+Candidates & Eight per route/class; 100 DDIM steps \\
+Duration & Fixed within each pool; sampled from that generator's prior \\
+Teacher contrast & Old/new readers applied to the same expanded pool \\
+Policies & Uniform, spatial, velocity, equal-weight dual \\
+Quality & Independent coordinates; no selecting CNN as ground truth \\
+Coverage & All 100 requests retained in each scene denominator \\
+\bottomrule\end{tabularx}}
+
+\section{Distributional fidelity and request-level agreement}
+\label{sec:statistical-perspectives}
+
+The primary $W_1$ analysis weights classes and requests equally. Candidates divide their request's mass; native intervals are weighted by duration.
+
+For scalar movement summaries, a second, already recorded quantity compares corresponding requests:
+\begin{equation}
+ \operatorname{MAE}_c(f)=\frac{1}{|Q_c|}\sum_{q\in Q_c}
+ \frac{1}{K_q}\sum_{k=1}^{K_q}|f(\widehat{\mathcal T}_{qk})-f(\mathcal T_q)|.
+\end{equation}
+Here $K_q=1$ after selection. MAE preserves request identity; marginal $W_1$ measures population agreement. One stochastic reference is not a route's unique permissible future, so neither measure alone establishes generative quality.
+
+The post-hoc audit retains every endpoint, averaging five-class macro errors equally over four scene/seed cells before taking percentage changes. Two generator seeds are technical replications, not additional traffic scenes. Improving-cell counts are descriptive. Duration, route length and predominantly fixed mean speed remain controls.

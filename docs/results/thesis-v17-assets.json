@@ -1,0 +1,20 @@
+{
+  "sources": {
+    "docs/results/g35-training/completed-summary.json": "7618ac52edf84ff4e20487ef54999453350f6f4577969dbd0e8c0492574d866f",
+    "docs/results/g35-training/paired-teacher-audit.json": "3d4f52cb560235ab946296000b6ead141ab4e30b65f32a2c82973f260225eb47",
+    "docs/results/g36-generation/completed-metrics.json": "7d51b281f0b9c8375926d3665e3be4da06d29990138c37d80e538056c0809329",
+    "docs/results/g36-statistics/statistics.json": "f4bcf3dd9933b3e0f01a9d0bda5dc537dd29b5657489bc42f3be9cd0f3c202c0"
+  },
+  "figures": [
+    "g35-corpus",
+    "g35-teacher-comparison",
+    "g35-confusion",
+    "g36-generator-context",
+    "g36-metric-audit",
+    "g36-class-stopping",
+    "g36-stopping-blocks",
+    "g36-teacher-effects"
+  ],
+  "script_sha256": "25fb385d0fc0ad1494d5697e88679d20042bc1cabb3cc39e0bde54247ffdedff",
+  "scope": "Aggregate receipts only; no fabricated trajectory examples or new evaluation"
+}

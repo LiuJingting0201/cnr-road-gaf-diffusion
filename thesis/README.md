@@ -1,18 +1,25 @@
 # Road-Conditioned Diffusion for Traffic Trajectory Synthesis
 
-English thesis research draft **v16**, centered on complete road-conditioned trajectory generation and spatial/velocity GAF feedback. The main evidence is the completed G33 native-demand experiment and the subsequent G34 fixed-duration development control. Main document: `main.tex`; compiler: pdfLaTeX. The final build has **74 PDF pages**, including 49 pages of main text, an appendix and the bibliography. The 51 bibliography entries are all cited; a fresh build of the packaged source is checked against the delivered PDF.
+English thesis research draft **v17**, covering complete road-conditioned trajectory generation, native-demand expansion, and spatial/velocity GAF feedback. Main document: `main.tex`; compiler: pdfLaTeX. The checked layout has **87 PDF pages**, including **60 pages of main text**, **18 figures**, **20 tables**, an appendix and **52 cited bibliography entries**. New results extend G33/G34 with G35 training/classification and G36 independent generation replication.
 
 ## Document structure
 
 The main text has eight chapters: introduction, related work, data, complete-journey diffusion, GAF feedback, experimental protocol, results, and discussion/conclusions. The appendix retains the full G33 physical metric matrix, class-wise native-resolution distances, five cases selected by a fixed request-order rule, and the scope of earlier evidence. The source files included by `main.tex` define the current manuscript; retained historical chapter files are not all part of this build.
 
-The bibliography contains **51 entries**: 46 research papers or preprints, one master's thesis, two code repositories and two official documentation entries. This count does not mean 51 peer-reviewed papers. The related-work chapter organizes their relevance to trajectory generation, temporal representation, feedback and evaluation.
+The bibliography contains **52 entries**: 47 research papers or preprints, one master's thesis, two code repositories and two official documentation entries. This count does not mean 52 peer-reviewed papers. The related-work chapter organizes their relevance to trajectory generation, temporal representation, feedback and evaluation.
 
 ## Open in Overleaf or build locally
 
 Upload the thesis source package as a new Overleaf project, choose `main.tex` as the main document and pdfLaTeX as compiler, and use a recent TeX Live release with `toptesi`. No shell escape or runtime data connection is required to compile the supplied manuscript and figures. From this directory, use `latexmk -pdf main.tex`, or run `pdflatex main.tex` three times to resolve references.
 
 Before submission, replace the administrative placeholders in `metadata.tex`: candidate name, degree programme, supervisor, academic year and graduation session. Check the working title and subtitle as well. These fields are intentionally unconfirmed; this is a research draft rather than a submission-ready administrative record. `cover.tex` adapts the referenced PoliTo layout; see [TEMPLATE.md](TEMPLATE.md) for attribution. The earlier same-school thesis length is a comparison, not a university page-count requirement.
+
+## Expanded results added in v17
+
+- G35:29,895 training legs/24,073 parents,7,230 development legs/5,842 parents. Four completed diffusion fits and two fixed readers. The matched development audit raises spatial macroF1 from50.10% to76.47% and velocity macroF1 from61.82% to90.34%. Training volume, temporal coverage and CNN update count change jointly.
+- G36:two new SUMO episodes,100requests each, eight generated pools and48selected evaluations. Quality intersections95/94; old/new teachers score identical expanded-generator pools. Expanded native generation has scene-dependent gains, not universal improvement.
+- Post-hoc full-metric audit:spatial longest-stop requestMAE improves7.6% overall and20.7% for buses, while motorcycle error increases5.3%. W1 and all adverse endpoints remain in the main result matrix. This is an exploratory class-specific mechanism, not confirmation of station-correct stopping, dual-view synergy or in-loop guidance.
+- Eight new vector figures and five automatically generated numerical tables derive from frozen aggregate JSON receipts; two additional protocol/coverage tables are in the text. `tools/build_expansion_assets.py` reproduces new assets. Input hashes are recorded in `../docs/results/thesis-v17-assets.json`. The manuscript package includes final figures; building it requires no Python or live server.
 
 ## Current evidence and its scope
 
