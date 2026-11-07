@@ -1,0 +1,623 @@
+{
+  "observed_utc": "2026-11-07 03:57:54",
+  "disk": {
+    "total": 199672938496,
+    "used": 178423578624,
+    "free": 21232582656
+  },
+  "receipts": {
+    "g35-data/data-complete.json": {
+      "complete": true,
+      "seconds": 22534.449450850487,
+      "merged_receipt_sha256": "876db647b9f82879bf58eed1bb7299514b4c3b05791e04695b72ac0429de860e",
+      "training_ready": true,
+      "groups": {
+        "train": {
+          "legs": 29895,
+          "parents": 24073,
+          "class_counts": {
+            "bus": 685,
+            "motorcycle": 6547,
+            "private_car": 18381,
+            "bycicle": 2744,
+            "taxi_or_uber": 1538
+          },
+          "class_parent_counts": {
+            "bus": 685,
+            "motorcycle": 5226,
+            "private_car": 13880,
+            "bycicle": 2744,
+            "taxi_or_uber": 1538
+          },
+          "duration_s": {
+            "n": 29895,
+            "min": 0.25,
+            "median": 549.0,
+            "mean": 544.0863940458271,
+            "p95": 1152.75,
+            "max": 3037.25
+          },
+          "arc_length_m": {
+            "n": 29895,
+            "min": 0.10049875621066501,
+            "median": 5739.201859252581,
+            "mean": 5284.205484983339,
+            "p95": 10697.004958320053,
+            "max": 16298.149343663095
+          },
+          "native_points": {
+            "n": 29895,
+            "min": 2.0,
+            "median": 2197.0,
+            "mean": 2177.3455761833084,
+            "p95": 4612.0,
+            "max": 12150.0
+          },
+          "total_native_points": 65091746,
+          "zero_motion_intervals": 8008914,
+          "constant_legs": 0,
+          "source_parent_route_hashes": 14649,
+          "legs_with_source_parent_route_hash": 29134,
+          "source_bus_lines": 23,
+          "route_count_scope": "Source parent route hashes; not necessarily individual activity-leg routes or unseen-route coverage"
+        },
+        "val": {
+          "legs": 7230,
+          "parents": 5842,
+          "class_counts": {
+            "bus": 155,
+            "motorcycle": 1591,
+            "private_car": 4436,
+            "bycicle": 668,
+            "taxi_or_uber": 380
+          },
+          "class_parent_counts": {
+            "bus": 155,
+            "motorcycle": 1258,
+            "private_car": 3381,
+            "bycicle": 668,
+            "taxi_or_uber": 380
+          },
+          "duration_s": {
+            "n": 7230,
+            "min": 0.25,
+            "median": 551.75,
+            "mean": 546.0906639004149,
+            "p95": 1138.0,
+            "max": 2524.25
+          },
+          "arc_length_m": {
+            "n": 7230,
+            "min": 0.2599999999993088,
+            "median": 5801.037060085148,
+            "mean": 5298.578460401076,
+            "p95": 10677.032506639704,
+            "max": 15807.569572011535
+          },
+          "native_points": {
+            "n": 7230,
+            "min": 2.0,
+            "median": 2208.0,
+            "mean": 2185.3626556016598,
+            "p95": 4553.0,
+            "max": 10098.0
+          },
+          "total_native_points": 15800172,
+          "zero_motion_intervals": 1941870,
+          "constant_legs": 0,
+          "source_parent_route_hashes": 4369,
+          "legs_with_source_parent_route_hash": 7057,
+          "source_bus_lines": 23,
+          "route_count_scope": "Source parent route hashes; not necessarily individual activity-leg routes or unseen-route coverage"
+        },
+        "all": {
+          "legs": 37125,
+          "parents": 29915,
+          "class_counts": {
+            "bus": 840,
+            "motorcycle": 8138,
+            "private_car": 22817,
+            "bycicle": 3412,
+            "taxi_or_uber": 1918
+          },
+          "class_parent_counts": {
+            "bus": 840,
+            "motorcycle": 6484,
+            "private_car": 17261,
+            "bycicle": 3412,
+            "taxi_or_uber": 1918
+          },
+          "duration_s": {
+            "n": 37125,
+            "min": 0.25,
+            "median": 549.75,
+            "mean": 544.4767205387205,
+            "p95": 1150.75,
+            "max": 3037.25
+          },
+          "arc_length_m": {
+            "n": 37125,
+            "min": 0.10049875621066501,
+            "median": 5753.387719038963,
+            "mean": 5287.004585650551,
+            "p95": 10692.370951543953,
+            "max": 16298.149343663095
+          },
+          "native_points": {
+            "n": 37125,
+            "min": 2.0,
+            "median": 2200.0,
+            "mean": 2178.906882154882,
+            "p95": 4604.0,
+            "max": 12150.0
+          },
+          "total_native_points": 80891918,
+          "zero_motion_intervals": 9950784,
+          "constant_legs": 0,
+          "source_parent_route_hashes": 17534,
+          "legs_with_source_parent_route_hash": 36191,
+          "source_bus_lines": 23,
+          "route_count_scope": "Source parent route hashes; not necessarily individual activity-leg routes or unseen-route coverage"
+        }
+      },
+      "completed_stages": [
+        "extract-350101",
+        "extract-350102",
+        "extract-350201",
+        "merge",
+        "simulate-350101",
+        "simulate-350102",
+        "simulate-350201"
+      ],
+      "code_sha256": {
+        "g35d_data_run.py": "aa411a82cbe855ff0dd567e87440cd4fc02bfe66bb322ef13abe0096a4fed38b",
+        "g35d_simulate.py": "c11122ec7df464df2a703b0ed6f0990e7c7f8976b8cf30e9cf79b607916310f9",
+        "g35d_extract.py": "48eabd8136f09dd964f24f2d6d22b49ae04bfffc71b3aea3fc097d70f3ea1ed0",
+        "g35c_runtime.py": "7de3a52d21741d751cbf587d78812328c834307b04032fe89ab3aaf772de5a1c",
+        "g35_data_run.py": "4a45ad9efed76488cf0eb3687d71ab24e4cb2857cecda5bdee64bd051ecd56cb",
+        "g35b_data_run.py": "94e2cca9a0dac3d963625064a898b2b4d1cba80221d2f5c6aeab505258a3e0a3",
+        "g35_train_run.py": "3618c4ba2d1c07c89e61434332e84b197fc42659fc0c2ddbb5956d57c813d458",
+        "g35_merge.py": "f74b897e21afcc3a46a50fc758dcb3cf031e5505979b7273f34fa87012346897",
+        "g35b_simulate.py": "6d48c71bf66948409a24d54b260606a0d2788adb857b9e871a1370d3587aea7a",
+        "g35b_extract.py": "e1792c8ec0600b4cd3e840d7875961b8ab998db4b214cf5e186662b8419c8298",
+        "g35c_extract.py": "64991d07f4144910cf8f6207d9d2e28706584182ccc0fe4f3231546865b9d8b8",
+        "g31_legs.py": "7c2eaf249ff710f01b78b4c378dec72e2d3f500cd7740b195749f72ec8e5942b",
+        "g33_prepare.py": "c9556ad60cd1862289ddff6d85c6057cfe0d222a94bcfa26a21fa863d3632328",
+        "g30_prepare.py": "b89f28a81f877158f229e3b3c0cd442ccc898700fcb3c023f938b513448d8eba",
+        "g30_extract.py": "e310405bb6dab584a57604c852135128abe76462a4a9fc5121741c5ba4600fb8",
+        "g30_demand_audit.py": "1cbb24bdb2f9d505e4502e3b20c1e69c702edc384d0a1b7507258bdd34dbee98",
+        "g29_prepare.py": "004f7bf17e0de35b4e4e2cebfc7e0ed9d023eaba0441caffa6c506a30c741b52"
+      },
+      "stage_receipts": {
+        "simulate-350201": "8d2f771ea7492cc54fb002f0ea17b0f7e6122fefae45102c54ec6f9415077d01",
+        "extract-350201": "e209c3cd1e4a58081dbffc3384dd068321148557aa43eab5629e3dd5718df90c",
+        "simulate-350101": "4a8e7dde4a2fb2628f7d93e61e2dc3e9dad2dd48a1e5aa3c68b2cbbe0d42bcdb",
+        "simulate-350102": "d85f5e3fbd78b558b63049a2d6e604ce797375ea116ea2caba1d47c8e2b16e0e",
+        "extract-350101": "67a4c18683c06d7a27c056b355d0343a02a98f4e90d3850cab45af17d0aded36",
+        "extract-350102": "6be556ed1ad90f643cc60ee855992e9ba299f23b8d274b6f6122b59db6948559",
+        "merge": "876db647b9f82879bf58eed1bb7299514b4c3b05791e04695b72ac0429de860e"
+      },
+      "storage": {
+        "budget_root_bytes": 34609549628,
+        "roots": {
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35b-job/g35-data": 16159543728,
+          "/workspace/cnr-experiments/gaf-inloop-v1/g35d-job/g35-data": 18450005900
+        },
+        "free_bytes": 21706276864
+      }
+    },
+    "g35-data/models/native_0_25s-42/complete.json": {
+      "complete": true,
+      "training_completed": true,
+      "generation_evaluated": false,
+      "seed": 42,
+      "arm": "native_0_25s",
+      "steps": 10000,
+      "elapsed_s": 2771.8953273519874,
+      "valid_tokens_seen": 1549007789,
+      "parameters": 891969,
+      "model_sha256": "3a8e959397eed93fa7153e4499d00825f397a31f47cff34a937d8259e34e38fc",
+      "config_sha256": "1579ef6daab4cbd3a68a5826118175bfe15b09b85415007ff646e78b53d09776",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd"
+    },
+    "g35-data/models/native_0_25s-43/complete.json": {
+      "complete": true,
+      "training_completed": true,
+      "generation_evaluated": false,
+      "seed": 43,
+      "arm": "native_0_25s",
+      "steps": 10000,
+      "elapsed_s": 2750.820919647813,
+      "valid_tokens_seen": 1547004644,
+      "parameters": 891969,
+      "model_sha256": "af439368ff2eb9a866f63ff7376fb4fefb8b8b28f6da912463e1efe9ef0f914d",
+      "config_sha256": "5a687230ff5dde3165dacf7353e912c4ea5369eb69a25520e8cbbbb5d18ce897",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd"
+    },
+    "g35-data/models/relative_257-42/complete.json": {
+      "complete": true,
+      "training_completed": true,
+      "generation_evaluated": false,
+      "seed": 42,
+      "arm": "relative_257",
+      "steps": 10000,
+      "elapsed_s": 319.14259883761406,
+      "valid_tokens_seen": 163840000,
+      "parameters": 891969,
+      "model_sha256": "74230decb89d48f56657ad5e71ccdfe440c0fd06f7fa98dff9911b8d2486d23d",
+      "config_sha256": "29ea048e843752fc29c080064c7bb33ac79aacd38e94511625525fcc2d90f639",
+      "stats_sha256": "f42704dabb3ccc67b50bf56fe2d26f51d8f665922ec5be3b234ea36aec48c51f"
+    },
+    "g35-data/models/relative_257-43/complete.json": {
+      "complete": true,
+      "training_completed": true,
+      "generation_evaluated": false,
+      "seed": 43,
+      "arm": "relative_257",
+      "steps": 10000,
+      "elapsed_s": 319.45472490787506,
+      "valid_tokens_seen": 163840000,
+      "parameters": 891969,
+      "model_sha256": "b8a5ff17e2eb8c071534234573366d7524991d94ba8fc40ab388b32a0c9c8f1d",
+      "config_sha256": "36e53033b2a0d6654e1950e131dc85093c40df54f4fa173383621323b763ef64",
+      "stats_sha256": "f42704dabb3ccc67b50bf56fe2d26f51d8f665922ec5be3b234ea36aec48c51f"
+    },
+    "g35-data/teachers/spatial-42/complete.json": {
+      "complete": true,
+      "view": "spatial",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "selected_epoch": 50,
+      "train": {
+        "n": 29895,
+        "accuracy": 0.9722027094831912,
+        "macro_f1": 0.9763760403913521,
+        "weighted_f1": 0.9718155422197824,
+        "per_class_f1": [
+          0.9841954022988506,
+          0.9362210367067442,
+          0.9793980363753421,
+          0.9934330536300621,
+          0.9886326729457616
+        ],
+        "per_class_precision": [
+          0.9688826025459689,
+          0.9778775781769794,
+          0.9660263533894269,
+          0.9945215485756026,
+          0.9876703439325114
+        ],
+        "per_class_recall": [
+          1.0,
+          0.8979685352069651,
+          0.9931450954790273,
+          0.9923469387755102,
+          0.9895968790637191
+        ],
+        "confusion": [
+          [
+            685,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            5879,
+            635,
+            6,
+            7
+          ],
+          [
+            1,
+            120,
+            18255,
+            4,
+            1
+          ],
+          [
+            1,
+            4,
+            5,
+            2723,
+            11
+          ],
+          [
+            0,
+            9,
+            2,
+            5,
+            1522
+          ]
+        ],
+        "nll": 0.07799575682529798,
+        "brier_multiclass_sum": 0.04503765559446785,
+        "ece_15_equal_width": 0.007732999787918543,
+        "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+      },
+      "val": {
+        "n": 7230,
+        "accuracy": 0.8616874135546335,
+        "macro_f1": 0.7647334125838647,
+        "weighted_f1": 0.8572052314040312,
+        "per_class_f1": [
+          0.9565217391304348,
+          0.7356930201786305,
+          0.9519823788546256,
+          0.7210172026925954,
+          0.4584527220630373
+        ],
+        "per_class_precision": [
+          0.9221556886227545,
+          0.776536312849162,
+          0.9306632213608957,
+          0.7204783258594918,
+          0.5031446540880503
+        ],
+        "per_class_recall": [
+          0.9935483870967742,
+          0.6989314896291641,
+          0.9743011722272318,
+          0.7215568862275449,
+          0.42105263157894735
+        ],
+        "confusion": [
+          [
+            154,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            1112,
+            297,
+            95,
+            79
+          ],
+          [
+            0,
+            108,
+            4322,
+            4,
+            2
+          ],
+          [
+            4,
+            93,
+            12,
+            482,
+            77
+          ],
+          [
+            1,
+            118,
+            13,
+            88,
+            160
+          ]
+        ],
+        "nll": 0.7689666364120533,
+        "brier_multiclass_sum": 0.2343987889493116,
+        "ece_15_equal_width": 0.08442676793078162,
+        "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+      },
+      "seconds": 841.6766283363104,
+      "peak_cuda_memory_bytes": 1651598848,
+      "config_sha256": "51240e6db807da41515cad9a4a8f14daffbf3bed30d5f26c0af3c85c9603a8f4",
+      "artifacts": {
+        "model.pt": {
+          "sha256": "bf308ff690dea92b0492bb01ccede4c5018748877a9f7bd2d395dba3dc701044",
+          "bytes": 44788418
+        },
+        "train-predictions.npz": {
+          "sha256": "b89378a12fe857c51721b16cb66f0fee659e29937ea907e4b0a9e22953745891",
+          "bytes": 50447345
+        },
+        "val-predictions.npz": {
+          "sha256": "e42899d2bc56d4246669b7cc459904db8a748472a513f730344002282f2fdf17",
+          "bytes": 12374606
+        }
+      },
+      "limits": [
+        "Preassigned-parent holdout with separate training/development simulation episodes, same public demand/map; not unseen-city or unseen-bus-line validation.",
+        "This CNN is self-trained, not supplied by the CNR group.",
+        "Teacher classification and calibration do not establish GAF generation benefit.",
+        "Spatial original encoding and speed angular encoding remain distinct."
+      ]
+    },
+    "g35-data/teachers/speed-42/complete.json": {
+      "complete": true,
+      "view": "speed",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "selected_epoch": 50,
+      "train": {
+        "n": 29895,
+        "accuracy": 0.9239003177788928,
+        "macro_f1": 0.9557428729992745,
+        "weighted_f1": 0.9269886215063989,
+        "per_class_f1": [
+          1.0,
+          0.8515497553017944,
+          0.9347781995190219,
+          0.9998177510479315,
+          0.9925686591276252
+        ],
+        "per_class_precision": [
+          1.0,
+          0.7433356117566644,
+          0.9999380114059013,
+          1.0,
+          0.9865125240847784
+        ],
+        "per_class_recall": [
+          1.0,
+          0.9966396822972354,
+          0.8775909906969153,
+          0.9996355685131195,
+          0.9986996098829649
+        ],
+        "confusion": [
+          [
+            685,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6525,
+            1,
+            0,
+            21
+          ],
+          [
+            0,
+            2250,
+            16131,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            2743,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            1536
+          ]
+        ],
+        "nll": 0.5593792081637708,
+        "brier_multiclass_sum": 0.151343769138301,
+        "ece_15_equal_width": 0.0748040799487861,
+        "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+      },
+      "val": {
+        "n": 7230,
+        "accuracy": 0.891286307053942,
+        "macro_f1": 0.9033597223409948,
+        "weighted_f1": 0.8954710543526673,
+        "per_class_f1": [
+          1.0,
+          0.7889502762430939,
+          0.922326632568098,
+          0.9947800149142431,
+          0.8107416879795396
+        ],
+        "per_class_precision": [
+          1.0,
+          0.7037949728930508,
+          0.9763283807605138,
+          0.9910846953937593,
+          0.7885572139303483
+        ],
+        "per_class_recall": [
+          1.0,
+          0.8975487115021998,
+          0.8739855725879171,
+          0.9985029940119761,
+          0.8342105263157895
+        ],
+        "confusion": [
+          [
+            155,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1428,
+            84,
+            1,
+            78
+          ],
+          [
+            0,
+            549,
+            3877,
+            3,
+            7
+          ],
+          [
+            0,
+            1,
+            0,
+            667,
+            0
+          ],
+          [
+            0,
+            51,
+            10,
+            2,
+            317
+          ]
+        ],
+        "nll": 0.6651084453315232,
+        "brier_multiclass_sum": 0.20294228410337642,
+        "ece_15_equal_width": 0.09537860289113005,
+        "calibration": "uncalibrated final-model probabilities; no temperature fitting"
+      },
+      "seconds": 828.8320890441537,
+      "peak_cuda_memory_bytes": 1647929344,
+      "config_sha256": "6a207ed33fd917337cd87d5db0ca7455fd75641312902a524f111842e45c957c",
+      "artifacts": {
+        "model.pt": {
+          "sha256": "570261df5ca2f5924ef259c08f0ac318086c79ab31bd1a99f43de6d03f47ecaa",
+          "bytes": 44788418
+        },
+        "train-predictions.npz": {
+          "sha256": "7a5b6679795c86bc85384fd6f7a42c0e3e835ebf5a6b6a52dfbad4c806742cbd",
+          "bytes": 52665550
+        },
+        "val-predictions.npz": {
+          "sha256": "4e0e8fcaa5da9507d1fc39cbdf96dbd878e4fa55ce58c71c2b8885d58ab81515",
+          "bytes": 12820932
+        }
+      },
+      "limits": [
+        "Preassigned-parent holdout with separate training/development simulation episodes, same public demand/map; not unseen-city or unseen-bus-line validation.",
+        "This CNN is self-trained, not supplied by the CNR group.",
+        "Teacher classification and calibration do not establish GAF generation benefit.",
+        "Spatial original encoding and speed angular encoding remain distinct."
+      ]
+    }
+  },
+  "verification": {
+    "verified_unix": 1794023920.2807155,
+    "verified_six_models": [
+      "g35-data/models/native_0_25s-42/complete.json",
+      "g35-data/models/native_0_25s-43/complete.json",
+      "g35-data/models/relative_257-42/complete.json",
+      "g35-data/models/relative_257-43/complete.json",
+      "g35-data/teachers/spatial-42/complete.json",
+      "g35-data/teachers/speed-42/complete.json"
+    ],
+    "audit": {
+      "pid": 220944,
+      "launched_unix": 1794023920.2816355
+    }
+  }
+}
