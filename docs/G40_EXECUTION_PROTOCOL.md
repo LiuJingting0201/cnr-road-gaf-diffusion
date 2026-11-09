@@ -115,3 +115,20 @@ small aggregate metrics, plots and prose; raw data/weights remain server/private
 After complete evidence review, revise thesis methods, results, figures, abstract
 and discussion consistently. Main figures must include all five participant classes,
 generated trajectories and both GAF views, alongside independent quality results.
+
+## Pilot finding and bounded prior check — 2026-11-10
+
+All four1000-update motion fits and diagnostics completed, but the pilot supervisor
+failed while checking a diagnostic's source model hash as a local model artifact.
+Preserve g40p-job/failed.json and every completed fit. Fix only provenance checking;
+independently verify all saved motion artifacts, tokens, RNGs and initialization.
+
+The1000-update EMA priors produced code maxima119–178, far outside ordinary
+LayerNorm encoder support, and increased training-side denoising MSE versus known
+codes. Do not release formal generation on those priors. In a new g40pr-job, reuse
+all four motion fits and fit the declared formal prior budget5000updates from its
+original initialization (B remains deterministic), then repeat the identical25-parent
+checks. This is a single bounded training-only prerequisite, not a held-out quality
+sweep. It changes no formal5000-update budget, architecture or endpoint. Original
+1000-update prior results remain visible. Formal release depends on actual review;
+if extrapolation persists, diagnose before more generation.

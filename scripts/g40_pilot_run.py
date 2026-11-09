@@ -43,7 +43,12 @@ def main():
             runner.run('prior-'+name,'g40_prior.py',['--model',out,'--output',prior,'--steps',1000],gpu);runner.verify(prior)
             runner.run('diagnostic-'+name,'g40_pilot_diagnostic.py',['--model',out,'--prior',prior,
                 '--data',FROZEN/'direct-legs/dataset.npz','--output',ROOT/'diagnostics'/name],gpu)
-            return runner.verify(ROOT/'diagnostics'/name)
+            diagnostic=ROOT/'diagnostics'/name
+            result=json.loads((diagnostic/'complete.json').read_text())
+            assert result['complete'] and not (diagnostic/'failed.json').exists()
+            assert result['model_sha256']==runner.digest(out/'model.pt')
+            assert result['prior_sha256']==runner.digest(prior/'model.pt')
+            return result
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futures={a:pool.submit(slot,g,a) for g,a in enumerate(ARMS)}
             results={a:f.result() for a,f in futures.items()}
