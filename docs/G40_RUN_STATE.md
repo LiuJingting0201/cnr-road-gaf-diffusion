@@ -16,10 +16,10 @@ Base `/workspace/cnr-experiments/gaf-inloop-v1`:
   three1000-update priors plus B zero prior, implementation/training-side diagnostics.
   Source2d3efc0,launchPID240691. Four fits/priors/diagnostics completed, but supervisor failed on a source-hash/local-artifact mix-up. Preserve failure; do not relaunch.
   Inspect queue.log, failed.json, model training.jsonl, prior and diagnostic receipts.
-- `g40pr-job`: newly implemented prior-only recovery, source4821c56; not launched at this checkpoint. Reuse four verified motion fits, test the already-declared5000-update prior budget, repeat identical training-only diagnostics. The1000-update prior sampled code magnitudes119–178 and worsened diagnostic noise MSE; formal release remains closed.
-- `g40-job`: formal snapshot not yet created/launched at this checkpoint. Planned
+- `g40pr-job`: newly implemented prior-only recovery, source4821c56; completed70.685s as PID241619. Four verified motion fits reused; declared5000-update prior budget restores ordinary code ranges on identical25-parent diagnostics. See results/g40-pilots/REPORT.md. The1000-update prior sampled code magnitudes119–178 and worsened diagnostic noise MSE; full-budget prerequisite has subsequently passed; weak condition-use remains a limitation, not a success claim.
+- `g40-job`: formal snapshot launched source29f34d7,PID242214,manifest6da6942cbda67007fe7941a84ca5db33760a53bbd930658b5b4b63d64503573a. Launch free40.41GiB. Queue includes
   eight arms×two seeds×5000updates,12priors×5000,8newSUMOreferences,128direct
-  generation/evaluation cells and30independent utility fits. Requires actual pilot
+  generation/evaluation cells and30independent utility fits. Has actual pilot
   review tied to the formal source manifest; fresh G39B start, not pilot checkpoints.
 
 No desktop milestone automation. Existing detached cloud supervisors own their
@@ -35,3 +35,5 @@ must be labelled in-sample and kept separate from prospective synthesis results.
 After completion, independently verify generated/source/metric receipts, compare
 primary speed/acceleration and all motion/diversity controls, then update LaTeX,
 trajectory/GAF figures, abstract and discussion together and render-review the PDF.
+
+Formal launch receipt does not prove progress or completion. Inspect live logs before reporting. The cloud queue includes utility after128cells close; all-stages-complete.json is required before final scientific interpretation and thesis revision. Main complete.json closes the primary stage only and remains immutable.

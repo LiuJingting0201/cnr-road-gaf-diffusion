@@ -1,0 +1,77 @@
+{
+  "complete": true,
+  "arm": "F-SV",
+  "seed": 42,
+  "kind": "diffusion",
+  "steps": 1000,
+  "seconds": 7.10762794315815,
+  "model_sha256": "02e6e2cb9b88156f46cab93983e06ac249f231e00fd3dd9ea23e812841ad6daa",
+  "motion_model_sha256": "47c246382db49d07e5fff436daa4e4bcb13df56a7682d9aa16250de0831385da",
+  "training_codes_sha256": "bd4927068244766558829c33e3c1ba34ad997a6af389cb5aa0063cf6b9bfcc8f",
+  "training_rows": 29895,
+  "conditions": "available route geometry, class, training-prior sampled duration; no held-out code/trajectory",
+  "code_dimensions": 64,
+  "training_only": true,
+  "no_validation_selection": true,
+  "lr": 0.0002,
+  "batch": 256,
+  "ema": 0.001,
+  "history": [
+    {
+      "step": 1,
+      "loss": 1.576302409172058,
+      "seconds": 1.8709904253482819
+    },
+    {
+      "step": 100,
+      "loss": 0.4297233819961548,
+      "seconds": 2.394140712916851
+    },
+    {
+      "step": 200,
+      "loss": 0.2548191547393799,
+      "seconds": 2.9115722104907036
+    },
+    {
+      "step": 300,
+      "loss": 0.18573327362537384,
+      "seconds": 3.4346809014678
+    },
+    {
+      "step": 400,
+      "loss": 0.2194441258907318,
+      "seconds": 3.956773355603218
+    },
+    {
+      "step": 500,
+      "loss": 0.1765737533569336,
+      "seconds": 4.475398056209087
+    },
+    {
+      "step": 600,
+      "loss": 0.19792048633098602,
+      "seconds": 5.0018865913152695
+    },
+    {
+      "step": 700,
+      "loss": 0.16093668341636658,
+      "seconds": 5.5216739773750305
+    },
+    {
+      "step": 800,
+      "loss": 0.1355859935283661,
+      "seconds": 6.058484710752964
+    },
+    {
+      "step": 900,
+      "loss": 0.13833087682724,
+      "seconds": 6.578699894249439
+    },
+    {
+      "step": 1000,
+      "loss": 0.13230545818805695,
+      "seconds": 7.101172782480717
+    }
+  ],
+  "source_sha256": "d020517169517a1486e46772bc3f247926749f212c6dd1179e7dae0d7af3e2c1"
+}

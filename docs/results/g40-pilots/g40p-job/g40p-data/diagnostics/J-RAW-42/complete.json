@@ -1,0 +1,326 @@
+{
+  "complete": true,
+  "arm": "J-RAW",
+  "training_parents": 25,
+  "seconds": 17.911372162401676,
+  "model_sha256": "9f755208d62c096ef58db939654669ea7e8e58e30e46705f973a08166cd2f9f5",
+  "prior_sha256": "27cf7927b88596681849cf6f3435c92d67bec6f51d9cf31a33f1e383641a5db9",
+  "in_sample_implementation_diagnostic_only": true,
+  "prospective_quality_evidence": false,
+  "rows": [
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.025358378887176514,
+        "other_train_trip_code": 0.025179937481880188,
+        "zero_code": 0.02517521195113659,
+        "sampled_prior": 0.035192858427762985
+      },
+      "prediction_change_true_vs_other": 0.003413645550608635,
+      "prediction_change_true_vs_zero": 0.0034122790675610304,
+      "sampled_code_abs_max": 59.93654251098633,
+      "different_draw_shape_mae": 0.052909908968477304
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.004390696529299021,
+        "other_train_trip_code": 0.004400609526783228,
+        "zero_code": 0.00438651954755187,
+        "sampled_prior": 0.004685209598392248
+      },
+      "prediction_change_true_vs_other": 0.0006560779293067753,
+      "prediction_change_true_vs_zero": 0.0003312861081212759,
+      "sampled_code_abs_max": 66.97776794433594
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.020977379754185677,
+        "other_train_trip_code": 0.02098066918551922,
+        "zero_code": 0.02095537632703781,
+        "sampled_prior": 0.023666489869356155
+      },
+      "prediction_change_true_vs_other": 0.0004038412298541516,
+      "prediction_change_true_vs_zero": 0.002091775881126523,
+      "sampled_code_abs_max": 80.70796966552734
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.02010512351989746,
+        "other_train_trip_code": 0.0200640931725502,
+        "zero_code": 0.02015009894967079,
+        "sampled_prior": 0.0235309898853302
+      },
+      "prediction_change_true_vs_other": 0.0007570901070721447,
+      "prediction_change_true_vs_zero": 0.0016985605470836163,
+      "sampled_code_abs_max": 86.7164306640625
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.02155933901667595,
+        "other_train_trip_code": 0.021540069952607155,
+        "zero_code": 0.021723192185163498,
+        "sampled_prior": 0.022609589621424675
+      },
+      "prediction_change_true_vs_other": 0.0003892037784680724,
+      "prediction_change_true_vs_zero": 0.00262056989595294,
+      "sampled_code_abs_max": 106.34880065917969
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.0265500545501709,
+        "other_train_trip_code": 0.02657778188586235,
+        "zero_code": 0.0264982171356678,
+        "sampled_prior": 0.027798468247056007
+      },
+      "prediction_change_true_vs_other": 0.0009332587942481041,
+      "prediction_change_true_vs_zero": 0.0008491042535752058,
+      "sampled_code_abs_max": 99.63658142089844,
+      "different_draw_shape_mae": 0.024764149397578584
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.020073480904102325,
+        "other_train_trip_code": 0.020094148814678192,
+        "zero_code": 0.020325709134340286,
+        "sampled_prior": 0.03281901776790619
+      },
+      "prediction_change_true_vs_other": 0.0002079143887385726,
+      "prediction_change_true_vs_zero": 0.0018541397294029593,
+      "sampled_code_abs_max": 77.6551284790039
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.01980167254805565,
+        "other_train_trip_code": 0.019784893840551376,
+        "zero_code": 0.0197964608669281,
+        "sampled_prior": 0.030983610078692436
+      },
+      "prediction_change_true_vs_other": 0.0012162048369646072,
+      "prediction_change_true_vs_zero": 0.002326305489987135,
+      "sampled_code_abs_max": 73.03470611572266
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.01828889362514019,
+        "other_train_trip_code": 0.018380586057901382,
+        "zero_code": 0.01835516095161438,
+        "sampled_prior": 0.01906173676252365
+      },
+      "prediction_change_true_vs_other": 0.0018345724092796445,
+      "prediction_change_true_vs_zero": 0.0013416172005236149,
+      "sampled_code_abs_max": 82.14140319824219
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.00021781589020974934,
+        "other_train_trip_code": 0.00022694926883559674,
+        "zero_code": 0.00021450337953865528,
+        "sampled_prior": 0.0014740240294486284
+      },
+      "prediction_change_true_vs_other": 0.00015312433242797852,
+      "prediction_change_true_vs_zero": 5.632638931274414e-05,
+      "sampled_code_abs_max": 73.2097396850586
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 7.039878983050585e-05,
+        "other_train_trip_code": 6.970370304770768e-05,
+        "zero_code": 6.797332025598735e-05,
+        "sampled_prior": 5.288740067044273e-05
+      },
+      "prediction_change_true_vs_other": 4.497955524129793e-05,
+      "prediction_change_true_vs_zero": 0.00010310282232239842,
+      "sampled_code_abs_max": 103.17754364013672,
+      "different_draw_shape_mae": 0.011355825256598822
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.0014363887021318078,
+        "other_train_trip_code": 0.0014412886230275035,
+        "zero_code": 0.0014451805036514997,
+        "sampled_prior": 0.0016010953113436699
+      },
+      "prediction_change_true_vs_other": 0.00017490980098955333,
+      "prediction_change_true_vs_zero": 0.0002726474485825747,
+      "sampled_code_abs_max": 98.89620971679688
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.012053074315190315,
+        "other_train_trip_code": 0.012065824121236801,
+        "zero_code": 0.012116623111069202,
+        "sampled_prior": 0.013888543471693993
+      },
+      "prediction_change_true_vs_other": 0.0004075662000104785,
+      "prediction_change_true_vs_zero": 0.0010655734222382307,
+      "sampled_code_abs_max": 87.86869812011719
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.01857452467083931,
+        "other_train_trip_code": 0.018570883199572563,
+        "zero_code": 0.018562495708465576,
+        "sampled_prior": 0.023620083928108215
+      },
+      "prediction_change_true_vs_other": 0.0003603707591537386,
+      "prediction_change_true_vs_zero": 0.001075117033906281,
+      "sampled_code_abs_max": 68.96336364746094
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.01521031279116869,
+        "other_train_trip_code": 0.015140118077397346,
+        "zero_code": 0.015165148302912712,
+        "sampled_prior": 0.016906412318348885
+      },
+      "prediction_change_true_vs_other": 0.001785212429240346,
+      "prediction_change_true_vs_zero": 0.0011340501951053739,
+      "sampled_code_abs_max": 47.17147445678711
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.018143324181437492,
+        "other_train_trip_code": 0.018138468265533447,
+        "zero_code": 0.018115146085619926,
+        "sampled_prior": 0.030292920768260956
+      },
+      "prediction_change_true_vs_other": 0.0003077288274653256,
+      "prediction_change_true_vs_zero": 0.0011598292039707303,
+      "sampled_code_abs_max": 80.71234130859375,
+      "different_draw_shape_mae": 0.02643810275831987
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.03142222389578819,
+        "other_train_trip_code": 0.03141423687338829,
+        "zero_code": 0.03148979693651199,
+        "sampled_prior": 0.050839342176914215
+      },
+      "prediction_change_true_vs_other": 0.00029597830143757164,
+      "prediction_change_true_vs_zero": 0.0018611301202327013,
+      "sampled_code_abs_max": 75.38088989257812
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.008910022675991058,
+        "other_train_trip_code": 0.008913081139326096,
+        "zero_code": 0.008949002251029015,
+        "sampled_prior": 0.010295774787664413
+      },
+      "prediction_change_true_vs_other": 0.0002749940613284707,
+      "prediction_change_true_vs_zero": 0.0012669820571318269,
+      "sampled_code_abs_max": 83.0805435180664
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.015560363419353962,
+        "other_train_trip_code": 0.015567845664918423,
+        "zero_code": 0.015591200441122055,
+        "sampled_prior": 0.016571132466197014
+      },
+      "prediction_change_true_vs_other": 0.00017505108553450555,
+      "prediction_change_true_vs_zero": 0.0013922927901148796,
+      "sampled_code_abs_max": 67.66661071777344
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.008463333360850811,
+        "other_train_trip_code": 0.008455012924969196,
+        "zero_code": 0.008468961343169212,
+        "sampled_prior": 0.009459953755140305
+      },
+      "prediction_change_true_vs_other": 0.0004543562245089561,
+      "prediction_change_true_vs_zero": 0.0010329647921025753,
+      "sampled_code_abs_max": 118.30693054199219
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.021760545670986176,
+        "other_train_trip_code": 0.021767616271972656,
+        "zero_code": 0.021750176325440407,
+        "sampled_prior": 0.02576642483472824
+      },
+      "prediction_change_true_vs_other": 0.0007675671949982643,
+      "prediction_change_true_vs_zero": 0.0011361994547769427,
+      "sampled_code_abs_max": 95.50568389892578,
+      "different_draw_shape_mae": 0.07686177220437175
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.018990952521562576,
+        "other_train_trip_code": 0.018998507410287857,
+        "zero_code": 0.018957844004034996,
+        "sampled_prior": 0.030626095831394196
+      },
+      "prediction_change_true_vs_other": 0.00042544060852378607,
+      "prediction_change_true_vs_zero": 0.0012506284983828664,
+      "sampled_code_abs_max": 63.46159744262695
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.030354227870702744,
+        "other_train_trip_code": 0.03049827180802822,
+        "zero_code": 0.030476152896881104,
+        "sampled_prior": 0.06638583540916443
+      },
+      "prediction_change_true_vs_other": 0.0025169856380671263,
+      "prediction_change_true_vs_zero": 0.0022687001619488,
+      "sampled_code_abs_max": 95.2168960571289
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.013474365696310997,
+        "other_train_trip_code": 0.013556519523262978,
+        "zero_code": 0.013467591255903244,
+        "sampled_prior": 0.016091298311948776
+      },
+      "prediction_change_true_vs_other": 0.0016982206143438816,
+      "prediction_change_true_vs_zero": 0.0005043466808274388,
+      "sampled_code_abs_max": 80.23397827148438
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.03787205368280411,
+        "other_train_trip_code": 0.03787033259868622,
+        "zero_code": 0.037877604365348816,
+        "sampled_prior": 0.03825058043003082
+      },
+      "prediction_change_true_vs_other": 0.0010175455827265978,
+      "prediction_change_true_vs_zero": 0.0021039037965238094,
+      "sampled_code_abs_max": 119.21780395507812
+    }
+  ],
+  "mean_noise_mse": {
+    "train_trip_code": 0.01718475789879449,
+    "other_train_trip_code": 0.017187897975672967,
+    "zero_code": 0.01720325389120262,
+    "sampled_prior": 0.02289881501958007
+  },
+  "same_class_code_swap_prediction_change": 0.0008268736096215435,
+  "zero_code_prediction_change": 0.001368377321632579,
+  "source_sha256": "d0c1d0072b2f9770e36c4ba387702205ca049c1459cd30f5b87e4957aae78d54"
+}

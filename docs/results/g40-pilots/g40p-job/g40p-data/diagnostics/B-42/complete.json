@@ -1,0 +1,326 @@
+{
+  "complete": true,
+  "arm": "B",
+  "training_parents": 25,
+  "seconds": 16.603704392910004,
+  "model_sha256": "22eaf27bc62e5de27c0e8a430dc46be6664a9bccb6fcae397ca82763c6041d50",
+  "prior_sha256": "263ba4d88eb6ca8934b8b75386b41051711f14119d2799ae83ecbaf7cc252613",
+  "in_sample_implementation_diagnostic_only": true,
+  "prospective_quality_evidence": false,
+  "rows": [
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.025342900305986404,
+        "other_train_trip_code": 0.025342900305986404,
+        "zero_code": 0.025342900305986404,
+        "sampled_prior": 0.025342900305986404
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0,
+      "different_draw_shape_mae": 0.08224381576617636
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.004390537738800049,
+        "other_train_trip_code": 0.004390537738800049,
+        "zero_code": 0.004390537738800049,
+        "sampled_prior": 0.004390537738800049
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.02096441574394703,
+        "other_train_trip_code": 0.02096441574394703,
+        "zero_code": 0.02096441574394703,
+        "sampled_prior": 0.02096441574394703
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.020081181079149246,
+        "other_train_trip_code": 0.020081181079149246,
+        "zero_code": 0.020081181079149246,
+        "sampled_prior": 0.020081181079149246
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 0,
+      "noise_mse": {
+        "train_trip_code": 0.021595101803541183,
+        "other_train_trip_code": 0.021595101803541183,
+        "zero_code": 0.021595101803541183,
+        "sampled_prior": 0.021595101803541183
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.02666836604475975,
+        "other_train_trip_code": 0.02666836604475975,
+        "zero_code": 0.02666836604475975,
+        "sampled_prior": 0.02666836604475975
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0,
+      "different_draw_shape_mae": 0.025025679334772774
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.020241424441337585,
+        "other_train_trip_code": 0.020241424441337585,
+        "zero_code": 0.020241424441337585,
+        "sampled_prior": 0.020241424441337585
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.019713478162884712,
+        "other_train_trip_code": 0.019713478162884712,
+        "zero_code": 0.019713478162884712,
+        "sampled_prior": 0.019713478162884712
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.018383469432592392,
+        "other_train_trip_code": 0.018383469432592392,
+        "zero_code": 0.018383469432592392,
+        "sampled_prior": 0.018383469432592392
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 1,
+      "noise_mse": {
+        "train_trip_code": 0.00013341235171537846,
+        "other_train_trip_code": 0.00013341235171537846,
+        "zero_code": 0.00013341235171537846,
+        "sampled_prior": 0.00013341235171537846
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.00010880298214033246,
+        "other_train_trip_code": 0.00010880298214033246,
+        "zero_code": 0.00010880298214033246,
+        "sampled_prior": 0.00010880298214033246
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0,
+      "different_draw_shape_mae": 0.011239558648414968
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.0015312881441786885,
+        "other_train_trip_code": 0.0015312881441786885,
+        "zero_code": 0.0015312881441786885,
+        "sampled_prior": 0.0015312881441786885
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.012112123891711235,
+        "other_train_trip_code": 0.012112123891711235,
+        "zero_code": 0.012112123891711235,
+        "sampled_prior": 0.012112123891711235
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.018555374816060066,
+        "other_train_trip_code": 0.018555374816060066,
+        "zero_code": 0.018555374816060066,
+        "sampled_prior": 0.018555374816060066
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 2,
+      "noise_mse": {
+        "train_trip_code": 0.015186593867838383,
+        "other_train_trip_code": 0.015186593867838383,
+        "zero_code": 0.015186593867838383,
+        "sampled_prior": 0.015186593867838383
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.01813470385968685,
+        "other_train_trip_code": 0.01813470385968685,
+        "zero_code": 0.01813470385968685,
+        "sampled_prior": 0.01813470385968685
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0,
+      "different_draw_shape_mae": 0.027102390676382527
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.03137744963169098,
+        "other_train_trip_code": 0.03137744963169098,
+        "zero_code": 0.03137744963169098,
+        "sampled_prior": 0.03137744963169098
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.00893639586865902,
+        "other_train_trip_code": 0.00893639586865902,
+        "zero_code": 0.00893639586865902,
+        "sampled_prior": 0.00893639586865902
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.015560153871774673,
+        "other_train_trip_code": 0.015560153871774673,
+        "zero_code": 0.015560153871774673,
+        "sampled_prior": 0.015560153871774673
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 3,
+      "noise_mse": {
+        "train_trip_code": 0.008484413847327232,
+        "other_train_trip_code": 0.008484413847327232,
+        "zero_code": 0.008484413847327232,
+        "sampled_prior": 0.008484413847327232
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.021794872358441353,
+        "other_train_trip_code": 0.021794872358441353,
+        "zero_code": 0.021794872358441353,
+        "sampled_prior": 0.021794872358441353
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0,
+      "different_draw_shape_mae": 0.13880683323614837
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.019011588767170906,
+        "other_train_trip_code": 0.019011588767170906,
+        "zero_code": 0.019011588767170906,
+        "sampled_prior": 0.019011588767170906
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.03014630638062954,
+        "other_train_trip_code": 0.03014630638062954,
+        "zero_code": 0.03014630638062954,
+        "sampled_prior": 0.03014630638062954
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.013502918183803558,
+        "other_train_trip_code": 0.013502918183803558,
+        "zero_code": 0.013502918183803558,
+        "sampled_prior": 0.013502918183803558
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    },
+    {
+      "class": 4,
+      "noise_mse": {
+        "train_trip_code": 0.037873975932598114,
+        "other_train_trip_code": 0.037873975932598114,
+        "zero_code": 0.037873975932598114,
+        "sampled_prior": 0.037873975932598114
+      },
+      "prediction_change_true_vs_other": 0.0,
+      "prediction_change_true_vs_zero": 0.0,
+      "sampled_code_abs_max": 0.0
+    }
+  ],
+  "mean_noise_mse": {
+    "train_trip_code": 0.017193249980336986,
+    "other_train_trip_code": 0.017193249980336986,
+    "zero_code": 0.017193249980336986,
+    "sampled_prior": 0.017193249980336986
+  },
+  "same_class_code_swap_prediction_change": 0.0,
+  "zero_code_prediction_change": 0.0,
+  "source_sha256": "d0c1d0072b2f9770e36c4ba387702205ca049c1459cd30f5b87e4957aae78d54"
+}

@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "arm": "F-SV",
+  "seed": 42,
+  "steps": 1000,
+  "elapsed_s": 356.68000566214323,
+  "training_rows": 29895,
+  "valid_tokens_seen": 155070109,
+  "model_sha256": "47c246382db49d07e5fff436daa4e4bcb13df56a7682d9aa16250de0831385da",
+  "config_sha256": "689be317a3a62559ee989a28ccb5db7b271febc7e2e004059a05852b5b9d50e6",
+  "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+  "codes_sha256": "bd4927068244766558829c33e3c1ba34ad997a6af389cb5aa0063cf6b9bfcc8f",
+  "prior_fitted": false,
+  "generation_evaluated": false,
+  "artifacts": {
+    "model.pt": "47c246382db49d07e5fff436daa4e4bcb13df56a7682d9aa16250de0831385da",
+    "config.json": "689be317a3a62559ee989a28ccb5db7b271febc7e2e004059a05852b5b9d50e6",
+    "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+    "train-codes.npz": "bd4927068244766558829c33e3c1ba34ad997a6af389cb5aa0063cf6b9bfcc8f"
+  },
+  "final_cuda_rng_sha256": "c48c9e8eb446b366f563ed02abe9fbd440828d77aea1a5d4c31167acf256569c",
+  "final_batch_rng_sha256": "edafb1ab1a5f0336a29c9da3e4cb994d7a64b5e304eb43903659c4ec7b99c758",
+  "classes": [
+    "bus",
+    "motorcycle",
+    "private_car",
+    "bycicle",
+    "taxi_or_uber"
+  ],
+  "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+  "code_std_quantiles": [
+    0.2582084834575653,
+    0.31689020395278933,
+    0.43926674127578735,
+    0.6826285243034365,
+    0.9483538866043091
+  ]
+}
