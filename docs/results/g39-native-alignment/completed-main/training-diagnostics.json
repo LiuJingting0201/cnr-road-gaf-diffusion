@@ -1,0 +1,119 @@
+{
+  "complete": true,
+  "fits": {
+    "B-42": {
+      "log_sha256": "f7fd899bad65e7a5969a1abeb0cf879306c0fb05d2b34367a5dbf568e8bb79c2",
+      "steps": 10000,
+      "initial_aux": 0.0,
+      "first1000_aux_mean": 0.0,
+      "last1000_aux_mean": 0.0,
+      "last1000_denoising_mean": 0.030884886318926875
+    },
+    "B-43": {
+      "log_sha256": "a8b8dd06a6dfa3f6999caa30ca0f913eecb07feec05450104a87558f93b99521",
+      "steps": 10000,
+      "initial_aux": 0.0,
+      "first1000_aux_mean": 0.0,
+      "last1000_aux_mean": 0.0,
+      "last1000_denoising_mean": 0.042471603810736266
+    },
+    "P-42": {
+      "log_sha256": "65f2c35dc4e10bf88ed181abb0efc164bdef2fe032a32b76499babe3a30db2c1",
+      "steps": 10000,
+      "initial_aux": 0.3499800435149609,
+      "first1000_aux_mean": 0.002633418152527156,
+      "last1000_aux_mean": 8.399175046922558e-05,
+      "last1000_denoising_mean": 0.031140049421901496
+    },
+    "P-43": {
+      "log_sha256": "7cf5d2d311c5d8423e573f739356f237718085f39892630e3f7b833dcb4537a2",
+      "steps": 10000,
+      "initial_aux": 0.29883813485503197,
+      "first1000_aux_mean": 0.002600888878953356,
+      "last1000_aux_mean": 8.594116198334945e-05,
+      "last1000_denoising_mean": 0.042305666335141726
+    },
+    "RAW-42": {
+      "log_sha256": "76299a6436f826f574168e0a8b36750ee11933edf8b9e4c2e5726b6728d411ef",
+      "steps": 10000,
+      "initial_aux": 0.348019463218634,
+      "first1000_aux_mean": 0.05422097780913191,
+      "last1000_aux_mean": 0.027142608694482463,
+      "last1000_denoising_mean": 0.03091259787815943
+    },
+    "RAW-43": {
+      "log_sha256": "6a0443a6dd08f668177d4bd5df9c3c07022af06d5259164beca664b2c8a36ce5",
+      "steps": 10000,
+      "initial_aux": 0.3008513720706105,
+      "first1000_aux_mean": 0.052496922644468216,
+      "last1000_aux_mean": 0.03194564691904134,
+      "last1000_denoising_mean": 0.04234796838536568
+    },
+    "S-42": {
+      "log_sha256": "3d9fd6a13ed4c491775a8653b842b42313dc621c486c5cbf442b0e762cb47ed0",
+      "steps": 10000,
+      "initial_aux": 0.3580737434985508,
+      "first1000_aux_mean": 0.0524003142649633,
+      "last1000_aux_mean": 0.03378241600111949,
+      "last1000_denoising_mean": 0.031282365705737905
+    },
+    "S-43": {
+      "log_sha256": "260002f0e55ceb61ae960ab93cc70a44174109d7b25f871142d742214922e7e8",
+      "steps": 10000,
+      "initial_aux": 0.30437522381544113,
+      "first1000_aux_mean": 0.05231275073667803,
+      "last1000_aux_mean": 0.039749636774297416,
+      "last1000_denoising_mean": 0.042022484633343994
+    },
+    "SH-42": {
+      "log_sha256": "fb1cfdd5029484ccff88d767617e20632e13769cceddec429c2e32c8f9e6bfdc",
+      "steps": 10000,
+      "initial_aux": 0.3510064694752373,
+      "first1000_aux_mean": 0.04867226472321704,
+      "last1000_aux_mean": 0.03071520301831825,
+      "last1000_denoising_mean": 0.031047036179643328
+    },
+    "SH-43": {
+      "log_sha256": "cb8945ed88454e46a69a51dbc8154cb78df007d9a86e153ffa7808365e9d7727",
+      "steps": 10000,
+      "initial_aux": 0.30053276754915714,
+      "first1000_aux_mean": 0.048694459622072375,
+      "last1000_aux_mean": 0.03843698850558752,
+      "last1000_denoising_mean": 0.0421685377880749
+    },
+    "SV-42": {
+      "log_sha256": "d61381b62b7ed45a376a128382e9245a99d1256aa3f60585ab3c91fcbcb26280",
+      "steps": 10000,
+      "initial_aux": 0.3511924390977583,
+      "first1000_aux_mean": 0.04555947815409809,
+      "last1000_aux_mean": 0.025175366213330008,
+      "last1000_denoising_mean": 0.031097778169350932
+    },
+    "SV-43": {
+      "log_sha256": "2b35edfbebdcb5a4e91ff0f1b46f023f1cc55649eedf8ccf191c0b5942e2f85d",
+      "steps": 10000,
+      "initial_aux": 0.29986717738211155,
+      "first1000_aux_mean": 0.04607276792588664,
+      "last1000_aux_mean": 0.029918647714913503,
+      "last1000_denoising_mean": 0.042067836800106305
+    },
+    "V-42": {
+      "log_sha256": "5450e967b3a757d9a4b7036cb48b8aa891372721a9f04b3e42e54c23dd982dbb",
+      "steps": 10000,
+      "initial_aux": 0.3443111328343207,
+      "first1000_aux_mean": 0.03752269599641522,
+      "last1000_aux_mean": 0.015668113556450612,
+      "last1000_denoising_mean": 0.03086457159447491
+    },
+    "V-43": {
+      "log_sha256": "1553c7f9c47dcd551c543908ec3f49a8af01a65450ba50a7789d22c8d61360ce",
+      "steps": 10000,
+      "initial_aux": 0.29535912442952394,
+      "first1000_aux_mean": 0.03748536011366923,
+      "last1000_aux_mean": 0.018873522094862594,
+      "last1000_denoising_mean": 0.042245297585759546
+    }
+  },
+  "scope": "Logged training objectives only; not held-out feature reconstruction or output quality.",
+  "auxiliary": "alpha_bar-weighted cosine loss, before0.1multiplier; means of10loggedupdates, not everyupdate."
+}

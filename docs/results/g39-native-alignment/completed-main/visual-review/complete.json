@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "main_receipt_sha256": "155093b761f87b99a92f29e7b6c512556ac8dbea7d0d17ac6042e4454a08cf5a",
+  "source_receipts": {
+    "B": "ce88a47b39719ba59e3a707e4016e746bcb53b8820a35f52f78c957459b5b21a",
+    "SV": "e5d408d39d18dc26aa0668e51bc64e92b3156d0334c7e60be5231bdb3ef0560d"
+  },
+  "reference_receipt_sha256": "6a944ec06743017cf69f1b48e20352c63889da21015d8ad8b9c1a0949fb091ec",
+  "selection": [
+    {
+      "class": "bus",
+      "request_sha256": "18e7ebb70f78ed7a63ffec9aeb8f20d3f2d457bdbc52eb590309fe724759a108",
+      "duration_s": {
+        "SUMO reference": 2392.0,
+        "Base diffusion": 1756.4642827314133,
+        "Dual-GAF alignment": 1756.4642827314133
+      }
+    },
+    {
+      "class": "motorcycle",
+      "request_sha256": "d06422b3ec38e8b19775f7a5ec530d705dee72631c86b9e793cc4f8202af714a",
+      "duration_s": {
+        "SUMO reference": 477.25,
+        "Base diffusion": 431.8425369402362,
+        "Dual-GAF alignment": 431.8425369402362
+      }
+    },
+    {
+      "class": "private_car",
+      "request_sha256": "45a004af0d74d11ecf4cebb1e2e3f6a8d656c32ae7ea964b45b41292c8f70f36",
+      "duration_s": {
+        "SUMO reference": 787.5,
+        "Base diffusion": 761.2148561080777,
+        "Dual-GAF alignment": 761.2148561080777
+      }
+    },
+    {
+      "class": "bycicle",
+      "request_sha256": "5759e25fb211f9e4fb29bd498ba924fad28b04b7a041d806a96e9e65e834aabe",
+      "duration_s": {
+        "SUMO reference": 18.25,
+        "Base diffusion": 19.19946642843903,
+        "Dual-GAF alignment": 19.19946642843903
+      }
+    },
+    {
+      "class": "taxi_or_uber",
+      "request_sha256": "01fb00dffab3081517d72c5c4a1d834fae5f0c2c8f335eecb770627a927480b1",
+      "duration_s": {
+        "SUMO reference": 380.0,
+        "Base diffusion": 483.3157748803336,
+        "Dual-GAF alignment": 483.3157748803336
+      }
+    }
+  ],
+  "rule": "First lexicographic jointly supported request per class, fixed episode390201/seed42/K1; no metric-based example selection.",
+  "display": "All five classes. Full geometry/time-progress; unsmoothed native coordinate speed in the first60s.",
+  "limits": [
+    "Illustration, not representative or statistical inference.",
+    "Reference route and duration may differ from generated alternatives; no future route/duration was supplied.",
+    "XY panels show trajectories, not a full map-legality audit."
+  ],
+  "source_sha256": "8be6bd4f3462c8419064ac5a1438ccad9b439138c88eacfd42c1963008cee05c",
+  "image_sha256": "e50ac71dea2e9d29619777519be1d0f1c845eb3ef2b62399fa94f661eb2549d2"
+}

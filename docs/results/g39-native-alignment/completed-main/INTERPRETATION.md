@@ -37,3 +37,13 @@ The justified methodological conclusion is narrow: this global hidden-feature in
 Wait for independent utility and factorial evidence before locking the next protocol. No current training, sampling, metric definition or thesis conclusion is changed. The candidate mechanism audit remains provisional.
 
 Source: `main-complete.json`, `main-all-class-metrics.csv`, `verified-aggregates.json`. All individual data and weights remain outside this public result directory.
+
+## Direct trajectory inspection
+
+`visual-review/complete-journeys.png` shows all five classes using the first lexicographic jointly supported request in the predeclared390201/seed42/first-draw cell. No visual or metric-based example selection was used. All generated route/time conditions match between B and SV. The plot uses full geometry, full elapsed-time progress and unsmoothed native speed during the first60seconds. It is illustrative, not a population estimate or requirement to reproduce a single reference.
+
+For these examples, B/SV motion is usually close, consistent with a weak output effect from auxiliary hidden alignment. The bus example has1756.5s generated duration versus2392.0s for the reference; the taxi example483.3s versus380.0s. A fixed-total-duration motion intervention cannot remove such timing differences. This does not make every alternative duration invalid; joint distribution and conditional context must be evaluated. The spatial panels are trajectory views, not a full network-legality certificate.
+
+## Auxiliary optimization versus output improvement
+
+All14 final training logs are retained in `training-diagnostics.json` as aggregate first/last1000-update summaries. For SV, the alpha-weighted cosine target loss decreases from0.04556 to0.02518 for seed42 and from0.04607 to0.02992 for seed43 (means of ten logged updates per interval, before the0.1multiplier). Speed-only alignment likewise decreases0.03752→0.01567 and0.03749→0.01887. Class-centroid alignment reaches about0.000084/0.000086. Thus the auxiliary objective is being optimized; its optimization alone is not delivering the required physical improvement. These are training observations, not an independent feature reconstruction test or proof that projection heads explain the whole failure.

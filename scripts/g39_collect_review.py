@@ -59,9 +59,23 @@ def collect(base,out,all_stages):
              'diagnostics':diagnostics,'receipt_sha256':{'../g39r-job/g39-data':sha(main/'complete.json')},
              'verified_generated_artifacts':112,'individual_records_exported':False}
     if all_stages:
+        import numpy as np
         utility=base/'g39ur-job/g39u-data';ur=verified(utility)
         assert ur['fit_count']==26 and ur['source_G39_sha256']==sha(main/'complete.json')
-        for name,expected in ur['results'].items():assert verified(utility/'fits'/name)==expected
+        cache=verified(utility/'cache')
+        assert cache['source_G39_sha256']==sha(main/'complete.json')
+        assert cache['real_n']==cache['synthetic_n_each']==1000
+        assert cache['nonbus_condition_parent_disjoint'] and not cache['evaluation_loaded_for_training']
+        for name,expected in ur['results'].items():
+            folder=utility/'fits'/name
+            assert verified(folder)==expected
+            with np.load(folder/'predictions.npz',allow_pickle=False) as f:
+                y,z=f['y'],f['logits']
+            cm=np.bincount(5*y+z.argmax(1),minlength=25).reshape(5,5)
+            f1=2*cm.diagonal()/np.maximum(cm.sum(0)+cm.sum(1),1)
+            assert cm.tolist()==expected['pooled']['confusion']
+            assert np.allclose(f1,expected['pooled']['per_class_f1'],atol=1e-15,rtol=0)
+            assert abs(f1.mean()-expected['pooled']['macro_f1'])<1e-15
         factorial=base/'g39fr-job/g39f-data';fr=verified(factorial)
         assert len(fr['results'])==4 and fr['same_expanded_pool_for_all_methods']
         generated={}
@@ -73,7 +87,8 @@ def collect(base,out,all_stages):
             # Aggregate counts only: do not export fallback request IDs.
             generated[key]={k:gr[k] for k in ['requested','generated','candidates','seconds',
                 'joint_route_duration_max_abs_error','network_forwards','reference_opened']}
-        payload.update(utility=ur,factorial=fr,factorial_generation=generated)
+        payload.update(utility=ur,utility_cache=cache,utility_primary_metrics_recomputed=True,
+                       factorial=fr,factorial_generation=generated)
         payload['receipt_sha256'].update({'../g39ur-job/g39u-data':sha(utility/'complete.json'),
                                          '../g39fr-job/g39f-data':sha(factorial/'complete.json')})
     out.mkdir(parents=True,exist_ok=False)
