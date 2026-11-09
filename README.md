@@ -4,7 +4,7 @@
 
 - [Thesis v19 PDF](deliverables/thesis-v19/Road_Conditioned_Diffusion_Thesis_v19.pdf) and [Overleaf source ZIP](deliverables/thesis-v19/PoliTo_Thesis_v19_Overleaf.zip). This is the existing research draft; G38 has not yet been incorporated.
 - [G38 protocol](docs/G38_PROTOCOL.md) and [completed comparison](docs/results/g38-route-preferences/STATUS.md): learned route preferences followed by frozen temporal diffusion and matched GAF controls.
-- [Archive index and restore instructions](docs/GITHUB_ARCHIVE.md). This code repository is public. Full datasets/checkpoints are held in the separately private `LiuJingting0201/cnr-road-gaf-artifacts` repository.
+- [Completed private archive](https://github.com/LiuJingting0201/cnr-road-gaf-artifacts/releases/tag/archive-2026-11-09):138verified attachments,54.40GiB,11,919file paths, including the closed G38 snapshot, all GAF caches and legacy uncommitted source. [Archive index and restore instructions](docs/GITHUB_ARCHIVE.md). This code repository is public. Full datasets/checkpoints are held in the separately private `LiuJingting0201/cnr-road-gaf-artifacts` repository.
 - [Early standalone working notes](docs/archive/early-local-notes/), retained as historical notes rather than current conclusions.
 
 

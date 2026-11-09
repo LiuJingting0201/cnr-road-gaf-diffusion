@@ -50,11 +50,10 @@ Index SHA256: `{index_asset['digest']}`.
 
 The public [source repository](https://github.com/LiuJingting0201/cnr-road-gaf-diffusion) contains code, full aggregate results, current thesis PDF and Overleaf package. Archive completion is not a claim that GAF universally improves generation.
 '''
-    result=api.request('PATCH',f'/repos/{REPO}/releases/{release["id"]}',{'draft':False,'body':body})
-    assert result['draft'] is False
+    release_url=f'https://github.com/{REPO}/releases/tag/{TAG}'
     readme=f'''# CNR private reproducibility archive
 
-[Open the completed2026-11-09 archive]({result['html_url']}). All {len(rows)+1} Release attachments are size/SHA256 verified, covering {coverage['total_file_paths']:,} file paths and {coverage['total_logical_bytes']/10**9:.2f}GB logical project content. Downloads total {(sum(x['size'] for x in rows)+index_asset['size'])/2**30:.2f}GiB.
+[Open the completed2026-11-09 archive]({release_url}). All {len(rows)+1} Release attachments are size/SHA256 verified, covering {coverage['total_file_paths']:,} file paths and {coverage['total_logical_bytes']/10**9:.2f}GB logical project content. Downloads total {(sum(x['size'] for x in rows)+index_asset['size'])/2**30:.2f}GiB.
 
 Read **RESTORE_COMPLETE.md**, then **ARCHIVE_INDEX.json**. The earlier RESTORE.md remains as a historical preparation note; the final instructions include GAF cache, G38 and legacy-source supplements.
 
@@ -66,6 +65,8 @@ Final index SHA256: `{index_asset['digest']}`.
 '''
     old=api.request('GET','/repos/'+REPO+'/contents/README.md')
     commit=api.request('PUT','/repos/'+REPO+'/contents/README.md',{'message':'Publish verified complete archive and recovery index','sha':old['sha'],'content':base64.b64encode(readme.encode()).decode()})
+    result=api.request('PATCH',f'/repos/{REPO}/releases/{release["id"]}',{'draft':False,'body':body,'target_commitish':commit['commit']['sha']})
+    assert result['draft'] is False
     proof={'complete':True,'private_repository':REPO,'release_url':result['html_url'],'release_id':release['id'],'draft':False,'verified_assets':len(rows)+1,
         'uploaded_bytes':sum(x['size'] for x in rows)+index_asset['size'],'index_sha256':index_asset['digest'],'coverage':coverage,'private_readme_commit':commit['commit']['sha']}
     (root/'PUBLISHED.json').write_text(json.dumps(proof,indent=2)+'\n');print(json.dumps(proof),flush=True)

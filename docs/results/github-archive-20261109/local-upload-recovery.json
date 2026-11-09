@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "original_attempt_failure": {
+    "error": "RemoteDisconnected('Remote end closed connection without response')",
+    "seconds": 2505.136742
+  },
+  "missing_asset": "local-deliverables-and-original-inputs.tar.gz.part0004",
+  "fix": "Bounded retry now covers asset-list metadata requests and disconnects; only missing asset retried after original workers ended.",
+  "all_local_assets_verified": 11,
+  "successful_assets_reuploaded": 0,
+  "recovery_seconds": 587.105264292
+}

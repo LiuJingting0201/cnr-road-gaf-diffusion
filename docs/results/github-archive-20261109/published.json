@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "private_repository": "LiuJingting0201/cnr-road-gaf-artifacts",
+  "release_url": "https://github.com/LiuJingting0201/cnr-road-gaf-artifacts/releases/tag/archive-2026-11-09",
+  "release_id": 438686487,
+  "draft": false,
+  "verified_assets": 138,
+  "uploaded_bytes": 58409772845,
+  "index_sha256": "sha256:f6a51e5477f1032eef891faa7ac52e9421cd55d6781f0dc0a1a94618f0ed76c7",
+  "coverage": {
+    "cloud_file_paths": 10464,
+    "cloud_logical_bytes": 72288926594,
+    "overlapping_snapshot_paths": 314,
+    "changed_snapshot_paths": [],
+    "free_gib_after": 49.62206268310547,
+    "local_file_paths": 1455,
+    "local_logical_bytes": 1811487547,
+    "total_file_paths": 11919,
+    "total_logical_bytes": 74100414141
+  },
+  "private_readme_commit": "f4003d15a56a5855dd2b48978a4d03731b831aef"
+}
