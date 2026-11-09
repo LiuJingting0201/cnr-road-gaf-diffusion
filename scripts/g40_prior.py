@@ -33,11 +33,9 @@ def train(folder, output, steps):
         assert len(set(data['ids']))==len(data['labels'])==receipt['training_rows']
         assert np.isfinite(data['code']).all()
         if arm in ('B','C'):
-            centers=np.stack([data['code'][data['labels']==c].mean(0) for c in range(5)])
+            centers=np.stack([data['code'][np.flatnonzero(data['labels']==c)[0]] for c in range(5)])
             assert np.allclose(data['code'],centers[data['labels']],atol=2e-4,rtol=2e-4)
             state={'kind':'zero' if arm=='B' else 'class_centroid','centers':torch.from_numpy(centers),'arm':arm,'seed':seed}
-            # Use the exact first identical code rather than an accumulated mean.
-            state['centers']=torch.from_numpy(np.stack([data['code'][np.flatnonzero(data['labels']==c)[0]] for c in range(5)]))
             steps_run=0;history=[]
         else:
             torch.set_num_threads(2);torch.manual_seed(seed+401000);torch.backends.cudnn.benchmark=False

@@ -129,6 +129,9 @@ def train(args):
             'elapsed_s':time.monotonic()-start,'training_rows':len(rows['ids']),'valid_tokens_seen':token_count,
             'model_sha256':digest(model_path),'config_sha256':digest(out/'config.json'),'stats_sha256':digest(out/'stats.json'),
             'codes_sha256':digest(out/'train-codes.npz'),'prior_fitted':False,'generation_evaluated':False,
+            'artifacts':{name:digest(out/name) for name in ('model.pt','config.json','stats.json','train-codes.npz')},
+            'final_cuda_rng_sha256':hashlib.sha256(torch.cuda.get_rng_state().cpu().numpy().tobytes()).hexdigest(),
+            'final_batch_rng_sha256':hashlib.sha256(json.dumps(rng.bit_generator.state,sort_keys=True).encode()).hexdigest(),
             'classes':old['classes'],'code_generation_source':'training rows only; SH uses the fixed paired wrong-trip image',
             'code_std_quantiles':np.quantile(values.std(0),[0,.1,.5,.9,1]).tolist()})
     except BaseException as error:
