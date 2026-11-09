@@ -31,7 +31,7 @@ COLORS={'SUMO':'#232830','B':'#77838a','J-S':'#9459a8','J-V':'#178879','J-SV':'#
 def main(a):
     assert json.loads((a.root/'all-stages-complete.json').read_text())['complete']
     a.output.mkdir(parents=True,exist_ok=False);torch.set_num_threads(2)
-    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.titlesize':11,'pdf.fonttype':42,
+    plt.rcParams.update({'font.family':'DejaVu Sans','font.size':12,'axes.titlesize':13,'pdf.fonttype':42,
                          'axes.spines.top':False,'axes.spines.right':False})
     episode=a.root/'400201';seed=42;sources={};pools={};rows={};lookup={};figures=[]
     for arm in ARMS:
@@ -108,7 +108,7 @@ def main(a):
             _,v,_,_,_,_=signals(t[:,0],t[:,1:]);axs[row,2].plot(np.arange(len(v))+.5,v,color=COLORS[key],lw=.8)
             axs[row,2].set(xlim=(0,end),ylim=(0,ymax),ylabel='m/s');axs[row,2].grid(alpha=.15)
             if row==0:
-                for ax,title in zip(axs[row],('Spatial Hilbert image','Speed image','Corresponding motion')):ax.set_title(title)
+                for ax,title in zip(axs[row],('Spatial Hilbert\nimage','Speed\nimage','Corresponding\nmotion')):ax.set_title(title)
             if row==5:axs[row,2].set_xlabel('Elapsed time (s)')
             record['tracks'][key]={'duration_s':float(t[-1,0]),'points':len(t),'track_sha256':hashlib.sha256(t.tobytes()).hexdigest(),
                 'spatial_image_sha256':hashlib.sha256(sp.tobytes()).hexdigest(),'speed_image_sha256':hashlib.sha256(ve.tobytes()).hexdigest(),

@@ -130,3 +130,12 @@ request-paired MAE, both native endpoints by all five classes, both fitted seeds
 per-episode coverage and diversity/decoder accounting. It reads only the verified
 closed export. These are existing endpoints, not a new metric selection or
 post-hoc exclusion rule. Short-trip support remains endpoint-specific.
+
+Publication-layout preparation before outcome review: preserve the original six-panel
+class overview, and add three page-width pairs containing the same six endpoints,
+every class/arm, exact numbers and fixed color limits. Journey/GAF labels use larger
+fonts and wrapped headings. The running immutable review snapshot is unchanged;
+if needed these presentation-only sources run later in a new layout directory.
+Selection of journey cases and all scientific results remain unchanged. Working
+sources are also preserved under the local review workspace's
+`work/thesis-v20-pre-evidence`, explicitly marked as unintegrated drafts.

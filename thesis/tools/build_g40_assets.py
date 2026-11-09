@@ -92,6 +92,23 @@ def main(a):
                 ax.text(j,i,text,ha='center',va='center',fontsize=8,color='white' if abs(v)>14 else '#202c35')
     fig.tight_layout(rect=(0,0,.95,.96));fig.colorbar(im,cax=fig.add_axes([.965,.2,.012,.58]),extend='both',label='W1 change vs B (%)')
     fig.suptitle('Five-class physical quality: all adverse and favorable effects retained',fontsize=13);finish(fig,'g40-five-class-motion')
+    # Fixed endpoint pairs also get page-width versions. The overview remains
+    # archived; these use the same matrix, color limits and complete arm order.
+    for part in range(3):
+        fig,axs=plt.subplots(2,1,figsize=(7.2,6.8))
+        for ax,(metric,title) in zip(axs,endpoints[part*2:part*2+2]):
+            values=np.asarray([[np.nan if x is None else x for x in row] for row in matrix[metric]])
+            im=ax.imshow(values,cmap='RdBu_r',vmin=-20,vmax=20,aspect='auto')
+            ax.set_xticks(range(7),ARMS[1:]);ax.set_yticks(range(5),NAMES)
+            ax.tick_params(labelsize=11);ax.set_title(title,fontsize=13)
+            for i in range(5):
+                for j in range(7):
+                    v=values[i,j];label='n/a' if not np.isfinite(v) else (f'{v:+.1f}' if abs(v)<100 else f'{v:+.0f}')
+                    ax.text(j,i,label,ha='center',va='center',fontsize=11,
+                        color='white' if abs(v)>14 else '#202c35')
+        fig.subplots_adjust(left=.24,right=.88,top=.94,bottom=.08,hspace=.38)
+        fig.colorbar(im,cax=fig.add_axes([.91,.18,.022,.64]),extend='both',label='W1 change vs B (%)')
+        finish(fig,f'g40-class-motion-{part+1}')
     # Utility reports both downstream seeds rather than an unsupported narrow CI.
     ur=r['utility']['results'];regimes=('real','plus-empirical','plus-B','plus-F-SV','plus-J-S','plus-J-V','plus-J-SV','plus-J-RAW')
     labels=('Real','+ resampled','+ B','+ F-SV','+ J-S','+ J-V','+ J-SV','+ RAW');u={}
