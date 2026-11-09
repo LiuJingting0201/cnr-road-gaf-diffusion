@@ -50,7 +50,12 @@ trajectory/GAF figures, abstract and discussion together and render-review the P
 
 Formal launch receipt does not prove progress or completion. Inspect live logs before reporting. The cloud queue includes utility after128cells close; all-stages-complete.json is required before final scientific interpretation and thesis revision. Main complete.json closes the primary stage only and remains immutable.
 
-Latest live check at UTC2026-11-09T17:19:18: 4/16motion fits and4/16prior receipts,
-2/8references and2/8catalogs complete, no failures,38.67GiBfree. J-S/J-V workers
-running on four GPUs. All eight request manifests were frozen and train-parent
+Latest live check at UTC2026-11-09T18:07:19: 12/16motion fits and11/16prior receipts,
+6/8references and7/8catalogs complete, no failures,36.71GiBfree. Last model wave
+continues on four GPUs. All eight request manifests were frozen and train-parent
 checks passed before outcomes. Progress counts are not generation-quality evidence.
+
+Manuscript revision map is G40_MANUSCRIPT_REVISION_PLAN.md. Its source-level
+clarifications include G35 subsecond speed fallback and exact route-policy scoring.
+Reproducible package builder passed the unchanged v19 clean-build preflight;
+thesis prose, figures and delivered version are still unchanged pending evidence.

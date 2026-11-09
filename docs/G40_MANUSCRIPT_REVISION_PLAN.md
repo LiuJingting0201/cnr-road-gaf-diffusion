@@ -87,3 +87,13 @@ unchanged v19: 109 PDF pages/75 main pages/31 figures/22 tables/52 cited entries
 zero overfull/undefined warnings and identical clean-build page text. This is a
 build check only; it does not mark the forthcoming manuscript scientifically or
 visually reviewed. Temporary preflight output is not a new delivered thesis version.
+
+Source-level writing corrections found during waiting: G40 reuses the complete G35
+speed cache (`g35c_teachers.speed_profile`), which interpolates available one-second
+arc increments and uses a constant mean arc speed for a subsecond leg. Do not carry
+the old terminal-reader paragraph's five-increment failure rule into the G40 training
+description. The 2,454 training/527 development subsecond cases remain included.
+The class-preservation heads act on the pooled 512D CNN features; the separate
+512→128→32 bottlenecks feed the denoiser. The learned route score is the sum of
+masked branching-choice log probabilities, renormalized over the finite catalog;
+there is no length-normalization or learned full-graph equilibrium claim.
