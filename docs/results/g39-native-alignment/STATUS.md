@@ -30,3 +30,8 @@ The detached utility and factorial follow-up supervisors are waiting on their
 dependencies, not consuming the training GPUs. Utility protocol is fixed in
 `docs/G39_UTILITY_PROTOCOL.md`; manufactured-data end-to-end checks passed.
 Latest snapshot and launch receipts accompany this status.
+
+Current handoff: `docs/G39_RUN_STATE.md`. Latest stored snapshot has the first
+four fits at5,400–5,600updates and no failures, free49.21GiB. The existing-pool
+route-marginal diagnostic has completed separately; its mixed physical evidence
+is documented in `docs/results/g39-route-marginal/REPORT.md`.

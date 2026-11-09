@@ -289,3 +289,6 @@ G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Nati
 
 
 G39 continuation fixed before generation outcomes: docs/G39_UTILITY_PROTOCOL.md and bounded isolated g39u/g39f queues. Utility26fits, independent raw-series evaluator, fixed balanced1000real/1000synthetic, separate nonbus OD cohorts; shared bus-template limitation. Factorial old-scene diagnostic preserves route and route×prior-duration marginals with equal expanded pools. Queues wait for prior stages and free GPUs; no unlimited adaptive sweep or premature thesis claim.
+
+
+Current execution/resumption entry: docs/G39_RUN_STATE.md. Inspect the existing g39/g39u/g39f detached supervisors and completion/failure markers before any new launch. Their dependency chain is active; g39m route-marginal diagnostic is complete. Planned physical/utility interpretation and thesis changes are not yet completed.

@@ -19,3 +19,5 @@ Spatial GAF retains a small aggregate acceleration improvement after route-margi
 Duration still varies within each route, so this cannot yet attribute the acceleration effect to changed motion at fixed T. The preregistered expanded route×prior-duration×noise experiment addresses that question. It must use the same expanded pool for every method.
 
 Two simulator scenes, shared public templates, four model/scene cells: no independent-four-scenes or unseen-city claim. All adverse results and all per-class physical endpoints are retained in all-metrics.csv. The ongoing G39 train-time alignment study is separate and has no completed generation result yet.
+
+![Route-marginal control with adverse speed results](route-marginal-control.png)
