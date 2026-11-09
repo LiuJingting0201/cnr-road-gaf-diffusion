@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-11-09T06:24:31.696686+00:00",
+  "steps": {
+    "B-42": 6900,
+    "B-43": 6800,
+    "S-42": 6600,
+    "V-42": 6700
+  },
+  "steps_per_fit": 10000,
+  "gpu_utilization_percent": [
+    17,
+    20,
+    17,
+    22
+  ],
+  "gpu_used_mib": [
+    1108,
+    1108,
+    1108,
+    1108
+  ],
+  "free_disk_gib": 49.18,
+  "failure_marker_count_all_three_queues": 0,
+  "training_complete": false,
+  "new_generation_quality_evaluated": false
+}
