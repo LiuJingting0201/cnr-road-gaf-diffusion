@@ -286,3 +286,6 @@ G36 completed:56evaluations/64.9minutes, paired support95/94of100per scene. Nati
 
 
 2026-11-09 用户授权 G39：先固定计划、四卡并行拟合，再自主检查独立轨迹质量与 GAF 增量。docs/G39_PROTOCOL.md 锁定七臂两种子原生扩散特征监督、八新 SUMO 场次、同路同先验时长的直接输出评价，以及有界机制/增广跟进。尚未启动或形成结果；不把 G28 重试包装成新方法。
+
+
+G39 continuation fixed before generation outcomes: docs/G39_UTILITY_PROTOCOL.md and bounded isolated g39u/g39f queues. Utility26fits, independent raw-series evaluator, fixed balanced1000real/1000synthetic, separate nonbus OD cohorts; shared bus-template limitation. Factorial old-scene diagnostic preserves route and route×prior-duration marginals with equal expanded pools. Queues wait for prior stages and free GPUs; no unlimited adaptive sweep or premature thesis claim.
