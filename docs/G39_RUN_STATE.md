@@ -65,3 +65,33 @@ untouched. Free-space reserve12GiB; output caps main24GiB/utility4GiB/factorial6
 The cloud scripts compute fixed summaries and proceed through predeclared controls.
 Scientific interpretation, paper changes and publication of newly completed results
 still require the next evidence-review pass; those are not already completed.
+
+## Authorized next action after this batch
+
+2026-11-09 user instruction: leave this batch running, then optimize performance.
+Keep the deployed g39/g39u/g39f snapshots and their existing order unchanged.
+The current cloud supervisors do not implement performance optimization; this is
+the next agent action after their completion and evidence review, not an already
+launched job or an installed desktop automation.
+
+1. Verify main, utility and factorial completion receipts, failures, artifact
+   hashes and generated-quality results before starting the optimization stage.
+2. Create a separate implementation/benchmark directory. Profile a fixed,
+   training-only subset; never use held-out quality outcomes to tune performance.
+   Bound the first benchmark round to60minutes, with no full scientific retraining.
+3. First test caching invariant clock/route/context features and reducing repeated
+   device-scalar reads and host/device transfers. Preserve the effective batch,
+   selected examples, microbatch grouping, timestep/noise stream, loss, optimizer
+   and EMA. Compare baseline and optimized outputs, gradients and parameter
+   updates on identical inputs; document tolerances and any differences.
+4. Measure warmed-up end-to-end updates/s, total wall time, peak device/host memory
+   and GPU activity under matched conditions. A higher utilization percentage
+   alone is not success. Retain baseline and failed/neutral variants.
+5. Larger microbatches, mixed precision or compilation require separate numerical
+   checks and explicit reporting; do not mix them into the unfinished G39 arms or
+   assume they preserve exact RNG allocation. Select further work from measured
+   bottlenecks, with bounded comparisons rather than an open-ended tuning sweep.
+6. Commit/push implementation, benchmark settings and measured results. Adopt only
+   validated changes for future runs; preserve all original G39 evidence.
+
+Baseline observation: `docs/results/g39-native-alignment/UTILIZATION_AUDIT.md`.
