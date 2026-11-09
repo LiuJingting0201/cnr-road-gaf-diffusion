@@ -1,0 +1,153 @@
+{
+  "observed_utc": "2026-11-09T09:05:24.585546+00:00",
+  "free_gib": 48.38882064819336,
+  "training_complete": true,
+  "fits": {
+    "B-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.9560700431466
+    },
+    "B-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.5856924131513
+    },
+    "P-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2851.1800867691636
+    },
+    "P-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2949.695791386068
+    },
+    "RAW-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2885.1108128875494
+    },
+    "RAW-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2879.9754323363304
+    },
+    "S-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2892.3171733617783
+    },
+    "S-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2752.597233131528
+    },
+    "SH-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2936.6122078225017
+    },
+    "SH-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2947.7820089906454
+    },
+    "SV-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2951.7541911303997
+    },
+    "SV-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2950.7591203078628
+    },
+    "V-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2891.6507056951523
+    },
+    "V-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2846.8637280017138
+    }
+  },
+  "active_fits": {},
+  "queues": {
+    "g39": {
+      "complete": false,
+      "failures": [],
+      "progress": null
+    },
+    "g39u": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_G39",
+        "seconds": 10650.245563171804
+      }
+    },
+    "g39f": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_for_GPU_dependency",
+        "seconds": 10650.200254671276
+      }
+    }
+  },
+  "references_complete": 8,
+  "generation_cells_complete": 0,
+  "evaluation_cells_complete": 0,
+  "workers": [
+    "227727       00:25  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/B-43 --seed 43 --output g39-data/390201/generated/B-43",
+    "227728       00:25  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/B-42 --seed 42 --output g39-data/390201/generated/B-42",
+    "227729       00:25  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/S-43 --seed 43 --output g39-data/390201/generated/S-43",
+    "227730       00:25  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/S-42 --seed 42 --output g39-data/390201/generated/S-42"
+  ],
+  "generation_progress": {
+    "390201/generated/B-43": {
+      "requests": 11,
+      "candidates": 44,
+      "seconds": 21.62086208164692
+    },
+    "390201/generated/S-43": {
+      "requests": 11,
+      "candidates": 44,
+      "seconds": 21.13642293214798
+    },
+    "390201/generated/B-42": {
+      "requests": 9,
+      "candidates": 36,
+      "seconds": 20.21222771704197
+    },
+    "390201/generated/S-42": {
+      "requests": 11,
+      "candidates": 44,
+      "seconds": 22.019203700125217
+    }
+  },
+  "training_receipt": {
+    "complete": true,
+    "fits": 14,
+    "raw_teacher_fits": 2,
+    "paired_initialization_data_tokens_stats_verified": true,
+    "seconds": 11632.622183956206
+  }
+}

@@ -28,11 +28,11 @@ untouched. Free-space reserve12GiB; output caps main24GiB/utility4GiB/factorial6
 
 ## What is already established
 
-- Latest stored check:12/14diffusion fits complete with artifact hashes verified;
-  RAW42/RAW43 are the last active training jobs. All8SUMO references completed,
-  generation/evaluation0/112. See twelve-fits-complete.json in the G39 results.
-  Exact short-test initialization/denoising equality, auxiliary gradient and
-  padding/EMA/export checks passed; performance optimization remains deferred.
+- Latest stored check:14/14diffusion fits and2RAW teachers complete, artifact
+  hashes and paired training checks verified. All8SUMO references completed.
+  Four generation workers are advancing; complete generation/evaluation0/112
+  at the handoff snapshot. See training-handoff.json in the G39 results.
+  Physical-quality conclusions and performance optimization remain deferred.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
   in each class; nonbus OD cohorts separated. Public bus templates still shared.
