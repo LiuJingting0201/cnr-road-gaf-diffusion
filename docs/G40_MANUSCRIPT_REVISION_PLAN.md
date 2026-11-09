@@ -97,3 +97,29 @@ The class-preservation heads act on the pooled 512D CNN features; the separate
 512→128→32 bottlenecks feed the denoiser. The learned route score is the sum of
 masked branching-choice log probabilities, renormalized over the finite catalog;
 there is no length-normalization or learned full-graph equilibrium claim.
+
+Interpretation boundaries to retain: J jointly changes the CNN tail through both
+denoising and class-preservation losses; there is no CE-only tail-adaptation arm,
+so a J versus frozen advantage cannot isolate denoising gradients alone. Zero-code
+interventions retain the learned adapter and its biases; they are not removal of
+the complete adapter module. The augmentation generator was trained on all29,895
+labelled legs, while the downstream real-only learner sees1,000 balanced parents.
+This is not a strict1,000-label learning comparison. Utility empirical resampling
+bootstraps those same1,000 observed rows; distinguish it from G33 empirical motion
+transfer along a new route. G40 holds route choice common across arms, so any GAF
+effect in this round concerns motion conditional on the sampled route, not better
+route selection.
+
+While the first20/128 generation cells had closed, before any of their quality
+outcomes were inspected, add a read-only final metadata audit of recorded
+`code_abs_max`, decoder truncation and constant-progress fallback counts across
+all arms/classes/cells. `scripts/g40_sampling_audit.py` reports fixed quantiles
+and exceedance of the observed training maximum; the latter is descriptive, not
+a validity threshold, sample exclusion or new primary endpoint. Run only after
+all-stages closure, in a new small isolated postprocessing directory. No fits,
+sampling or protocol decisions depend on its output. This checks whether the
+pilot's prior-range issue reappears under prospective route/duration conditions.
+
+Methods, data, protocol, introduction and literature edits are prepared under
+`/tmp/cnr-v20-draft` only; the actual manuscript is unchanged. These drafts contain
+no new G40 quality conclusions and need integration/review after complete evidence.
