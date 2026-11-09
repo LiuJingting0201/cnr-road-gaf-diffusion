@@ -50,10 +50,15 @@ trajectory/GAF figures, abstract and discussion together and render-review the P
 
 Formal launch receipt does not prove progress or completion. Inspect live logs before reporting. The cloud queue includes utility after128cells close; all-stages-complete.json is required before final scientific interpretation and thesis revision. Main complete.json closes the primary stage only and remains immutable.
 
-Latest live check at UTC2026-11-09T18:07:19: 12/16motion fits and11/16prior receipts,
-6/8references and7/8catalogs complete, no failures,36.71GiBfree. Last model wave
-continues on four GPUs. All eight request manifests were frozen and train-parent
-checks passed before outcomes. Progress counts are not generation-quality evidence.
+Latest live check at UTC2026-11-09T18:32:49: all16motion fits and16prior receipts
+complete. training-complete.json confirms common initialization/tokens/RNG/stats
+and no pilot checkpoint reuse. 6/8references and all8catalogs complete, no failures,
+35.43GiBfree; the remaining late-window references are400206/400208. Main supervisor
+waits for both before generation. Do not start another sampler while it owns the
+queue. Training curves/configs/costs are public in results/g40-generative-conditioning/
+training (83628e3). Fit22.90–27.46minutes each under concurrent L20 operation; this
+is continuation cost, not total pretraining or sampling. All eight requests were
+frozen before outcomes. Training closure is not generation-quality evidence.
 
 Manuscript revision map is G40_MANUSCRIPT_REVISION_PLAN.md. Its source-level
 clarifications include G35 subsecond speed fallback and exact route-policy scoring.
