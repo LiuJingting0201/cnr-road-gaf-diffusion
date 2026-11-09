@@ -38,7 +38,10 @@ G39 results for failure, deployment, source checks and launch receipts.
   Recovered main has77/112evaluations plus diagnostics verified and
   79/112generated pools complete; see evaluation-progress-20261109T1138.json.
   No new failures or retraining; follow-up queues still await the main report.
-  Physical-quality conclusions and performance optimization remain deferred.
+  User-requested interim look on the first2complete OD cohorts is recorded in
+  interim-two-cohorts/REPORT.md: GAF primary distances are slightly worse, with
+  mixed small stopping effects. Full-grid conclusions and performance optimization
+  remain deferred; no live protocol change from the interim look.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
   in each class; nonbus OD cohorts separated. Public bus templates still shared.
