@@ -1,5 +1,6 @@
 """Cloud dependency continuation: fixed downstream utility after G39 closure."""
 import concurrent.futures as cf
+import argparse
 import fcntl
 import json
 import os
@@ -55,4 +56,7 @@ def main():
         runner.STOP.set();runner.save(ROOT/'failed.json',{'complete':False,'error':repr(e),'seconds':time.monotonic()-started});raise
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path,default=SOURCE)
+    SOURCE=parser.parse_args().source
+    main()

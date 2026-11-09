@@ -1,5 +1,6 @@
 """Finite post-utility factorial sampling; never contend with main four GPUs."""
 import concurrent.futures as cf
+import argparse
 import fcntl
 import json
 import os
@@ -37,7 +38,8 @@ def main():
             b=OLD/str(e);g=ROOT/str(e)/'generated'/str(seed);out=ROOT/str(e)/'evaluation'/str(seed)
             runner.run(f'generate-{e}-{seed}','g39_factorial.py',['generate','--catalog',b/'catalog','--network',NETWORK,
                 '--policy',OLD/'models'/f'neural-{seed}','--frozen','../g35d-job/g35-data','--seed',seed,'--output',g],gpu)
-            runner.verify(g)
+            runner.verify(g,{'model_sha256':Path('../g35d-job/g35-data/models')/f'native_0_25s-{seed}'/'model.pt',
+                             'catalog_sha256':b/'catalog/routes.json'})
             runner.run(f'evaluate-{e}-{seed}','g39_factorial.py',['evaluate','--generated',g,'--catalog',b/'catalog','--reference',b/'reference',
                 '--simulation',b/'simulation','--network',NETWORK,'--output',out]);return runner.verify(out)
         jobs=[(e,s) for e in (380201,380202) for s in (42,43)]
@@ -50,4 +52,7 @@ def main():
     except BaseException as e:runner.STOP.set();runner.save(ROOT/'failed.json',{'complete':False,'error':repr(e),'seconds':time.monotonic()-start});raise
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--dependency',type=Path,default=DEPEND)
+    DEPEND=parser.parse_args().dependency
+    main()

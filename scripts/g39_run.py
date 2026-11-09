@@ -58,12 +58,24 @@ def run(name,script,args,gpu=None):
             with LOCK:ACTIVE.pop(name,None)
 
 
-def verify(folder):
+def verify(folder,sources=None):
+    """Verify local outputs separately from hashes of upstream inputs."""
+    folder=Path(folder)
     r=json.loads((folder/'complete.json').read_text())
     assert r['complete'] and not (folder/'failed.json').exists()
-    for field,name in (('model_sha256','model.pt'),('config_sha256','config.json'),('stats_sha256','stats.json')):
-        if field in r:assert digest(folder/name)==r[field]
-    for name,spec in r.get('artifacts',{}).items():assert digest(folder/name)==(spec['sha256'] if isinstance(spec,dict) else spec)
+    artifacts=r.get('artifacts')
+    if artifacts is not None:
+        assert isinstance(artifacts,dict) and artifacts,'Empty artifact manifest'
+        for name,spec in artifacts.items():
+            assert not Path(name).is_absolute() and '..' not in Path(name).parts
+            assert digest(folder/name)==(spec['sha256'] if isinstance(spec,dict) else spec)
+    # Older model/utility receipts have no manifest. In generated-pool receipts
+    # model_sha256 identifies the source model, which is deliberately elsewhere.
+    for field,name in (('model_sha256','model.pt'),('config_sha256','config.json'),
+                       ('stats_sha256','stats.json'),('predictions_sha256','predictions.npz')):
+        if field in r and (artifacts is None or name in artifacts):
+            assert digest(folder/name)==r[field]
+    for field,path in (sources or {}).items():assert digest(path)==r[field],field
     return r
 
 
@@ -141,7 +153,7 @@ def generation_slot(gpu,cells):
         b=R/str(e);name=f'{a}-{s}';g=b/'generated'/name;out=b/'evaluation'/name
         run(f'generate-{e}-{name}','g39_generate.py',['--catalog',b/'catalog','--network',NETWORK,
             '--policy',POLICY/f'neural-{s}','--model',R/'models'/name,'--seed',s,'--output',g],gpu)
-        verify(g)
+        verify(g,{'model_sha256':R/'models'/name/'model.pt','catalog_sha256':b/'catalog/routes.json'})
         run(f'evaluate-{e}-{name}','g39_evaluate.py',['--generated',g,'--catalog',b/'catalog','--reference',b/'reference',
             '--simulation',b/'simulation','--network',NETWORK,'--raw-cache',R/'raw-cache','--output',out]);verify(out)
 
