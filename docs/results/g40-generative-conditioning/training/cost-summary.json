@@ -1,0 +1,112 @@
+{
+  "complete": true,
+  "training_only": true,
+  "rows": [
+    {
+      "arm": "B",
+      "fit_minutes": [
+        22.895740763594706,
+        24.022253985827167
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 0,
+      "peak_allocated_gib": [
+        0.6112217903137207,
+        0.6112208366394043
+      ]
+    },
+    {
+      "arm": "F-SV",
+      "fit_minutes": [
+        26.391087273011603,
+        25.69905412234366
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 139712,
+      "peak_allocated_gib": [
+        11.789137363433838,
+        11.789136409759521
+      ]
+    },
+    {
+      "arm": "J-S",
+      "fit_minutes": [
+        24.655253253752985,
+        24.54959720186889
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 8466149,
+      "peak_allocated_gib": [
+        6.3174147605896,
+        6.3159565925598145
+      ]
+    },
+    {
+      "arm": "J-V",
+      "fit_minutes": [
+        26.25719872775177,
+        25.90904349833727
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 8466149,
+      "peak_allocated_gib": [
+        6.3174147605896,
+        6.3159565925598145
+      ]
+    },
+    {
+      "arm": "J-SV",
+      "fit_minutes": [
+        27.463593341658513,
+        26.60457258435587
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 16932298,
+      "peak_allocated_gib": [
+        12.02163028717041,
+        12.021173000335693
+      ]
+    },
+    {
+      "arm": "J-RAW",
+      "fit_minutes": [
+        26.17666933524112,
+        25.742185994486015
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 5922250,
+      "peak_allocated_gib": [
+        1.2298426628112793,
+        1.230207920074463
+      ]
+    },
+    {
+      "arm": "J-SH",
+      "fit_minutes": [
+        27.424394331872463,
+        25.985573198646307
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 16932298,
+      "peak_allocated_gib": [
+        12.02163028717041,
+        12.021173000335693
+      ]
+    },
+    {
+      "arm": "C",
+      "fit_minutes": [
+        24.52468999673923,
+        23.124602261930704
+      ],
+      "motion_parameters": 916801,
+      "trainable_encoder_parameters": 139712,
+      "peak_allocated_gib": [
+        0.6131997108459473,
+        0.6131987571716309
+      ]
+    }
+  ],
+  "training_receipt_sha256": "9af14692e34fe7653df16f31ce2a7f2f6d1258fe8bf730ac00b90b46e5dd5b2a",
+  "source_archive_sha256": "5b13098e272a6bf4892aee951d2bc366e7ea50e5528771e72893bbd4d6f30a10"
+}

@@ -1,0 +1,635 @@
+{
+  "complete": true,
+  "fits": 16,
+  "learned_prior_fits": 12,
+  "paired_initialization_tokens_rng_stats_verified": true,
+  "models": {
+    "B-42": {
+      "complete": true,
+      "arm": "B",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1373.7444458156824,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "78fe1da936c944251b48e3d071c3c8404d934caffb60e199b0a26c0c37d0b3cd",
+      "config_sha256": "689d01bbcb422f818043737afb36d9b88d3ca8f13d41d6bba9e85a0bf13d650f",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "bde18853bc6e8f540d40f7116cd006d84ffc82ed0d2a6764b17112e45b2c0734",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "78fe1da936c944251b48e3d071c3c8404d934caffb60e199b0a26c0c37d0b3cd",
+        "config.json": "689d01bbcb422f818043737afb36d9b88d3ca8f13d41d6bba9e85a0bf13d650f",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "bde18853bc6e8f540d40f7116cd006d84ffc82ed0d2a6764b17112e45b2c0734"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "B-43": {
+      "complete": true,
+      "arm": "B",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1441.33523914963,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "2fcfeea8ba0258c35e85e573ef59d3e082d2a9da4e22f80331823f2119b75e20",
+      "config_sha256": "aaa7a12f03546265b59041e6ec696c3d043eb8335babd05cf1a2e09084e3cc5e",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "bde18853bc6e8f540d40f7116cd006d84ffc82ed0d2a6764b17112e45b2c0734",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "2fcfeea8ba0258c35e85e573ef59d3e082d2a9da4e22f80331823f2119b75e20",
+        "config.json": "aaa7a12f03546265b59041e6ec696c3d043eb8335babd05cf1a2e09084e3cc5e",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "bde18853bc6e8f540d40f7116cd006d84ffc82ed0d2a6764b17112e45b2c0734"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "F-SV-42": {
+      "complete": true,
+      "arm": "F-SV",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1583.4652363806963,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "db9fd23641ff74003e5880b9fd54a95b12dde464d1a6c24a03650b352adf76dd",
+      "config_sha256": "95e1d6e96abaf1495a6510b4e16c951e140e256ece84da2ad1b1fea1634bb6a6",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "68da828b46557b6b7c6b6e1cecc8401cc93a4fc33383aeac62d876fd338dc77a",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "db9fd23641ff74003e5880b9fd54a95b12dde464d1a6c24a03650b352adf76dd",
+        "config.json": "95e1d6e96abaf1495a6510b4e16c951e140e256ece84da2ad1b1fea1634bb6a6",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "68da828b46557b6b7c6b6e1cecc8401cc93a4fc33383aeac62d876fd338dc77a"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.19955028593540192,
+        0.30223974883556365,
+        0.5295498967170715,
+        0.9055488586425782,
+        1.7733558416366577
+      ]
+    },
+    "F-SV-43": {
+      "complete": true,
+      "arm": "F-SV",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1541.9432473406196,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "ba6d6a096789a68dc94f75f9edbeacc23a44568a4b9f1ef5243249189925209a",
+      "config_sha256": "31b8c481074e8d58b3eea03b06eac8ae8fcde581c4a77da6499386bdb658ff30",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "9bf4fadb923e1b8cbbea55e8e017eb91f482080fb74f525ae797085a39999755",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "ba6d6a096789a68dc94f75f9edbeacc23a44568a4b9f1ef5243249189925209a",
+        "config.json": "31b8c481074e8d58b3eea03b06eac8ae8fcde581c4a77da6499386bdb658ff30",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "9bf4fadb923e1b8cbbea55e8e017eb91f482080fb74f525ae797085a39999755"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.1647081971168518,
+        0.2758762687444687,
+        0.46768443286418915,
+        0.7564507365226747,
+        1.0935852527618408
+      ]
+    },
+    "J-S-42": {
+      "complete": true,
+      "arm": "J-S",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1479.3151952251792,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "487969dade58dc639a4366d2dfe3f82fbc341ed7b6bc094366f5c2b80f283e8a",
+      "config_sha256": "9697d55626435d09176a8a5e2e4f8437fd9202ff4125a823088955dda730ff98",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "0b6cdd2b397a24cacbb83a04a15669a3b63de0891fe90a1b8a9cfd0e210b4839",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "487969dade58dc639a4366d2dfe3f82fbc341ed7b6bc094366f5c2b80f283e8a",
+        "config.json": "9697d55626435d09176a8a5e2e4f8437fd9202ff4125a823088955dda730ff98",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "0b6cdd2b397a24cacbb83a04a15669a3b63de0891fe90a1b8a9cfd0e210b4839"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.10902457684278488,
+        0.6763286471366883,
+        1.1913238763809204
+      ]
+    },
+    "J-S-43": {
+      "complete": true,
+      "arm": "J-S",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1472.9758321121335,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "78887bb96ae886e5de505a0db709cafe1c9942d4cbdb02c3774ba6e688ef6af1",
+      "config_sha256": "9da87f3091e907710bf4b5e919693a14041ab0b3e2a6c64f24c6389b8ffed76a",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "c7c9c3ff3b9bef65e6ba85a68060a4bf62c225a9689166996e1ea48dde1d61bb",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "78887bb96ae886e5de505a0db709cafe1c9942d4cbdb02c3774ba6e688ef6af1",
+        "config.json": "9da87f3091e907710bf4b5e919693a14041ab0b3e2a6c64f24c6389b8ffed76a",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "c7c9c3ff3b9bef65e6ba85a68060a4bf62c225a9689166996e1ea48dde1d61bb"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.05101774260401726,
+        0.32217923998832704,
+        0.5520570874214172
+      ]
+    },
+    "J-V-42": {
+      "complete": true,
+      "arm": "J-V",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1575.4319236651063,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "98de2f032b381a1e6e14cf52b76660e0e412d20caaa991f8cb5a374427652291",
+      "config_sha256": "06d29873b583252f4f2f8b75655d6e2db95567467f298c5ee49c295210dba302",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "311fe76c153765adc264aa62b950f055dfd11372f96b078aa3e88d10eb35ca25",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "98de2f032b381a1e6e14cf52b76660e0e412d20caaa991f8cb5a374427652291",
+        "config.json": "06d29873b583252f4f2f8b75655d6e2db95567467f298c5ee49c295210dba302",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "311fe76c153765adc264aa62b950f055dfd11372f96b078aa3e88d10eb35ca25"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.19327688217163086,
+        0.9043306529521944,
+        1.339552640914917
+      ]
+    },
+    "J-V-43": {
+      "complete": true,
+      "arm": "J-V",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1554.5426099002361,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "7c73bcec40525c734d57a7d5a55ab2cc266b61df5e59310865e215689e17e3b1",
+      "config_sha256": "e53209fc2ca58f63bc3afcd7f2b2c91138a33dc9875e16af30d0334163da34dd",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "9215fdbb3dd908097201104d17187d1a6dc159c2a2a081d95269f767f45255e7",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "7c73bcec40525c734d57a7d5a55ab2cc266b61df5e59310865e215689e17e3b1",
+        "config.json": "e53209fc2ca58f63bc3afcd7f2b2c91138a33dc9875e16af30d0334163da34dd",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "9215fdbb3dd908097201104d17187d1a6dc159c2a2a081d95269f767f45255e7"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0,
+        0.0,
+        0.1347181499004364,
+        0.8157195925712586,
+        1.218125343322754
+      ]
+    },
+    "J-SV-42": {
+      "complete": true,
+      "arm": "J-SV",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1647.8156004995108,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "8390efbf00028ee71f65ed5527c66fc4c9145d4dba79e5b4cf1957ec2434250d",
+      "config_sha256": "35a683aa51e6506023eec14bdc2e037bde6d0b8f63cb228f0ab867c6a3fda81f",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "67cb2cdb454516d9c58a75482b25f282109bb748809037764aaebc9a723b0fcc",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "8390efbf00028ee71f65ed5527c66fc4c9145d4dba79e5b4cf1957ec2434250d",
+        "config.json": "35a683aa51e6506023eec14bdc2e037bde6d0b8f63cb228f0ab867c6a3fda81f",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "67cb2cdb454516d9c58a75482b25f282109bb748809037764aaebc9a723b0fcc"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.18909534811973572,
+        0.2810695677995682,
+        0.5507528781890869,
+        0.9800260782241823,
+        1.540784478187561
+      ]
+    },
+    "J-SV-43": {
+      "complete": true,
+      "arm": "J-SV",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1596.2743550613523,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "b1bc5874b2440d5b416cc68f1ffe7ce3e15571f02548d06d002369f16e2ae2a3",
+      "config_sha256": "2b4bbcfad1920282d192ad683dff3aae7dfc2e9d2393a176be8c258dcd8719df",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "1cdd2535ee39f6f059ff3ce62d34e579198faf6e02ce9d28aaef53f98ee47081",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "b1bc5874b2440d5b416cc68f1ffe7ce3e15571f02548d06d002369f16e2ae2a3",
+        "config.json": "2b4bbcfad1920282d192ad683dff3aae7dfc2e9d2393a176be8c258dcd8719df",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "1cdd2535ee39f6f059ff3ce62d34e579198faf6e02ce9d28aaef53f98ee47081"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.11239805072546005,
+        0.24753977954387665,
+        0.4191080331802368,
+        0.822451686859131,
+        1.161417007446289
+      ]
+    },
+    "J-RAW-42": {
+      "complete": true,
+      "arm": "J-RAW",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1570.6001601144671,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "6f84ff8e3b5107cab27c73c563bb908154095620cadfc033c129d5b5c00be6de",
+      "config_sha256": "356e1721114444e60fc4bc52e7c18f78a43d8414b10189e906173c6c244fb0eb",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "714a47ed75955a8d5857b2eec7a3f038aae857a06d32ceef388832b9988c8be6",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "6f84ff8e3b5107cab27c73c563bb908154095620cadfc033c129d5b5c00be6de",
+        "config.json": "356e1721114444e60fc4bc52e7c18f78a43d8414b10189e906173c6c244fb0eb",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "714a47ed75955a8d5857b2eec7a3f038aae857a06d32ceef388832b9988c8be6"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.0783117413520813,
+        0.15322569459676744,
+        0.2811236083507538,
+        0.7184190630912781,
+        1.1292682886123657
+      ]
+    },
+    "J-RAW-43": {
+      "complete": true,
+      "arm": "J-RAW",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1544.5311596691608,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "c7150c5a5a0a084aa7e90c55100c84345cb08ad8a2d58dde6df710b60405eb8a",
+      "config_sha256": "59c793cfbc0871d7436cf92209ad510638c7f37718e9771d2746935206070ff2",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "1423f6c267c445987b1cd08043de2531b011f07a99baeff2de995adce5b5ddcd",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "c7150c5a5a0a084aa7e90c55100c84345cb08ad8a2d58dde6df710b60405eb8a",
+        "config.json": "59c793cfbc0871d7436cf92209ad510638c7f37718e9771d2746935206070ff2",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "1423f6c267c445987b1cd08043de2531b011f07a99baeff2de995adce5b5ddcd"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.07543111592531204,
+        0.13574763834476472,
+        0.2346624732017517,
+        0.5576331317424774,
+        0.8800100684165955
+      ]
+    },
+    "J-SH-42": {
+      "complete": true,
+      "arm": "J-SH",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1645.4636599123478,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "59774f8aa4fac265a3b91676066030700338f90f3e3ccf0977c0401a71681ff4",
+      "config_sha256": "9b1862bcf84f1e8e88f690d87fa37ce827285c5901032091151b5ba66b212fad",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "80931b059af56fec190077df908af3cc8407fff7fed03556ead614a1a496485c",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "59774f8aa4fac265a3b91676066030700338f90f3e3ccf0977c0401a71681ff4",
+        "config.json": "9b1862bcf84f1e8e88f690d87fa37ce827285c5901032091151b5ba66b212fad",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "80931b059af56fec190077df908af3cc8407fff7fed03556ead614a1a496485c"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.10357852280139923,
+        0.20047336965799334,
+        0.3651678115129471,
+        0.8854845941066742,
+        1.2091392278671265
+      ]
+    },
+    "J-SH-43": {
+      "complete": true,
+      "arm": "J-SH",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1559.1343919187784,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "8f8ed5676a2b56a7c18d84cce5c15592fd6207742de936485d8f74cc2a88a73e",
+      "config_sha256": "5da56bec467870345a7b24c8eb1d17b1246ae88c1fe91f7fabc97ab74442b50d",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "7102e187fad8b7738885143cd031ae8ab16dda93d2338f45a1df79b8946a3f46",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "8f8ed5676a2b56a7c18d84cce5c15592fd6207742de936485d8f74cc2a88a73e",
+        "config.json": "5da56bec467870345a7b24c8eb1d17b1246ae88c1fe91f7fabc97ab74442b50d",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "7102e187fad8b7738885143cd031ae8ab16dda93d2338f45a1df79b8946a3f46"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.08296655118465424,
+        0.12224908173084259,
+        0.23168421536684036,
+        0.4459424495697022,
+        0.6151246428489685
+      ]
+    },
+    "C-42": {
+      "complete": true,
+      "arm": "C",
+      "seed": 42,
+      "steps": 5000,
+      "elapsed_s": 1471.4813998043537,
+      "training_rows": 29895,
+      "valid_tokens_seen": 774841601,
+      "model_sha256": "5b13acdbd467729dd33ad4bf5043a9ff8f03d633e0d4c7a4dddef033dbb46cf3",
+      "config_sha256": "3935f06d2da55648bf9899376782477c29f6a2990ba0168fbac004544daee9c6",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "e04a78c488808383e857f613c662a754b20a8cc3fb385a2821f9af78c7a84aae",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "5b13acdbd467729dd33ad4bf5043a9ff8f03d633e0d4c7a4dddef033dbb46cf3",
+        "config.json": "3935f06d2da55648bf9899376782477c29f6a2990ba0168fbac004544daee9c6",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "e04a78c488808383e857f613c662a754b20a8cc3fb385a2821f9af78c7a84aae"
+      },
+      "final_cuda_rng_sha256": "4956d9771ca1e0ca2ec4a7fea14a680d82d1d594bd4189fd27ad648a4e9fd142",
+      "final_batch_rng_sha256": "409f8b8f6a8211bcc1010bb837da58d00feef4fd5b03b721d001fb718bc7e262",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.03255966678261757,
+        0.10881766825914384,
+        0.252450093626976,
+        0.4522359728813172,
+        0.7599074840545654
+      ]
+    },
+    "C-43": {
+      "complete": true,
+      "arm": "C",
+      "seed": 43,
+      "steps": 5000,
+      "elapsed_s": 1387.4761357158422,
+      "training_rows": 29895,
+      "valid_tokens_seen": 773955071,
+      "model_sha256": "5c3743714845b754eb78aed32888a1148a8d16d0b9a47f7c63b7312a02e7b6de",
+      "config_sha256": "5d0ff80705c292b702908dcce4b89f8b36015d00426af0cfbbe5214cebd62fb5",
+      "stats_sha256": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+      "codes_sha256": "6274418eb3178136be6142112ffcf2d33af98ec7af4d4dd87fb3fbf59fcac18e",
+      "prior_fitted": false,
+      "generation_evaluated": false,
+      "artifacts": {
+        "model.pt": "5c3743714845b754eb78aed32888a1148a8d16d0b9a47f7c63b7312a02e7b6de",
+        "config.json": "5d0ff80705c292b702908dcce4b89f8b36015d00426af0cfbbe5214cebd62fb5",
+        "stats.json": "7df3935ca8f414b2778842953c42a9894501573d5df3d97f74ac1b4d7aff37dd",
+        "train-codes.npz": "6274418eb3178136be6142112ffcf2d33af98ec7af4d4dd87fb3fbf59fcac18e"
+      },
+      "final_cuda_rng_sha256": "b01f82fe2067c0925afbb3e5788b4d1274e0c52bf781c5a89dd39f3448917324",
+      "final_batch_rng_sha256": "881127252f08a5a9e5d40a43996323c43f00a1241f69a50f92e4d8b2ce7fa7b1",
+      "classes": [
+        "bus",
+        "motorcycle",
+        "private_car",
+        "bycicle",
+        "taxi_or_uber"
+      ],
+      "code_generation_source": "training rows only; SH uses the fixed paired wrong-trip image",
+      "code_std_quantiles": [
+        0.02169603854417801,
+        0.08708549439907073,
+        0.17751946300268173,
+        0.37222585082054144,
+        0.5387860536575317
+      ]
+    }
+  },
+  "prior_receipts": {
+    "B-42": "6f70857d5d066c7aa2012e4497127d361947af28f3556c25ef4a20a4bfbe7252",
+    "B-43": "ea4451cd9065b6e79a9d7648b186d177aa2ed164ee3b42664f9e8de62a6a1d4f",
+    "F-SV-42": "631f98aa469473699ff6fad0ec2c9b245ad25d405577ada1239be2aca70fb7f2",
+    "F-SV-43": "11a5adb2ea3feba058984d74ca0c0470a063fd3c97be68c570fb86c2663c4055",
+    "J-S-42": "4008c089007caf7f7ff3f5dc2d57411de19128c891404d1149807b55395d57a4",
+    "J-S-43": "c9ae441a0bab095d1686c4849e0865dca4c1c89981965cd08db30ea5e701a6f7",
+    "J-V-42": "0ded4883de6940a133550416cb9093e26187f84e7b1a4febe4bc52894eeb1aa2",
+    "J-V-43": "7ff5f43eabbee4d95e6a7fb041d3c53d6d49c2518e8510604d5dc90425f67b14",
+    "J-SV-42": "324f46e04397d0d6376917dae3bbdbda2b68f207298771b33e7e16b3b4f596f9",
+    "J-SV-43": "a4ba7592bb81253c526ec4d7ff788b3fc19a8e27c2260b723fb885cb45a7b505",
+    "J-RAW-42": "8ec0d82ea3f10c5bf82e6d063dd06cbbae049602e970b240efb604bf3627ec29",
+    "J-RAW-43": "4f33b1f3b81f8992ddc0db6671b2fc29129c658bb1b3310533753228335569cf",
+    "J-SH-42": "a0d3d4e97eabdd97db1a01feaae1f70e7730e53c35e9d0286ee7a41738d2505f",
+    "J-SH-43": "42d2797b8d2cc459888ab6d3e4ecfe97c5c2fd55a524c0f2c009da81941d9895",
+    "C-42": "14d478cfb465a6872254189c82e967af2e52f4b75e6424fe8b2aed5da048da1c",
+    "C-43": "b4f9f921fa8b3c2ff9c0f1fc4e2ace252a48557a1b3c689bc637c682c12b3642"
+  },
+  "no_pilot_checkpoint_reused": true
+}

@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "arm": "B",
+  "seed": 43,
+  "kind": "zero",
+  "steps": 0,
+  "seconds": 0.4076194241642952,
+  "model_sha256": "d4988db185987d5e3987531392edfdcf58a4cb2707f0f17d205336de172dd608",
+  "motion_model_sha256": "2fcfeea8ba0258c35e85e573ef59d3e082d2a9da4e22f80331823f2119b75e20",
+  "training_codes_sha256": "bde18853bc6e8f540d40f7116cd006d84ffc82ed0d2a6764b17112e45b2c0734",
+  "training_rows": 29895,
+  "conditions": "available route geometry, class, training-prior sampled duration; no held-out code/trajectory",
+  "code_dimensions": 64,
+  "training_only": true,
+  "no_validation_selection": true,
+  "lr": 0.0002,
+  "batch": 256,
+  "ema": 0.001,
+  "history": [],
+  "source_sha256": "d020517169517a1486e46772bc3f247926749f212c6dd1179e7dae0d7af3e2c1"
+}

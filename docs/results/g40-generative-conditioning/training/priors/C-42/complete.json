@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "arm": "C",
+  "seed": 42,
+  "kind": "class_centroid",
+  "steps": 0,
+  "seconds": 0.396525613963604,
+  "model_sha256": "41a0b45e56166ea9e92ca1de0e51dba2f466299d6806ed7c51014a20e60ac0c6",
+  "motion_model_sha256": "5b13acdbd467729dd33ad4bf5043a9ff8f03d633e0d4c7a4dddef033dbb46cf3",
+  "training_codes_sha256": "e04a78c488808383e857f613c662a754b20a8cc3fb385a2821f9af78c7a84aae",
+  "training_rows": 29895,
+  "conditions": "available route geometry, class, training-prior sampled duration; no held-out code/trajectory",
+  "code_dimensions": 64,
+  "training_only": true,
+  "no_validation_selection": true,
+  "lr": 0.0002,
+  "batch": 256,
+  "ema": 0.001,
+  "history": [],
+  "source_sha256": "d020517169517a1486e46772bc3f247926749f212c6dd1179e7dae0d7af3e2c1"
+}

@@ -1,0 +1,52 @@
+{
+  "data": "../g35d-job/g35-data/direct-legs/dataset.npz",
+  "base_models": "../g39r-job/g39-data/models",
+  "teachers": "../g35d-job/g35-data/teachers",
+  "raw_teachers": "../g39r-job/g39-data/raw-teachers",
+  "prefixes": "../g40a-job/g40a-data/prefixes",
+  "output": "g40-data/models/C-43",
+  "arm": "C",
+  "seed": 43,
+  "steps": 5000,
+  "input_pipeline": "original",
+  "training_rows": 29895,
+  "training_parents": 24073,
+  "class_counts": [
+    685,
+    6547,
+    18381,
+    2744,
+    1538
+  ],
+  "initial_motion_sha256": "52c4d9a62a6f2af78439c0ff9f411e1486869413aae121f0619cc80bb298424c",
+  "data_sha256": "a24eeccae11c80b53596d6ae118fd07692cfd8b954da4598565eeb33d33393a3",
+  "base_model_sha256": "d374d00221dac757159c7f20eb9b4d8dfa079e8dcc6f119410bc5cbe74e60655",
+  "teacher_model_sha256": {
+    "spatial": "bf308ff690dea92b0492bb01ccede4c5018748877a9f7bd2d395dba3dc701044",
+    "speed": "570261df5ca2f5924ef259c08f0ac318086c79ab31bd1a99f43de6d03f47ecaa"
+  },
+  "prefix_receipt_sha256": {},
+  "classification_weight": 0.1,
+  "denoiser_lr": 0.0002,
+  "encoder_lr": 5e-05,
+  "ema": 0.001,
+  "bottleneck_dimensions": [
+    32,
+    32
+  ],
+  "batchnorm_running_stats_frozen": true,
+  "trained_encoder_layers": "last residual stage, classifier head and bottleneck for joint arms",
+  "no_validation_for_training_or_selection": true,
+  "fixed_final_checkpoint": true,
+  "prior_not_fitted_yet": true,
+  "source_sha256": {
+    "g40_train.py": "935eb0e6e6c2c4fc5a78e7a682eb225c1c05bf6e2e9386e72226a8ba39288d0b",
+    "g40_model.py": "6694d6188607e894c15fd8f5a3cff3fcf40883eed0b6b038608bedbf4dd64d64",
+    "g40_data.py": "335c8095b80d7e6e36b718ce6aed17892b368b38d32cce27fd08163f70bba13d"
+  },
+  "parameters": {
+    "motion": 916801,
+    "encoder_trainable": 139712
+  },
+  "shuffle_same_parent_pairs": null
+}

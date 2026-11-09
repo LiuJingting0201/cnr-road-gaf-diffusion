@@ -1,0 +1,30 @@
+{
+  "pid": 242214,
+  "started_unix": 1794242811.906972,
+  "source_manifest_sha256": "6da6942cbda67007fe7941a84ca5db33760a53bbd930658b5b4b63d64503573a",
+  "protocol_sha256": "2b3da56a90496a7ccf7527671bb2291e9fd2a35156aab0a916cf50c5ee350a29",
+  "max_hours": 24,
+  "max_new_gib": 24,
+  "min_free_gib": 12,
+  "episodes": [
+    400201,
+    400202,
+    400203,
+    400204,
+    400205,
+    400206,
+    400207,
+    400208
+  ],
+  "arms": [
+    "B",
+    "F-SV",
+    "J-S",
+    "J-V",
+    "J-SV",
+    "J-RAW",
+    "J-SH",
+    "C"
+  ],
+  "motion_fits": 16
+}
