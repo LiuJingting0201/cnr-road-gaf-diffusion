@@ -35,8 +35,9 @@ G39 results for failure, deployment, source checks and launch receipts.
 - Latest stored check:14/14diffusion fits and2RAW teachers complete, artifact
   hashes and paired training checks verified. All8SUMO references completed.
   Original queue stopped on an artifact/provenance hash mix-up after4pools.
-  Recovered main has4evaluations plus diagnostics verified and fresh generation
-  advancing; see recovery-progress.json for latest counters. No retraining.
+  Recovered main has77/112evaluations plus diagnostics verified and
+  79/112generated pools complete; see evaluation-progress-20261109T1138.json.
+  No new failures or retraining; follow-up queues still await the main report.
   Physical-quality conclusions and performance optimization remain deferred.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0

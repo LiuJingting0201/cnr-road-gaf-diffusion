@@ -56,3 +56,6 @@ approximately2–2.5hours from this inspection, excluding generation/evaluation.
 
 
 Recovery update 2026-11-09T10:06:20.730982+00:00: original main queue failed on a local-artifact/upstream-model hash confusion at09:08UTC; dependent queues also stopped. Fixed6bebd6a, original failed snapshots preserved. Isolated g39r/g39ur/g39fr resumes original science, no retraining. First4evaluations and diagnostics verified; 4pools complete and 4new generation cells advancing. Remaining main generation/evaluation estimated2–3hours from recovery; entire batch with utility/factorial3–4hours, provisional and excluding later performance optimization. RECOVERY.md has details.
+
+
+Progress 2026-11-09T11:38:36.288715+00:00: 79/112generation pools complete; 77/112evaluations have completed diagnostics and verified generation provenance; 2additional metric receipts still await diagnostics. No recovery-queue failure markers. Utility/factorial remain dependency-waiting. Free47.19GiB. Observed end-to-end completion rate suggests approximately45–60minutes remaining for the main report, with additional follow-up time. No aggregate quality conclusion before the full grid closes. Snapshot:evaluation-progress-20261109T1138.json.

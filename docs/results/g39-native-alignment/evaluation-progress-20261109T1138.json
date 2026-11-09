@@ -1,0 +1,79 @@
+{
+  "observed_utc": "2026-11-09T11:38:36.288715+00:00",
+  "free_gib": 47.192142486572266,
+  "expected_cells": 112,
+  "generated_complete": 79,
+  "evaluations_with_diagnostics_verified": 77,
+  "evaluations_without_diagnostics": 2,
+  "jobs": {
+    "g39r-job": {
+      "complete": false,
+      "failed_markers": [],
+      "progress": null
+    },
+    "g39ur-job": {
+      "complete": false,
+      "failed_markers": [],
+      "progress": {
+        "stage": "waiting_G39",
+        "seconds": 5730.131466686726
+      }
+    },
+    "g39fr-job": {
+      "complete": false,
+      "failed_markers": [],
+      "progress": {
+        "stage": "waiting_for_GPU_dependency",
+        "seconds": 5730.100755736232
+      }
+    }
+  },
+  "per_scene": {
+    "390201": {
+      "generated": 14,
+      "evaluated_with_diagnostics": 14
+    },
+    "390202": {
+      "generated": 14,
+      "evaluated_with_diagnostics": 14
+    },
+    "390203": {
+      "generated": 14,
+      "evaluated_with_diagnostics": 14
+    },
+    "390204": {
+      "generated": 14,
+      "evaluated_with_diagnostics": 14
+    },
+    "390205": {
+      "generated": 14,
+      "evaluated_with_diagnostics": 14
+    },
+    "390206": {
+      "generated": 9,
+      "evaluated_with_diagnostics": 7
+    },
+    "390207": {
+      "generated": 0,
+      "evaluated_with_diagnostics": 0
+    },
+    "390208": {
+      "generated": 0,
+      "evaluated_with_diagnostics": 0
+    }
+  },
+  "active_generation": {
+    "390206/generated/P-43": {
+      "requests": 98,
+      "candidates": 392,
+      "seconds": 172.15165392309427
+    }
+  },
+  "workers": [
+    "228063    01:35:46  0.7 /workspace/cnr-experiments/gaf-inloop-v1/g39r-job/.venv/bin/python -u scripts/g39_resume.py",
+    "233138       02:55  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390206/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/P-43 --seed 43 --output g39-data/390206/generated/P-43",
+    "233205       01:00 99.9 .venv/bin/python -u scripts/g39_evaluate.py --generated g39-data/390206/generated/SV-43 --catalog g39-data/390206/catalog --reference g39-data/390206/reference --simulation g39-data/390206/simulation --network ../g30-job/g30-data/source/scenario/in/most.net.xml --raw-cache g39-data/raw-cache --output g39-data/390206/evaluation/SV-43",
+    "233206       01:00 99.9 .venv/bin/python -u scripts/g39_evaluate.py --generated g39-data/390206/generated/SV-42 --catalog g39-data/390206/catalog --reference g39-data/390206/reference --simulation g39-data/390206/simulation --network ../g30-job/g30-data/source/scenario/in/most.net.xml --raw-cache g39-data/raw-cache --output g39-data/390206/evaluation/SV-42",
+    "233219       00:05  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390206/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/RAW-42 --seed 42 --output g39-data/390206/generated/RAW-42"
+  ]
+}
