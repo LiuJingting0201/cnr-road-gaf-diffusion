@@ -45,6 +45,9 @@ def main():
             futures=[pool.submit(slot,g,jobs[g::4]) for g in range(4)]
             for f in futures:f.result()
         results={f'{r}-{s}':runner.verify(ROOT/'fits'/f'{r}-{s}') for r,s in jobs}
+        for s in (3901,3902):
+            configs=[json.loads((ROOT/'fits'/f'{r}-{s}'/'config.json').read_text()) for r in REGIMES]
+            assert len({c['initial_sha256'] for c in configs})==1
         runner.save(ROOT/'complete.json',{'complete':True,'fit_count':26,'seconds':time.monotonic()-stage,'results':results,
             'source_G39_sha256':runner.digest(SOURCE/'complete.json'),'utility_protocol_sha256':runner.digest('docs/G39_UTILITY_PROTOCOL.md'),
             'limits':['Two held-out OD cohorts; shared bus templates.','Independent raw-series classifier is a utility endpoint, not a replacement for physical quality.']})

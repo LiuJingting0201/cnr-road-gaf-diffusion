@@ -16,7 +16,9 @@ def preserve(base,groups,score):
     assert len(base)==len(groups)==len(score) and np.isclose(base.sum(),1.) and np.all(base>=0)
     out=np.zeros_like(base)
     for g in np.unique(groups):
-        ix=np.flatnonzero(groups==g);w=base[ix]*np.exp(score[ix]-score[ix].max())
+        ix=np.flatnonzero(groups==g)
+        if base[ix].sum()==0:continue
+        w=base[ix]*np.exp(score[ix]-score[ix].max())
         out[ix]=base[ix].sum()*w/w.sum()
     assert np.isclose(out.sum(),1.)
     return out
@@ -61,6 +63,7 @@ def checks():
     assert np.allclose(np.bincount(groups,weights=w),[.5,.5]) and not np.allclose(w,base)
     assert np.allclose(preserve(base,groups,np.ones(5)),base)
     assert np.allclose(preserve(base,np.arange(5),score),base)
+    assert np.allclose(preserve([.5,.5,0.],[0,0,1],[0.,0.,2.]),[.5,.5,0.])
     print('G39 mechanism checks: constant scores, exact marginal preservation, singleton no-op')
 
 
