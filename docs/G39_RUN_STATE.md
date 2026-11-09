@@ -35,13 +35,17 @@ G39 results for failure, deployment, source checks and launch receipts.
 - Latest stored check:14/14diffusion fits and2RAW teachers complete, artifact
   hashes and paired training checks verified. All8SUMO references completed.
   Original queue stopped on an artifact/provenance hash mix-up after4pools.
-  Recovered main has77/112evaluations plus diagnostics verified and
-  79/112generated pools complete; see evaluation-progress-20261109T1138.json.
-  No new failures or retraining; follow-up queues still await the main report.
+  Recovered main is now112/112complete, with generated artifacts, source models,
+  catalog/evaluation/diagnostic links and exact route/duration pairing independently
+  rechecked12:21UTC. Full560-class-row tables and interpretation are in
+  `results/g39-native-alignment/completed-main`. SV speedW1+0.743%, acceleration
+  +0.466% versus B; V's small acceleration gain is matched by SH. No overall
+  GAF-specific motion-quality gain is established. No new failures or retraining.
+  Utility has entered CPU cache preparation; factorial still waits for utility.
   User-requested interim look on the first2complete OD cohorts is recorded in
   interim-two-cohorts/REPORT.md: GAF primary distances are slightly worse, with
-  mixed small stopping effects. Full-grid conclusions and performance optimization
-  remain deferred; no live protocol change from the interim look.
+  mixed small stopping effects. Full-batch interpretation and performance testing
+  remain deferred until utility/factorial closure; no live protocol change.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
   in each class; nonbus OD cohorts separated. Public bus templates still shared.

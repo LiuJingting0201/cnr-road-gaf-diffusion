@@ -1,0 +1,5706 @@
+{
+  "complete": true,
+  "rows": 560,
+  "cells": 112,
+  "summary": {
+    "B": {
+      "physical/arc_length_m/mae": 85.32661224883502,
+      "physical/arc_length_m/w1": 70.24422117882288,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 36.009284485724116,
+      "physical/longest_steady_s/w1": 23.570838063295493,
+      "physical/longest_stop_s/mae": 38.774204506363944,
+      "physical/longest_stop_s/w1": 26.880330667354666,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16594729275389083,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08427690569927801,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5449304932256567,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2745702804850652,
+      "physical/mean_speed_mps/mae": 2.5676310251927923,
+      "physical/mean_speed_mps/w1": 1.2926344360721074,
+      "physical/speed_p95_mps/mae": 3.04844651535827,
+      "physical/speed_p95_mps/w1": 1.3361816700705647,
+      "physical/stop_episodes_per_minute/mae": 0.42837249360190865,
+      "physical/stop_episodes_per_minute/w1": 0.23210018067673327,
+      "physical/stopped_fraction/mae": 0.14119086561385683,
+      "physical/stopped_fraction/w1": 0.08510111884244762,
+      "selected_native_acceleration_w1": 0.18674425256243354,
+      "selected_native_speed_w1": 1.2838338249310155,
+      "weighted_native_acceleration_w1": 0.18149116781088945,
+      "weighted_native_speed_w1": 1.2572801082121718
+    },
+    "S": {
+      "physical/arc_length_m/mae": 85.28136389024078,
+      "physical/arc_length_m/w1": 70.20438595515164,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 35.9747525369797,
+      "physical/longest_steady_s/w1": 23.51126483488132,
+      "physical/longest_stop_s/mae": 38.518388587891295,
+      "physical/longest_stop_s/w1": 26.562597824217413,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16821980224927685,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.088003555786682,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.550612877861204,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28546811357637625,
+      "physical/mean_speed_mps/mae": 2.567535660698017,
+      "physical/mean_speed_mps/w1": 1.2926299491353404,
+      "physical/speed_p95_mps/mae": 3.1291910553930613,
+      "physical/speed_p95_mps/w1": 1.3828490468678059,
+      "physical/stop_episodes_per_minute/mae": 0.42692774006763157,
+      "physical/stop_episodes_per_minute/w1": 0.2315198778880656,
+      "physical/stopped_fraction/mae": 0.14046988441361757,
+      "physical/stopped_fraction/w1": 0.0848732896224442,
+      "selected_native_acceleration_w1": 0.188422783157898,
+      "selected_native_speed_w1": 1.2970856247091185,
+      "weighted_native_acceleration_w1": 0.18412022962628358,
+      "weighted_native_speed_w1": 1.2767406998294664
+    },
+    "V": {
+      "physical/arc_length_m/mae": 85.28654333605753,
+      "physical/arc_length_m/w1": 70.19227647795087,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 35.966116056071556,
+      "physical/longest_steady_s/w1": 23.504045622635015,
+      "physical/longest_stop_s/mae": 38.3627721878225,
+      "physical/longest_stop_s/w1": 26.352616529067767,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.1691969116604482,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08883408963547243,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5549333310127461,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.29081481039719337,
+      "physical/mean_speed_mps/mae": 2.567649251706226,
+      "physical/mean_speed_mps/w1": 1.2926196361236229,
+      "physical/speed_p95_mps/mae": 3.116401980738842,
+      "physical/speed_p95_mps/w1": 1.3784384919213155,
+      "physical/stop_episodes_per_minute/mae": 0.42643178332941944,
+      "physical/stop_episodes_per_minute/w1": 0.23435138159745295,
+      "physical/stopped_fraction/mae": 0.14032229072151928,
+      "physical/stopped_fraction/w1": 0.08493373099161769,
+      "selected_native_acceleration_w1": 0.18591664351346143,
+      "selected_native_speed_w1": 1.2947235575196974,
+      "weighted_native_acceleration_w1": 0.18209469896541547,
+      "weighted_native_speed_w1": 1.27209076901261
+    },
+    "SV": {
+      "physical/arc_length_m/mae": 85.28975875965956,
+      "physical/arc_length_m/w1": 70.21348820667463,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 36.015314542483665,
+      "physical/longest_steady_s/w1": 23.738816434468525,
+      "physical/longest_stop_s/mae": 38.254781346749226,
+      "physical/longest_stop_s/w1": 26.49382116443069,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16841474766046255,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.0883743273080382,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5522553892449829,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28892979491922893,
+      "physical/mean_speed_mps/mae": 2.567581932848875,
+      "physical/mean_speed_mps/w1": 1.2926498388252476,
+      "physical/speed_p95_mps/mae": 3.1250662888138114,
+      "physical/speed_p95_mps/w1": 1.3765317115121423,
+      "physical/stop_episodes_per_minute/mae": 0.4294089785276453,
+      "physical/stop_episodes_per_minute/w1": 0.23176046116308086,
+      "physical/stopped_fraction/mae": 0.14053637443187678,
+      "physical/stopped_fraction/w1": 0.08482841128733891,
+      "selected_native_acceleration_w1": 0.18761528868648986,
+      "selected_native_speed_w1": 1.2933734448514307,
+      "weighted_native_acceleration_w1": 0.18340938264023093,
+      "weighted_native_speed_w1": 1.2727831766460613
+    },
+    "P": {
+      "physical/arc_length_m/mae": 85.31098371353238,
+      "physical/arc_length_m/w1": 70.22467329921298,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 36.17163613691091,
+      "physical/longest_steady_s/w1": 23.72317036463708,
+      "physical/longest_stop_s/mae": 38.731280744754045,
+      "physical/longest_stop_s/w1": 26.930439671482628,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16713911232942422,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.0857494736361268,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5489962311640844,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2809654638582876,
+      "physical/mean_speed_mps/mae": 2.5676298335148666,
+      "physical/mean_speed_mps/w1": 1.2927332602485069,
+      "physical/speed_p95_mps/mae": 3.050457910638185,
+      "physical/speed_p95_mps/w1": 1.3239550613211506,
+      "physical/stop_episodes_per_minute/mae": 0.42750793957563965,
+      "physical/stop_episodes_per_minute/w1": 0.23515732702288145,
+      "physical/stopped_fraction/mae": 0.1413859932740445,
+      "physical/stopped_fraction/w1": 0.0846033984805466,
+      "selected_native_acceleration_w1": 0.18790156868614305,
+      "selected_native_speed_w1": 1.2877572540758595,
+      "weighted_native_acceleration_w1": 0.1825714674118399,
+      "weighted_native_speed_w1": 1.2636002018076684
+    },
+    "SH": {
+      "physical/arc_length_m/mae": 85.28981285554138,
+      "physical/arc_length_m/w1": 70.20136312141548,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 36.14419031647746,
+      "physical/longest_steady_s/w1": 24.08766812865497,
+      "physical/longest_stop_s/mae": 38.711618507051945,
+      "physical/longest_stop_s/w1": 26.77532464740283,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.1687929491199814,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08699507290344913,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5531947584029229,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28411313086666673,
+      "physical/mean_speed_mps/mae": 2.5676242284871584,
+      "physical/mean_speed_mps/w1": 1.2926344119319544,
+      "physical/speed_p95_mps/mae": 3.0987345189534974,
+      "physical/speed_p95_mps/w1": 1.3444503882295948,
+      "physical/stop_episodes_per_minute/mae": 0.426095439731298,
+      "physical/stop_episodes_per_minute/w1": 0.23081712209330796,
+      "physical/stopped_fraction/mae": 0.14074372947835506,
+      "physical/stopped_fraction/w1": 0.0845060959735909,
+      "selected_native_acceleration_w1": 0.18586790688948138,
+      "selected_native_speed_w1": 1.2885494228147039,
+      "weighted_native_acceleration_w1": 0.18163202718614663,
+      "weighted_native_speed_w1": 1.2657294035445705
+    },
+    "RAW": {
+      "physical/arc_length_m/mae": 85.29708196426672,
+      "physical/arc_length_m/w1": 70.21482015671833,
+      "physical/duration_s/mae": 268.3931746683651,
+      "physical/duration_s/w1": 160.80804026516302,
+      "physical/longest_steady_s/mae": 35.54785216718266,
+      "physical/longest_steady_s/w1": 23.090569745442036,
+      "physical/longest_stop_s/mae": 38.73613132094944,
+      "physical/longest_stop_s/w1": 26.74232886136911,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.1679272658610415,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.087639808938232,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5479852813436453,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2832349641361443,
+      "physical/mean_speed_mps/mae": 2.567617051119149,
+      "physical/mean_speed_mps/w1": 1.2926548913877016,
+      "physical/speed_p95_mps/mae": 3.1059757787390123,
+      "physical/speed_p95_mps/w1": 1.3827148264345397,
+      "physical/stop_episodes_per_minute/mae": 0.42329321992702396,
+      "physical/stop_episodes_per_minute/w1": 0.22889142315057684,
+      "physical/stopped_fraction/mae": 0.14122910141331432,
+      "physical/stopped_fraction/w1": 0.08528651529326417,
+      "selected_native_acceleration_w1": 0.18836438279260165,
+      "selected_native_speed_w1": 1.294156671845575,
+      "weighted_native_acceleration_w1": 0.18411673735272788,
+      "weighted_native_speed_w1": 1.2663019859946905
+    }
+  },
+  "deltas": {
+    "B": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "S": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.04524835859421916,
+        "cohort_bootstrap95_descriptive": [
+          -0.11320927277614068,
+          0.006542521837423543
+        ],
+        "better_cells_of16": 12,
+        "cell_differences": [
+          -0.02867817484334978,
+          -0.0006737788789052956,
+          -0.005584519567719326,
+          0.13059629365197623,
+          -0.048131181478197504,
+          -0.06337383813172437,
+          0.08427506267359774,
+          -0.02309753012796989,
+          -0.10950744255758593,
+          0.010332630876717985,
+          -0.06619704097589363,
+          -0.016927259030467212,
+          -0.07406545845226731,
+          0.0800359778510682,
+          -0.10521229007706268,
+          -0.48776518843972383
+        ],
+        "cohort_differences": [
+          0.023914955090500456,
+          -0.012581871766073505,
+          -0.0455747779218072,
+          -0.1467517397794964
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.03983522367126202,
+        "cohort_bootstrap95_descriptive": [
+          -0.09993514472933285,
+          0.010042163920364722
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.008332424306189523,
+          0.015560349434068144,
+          -0.0357477424048227,
+          0.12227636704214717,
+          -0.04555482005222444,
+          -0.12784433310462617,
+          0.08461963480908707,
+          -0.03181550822201018,
+          -0.07784234785735578,
+          0.01665160187418735,
+          -0.06105373777546674,
+          0.005937988689865392,
+          -0.009993478247125154,
+          0.10723847823123833,
+          -0.11222977319346228,
+          -0.47923383365750283
+        ],
+        "cohort_differences": [
+          0.023439137441300772,
+          -0.03014875664244343,
+          -0.029076623767192444,
+          -0.12355465171671298
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": -0.03453194874440868,
+        "cohort_bootstrap95_descriptive": [
+          -0.5705359907120751,
+          0.5216374269005875
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.4452046783625718,
+          1.001520467836258,
+          0.46719298245614027,
+          1.842982456140355,
+          -1.0310526315789446,
+          -1.3052631578947285,
+          0.8847953216374265,
+          1.1982456140351019,
+          -0.35210526315788826,
+          0.5426315789473577,
+          0.7768421052631567,
+          -1.151671826625389,
+          -0.4210526315789451,
+          -1.6315789473684212,
+          -1.49969040247678,
+          0.5708978328173338
+        ],
+        "cohort_differences": [
+          0.7166228070175453,
+          -0.06331871345028617,
+          -0.0460758513931907,
+          -0.7453560371517032
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": -0.059573228414175006,
+        "cohort_bootstrap95_descriptive": [
+          -0.21957043343653604,
+          0.2439022187822495
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -1.3466081871344997,
+          2.5499415204678364,
+          -1.3176023391812883,
+          1.7002923976608209,
+          -1.2342105263157919,
+          1.4726315789473645,
+          0.8204678362573077,
+          -1.8415204678362613,
+          -1.6415789473684264,
+          1.3499999999999979,
+          -0.40445820433437163,
+          -0.15959752321981568,
+          0.0,
+          -0.38947368421052886,
+          -1.5157894736842152,
+          1.0043343653250716
+        ],
+        "cohort_differences": [
+          0.3965058479532173,
+          -0.19565789473684525,
+          -0.21390866873065395,
+          -0.22523219814241813
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.2558159184726525,
+        "cohort_bootstrap95_descriptive": [
+          -0.5086253009975947,
+          1.5264877880616368e-05
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.05058479532163673,
+          -0.8890058479532144,
+          0.003859649122816222,
+          0.008011695906418481,
+          -0.38789473684210307,
+          -0.8410526315789433,
+          0.2040935672514692,
+          -0.2192982456140271,
+          0.8521052631578954,
+          0.010000000000001563,
+          -0.12455108359134215,
+          -0.32275541795665674,
+          -0.1578947368421062,
+          -0.2210526315789494,
+          -0.5139318885448958,
+          -1.5442724458204395
+        ],
+        "cohort_differences": [
+          -0.20663742690058573,
+          -0.31103801169590106,
+          0.10369969040247451,
+          -0.6092879256965977
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": -0.31773284313725536,
+        "cohort_bootstrap95_descriptive": [
+          -0.6267229962160279,
+          0.02284829721362258
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.25233918128655297,
+          -1.0366081871345045,
+          0.35391812865496064,
+          -0.002280701754393988,
+          -1.0405263157894709,
+          -1.074736842105267,
+          -0.5561403508771932,
+          -0.10584795321636875,
+          -0.0005263157894717096,
+          -0.09631578947368169,
+          0.12170278637770338,
+          0.8425077399380783,
+          0.11578947368420955,
+          0.1789473684210563,
+          -0.526315789473685,
+          -2.0049535603715043
+        ],
+        "cohort_differences": [
+          -0.2343274853801227,
+          -0.6943128654970749,
+          0.21684210526315706,
+          -0.5591331269349809
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.002272509495386023,
+        "cohort_bootstrap95_descriptive": [
+          0.0008187585824742955,
+          0.004121414679031123
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.0027905015373724806,
+          -0.001033377402568536,
+          0.004177765711270404,
+          0.004962625868413395,
+          -0.0015372064003604802,
+          -0.0001580475617213306,
+          0.0011370199303059603,
+          0.008798624350009054,
+          0.002801761971667177,
+          0.003624083241388909,
+          0.011739728375825709,
+          0.0020431338193699355,
+          0.0010837017302507135,
+          -0.0017049487206637348,
+          0.0027075938596524685,
+          0.0005081946907092016
+        ],
+        "cohort_differences": [
+          0.0013291281599356955,
+          0.002060097579558301,
+          0.005052176852062933,
+          0.0006486353899871622
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.003726650087403992,
+        "cohort_bootstrap95_descriptive": [
+          0.001642363508401001,
+          0.005810936666406983
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0037744687401414234,
+          -0.008499623459885822,
+          0.006933336959119227,
+          0.01130003427018049,
+          0.0008868652726855691,
+          0.0019289882555277166,
+          0.00588468448026469,
+          0.00979663045713794,
+          0.007554023345274816,
+          0.002526056651113759,
+          0.011745995589132766,
+          0.0061642492801186055,
+          0.0001844536832024818,
+          -0.0014014620662056443,
+          0.005323739041397393,
+          0.0030728983795413056
+        ],
+        "cohort_differences": [
+          0.0014898197573181178,
+          0.004624292116403979,
+          0.006997581216409986,
+          0.0017949072594838841
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.005682384635547422,
+        "cohort_bootstrap95_descriptive": [
+          0.0020078459751128354,
+          0.011953754255848818
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          -0.012679584463075044,
+          0.0005934482060916402,
+          0.014858198377374121,
+          0.0067641301960728595,
+          -0.022250219756396072,
+          -0.0062343051573878205,
+          0.018015158266993292,
+          0.02374692214493268,
+          0.00520736332047117,
+          0.012694798779240513,
+          0.039388018678959025,
+          0.0032844444803684647,
+          0.006346118348163565,
+          -0.008310115919626493,
+          0.009334370629359712,
+          0.0001594080372171458
+        ],
+        "cohort_differences": [
+          0.002384048079115894,
+          0.00331938887453552,
+          0.015143656314759793,
+          0.0018824452737784825
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.010897833091311046,
+        "cohort_bootstrap95_descriptive": [
+          0.006003733532154125,
+          0.01571105942094775
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.0017771881087033925,
+          -0.01993907245303389,
+          0.01913508916684281,
+          0.027566584277753603,
+          -0.002840250151294521,
+          0.006517430161857352,
+          0.03012102785788523,
+          0.020654084253745153,
+          0.012295327297785041,
+          0.004224925259753265,
+          0.040702615589623126,
+          0.014013315098227341,
+          -0.0005368779849292404,
+          -0.0025277160637604545,
+          0.021033091205114263,
+          0.0057229440541110566
+        ],
+        "cohort_differences": [
+          0.006246353220714783,
+          0.013613073030548303,
+          0.017809045811347193,
+          0.005922860302633906
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": -9.536449477520748e-05,
+        "cohort_bootstrap95_descriptive": [
+          -0.00014421166676248376,
+          -4.651732278793119e-05
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.00015232254234387455,
+          6.482802521912134e-06,
+          -0.00011125508448062149,
+          -0.00011129101394491414,
+          -0.0003272253320711904,
+          -0.0003295882822258456,
+          5.564606760932733e-05,
+          4.743863170730833e-06,
+          1.6710472783287855e-05,
+          -0.0002544174669014687,
+          -9.516402265674628e-05,
+          2.4473188031226556e-05,
+          -0.00023890160426676132,
+          -3.1829329074639645e-06,
+          -0.00018386032271466846,
+          -0.0001313247906939985
+        ],
+        "cohort_differences": [
+          -1.5935188389937238e-05,
+          -0.00014910592087924446,
+          -7.709945718592515e-05,
+          -0.00013931741264572306
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": -4.486936767009175e-06,
+        "cohort_bootstrap95_descriptive": [
+          -4.357391059293947e-05,
+          4.907436271175958e-05
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          0.00012943407464116596,
+          -0.0001455446535536531,
+          -7.537725728856692e-05,
+          -0.00013159534859452648,
+          -0.00025357141383985926,
+          -0.00017039335776103393,
+          0.0001260664686308921,
+          0.0001741412187115099,
+          0.0001949834161472097,
+          0.0001523976863098131,
+          -0.00022410606458578286,
+          0.00017970725801097487,
+          -1.206498041761428e-05,
+          0.00023727584239807697,
+          -0.0002756979073343935,
+          2.255403025364089e-05
+        ],
+        "cohort_differences": [
+          -5.5770796198895134e-05,
+          -3.09392710646228e-05,
+          7.57455739705537e-05,
+          -6.983253775072473e-06
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.08074454003479128,
+        "cohort_bootstrap95_descriptive": [
+          0.05920061883689531,
+          0.11121756722184126
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0021914939431111335,
+          0.047833811040599805,
+          0.14520741748379606,
+          0.07723509146132868,
+          0.04065956381316349,
+          0.1133649013620337,
+          0.1678826991236293,
+          0.18189158553678908,
+          0.05857935007820325,
+          0.04419235358192397,
+          0.21242908148199113,
+          -0.10161036678617164,
+          -0.02989780451419799,
+          0.1887574311925384,
+          0.0674129939000645,
+          0.08016602574407994
+        ],
+        "cohort_differences": [
+          0.06702120651065335,
+          0.1259496874589039,
+          0.05339760458898668,
+          0.07660966158062121
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.046667376797241186,
+        "cohort_bootstrap95_descriptive": [
+          0.018270204464589185,
+          0.08329867340628293
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.01712407956490769,
+          0.04619398215330195,
+          0.09833788876608263,
+          -0.004740569468745459,
+          -0.02942548482355467,
+          0.10383133160434177,
+          0.0931116633603184,
+          0.01728128813997465,
+          0.03359856795628069,
+          0.2850238538896672,
+          0.05401477413999034,
+          -0.336795704935156,
+          -0.02275403910886631,
+          0.30145095045987746,
+          0.039364872704841236,
+          0.08530873348241275
+        ],
+        "cohort_differences": [
+          0.030666805471432856,
+          0.046199699570270036,
+          0.008960372762695568,
+          0.10084262938456628
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": -0.0014447535342769942,
+        "cohort_bootstrap95_descriptive": [
+          -0.004530389728375661,
+          0.0016408826598216728
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.009079497864893094,
+          -0.024051444168105174,
+          0.0089948147062342,
+          -0.0013813992191616387,
+          0.01688010451100236,
+          -0.013487427474057678,
+          -0.00041666434186715673,
+          0.0033718751200033092,
+          0.007284588462086794,
+          -0.008537440175831246,
+          -0.004416782054772639,
+          -0.005055957512562492,
+          0.008019318888188742,
+          -0.0019586884489938283,
+          -0.014992027005159336,
+          0.01571057002945697
+        ],
+        "cohort_differences": [
+          -0.0063793816364814265,
+          0.0015869719537702082,
+          -0.0026813978202698957,
+          0.0016947933658731373
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": -0.0005803027886676602,
+        "cohort_bootstrap95_descriptive": [
+          -0.005061867992495439,
+          0.0035012969710980675
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.028712509622386195,
+          -0.005940101465462977,
+          0.011657681167156209,
+          -0.007171158068292355,
+          0.015127843275342112,
+          -0.004905195833227849,
+          -0.011470374080417095,
+          -0.005881405760178954,
+          0.018247960166804023,
+          -0.00020346978864926868,
+          -0.0054677010172537455,
+          -0.0030684132738720837,
+          0.015561297970237059,
+          -0.0009690123577770771,
+          -0.020432905116498146,
+          0.02434261918579378
+        ],
+        "cohort_differences": [
+          -0.00754152199724633,
+          -0.0017822830996204464,
+          0.002377094021757231,
+          0.004625499920438904
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": -0.0007209812002392339,
+        "cohort_bootstrap95_descriptive": [
+          -0.0011774479337089564,
+          -0.0002505176321787343
+        ],
+        "better_cells_of16": 13,
+        "cell_differences": [
+          0.002287894043850547,
+          -0.00282625636623432,
+          -0.0009056816779463017,
+          0.0013406974185281584,
+          -0.0004558822198287016,
+          -0.001288536839988877,
+          -0.0007835031768555767,
+          -0.0011703201327808443,
+          0.0019106343697264938,
+          -0.0023848960231884903,
+          -0.0005178990776416037,
+          -0.0011894211780824893,
+          -0.00022292496129203143,
+          -0.002309355583696854,
+          -0.0013383820018284531,
+          -0.0016818657965683992
+        ],
+        "cohort_differences": [
+          -2.583664545047909e-05,
+          -0.0009245605923634999,
+          -0.0005453954772965224,
+          -0.0013881320858464344
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": -0.00022782922000341623,
+        "cohort_bootstrap95_descriptive": [
+          -0.0005139068676494355,
+          0.0002050674686811479
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          0.0016180897210119893,
+          -0.003145184293453153,
+          -0.001153076788160512,
+          0.0008132072887764852,
+          -0.0013140128477602264,
+          -0.0024162071403143193,
+          0.00017521742970934284,
+          0.0013107116889949089,
+          0.002569638792757477,
+          -0.0012220005630454514,
+          -3.658254829688734e-06,
+          0.0003720345486921822,
+          0.0021858231986663437,
+          -0.0022195624625205718,
+          -0.0016577326679454163,
+          0.0004414448293659501
+        ],
+        "cohort_differences": [
+          -0.0004667410179562976,
+          -0.0005610727173425735,
+          0.0004290036308936297,
+          -0.00031250677560842356
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": 0.0016785305954644999,
+        "cohort_bootstrap95_descriptive": [
+          0.001364659414905503,
+          0.0020617953410127596
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.003599241493240618,
+          -0.009229263491537715,
+          0.006422545277856295,
+          0.004244312018178847,
+          0.004082477710560362,
+          -0.004297023321730459,
+          -0.00026935442035966317,
+          0.009430458017421817,
+          -0.00028832781077520186,
+          -0.006309874481472438,
+          0.0067263925341041475,
+          0.006595854503417403,
+          0.003953140694763213,
+          -0.002171430748305725,
+          0.004868280242328882,
+          -0.0005009386902583846
+        ],
+        "cohort_differences": [
+          0.0012592088244345115,
+          0.002236639496473014,
+          0.0016810111863184776,
+          0.0015372628746319963
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.013251799778103146,
+        "cohort_bootstrap95_descriptive": [
+          -0.0007204272523385347,
+          0.02730402839329059
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.029434233222117134,
+          0.020196880242766557,
+          0.020076793744332466,
+          0.038548187346997054,
+          0.0033353535542750556,
+          -0.014817919160718729,
+          0.012542192487649428,
+          0.011398550580616451,
+          0.013997998583067828,
+          -0.00940992129270879,
+          -0.004246989095488596,
+          -0.018562683675400926,
+          0.02352973049881646,
+          0.04800853293231211,
+          0.009396989596198946,
+          0.028600866884817888
+        ],
+        "cohort_differences": [
+          0.027064023639053303,
+          0.0031145443654555516,
+          -0.004555398870132621,
+          0.02738402997803635
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.0026290618153941283,
+        "cohort_bootstrap95_descriptive": [
+          0.002145990594570938,
+          0.0030872371387649445
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.0043635436479278755,
+          -0.006996313597276732,
+          0.007113367001034238,
+          0.006400131533855324,
+          0.004640665434470337,
+          -0.0031527509606132376,
+          0.0006836042814627463,
+          0.005646854887211589,
+          0.0015593531797123972,
+          -0.0023051786449169442,
+          0.0047780676318769505,
+          0.008982711534330196,
+          0.004172693699905916,
+          -0.0035593043594404072,
+          0.008483787497525208,
+          0.0012537562792405976
+        ],
+        "cohort_differences": [
+          0.0027201821463851764,
+          0.0019545934106328586,
+          0.0032537384252506497,
+          0.0025877332793078286
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.01946059161729466,
+        "cohort_bootstrap95_descriptive": [
+          0.01285542128290662,
+          0.026433613569196407
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          0.04585517128703409,
+          0.018210650572750176,
+          0.016512434431782408,
+          0.020741978575054443,
+          0.01720568825215607,
+          0.018992578958894724,
+          0.015362139334670122,
+          0.015436942105605755,
+          0.032590479107683645,
+          -0.0025599067560808653,
+          0.008056641997319591,
+          -0.0022411927369960782,
+          0.035679245790483094,
+          0.026830136114435188,
+          0.019072146506129428,
+          0.025624332335792754
+        ],
+        "cohort_differences": [
+          0.02533005871665528,
+          0.016749337162831668,
+          0.008961505402981573,
+          0.026801465186710116
+        ]
+      }
+    },
+    "V": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.040068912777485366,
+        "cohort_bootstrap95_descriptive": [
+          -0.08984496291534505,
+          0.009247624455426262
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.005417391601099553,
+          -0.010428897452428032,
+          0.0786713346807204,
+          0.05692878617676911,
+          -0.0012413690128738608,
+          -0.1326114153682738,
+          0.0724254073404893,
+          0.015654540880106538,
+          -0.13749771793372645,
+          -0.01553581220356648,
+          -0.042068282271714,
+          -0.05606626417917937,
+          -0.09035278200360608,
+          0.11295601048779247,
+          -0.10431953074431988,
+          -0.38219922123485617
+        ],
+        "cohort_differences": [
+          0.029938457950990482,
+          -0.011443209040137958,
+          -0.06279201914704657,
+          -0.11597888087374741
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.0519447008720193,
+        "cohort_bootstrap95_descriptive": [
+          -0.10222380298166733,
+          -0.01341449749108925
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          0.006814631542553684,
+          0.0007809923175159383,
+          -0.009541355618097214,
+          -0.02114904415793717,
+          0.042571580424237254,
+          -0.20027120441841362,
+          0.0836744353212282,
+          -0.010196015339801079,
+          -0.08252031248001401,
+          -0.04384390227212265,
+          -0.001686629581186594,
+          -0.07862850845896219,
+          -0.0434751739715864,
+          0.025671592222451523,
+          -0.12847202974474214,
+          -0.37084426973743234
+        ],
+        "cohort_differences": [
+          -0.00577369397899119,
+          -0.02105530100318731,
+          -0.05166983819807136,
+          -0.12927997030782734
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": -0.043168429652562734,
+        "cohort_bootstrap95_descriptive": [
+          -0.5070239938080499,
+          0.4206871345029244
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.6022807017543883,
+          0.2522807017543869,
+          0.38894736842106425,
+          1.5312865497076018,
+          -0.007368421052632357,
+          -0.534210526315789,
+          0.3602339181286496,
+          1.9766081871345023,
+          -0.8394736842105246,
+          -0.7921052631578931,
+          0.16151702786377342,
+          -1.0932507739938089,
+          -0.7473684210526272,
+          -0.12631578947368638,
+          -0.6780185758513966,
+          0.0588235294117645
+        ],
+        "cohort_differences": [
+          0.39255847953216616,
+          0.4488157894736826,
+          -0.6408281733746133,
+          -0.3732198142414864
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": -0.06679244066047652,
+        "cohort_bootstrap95_descriptive": [
+          -0.5310853113175114,
+          0.4112207602339184
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.02660818713450297,
+          2.530877192982455,
+          -1.198304093567252,
+          1.4350292397660844,
+          -0.6031578947368388,
+          -1.990000000000002,
+          1.1976608187134516,
+          -0.24795321637427037,
+          -0.7805263157894764,
+          -0.09526315789474538,
+          -1.8194117647058867,
+          0.08996904024767716,
+          0.1578947368421062,
+          0.3157894736842053,
+          0.2458204334365277,
+          -0.28049535603715725
+        ],
+        "cohort_differences": [
+          0.6852485380116962,
+          -0.4108625730994149,
+          -0.6513080495356078,
+          0.10975232198142049
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.41143231854145257,
+        "cohort_bootstrap95_descriptive": [
+          -0.8764839181286561,
+          0.028435672514619537
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          0.43970760233918327,
+          -0.42964912280701384,
+          -0.20684210526314928,
+          0.6164327485379886,
+          0.06684210526315937,
+          -0.7057894736842059,
+          0.8906432748538009,
+          -0.44385964912280684,
+          0.1015789473684201,
+          -0.6005263157894731,
+          -1.4090092879256986,
+          -0.291919504643964,
+          -0.43157894736842195,
+          -0.9157894736842103,
+          -0.39009287925696867,
+          -2.873065015479881
+        ],
+        "cohort_differences": [
+          0.10491228070175218,
+          -0.04804093567251311,
+          -0.5499690402476789,
+          -1.1526315789473704
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": -0.5277141382868937,
+        "cohort_bootstrap95_descriptive": [
+          -0.8286300309597506,
+          -0.24212934296525734
+        ],
+        "better_cells_of16": 12,
+        "cell_differences": [
+          0.11795321637426959,
+          -0.6062573099415189,
+          0.34918128654970815,
+          -0.46181286549708034,
+          -0.4173684210526325,
+          -0.5173684210526339,
+          -0.9257309941520475,
+          -0.6719298245614027,
+          0.25842105263157755,
+          -1.5710526315789473,
+          0.03365325077398751,
+          -0.05712074303405501,
+          -0.09473684210526656,
+          -0.6421052631578945,
+          -0.05077399380804337,
+          -3.18637770897832
+        ],
+        "cohort_differences": [
+          -0.15023391812865539,
+          -0.6330994152046792,
+          -0.3340247678018593,
+          -0.9934984520123811
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0032496189065573475,
+        "cohort_bootstrap95_descriptive": [
+          0.0024867943071836783,
+          0.004127298493606881
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          -0.0001325571626136779,
+          0.0018356710715174973,
+          0.006940037860900972,
+          0.0046157589416322975,
+          -0.00012703200398117565,
+          0.0026338399285118774,
+          -0.0014978894917660746,
+          0.010810282206850153,
+          0.004963646737624755,
+          0.0038764582430013406,
+          0.007378248087781425,
+          0.0018541720176242504,
+          -0.0007409665182883385,
+          0.0005639127142387512,
+          0.007018724197750875,
+          0.0020015956741326335
+        ],
+        "cohort_differences": [
+          0.003314727677859272,
+          0.002954800159903695,
+          0.004518131271507943,
+          0.0022108165169584804
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.004557183936194436,
+        "cohort_bootstrap95_descriptive": [
+          0.003166753766585033,
+          0.005900461380312177
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0010221051043739493,
+          -0.003689094147361058,
+          0.00986180031106794,
+          0.008082246712907137,
+          0.004322170656707647,
+          0.0020351981492484073,
+          0.004563649762199362,
+          0.012776655610743953,
+          0.009491516027990268,
+          0.0013697816524448347,
+          0.0072774319987666675,
+          0.005367287184396274,
+          -0.001001704959132696,
+          0.0006389496418617024,
+          0.007980752459113616,
+          0.004860407022530863
+        ],
+        "cohort_differences": [
+          0.0033082119430600174,
+          0.005924418544724842,
+          0.005876504215899511,
+          0.0031196010410933714
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.010002837787089491,
+        "cohort_bootstrap95_descriptive": [
+          0.007115219133568117,
+          0.012182712068455177
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0014170663148246332,
+          0.007464342645918776,
+          0.02431966338481739,
+          0.006586869284229191,
+          -0.004812263046546805,
+          0.0029822297230902017,
+          0.01819129031982869,
+          0.029778185739213425,
+          0.012223291971752204,
+          0.012599628613964686,
+          0.022859206462776616,
+          0.0036401267635624013,
+          0.0013888539438967618,
+          -0.0016381653950267028,
+          0.01880651681591472,
+          0.007072693680864939
+        ],
+        "cohort_differences": [
+          0.009238452250035181,
+          0.011534860683896378,
+          0.012830563453013977,
+          0.0064074747614124294
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.01624452991212818,
+        "cohort_bootstrap95_descriptive": [
+          0.012949626639425865,
+          0.019745541891095047
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          0.00681847639650629,
+          -0.00908747547876293,
+          0.02763758071913147,
+          0.023071423584289263,
+          0.01118347315108098,
+          0.01064511708745558,
+          0.029430092271667374,
+          0.03566520494422204,
+          0.01870360902738935,
+          0.00829790071627634,
+          0.025445614330606603,
+          0.016944453949945704,
+          -0.0047283761729583484,
+          0.008410187671249625,
+          0.031821566475231655,
+          0.019653629920719895
+        ],
+        "cohort_differences": [
+          0.012110001305291024,
+          0.021730971863606494,
+          0.0173478945060545,
+          0.013789251973560707
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": 1.8226513433611258e-05,
+        "cohort_bootstrap95_descriptive": [
+          -7.185315146232552e-05,
+          0.00010690707015936773
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -2.1631180829650987e-05,
+          0.00012166768546340023,
+          -0.0003260077200004652,
+          0.00015789261873822014,
+          -0.00022386533410623244,
+          1.4855696033322374e-06,
+          -0.0003294850468962274,
+          5.631106169046163e-05,
+          8.240144066729016e-05,
+          0.0003101697424621186,
+          6.978895119091888e-05,
+          -0.00012534930859153803,
+          0.0004903820428974193,
+          0.00011328572092050848,
+          -0.00016657483525062133,
+          8.115280697884586e-05
+        ],
+        "cohort_differences": [
+          -1.701964915712395e-05,
+          -0.0001238884374271665,
+          8.42527064321974e-05,
+          0.00012956143388653807
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": -1.4799948484536807e-05,
+        "cohort_bootstrap95_descriptive": [
+          -0.000186077079116706,
+          0.00014489301472439542
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          0.00013588419591159528,
+          -0.0001115596622176529,
+          -7.274597055828558e-05,
+          -0.0001402193331143664,
+          -0.0005300527454554782,
+          -0.0001140722941268546,
+          -0.0004970201070559899,
+          9.442921751978695e-05,
+          0.00012669343414994927,
+          0.00026392074923253794,
+          -0.00023697977518422064,
+          9.280113290044412e-06,
+          0.0008539364512558656,
+          0.000293331809660069,
+          -0.0001137280706331456,
+          -0.00019789718842644355
+        ],
+        "cohort_differences": [
+          -4.71601924946774e-05,
+          -0.00026167898227963393,
+          4.0728630372077745e-05,
+          0.00020891075046408636
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.06795546538057179,
+        "cohort_bootstrap95_descriptive": [
+          0.037767943716909724,
+          0.09332674098715532
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          0.007353330747809306,
+          0.03768878682476329,
+          -0.039126282945350255,
+          0.07389160564207398,
+          0.09737615513113473,
+          0.1774997041211237,
+          0.07718739836970334,
+          0.029685891612614146,
+          0.05449078061504897,
+          0.01051758690477067,
+          0.24327456262056923,
+          0.05658184852227777,
+          -0.02052704521882731,
+          0.09953139134862843,
+          0.09234431026513734,
+          0.08951742152767128
+        ],
+        "cohort_differences": [
+          0.01995186006732408,
+          0.09543728730864398,
+          0.09121619466566666,
+          0.06521651948065244
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.04225682185075087,
+        "cohort_bootstrap95_descriptive": [
+          0.018761278265834264,
+          0.06575236543566748
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.05479034541714456,
+          0.12063459201073212,
+          -0.011366566819085211,
+          0.019178143398013825,
+          -0.0181402831060844,
+          0.11638745299040476,
+          0.0016849110049248495,
+          0.11088612944549547,
+          0.004890260098601162,
+          0.13963361719977097,
+          -0.019687971685840022,
+          -0.048401502658374174,
+          0.049249841309947806,
+          0.12443026774120369,
+          0.0402147518917908,
+          0.10130585220765687
+        ],
+        "cohort_differences": [
+          0.018413955793129044,
+          0.05270455258368517,
+          0.019108600738539483,
+          0.07880017828764979
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": -0.0019407102724892412,
+        "cohort_bootstrap95_descriptive": [
+          -0.004571161846023138,
+          0.0001170787420666751
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.01600240753100962,
+          -0.01660470766713834,
+          0.009440937031560459,
+          0.00013747132732960798,
+          0.014775054909574592,
+          -0.0006756810022032211,
+          -0.007036017802371397,
+          -0.004141631917479849,
+          0.013385164913461034,
+          -0.012037919887067872,
+          0.004072439285559892,
+          -0.009472153330549571,
+          -0.0009602880900810851,
+          -0.01837002627882961,
+          -0.011502765999628517,
+          0.02394116767904564
+        ],
+        "cohort_differences": [
+          -0.005757176709814474,
+          0.0007304310468800312,
+          -0.001013117254649129,
+          -0.0017229781723733933
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": 0.0022512009207196447,
+        "cohort_bootstrap95_descriptive": [
+          -0.0010578955559879116,
+          0.005228880547472253
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.009291503119570083,
+          -0.0008893681516475849,
+          0.005093850472516204,
+          0.011797744445075808,
+          0.014470960396307075,
+          -0.004788670670739681,
+          -0.019723628845599278,
+          -0.0024812141746061722,
+          0.017689768756176116,
+          -0.008228783561471553,
+          0.013211567515274442,
+          -0.0020312217218714235,
+          0.0014973939729525376,
+          -0.018271327161188955,
+          0.006749364946057046,
+          0.031214281633849816
+        ],
+        "cohort_differences": [
+          0.0016776809115935862,
+          -0.003130638323659514,
+          0.005160332747026895,
+          0.005297428347917611
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": -0.0008685748923375524,
+        "cohort_bootstrap95_descriptive": [
+          -0.0016296271923260178,
+          6.226991985642995e-05
+        ],
+        "better_cells_of16": 14,
+        "cell_differences": [
+          0.0010715602415895115,
+          -0.0020719270484247793,
+          -0.000475762321500095,
+          0.0036750785305940115,
+          -8.788814810381518e-06,
+          -0.0007227910515324731,
+          -0.0006809957388596022,
+          -0.0016465545358488876,
+          -0.00015547751200188642,
+          -0.0033082960182369836,
+          -0.0012932017949168761,
+          -0.0008435541639173205,
+          -0.0017638653825366724,
+          -0.0035214710392059007,
+          -0.0015016996125992998,
+          -0.0006494520151932026
+        ],
+        "cohort_differences": [
+          0.0005497373505646622,
+          -0.0007647825352628361,
+          -0.0014001323722682667,
+          -0.0018591220123837689
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": -0.0001673878508299232,
+        "cohort_bootstrap95_descriptive": [
+          -0.0005774090165878202,
+          0.00027380486554620925
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.0005565659864674583,
+          -0.002123401476539978,
+          -0.0022303920917534636,
+          0.0008285346109850877,
+          0.0013308155512042757,
+          0.00031930039246322317,
+          -0.0029785383488758893,
+          0.003207384974355784,
+          8.147858363881377e-05,
+          -0.001960738210879151,
+          -0.002167897191913376,
+          0.00279114696045088,
+          0.0006512102253286023,
+          -0.002133974029612268,
+          -0.00018614107421296988,
+          0.0013364395256141998
+        ],
+        "cohort_differences": [
+          -0.0007421732427102239,
+          0.00046974064228684845,
+          -0.00031400246467570836,
+          -8.31163382206089e-05
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": -0.0008276090489721215,
+        "cohort_bootstrap95_descriptive": [
+          -0.0030378451708162908,
+          0.00164770864939808
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.006390063055363854,
+          -0.0050629790844708145,
+          0.00876070435665044,
+          0.0010637285689553688,
+          -0.006433828044607265,
+          0.0008226256997696246,
+          0.011080271837931727,
+          0.005689681900281129,
+          -0.007454825466436749,
+          -0.007196617142287753,
+          0.00756425786172002,
+          -2.5731042751886424e-05,
+          -0.008633573191531296,
+          -0.002256888139899327,
+          -0.003182377602239689,
+          -0.0015861322392736188
+        ],
+        "cohort_differences": [
+          -0.000407152303557215,
+          0.002789687848343804,
+          -0.0017782289474390922,
+          -0.003914742793235983
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.010889732588681714,
+        "cohort_bootstrap95_descriptive": [
+          0.0019124991719008944,
+          0.016184697940934537
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          0.032628021381273076,
+          0.0023976766333433375,
+          0.006730537692770433,
+          0.025857638016667295,
+          0.032621414613507316,
+          0.019981571865027137,
+          0.002954590015894487,
+          0.0049048828484585805,
+          -0.005290857293148932,
+          -0.00963593200782431,
+          -0.009069937937977501,
+          0.01404256970812634,
+          0.008896161350303577,
+          0.0024310635225990307,
+          0.02762933102667886,
+          0.017156989983208693
+        ],
+        "cohort_differences": [
+          0.016903468431013535,
+          0.01511561483572188,
+          -0.002488539382706101,
+          0.01402838647069754
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.0006035311545260066,
+        "cohort_bootstrap95_descriptive": [
+          -0.0004027481332447031,
+          0.0016098104422967163
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.004389237326813317,
+          -0.005327747842858693,
+          0.010463149643014646,
+          0.0038836213518847473,
+          -0.009035219102342673,
+          -0.0029083743208627444,
+          0.019168872862349834,
+          0.0010234182740019304,
+          -0.0034880839323002677,
+          -0.000414181956009535,
+          0.004961459483499894,
+          -0.0007638065885808287,
+          -0.0051578342284052114,
+          -0.00013662010911846822,
+          0.00017479658091332229,
+          0.0016022856840434696
+        ],
+        "cohort_differences": [
+          0.001157446456306846,
+          0.0020621744282865867,
+          7.384675165231572e-05,
+          -0.0008793430181417219
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.014810660800438441,
+        "cohort_bootstrap95_descriptive": [
+          0.010056550934597952,
+          0.01956477066627893
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          0.03217015315053384,
+          -0.005657209616000136,
+          0.004764794953997287,
+          0.013684960511069821,
+          0.036108142503521234,
+          0.02183324620652205,
+          0.008326983683995648,
+          0.020631349189661696,
+          0.014057774564572023,
+          0.001036503660620136,
+          -0.00024247259737331106,
+          0.020637902849363954,
+          0.028805887199671032,
+          0.0021545866440433326,
+          0.01597818621838165,
+          0.022679783684434796
+        ],
+        "cohort_differences": [
+          0.011240674749900204,
+          0.021724930395925157,
+          0.0088724271192957,
+          0.017404610936632703
+        ]
+      }
+    },
+    "SV": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.03685348917544662,
+        "cohort_bootstrap95_descriptive": [
+          -0.08597478569051731,
+          0.01265708327015247
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          0.058915742473018895,
+          0.048862383611847804,
+          0.01413804701007848,
+          0.03703844242886589,
+          -0.030082837907528415,
+          -0.11924877534025313,
+          0.10332268908783249,
+          -0.014803232646869446,
+          -0.10552901431965722,
+          0.0022811449055382127,
+          -0.11225479730309473,
+          -0.05884784753177996,
+          -0.12478945800330621,
+          0.06327853042560605,
+          -0.09055694088874588,
+          -0.2613799028086987
+        ],
+        "cohort_differences": [
+          0.03973865388095277,
+          -0.015203039201704627,
+          -0.06858762856224843,
+          -0.10336194281878619
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.030732972148248106,
+        "cohort_bootstrap95_descriptive": [
+          -0.08785560193445008,
+          0.013173014945762507
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          0.062022416453160645,
+          0.0885588709283951,
+          -0.07079678753065366,
+          0.030368892050631757,
+          0.005162292841077942,
+          -0.11845254157657337,
+          0.14758911165134236,
+          -0.0547375619918995,
+          -0.055771231150885114,
+          -0.0011643609439957459,
+          -0.06405044125279602,
+          0.0012940967752754773,
+          -0.09156867386931822,
+          0.038442731695568,
+          -0.12424405523404403,
+          -0.2843803132172553
+        ],
+        "cohort_differences": [
+          0.02753834797538346,
+          -0.0051096747690131394,
+          -0.02992298414310035,
+          -0.11543757765626239
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": 0.00603005675954571,
+        "cohort_bootstrap95_descriptive": [
+          -0.406794805641556,
+          0.35690423976608265
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -1.4195321637426943,
+          1.2230409356725147,
+          -0.12304093567251329,
+          0.3235087719298235,
+          -0.21368421052631703,
+          -0.07421052631578817,
+          0.9116959064327474,
+          1.2783625730994217,
+          0.6621052631578976,
+          0.25789473684210407,
+          0.8722291021671822,
+          -1.4309907120743048,
+          -2.0736842105263165,
+          0.07368421052632002,
+          0.5591331269349809,
+          -0.7300309597523267
+        ],
+        "cohort_differences": [
+          0.0009941520467826592,
+          0.475540935672516,
+          0.09030959752321976,
+          -0.5427244582043356
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": 0.1679783711730296,
+        "cohort_bootstrap95_descriptive": [
+          -0.10112788097695313,
+          0.5259674922600612
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -1.4768421052631595,
+          3.444561403508775,
+          -0.09204678362572949,
+          1.009239766081869,
+          0.4768421052631595,
+          0.09315789473684433,
+          0.7561403508771889,
+          -1.8959064327485322,
+          -0.08947368421052815,
+          0.7105263157894726,
+          -1.1044891640866936,
+          0.24417956656346362,
+          -0.9368421052631568,
+          1.3368421052631554,
+          -0.027863777089788044,
+          0.23962848297213313
+        ],
+        "cohort_differences": [
+          0.7212280701754388,
+          -0.14244152046783487,
+          -0.059814241486071396,
+          0.15294117647058592
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.5194231596147241,
+        "cohort_bootstrap95_descriptive": [
+          -0.7791021671826659,
+          -0.25974415204678225
+        ],
+        "better_cells_of16": 13,
+        "cell_differences": [
+          -0.11906432748538265,
+          -0.7467251461988269,
+          -0.6901169590643264,
+          0.2727485380116832,
+          -0.07631578947368212,
+          -0.7705263157894713,
+          0.3549707602339254,
+          -0.30292397660817727,
+          -0.43157894736842195,
+          -0.5378947368421088,
+          -1.2660371517027968,
+          -0.4004024767801866,
+          -0.9894736842105267,
+          -0.5578947368421012,
+          0.07801857585138805,
+          -2.127554179566573
+        ],
+        "cohort_differences": [
+          -0.3207894736842132,
+          -0.19869883040935132,
+          -0.6589783281733785,
+          -0.8992260061919533
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": -0.38650950292397723,
+        "cohort_bootstrap95_descriptive": [
+          -0.674124957000344,
+          -0.07751612487100112
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.5029239766081908,
+          -0.8412280701754398,
+          0.470233918128649,
+          -0.33251461988304953,
+          -0.47631578947368425,
+          -0.7084210526315786,
+          -0.5128654970760209,
+          -0.35906432748537753,
+          -0.24842105263157777,
+          0.2210526315789476,
+          0.2009597523219746,
+          0.09854489164086999,
+          -0.6105263157894747,
+          -0.49473684210526514,
+          0.5027863777089792,
+          -2.590712074303397
+        ],
+        "cohort_differences": [
+          -0.30160818713450777,
+          -0.5141666666666653,
+          0.06803405572755361,
+          -0.7982972136222894
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0024674549065716866,
+        "cohort_bootstrap95_descriptive": [
+          0.0013719143647759838,
+          0.0038676572830512023
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.0014950387274422772,
+          -0.0017804878700080073,
+          0.005323449595013768,
+          0.0019282831021142366,
+          -0.0017037805769684333,
+          0.004148172645871806,
+          -0.0013734730487138802,
+          0.008951092517193088,
+          0.0004449626583934718,
+          0.0073493762742754265,
+          0.00984765080019337,
+          0.0005587380975040079,
+          0.003009046729464143,
+          0.001233290793093228,
+          0.0042761035507864475,
+          -0.0012381080356234087
+        ],
+        "cohort_differences": [
+          0.00099405152491943,
+          0.002505502884345645,
+          0.004550181957591569,
+          0.0018200832594301025
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.004097421608760186,
+        "cohort_bootstrap95_descriptive": [
+          0.001999550694491832,
+          0.0061952925230285396
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          -0.000983207172059998,
+          -0.006746132517429462,
+          0.008693638191547476,
+          0.0059423407753026875,
+          0.004275072921304551,
+          0.0016528857717946072,
+          0.006235278463852856,
+          0.01032863395185464,
+          0.00961940456643099,
+          0.005289182322684577,
+          0.009127866996402334,
+          0.0030340151899037604,
+          0.0010999327267949416,
+          0.0007144631630659759,
+          0.006088269130249818,
+          0.001187101258463219
+        ],
+        "cohort_differences": [
+          0.0017266598193401757,
+          0.005622967777201664,
+          0.0067676172688554154,
+          0.0022724415696434887
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.007324896019326319,
+        "cohort_bootstrap95_descriptive": [
+          0.0032641629059670524,
+          0.011953651754431596
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -0.009512771972126688,
+          -0.0028562588848243253,
+          0.018854943463779028,
+          0.001420657364741007,
+          -0.009074971586702896,
+          0.0015494064636425997,
+          0.013652168815619148,
+          0.027274531104013122,
+          0.0027424270115018468,
+          0.021664428653113355,
+          0.03363049177104083,
+          -0.00035344917074331406,
+          0.014001925703417073,
+          -0.001594887126689315,
+          0.009977163499363173,
+          -0.004177468799923534
+        ],
+        "cohort_differences": [
+          0.0019766424928922555,
+          0.008350283699142994,
+          0.014420974566228179,
+          0.004551683319041849
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.014359514434163742,
+        "cohort_bootstrap95_descriptive": [
+          0.009860555109795697,
+          0.018602271768099355
+        ],
+        "better_cells_of16": 1,
+        "cell_differences": [
+          0.0062357351014386,
+          -0.016045471383338228,
+          0.021262303776071412,
+          0.017512247109981505,
+          0.019348605638015104,
+          0.003234766201664102,
+          0.02688974665915267,
+          0.02847061770169168,
+          0.019688586593557156,
+          0.010683301893074149,
+          0.029844805787729023,
+          0.010657743669910957,
+          0.009494774134925665,
+          0.007802149172962236,
+          0.027364450935056628,
+          0.00730786795472721
+        ],
+        "cohort_differences": [
+          0.007241203651038322,
+          0.01948593405013089,
+          0.01771860948606782,
+          0.012992310549417935
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": -4.909234391758943e-05,
+        "cohort_bootstrap95_descriptive": [
+          -8.882609068489034e-05,
+          -9.358597150288528e-06
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -5.787988200323113e-05,
+          9.007923497739156e-05,
+          -0.00027733930481810276,
+          -6.370323558879676e-05,
+          -0.0001809586107741623,
+          -0.00015557122201181883,
+          8.424322150579755e-05,
+          0.00018085537968293153,
+          -0.00013888826231012175,
+          -0.00011492863031081768,
+          -0.00011519490167977153,
+          -3.2753743745672637e-05,
+          0.00012488416950962034,
+          -5.743867535246139e-05,
+          -0.00012896141887752677,
+          5.807837911531166e-05
+        ],
+        "cohort_differences": [
+          -7.721079685818477e-05,
+          -1.7857807899313016e-05,
+          -0.0001004413845115959,
+          -8.593864012640395e-07
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": 1.5402753140283942e-05,
+        "cohort_bootstrap95_descriptive": [
+          -2.862120523439149e-05,
+          9.0332085249889e-05
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          9.771791443902167e-05,
+          -1.1196014419567746e-05,
+          -1.4951891802228445e-05,
+          -0.00017350292046147686,
+          -0.00020910062850232336,
+          -2.0290561424829434e-05,
+          -1.8251396595170277e-05,
+          0.00020730751989450624,
+          -6.638995228858136e-05,
+          0.0001303587058820721,
+          -0.00028991247600695935,
+          9.890699278258808e-05,
+          0.00045845888651085964,
+          0.0002770150660322823,
+          -0.00022232501897256896,
+          2.599825176918813e-06
+        ],
+        "cohort_differences": [
+          -2.5483228061062846e-05,
+          -1.0083766656954207e-05,
+          -3.175918240772013e-05,
+          0.00012893718968687296
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.07661977345554133,
+        "cohort_bootstrap95_descriptive": [
+          0.04467787757387309,
+          0.10120320427197571
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          -0.036551734235016564,
+          0.02159572155495626,
+          0.04231508945365059,
+          0.0984899468368905,
+          0.08544065829734393,
+          0.08366358277653285,
+          0.10731864195374996,
+          0.05810405478804759,
+          0.056631019073467126,
+          0.09555516393343666,
+          0.2425267348637803,
+          0.03352852564129494,
+          -0.041111335828443174,
+          0.20790373582778798,
+          0.08627615756720308,
+          0.08423041278397925
+        ],
+        "cohort_differences": [
+          0.031462255902620195,
+          0.08363173445391858,
+          0.10706036087799475,
+          0.08432474258763178
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.04035004144157759,
+        "cohort_bootstrap95_descriptive": [
+          0.014176658718509864,
+          0.07645120342703857
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          -0.05190644024933966,
+          0.03673559727665787,
+          0.005708045252609151,
+          0.03955541759873027,
+          -0.0247222920528809,
+          0.058740471372107805,
+          0.04310431618173194,
+          0.029706922072330944,
+          0.03166145450043989,
+          0.244446034753955,
+          0.010153213348862211,
+          -0.14971202274307216,
+          -0.018722133508046968,
+          0.24092627101661512,
+          0.05391450373743778,
+          0.09601130450710316
+        ],
+        "cohort_differences": [
+          0.0075231549696644084,
+          0.026707354393322447,
+          0.03413716996504623,
+          0.09303248643827727
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": 0.0010364849257367519,
+        "cohort_bootstrap95_descriptive": [
+          -0.0018288480451198602,
+          0.003287120560287682
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.0012923872902776967,
+          -0.02993868943335959,
+          0.020518958147544453,
+          -0.003045321397634082,
+          0.009075201630133312,
+          -0.009093728050559913,
+          0.001453968758061197,
+          0.002608791965578894,
+          0.018431371302986,
+          -0.01180186341707301,
+          0.0036091665735243916,
+          0.001772076739825601,
+          0.008086706959571921,
+          -0.012509298277890046,
+          -0.008281876383185394,
+          0.026990680984541993
+        ],
+        "cohort_differences": [
+          -0.0034393599934317287,
+          0.0010110585758033724,
+          0.0030026877998157453,
+          0.0035715533207596184
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": -0.0003397195136524214,
+        "cohort_bootstrap95_descriptive": [
+          -0.004788262671034681,
+          0.004108823643729838
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.0036682282780118314,
+          -0.007463358943773618,
+          0.0012416843998501181,
+          -0.004016273274036225,
+          0.005952960419381703,
+          -0.013453833361340761,
+          -0.012959194189546275,
+          -0.003939858140800556,
+          0.019810803539115768,
+          -0.016620919323146743,
+          0.00826946463784578,
+          0.0007675548947558841,
+          0.015658288513856672,
+          -0.010522660932957117,
+          -0.019796361401903773,
+          0.03530441922227223
+        ],
+        "cohort_differences": [
+          -0.003476544023992889,
+          -0.006099981318076472,
+          0.003056725937142672,
+          0.0051609213503170034
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": -0.0006544911819800284,
+        "cohort_bootstrap95_descriptive": [
+          -0.001095982932290465,
+          -8.68504001938315e-05
+        ],
+        "better_cells_of16": 13,
+        "cell_differences": [
+          0.00073348556806202,
+          -0.0025567191499528408,
+          -6.107305410371633e-05,
+          0.0026591353019527197,
+          -0.0013833458613837085,
+          -0.0004791295024915293,
+          -0.0005734740781632996,
+          -9.507986463191953e-05,
+          0.0002691274509274838,
+          -0.0022787767176174756,
+          -0.0011751528440733794,
+          -0.0005292902902124808,
+          -0.0017876342388412902,
+          -0.0019073533923000124,
+          -0.0011272363692281517,
+          -0.00017934186962287324
+        ],
+        "cohort_differences": [
+          0.00019370716648954567,
+          -0.0006327573266676143,
+          -0.000928523100243963,
+          -0.001250391467498082
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": -0.00027270755510868825,
+        "cohort_bootstrap95_descriptive": [
+          -0.000720788992254676,
+          4.704472506983099e-06
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.0005487430508698127,
+          -0.0023405163280738675,
+          -0.0012637011669126008,
+          -0.0007046866363994708,
+          -0.0009154381867244737,
+          -0.00023061145917226133,
+          -0.0006200554016584231,
+          0.0012019405174546194,
+          0.000434542625114033,
+          -0.0009415840142110443,
+          -0.0005800777261016216,
+          0.0008349784806721966,
+          0.0011148549796332272,
+          -0.0016717442527730553,
+          -0.00038996000053212465,
+          0.0011599946370760422
+        ],
+        "cohort_differences": [
+          -0.0009400402701290316,
+          -0.0001410411325251347,
+          -6.303515863160906e-05,
+          5.3286340851022365e-05
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": 0.0008710361240563038,
+        "cohort_bootstrap95_descriptive": [
+          -0.0008865279126232459,
+          0.0031676640625281846
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.000784733390249176,
+          -0.008246261245204334,
+          0.009423542481481723,
+          0.00021420626430648793,
+          0.0031701181523436928,
+          0.0007135214682755797,
+          0.005560988047390414,
+          0.007247329295362398,
+          -0.0007750831528293423,
+          -0.007148221967420376,
+          0.008219047800339052,
+          0.001272524468540287,
+          -0.003246249236829757,
+          -0.0013141425562163134,
+          -0.0006650026264648501,
+          0.0002949941820753754
+        ],
+        "cohort_differences": [
+          0.00015168852758367518,
+          0.004172989240843021,
+          0.00039206678715740517,
+          -0.0012326000593588862
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.00953961992041523,
+        "cohort_bootstrap95_descriptive": [
+          -0.00013503245573237566,
+          0.019715153273608607
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.03184260742710476,
+          0.0017744935090953096,
+          0.015406276448405976,
+          0.023826663985279106,
+          0.007795461149262994,
+          0.0012067137144176066,
+          0.007284620833042599,
+          -0.0022996527772831676,
+          -0.004694448745481639,
+          -0.009416927094740624,
+          -0.004439023720219648,
+          0.003482996995142873,
+          0.016452343449891993,
+          0.02720399879998392,
+          0.012803532234628046,
+          0.024404262518113562
+        ],
+        "cohort_differences": [
+          0.01821251034247129,
+          0.003496785729860008,
+          -0.0037668506413247593,
+          0.02021603425065438
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.0019182148293414554,
+        "cohort_bootstrap95_descriptive": [
+          0.0008589666314710274,
+          0.0026681964578078466
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          2.572763333921757e-05,
+          -0.006760093873672046,
+          0.010346386550286246,
+          0.003535045048779134,
+          -0.0018492660377793513,
+          -0.002208022645531549,
+          0.012993859674394093,
+          0.0018515109682418485,
+          0.0013904395164156536,
+          0.00025903340080773996,
+          0.006086894178642013,
+          0.002821122607272325,
+          -0.001055957734727997,
+          -0.0006216193294893424,
+          0.0036920979850998403,
+          0.0001842793273854615
+        ],
+        "cohort_differences": [
+          0.001786766339683138,
+          0.0026970204898312602,
+          0.002639372425784433,
+          0.0005497000620669906
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.015503068433889433,
+        "cohort_bootstrap95_descriptive": [
+          0.011071983712409542,
+          0.01970107865140218
+        ],
+        "better_cells_of16": 1,
+        "cell_differences": [
+          0.032284106985154715,
+          0.003967489589265405,
+          0.01076850692596798,
+          0.012288179763182194,
+          0.022127813733023416,
+          0.010287558594856971,
+          0.016938066085209202,
+          0.017227421826192746,
+          0.020471639989606105,
+          -0.0024426007786928494,
+          0.007535791478368248,
+          0.011292129030475273,
+          0.03093650419465188,
+          0.012443150135404979,
+          0.016080027314716583,
+          0.02584331007484808
+        ],
+        "cohort_differences": [
+          0.014827070815892573,
+          0.016645215059820584,
+          0.009214239929939194,
+          0.02132574792990538
+        ]
+      }
+    },
+    "P": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.015628535302636415,
+        "cohort_bootstrap95_descriptive": [
+          -0.05778521035024564,
+          0.016459232518627687
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.05341817353004785,
+          0.0240489733917002,
+          0.10203131870144944,
+          0.030450032076856814,
+          -0.06764407785480842,
+          -0.044796317462044044,
+          0.08958461882383517,
+          0.024367483504519782,
+          -0.0646888630305682,
+          0.06341618367632407,
+          -0.0891205825659398,
+          0.04440453029835112,
+          -0.08927026272365879,
+          0.06706183969536994,
+          -0.11428327570695274,
+          -0.17219999213656934
+        ],
+        "cohort_differences": [
+          0.02577803765998965,
+          0.0003779267528756236,
+          -0.011497182905458203,
+          -0.07717292271795273
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.019547879609899343,
+        "cohort_bootstrap95_descriptive": [
+          -0.04546460470052072,
+          0.002689342442048215
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.10692012697217024,
+          0.02409839676145964,
+          0.006543719289524574,
+          0.06112531813454325,
+          -0.029558760544453833,
+          -0.06413834855492695,
+          0.1113729111162911,
+          0.018991630306118168,
+          -0.042822061625301444,
+          0.04225429577807205,
+          -0.11632660199691003,
+          0.020040548689927107,
+          -0.03680139839556773,
+          0.09794198160679457,
+          -0.06902508444275668,
+          -0.22954249290903306
+        ],
+        "cohort_differences": [
+          -0.0037881731966606935,
+          0.009166858080757123,
+          -0.02421345478855308,
+          -0.059356748535140724
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": 0.16235165118679018,
+        "cohort_bootstrap95_descriptive": [
+          -0.3042096663226701,
+          0.6289129686962505
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -1.2087134502924002,
+          0.10403508771929637,
+          -0.26111111111110574,
+          0.11672514619883145,
+          -0.6252631578947359,
+          1.3463157894736923,
+          1.3695906432748473,
+          1.1456140350877249,
+          -0.1131578947368439,
+          0.8847368421052622,
+          -0.9650773993808102,
+          -0.9911145510835908,
+          -0.37894736842105203,
+          1.7263157894736807,
+          -0.20061919504644266,
+          0.6482972136222891
+        ],
+        "cohort_differences": [
+          -0.3122660818713445,
+          0.8090643274853822,
+          -0.2961532507739957,
+          0.4487616099071188
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": 0.15233230134158737,
+        "cohort_bootstrap95_descriptive": [
+          -0.3106503697970444,
+          0.626552502579979
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.5987719298245615,
+          2.6514035087719314,
+          0.31444444444444386,
+          0.7984795321637428,
+          0.2673684210526339,
+          2.57473684210526,
+          -1.6830409356725191,
+          -0.5584795321637479,
+          -1.6394736842105289,
+          1.2194736842105236,
+          -1.1950464396284879,
+          -0.24195046439628598,
+          0.9263157894736835,
+          0.44210526315789167,
+          -0.7195046439628534,
+          -0.12074303405572806
+        ],
+        "cohort_differences": [
+          0.7913888888888891,
+          0.1501461988304067,
+          -0.4642492260061948,
+          0.13204334365324844
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.04292376160990741,
+        "cohort_bootstrap95_descriptive": [
+          -0.3050073099415185,
+          0.17936898004815705
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.07058479532163986,
+          0.10192982456140598,
+          -0.15321637426900736,
+          -0.004502923976630768,
+          -0.7910526315789461,
+          -0.03473684210526429,
+          -0.28596491228069,
+          -0.5198830409356674,
+          -0.141052631578944,
+          0.7142105263157923,
+          -0.31436532507740367,
+          -0.28043343653250474,
+          0.05263157894736992,
+          0.9157894736842138,
+          0.10650154798761235,
+          -0.12321981424149442
+        ],
+        "cohort_differences": [
+          0.0036988304093519275,
+          -0.40790935672514195,
+          -0.005410216718265026,
+          0.23792569659442542
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": 0.050109004127966705,
+        "cohort_bootstrap95_descriptive": [
+          -0.2097381320949434,
+          0.2484595373237014
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -0.009298245614036915,
+          0.22181286549707657,
+          0.4209356725146165,
+          -0.3565497076023405,
+          -1.127894736842105,
+          0.15368421052631298,
+          0.0029239766081872176,
+          -0.3526315789473671,
+          0.031578947368421595,
+          0.028947368421054165,
+          0.45269349845201035,
+          0.10272445820433518,
+          0.7263157894736807,
+          0.9578947368421034,
+          -0.14365325077399405,
+          -0.3077399380804877
+        ],
+        "cohort_differences": [
+          0.06922514619882891,
+          -0.330979532163743,
+          0.15398606811145532,
+          0.30820433436532557
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0011918195755333452,
+        "cohort_bootstrap95_descriptive": [
+          0.00018476157299764442,
+          0.0023552036429890216
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          0.0003940148125585463,
+          -0.0010768655708363328,
+          0.0002478529466474477,
+          0.0061010860590886284,
+          -0.0012534560509631365,
+          0.002683197287442235,
+          0.004964702837750412,
+          0.005530488302864567,
+          -0.0013608682771086844,
+          0.0019842014091788762,
+          -0.0007229996951945428,
+          0.0020081277196664638,
+          -0.0009528605955000102,
+          0.00035317824181893553,
+          -0.0020044497775656145,
+          0.002173763558685732
+        ],
+        "cohort_differences": [
+          0.0014165220618645724,
+          0.0029812330942735193,
+          0.0004771152891355282,
+          -0.00010759214314023935
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.0014725679368487823,
+        "cohort_bootstrap95_descriptive": [
+          0.0009609235260732325,
+          0.0024207623706043978
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.00033231332311332157,
+          -0.0012036832310999418,
+          -0.0006100027062141133,
+          0.006402974962029143,
+          -0.002576732763225481,
+          0.0003621953748193657,
+          0.0053055731647072,
+          0.008525687303091806,
+          -0.0003197727782376092,
+          0.002137107058123408,
+          -0.001746359448089721,
+          0.003811053859695615,
+          -0.002133886539999949,
+          0.0012011265411983607,
+          0.0008627535484807131,
+          0.0038753659674150426
+        ],
+        "cohort_differences": [
+          0.0010642439254004415,
+          0.0029041807698482226,
+          0.0009705071728729232,
+          0.0009513398792735418
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.004065737938427648,
+        "cohort_bootstrap95_descriptive": [
+          0.0007515706484340495,
+          0.007379905228421246
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.0015647875734528527,
+          0.0016528849222772202,
+          0.0035991102395180885,
+          0.020079985535939704,
+          0.0009720129814487777,
+          0.010072869387130201,
+          0.0041088443017733844,
+          0.020118322032735447,
+          -0.003400681270558592,
+          0.00402000214899223,
+          -0.007694602504209169,
+          0.010811508989674645,
+          -0.004973679478802007,
+          0.005067507039592689,
+          -0.005681509734342227,
+          0.007864019997124827
+        ],
+        "cohort_differences": [
+          0.00594179828107054,
+          0.008818012175771953,
+          0.0009340568409747785,
+          0.0005690844558933206
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.00639518337322241,
+        "cohort_bootstrap95_descriptive": [
+          0.004081514929542784,
+          0.008210161962217535
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          0.00191583556913838,
+          -0.0006911512745541581,
+          2.1059494556940894e-05,
+          0.023879174904860523,
+          -0.007722437148655892,
+          0.006092500249850308,
+          0.0074876656484369475,
+          0.029069486814874146,
+          -0.001744593337357797,
+          0.004001926787875171,
+          -0.008888563406327765,
+          0.018147949535626984,
+          -0.0023655607614119223,
+          0.00624866520919698,
+          0.010462786112856337,
+          0.01640818957259338
+        ],
+        "cohort_differences": [
+          0.006281229673500421,
+          0.008731803891126377,
+          0.002879179894954148,
+          0.007688520033308693
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": -1.191677925310719e-06,
+        "cohort_bootstrap95_descriptive": [
+          -6.600565877368236e-05,
+          7.106381228130787e-05
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          7.5469491576996e-05,
+          0.00013801953378944631,
+          -0.00017561624082551575,
+          -8.153061448412657e-05,
+          -0.00040071628912530244,
+          -0.00013598808919557115,
+          0.00036848177565840246,
+          0.00014281493433720982,
+          -3.519660077344611e-05,
+          -0.00015906777110163972,
+          9.103397628251741e-05,
+          -0.00024033056175865042,
+          0.00039375860530066475,
+          0.00011667909268497922,
+          -9.462879530897084e-05,
+          -2.2249293861964503e-05
+        ],
+        "cohort_differences": [
+          -1.09144574858e-05,
+          -6.351917081315328e-06,
+          -8.589023933780471e-05,
+          9.838990220367716e-05
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": 9.88241763995451e-05,
+        "cohort_bootstrap95_descriptive": [
+          5.377714475521267e-05,
+          0.00015904969821518844
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.00021433414211990964,
+          4.0453976323240326e-05,
+          1.4556122098774438e-06,
+          -5.1708145265561e-05,
+          -0.00019137095738575027,
+          5.463349901368986e-07,
+          0.0003018040245081899,
+          0.00011470217054165843,
+          0.00021112705520276442,
+          0.00016549156124479047,
+          0.00012972514271702984,
+          -0.0001284119610764911,
+          0.0005023987644943162,
+          0.00015976900953651452,
+          -9.698310917505282e-05,
+          0.0002078532014071488
+        ],
+        "cohort_differences": [
+          5.11338963468666e-05,
+          5.6420393163558735e-05,
+          9.448294952202341e-05,
+          0.00019325946656573167
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.0020113952799150625,
+        "cohort_bootstrap95_descriptive": [
+          -0.006588653508853237,
+          0.012969179154172394
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.001001537092310656,
+          -0.023339600921195913,
+          0.03250601624014493,
+          -0.0010585639920108747,
+          0.0411873593339136,
+          -0.062439849763951116,
+          0.07152108935701662,
+          0.02751663938786031,
+          0.031717305197553,
+          -0.010216048940633105,
+          0.009622114079678834,
+          -0.056972218814358655,
+          0.02525228296767379,
+          -0.029221650823121337,
+          0.02022814789185068,
+          -0.043119159629469106
+        ],
+        "cohort_differences": [
+          0.0017765785586568716,
+          0.019446309578709853,
+          -0.006462212119439981,
+          -0.006715094898266494
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": -0.012226608749414197,
+        "cohort_bootstrap95_descriptive": [
+          -0.028966258588168592,
+          0.004513041089340197
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.05602261110953499,
+          -0.038981596904810845,
+          0.019543189646000547,
+          -0.03706387203582717,
+          0.028772607382764326,
+          -0.12751531310239494,
+          0.007863302385315407,
+          -0.02832577496686106,
+          0.0005318825336402266,
+          -0.001532654871089223,
+          -0.0002533741792671851,
+          -0.0047750923001315115,
+          0.05366947931661503,
+          -0.017405650816752827,
+          0.019030956106812935,
+          -0.013161217075105869
+        ],
+        "cohort_differences": [
+          -0.028131222601043115,
+          -0.02980129457529407,
+          -0.0015073097042119232,
+          0.010533391882892318
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": -0.0008645540262689939,
+        "cohort_bootstrap95_descriptive": [
+          -0.00423737221725605,
+          0.0021170361477711314
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.003209843483451047,
+          0.0030663991732547413,
+          0.017173624193873693,
+          -0.004947046114867959,
+          0.012192790159035682,
+          -0.0014819217418354236,
+          -0.008286132013371528,
+          -0.008976853043149546,
+          0.012610941432179334,
+          0.0007641134513123315,
+          0.0005498892235434316,
+          -0.009071788693675475,
+          -0.005279303748302433,
+          -0.002517738612100029,
+          -0.012616224877792848,
+          -0.003803769724956829
+        ],
+        "cohort_differences": [
+          0.003020783442202357,
+          -0.0016380291598302038,
+          0.0012132888533399055,
+          -0.006054259240788035
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": 0.0030571463461481294,
+        "cohort_bootstrap95_descriptive": [
+          0.0003124034443076837,
+          0.006088810270066254
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -0.00323359701342929,
+          0.011748456497971238,
+          0.018627771108384095,
+          -0.01123786633255261,
+          0.005444013977169038,
+          0.005005697445250756,
+          -0.004405664313361257,
+          -0.009434734705051628,
+          0.009442298931287674,
+          0.022146222598177334,
+          0.005367195553498794,
+          -0.006445367359428633,
+          0.0007132250429041087,
+          0.011019824788686072,
+          -0.006459580342420779,
+          0.0006164456612851588
+        ],
+        "cohort_differences": [
+          0.003976191065093358,
+          -0.0008476718989982729,
+          0.007627587430883792,
+          0.0014724787876136403
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": 0.00019512766018768123,
+        "cohort_bootstrap95_descriptive": [
+          -0.00018632461588480483,
+          0.0005765799362601673
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -2.725521535962283e-05,
+          0.0015807730875489756,
+          0.0011286848905305846,
+          -0.0008948432510388349,
+          0.0004386560327260397,
+          0.0026359770745998518,
+          0.0002864044302709201,
+          -0.0005357575591965757,
+          -0.0012677158829403623,
+          0.001368391113580364,
+          -0.0007970293232452408,
+          -0.0008669699743049653,
+          -0.0008649737814046266,
+          0.0020616610927933904,
+          -0.000619654689363619,
+          -0.000504305482193379
+        ],
+        "cohort_differences": [
+          0.00044683987792027563,
+          0.000706319994600059,
+          -0.0003908310167275511,
+          1.8181784957941455e-05
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": -0.0004977203619010166,
+        "cohort_bootstrap95_descriptive": [
+          -0.0007872375064147158,
+          -0.0002755352452732812
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.0002819246177643425,
+          0.002416888185212289,
+          -0.002357286817601223,
+          -0.004156970496574985,
+          0.0009102069620053332,
+          0.001043474376563866,
+          -0.0007456492060144843,
+          -0.0022628475257042424,
+          -0.0005375392320801503,
+          0.002548500789927313,
+          -0.0013150097778742154,
+          -0.002639751097003387,
+          -0.0007223128006011437,
+          0.0017717150384898295,
+          -0.00031077094794693116,
+          -0.001888097858978477
+        ],
+        "cohort_differences": [
+          -0.0009538611277998942,
+          -0.00026370384828738186,
+          -0.0004859498292576099,
+          -0.00028736664225918057
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": 0.0011573161237095168,
+        "cohort_bootstrap95_descriptive": [
+          -0.0005517362197979773,
+          0.0023582230746411817
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.00222838004518483,
+          -0.000836760818734128,
+          0.00224690465262814,
+          0.0018586713188365467,
+          0.004029463468962047,
+          -0.0008953841075699798,
+          0.0040292894439719895,
+          0.0029924298614553146,
+          -0.0007253824402803644,
+          -0.0016780903829270721,
+          -0.0017578456013132848,
+          -0.0016846033911718516,
+          0.004988820522308868,
+          0.0015020816848272944,
+          0.002399442696188969,
+          -0.000180358973015049
+        ],
+        "cohort_differences": [
+          0.0013742987994788472,
+          0.002538949666704843,
+          -0.0014614804539231432,
+          0.0021774964825775206
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.003923429144844184,
+        "cohort_bootstrap95_descriptive": [
+          -0.0028634941465362496,
+          0.011806810330426146
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.004221618778561087,
+          0.02187757368432819,
+          -0.0037597801419744226,
+          -0.017709022045492295,
+          0.023426653890310734,
+          0.004549937698226314,
+          -0.003710205035400538,
+          -0.006281006823417812,
+          0.004101164831158188,
+          0.01682754036711387,
+          -0.010416629676537115,
+          -0.031779170879834506,
+          0.014384214139139484,
+          0.039498762108754804,
+          0.009077316394137336,
+          -0.0015341009715663656
+        ],
+        "cohort_differences": [
+          0.0011575975688556395,
+          0.0044963449324296745,
+          -0.005316773839524891,
+          0.015356547917616314
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.0010802996009504654,
+        "cohort_bootstrap95_descriptive": [
+          -0.00011900066503790253,
+          0.0024985051857385233
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.004813369859813982,
+          -0.0004398183500889663,
+          0.0028982934305786523,
+          9.531197705414662e-05,
+          0.003170362680834038,
+          -0.0015987710099582553,
+          -0.0019697804730721413,
+          -0.0004196576040724209,
+          0.0021887768686063847,
+          -0.0004501588746636531,
+          -0.0002599586422276784,
+          -0.0016128182657494938,
+          0.003536578014081193,
+          0.0012803811588152358,
+          0.004046576043784972,
+          0.0020061068014714523
+        ],
+        "cohort_differences": [
+          0.0018417892293394536,
+          -0.0002044616015671949,
+          -3.353972850861017e-05,
+          0.0027174105045382133
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.006320093595496554,
+        "cohort_bootstrap95_descriptive": [
+          0.0010380810298695753,
+          0.012721357318499507
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.009545314324863385,
+          0.03687458848465863,
+          0.0024079985194529474,
+          -0.011373485943488637,
+          0.013206245209423928,
+          0.02069841916909887,
+          -0.0033969941871947462,
+          -0.026328525421206228,
+          0.0077091288099602195,
+          0.014507151899489479,
+          0.0007417955325084158,
+          -0.018832572773123335,
+          0.009864172265152238,
+          0.04032955515816772,
+          0.0020553190610241856,
+          0.003113387419157787
+        ],
+        "cohort_differences": [
+          0.009363603846371582,
+          0.0010447861925304558,
+          0.0010313758672086948,
+          0.013840608475875482
+        ]
+      }
+    },
+    "SH": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.036799393293628135,
+        "cohort_bootstrap95_descriptive": [
+          -0.07946661255383614,
+          0.004376388699908418
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.002165456233228724,
+          0.015164153051884455,
+          -0.021597432451983423,
+          0.08707937906882535,
+          -0.0067126519071365465,
+          -0.1547840950826469,
+          0.04128246336563279,
+          0.0031703465164554245,
+          -0.062292395166934966,
+          0.0155699507242133,
+          -0.0380025023260373,
+          -0.08069476433919931,
+          -0.09565291623522398,
+          0.03666290408934003,
+          -0.02702149414774624,
+          -0.2987957816242641
+        ],
+        "cohort_differences": [
+          0.019620160858874414,
+          -0.029260984276923807,
+          -0.04135492777698957,
+          -0.09620182197947358
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.04285805740740667,
+        "cohort_bootstrap95_descriptive": [
+          -0.0733489267973253,
+          -0.01837381391822035
+        ],
+        "better_cells_of16": 12,
+        "cell_differences": [
+          -0.03982898814116709,
+          -0.009835243215491118,
+          -0.05612376934271879,
+          0.0605440502279464,
+          0.01184932979943909,
+          -0.19603496353255423,
+          0.05764917269314651,
+          -0.031712710237265185,
+          -0.04661887406106757,
+          -0.053825014253639836,
+          -0.005404859224533709,
+          -0.030713533236919943,
+          -0.01381949952092043,
+          0.04273624818341659,
+          -0.06086747853245811,
+          -0.3137227861237193
+        ],
+        "cohort_differences": [
+          -0.011310987617857649,
+          -0.03956229281930845,
+          -0.034140570194040265,
+          -0.08641837899842031
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": 0.13490583075335438,
+        "cohort_bootstrap95_descriptive": [
+          -0.16524208806329677,
+          0.33839912280701956
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -1.137368421052635,
+          0.9197660818713373,
+          -0.18058479532162863,
+          1.6366666666666774,
+          -0.9205263157894734,
+          0.5336842105263244,
+          0.959649122807015,
+          0.8959064327485393,
+          0.754210526315795,
+          1.8010526315789477,
+          -0.3065944272445833,
+          -1.5032507739938126,
+          -0.47368421052631504,
+          -0.789473684210531,
+          0.7913312693498398,
+          -0.8222910216718269
+        ],
+        "cohort_differences": [
+          0.3096198830409378,
+          0.3671783625731013,
+          0.1863544891640867,
+          -0.3235294117647083
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": 0.5168300653594757,
+        "cohort_bootstrap95_descriptive": [
+          -0.026436403508771633,
+          0.9461100361197108
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          -0.0243859649122804,
+          2.5269005847953245,
+          0.963391812865499,
+          0.845204678362574,
+          -0.603684210526314,
+          0.8515789473684237,
+          -0.7713450292397681,
+          -0.5649122807017513,
+          0.8478947368421004,
+          1.2757894736842097,
+          0.4042414860680985,
+          -0.32349845201238736,
+          1.4842105263157883,
+          0.13684210526315255,
+          0.7046439628482943,
+          0.516408668730648
+        ],
+        "cohort_differences": [
+          1.0777777777777793,
+          -0.27209064327485244,
+          0.5511068111455053,
+          0.7105263157894708
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.06258599931200459,
+        "cohort_bootstrap95_descriptive": [
+          -0.22290828173374755,
+          0.10669956140351089
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          0.6487719298245587,
+          0.17292397660818892,
+          -0.5035087719298232,
+          0.3692397660818756,
+          0.3594736842105277,
+          -1.0005263157894717,
+          0.49415204678363267,
+          -0.20818713450291426,
+          0.21631578947368624,
+          0.09578947368420643,
+          0.1513931888544846,
+          -0.6808049535603686,
+          0.7052631578947377,
+          0.3789473684210556,
+          -0.04334365325077982,
+          -2.15727554179567
+        ],
+        "cohort_differences": [
+          0.17185672514619998,
+          -0.0887719298245564,
+          -0.05432662538699784,
+          -0.2791021671826641
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": -0.10500601995184067,
+        "cohort_bootstrap95_descriptive": [
+          -0.40930082559339365,
+          0.1992887856897123
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          0.2625730994152029,
+          0.029532163742691964,
+          0.5291228070175364,
+          0.1728654970760175,
+          -0.29315789473684006,
+          -0.9173684210526325,
+          -0.4906432748537952,
+          -0.4233918128654963,
+          0.2878947368421052,
+          0.11473684210526258,
+          -0.2591331269349908,
+          0.4567182662538727,
+          0.9578947368421034,
+          0.06315789473684319,
+          0.38018575851393166,
+          -2.5510835913312633
+        ],
+        "cohort_differences": [
+          0.2485233918128622,
+          -0.531140350877191,
+          0.15005417956656242,
+          -0.28746130030959627
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0028456563660905643,
+        "cohort_bootstrap95_descriptive": [
+          0.0016009471381771695,
+          0.004004353814994168
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0011066417198861978,
+          -0.0011621162117822492,
+          0.003733459531396921,
+          0.005971228301097697,
+          0.004523116692503271,
+          0.003659796924755293,
+          -0.0027634057109777455,
+          0.00918672444702645,
+          0.003961158314749663,
+          0.00486496483216281,
+          0.005182329040720773,
+          0.0034201459790128286,
+          0.002058202841807827,
+          0.001180032605050424,
+          0.001319416651006794,
+          0.0015020893388044687
+        ],
+        "cohort_differences": [
+          0.0018589824752065429,
+          0.0036515580883268173,
+          0.004357149541661519,
+          0.0015149353591673784
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.00271816720417112,
+        "cohort_bootstrap95_descriptive": [
+          0.0022236406456403557,
+          0.0033926221448506554
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          -0.0012639554253442362,
+          -0.0033871577212261916,
+          0.004729076151381392,
+          0.008249589669620541,
+          0.0014395520938503409,
+          0.0014588173621917222,
+          -0.003971762967162937,
+          0.011668985818072047,
+          0.0034987604197029842,
+          0.002602084211078007,
+          0.004240440035734955,
+          0.004515927349611676,
+          0.002075166972907952,
+          2.549518902111858e-05,
+          0.0038261583327813403,
+          0.003783497774517211
+        ],
+        "cohort_differences": [
+          0.0020818881686078764,
+          0.0026488980767377934,
+          0.0037143030040319054,
+          0.0024275795673069055
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.008264265177266226,
+        "cohort_bootstrap95_descriptive": [
+          0.0043888493722154705,
+          0.011427296570200945
+        ],
+        "better_cells_of16": 1,
+        "cell_differences": [
+          -0.003987624959558789,
+          0.001215370171687491,
+          0.014592190673076821,
+          0.014284074549048786,
+          0.001208000265154996,
+          0.008159263254614135,
+          0.011016850317656646,
+          0.02926056889818318,
+          0.012416382141788695,
+          0.00962711901507457,
+          0.012697095858854146,
+          0.007033092810281194,
+          0.006136568154981092,
+          0.002727696171350824,
+          0.0018233839472598934,
+          0.004018211566805929
+        ],
+        "cohort_differences": [
+          0.0065260026085635775,
+          0.01241117068390224,
+          0.010443422456499651,
+          0.003676464960099435
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.00954285038160152,
+        "cohort_bootstrap95_descriptive": [
+          0.007504445491425437,
+          0.011852160354760298
+        ],
+        "better_cells_of16": 3,
+        "cell_differences": [
+          2.8197160980653058e-05,
+          -0.004873759466805794,
+          0.006937588345511225,
+          0.02441111791679762,
+          -0.0023300112315432775,
+          0.0038453187134254163,
+          0.002000506306547911,
+          0.03704588220492583,
+          0.004417989916495918,
+          -0.002539441527637437,
+          0.016402164775150108,
+          0.015333153231586127,
+          0.003182686986582972,
+          0.008587180787615833,
+          0.020712589056817776,
+          0.019524442929173436
+        ],
+        "cohort_differences": [
+          0.006625785989120926,
+          0.01014042399833897,
+          0.008403466598898679,
+          0.013001724940047504
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": -6.796705633749234e-06,
+        "cohort_bootstrap95_descriptive": [
+          -4.987277367243803e-05,
+          5.702999113879614e-05
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.00010339956437643849,
+          0.00011715607010209794,
+          -3.845064017493627e-05,
+          -9.968346806665807e-05,
+          -0.00041150090524499916,
+          8.02579317720209e-05,
+          3.820700574763691e-05,
+          0.0001875760519367553,
+          3.6381293559983874e-05,
+          0.00028842463284695086,
+          1.8567939923830323e-05,
+          2.2452872481260044e-06,
+          -0.00012333998538682778,
+          2.1851413256612773e-05,
+          -4.6889808338779204e-05,
+          -7.615054494536366e-05
+        ],
+        "cohort_differences": [
+          -3.109440062898372e-05,
+          -2.636497894714651e-05,
+          8.640478839472276e-05,
+          -5.613223135358947e-05
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": -2.4140153126461783e-08,
+        "cohort_bootstrap95_descriptive": [
+          -6.239209009442637e-05,
+          6.234380978817344e-05
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.00017051563923087265,
+          -0.00016698978209506166,
+          0.00023147882174745504,
+          -0.0001003094318090536,
+          -0.0004226882249198649,
+          -3.068799029559699e-06,
+          -1.1766228940945922e-05,
+          0.00014472256352249246,
+          0.00010464499127316174,
+          0.0002983873072386345,
+          -3.287658387529646e-05,
+          -4.789614529743247e-05,
+          -4.544692782992854e-06,
+          0.0001118712099492658,
+          -4.092181859260968e-05,
+          0.00011008621039265698
+        ],
+        "cohort_differences": [
+          -5.158400784688322e-05,
+          -7.320017234196952e-05,
+          8.056489233476682e-05,
+          4.412272724158006e-05
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.050288003595227504,
+        "cohort_bootstrap95_descriptive": [
+          0.03324500902535654,
+          0.06733099816509847
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          -0.005256340275413329,
+          0.09101410500881713,
+          -0.026932197931694546,
+          0.045304801259868466,
+          0.01934822164390093,
+          0.1543138001279898,
+          0.02526184739825066,
+          0.09876109570416114,
+          0.03663475489972923,
+          0.11893581934115938,
+          0.11910043466162268,
+          -0.03370798845602607,
+          0.01835767826227297,
+          0.13058010838891132,
+          -0.0011985493039965434,
+          0.014090466794086876
+        ],
+        "cohort_differences": [
+          0.02603259201539443,
+          0.07442124121857563,
+          0.0602407551116213,
+          0.040457426035318655
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.008268718159030124,
+        "cohort_bootstrap95_descriptive": [
+          -0.008237361521246232,
+          0.03211827442138404
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.06303046402447565,
+          0.06360497759122774,
+          -0.04280296784424664,
+          -0.005038509721550177,
+          -0.01642116264152449,
+          0.061516160389034624,
+          -0.036982378425292284,
+          -0.010713794363791829,
+          -0.03441224348019012,
+          0.13549863640450566,
+          0.004920940030816334,
+          -0.0960042252979374,
+          0.05391619141579995,
+          0.17388416403164486,
+          -0.05036845180802052,
+          -0.005267381711518082
+        ],
+        "cohort_differences": [
+          -0.011816740999761183,
+          -0.0006502937603934944,
+          0.002500776914298619,
+          0.04304113048197655
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": -0.0022770538706107096,
+        "cohort_bootstrap95_descriptive": [
+          -0.006453323631525027,
+          0.0005627801290415159
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.009800463032618278,
+          -0.01966192925971416,
+          0.020136237863374706,
+          0.007653222596299636,
+          0.0056821148217414685,
+          -0.007638711093427064,
+          -0.01261724308816764,
+          0.01011485338754664,
+          -0.0007229626655395061,
+          -0.019450794673226912,
+          -0.017395689280561843,
+          0.003709364528747483,
+          -0.010052946611458946,
+          -0.012697886286560045,
+          -0.005436370263426138,
+          0.031746341127219246
+        ],
+        "cohort_differences": [
+          -0.00041823295816452444,
+          -0.0011147464930766487,
+          -0.008465020522645195,
+          0.0008897844914435293
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": -0.0012830585834253064,
+        "cohort_bootstrap95_descriptive": [
+          -0.004189565622039947,
+          0.002091527229007366
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.0022524651672375384,
+          -0.007047252961217415,
+          0.01400431099891769,
+          -0.001955429240249662,
+          0.008673286159785631,
+          -0.005332596904963127,
+          -0.015350884653123537,
+          -0.0007095427554023315,
+          0.0008115387975635158,
+          -0.01630999444013334,
+          0.001309646325839825,
+          -0.006607977505886209,
+          -0.0042482828413385465,
+          -0.011232011067416281,
+          -0.0005555543463435231,
+          0.026274272266399945
+        ],
+        "cohort_differences": [
+          0.0006872909075532688,
+          -0.003179934538425841,
+          -0.005199196705654052,
+          0.0025596060028253986
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": -0.00044713613550177375,
+        "cohort_bootstrap95_descriptive": [
+          -0.001189331968366042,
+          0.0003751739796495216
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          0.0023204847279524876,
+          -0.0013462732412957562,
+          0.0007808839464209794,
+          0.0015488421087019588,
+          0.00047829969971867337,
+          -0.0004970211553115833,
+          -0.0006574430949322918,
+          -0.0002672954123545124,
+          2.834160197943969e-05,
+          -0.00225543298499202,
+          -0.001798433068278038,
+          -0.0015801023446910534,
+          -0.0016812460443462462,
+          -0.000792858844219757,
+          0.00035361691085639135,
+          -0.0017885409732370516
+        ],
+        "cohort_differences": [
+          0.0008259843854449174,
+          -0.00023586499071992853,
+          -0.001401406698995418,
+          -0.000977257237736666
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": -0.0005950228688566955,
+        "cohort_bootstrap95_descriptive": [
+          -0.0007750052500993592,
+          -0.00044553851510705216
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          0.001568356359889292,
+          -0.0013252583306791674,
+          -0.002889283829050293,
+          0.00016124563916614099,
+          0.0004512732019074511,
+          -0.000596204954588786,
+          -0.0017321030088503914,
+          -0.00010969637952797096,
+          0.000325722265823461,
+          -0.0004947801616042719,
+          -0.002188833703126475,
+          -0.0011132260212693978,
+          0.00020818406194057087,
+          -0.001144264798790512,
+          -0.00020113741502703064,
+          -0.00044035882791974845
+        ],
+        "cohort_differences": [
+          -0.0006212350401685069,
+          -0.0004966827852649243,
+          -0.0008677794050441709,
+          -0.00039439424494918003
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": -0.0008763456729521668,
+        "cohort_bootstrap95_descriptive": [
+          -0.0015736132951328224,
+          -0.00016385080940357725
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.0005418040685789827,
+          -0.007086109175822974,
+          0.005127736450215803,
+          0.0032814677549022064,
+          -0.0015545231678829596,
+          -0.0020686636408067394,
+          -0.003978833795408726,
+          0.005388105237210283,
+          -0.0032215611258485377,
+          -0.007851213292698056,
+          0.002565354839220546,
+          0.0008839990508688611,
+          -0.001188678030109025,
+          -0.0031556303422149434,
+          0.0018405262981404102,
+          -0.002461703758421835
+        ],
+        "cohort_differences": [
+          0.00019532274017901308,
+          -0.0005534788417220354,
+          -0.0019058551321142966,
+          -0.0012413714581513483
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.004715597883688291,
+        "cohort_bootstrap95_descriptive": [
+          -0.00448304108160659,
+          0.014009699905711132
+        ],
+        "better_cells_of16": 5,
+        "cell_differences": [
+          0.011940497296968555,
+          0.0034113477178603357,
+          0.002086751106082252,
+          0.019811214713836733,
+          0.012695202904851932,
+          0.00016787364391257498,
+          0.004667247703808108,
+          -0.005306208787033473,
+          -0.005161291542293167,
+          -0.009057775130749457,
+          -0.012415945316511579,
+          -0.009691144057263568,
+          0.005541989904445543,
+          0.023795756670743407,
+          0.010080496105647319,
+          0.02288355320470714
+        ],
+        "cohort_differences": [
+          0.009312452708686969,
+          0.0030560288663847857,
+          -0.009081539011704443,
+          0.015575448971385852
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.00014085937525718222,
+        "cohort_bootstrap95_descriptive": [
+          -0.0003369405969334844,
+          0.0006272376791647064
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.00042229378044766896,
+          -0.007183774963421735,
+          0.006369614287524361,
+          0.0036424651924015783,
+          -0.002881178574997728,
+          -0.005108793919689575,
+          0.004590123068470481,
+          0.0011551633483381507,
+          -0.0010522033561699562,
+          -0.0029755637503027232,
+          0.001992018565813533,
+          0.0015849098430699426,
+          -3.8784333497021706e-05,
+          -0.0011840050316767603,
+          0.003329510163378263,
+          0.00043654324532177435
+        ],
+        "cohort_differences": [
+          0.0006015026840141338,
+          -0.0005611715194696679,
+          -0.00011270967439730092,
+          0.0006358160108815639
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.008449295332398798,
+        "cohort_bootstrap95_descriptive": [
+          0.004008983567146407,
+          0.012985716914865886
+        ],
+        "better_cells_of16": 2,
+        "cell_differences": [
+          0.01539826205286099,
+          0.00873182156162966,
+          0.003838341739052842,
+          0.004064449089220767,
+          0.015202776089281222,
+          0.013176297160623962,
+          0.004409175102708218,
+          0.002004361326095161,
+          0.011392576544761113,
+          0.002176418475132058,
+          -0.0012216267858653485,
+          -0.00256365910214984,
+          0.008649001314477545,
+          0.017659394714350407,
+          0.009904291414889244,
+          0.022366844621312776
+        ],
+        "cohort_differences": [
+          0.008008218610691065,
+          0.008698152419677141,
+          0.0024459272829694956,
+          0.014644883016257493
+        ]
+      }
+    },
+    "RAW": {
+      "physical/arc_length_m/mae": {
+        "difference_vs_B": -0.029530284568282994,
+        "cohort_bootstrap95_descriptive": [
+          -0.05456879128966463,
+          -0.004491777846901357
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.02240117448357637,
+          -0.0752172755722853,
+          0.015449386767571127,
+          0.04401343169968186,
+          -0.026393883517968675,
+          -0.15099473708298206,
+          0.031398177146797934,
+          -0.030016617299594373,
+          -0.009282257364873203,
+          0.09970738151405101,
+          -0.02002437923022171,
+          -0.06817933610555826,
+          -0.04913355618232629,
+          0.026968505430843948,
+          -0.033183922491630824,
+          -0.20519429632045671
+        ],
+        "cohort_differences": [
+          -0.009538907897152171,
+          -0.04400176518843679,
+          0.0005553522033494573,
+          -0.06513581739089247
+        ]
+      },
+      "physical/arc_length_m/w1": {
+        "difference_vs_B": -0.029401022104551533,
+        "cohort_bootstrap95_descriptive": [
+          -0.04959086972821858,
+          -0.009211174480884488
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          0.016012011229278755,
+          -0.049984442572082344,
+          -0.07858538984504548,
+          0.0425449505214317,
+          -0.013415590269346467,
+          -0.16297021742160922,
+          0.051638893911402306,
+          -0.03982545354471512,
+          0.01838420839985133,
+          0.022530697603144745,
+          -0.04787321961074298,
+          0.0032817884270883724,
+          0.014647982949171023,
+          -0.033690756239181496,
+          -0.02088527362641912,
+          -0.19222654358505054
+        ],
+        "cohort_differences": [
+          -0.017503217666604343,
+          -0.041143091831067125,
+          -0.0009191312951646324,
+          -0.05803864762537003
+        ]
+      },
+      "physical/duration_s/mae": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/duration_s/w1": {
+        "difference_vs_B": 0.0,
+        "cohort_bootstrap95_descriptive": [
+          0.0,
+          0.0
+        ],
+        "better_cells_of16": 0,
+        "cell_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cohort_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "physical/longest_steady_s/mae": {
+        "difference_vs_B": -0.4614323185414513,
+        "cohort_bootstrap95_descriptive": [
+          -1.0840828173374604,
+          0.18991959064327446
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.5039181286549805,
+          0.2986549707602393,
+          0.8788304093567305,
+          1.2125730994152022,
+          -1.3500000000000014,
+          -2.2410526315789454,
+          0.35906432748537753,
+          0.6122807017543863,
+          -0.36631578947367416,
+          0.05526315789473557,
+          0.9842414860681075,
+          -1.9745510835913294,
+          -1.9684210526315766,
+          -0.8315789473684134,
+          -1.6482972136222962,
+          -0.8996904024767822
+        ],
+        "cohort_differences": [
+          0.47153508771929786,
+          -0.6549269005847957,
+          -0.3253405572755401,
+          -1.3369969040247671
+        ]
+      },
+      "physical/longest_steady_s/w1": {
+        "difference_vs_B": -0.4802683178534588,
+        "cohort_bootstrap95_descriptive": [
+          -0.8794820691434482,
+          0.03150348297213412
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          1.442748538011692,
+          0.5932748538011694,
+          -1.0483040935672534,
+          0.051403508771926454,
+          -0.3100000000000023,
+          -0.9789473684210535,
+          0.7578947368421041,
+          -1.5982456140350898,
+          0.09473684210526301,
+          0.3121052631578891,
+          -1.030866873065019,
+          -1.9892879256965905,
+          -0.810526315789474,
+          -1.1052631578947398,
+          -0.9758513931888544,
+          -1.0891640866873082
+        ],
+        "cohort_differences": [
+          0.2597807017543836,
+          -0.5323245614035104,
+          -0.6533281733746144,
+          -0.9952012383900941
+        ]
+      },
+      "physical/longest_stop_s/mae": {
+        "difference_vs_B": -0.03807318541451665,
+        "cohort_bootstrap95_descriptive": [
+          -0.38603586171310744,
+          0.2250000000000023
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          -0.3984795321637442,
+          -0.9825146198830375,
+          0.3157309941520552,
+          0.719649122807013,
+          1.3805263157894778,
+          -0.7015789473684215,
+          0.7140350877192958,
+          -0.07777777777776862,
+          1.7768421052631567,
+          -0.5715789473684225,
+          -1.2169659442724523,
+          0.3765944272445836,
+          -0.2736842105263122,
+          -0.5789473684210513,
+          0.5071207430340507,
+          -1.598142414860689
+        ],
+        "cohort_differences": [
+          -0.08640350877192837,
+          0.32880116959064587,
+          0.09122291021671636,
+          -0.48591331269350047
+        ]
+      },
+      "physical/longest_stop_s/w1": {
+        "difference_vs_B": -0.13800180598555312,
+        "cohort_bootstrap95_descriptive": [
+          -0.30088622291021605,
+          -0.013088235294120398
+        ],
+        "better_cells_of16": 10,
+        "cell_differences": [
+          -0.136140350877195,
+          -0.7834502923976601,
+          0.47432748538010827,
+          0.2694736842105243,
+          1.0226315789473652,
+          -0.28157894736842515,
+          -0.45204678362572537,
+          -0.8461988304093566,
+          0.23684210526315752,
+          -0.17789473684210222,
+          0.30142414860680233,
+          -0.28928792569659834,
+          -0.10526315789473983,
+          -0.5157894736842081,
+          0.9727554179566624,
+          -1.8978328173374592
+        ],
+        "cohort_differences": [
+          -0.04394736842105562,
+          -0.13929824561403548,
+          0.017770897832814825,
+          -0.3865325077399362
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "difference_vs_B": 0.0019799731071506697,
+        "cohort_bootstrap95_descriptive": [
+          0.0009676007566878416,
+          0.00286495784897502
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.0018828706823901808,
+          -0.0012710098270046488,
+          0.010686458088943335,
+          -0.001109492105616977,
+          -0.002887641260707924,
+          0.0008763706810906435,
+          0.0029619811141032015,
+          0.008147518125079023,
+          0.004952846112697612,
+          -0.001437348231794311,
+          0.01101093268013248,
+          -0.0013876838578128492,
+          0.006011612461372912,
+          -0.000723804778534648,
+          0.002308576176624305,
+          -0.004576874981771256
+        ],
+        "cohort_differences": [
+          0.001605771368482882,
+          0.002274557164891236,
+          0.0032846866758057328,
+          0.0007548772194228281
+        ]
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "difference_vs_B": 0.0033629032389540106,
+        "cohort_bootstrap95_descriptive": [
+          0.0009860507338346823,
+          0.0052841787194090085
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.002670925101074008,
+          -0.00570626327726724,
+          0.014007885024617417,
+          0.003780430585034536,
+          0.009083273030496414,
+          -0.00023183966501721942,
+          0.0073397829837164585,
+          0.004348665196981516,
+          0.011746600951889265,
+          -0.0019041451398534998,
+          0.012517930452708104,
+          -0.0006268380556489761,
+          0.0002682053765864917,
+          -0.0024140805526932096,
+          0.007094867870300961,
+          -0.002827097857512839
+        ],
+        "cohort_differences": [
+          0.0023527818078276762,
+          0.005134970386544292,
+          0.005433387052273723,
+          0.000530473709170351
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "difference_vs_B": 0.003054788117988736,
+        "cohort_bootstrap95_descriptive": [
+          -0.0015920592202332794,
+          0.006975760940479275
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          -0.0026028991011565195,
+          -0.00651104439632566,
+          0.031232226285526465,
+          -0.019776025480199688,
+          -0.01417135036131928,
+          -0.008158918887569477,
+          0.026170129767599692,
+          0.021752906481676826,
+          0.008859809490844583,
+          0.0007187931353820343,
+          0.03594371994428014,
+          -0.015309002047060316,
+          0.016484062275404665,
+          -0.014855653181867434,
+          0.004154362846118254,
+          -0.015054506883514507
+        ],
+        "cohort_differences": [
+          0.0005855643269611494,
+          0.00639819175009694,
+          0.00755333013086161,
+          -0.0023179337359647556
+        ]
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "difference_vs_B": 0.008664683651079084,
+        "cohort_bootstrap95_descriptive": [
+          0.0028383527230643676,
+          0.013977820310711927
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.0051378572473921025,
+          -0.016450807042065557,
+          0.032394207086501314,
+          -0.003569515178987903,
+          0.019605469410090642,
+          0.009011778516526875,
+          0.03017239030001756,
+          0.00948119898424804,
+          0.018415982938029513,
+          -0.006657221304642358,
+          0.037991696576378964,
+          -0.006198732934953821,
+          -0.00012220102964022317,
+          -0.007627999449785594,
+          0.02505721306490971,
+          -0.008006378766753919
+        ],
+        "cohort_differences": [
+          0.004377935528209989,
+          0.01706770930272078,
+          0.010887931318703074,
+          0.002325158454682494
+        ]
+      },
+      "physical/mean_speed_mps/mae": {
+        "difference_vs_B": -1.397407364325809e-05,
+        "cohort_bootstrap95_descriptive": [
+          -0.00011812667623584128,
+          6.204055018715904e-05
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          0.00013956325284292248,
+          8.30777900158175e-05,
+          -0.0002261451806262471,
+          -0.00013134682202986525,
+          0.00016558571523894727,
+          6.79124315428048e-05,
+          -4.06174691436334e-05,
+          7.416040722407757e-05,
+          0.00013606692472700743,
+          0.0002625811140424261,
+          4.195485561675483e-05,
+          -0.00021131957775111232,
+          -0.00021594720316331362,
+          -6.241935041595426e-05,
+          -0.00022517855042147872,
+          -8.151351599128276e-05
+        ],
+        "cohort_differences": [
+          -3.3712739949343096e-05,
+          6.676027121554906e-05,
+          5.7320829158769016e-05,
+          -0.00014626465499800734
+        ]
+      },
+      "physical/mean_speed_mps/w1": {
+        "difference_vs_B": 2.0455315594247736e-05,
+        "cohort_bootstrap95_descriptive": [
+          -4.879346268431284e-05,
+          9.964741214242567e-05
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          0.00027674963805490727,
+          -0.00012273406612073323,
+          -6.501126732394447e-05,
+          -0.0001638151525005238,
+          -5.9068828171193744e-05,
+          -0.00021780662256776218,
+          -0.00012763650435809737,
+          9.131121195160574e-05,
+          0.00025103907184487184,
+          0.00038591248593511374,
+          -0.00011013535535386865,
+          2.9573611630251406e-05,
+          7.640854778201422e-05,
+          8.932923915128121e-05,
+          -0.00019251734612435456,
+          0.00018568638567839635
+        ],
+        "cohort_differences": [
+          -1.870271197257356e-05,
+          -7.830018578636189e-05,
+          0.00013909745351409208,
+          3.972670662183431e-05
+        ]
+      },
+      "physical/speed_p95_mps/mae": {
+        "difference_vs_B": 0.05752926338074213,
+        "cohort_bootstrap95_descriptive": [
+          0.032309480360603465,
+          0.0743276313210322
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          -0.0033510674775238947,
+          0.0517378511825588,
+          -0.024064932112601856,
+          0.058936187432377274,
+          0.09985519821429278,
+          0.131366786060358,
+          0.04194647829359344,
+          -0.005990893873019765,
+          0.07279218883118777,
+          0.02441895853095355,
+          0.1182998512493274,
+          0.09409374877086929,
+          -0.06600710165405355,
+          0.23981800930084107,
+          0.025190934504301765,
+          0.06142601683841198
+        ],
+        "cohort_differences": [
+          0.02081450975620258,
+          0.06679439217380612,
+          0.0774011868455845,
+          0.06510696474737532
+        ]
+      },
+      "physical/speed_p95_mps/w1": {
+        "difference_vs_B": 0.04653315636397522,
+        "cohort_bootstrap95_descriptive": [
+          0.01729417274715589,
+          0.0766516529525083
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -0.12049646007569548,
+          0.1922200328188386,
+          -0.0050328655423217405,
+          -0.04100801156249401,
+          -0.06843065170226481,
+          0.19890379826443327,
+          0.07283460339654879,
+          0.03161744958723478,
+          0.019260581256581144,
+          0.13162744532592918,
+          0.03777806810558282,
+          -0.0759954083491734,
+          -0.022474637723457036,
+          0.25044964019650573,
+          0.030129008454032435,
+          0.1131479093733232
+        ],
+        "cohort_differences": [
+          0.006420673909581842,
+          0.05873129988648801,
+          0.028167671584729936,
+          0.09281298007510108
+        ]
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "difference_vs_B": -0.005079273674884706,
+        "cohort_bootstrap95_descriptive": [
+          -0.012710609672305091,
+          -0.00027534207365310925
+        ],
+        "better_cells_of16": 11,
+        "cell_differences": [
+          -0.00551745010934046,
+          -0.024520575523865107,
+          -0.029807355478146058,
+          -0.007443551392769421,
+          0.020627039124069657,
+          -0.014781882139957736,
+          -0.007916813120632749,
+          0.001371876791814275,
+          0.02252431491246154,
+          -0.011663291380369478,
+          -0.007778791672993779,
+          -0.014858941563907657,
+          0.005005397385596855,
+          -0.015547837114975427,
+          -0.01724262786058045,
+          0.0262821103454407
+        ],
+        "cohort_differences": [
+          -0.01682223312603026,
+          -0.00017494483617663814,
+          -0.0029441774262023435,
+          -0.00037573931112958037
+        ]
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "difference_vs_B": -0.0032087575261564444,
+        "cohort_bootstrap95_descriptive": [
+          -0.0070138369336141156,
+          0.0001443323553880875
+        ],
+        "better_cells_of16": 9,
+        "cell_differences": [
+          0.0074236469249799875,
+          -0.005740891812754029,
+          -0.03890330912486392,
+          0.0024960627060402474,
+          0.018818341210634026,
+          -0.021688741912850473,
+          -0.008523745840494396,
+          -0.0026120804412028964,
+          0.025779611476136582,
+          -0.014468111802896672,
+          -0.019856753550252404,
+          0.0004973368589797911,
+          0.014095734595036324,
+          -0.016763085791244525,
+          -0.012873599643669686,
+          0.020979465729918934
+        ],
+        "cohort_differences": [
+          -0.008681122826649429,
+          -0.0035015567459784347,
+          -0.0020119792545081755,
+          0.0013596287225102616
+        ]
+      },
+      "physical/stopped_fraction/mae": {
+        "difference_vs_B": 3.823579945750905e-05,
+        "cohort_bootstrap95_descriptive": [
+          -0.00011295777490237264,
+          0.00029253371723908343
+        ],
+        "better_cells_of16": 8,
+        "cell_differences": [
+          0.0006269451095756579,
+          -0.003973199219143769,
+          -0.0014887347767331693,
+          0.004646322455226337,
+          0.0019351117835787884,
+          -0.00028315446939626565,
+          -0.0001381470027151943,
+          0.00015646348735395832,
+          0.0017628956177778016,
+          -0.0014933916011890397,
+          0.00019135722583157877,
+          -0.0007911431630588661,
+          0.0015992156433076027,
+          -0.002811209568911968,
+          0.0007556778129757247,
+          -8.323654315903206e-05
+        ],
+        "cohort_differences": [
+          -4.716660776873591e-05,
+          0.0004175684497053217,
+          -8.257048015963137e-05,
+          -0.00013488816394691822
+        ]
+      },
+      "physical/stopped_fraction/w1": {
+        "difference_vs_B": 0.00018539645081655596,
+        "cohort_bootstrap95_descriptive": [
+          -2.0214242268590775e-05,
+          0.0003910071439017027
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          0.0014819562896487837,
+          -0.004058192816085528,
+          -0.0006609782233996664,
+          0.002857636079123288,
+          0.0016622469743553109,
+          -0.001026070361590109,
+          -0.0025280115333040226,
+          0.002109699653103217,
+          0.0022451107968035275,
+          -0.0007865652674997822,
+          -0.002565279552014618,
+          0.0025011042883452683,
+          0.003015048543691466,
+          -0.003774566337672286,
+          0.0008988691441131208,
+          0.0015943355354469252
+        ],
+        "cohort_differences": [
+          -9.48946676782806e-05,
+          5.446618314109905e-05,
+          0.00034859256640859884,
+          0.00043342172139480654
+        ]
+      },
+      "selected_native_acceleration_w1": {
+        "difference_vs_B": 0.0016201302301681163,
+        "cohort_bootstrap95_descriptive": [
+          0.0006099566967683791,
+          0.0023859859256060902
+        ],
+        "better_cells_of16": 6,
+        "cell_differences": [
+          -0.0017616942104075328,
+          -0.005751296115377863,
+          0.012085146679956416,
+          0.0013484814751942853,
+          -0.0012986188805743093,
+          0.0012884391733417877,
+          0.007032964839150696,
+          0.0009473919549860821,
+          -0.0008695835144734432,
+          0.0017386544445998076,
+          0.009433532545061268,
+          0.0004491088515897468,
+          -0.0003215229893687166,
+          0.001742154545776975,
+          -0.00017857570360677033,
+          3.7500586841432426e-05
+        ],
+        "cohort_differences": [
+          0.0014801594573413263,
+          0.001992544271726064,
+          0.002687928081694345,
+          0.0003198891099107301
+        ]
+      },
+      "selected_native_speed_w1": {
+        "difference_vs_B": 0.010322846914559355,
+        "cohort_bootstrap95_descriptive": [
+          0.004727252140673793,
+          0.015927830835842482
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.02631872731459106,
+          -0.015486360073566408,
+          0.006126122589461991,
+          0.046640163744112506,
+          0.027180601566048956,
+          -0.008347287067911546,
+          0.0038101799016492244,
+          0.010787355581240998,
+          0.005951746129507329,
+          -0.027027864713375704,
+          0.0023558342569809376,
+          0.02310745147125015,
+          0.0245930054039476,
+          -0.004149774703880338,
+          0.02341035030699623,
+          0.0198952989258967
+        ],
+        "cohort_differences": [
+          0.015899663393649788,
+          0.008357712495256908,
+          0.0010967917860906784,
+          0.015937219983240047
+        ]
+      },
+      "weighted_native_acceleration_w1": {
+        "difference_vs_B": 0.002625569541838414,
+        "cohort_bootstrap95_descriptive": [
+          0.0017736960976587179,
+          0.00347744298601811
+        ],
+        "better_cells_of16": 7,
+        "cell_differences": [
+          -0.0001731032157767931,
+          -0.005595398460629786,
+          0.014946416396044354,
+          0.0033834205096685277,
+          -0.0065459743881929044,
+          -0.0020182969448835353,
+          0.018222249148205166,
+          -0.0020292057580495043,
+          -5.9673677175686723e-05,
+          0.005900058974556727,
+          0.008902179128753865,
+          0.0005156442327036714,
+          -0.0017237810997247083,
+          0.0015918759422651751,
+          0.0034574196753347497,
+          0.003235282206315304
+        ],
+        "cohort_differences": [
+          0.0031403338073265757,
+          0.0019071930142698056,
+          0.003814552164709644,
+          0.0016401991810476302
+        ]
+      },
+      "weighted_native_speed_w1": {
+        "difference_vs_B": 0.00902187778251877,
+        "cohort_bootstrap95_descriptive": [
+          0.005011264194032611,
+          0.013406843383256109
+        ],
+        "better_cells_of16": 4,
+        "cell_differences": [
+          0.035693134310154084,
+          -0.035094411328580266,
+          0.002028064728393897,
+          0.019507011944255526,
+          0.03283783985174127,
+          -0.010076528607161128,
+          0.00613056889388397,
+          0.035233351354160725,
+          0.017067985145389653,
+          5.491973626758906e-05,
+          -0.0013565569506051034,
+          0.02297585629230059,
+          0.02624057017963488,
+          -0.03404668345921502,
+          0.012099289676840153,
+          0.015055632752839498
+        ],
+        "cohort_differences": [
+          0.00553344991355581,
+          0.01603130787315621,
+          0.009685551055838182,
+          0.004837202287524878
+        ]
+      }
+    }
+  },
+  "finding": "SV does not improve both aggregate primary endpoints; no broad physical-quality improvement claim.",
+  "primary": [
+    "selected_native_speed_w1",
+    "selected_native_acceleration_w1"
+  ],
+  "weighting": "equal classes, seeds, windows, cohorts",
+  "source_sha256": {
+    "390201/evaluation/B-42/complete.json": "185f5325498ebdd97b2ed6784f6d5ef3447f951996e99af6ecd6b9c633960deb",
+    "390201/evaluation/B-43/complete.json": "6cd8634e37526850739973ff213c31ab3cc98e7a979973c2c3fe115f21579b97",
+    "390201/evaluation/S-42/complete.json": "0e6224433f60000e6a90340917982979300008098cb7c9fed0859bb8720bd4b2",
+    "390201/evaluation/S-43/complete.json": "470b3ed33c1eebe91727d6c86005c3d92638fbddd9fc744d2e3a194fe051a427",
+    "390201/evaluation/V-42/complete.json": "d25d223f69f175858b4c3febdf1bc8e1b34b72ea80d3cb2d86621d3bd7de3b28",
+    "390201/evaluation/V-43/complete.json": "561179d342eb275a5ab67c154e5647066a57b3fc78963951ac319a9d0b6d170a",
+    "390201/evaluation/SV-42/complete.json": "4926bd6544ac1e14fb71535968570660e518d192d22baa46cf24419bb5f87772",
+    "390201/evaluation/SV-43/complete.json": "6c5f5c240e73c45c118a5702c9ae3c2b8c6bcd6304894856331d2dd28aef375b",
+    "390201/evaluation/P-42/complete.json": "1cebbedcffba0aabcc82dd27c163c9dcf1226253c85399a9e3ad85707791f6d6",
+    "390201/evaluation/P-43/complete.json": "e93af075eddee2c7652f068f88f8a1cb52b797ad9cec36f05fe69ac29cf83878",
+    "390201/evaluation/SH-42/complete.json": "34375cdd126fd1d6d0273977b40c10d2c0166f0046cfaa700ae188bda0bf0b11",
+    "390201/evaluation/SH-43/complete.json": "8c6b7980d407b72616b72f1831137200a81ac9cf28db3d7aa00f03b0f92ac984",
+    "390201/evaluation/RAW-42/complete.json": "3822d866848d41b936cf73f98e77b29756582cdef761ad51b57d117e0124f502",
+    "390201/evaluation/RAW-43/complete.json": "4fff19bcca35bbc92e4009817b7828c334a47bc6ee592f4fa6bc7c5a8c079fbf",
+    "390202/evaluation/B-42/complete.json": "e80bc24aec6884886cdf8d77e8940d193716cfca3a4632f78bdc979b766ffd04",
+    "390202/evaluation/B-43/complete.json": "3a64b1f7a31a3239fa7e576835e0cc687209ce98d52f1ff96783c5f3f09eb0f8",
+    "390202/evaluation/S-42/complete.json": "a0f9e3b29ba5181bf1779778c522aa3f30b5394482bb632c7c11cae7ec6fda5c",
+    "390202/evaluation/S-43/complete.json": "a4c62181a9a5535b83d8c37f85bb46d8936105bb24fff2650f19467aaacf4550",
+    "390202/evaluation/V-42/complete.json": "f4d9e39c8a0ce2e6bd2995c9a7ff954eab70863519e480e543275814dc492d71",
+    "390202/evaluation/V-43/complete.json": "78b6f5a5e9cc7d58c66c011615bd024d5ee402839688eb897dade8b318f75423",
+    "390202/evaluation/SV-42/complete.json": "51d9349f922be5c40dfef210433c4150c72b4434a8aa8ba62089d914c8900780",
+    "390202/evaluation/SV-43/complete.json": "f3b2b9a75dd6d2e3e9500152d0b09752170fbcd0b51bc4c14a5a002ddc921cda",
+    "390202/evaluation/P-42/complete.json": "5d2970f3cbb0e8c1c9c72ff7799b2eab83987e3ec734d9bed6811b38da45757a",
+    "390202/evaluation/P-43/complete.json": "a26c40cbba15100c8d248c28095254c95e90f402c15e423c24aa0bbbd1d63253",
+    "390202/evaluation/SH-42/complete.json": "d375863d5ec5f4509fd99d75ba8353248448e791464bb03a0223ffacd4bd86c5",
+    "390202/evaluation/SH-43/complete.json": "2c7cd6ed441a3c2e61532c390ab3fab846d5d84f823d3e3eab34a12bb43cc502",
+    "390202/evaluation/RAW-42/complete.json": "6e6e603118d8202cd9854b28b82cb9cb2c8f7f66c2d02645e113a09e2ed235f9",
+    "390202/evaluation/RAW-43/complete.json": "b3b6d6f4cea599a1616b4b2e6ef48061cff74541d30bbf966d8991d00d24413d",
+    "390203/evaluation/B-42/complete.json": "c364737bdf7eba7f2974c357f9d2178116588618032a4788bce18ad241b7f0b1",
+    "390203/evaluation/B-43/complete.json": "7317143d27e9f4d71a75fa1f309edf4bfcc6277462c69f498136407375eff97e",
+    "390203/evaluation/S-42/complete.json": "e3ecc92e40ac4a1b0e720f820fa5090a6fd761ef5b3141817146ee25269c5ba4",
+    "390203/evaluation/S-43/complete.json": "07fa6b83614152c6aa557864b54897ec260e93195b445113884ab26593b8b87d",
+    "390203/evaluation/V-42/complete.json": "a755eb970ef7bad52918c90ca3d7ff867cae389597173a3df15b0edcebff0497",
+    "390203/evaluation/V-43/complete.json": "568e2b3a1f0e60cbe27ceaa2e62a62fd4e8232cf570708111a314b0d5c0eefe2",
+    "390203/evaluation/SV-42/complete.json": "caea65e26b38d790754fa813e65c6c8b206d46e468d1847dbb155aceb952ee3f",
+    "390203/evaluation/SV-43/complete.json": "f80b7822fcfd7777258494d4190e29037573e4b1ac7db073efb32fe0be6f8093",
+    "390203/evaluation/P-42/complete.json": "6075880eec3c99acc4fc11e80a07a3a1ca2a925b83dc2474f1dc25ba0e10cd6b",
+    "390203/evaluation/P-43/complete.json": "167b2999dc6eb96180967261faa7642101b05669560c08cbfdc963fa755e8c7c",
+    "390203/evaluation/SH-42/complete.json": "4399c7f2440eb6cddcb7b2c6e7c8d47851c6ac1df7c6e10eb86a236db3db1a2b",
+    "390203/evaluation/SH-43/complete.json": "3f8bd635dc86c1554786d9cc1826418224aa58179479b33d7c46d09a42a39716",
+    "390203/evaluation/RAW-42/complete.json": "57299a66853c13e53b889feb21710a58cc97f0bed9e366a862a22eda4933229d",
+    "390203/evaluation/RAW-43/complete.json": "16b4dc46c401c9ff58628cc66a8e3a2bcd4d31d6c8ce24812f1fb431af044e65",
+    "390204/evaluation/B-42/complete.json": "d89977f5d27cb7665fb17c79c28352936f465dc6ff90f377fe9a3584441cd04f",
+    "390204/evaluation/B-43/complete.json": "9d1bf7958bf0bb53c84317496ad11198e770a1795545c16c72d4566b63663625",
+    "390204/evaluation/S-42/complete.json": "0a48c88008063b0d6be65f216a45f5fe66f7e263d5cf44481f70db8c1c4d6801",
+    "390204/evaluation/S-43/complete.json": "86c4c318e47f9f686a57e2649a7defc2051fb1361d1e76b98bb78afc9f25c9c1",
+    "390204/evaluation/V-42/complete.json": "f1bd021ca42b546f3256b9f005ee64d8172dc82fec404278f872bd40e88d6bef",
+    "390204/evaluation/V-43/complete.json": "9775b2fe85dda52ae3439673751d7ed33c6d822d82cbc5b34f33ea4d6b6a6266",
+    "390204/evaluation/SV-42/complete.json": "8d6c8c6f8b9020212dc8d9f1e893275ce46094679ca2413b4d6d23fa9ad0692d",
+    "390204/evaluation/SV-43/complete.json": "c62ceebccd08a013fadac84fc07467cdee7a7549147c158ece7f95e91a5b69b7",
+    "390204/evaluation/P-42/complete.json": "af6ea39fe03566d50fb9dd42a7419029cd1308ac4dba42843c2994239ac31950",
+    "390204/evaluation/P-43/complete.json": "41ec5826b834298ec9d3080dbefd8e37e1a60e97da170cf428175c78ebc6e586",
+    "390204/evaluation/SH-42/complete.json": "e484c090075a738a89c845a9103f95da52f3ba499abcf1a3cd31adb663ca6298",
+    "390204/evaluation/SH-43/complete.json": "d68078782ba28fc5f994bf3956104956cf8e417132af4b96ae9887d1d4e36816",
+    "390204/evaluation/RAW-42/complete.json": "2cd4ef6bcb277fdad9b31c61614b6a3ba727d4bfa148e6d2b174283c9c721508",
+    "390204/evaluation/RAW-43/complete.json": "043a8a477ad88b6df8e7201029490eba11ccbfa3e68a44acc132e6feae2f1835",
+    "390205/evaluation/B-42/complete.json": "f7773afb4359900db58e85ff965abd0fe80e5ee62feee65985df8df8eecf3978",
+    "390205/evaluation/B-43/complete.json": "bb9ac178e6d1b84ac228bfd3992ab1e27d9fd8e892bfb9bb24a4493c66b79fc0",
+    "390205/evaluation/S-42/complete.json": "a07cd0edbf8ebc35bf066155add8422521bb3bdc758006fb2a3dfccaa6122348",
+    "390205/evaluation/S-43/complete.json": "4fab5ef9a09a65ea5d81316893e2af5f55672656c027d9b248ad29816ec74bad",
+    "390205/evaluation/V-42/complete.json": "8d738839696248fd5d92936199031adb0260b65e44e18ae2b577c9eac45b1e42",
+    "390205/evaluation/V-43/complete.json": "b7cc69827e62e32cdb62eec29fd497d2a667a33573dd479f144ada2b73dca4df",
+    "390205/evaluation/SV-42/complete.json": "028ea439e2f18dbb0c9ffa1afd4f9971c9e52a3c9c4070e778ada7d2d997d726",
+    "390205/evaluation/SV-43/complete.json": "59169a48a52e9aaf4ec58ad5546a7bb4d111897acf6749e48386a1daed28853d",
+    "390205/evaluation/P-42/complete.json": "a9dbf05d5c0a00fd22ddd996685fb730811b8cdda25e59afeaaf2b647af305a7",
+    "390205/evaluation/P-43/complete.json": "381af624e69aa19896bfb855aa9f01303218c0e0048bf27d3be3b9531235aa7f",
+    "390205/evaluation/SH-42/complete.json": "6eea0adc2fdadd090419065f982da361b12fe1ff4b6a64d07305ae9a9ff3dacd",
+    "390205/evaluation/SH-43/complete.json": "291bfc12b03c58e5c8aaec4d7c5a71eb829910f44f9f216ce3ed5962bf2ceff6",
+    "390205/evaluation/RAW-42/complete.json": "7b63afd3bc055c59eb6caa156d24d804316aafef101b699443e36e6e1b38db5c",
+    "390205/evaluation/RAW-43/complete.json": "766137df927f8be7b7dd948905f46bdd8b9b89dc885049da6b83585fdd0347b6",
+    "390206/evaluation/B-42/complete.json": "1eeb3e82e3f362f183fe31c1c222f891ccae226584e3f8f18d949ab4722705bb",
+    "390206/evaluation/B-43/complete.json": "873b6a7487a4e596525f45d1195ceb96cdf4c8488dad330f9350a94e56eba681",
+    "390206/evaluation/S-42/complete.json": "82b33ee391ecba896ac05e47451c3ec4ab61230a84b13f6f16ece6c810182581",
+    "390206/evaluation/S-43/complete.json": "c26f3e79ba08e013d70a6ece2acbf6d539f8719d0d0e21288eb1e9ab21ab43a6",
+    "390206/evaluation/V-42/complete.json": "41afa2016ed5a7baf960f181195d87f4d33f5cba7180ef0a778f70945b05021f",
+    "390206/evaluation/V-43/complete.json": "09d07340792adf5d884e01ea6d952bb2b997f74ec4faa8bebc8e79804b00a270",
+    "390206/evaluation/SV-42/complete.json": "67ce37bf916753263ac4cd0ac276ac510accb99b48a677670858904b50a56f3b",
+    "390206/evaluation/SV-43/complete.json": "56be38649bc71f6daf17f5ba0dae87cb30b2b07ba43ab3aced88179aa16a7efb",
+    "390206/evaluation/P-42/complete.json": "27dea930284836d741ffdb7f0a24cc5a4a4f3c8d599137ae7af5965d2720428a",
+    "390206/evaluation/P-43/complete.json": "47c6f31086787c72570fabae7ed5a1bed986decae6342c18f98cb5ef9c2cda80",
+    "390206/evaluation/SH-42/complete.json": "b2af9a5f85549c451447921f0f164f500f99f6994aeff01b6064cad73dc20bfc",
+    "390206/evaluation/SH-43/complete.json": "c4b719131d0832121b6e668f1ca34e3b7d348524d2c8a9644e8f7a9136d7d742",
+    "390206/evaluation/RAW-42/complete.json": "b69d2fd85190cc4dc348365338196feec9c840273fd6346551af35a03d45dc26",
+    "390206/evaluation/RAW-43/complete.json": "7f2cca68695623394feef991fc26e9fffa2a43647299fa1c166ff2a9037fd87c",
+    "390207/evaluation/B-42/complete.json": "16a456cea8ef9574f4f82d4f193b2c5133238592764e8a55c5c67fbf3732df86",
+    "390207/evaluation/B-43/complete.json": "dd48dd2212c204f6c8d88eae25516974cdb542ed0492e02d27bbe7b77723ee8a",
+    "390207/evaluation/S-42/complete.json": "dd58e2805c475d43eeb9a455ba831e90d0fe7df1c1fc49c07b03b126008ccd76",
+    "390207/evaluation/S-43/complete.json": "d1d05d34f8d8ab0e969f77270876759954cbe1cc21bab4c050bd2251a81102f8",
+    "390207/evaluation/V-42/complete.json": "57baec504a977194900e8dc02e156ce26c4fea4ab1cafa2464d90214e8f4c99b",
+    "390207/evaluation/V-43/complete.json": "a64131347e481cd550ff608cf9fd7ec2fdc49d345b94767c053e9b01c4c8b502",
+    "390207/evaluation/SV-42/complete.json": "a476ddc0786af2646197f3888b46f16ddd19237cebb855d5534a1e614fed33fb",
+    "390207/evaluation/SV-43/complete.json": "f27095cc6f54d64dd4158f060a37c29430c4f4f7ed95b17aa4562929c03f8466",
+    "390207/evaluation/P-42/complete.json": "d41ef91a8de1e59b656a4576eb080219032ced7b16269de7cd0f216bafa0009b",
+    "390207/evaluation/P-43/complete.json": "a5316d7c2b6c310a1432823678c038f16a395138b5e4fd0aec2018d0ea4927c5",
+    "390207/evaluation/SH-42/complete.json": "3802f40c6f65573d69e1fa86903465f6f5c0fd42e87f46622cd079f1e308d722",
+    "390207/evaluation/SH-43/complete.json": "627d10a2ed2b4fb7467153de208e9f975f44daa260ecb53709076b0e6f466728",
+    "390207/evaluation/RAW-42/complete.json": "374992b0fd3b0b8244f350f3d576f74fa8f6dc05e44b97641acbc0bfe53965d5",
+    "390207/evaluation/RAW-43/complete.json": "17d290484ef995f87916a95e616dd567d9d47e938229f974c3057bbadb9b6904",
+    "390208/evaluation/B-42/complete.json": "1fa19b06f3bbd9a6c166d02d43861b840908c275638569ec26e4064ea83a09e8",
+    "390208/evaluation/B-43/complete.json": "4ea87092dc0bcfd60dc8cd9670307bd67b24a5e26bf7fbd07d04dfecd5a0c55d",
+    "390208/evaluation/S-42/complete.json": "cf2ed2de9c99275edc4bf786cdfbe194bbd109efcfee1bf7028405f2a045dfb5",
+    "390208/evaluation/S-43/complete.json": "a7a3b2d27251546146dc8b440e5afb1bb118d899efef41b7b1e356797e36b9a0",
+    "390208/evaluation/V-42/complete.json": "5f8a08a1aa217d628757a6aed0378aaa7ba6ac1ea321ca2063a17708793fb855",
+    "390208/evaluation/V-43/complete.json": "0837f35e4e9b86cbca78a3010808571c3577b7b6e23b392c007e4211642d5a04",
+    "390208/evaluation/SV-42/complete.json": "db751097d107713635419785148dfcb46a95dc9a8ed813515f413bd32f9456ac",
+    "390208/evaluation/SV-43/complete.json": "a293e4ad902dc6902cc83a469cd4bfaf4198c191edf89fcbe9287922ad30dff3",
+    "390208/evaluation/P-42/complete.json": "c8489cba484c693bc6ad796e5faa7fe924a1dd3e526dab8106d0499ccce99196",
+    "390208/evaluation/P-43/complete.json": "aa215d08caec6832a1592d8625335e4f597feafbf541b1338118b6a9ae9667d2",
+    "390208/evaluation/SH-42/complete.json": "889fc867e84e123be039e6a0c1ad349d29f5063a9f025df69b1ebb2e249c92c9",
+    "390208/evaluation/SH-43/complete.json": "c43cbbf5d7df983e0635025bd3316368aba143f705a74d27d156ae67c34fdafd",
+    "390208/evaluation/RAW-42/complete.json": "a43283c25ce0346584a142d82dc4b94890dc7e0a4d9060a403f545bcc258606f",
+    "390208/evaluation/RAW-43/complete.json": "c14d81384ef7ad599d5408450c23133a9b7700ff0e58e0f7ce2aa74271628e8b"
+  },
+  "limits": [
+    "Four OD cohorts, repeated windows and common bus templates; bootstrap is descriptive.",
+    "Native route and duration marginals fixed by design; no learned duration gain.",
+    "This primary report precedes utility and expanded-pool mechanism follow-up."
+  ]
+}
