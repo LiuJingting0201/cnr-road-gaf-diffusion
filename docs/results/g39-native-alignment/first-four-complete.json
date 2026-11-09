@@ -1,0 +1,155 @@
+{
+  "observed_unix": 1794206813.7842855,
+  "verified_fits": {
+    "models/V-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 2891.6507056951523,
+      "steps": 10000,
+      "epochs": null
+    },
+    "models/B-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 2798.5856924131513,
+      "steps": 10000,
+      "epochs": null
+    },
+    "models/B-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 2798.9560700431466,
+      "steps": 10000,
+      "epochs": null
+    },
+    "models/S-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 2892.3171733617783,
+      "steps": 10000,
+      "epochs": null
+    },
+    "raw-teachers/speed-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 146.58288173377514,
+      "steps": null,
+      "epochs": 50
+    },
+    "raw-teachers/spatial-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "seconds": 137.01001130789518,
+      "steps": null,
+      "epochs": 50
+    }
+  },
+  "references": {
+    "390201": {
+      "complete": true,
+      "latest_simulation_time": 22999.75,
+      "target_end": 23000,
+      "catalog_complete": true
+    },
+    "390202": {
+      "complete": false,
+      "latest_simulation_time": 36961.75,
+      "target_end": 37400,
+      "catalog_complete": true
+    },
+    "390203": {
+      "complete": true,
+      "latest_simulation_time": 22999.75,
+      "target_end": 23000,
+      "catalog_complete": true
+    },
+    "390204": {
+      "complete": false,
+      "latest_simulation_time": 32798.25,
+      "target_end": 37400,
+      "catalog_complete": true
+    },
+    "390205": {
+      "complete": false,
+      "latest_simulation_time": null,
+      "target_end": 23000,
+      "catalog_complete": true
+    },
+    "390206": {
+      "complete": false,
+      "latest_simulation_time": null,
+      "target_end": 37400,
+      "catalog_complete": false
+    },
+    "390207": {
+      "complete": false,
+      "latest_simulation_time": null,
+      "target_end": 23000,
+      "catalog_complete": false
+    },
+    "390208": {
+      "complete": false,
+      "latest_simulation_time": null,
+      "target_end": 37400,
+      "catalog_complete": false
+    }
+  },
+  "training_progress": {
+    "complete": false,
+    "finished": [
+      "fit-B-43",
+      "fit-B-42",
+      "fit-V-42",
+      "fit-S-42",
+      "raw-spatial-None",
+      "raw-speed-None"
+    ],
+    "pending": [
+      [
+        "fit",
+        "P",
+        42
+      ],
+      [
+        "fit",
+        "P",
+        43
+      ],
+      [
+        "fit",
+        "SH",
+        42
+      ],
+      [
+        "fit",
+        "SH",
+        43
+      ],
+      [
+        "fit",
+        "RAW",
+        42
+      ],
+      [
+        "fit",
+        "RAW",
+        43
+      ]
+    ],
+    "active": {
+      "reference-390202": 226327,
+      "reference-390204": 226517,
+      "train-S-43": 226815,
+      "train-V-43": 226816,
+      "train-SV-42": 226949,
+      "train-SV-43": 227016,
+      "catalog-390206": 227083
+    },
+    "seconds": 3341.8890939727426,
+    "free_bytes": 52465311744,
+    "output_bytes": 708297751
+  },
+  "free_disk_gib": 48.86178970336914,
+  "new_generation_cells_complete": 0,
+  "new_evaluation_cells_complete": 0
+}

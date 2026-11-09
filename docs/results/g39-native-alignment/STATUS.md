@@ -35,3 +35,12 @@ Current handoff: `docs/G39_RUN_STATE.md`. Latest stored snapshot has the first
 four fits at5,400–5,600updates and no failures, free49.21GiB. The existing-pool
 route-marginal diagnostic has completed separately; its mixed physical evidence
 is documented in `docs/results/g39-route-marginal/REPORT.md`.
+
+Latest completion check:4/14diffusion fits (B42/B43/S42/V42) have completed
+10,000updates in46.64–48.21minutes; model/config/stats hashes verified. Both
+RAW-series control teachers have also completed50epochs and artifact checks.
+Four GPU workers automatically advanced to S43/V43/SV42/SV43, about1,000–1,200
+updates at inspection. Eight reference scenes:2complete, another near its end.
+No failures;48.86GiB free. Generation/evaluation cells remain0: no new physical
+benefit conclusion. Receipt: first-four-complete.json. Remaining training ETA
+approximately2–2.5hours from this inspection, excluding generation/evaluation.
