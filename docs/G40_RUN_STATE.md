@@ -27,6 +27,12 @@ Base `/workspace/cnr-experiments/gaf-inloop-v1`:
   downstream predictions, produces fixed five-class journey/GAF figures plus
   all-arm aggregate plots/tables. This does not interpret results or edit thesis
   prose automatically; a review is still required. Max24h wait/1h active/free12GiB.
+- `g40m-job/g40m-data`: source26e8090,PID243107,manifest
+  afcd4bb7c339e25b5c0c3bcb2eaf534aec0e38a946d33fe214d81ff43698ceb2;
+  361 files verified, observed waiting_for_closed_science_and_visuals. Fixed final
+  condition-use audit (25 training parents, five noise levels, four code variants,
+  all16models), no fitting. Starts only after g40-review complete; max30active
+  minutes/1GiB/free12GiB. Review separately from independent synthesis results.
 
 No desktop milestone automation. Existing detached cloud supervisors own their
 children and stop on bounds/failure. Preserve all old work trees/failure receipts.
@@ -44,4 +50,7 @@ trajectory/GAF figures, abstract and discussion together and render-review the P
 
 Formal launch receipt does not prove progress or completion. Inspect live logs before reporting. The cloud queue includes utility after128cells close; all-stages-complete.json is required before final scientific interpretation and thesis revision. Main complete.json closes the primary stage only and remains immutable.
 
-Latest live check at formal elapsed~18minutes: B42/B43 3700/3600updates; F-SV42/43 3200/3300. Four GPU processes active,2/8references and1/8catalog complete, no failures. First eight request manifests are frozen and train-parent checks passed. These are progress counts, not completed-model quality evidence.
+Latest live check at UTC2026-11-09T17:19:18: 4/16motion fits and4/16prior receipts,
+2/8references and2/8catalogs complete, no failures,38.67GiBfree. J-S/J-V workers
+running on four GPUs. All eight request manifests were frozen and train-parent
+checks passed before outcomes. Progress counts are not generation-quality evidence.
