@@ -1,0 +1,25 @@
+{
+  "metadata_only": true,
+  "configured_precision_fields": [],
+  "first_fcd_vehicle_observations": 1000,
+  "decimal_places_counts": {
+    "x": {
+      "2": 1000
+    },
+    "y": {
+      "2": 1000
+    },
+    "speed": {
+      "2": 1000
+    }
+  },
+  "analytic_constant_speed_fixture": {
+    "true_speed_mps": 13.37,
+    "true_acceleration_mps2": 0,
+    "coordinate_precision_m": 0.01,
+    "sample_interval_s": 0.25,
+    "coordinate_derived_mean_absolute_acceleration_mps2": 0.08033472803368182,
+    "coordinate_derived_max_absolute_acceleration_mps2": 0.16000000000167347
+  },
+  "scope": "Measurement-operator audit; no metric recomputation, new simulation, model selection or change to G39."
+}
