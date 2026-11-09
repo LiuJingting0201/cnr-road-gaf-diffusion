@@ -46,7 +46,11 @@ def main(args):
     if compiler is None:raise FileNotFoundError(args.compiler)
     with tempfile.TemporaryDirectory(prefix='cnr-thesis-') as temp:
         temp=Path(temp);build=temp/'build'
-        pdf=compile_document(source,build,compiler)
+        try:
+            pdf=compile_document(source,build,compiler)
+        except Exception:
+            if build.exists():shutil.copytree(build,output/'failed-build')
+            raise
         inputs=set()
         for line in (build/'main.fls').read_text().splitlines():
             if not line.startswith('INPUT '):continue
@@ -63,7 +67,12 @@ def main(args):
             for rel in sorted(inputs):z.write(source/rel,str(rel))
         clean=temp/'clean';clean.mkdir()
         with zipfile.ZipFile(archive) as z:z.extractall(clean)
-        rebuilt=compile_document(clean,temp/'clean-build',compiler)
+        try:
+            rebuilt=compile_document(clean,temp/'clean-build',compiler)
+        except Exception:
+            if (temp/'clean-build').exists():
+                shutil.copytree(temp/'clean-build',output/'failed-clean-build')
+            raise
         texts=page_text(pdf)
         assert texts==page_text(rebuilt),'Clean package build changes PDF page text'
         final=output/f'Road_Conditioned_Diffusion_Thesis_{args.version}.pdf'
