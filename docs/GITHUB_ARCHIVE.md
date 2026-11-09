@@ -26,3 +26,7 @@ Download the private Release assets with an authenticated GitHub client. Save `S
 Environment symlinks are inventory metadata, not instructions to follow external absolute paths. Recreate virtual environments/SUMO from the recorded requirements and version information, then map `experiments/data` and `experiments/runs` to the restored legacy data/runs directories. The source repository and per-job script snapshots preserve the implementations used by old experiments.
 
 Large artifacts are Release attachments rather than ordinary Git blobs. [GitHub documents a2GiB maximum for each Release asset](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases); the512MiB parts stay below that boundary. No LFS paid-storage setting or account billing setting is changed.
+
+## Verified recovery tooling
+
+`scripts/archive_verify_restore.py` verifies per-part, full-stream and per-file SHA256 before or during restoration, reconstructs exact duplicate paths and preserves ordinary file modes. It rejects path traversal, non-regular tar members, corrupt content and existing restore destinations. The private Release includes a standalone copy and `RESTORE.md`. Full Git history is preserved as a private bundle rather than publishing all historical refs to the public code repository.

@@ -1,0 +1,42 @@
+{
+  "local_manifest": {
+    "files": 1455,
+    "logical_bytes": 1811487547,
+    "unique_bytes": 1735930695,
+    "excluded_bytes": 6148,
+    "excluded_reasons": {
+      "system-cache": 1
+    }
+  },
+  "local_restore": {
+    "verified_unique_files": 894,
+    "verified_logical_files": 1455,
+    "restored": true,
+    "permission_modes_preserved": true
+  },
+  "source_history": {
+    "refs": 30,
+    "git_bundle_verify": true,
+    "mirror_clone": true,
+    "git_fsck_full": true,
+    "head": "0eff67862da020ab2e4d8b6d9546240aece43b29"
+  },
+  "download_check": {
+    "asset_name": "g35-native-diffusion-seed42.pt",
+    "bytes": 3877606,
+    "sha256": "3a8e959397eed93fa7153e4499d00825f397a31f47cff34a937d8259e34e38fc",
+    "verified_download": true,
+    "credential_forwarded_to_redirect": false,
+    "release_id": 438686487
+  },
+  "restore_safety_checks": [
+    "part_sha256",
+    "concatenated_stream_sha256",
+    "file_sha256",
+    "duplicate_restoration",
+    "permission_bits",
+    "existing_directory_rejection",
+    "corruption_rejection",
+    "path_traversal_rejection"
+  ]
+}
