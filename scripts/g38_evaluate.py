@@ -57,7 +57,9 @@ def evaluate(generated,catalog,reference,simulation,network,out):
         # Chain reference -> simulation -> exact prepared manifest used by catalog.
         assert refreceipt['source_sha256']['simulation_receipt']==digest(simulation/'simulation-complete.json')
         assert refreceipt['source_sha256']['requests']==json.loads((catalog/'complete.json').read_text())['request_manifest_sha256']
-        pool=np.load(generated/'samples.npz');rows=json.loads((generated/'candidates.json').read_text())['rows']
+        with np.load(generated/'samples.npz',allow_pickle=False) as archive:
+            pool={k:archive[k] for k in ('txy','offsets')}
+        rows=json.loads((generated/'candidates.json').read_text())['rows']
         selections=json.loads((generated/'selections.json').read_text())['rows'];cat={r['id']:r for r in json.loads((catalog/'routes.json').read_text())['rows']}
         ods={r['id']:r for r in json.loads((catalog/'od.json').read_text())['requests']}
         rr={str(rid):dict(extract_record(ref['txy'][ref['offsets'][i]:ref['offsets'][i+1]]),request_id=str(rid),label=int(ref['labels'][i])) for i,rid in enumerate(ref['ids'])}

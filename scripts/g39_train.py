@@ -102,6 +102,10 @@ def train(args):
         rows, clocks, targets, stats = load_train(Path(args.data), "native_0_25s")
         device = torch.device(args.device)
         vectors, centers, permutation = load_features(rows, args.teachers, output, device)
+        cache = None
+        if getattr(args, 'input_pipeline', 'original') == 'cached':
+            from g39_fast_inputs import MotionInputCache
+            cache = MotionInputCache(rows, clocks, targets, stats, device)
         model = AlignedDenoiser(base=args.width).to(device)
         ema = copy.deepcopy(model).eval().requires_grad_(False)
         optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4, weight_decay=1e-4)
@@ -134,9 +138,10 @@ def train(args):
                 chunks = split_batch(indices, targets, args.token_budget, args.microbatch)
                 optimizer.zero_grad(set_to_none=True)
                 total_loss = 0.; total_noise = 0.; total_aux = 0.
+                device_metrics = []
                 for chunk in chunks:
                     ix = np.asarray(chunk)
-                    batch = pack_motion([targets[i] for i in ix], [clocks[i] for i in ix],
+                    batch = cache.pack(ix) if cache is not None else pack_motion([targets[i] for i in ix], [clocks[i] for i in ix],
                                         rows["labels"][ix], rows["paths"][ix], rows["length"][ix],
                                         rows["duration"][ix], stats, device)
                     x = batch["x"]
@@ -151,13 +156,26 @@ def train(args):
                         auxiliary = alignment(model, args.arm, torch.as_tensor(ix,device=device),
                             batch["labels"], vectors, centers, permutation, alpha[:,0,0]).sum()/args.batch_size
                     loss = denoising + .1*auxiliary
-                    total_noise += float(denoising.detach()); total_aux += float(auxiliary.detach())
-                    if not torch.isfinite(loss):
-                        raise ValueError("Nonfinite training loss")
+                    if cache is None:
+                        total_noise += float(denoising.detach()); total_aux += float(auxiliary.detach())
+                        if not torch.isfinite(loss):
+                            raise ValueError("Nonfinite training loss")
+                    else:
+                        device_metrics.append(torch.stack([loss.detach(),denoising.detach(),auxiliary.detach()]))
                     loss.backward()
-                    total_loss += float(loss.detach())
+                    if cache is None: total_loss += float(loss.detach())
                     token_count += int(lengths[ix].sum())
-                grad_norm = float(torch.nn.utils.clip_grad_norm_(model.parameters(), 1.))
+                grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.)
+                if cache is not None:
+                    # One blocking scalar transfer per update, before optimizer
+                    # mutation. Nonfinite loss/gradients still stop the job.
+                    scalars = torch.cat([torch.stack(device_metrics).sum(0,dtype=torch.float64),
+                                         grad_norm.detach().double().reshape(1)]).cpu().tolist()
+                    if not all(math.isfinite(x) for x in scalars):
+                        raise ValueError("Nonfinite training loss or gradient")
+                    total_loss,total_noise,total_aux,grad_norm = scalars
+                else:
+                    grad_norm = float(grad_norm)
                 if not math.isfinite(grad_norm):
                     raise ValueError("Nonfinite gradient norm")
                 optimizer.step()
@@ -206,6 +224,8 @@ if __name__ == "__main__":
     parser.add_argument("--token-budget", type=int, default=32768)
     parser.add_argument("--width", type=int, default=64)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--input-pipeline", choices=("original", "cached"), default="original",
+                        help="Cached mode is opt-in; benchmark equivalence before scientific use")
     args = parser.parse_args()
     if min(args.steps, args.batch_size, args.microbatch, args.token_budget, args.width) <= 0:
         parser.error("Positive training dimensions and budget required")

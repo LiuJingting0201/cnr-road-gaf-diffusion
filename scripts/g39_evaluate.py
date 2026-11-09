@@ -22,7 +22,8 @@ def diagnostics(generated,raw_cache,output):
         library[c]=profiles[ii]
     rows=json.loads((generated/'candidates.json').read_text())['rows'];byclass={}
     with np.load(generated/'samples.npz',allow_pickle=False) as f:
-        pp=np.stack([extract_record(f['txy'][a:b])['profile'] for a,b in zip(f['offsets'][:-1],f['offsets'][1:])])
+        txy,offsets=f['txy'],f['offsets']
+    pp=np.stack([extract_record(txy[a:b])['profile'] for a,b in zip(offsets[:-1],offsets[1:])])
     for c,name in enumerate(CLASSES):
         ix=[i for i,r in enumerate(rows) if r['label']==c];groups={}
         for i in ix:groups.setdefault(rows[i]['request_id'],[]).append(i)

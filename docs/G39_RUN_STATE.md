@@ -82,9 +82,14 @@ still require the next evidence-review pass; those are not already completed.
 2026-11-09 user instruction: leave this batch running, then optimize performance.
 Keep the recovered g39r/g39ur/g39fr snapshots and their existing order unchanged.
 The receipt-verifier repair was necessary recovery, not a throughput optimization.
-The current cloud supervisors do not implement performance optimization; this is
-the next agent action after their completion and evidence review, not an already
-launched job or an installed desktop automation.
+The scientific supervisors do not implement performance optimization. Candidate
+code is now prepared separately in `g39perf-job`; its CPU-only synthetic input
+fixture passed exact value/layout and RNG checks, with307 original Python source
+hashes verified. No performance fit has run at this preparation checkpoint.
+`docs/G39_PERFORMANCE_PROTOCOL.md` defines a finite controller gated on all three
+scientific completions **and an actual completed-batch review receipt**. Inspect
+its launch/progress markers before any start; do not duplicate it. Preparation is
+not a measured speedup or adoption. No desktop automation is installed.
 
 1. Verify main, utility and factorial completion receipts, failures, artifact
    hashes and generated-quality results before starting the optimization stage.
@@ -107,3 +112,9 @@ launched job or an installed desktop automation.
    validated changes for future runs; preserve all original G39 evidence.
 
 Baseline observation: `docs/results/g39-native-alignment/UTILIZATION_AUDIT.md`.
+
+2026-11-09 latest user direction: examine the GAF integration mechanism, complete
+this batch, then design the next scientific round. Code-level hypotheses and
+representation/differentiability limitations are in
+`docs/GAF_INTEGRATION_REVIEW_PENDING_G39.md`. That note is not a locked protocol;
+no new scientific arm or thesis claim is authorized by the note itself.

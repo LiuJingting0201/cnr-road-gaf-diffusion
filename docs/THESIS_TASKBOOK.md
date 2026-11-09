@@ -294,3 +294,5 @@ G39 continuation fixed before generation outcomes: docs/G39_UTILITY_PROTOCOL.md 
 Current execution/resumption entry: docs/G39_RUN_STATE.md. Inspect the existing g39/g39u/g39f detached supervisors and completion/failure markers before any new launch. Their dependency chain is active; g39m route-marginal diagnostic is complete. Planned physical/utility interpretation and thesis changes are not yet completed.
 
 2026-11-09 用户要求当前批次先继续完成，之后再优化GPU利用效率。现有G39及已排定后续实验配置保持不变；完成核验与结果审阅后，在隔离目录进行有界性能短测，优先缓存输入构造、减少CPU/GPU同步，保持有效批次、样本与噪声流并核验数值一致性。首轮最多60分钟，不自动追加完整科学训练；以端到端吞吐和一致性决定是否采用，不能仅追求利用率数字。具体顺序见docs/G39_RUN_STATE.md；这是下一阶段授权，尚未启动性能优化任务。
+
+2026-11-09 用户进一步要求审查GAF接入方式，当前整批结束后再设计下一轮。候选机制包括全局中间特征监督与实际输出脱节、路线/总时长固定造成作用位置不匹配，以及整程速度压缩削弱短时运动信息；均为待检验假设。先保留完整主结果、独立增广和路线×时长机制对照，再决定是否直接约束解码输出及其物理时间上的GAF。不得仅换名称重跑G24/G27，不得把硬Hilbert/MTF声称为完整可微。候选审查见docs/GAF_INTEGRATION_REVIEW_PENDING_G39.md。性能候选实现已在新隔离目录通过CPU输入一致性检查，完整短测仍待本批完成与审阅；协议docs/G39_PERFORMANCE_PROTOCOL.md。
