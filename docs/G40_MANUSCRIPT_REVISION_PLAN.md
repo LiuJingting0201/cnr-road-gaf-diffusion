@@ -1,3 +1,5 @@
+> Current status, 2026-11-10: full G40 evidence has been reviewed and integrated into the actual v20 manuscript. Final rendering/packaging QA is complete; delivered artifacts are in `deliverables/thesis-v20` and the build receipt is `docs/results/thesis-v20-build.json`. The preparation notes below are retained as historical decisions, not pending scientific tasks.
+
 # G40 manuscript revision plan — evidence first
 
 Registered while the formal queue is running. This is a revision map, not a result

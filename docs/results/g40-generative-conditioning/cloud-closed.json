@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-11-09T21:23:33.583865+00:00",
+  "free_bytes": 35761442816,
+  "completion": {
+    "formal": true,
+    "review": true,
+    "condition_audit": true,
+    "layout": true
+  },
+  "gpu_processes": [],
+  "active_scientific_jobs": []
+}

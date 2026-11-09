@@ -1,128 +1,39 @@
 # CNR Road / GAF Trajectory Diffusion
 
-## Current deliverables and archive (2026-11-09)
+Map-, OD- and participant-class-conditioned synthesis of complete timestamped traffic journeys. The main learned motion component is temporal diffusion. Output follows `time,id,x,y,type`.
 
-- [Thesis v19 PDF](deliverables/thesis-v19/Road_Conditioned_Diffusion_Thesis_v19.pdf) and [Overleaf source ZIP](deliverables/thesis-v19/PoliTo_Thesis_v19_Overleaf.zip). This is the existing research draft; G38 has not yet been incorporated.
-- [G38 protocol](docs/G38_PROTOCOL.md) and [completed comparison](docs/results/g38-route-preferences/STATUS.md): learned route preferences followed by frozen temporal diffusion and matched GAF controls.
-- [Completed private archive](https://github.com/LiuJingting0201/cnr-road-gaf-artifacts/releases/tag/archive-2026-11-09):138verified attachments,54.40GiB,11,919file paths, including the closed G38 snapshot, all GAF caches and legacy uncommitted source. [Archive index and restore instructions](docs/GITHUB_ARCHIVE.md). This code repository is public. Full datasets/checkpoints are held in the separately private `LiuJingting0201/cnr-road-gaf-artifacts` repository.
-- [Early standalone working notes](docs/archive/early-local-notes/), retained as historical notes rather than current conclusions.
+## Current work — 2026-11-10
 
+G40 scientific work is complete: 16 motion fits, 12 learned code priors, eight prospective SUMO reference episodes, 128 generation/evaluation cells, 50,176 generated candidates and 30 independent downstream fits. Thesis v20 integrates these results: 113 PDF pages, 69 main-text pages, 34 figures, 29 tables and 54 cited entries. All pages were rendered and reviewed; the clean Overleaf ZIP rebuild matches the delivered PDF page text.
 
-毕设目标：给定路网、起点和交通类别，扩散合成满足路网约束、运动合理性和类别语义的新轨迹；承接组内 Hilbert/GAF 表示与分类研究，验证其在生成与下游增广中的作用。
+- [Complete G40 interpretation and evidence](docs/results/g40-generative-conditioning/REPORT.md)
+- [Thesis v20 PDF](deliverables/thesis-v20/Road_Conditioned_Diffusion_Thesis_v20.pdf), [Overleaf ZIP](deliverables/thesis-v20/PoliTo_Thesis_v20_Overleaf.zip), and [source/build instructions](thesis/README.md)
+- [Execution state](docs/G40_RUN_STATE.md), [taskbook](docs/THESIS_TASKBOOK.md), [experiment log](docs/EXPERIMENT_LOG.md)
+- [Fixed execution protocol](docs/G40_EXECUTION_PROTOCOL.md) and [generative-conditioning design](docs/G40_GAF_GENERATIVE_CONDITIONING_DESIGN.md)
 
-## 当前主线：承接原GAF工作开展扩散轨迹合成
+The system learns preferences over feasible route catalogs, samples duration, generates motion on a 0.25-second clock, and decodes to road coordinates. G40 tests learned spatial and speed GAF conditions with frozen, joint, raw-series, wrong-trip and class-centroid controls. Image encoders are trained in this project; no group CNN weights were supplied. The inherited ordered Hilbert–GASF/GADF/MTF spatial transform is retained. Speed images are a separate view derived from XY/time. New generation uses a training-only code prior, not an image of the unknown future or image inversion.
 
-**唯一当前执行任务书：[路网条件扩散与 Hilbert GAF 类别反馈任务书](docs/THESIS_TASKBOOK.md)**。恢复工作先读任务书和最新实验日志；`AGENTS.md` 固定该入口。主线是路径条件扩散直接生成坐标轨迹，自训原编码 CNN 做类别反馈筛选；可微教师 guidance 是后续有条件模块。旧计划仅作历史，冲突处以任务书为准。
+The full evidence does **not** establish an overall physical-quality gain from GAF. Spatial-only augmentation gives a small pooled downstream gain (96.95% macro F1 versus 96.26% for baseline augmentation), but effects have opposite signs across the two evaluation OD cohorts. The dual-view method worsens native acceleration distance by 2.44%. All classes, controls, failures, coverage limits and adverse endpoints are retained. No further model search is automatically queued.
 
-原仓库没有提供 CNN。组内编码、我们训练的辅助网络、历史位移 GAF 和正式论文配置分别标识，不能混称复现。
+## Data and evaluation boundaries
 
-### 历史开发结果（2026-11-06）
+The supplied principal CNR export supplies the source-domain audit. Expanded native MoST demand supplies 29,895 training legs from 24,073 source parents, across bus, motorcycle, private car, bicycle and taxi/ride-hailing. Legs, parents and independent simulation scenes are different units. The second supplied export lacks a confirmed Monaco map match and is not silently pooled. Original coordinates are local planar XY, not GPS longitude/latitude.
 
-- **[G33 完整行程生成与GAF反馈完成报告](docs/results/g33-generation/REPORT.md)**：925条训练/126条开发、四个扩散拟合与14项生成/选择评价全部完成；六个全池各776候选，质量覆盖94/100请求。0.25秒模型原生加速度W1较257点下降82.23%/81.07%，同时保留最长停车等代价。空间/速度GAF宏F1为69.80%/84.99%，193/194池有8张不同空间图，但最高分筛选未形成普遍物理增益。
-- **[G34 固定时长机制结果](docs/results/g34-fixed-duration/REPORT.md)**：两个种子各776候选、10项评价完成；旧/新Uniform坐标与时刻逐点一致。排除时长重选后，速度GAF使原生加速度宏W1下降9.73%/17.22%、最长停车下降22.49%/6.53%，但最长巡航和p95速度均恶化。仅为同开发参考上的机制诊断，不是新盲测或采样中guidance；不能把宏平均改善推广至每类。
-- **[论文第16稿说明](thesis/README.md)**：八章围绕完整轨迹扩散与GAF反馈组织；51条引用含46篇论文/预印本、1硕士论文、2代码来源、2官方文档，保留全部方法代价。实际采样与导出入口见 [G33 操作说明](docs/G33_QUICKSTART.md)。
-- [G29 原CNR与随机需求审计](docs/results/g29-source-audit/REPORT.md)：空间低分伴随类别—路线结构变化，不能仅归因于GAF编码或CNN。
-- [G30 原生MoST需求恢复](docs/results/g30-native-demand/REPORT.md)：同类数/编码/训练规则下，原GAF宏F1为CNR59.88%、随机需求30.15%、原生需求58.69%；十项宏运动分布距离点估计更接近CNR。共享需求模板与线路限制泛化，尚非guidance有效证据。
-- [G31 完整行程接口](docs/results/g31-leg-interface/REPORT.md)：单场提取1644段、1592个parent；原生输出无扰动。257点时间进度会平滑长行程运动。本阶段为设计诊断，后续训练已在G33直接使用SUMO完整车辆轨迹，不再以手工地图适配成功作为训练前置条件。
-- [G32 物理时间表示](docs/results/g32-physical-clock/REPORT.md)：固定三臂检查全部1644段，旧臂完整复现；原生0.25秒速度/加速度MAE由257点的0.2614/1.0514降至0.0093/0.0314。1秒表示仍丢秒内变化；下一模型目标选0.25秒变长序列。此为oracle重构，尚非生成收益。
-- [G32 事前地图解码](docs/results/g32-plan-route-adapter/REPORT.md)：33项构造检查通过；同一24条公共公交请求的静态几何构造由11条提升至21条，保留235/298源站点，3条失败仍在分母。此为道路工程接口，G33正式生成沿用并保留失败，不能以此代替学习到的运动质量。
-- [论文收敛计划](docs/THESIS_FINISH_PLAN.md)：围绕扩散合成质量与GAF反馈增量两张主表，重组正文并将历史探索归附录。当前训练、生成评价与待验证结论分别记录。
+The final comparison uses four new non-bus OD cohorts with paired time windows. Public bus services and the road map remain shared. Physical quality, route-use distributions, diversity and independent synthetic-data augmentation are separate endpoints. Observed references are SUMO data, not field observations. Topology support comes from the route interface/decoder; it is not a GAF result or an interactive traffic-safety guarantee.
 
-### 历史扩展实验：扩散训练与GAF反馈
+## Earlier closed evidence
 
-核心目标是训练能够合成轨迹的路网条件扩散模型，并检验GAF语义反馈是否带来实际生成或下游分类收益。G4/G4b共16次20,000步训练已完成，含三种子反馈对照与单种子软一致性消融；结果未证明GAF反馈有稳定的总体收益。
+- [G38 route-preference comparison](docs/results/g38-route-preferences/STATUS.md) and [protocol](docs/G38_PROTOCOL.md).
+- [G39 complete evidence](docs/results/g39-native-alignment/completed-batch/) and [performance study](docs/results/g39-performance/REPORT.md).
+- [G33 physical-clock pilot](docs/results/g33-generation/REPORT.md), [G34 duration control](docs/results/g34-fixed-duration/REPORT.md), and [G35/G36 generation](docs/results/g36-generation/STATUS.md).
+- [CNR/random-demand diagnosis](docs/results/g29-source-audit/REPORT.md) and [native-demand recovery](docs/results/g30-native-demand/REPORT.md).
+- [Earlier exposed E7 test](docs/results/final-test-e7/REPORT.md), retained without reuse for current method selection.
+- [Historical repository overview](docs/archive/README-before-v20.md) and [early working notes](docs/archive/early-local-notes/).
 
-停车与地图核验属于数据协议和评价边界，不作为独立论文主线。论文核心工作安排见[主线与实验路线](docs/NEXT_STAGE.md)。
+## Publication and archival
 
-## 当前实现边界
+This source repository is public. Code, protocols, small metrics, figures and manuscripts are published here. Raw datasets, model weights and secrets are excluded.
 
-本仓库独立于历史仓库。目前包括车辆级数据划分、连续片段提取、Hilbert/GAF/序列分类对照、类别与起点条件扩散、相对坐标扩散、类别许可道路距离场条件及训练损失，以及独立的向量车道几何评价。
+The [private November 9 archive](https://github.com/LiuJingting0201/cnr-road-gaf-artifacts/releases/tag/archive-2026-11-09) contains 138 verified attachments (54.40 GiB), including the then-completed G38 snapshot and earlier assets. [Index and restore instructions](docs/GITHUB_ARCHIVE.md). That historical archive does not imply that the subsequently trained G39/G40 weights have already been added; their immutable server snapshots remain preserved.
 
-**当前 G33/G34 已实现五类车辆的完整行程扩散与末端反馈。** 使用925条原生完整行程训练，生成端地图支持97/100请求，质量配对94/100。道路支持来自静态解码；不宣称任意路网、动态无碰撞或下游增广收益。G5/G6 的移动短窗与 E1–E5 的反馈/增广是历史阶段，保留各自证据，不能替代当前完整行程结果。
-
-实验设计、执行过程和待验证假设见 [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md)，第一轮实测分析见 [docs/results/ROUND1_ANALYSIS.md](docs/results/ROUND1_ANALYSIS.md)。R1已完成18项训练，公平位移对照R1b完成3项，G2完成三种子共9项20,000步生成训练；R2长窗口研究21项训练也已完成，报告见 [representation-r2-long](docs/results/representation-r2-long/REPORT.md)。上述历史结果为验证集探索；锁定后的正式测试另见下方最终报告。
-
-代码与记录已发布到私有仓库 [LiuJingting0201/cnr-road-gaf-diffusion](https://github.com/LiuJingting0201/cnr-road-gaf-diffusion)，同时保留开发机 Git 远端 `server`（服务器端名为 `origin`）。长窗口研究完成后，一次性回调只将完整报告推到 `results/representation-r2-long` 分支，不包含原始数据或权重。
-
-## 最新结果入口
-
-- **[当前完整轨迹主结果：G33](docs/results/g33-generation/REPORT.md)**：真实生成质量、同池GAF反馈、覆盖与成本；[完整数值表](docs/results/g33-generation/report/TABLES.md)。以下正式测试与扩展记录为既有阶段结果，保留各自范围。
-- **[本轮毕设总结与论文写作依据](docs/THESIS_RESULTS_SUMMARY.md)**：E1–E5/E7及一次性正式测试已完成；路网条件扩散合成闭环跑通，GAF增广收益未建立。
-- **[锁定正式测试报告与图表](docs/results/final-test-e7/REPORT.md)**：53个严格测试条件、1,272条扩散候选；行程分布有条件改善，速度/加速度区间跨零；GAF增广在TCN上较仅真实数据下降5.23个百分点。
-
-- [E7 配对区间与运动记忆诊断](docs/results/motion-audit-e7/REPORT.md)：加速度单项区间未跨零，速度/行程仍跨零；未发现预定义的完整对齐近复制，不能宣称无记忆。[最终测试协议](docs/FINAL_TEST_PROTOCOL.md)与[217项锁定清单](docs/results/final-lock-e7/manifest.json)已固定，最终运行状态见实验日志。
-- [E3b 相同路径的经验运动基线](docs/results/empirical-motion-e3b/REPORT.md)：三次重采样完成；扩散运动分布误差较小，但经验基线的候选差异更大，尚无显著性结论。后续配对审计与正式测试均已完成，见上述报告。
-- [E5 下游增广结果与不确定性图](docs/results/augmentation-e5/REPORT.md)：36次正式训练完成，尚未证明稳定增益。
-- [E4r 路线多样性对照](docs/results/route-diverse-e4r/REPORT.md)：三种子已完成，平均每池6.70条路径；GAF同家族分数改善仍未转化为跨家族收益。
-
-- [E2 原 Hilbert–GAF 时长匹配诊断](docs/results/gaf-duration-e2/REPORT.md)：已完成，长轨迹需使用匹配时长分类器。
-- [E1 原编码 ResNet18 对照](docs/results/gaf-resnet-e1/REPORT.md)：已完成，非组内未知 CNN 复现。
-- [E3/E4 长轨迹生成与原 GAF 同池筛选](docs/results/long-selection-e4-cap64/REPORT.md)：三种子评价及道路搜索容量复核完成；GAF 尚未显示稳定跨模型收益；后续 E5 与 E4r 结果见上。原保守评价也保留在 [strict E4](docs/results/long-selection-e4/REPORT.md)。
-
-- [G6同路线公平对照与保持行程引导](docs/results/g6-analysis/REPORT.md)
-
-- [G5地图路径扩散与GAF引导：三种子重复采样](docs/results/path-g5-repeat/REPORT.md)
-- [固定起点全部采样地图图表](docs/results/path-g5-repeat/seed42/fixed_examples.png)
-
-- [GAF继承关系与当前缺口](docs/GAF_CONTINUITY.md)
-- [G4/G4b完整反馈对照：16次训练](docs/results/semantic-followup/REPORT.md)
-- [道路连接与停车状态审计：数据与评价支撑](docs/results/TOPOLOGY_AND_PARKING.md)
-
-- [224点表示对照：21项训练](docs/results/representation-r2-long/REPORT.md)
-- [道路扩散三种子汇总：9项训练](docs/results/road-g2-multiseed/REPORT.md)
-- [G3公平筛选：道路与类别一致性的权衡](docs/results/candidate-selection-g3/REPORT.md)
-- [固定地图案例](docs/results/candidate-selection-g3/map_examples.png)与[追加运动诊断](docs/results/candidate-selection-g3/MOTION_AUDIT.md)
-- [下一阶段路线与验收门槛](docs/NEXT_STAGE.md)
-
-GAF评分已显示相对随机选择的语义筛选作用，但未显示相对同输入TCN的独特优势。地图贴合仍不等于道路连接与方向合法，历史结果为验证探索，最终结果以锁定测试报告为准。
-
-## 首次启动验证（2026-11-04）
-
-独立环境通过 `pip check`，7 项测试通过。GPU0/1 分别完成 100 步 GAF 分类与坐标扩散，保存 checkpoint；扩散采样得到六类共 96 条有限数值轨迹。此为每类 64 个训练窗、16 个验证窗的小样本链路测试，不能作为正式精度或吞吐结论。
-
-这 96 条真实验证窗的 6,144 个点在全部车道和类别许可假设下均处于中心线 5 米内；方向、拓扑连接和精确 vClass 尚未验收。完整64点数据（26,642 / 2,791 / 3,030窗口）已上传校验，文件清单见 `docs/processed_hashes.json`。`baseline-001` 两条10,000步基线均已完成；另有完整 canonical 数据包支持服务器直接重建其他窗口长度。
-
-队列只负责这次基线启动，不会自动实现一周计划内尚未完成的模型模块。原始 CSV 另行上传，未通过 `verify_raw.py` 前不得视为完整到达。
-
-## 数据与来源
-
-- 主数据：用户提供的 `midimost_with_class2.csv`，六类、2,685 辆/参与者 ID、4,840,789 行。原文件不会进入 Git。
-- 补充数据：用户提供的 `vehicle_positions_TS_New.csv`，单类；目前没有确认对应地图，不直接套用 MoST 地图。
-- 地图：[MoSTScenario](https://github.com/lcodeca/MoSTScenario/blob/master/scenario/in/most.net.xml)，GPL-3.0 来源；仅下载缓存，不纳入本仓库重新授权。hash 和配准证据在 `docs/map_alignment.json`。
-- 历史工作：[原项目](https://github.com/LiuJingting0201/Deep-Learning-Based-Generative-Models-for-Traffic-Trajectory-Synthesis)，审计基础为 week07。新代码为独立实现，旧方法及研究关系保留在计划和审计材料中。
-
-CSV 的 XY 是局部坐标，不是经纬度。MoST 候选路网与六类数据几何高度一致，但仿真版本和类别的 SUMO vClass 映射尚未完全确认。`taxi_or_uber` 暂用 taxi/passenger 许可并集评价，并明确标为假设。
-
-## 数据协议
-
-先按类别分层、车辆 ID 分组进行 80/10/10 划分，再按时间排序切段。非 0.25 间隔或位置变化率大于 100 的边界切断，不作镜像填充。64 点跨度为 15.75 原始时间单位；每辆最多 16 窗口，训练窗步长 32，验证/测试步长 64。只使用训练窗估计坐标均值和标准差。窗口 manifest、排除车辆及原文件 SHA256 均保留。
-
-所有参数与阈值在本轮固定；真实仿真时间单位、异常阈值及类别区分上限需在正式实验中说明。仅用验证集选型；当前测试集不用于调参。
-
-## 开发机使用
-
-工作目录 `/workspace/cnr-road-gaf-diffusion`；独立环境 `.venv`；四张 L20。旧开发内容无需立即删除，避免删除已有运行环境和访问配置。
-
-环境固定为 Python 3.12、PyTorch 2.5.1+cu121，其他直接依赖见 `requirements.txt`；安装完成后保存 `docs/environment-lock.txt`。系统 Python 无 ensurepip，首次环境通过现有 pip 的 `--python` 功能引导，后续均用 `.venv/bin/python`。
-
-```bash
-cd /workspace/cnr-road-gaf-diffusion
-export PYTHONPATH=src
-.venv/bin/python scripts/verify_raw.py
-.venv/bin/python scripts/prepare_data.py
-.venv/bin/python -m pytest -q
-.venv/bin/python scripts/launch_pilots.py --name pilot-001 --steps 1000
-```
-
-预处理拒绝覆盖已有目录。若已同步同一协议的数据，跳过 prepare。启动器在 GPU0/1 分别运行分类器与坐标扩散，记录进程、命令、日志、参数和 checkpoint，拒绝覆盖同名实验。训练完成须以各任务的 `complete.json` 为准，jobs.json 仅表示已启动。当前入口不支持断点续训，不应把中断后重跑当作延续同一任务。
-
-```bash
-.venv/bin/python scripts/evaluate_geometry.py --samples data/processed/most64/val.npz --output runs/real-val-geometry.json
-.venv/bin/python scripts/evaluate_geometry.py --samples runs/pilot-001/raw_diffusion/validation_samples.npz --output runs/pilot-generated-geometry.json
-```
-
-几何报告对所有样本计数，分别报告全部车道和类别许可假设下的距离，并给出速度统计。需要配合地图方向、连接、修正量、拒绝率、分类一致性、多样性和记忆检查，才能用于正式论文结论。
-
-## 一周执行原则
-
-以 [当前任务书](docs/THESIS_TASKBOOK.md) 第 8 节为准。分类对照限定为辅助任务，随后推进长轨迹生成、同候选预算的类别筛选与下游增广；不再启动 GASF 图像生成反解主线。
+Resume work by reading `AGENTS.md`, the current taskbook entry and the latest experiment log. Never restart a closed queue merely because an older plan describes it as pending. The earlier server worktree has uncommitted legacy work and remains protected.

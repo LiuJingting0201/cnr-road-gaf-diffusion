@@ -1,0 +1,331 @@
+{
+  "complete": true,
+  "rule": "400201,seed42,first lexicographic request per class jointly supported by reference and all eight arms; candidate0 only",
+  "sources": {
+    "../g40-job/g40-data/400201/generated/B-42/complete.json": "3251b349db060ecb660b444f5f0551d490214dfe7bef4a48195554ddfa221d97",
+    "../g40-job/g40-data/400201/generated/F-SV-42/complete.json": "cd8894b2349706319e2710eb1c369a9e2b6e3c18ac52de769e27451f7fe5deec",
+    "../g40-job/g40-data/400201/generated/J-S-42/complete.json": "5d81fb28cd4db777808e954fa2c6f2b2d6333eabe9788ff12bf055ac1f6b3f82",
+    "../g40-job/g40-data/400201/generated/J-V-42/complete.json": "9b800b68b3f5f736f2b11c2f9b425b6e5468e99bd94e71c735f09f201c0191e4",
+    "../g40-job/g40-data/400201/generated/J-SV-42/complete.json": "3c0a40f7306462347bcbba64b72010a1629fa3e1c5a117a524d0a637b69397cf",
+    "../g40-job/g40-data/400201/generated/J-RAW-42/complete.json": "c1d391b110a5769c955712bc17e82e64fa651cf799bd5ea81f01476caef6af59",
+    "../g40-job/g40-data/400201/generated/J-SH-42/complete.json": "fb8f79775c09a78df099470d6f68472210e5bf218aa272f75aa26b04887fa32b",
+    "../g40-job/g40-data/400201/generated/C-42/complete.json": "d7a36c81413c83988f09b77123060e8a452bb1944c256241757d7b11992eb49e",
+    "../g40-job/g40-data/400201/reference/complete.json": "89436aa83644eebd31626045adbe8b12d20b7ec84bffd65214da971d5af21424",
+    "../g35d-job/g35-data/gaf-cache/complete.json": "05317df345b3bf6fe9977be1854ea0711d7ff7e12a3329b001d2a522acfc56ea",
+    "../g30-job/g30-data/source/scenario/in/most.net.xml": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0"
+  },
+  "source_sha256": "f029d621062841560747a67d145b3f474a2d361e2e80ff95916f5f06aac4058c",
+  "cases": [
+    {
+      "class": "bus",
+      "request_sha256": "9b6773c4ba35c0167d52a810cf356a5a2ba427bb3933e617dac0115dcb0e955a",
+      "eligible_requests": 20,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 2328.0,
+          "points": 9313,
+          "track_sha256": "53812925635fb23ce57f3533984541c4d65cc0ea969626f2d2b6fb9e72a93e76",
+          "spatial_image_sha256": "4f4c17ba1b1afcedc7511ed6004b0c1a134d83cb786673166d0a12f197de8e33",
+          "speed_image_sha256": "a467ef5575d25eea525234ad040208873e46017890357b5949cec03166854a00",
+          "coordinate_clipped": 0
+        },
+        "B": {
+          "duration_s": 2560.2662611342503,
+          "points": 10243,
+          "track_sha256": "a236dc8980ec044b57c8db80d1bb888f1271241c772c8693b73abe5476b4e5ae",
+          "spatial_image_sha256": "93e723241081b67817c3a7d66f7d5b18175aca45b6c3c30e8b299400a13f7ae4",
+          "speed_image_sha256": "0e22784c43c3c99e48b29e889ac85823d3d9c22b52e860055c23364e47dd975e",
+          "coordinate_clipped": 0
+        },
+        "J-S": {
+          "duration_s": 2560.2662611342503,
+          "points": 10243,
+          "track_sha256": "00116f5fc2de09a4c34ca69fd3d3319f1383308834048c838c802bf6ffe86095",
+          "spatial_image_sha256": "39c29057e5fd275a4680f680141d33c79692e73b1870216616d0ba1412750e01",
+          "speed_image_sha256": "f0e52ab6e635f673264dacacc8e0db4114a9c16d80947898b774aadb979b92a3",
+          "coordinate_clipped": 0
+        },
+        "J-V": {
+          "duration_s": 2560.2662611342503,
+          "points": 10243,
+          "track_sha256": "fdc83fdad17988dba7ddeb1b3a70db4a9e7e9f3b97860655b71af7e57656e962",
+          "spatial_image_sha256": "bad24ae08c8ac3d9566697632fcb4d33bfb5c2a5360e3c1575f5d039b3553099",
+          "speed_image_sha256": "a743f0cac29ea33d5fed8285418daadfe1a551fc41ebc0079b7d55bcacbdd656",
+          "coordinate_clipped": 0
+        },
+        "J-SV": {
+          "duration_s": 2560.2662611342503,
+          "points": 10243,
+          "track_sha256": "65fc48a5aa7eb7c0dcb81140d44432eb4d3c736c380d5cfd3137af7c111f1a1e",
+          "spatial_image_sha256": "3173bd6e8eb19a32b64c9635bd01546587235f9f7a1a93cc47c915b8c92ca5f3",
+          "speed_image_sha256": "12702a800101ef5bf19fc196134a09b1711cce42de43118077b1b275c5697d59",
+          "coordinate_clipped": 0
+        },
+        "J-RAW": {
+          "duration_s": 2560.2662611342503,
+          "points": 10243,
+          "track_sha256": "a34c1bbafd7f6b5fb4e7f4f69254db20979ae26c7374e795301e25d4bcbdb21f",
+          "spatial_image_sha256": "51f05bebe502a2b1f02d21b56e4b740251801f673acf5fc42f8af15215f2b6e8",
+          "speed_image_sha256": "87a90309691299cd340842cbb88afa10304fdfbe9c83ecc9071a751f960ad7a5",
+          "coordinate_clipped": 0
+        }
+      }
+    },
+    {
+      "class": "motorcycle",
+      "request_sha256": "e44d09c4f4718bfabc5f19f272d09af74a6385a191c7a7befec6a2b009d9d0ff",
+      "eligible_requests": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 266.75,
+          "points": 1068,
+          "track_sha256": "aff651e5c904e992e4b6d2acfd47fe71880b24091a97f0b7ca07d4a1ff4d08b7",
+          "spatial_image_sha256": "6cb6218bdc1de86453c498299768d226df30130f81afd524f59acc316189f7df",
+          "speed_image_sha256": "4425eb7c48d854075545ae21f6f445ec7b098b6f81bc8d4c4d18a7d46c34411c",
+          "coordinate_clipped": 0
+        },
+        "B": {
+          "duration_s": 355.3119047188084,
+          "points": 1423,
+          "track_sha256": "b11b6eb354ec85b7b9d99e8d53cae616fcd5dce7b7d216e664cfcd666aa0cd17",
+          "spatial_image_sha256": "c3aae0737e187315847b96f2c6aeffaa37760d2ced2ae935fde05f986ae08edc",
+          "speed_image_sha256": "136a117afec8a82dc0c0b8e173c5d68397db7ecc96afd6f888eae0c6e6048dba",
+          "coordinate_clipped": 0
+        },
+        "J-S": {
+          "duration_s": 355.3119047188084,
+          "points": 1423,
+          "track_sha256": "eb339bc2caccb724fde2b64e83487212d35d9800d6079224689a445dff0fe178",
+          "spatial_image_sha256": "3cdeda06e176e8a30b2198add43efb8dd86185e95533cd3de0a0a6b7ba38f8bd",
+          "speed_image_sha256": "2fae40a2d8be3b2c495ffce36f7c8c34f4ba6883861b29cb7e3da1e2160aeb59",
+          "coordinate_clipped": 0
+        },
+        "J-V": {
+          "duration_s": 355.3119047188084,
+          "points": 1423,
+          "track_sha256": "8e39a2902e2dd60dedcfbd5d6dc9fcf1e7f99af5a8235a242176e517afa2c67b",
+          "spatial_image_sha256": "7ab8dac02b0e2e5787aec93e0b2636e6b8df1bf8eb463302d95b37a8784df653",
+          "speed_image_sha256": "1a5e264fb7da5ecdffe676f4341fd45f624bf8b6257dde680ea5d04dbe0e4518",
+          "coordinate_clipped": 0
+        },
+        "J-SV": {
+          "duration_s": 355.3119047188084,
+          "points": 1423,
+          "track_sha256": "07e5e19e528001e2c0bc00dd6f0434468554514ac288add5ca8aa93481755051",
+          "spatial_image_sha256": "5b52c9a4adb5a8256a917abfa1bfb9460ab82caf68b36a93a8b1a0d3d1e42f39",
+          "speed_image_sha256": "b5502fa031d2d68e0de783158c9c3619d9e34913776169ba11042c55985c7b49",
+          "coordinate_clipped": 0
+        },
+        "J-RAW": {
+          "duration_s": 355.3119047188084,
+          "points": 1423,
+          "track_sha256": "ee2519d972101b6d39f67b93b2413de7a9472a1a8523a0e5fd52e95f81d87028",
+          "spatial_image_sha256": "de4269b4d18fddee47eb00a9760eed95e8595ee0cdf1d0742218e333178856fe",
+          "speed_image_sha256": "109c96c260cb04abcd86666a606430ed466d88994cd138279b1899275fb2a372",
+          "coordinate_clipped": 0
+        }
+      }
+    },
+    {
+      "class": "private_car",
+      "request_sha256": "84ac69a46a55898a2932ed5cc14e1e9e7708f0b04ea5ec492ff612406f5b8f8d",
+      "eligible_requests": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 631.75,
+          "points": 2528,
+          "track_sha256": "9eb324d0292bc3f35564f575e703ffcc9c4009de24cb9b1d24a20819d07df449",
+          "spatial_image_sha256": "8d839078852108d6afc77bc3b0c33a3e5feee96e3bd0cd9c5dc6de2ba5d7c61b",
+          "speed_image_sha256": "e49ea3055f8f1ac924d7344c66d1afb2fbda11123458385dcd8f59d6cbcf3f4a",
+          "coordinate_clipped": 0
+        },
+        "B": {
+          "duration_s": 763.9041758733011,
+          "points": 3057,
+          "track_sha256": "2bbd94522a895915cfdecbbb134a202db7a04baffdd0a00b6b7e9f82fd18cdc6",
+          "spatial_image_sha256": "c749c402f05ba2f523c7d008d4053ee8015ff5c92248b242caf071f5c0a8dbda",
+          "speed_image_sha256": "0ed3dbb1712a964afb89a130e9124c54cb9da14f9fae65736145d40a30c9c49d",
+          "coordinate_clipped": 0
+        },
+        "J-S": {
+          "duration_s": 763.9041758733011,
+          "points": 3057,
+          "track_sha256": "16c5477d2989a581c4ab6d869cb25b36ecf34a9980841f7042c28a1c2d4a2979",
+          "spatial_image_sha256": "5e765b1ed524c44bf5a99552a280eb66c9e3214fd22b6785b4f87ede98eb40e2",
+          "speed_image_sha256": "92a09aa567dd64c4f8c8ff6cc37bc81892cc1fac5c7b400076768f73093a1083",
+          "coordinate_clipped": 0
+        },
+        "J-V": {
+          "duration_s": 763.9041758733011,
+          "points": 3057,
+          "track_sha256": "b4aedb87d416e224fcf1178f7a0c2dfd1da65bb3de80c1dc389dc9d1b035d9fb",
+          "spatial_image_sha256": "9df00ba3921064d9212c0177404a337e4915224598fc6d47392f851ac26ad433",
+          "speed_image_sha256": "1ec19a620208be82790934719f9bdc1881378e3fa1f19ca84b483037527f6172",
+          "coordinate_clipped": 0
+        },
+        "J-SV": {
+          "duration_s": 763.9041758733011,
+          "points": 3057,
+          "track_sha256": "936a4af380b99708eca36ea2665bbe798177022bebcb81488d0be54c71c47249",
+          "spatial_image_sha256": "14971b76082513f334a6b4cea3f845b7456c07da3494e58b1d6783c53d31667c",
+          "speed_image_sha256": "b3f6d5281039d53726fbca48e3348b845664a50aa1d78d60f8fff3e773dc3454",
+          "coordinate_clipped": 0
+        },
+        "J-RAW": {
+          "duration_s": 763.9041758733011,
+          "points": 3057,
+          "track_sha256": "1fad529c779fa63e09be23f0cf37c664f9f4dbd91a796d8f60cbbdc8cbe4c868",
+          "spatial_image_sha256": "773580f7a387708b8faa86090433039e67b8e9d52a415dffa9fe70d68c1cc5b4",
+          "speed_image_sha256": "866bfb8f62624b5fc1790d5db3fa29dd1c7f5b2a8c0d441fe4839d0640e9daf9",
+          "coordinate_clipped": 0
+        }
+      }
+    },
+    {
+      "class": "bycicle",
+      "request_sha256": "b3603ace62c0c27ce6f58914770053434c629e0a9ff63f832d446eb2c4ab2efd",
+      "eligible_requests": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 778.5,
+          "points": 3115,
+          "track_sha256": "16da976dd35f70bf387dce556227478f25436fe22a0360c8ae423d4c8f06a7c3",
+          "spatial_image_sha256": "4c9e773500b8160b885224331aac698142e63bed562c063cc814bca1e379ba91",
+          "speed_image_sha256": "afd0c434014e4650a92835d98baf379a4d9e7ab9e249fd4a9fcc8ecab0217de9",
+          "coordinate_clipped": 0
+        },
+        "B": {
+          "duration_s": 499.1494767797094,
+          "points": 1998,
+          "track_sha256": "7a2c36b2e031fa2bbb8132e689828d9741336fbb3e09c2906dd59b19304d9865",
+          "spatial_image_sha256": "97783a7d4bca0c66e1dbc46dd0ca9654228096114f3a4a0ca7bc61e56d34d9a2",
+          "speed_image_sha256": "88b92bc5b740e48e291dbcb14ccbf902e180d50ce69186888563edd725397cf1",
+          "coordinate_clipped": 0
+        },
+        "J-S": {
+          "duration_s": 499.1494767797094,
+          "points": 1998,
+          "track_sha256": "e129351e70ea8280791aedeb02db7cffeb652198616dbb6e7974b848a79904f0",
+          "spatial_image_sha256": "f64721bb615a19ad33aef00ea560d86473a384105c5300beddf7acac6d63b2c9",
+          "speed_image_sha256": "47c27408e0dbec921f8b90eeda26bcb6bb9cec9ba0328ac36643a143af57fdec",
+          "coordinate_clipped": 0
+        },
+        "J-V": {
+          "duration_s": 499.1494767797094,
+          "points": 1998,
+          "track_sha256": "6dbc1c4355b6edd606b8dd04cd2fd872bd7af2b7f2d8ba832af82dad554b12ae",
+          "spatial_image_sha256": "7bd38e84c0fff9fcaf69b0178769b3e2fd4a3fd1224d1571b120141b56213efd",
+          "speed_image_sha256": "407a1dbd5f5fc4ffe5c7634da70cb77982fae7ba2d5448166fb323ed2754390d",
+          "coordinate_clipped": 0
+        },
+        "J-SV": {
+          "duration_s": 499.1494767797094,
+          "points": 1998,
+          "track_sha256": "df80f130f102c49e5033413e67b8c8ab2d63320ecb844ea87c9b5fd8912d8068",
+          "spatial_image_sha256": "5885bc9544ad87b9d6f799e11c5b9634c5fd4b20ec69c8ca68b146064db25fbb",
+          "speed_image_sha256": "5d3ca03fd608529a4ba57a7cc85fd9d035d6a20783ddb236eb218ef6a42a86c8",
+          "coordinate_clipped": 0
+        },
+        "J-RAW": {
+          "duration_s": 499.1494767797094,
+          "points": 1998,
+          "track_sha256": "c288f2704a29b8c9553b547048c85c203c3edd7520ff23cc3ee0da1aa38d2f49",
+          "spatial_image_sha256": "f64721bb615a19ad33aef00ea560d86473a384105c5300beddf7acac6d63b2c9",
+          "speed_image_sha256": "e1796ec14caca32ac90e4e9702650e598ed4750bd27c336b833d9fcd6821b342",
+          "coordinate_clipped": 0
+        }
+      }
+    },
+    {
+      "class": "taxi_or_uber",
+      "request_sha256": "a716dba5bad9098f2202453dacd0d383e649741d3273e2884ec83335e5ace263",
+      "eligible_requests": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 293.0,
+          "points": 1173,
+          "track_sha256": "9e1af2259b7c750401393b4a90e8deb36e5315b999ad2e24eaf4093ca72f9ae5",
+          "spatial_image_sha256": "6129f56deddde1ecd4483c330328b9982e6abde13a08eabfebac82790f2a8da7",
+          "speed_image_sha256": "7b5cb00a1836319cdd360165707b592b925f94188d4d4c6f0a61023734b2bb7c",
+          "coordinate_clipped": 0
+        },
+        "B": {
+          "duration_s": 345.1840887116128,
+          "points": 1382,
+          "track_sha256": "f7581e4bc86581f96046a31c19b5638f717c021fcaf8354e373cef77eff9adda",
+          "spatial_image_sha256": "2a227c9d7359c8a42987047383e3fe69aec2ae4543a83238492a935e2ea164ae",
+          "speed_image_sha256": "c7c2e4944b86b57109948e13a169765cfe7a04357811e499d20a10976febe77c",
+          "coordinate_clipped": 0
+        },
+        "J-S": {
+          "duration_s": 345.1840887116128,
+          "points": 1382,
+          "track_sha256": "1ffe97f49393cb03a73d53b52d76c8420d2fa243b6b68eb82213ee9d9ad5c292",
+          "spatial_image_sha256": "2405ca910f987bfb1bd26381e49bcbd7eefe9ffb099546a2ad1c56fb33d8db56",
+          "speed_image_sha256": "1685856a9309c15d452ce42cf441e8b149ac4157cb12555a2e7258050d6d3b96",
+          "coordinate_clipped": 0
+        },
+        "J-V": {
+          "duration_s": 345.1840887116128,
+          "points": 1382,
+          "track_sha256": "7c03524c9d8e30529309b3eda5fe16d37cf1ec89589f4949bb38734d866b424b",
+          "spatial_image_sha256": "dc6d687762bce90dd2992a76e08587f3619519ab96772f6ed619eb21cdb361b3",
+          "speed_image_sha256": "953112996776df5620bb30458b9f2bb0842443b70f27d7de9da639ef4cd18e80",
+          "coordinate_clipped": 0
+        },
+        "J-SV": {
+          "duration_s": 345.1840887116128,
+          "points": 1382,
+          "track_sha256": "413be69a2660cd29c1d8ccbd11d685e3f28c1580aaa21ef0f42ef11c40d86870",
+          "spatial_image_sha256": "d1f9c12ca838f0c52d23be6eb83927455ca956e597cd9075b012f8fbd27e2e21",
+          "speed_image_sha256": "68566300aa2320457db0f214713149e943335d97f67e7ece3455a22b755cbd96",
+          "coordinate_clipped": 0
+        },
+        "J-RAW": {
+          "duration_s": 345.1840887116128,
+          "points": 1382,
+          "track_sha256": "c280744e511e5e76e57124c7d6412f6b9af255e04ff15e76dbcef0fcd2d3fcd8",
+          "spatial_image_sha256": "214502a30939f3316c4f4c49d86b56c6661c068eeda9b91ca90b7650784d948d",
+          "speed_image_sha256": "8b42524190417d2764b4a5d1ada006cff57eb6f2afa7d2fed1a7d6f6a4cd8cbc",
+          "coordinate_clipped": 0
+        }
+      }
+    }
+  ],
+  "figures": [
+    "g40-journey-bus",
+    "g40-gaf-bus",
+    "g40-journey-motorcycle",
+    "g40-gaf-motorcycle",
+    "g40-journey-private_car",
+    "g40-gaf-private_car",
+    "g40-journey-bycicle",
+    "g40-gaf-bycicle",
+    "g40-journey-taxi_or_uber",
+    "g40-gaf-taxi_or_uber"
+  ],
+  "scope": "Descriptive fixed-order examples, no scores, no favorable re-selection, no new fitting or generation.",
+  "images": "Original frozen spatial transform and unchanged speed transform; output visualization, not future conditions fed into synthesis.",
+  "artifacts": {
+    "g40-journey-bycicle.pdf": "fc1d5e949783dd0c4f73bc2e7e6c0f2eaad7f8e4eb0c9d0cd22718e4e3096c10",
+    "g40-journey-taxi_or_uber.png": "04781a4218a697b9a20507b1460edc809fabc56174f1180cb1f011fbee1955ee",
+    "g40-gaf-bycicle.png": "3ac85eb5bc2bf0c50a1b4621185f5c7a63f05d47baeef2234161ee06e8ef5aae",
+    "g40-journey-bycicle.png": "787b98ec0745e7138e676534a1d33f82a46083d7c72a7cb3dacf739220b379c6",
+    "g40-gaf-motorcycle.png": "b051b8ff7a709ac2e248d429bf744d6397543a451f8d48b5b495eed034edbc19",
+    "g40-gaf-private_car.png": "6c7a346258ddfb2506fa524a223da617680263b63eeab5031751f3f9a6f34a07",
+    "g40-gaf-taxi_or_uber.png": "d7818babe40df90f6f48b3d61e9bc4c843383dbfc0885cb047bfbd68d019176c",
+    "g40-journey-private_car.png": "477fc79ad68885ecddcec9a017e80e622ffad12ee6d6378b5d35bcc6dfd50c0c",
+    "g40-journey-bus.pdf": "768b794b74a76c693ec7527cd828d93d8a0411368ade1364816dd2109a4e332d",
+    "g40-journey-private_car.pdf": "89338d42901d3bdf5804abade51d12cea92ae02c40e688b376f853ba566c8a88",
+    "g40-journey-motorcycle.pdf": "3b687212b44152167f19c31418a3b8a79ccd140eb45c5e3c57bd2f2e8488e188",
+    "g40-gaf-motorcycle.pdf": "bc74eea280624f0ada7853eb11ec77490e7743e4432c785503d056f2bba8f027",
+    "g40-gaf-taxi_or_uber.pdf": "80de91ea2883b71995e00008cfc55fa6b98d9c37cbd7aba058da1d8dfad6e6b1",
+    "g40-gaf-bus.pdf": "0fb975ea632119380b1c913f312759d994ca4c08435e09b2297893ec7cf51dcd",
+    "g40-journey-bus.png": "c2eae343d22672590a217e1a89c96e9c66f4f2951cc5c9187ca6c0e4bf53f6bc",
+    "g40-gaf-private_car.pdf": "309b392367a941615c669f78b8afa415cd646b56c512a04e4e8531979c594d47",
+    "g40-journey-motorcycle.png": "1ecb26a35941b3ae6df4af1d77d61044d69f74a8b6a524951f1d3333ba0dfaec",
+    "g40-gaf-bus.png": "c450419940e199db9f46117a23d05e4862a2e179a692056bbfb4eab2402c7512",
+    "g40-gaf-bycicle.pdf": "f6e3db871ee5e70180c6cb78ec63d6dae006c0fe611970735e28222981dd28cf",
+    "g40-journey-taxi_or_uber.pdf": "a6f7a6d3a75f0c5be8f6a5aeeecbfa52743ee04a1c36297c6534d91bf7f8f380"
+  }
+}

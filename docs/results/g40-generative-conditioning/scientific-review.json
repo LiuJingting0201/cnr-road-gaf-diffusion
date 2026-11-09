@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "review_date_beijing": "2026-11-10",
+  "reviewed_entire_planned_grid": true,
+  "scientific_queue_complete": true,
+  "all_arms_and_classes_retained": true,
+  "primary_physical_and_coarse_endpoints_reviewed": true,
+  "utility_all_regimes_seeds_classes_episodes_reviewed": true,
+  "condition_interventions_all_arms_and_fixed_levels_reviewed": true,
+  "coverage_diversity_decoder_and_cost_reviewed": true,
+  "claim": "No overall GAF physical-quality gain; modest spatial augmentation effect with opposite signs across evaluation OD cohorts.",
+  "not_claimed": [
+    "GAF necessity",
+    "dual-view superiority",
+    "independent city transfer",
+    "interactive traffic safety",
+    "perfect code-prior fit",
+    "final adapted CNN accuracy from pre-adaptation figures"
+  ],
+  "evidence": {
+    "completed/aggregates/verified-aggregates.json": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+    "completed/independent-recomputation/complete.json": "b87e6d8994dbd391581f5eaf16f85d189a531bb4acdaddd033aa86cf58652f38",
+    "completed/closing-summary/complete.json": "35863823b8a038e12a801c74039883b636e9a5f56f9c2062d498ad2d2d13670d",
+    "completed/condition-audit.json": "ad504467f4c65c06d572bf181d3824d9e5c2eecf2c00914a4506a25c96c25a61",
+    "completed/sampling-audit/summary.json": "3bd1a2936183d11766afd446c0cf380cde3ae7eea846950530c253e4eaebd603",
+    "REPORT.md": "db974efd659a04d09349890e5ec2de5636af3d941a26949fe9873cf9df27b827"
+  },
+  "next_action": "Finish manuscript visual verification, publish artifacts, pause this round."
+}

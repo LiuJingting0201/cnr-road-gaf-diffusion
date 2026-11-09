@@ -1,0 +1,360 @@
+{
+  "version": "v20",
+  "pdf_pages": 113,
+  "main_text_pages": 69,
+  "figures": 34,
+  "tables": 29,
+  "cited_bibliography_entries": 54,
+  "bibliography_entries": 54,
+  "clean_zip_build_page_text_identical": true,
+  "latex_overfull_or_undefined": 0,
+  "visual_review_complete": true,
+  "scientific_review_complete": true,
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "inputs": {
+    "README.md": {
+      "sha256": "bd4fcfcc8bb3637796b812186ec155cb9902d210ecfaa806bc5e67000955b833",
+      "bytes": 3464
+    },
+    "TEMPLATE.md": {
+      "sha256": "b3eb0202983b9e7e01aa00a59e56496898819040b5d2d7b9de9daf933715fc95",
+      "bytes": 1092
+    },
+    "abstract.tex": {
+      "sha256": "607a41d26a3eda1f3a916e2ec1e18b9098ded57fd2c695975151f483b5417bd0",
+      "bytes": 2386
+    },
+    "chapters/02-background.tex": {
+      "sha256": "1b90419483cacb97b02a2edd7849a021030c14ef8c672daa13e982136cbbfea4",
+      "bytes": 9846
+    },
+    "chapters/closed-results.tex": {
+      "sha256": "b97df54cb36b36ac84b838eaf66e74f434d03cd9d7ea32ade7ee67cbf999d2ee",
+      "bytes": 8839
+    },
+    "chapters/native-appendix.tex": {
+      "sha256": "22530b3d8b64032608ea6598c824d1190c1bd7e4963219d1297de1fdf97beba9",
+      "bytes": 29331
+    },
+    "chapters/native-data.tex": {
+      "sha256": "1ec11c82f470d6fac5db0ef7b7f9c284e0439624a284b8ecae9d34734cfef6fd",
+      "bytes": 11366
+    },
+    "chapters/native-discussion.tex": {
+      "sha256": "22cbe9a82773e1c61303d163ed8eca4b93a66812a639b4de8dad1ee6dc68824d",
+      "bytes": 11657
+    },
+    "chapters/native-feedback.tex": {
+      "sha256": "729e5a0c8b9fc98b462edb3aa36d974f8ad7075f5ca7c911069c40c0742fbb13",
+      "bytes": 17360
+    },
+    "chapters/native-introduction.tex": {
+      "sha256": "45b70e46104c78d7c9f116c6c1e9a733363d923c9b8f3916b1cbb0abc6292055",
+      "bytes": 10103
+    },
+    "chapters/native-method.tex": {
+      "sha256": "07a3145195924aa2e88ee9cd37362a0492cfe45abe71fed7d38e390ee0424c0d",
+      "bytes": 15446
+    },
+    "chapters/native-protocol.tex": {
+      "sha256": "2b08fef49a1035eb6cc7f746d4bedd902ec8439218910bd20a055df84640c944",
+      "bytes": 15814
+    },
+    "chapters/native-results.tex": {
+      "sha256": "a5e0964be9be68462da34e9213adaa20a2f752a4850a55dce546b9a9545e7593",
+      "bytes": 21348
+    },
+    "chapters/review-comparison.tex": {
+      "sha256": "c3c44a00f760b028c3c7bd48c2a58dcae25d68a4462a4a3538d0e53a07c94f3e",
+      "bytes": 9273
+    },
+    "cover.tex": {
+      "sha256": "cdb34d014744db864666d6588aff619a81f5668e4418da89e5a066bf5df44536",
+      "bytes": 691
+    },
+    "figures/g33-case-bus.pdf": {
+      "sha256": "992c111f8aa1f42078b156dc92b1cd096ba8da1dea7251ba674c512a135ee872",
+      "bytes": 68880
+    },
+    "figures/g33-case-bycicle.pdf": {
+      "sha256": "40e95c24b34b57224b9d8aee59d87fd694c93afc37baa9957f75a903ea3478ab",
+      "bytes": 34991
+    },
+    "figures/g33-case-motorcycle.pdf": {
+      "sha256": "245e1878d9feed8cba1b323f760cdc599be2c756676e7b9b34bf3bd452886ff2",
+      "bytes": 54491
+    },
+    "figures/g33-case-private_car.pdf": {
+      "sha256": "4f464f6eb3ffa573d4e63dd95ad88d036bc4e81aded3236b29382c7361634f64",
+      "bytes": 40094
+    },
+    "figures/g33-case-taxi_or_uber.pdf": {
+      "sha256": "12b549a1e896f9c12a03d33e0bcc021fd2820c20dd9b825b3d8b39ff0695f92e",
+      "bytes": 37018
+    },
+    "figures/g33-native-motion.pdf": {
+      "sha256": "54673b4d3dc7dec4eead5e4b353f76139a14438ee0316632d87eb73f1201ad19",
+      "bytes": 15885
+    },
+    "figures/g35-confusion.pdf": {
+      "sha256": "936f1b0a69b47ab31d1cae3152f0c092e151b6dd0a244bbbd16c9a12a44206cc",
+      "bytes": 23494
+    },
+    "figures/g35-corpus.pdf": {
+      "sha256": "630764b72c8527e33797bc038f4666a88781794ec18b26f19b2dea15ff18ea08",
+      "bytes": 12246
+    },
+    "figures/g35-teacher-comparison.pdf": {
+      "sha256": "eb12eaf6df54c6f37ac22b29540236c6929cdf001215b8cfd883e107939c636f",
+      "bytes": 17301
+    },
+    "figures/g36-class-stopping.pdf": {
+      "sha256": "3f995ceb1c3273db4368af772f7f3917842810e57eb0700022020489f5e2d6f5",
+      "bytes": 17867
+    },
+    "figures/g36-gaf-construction.pdf": {
+      "sha256": "1671b9ae223ae970da9aa5436369701f9543da3118f45f21e721b308383be7aa",
+      "bytes": 71496
+    },
+    "figures/g36-generator-context.pdf": {
+      "sha256": "cbfb0bc59540a3458d7a2cf501c556f100bfb1b8467a6e694932219e3cbc134f",
+      "bytes": 22405
+    },
+    "figures/g36-stopping-blocks.pdf": {
+      "sha256": "4b1189a34cc8376d15a40b33314b6d0de152e1d83a945bfc6f309838d7abaffb",
+      "bytes": 27509
+    },
+    "figures/g36-teacher-effects.pdf": {
+      "sha256": "743c4dae0193909cf7b8ec70229d7307f0bca9176959e74719a75a47df1c3760",
+      "bytes": 17999
+    },
+    "figures/g38-route-motion.pdf": {
+      "sha256": "03671bb2e2ff5b0a66d3a2fa1051002facef590733cdd10790d6163439240a2e",
+      "bytes": 20987
+    },
+    "figures/g39-alignment-utility.pdf": {
+      "sha256": "77cfc326d4808b8dcb3bccd370d4dcfca10b538bef154199bf2e7388cedc2dab",
+      "bytes": 18210
+    },
+    "figures/g39-fixed-marginals.pdf": {
+      "sha256": "f9e671c40ba4c06f8d0ebc981e083d9c627b1ed570128dba51fc77aa5d787070",
+      "bytes": 13999
+    },
+    "figures/g40-augmentation.pdf": {
+      "sha256": "04854a5ad1cd800ade8f01deb00e1c9f11295825c695981afdd46854a671f694",
+      "bytes": 22965
+    },
+    "figures/g40-class-motion-1.pdf": {
+      "sha256": "593093865fa11e070b3e55560328ca2f6e4a62576b18a96585a36ed8ba54873d",
+      "bytes": 20795
+    },
+    "figures/g40-class-motion-2.pdf": {
+      "sha256": "a24029df06ee4aba4fa9a9a124f6c7f360006bc284611911dc6e9246f6a252d3",
+      "bytes": 22552
+    },
+    "figures/g40-class-motion-3.pdf": {
+      "sha256": "cce13bb075f805c4f706fa71f68a48227804bb20a47b6312d799788f66c3bba9",
+      "bytes": 21978
+    },
+    "figures/g40-framework.pdf": {
+      "sha256": "d3d0968c16ae015dff84987dcd75329cdaec033323f780e3732e7848488411db",
+      "bytes": 23312
+    },
+    "figures/g40-gaf-bus.pdf": {
+      "sha256": "0fb975ea632119380b1c913f312759d994ca4c08435e09b2297893ec7cf51dcd",
+      "bytes": 341852
+    },
+    "figures/g40-gaf-bycicle.pdf": {
+      "sha256": "f6e3db871ee5e70180c6cb78ec63d6dae006c0fe611970735e28222981dd28cf",
+      "bytes": 92570
+    },
+    "figures/g40-gaf-motorcycle.pdf": {
+      "sha256": "bc74eea280624f0ada7853eb11ec77490e7743e4432c785503d056f2bba8f027",
+      "bytes": 219742
+    },
+    "figures/g40-gaf-private_car.pdf": {
+      "sha256": "309b392367a941615c669f78b8afa415cd646b56c512a04e4e8531979c594d47",
+      "bytes": 255087
+    },
+    "figures/g40-gaf-taxi_or_uber.pdf": {
+      "sha256": "80de91ea2883b71995e00008cfc55fa6b98d9c37cbd7aba058da1d8dfad6e6b1",
+      "bytes": 166250
+    },
+    "figures/g40-journey-bus.pdf": {
+      "sha256": "768b794b74a76c693ec7527cd828d93d8a0411368ade1364816dd2109a4e332d",
+      "bytes": 4216826
+    },
+    "figures/g40-journey-bycicle.pdf": {
+      "sha256": "fc1d5e949783dd0c4f73bc2e7e6c0f2eaad7f8e4eb0c9d0cd22718e4e3096c10",
+      "bytes": 631777
+    },
+    "figures/g40-journey-motorcycle.pdf": {
+      "sha256": "3b687212b44152167f19c31418a3b8a79ccd140eb45c5e3c57bd2f2e8488e188",
+      "bytes": 933535
+    },
+    "figures/g40-journey-private_car.pdf": {
+      "sha256": "89338d42901d3bdf5804abade51d12cea92ae02c40e688b376f853ba566c8a88",
+      "bytes": 3211786
+    },
+    "figures/g40-journey-taxi_or_uber.pdf": {
+      "sha256": "a6f7a6d3a75f0c5be8f6a5aeeecbfa52743ee04a1c36297c6534d91bf7f8f380",
+      "bytes": 1283186
+    },
+    "figures/g40-primary.pdf": {
+      "sha256": "d33dda3c8430115cd61427ce213b445b4fecfd49e79bc9f0112f5562ec5b6737",
+      "bytes": 19717
+    },
+    "figures/g40-sensitivity.pdf": {
+      "sha256": "a0e12ff89f522089a23c1420b65b5723485ce4fbad96cd9b972e30c841dc8aa7",
+      "bytes": 15128
+    },
+    "figures/polito-logo.jpg": {
+      "sha256": "632842680635c3a69e00f725d22967ac9c63951480d346520ac43165e0492b78",
+      "bytes": 85132
+    },
+    "main.tex": {
+      "sha256": "7becd274e192423ec6387bc8ba76394bbb6ddededf90acfe4741eb174844cf3b",
+      "bytes": 1539
+    },
+    "metadata.tex": {
+      "sha256": "420866b42e8c7a81b2097e28ae63a19cd6b6a0a979c307e460576731370c6738",
+      "bytes": 515
+    },
+    "references.tex": {
+      "sha256": "8a63cfafcc6f60823d091901491181247b35e2ecc3d015ff02f6f5e6eb96ccdf",
+      "bytes": 12434
+    },
+    "tables/g35-cohort.tex": {
+      "sha256": "d2e40cdc99ac1d0475f9ad57ed20b389d80135947f5f6ad3a7576518ec7cd9c9",
+      "bytes": 425
+    },
+    "tables/g35-five-class-readers.tex": {
+      "sha256": "e313cfa670c2568a73039cc3b1f4abab817ee3c8dc5e30fdd94276504a715b90",
+      "bytes": 513
+    },
+    "tables/g35-readers.tex": {
+      "sha256": "28b6f732713eee5c6b3cceb7c8a90a3d924b342dda035e1ae6f07d3c1a14a43c",
+      "bytes": 374
+    },
+    "tables/g36-generator.tex": {
+      "sha256": "0a1146db35e487131797355f33d7780fd13c07d366ac4c064f25a18b4b737b8f",
+      "bytes": 415
+    },
+    "tables/g40-class-acceleration.tex": {
+      "sha256": "16357e6555372bcd32d662e95aac27f3c6465c6f5eb30fc79349243a2e0edfd7",
+      "bytes": 882
+    },
+    "tables/g40-class-speed.tex": {
+      "sha256": "a1a504900d22ca6c3ff33f88fd9da6ba074b33e746a36ed26463e9d10491d520",
+      "bytes": 864
+    },
+    "tables/g40-condition-all-1.tex": {
+      "sha256": "a944819c23e348bb44d99b64c7e8b703e380f43cd17194e9710ef568d79bf606",
+      "bytes": 1400
+    },
+    "tables/g40-condition-all-2.tex": {
+      "sha256": "1c1027a25d29172173dbd6eaf88f435cd70d0e95949fd91ea52188334b6349b9",
+      "bytes": 1415
+    },
+    "tables/g40-condition-use.tex": {
+      "sha256": "0f1e6891c10d27c822cd86a0a54c2510200f429177ac6a5400a8b9ed54245798",
+      "bytes": 610
+    },
+    "tables/g40-coverage.tex": {
+      "sha256": "60c89c8178d8a27f22c30de121206611c3be3847287f7c41d1c51d3c2ba6e8c7",
+      "bytes": 786
+    },
+    "tables/g40-diversity-decode.tex": {
+      "sha256": "33d3378cc6e446425f89c07ff4e69deba01d11a0cb70867858ea50bffd98e9d3",
+      "bytes": 989
+    },
+    "tables/g40-physical-mae-1.tex": {
+      "sha256": "961df76c5ceb371abe0d08e4bc01d487c041fd7934481db9f50ffc9bd8487f8a",
+      "bytes": 956
+    },
+    "tables/g40-physical-mae-2.tex": {
+      "sha256": "0a24309293ea78c908304423019a4b77d0dd053c1f18a7467b5897ed5a5530e4",
+      "bytes": 968
+    },
+    "tables/g40-physical-w1-1.tex": {
+      "sha256": "77f4048f4cb91c65da3fe97864335645985e7239dbbb9f50837c31f593f61d3d",
+      "bytes": 949
+    },
+    "tables/g40-physical-w1-2.tex": {
+      "sha256": "9def28fe6f4557ee5fa7d8a1e090a172ca1b4928ebefac0668e2d4a693e1b382",
+      "bytes": 961
+    },
+    "tables/g40-primary.tex": {
+      "sha256": "f179af4f5954474c1746a89d2dfb87b63218102b39331ed4bd5ec1a9404e2dd8",
+      "bytes": 618
+    },
+    "tables/g40-seed-native.tex": {
+      "sha256": "9fbcbbdb5236d30d4f7d71c9b174f9d12c0d83c60e6dd1b4205b021da96a5874",
+      "bytes": 1269
+    },
+    "tables/g40-training-costs.tex": {
+      "sha256": "7fdfbbf8427ba6c4c15113ecd523f042a6031c0e07d8413b0319c7ab85e54553",
+      "bytes": 869
+    },
+    "tables/g40-utility-cohorts.tex": {
+      "sha256": "02d944e54e2323e049d8218873fb28917bcd964abab440af389ce55df76a2fb3",
+      "bytes": 749
+    },
+    "tables/g40-utility.tex": {
+      "sha256": "459908a80fc9920c000e2b927d35919dc43f2a5fede7b53eee5e248e20c94884",
+      "bytes": 837
+    }
+  },
+  "outputs": {
+    "Road_Conditioned_Diffusion_Thesis_v20.pdf": {
+      "sha256": "e9006f939a3e36f98fb1af5020299e63072939fe327ceccf214cd5946510fbfe",
+      "bytes": 12710933
+    },
+    "PoliTo_Thesis_v20_Overleaf.zip": {
+      "sha256": "555e8920824193c3f1607db6a5e6086f2d0b82abf43d6c76a72e94fd5b65202e",
+      "bytes": 12085285
+    }
+  },
+  "builder_sha256": "f4aa4506d32cd3948f965c88d3c642629eff237c78ac37d64f3be5e7bbbb9a2f",
+  "review_date_beijing": "2026-11-10",
+  "all_pdf_pages_rendered": 113,
+  "all_page_contact_sheets_inspected": true,
+  "detailed_pages_inspected": [
+    31,
+    39,
+    43,
+    56,
+    58,
+    62,
+    63,
+    65,
+    67,
+    69,
+    71,
+    73,
+    74,
+    75,
+    83,
+    85,
+    87,
+    88,
+    90
+  ],
+  "visual_review_notes": [
+    "All-page contacts checked for layout, missing content, table overflow, numbering and section transitions.",
+    "All five final GAF panels, full journey example, framework, primary and per-class evidence, mechanism and appendix tables checked at detailed resolution.",
+    "Long acceleration label wrapped; fixed data and image-array hashes unchanged.",
+    "No clipping, overlap, undefined references or overfull boxes observed. Administrative fields intentionally unconfirmed."
+  ],
+  "contact_sheet_hashes": {
+    "contact-03.png": "b68596abdfca29c2720a81257417786b51fa51638e899da949c02c420ee1906d",
+    "contact-02.png": "030184d560bb24c99700a8b98f2c3d7ab114b50d119b4ab5313c6b230fde1da9",
+    "contact-01.png": "133176da8820552d5a5f1ea28c80fe0d3bf43abeda879f74974a237584da72ba",
+    "contact-05.png": "505114fc91041e6f098d4f627bf4f96d195d67d3b74d16cd8b3af1284b3f8ae9",
+    "contact-04.png": "7bb0f921ab87fb7685ffaa0ff15568cd56fe7dce74103be31ceb0a7ce50653e5",
+    "contact-06.png": "91b6bc0fcf98515c3ae7520309d0efe0bf8b4921667e084aa6d41f366fa7b878",
+    "contact-07.png": "b1523ecf52ee42de1167b2d1d12565156d116b961c6a9f9eeb70486dee895048",
+    "contact-08.png": "9fd2803fd809081b9a6d53974105bbb4a9828a3f7806ba10e27bc77c345e6ece"
+  },
+  "scientific_review_receipt_sha256": "9c7aa66b7e2b04a9752cce60fc0deb82b241e637ef2b76bacb92b4fd4a9cb68b"
+}

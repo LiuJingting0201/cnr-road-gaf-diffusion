@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "seconds": 41.00525861233473,
+  "same_cases_and_images": true,
+  "same_numeric_matrices": true,
+  "source_hashes": {
+    "g40_visual_assets.py": "f029d621062841560747a67d145b3f474a2d361e2e80ff95916f5f06aac4058c",
+    "build_g40_assets.py": "fc56c73487853e394ecc4a604a42214ddd5ce22007868c32e9c4e21af520a9aa"
+  }
+}

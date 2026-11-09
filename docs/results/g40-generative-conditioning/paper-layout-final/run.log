@@ -1,0 +1,4 @@
+  File "/workspace/cnr-experiments/gaf-inloop-v1/g40-layout-final-job/run.py", line 9
+    (job/'complete.json').write_text(json.dumps({'complete':True,'seconds':time.monotonic()-t,'same_cases_and_images':True,'same_numeric_matrices':True,'source_hashes':{n:hashlib.sha256((job/n).read_bytes()).hexdigest() for n in ('g40_visual_assets.py','build_g40_assets.py')}},indent=2)+'
+                                                                                                                                                                                                                                                                                                ^
+SyntaxError: unterminated string literal (detected at line 9)
