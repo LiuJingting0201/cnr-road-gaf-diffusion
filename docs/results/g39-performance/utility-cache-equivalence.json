@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "seconds": 19.944007255136967,
+  "all_arrays_bitwise_equal": true,
+  "checked_arrays": 21,
+  "files": {
+    "B.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "RAW.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "S.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "SV.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "V.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "empirical.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "evaluation.npz": {
+      "arrays": 5,
+      "exact": true
+    },
+    "identities.npz": {
+      "arrays": 2,
+      "exact": true
+    },
+    "real.npz": {
+      "arrays": 2,
+      "exact": true
+    }
+  },
+  "normalizers_and_metadata_equal": true,
+  "candidate_source_sha256": "41e32fbb03d5b7ee86f5d7dc07e186ad15082d1601a77c0529d08da507003ac1",
+  "original_receipt_sha256": "b984abe04548e23915c5cccb372559f21dbd9e807d4e184e6210ad8671d04008",
+  "new_receipt_sha256": "b984abe04548e23915c5cccb372559f21dbd9e807d4e184e6210ad8671d04008",
+  "limits": "One completed cache rebuilt; historical preparation was not an instrumented paired benchmark. No speedup ratio claimed.",
+  "no_training_or_new_sampling": true
+}

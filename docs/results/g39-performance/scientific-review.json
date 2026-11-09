@@ -1,0 +1,12 @@
+{
+  "reviewed_main_utility_factorial": true,
+  "receipt_sha256": {
+    "../g39r-job/g39-data": "155093b761f87b99a92f29e7b6c512556ac8dbea7d0d17ac6042e4454a08cf5a",
+    "../g39ur-job/g39u-data": "099b53985f9e890c08e61f5712a740be441edd4b792d832e71a5dbea962407f9",
+    "../g39fr-job/g39f-data": "da2d8a8119941488db48285d89708cb92e551d481412d4e9e532722f1e2c7724"
+  },
+  "review_commit": "7192efb",
+  "review_document": "docs/results/g39-native-alignment/completed-batch/INTERPRETATION.md",
+  "released_utc": "2026-11-09T15:55:49.617958+00:00",
+  "authorization": "User resumed experiments and requested thesis update after completed results"
+}

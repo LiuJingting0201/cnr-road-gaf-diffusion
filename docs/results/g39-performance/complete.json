@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "seconds": 674.3983635008335,
+  "report_sha256": "15a763b98e6b0e5ec3d2b8c3f33cc1c9be67d5fa958391735057c42e4c369fcc",
+  "all_scientific_jobs_completed_before_benchmark": true,
+  "new_full_training": false,
+  "no_frozen_test_access": true
+}

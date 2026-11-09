@@ -1,3 +1,7 @@
+# Current override — 2026-11-10 Beijing
+
+G39 scientific batch and bounded performance benchmark are complete. Do not relaunch either. Evaluation IO is adopted (10.399× on one fixed cell, exact JSON); training cache is not adopted (no whole-run gain, equality gate failed including baseline repetitions). User resumed G40; see G40_EXECUTION_PROTOCOL.md. Preparation implementation committed3f7ce2a, not yet launched at this documentation checkpoint. Earlier sections below are preserved chronological checkpoints.
+
 # G39 continuation entry point
 
 Latest override,2026-11-09: the entire recovered scientific batch is complete and

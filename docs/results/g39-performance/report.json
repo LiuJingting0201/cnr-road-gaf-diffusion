@@ -1,0 +1,1757 @@
+{
+  "complete": true,
+  "training": {
+    "B-42": {
+      "elapsed_s": {
+        "original": [
+          97.40745488554239,
+          99.20646380633116
+        ],
+        "cached": [
+          105.67959909886122,
+          100.8494166880846
+        ]
+      },
+      "steady_updates_per_s": {
+        "original": [
+          3.890530390749743,
+          3.805630750599151
+        ],
+        "cached": [
+          3.6728898212201893,
+          3.8948940074914518
+        ]
+      },
+      "peak_allocated_bytes": {
+        "original": [
+          644456960,
+          644456960
+        ],
+        "cached": [
+          1978566144,
+          1978566144
+        ]
+      },
+      "steady_speedup": 0.9833193055239547,
+      "whole_run_speedup": 0.9519917477101589,
+      "comparisons": {
+        "original-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.00222981721162796
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.00017879903316497803
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.002424715436063707
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-0": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.002305479720234871
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.000331241637468338
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0010783948418975342
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.002782665193080902
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.00027311965823173523
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0029591129859909415
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        }
+      },
+      "resource_observations": {
+        "original-0": {
+          "complete": true,
+          "wall_s": 100.39365956187248,
+          "gpu": 0,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0066297128796577,
+              "rss_kib": 1559940,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.038501888513565,
+              "rss_kib": 1496764,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.069369077682495,
+              "rss_kib": 2322300,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 32.101411648094654,
+              "rss_kib": 2557924,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.14105712622404,
+              "rss_kib": 2689512,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 52.184789687395096,
+              "rss_kib": 2757252,
+              "gpu_utilization_percent": 28,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 62.22438430041075,
+              "rss_kib": 2761212,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 72.26759319007397,
+              "rss_kib": 2764380,
+              "gpu_utilization_percent": 26,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 82.30886629223824,
+              "rss_kib": 2767020,
+              "gpu_utilization_percent": 28,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 92.3537484779954,
+              "rss_kib": 2768076,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "original-1": {
+          "complete": true,
+          "wall_s": 102.40882307291031,
+          "gpu": 0,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.00301181524992,
+              "rss_kib": 1436680,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.0419360101223,
+              "rss_kib": 2629660,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.08134998381138,
+              "rss_kib": 2331892,
+              "gpu_utilization_percent": 15,
+              "driver_memory_mib": 1090
+            },
+            {
+              "elapsed_s": 32.121046140789986,
+              "rss_kib": 2557588,
+              "gpu_utilization_percent": 27,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.16184802353382,
+              "rss_kib": 2695652,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 52.20270458608866,
+              "rss_kib": 2769168,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 62.244387581944466,
+              "rss_kib": 2773128,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 72.28595893830061,
+              "rss_kib": 2776296,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 82.3279341161251,
+              "rss_kib": 2778936,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 92.3682632446289,
+              "rss_kib": 2779992,
+              "gpu_utilization_percent": 33,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 102.40841252356768
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-0": {
+          "complete": true,
+          "wall_s": 108.40316962450743,
+          "gpu": 0,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0093088671565056,
+              "rss_kib": 1448028,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.043817937374115,
+              "rss_kib": 2472132,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.077238030731678,
+              "rss_kib": 1697332,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 1738
+            },
+            {
+              "elapsed_s": 32.11547480523586,
+              "rss_kib": 2454184,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 2364
+            },
+            {
+              "elapsed_s": 42.153371036052704,
+              "rss_kib": 2651188,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2364
+            },
+            {
+              "elapsed_s": 52.188574239611626,
+              "rss_kib": 2740420,
+              "gpu_utilization_percent": 30,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.22314151376486,
+              "rss_kib": 2766616,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 72.26193650066853,
+              "rss_kib": 2770312,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 82.29953112453222,
+              "rss_kib": 2773216,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 92.33491237461567,
+              "rss_kib": 2774800,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 102.37046956270933,
+              "rss_kib": 2775856,
+              "gpu_utilization_percent": 14,
+              "driver_memory_mib": 2366
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-1": {
+          "complete": true,
+          "wall_s": 104.41666210442781,
+          "gpu": 0,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0052207559347153,
+              "rss_kib": 1451216,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.047830991446972,
+              "rss_kib": 2472500,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.08454256504774,
+              "rss_kib": 2132952,
+              "gpu_utilization_percent": 3,
+              "driver_memory_mib": 2314
+            },
+            {
+              "elapsed_s": 32.12257543206215,
+              "rss_kib": 2455032,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2364
+            },
+            {
+              "elapsed_s": 42.16088144481182,
+              "rss_kib": 2647020,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 52.20094244927168,
+              "rss_kib": 2738688,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.238593228161335,
+              "rss_kib": 2750832,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 72.27596066147089,
+              "rss_kib": 2754264,
+              "gpu_utilization_percent": 29,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 82.31323108077049,
+              "rss_kib": 2757168,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 92.35074350982904,
+              "rss_kib": 2758488,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 102.38809758424759,
+              "rss_kib": 2729276,
+              "gpu_utilization_percent": 5,
+              "driver_memory_mib": 2366
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        }
+      }
+    },
+    "SV-42": {
+      "elapsed_s": {
+        "original": [
+          104.31829730421305,
+          100.43553037941456
+        ],
+        "cached": [
+          104.41808569431305,
+          104.63558040559292
+        ]
+      },
+      "steady_updates_per_s": {
+        "original": [
+          3.6189323451225595,
+          3.7512552048778436
+        ],
+        "cached": [
+          3.7183379991688175,
+          3.756042146932156
+        ]
+      },
+      "peak_allocated_bytes": {
+        "original": [
+          646438400,
+          646438400
+        ],
+        "cached": [
+          1980547584,
+          1980547584
+        ]
+      },
+      "steady_speedup": 1.0141370345589868,
+      "whole_run_speedup": 0.9794318918366948,
+      "comparisons": {
+        "original-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.0008964519947767258
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.00010401755571365356
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0008085699810180813
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-0": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.0016252342611551285
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.00013996660709381104
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0010055169186671264
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.001919616013765335
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.0001874789595603943
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.002288511168444529
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        }
+      },
+      "resource_observations": {
+        "original-0": {
+          "complete": true,
+          "wall_s": 108.39664436131716,
+          "gpu": 1,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.001835897564888,
+              "rss_kib": 1401076,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.044229671359062,
+              "rss_kib": 2472348,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.077749468386173,
+              "rss_kib": 2333560,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 32.11180503666401,
+              "rss_kib": 2539076,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 42.1463388800621,
+              "rss_kib": 2693740,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 52.1798127964139,
+              "rss_kib": 2775812,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 62.214268527925014,
+              "rss_kib": 2786620,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 72.24854855239391,
+              "rss_kib": 2790052,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 82.28402053564787,
+              "rss_kib": 2792956,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 92.31847056001425,
+              "rss_kib": 2794276,
+              "gpu_utilization_percent": 31,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 102.3582374677062,
+              "rss_kib": 2795596,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1094
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "original-1": {
+          "complete": true,
+          "wall_s": 104.50450487434864,
+          "gpu": 1,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.004296451807022,
+              "rss_kib": 1156792,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.0632264316082,
+              "rss_kib": 2472228,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.11692003905773,
+              "rss_kib": 2336932,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 32.15568023920059,
+              "rss_kib": 2562360,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 42.193165384233,
+              "rss_kib": 2701680,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 52.23191989213228,
+              "rss_kib": 2779028,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 62.26934219151735,
+              "rss_kib": 2783780,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 72.34869047999382,
+              "rss_kib": 2786420,
+              "gpu_utilization_percent": 28,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 82.38594665378332,
+              "rss_kib": 2789324,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 92.42323365062475,
+              "rss_kib": 2790644,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 102.47536325454712,
+              "rss_kib": 2772952,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 1094
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-0": {
+          "complete": true,
+          "wall_s": 108.45822114497423,
+          "gpu": 1,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0074311792850494,
+              "rss_kib": 1541836,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.058180771768093,
+              "rss_kib": 1496544,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.101526595652103,
+              "rss_kib": 2268072,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 2336
+            },
+            {
+              "elapsed_s": 32.136496886610985,
+              "rss_kib": 2499672,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 42.172406665980816,
+              "rss_kib": 2686524,
+              "gpu_utilization_percent": 13,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 52.20709118247032,
+              "rss_kib": 2776344,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 62.24127101153135,
+              "rss_kib": 2796936,
+              "gpu_utilization_percent": 26,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 72.28037632256746,
+              "rss_kib": 2800368,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 82.31811659783125,
+              "rss_kib": 2803536,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 92.35660661011934,
+              "rss_kib": 2805120,
+              "gpu_utilization_percent": 29,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 102.41884867846966,
+              "rss_kib": 2806176,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2368
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-1": {
+          "complete": true,
+          "wall_s": 108.46882878243923,
+          "gpu": 1,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0032800436019897,
+              "rss_kib": 1330568,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.043058410286903,
+              "rss_kib": 2472320,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.08339924365282,
+              "rss_kib": 1835328,
+              "gpu_utilization_percent": 1,
+              "driver_memory_mib": 1770
+            },
+            {
+              "elapsed_s": 32.12380228191614,
+              "rss_kib": 2478244,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 42.16375336050987,
+              "rss_kib": 2682704,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 52.22653875499964,
+              "rss_kib": 2773256,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 62.265391163527966,
+              "rss_kib": 2800772,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 72.31109744310379,
+              "rss_kib": 2803940,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 82.35009580105543,
+              "rss_kib": 2807108,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 92.39288632571697,
+              "rss_kib": 2808688,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 102.4338311702013,
+              "rss_kib": 2810008,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 2368
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        }
+      }
+    },
+    "B-43": {
+      "elapsed_s": {
+        "original": [
+          100.23654583096504,
+          99.75400239229202
+        ],
+        "cached": [
+          102.64451365917921,
+          101.75929965078831
+        ]
+      },
+      "steady_updates_per_s": {
+        "original": [
+          3.7398072710611134,
+          3.7902618707803555
+        ],
+        "cached": [
+          3.7583663913556107,
+          3.7951404015974233
+        ]
+      },
+      "peak_allocated_bytes": {
+        "original": [
+          644342272,
+          644342272
+        ],
+        "cached": [
+          1978451456,
+          1978451456
+        ]
+      },
+      "steady_speedup": 1.0031125412888084,
+      "whole_run_speedup": 0.9784090863313887,
+      "comparisons": {
+        "original-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.006242106668651104
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.0005613416433334351
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.014718648373673204
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-0": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.0048318468034267426
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.00021983683109283447
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.004040010135213379
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.005398456007242203
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.0004504099488258362
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.009748950862558559
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        }
+      },
+      "resource_observations": {
+        "original-0": {
+          "complete": true,
+          "wall_s": 104.42207716405392,
+          "gpu": 2,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0070092901587486,
+              "rss_kib": 1539544,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.058717519044876,
+              "rss_kib": 1497504,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.102428175508976,
+              "rss_kib": 2320164,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 32.13711140304804,
+              "rss_kib": 2564960,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.17310028523207,
+              "rss_kib": 2692532,
+              "gpu_utilization_percent": 7,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 52.207492128014565,
+              "rss_kib": 2765980,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 62.24187546223402,
+              "rss_kib": 2770204,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 72.28137128055096,
+              "rss_kib": 2773372,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 82.31942573934793,
+              "rss_kib": 2776012,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 92.35834564268589,
+              "rss_kib": 2777068,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 102.420479349792
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "original-1": {
+          "complete": true,
+          "wall_s": 102.499980725348,
+          "gpu": 2,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0030784234404564,
+              "rss_kib": 1343196,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.041744887828827,
+              "rss_kib": 2471764,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.080477118492126,
+              "rss_kib": 2294560,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 32.12082087248564,
+              "rss_kib": 2533376,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.1623757481575,
+              "rss_kib": 2678404,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 52.20159097015858,
+              "rss_kib": 2756360,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 62.29922033846378,
+              "rss_kib": 2760584,
+              "gpu_utilization_percent": 28,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 72.3382194712758,
+              "rss_kib": 2763752,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 82.37778095155954,
+              "rss_kib": 2766392,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 92.4349299967289,
+              "rss_kib": 2767448,
+              "gpu_utilization_percent": 28,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 102.49956800788641
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-0": {
+          "complete": true,
+          "wall_s": 106.46304132044315,
+          "gpu": 2,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0019687935709953,
+              "rss_kib": 1314100,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.11928478628397,
+              "rss_kib": 2709804,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.152671098709106,
+              "rss_kib": 2241996,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 2322
+            },
+            {
+              "elapsed_s": 32.184781581163406,
+              "rss_kib": 2469876,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2364
+            },
+            {
+              "elapsed_s": 42.21853771060705,
+              "rss_kib": 2649176,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 52.25479803979397,
+              "rss_kib": 2738672,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.2970234900713,
+              "rss_kib": 2750024,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 72.3302778378129,
+              "rss_kib": 2753456,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 82.3641537502408,
+              "rss_kib": 2756624,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 92.39943396300077,
+              "rss_kib": 2757680,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 102.43325229734182,
+              "rss_kib": 2757944,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2366
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-1": {
+          "complete": true,
+          "wall_s": 104.47498667985201,
+          "gpu": 2,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0023510083556175,
+              "rss_kib": 1340288,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.037968426942825,
+              "rss_kib": 2472524,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.07405775785446,
+              "rss_kib": 2241340,
+              "gpu_utilization_percent": 15,
+              "driver_memory_mib": 2320
+            },
+            {
+              "elapsed_s": 32.11143093556166,
+              "rss_kib": 2473972,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2364
+            },
+            {
+              "elapsed_s": 42.14899255335331,
+              "rss_kib": 2653884,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 52.18628890812397,
+              "rss_kib": 2746020,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.23083487898111,
+              "rss_kib": 2754732,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 72.27277996391058,
+              "rss_kib": 2757900,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 82.33195928484201,
+              "rss_kib": 2760804,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 92.37507551908493,
+              "rss_kib": 2761860,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 102.4427447617054,
+              "rss_kib": 2761860,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 2366
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        }
+      }
+    },
+    "SV-43": {
+      "elapsed_s": {
+        "original": [
+          103.35287923365831,
+          104.28021148592234
+        ],
+        "cached": [
+          108.84636964648962,
+          105.54076465219259
+        ]
+      },
+      "steady_updates_per_s": {
+        "original": [
+          3.5947122455084175,
+          3.540727501976532
+        ],
+        "cached": [
+          3.5773066642113878,
+          3.621539518708578
+        ]
+      },
+      "peak_allocated_bytes": {
+        "original": [
+          646323712,
+          646323712
+        ],
+        "cached": [
+          1980432896,
+          1980432896
+        ]
+      },
+      "steady_speedup": 1.0088861286310162,
+      "whole_run_speedup": 0.9684960405800663,
+      "comparisons": {
+        "original-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.004685502499341965
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.0004297718405723572
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0012719650112558156
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-0": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.004786375910043716
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.0005194470286369324
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.00468546585761942
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        },
+        "cached-1": {
+          "model": {
+            "exact": false,
+            "max_abs": 0.004088729619979858
+          },
+          "ema": {
+            "exact": false,
+            "max_abs": 0.000409057829529047
+          },
+          "optimizer": {
+            "exact": false,
+            "max_abs": 0.0018337942601647228
+          },
+          "torch_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "torch_cuda_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "numpy_rng": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "stats": {
+            "exact": true,
+            "max_abs": 0.0
+          },
+          "valid_tokens_seen": {
+            "exact": true,
+            "max_abs": 0
+          }
+        }
+      },
+      "resource_observations": {
+        "original-0": {
+          "complete": true,
+          "wall_s": 106.39892157912254,
+          "gpu": 3,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0020768344402313,
+              "rss_kib": 1273544,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.048130668699741,
+              "rss_kib": 2471888,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.084728851914406,
+              "rss_kib": 2321072,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 32.11878379434347,
+              "rss_kib": 2554592,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.15350526571274,
+              "rss_kib": 2692312,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 52.194186717271805,
+              "rss_kib": 2772492,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 62.228142157197,
+              "rss_kib": 2776716,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 72.26237503439188,
+              "rss_kib": 2779884,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 82.299265794456,
+              "rss_kib": 2782524,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 92.33344943076372,
+              "rss_kib": 2783580,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 102.36823663115501,
+              "rss_kib": 2784108,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 1094
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "original-1": {
+          "complete": true,
+          "wall_s": 108.55095602571964,
+          "gpu": 3,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0025620460510254,
+              "rss_kib": 1117868,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.058479025959969,
+              "rss_kib": 2471720,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.11194732040167,
+              "rss_kib": 2318160,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 32.14817415177822,
+              "rss_kib": 2551156,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 1092
+            },
+            {
+              "elapsed_s": 42.18374428153038,
+              "rss_kib": 2687860,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 52.21954157203436,
+              "rss_kib": 2768276,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 62.26227976381779,
+              "rss_kib": 2773028,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 72.35168696939945,
+              "rss_kib": 2775932,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 82.39356864988804,
+              "rss_kib": 2778836,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 92.46250870078802,
+              "rss_kib": 2779892,
+              "gpu_utilization_percent": 18,
+              "driver_memory_mib": 1094
+            },
+            {
+              "elapsed_s": 102.50344387441874,
+              "rss_kib": 2780420,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 1094
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-0": {
+          "complete": true,
+          "wall_s": 112.46033944934607,
+          "gpu": 3,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0068616569042206,
+              "rss_kib": 1520808,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.056857034564018,
+              "rss_kib": 2468516,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.094993077218533,
+              "rss_kib": 3768360,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 1738
+            },
+            {
+              "elapsed_s": 32.12282285839319,
+              "rss_kib": 2481312,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 42.15639206022024,
+              "rss_kib": 2694488,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 52.18606707453728,
+              "rss_kib": 2782928,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.223785765469074,
+              "rss_kib": 2822528,
+              "gpu_utilization_percent": 23,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 72.26660919934511,
+              "rss_kib": 2825696,
+              "gpu_utilization_percent": 24,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 82.30831987410784,
+              "rss_kib": 2828864,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 92.35288792103529,
+              "rss_kib": 2830712,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 102.41840079426765,
+              "rss_kib": 2831240,
+              "gpu_utilization_percent": 19,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 112.45999567210674
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        },
+        "cached-1": {
+          "complete": true,
+          "wall_s": 108.52457135170698,
+          "gpu": 3,
+          "resource_samples": [
+            {
+              "elapsed_s": 2.0031251683831215,
+              "rss_kib": 1301176,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 12.04229286313057,
+              "rss_kib": 2491748,
+              "gpu_utilization_percent": 0,
+              "driver_memory_mib": 0
+            },
+            {
+              "elapsed_s": 22.082102961838245,
+              "rss_kib": 2239956,
+              "gpu_utilization_percent": 16,
+              "driver_memory_mib": 2316
+            },
+            {
+              "elapsed_s": 32.123505137860775,
+              "rss_kib": 2525924,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 42.16271285712719,
+              "rss_kib": 2712044,
+              "gpu_utilization_percent": 25,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 52.251904375851154,
+              "rss_kib": 2799956,
+              "gpu_utilization_percent": 21,
+              "driver_memory_mib": 2366
+            },
+            {
+              "elapsed_s": 62.290656730532646,
+              "rss_kib": 2818172,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 72.32952094823122,
+              "rss_kib": 2821340,
+              "gpu_utilization_percent": 17,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 82.38485513627529,
+              "rss_kib": 2824244,
+              "gpu_utilization_percent": 26,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 92.44875179976225,
+              "rss_kib": 2825564,
+              "gpu_utilization_percent": 20,
+              "driver_memory_mib": 2368
+            },
+            {
+              "elapsed_s": 102.48869562894106,
+              "rss_kib": 2826092,
+              "gpu_utilization_percent": 22,
+              "driver_memory_mib": 2368
+            }
+          ],
+          "resource_note": "Approximately10s snapshots; RSS may miss shorter peaks."
+        }
+      }
+    }
+  },
+  "training_state_bitwise_equal": false,
+  "evaluation_seconds": {
+    "original": [
+      104.1632483676076,
+      104.17355055361986
+    ],
+    "cached": [
+      10.016900032758713,
+      10.017120607197285
+    ]
+  },
+  "evaluation_json_exactly_equal": true,
+  "evaluation_speedup": 10.399150658042101,
+  "adoption_rule": "Cached training only if state/optimizer/RNG exact and measured faster; evaluation only if full metrics/diagnostics exact.",
+  "limits": [
+    "300-update checks, not a replacement for full training-quality validation.",
+    "Two orders/repeats per arm and seed on four concurrent L20 GPUs.",
+    "No change to microbatch grouping, effective batch, model, teacher, precision or loss.",
+    "One fixed evaluation cell; speedup need not generalize uniformly."
+  ]
+}
