@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import shutil
 import time
 import g39_run as runner
 
@@ -17,6 +18,12 @@ def main():
         'source_manifest_sha256':runner.digest('source-manifest.json'),'reuse_completed_motion_fits':True,
         'prior_updates':5000,'formal_source_prior_budget':5000},f,indent=2)
     start=time.monotonic();runner.R=ROOT;runner.START=start
+    def guard():
+        free=shutil.disk_usage('.').free;used=sum(p.stat().st_size for p in ROOT.rglob('*') if p.is_file())
+        if free<12*1024**3 or used>2*1024**3 or time.monotonic()-start>3600:
+            runner.STOP.set();raise RuntimeError('Full-budget prior check storage/time bound')
+        return {'free_bytes':free,'output_bytes':used}
+    runner.guard=guard
     try:
         assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
         rec=[runner.verify(OLD/'models'/(a+'-42')) for a in ARMS]
