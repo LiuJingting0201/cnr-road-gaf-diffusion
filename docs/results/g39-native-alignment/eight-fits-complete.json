@@ -1,0 +1,178 @@
+{
+  "observed_utc": "2026-11-09T07:52:31.120735+00:00",
+  "free_gib": 48.47260284423828,
+  "fits": {
+    "B-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.9560700431466
+    },
+    "B-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.5856924131513
+    },
+    "S-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2892.3171733617783
+    },
+    "S-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2752.597233131528
+    },
+    "SV-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2951.7541911303997
+    },
+    "SV-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2950.7591203078628
+    },
+    "V-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2891.6507056951523
+    },
+    "V-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2846.8637280017138
+    }
+  },
+  "references": {
+    "390201": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390202": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390203": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390204": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390205": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390206": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390207": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390208": {
+      "complete": false,
+      "catalog_complete": true
+    }
+  },
+  "active_fits": {
+    "P-42": {
+      "step": 5400,
+      "elapsed_s": 1579.2291938215494,
+      "updates_per_s": 3.4193896751190582
+    },
+    "P-43": {
+      "step": 5000,
+      "elapsed_s": 1484.7987715899944,
+      "updates_per_s": 3.36745968253042
+    },
+    "SH-42": {
+      "step": 4400,
+      "elapsed_s": 1320.317880898714,
+      "updates_per_s": 3.3325307970569993
+    },
+    "SH-43": {
+      "step": 4400,
+      "elapsed_s": 1302.8702464476228,
+      "updates_per_s": 3.377159016407768
+    }
+  },
+  "queues": {
+    "g39": {
+      "complete": false,
+      "failures": [],
+      "progress": null
+    },
+    "g39u": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_G39",
+        "seconds": 6270.162830293179
+      }
+    },
+    "g39f": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_for_GPU_dependency",
+        "seconds": 6270.12151042372
+      }
+    }
+  },
+  "generation_cells_complete": 0,
+  "evaluation_cells_complete": 0,
+  "training_progress": {
+    "complete": false,
+    "finished": [
+      "fit-B-43",
+      "fit-B-42",
+      "fit-V-42",
+      "fit-S-42",
+      "raw-spatial-None",
+      "raw-speed-None",
+      "fit-S-43",
+      "fit-V-43",
+      "fit-SV-42",
+      "fit-SV-43"
+    ],
+    "pending": [
+      [
+        "fit",
+        "RAW",
+        42
+      ],
+      [
+        "fit",
+        "RAW",
+        43
+      ]
+    ],
+    "active": {
+      "reference-390208": 227202,
+      "train-P-42": 227205,
+      "train-P-43": 227272,
+      "train-SH-42": 227339,
+      "train-SH-43": 227405
+    },
+    "seconds": 7284.642908021808,
+    "free_bytes": 52047073280,
+    "output_bytes": 1125814060
+  },
+  "gpus": [
+    "0, 21 %, 1108 MiB",
+    "1, 18 %, 1110 MiB",
+    "2, 27 %, 1110 MiB",
+    "3, 16 %, 1108 MiB"
+  ]
+}

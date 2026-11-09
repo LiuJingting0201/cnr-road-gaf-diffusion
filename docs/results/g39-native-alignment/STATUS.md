@@ -44,3 +44,6 @@ updates at inspection. Eight reference scenes:2complete, another near its end.
 No failures;48.86GiB free. Generation/evaluation cells remain0: no new physical
 benefit conclusion. Receipt: first-four-complete.json. Remaining training ETA
 approximately2–2.5hours from this inspection, excluding generation/evaluation.
+
+
+2026-11-09 07:52 UTC progress check: 8/14 diffusion fits complete (B/S/V/SV, both seeds), each 10,000 updates; all model/config/stats hashes verified. Four GPUs run P42/P43/SH42/SH43; RAW42/RAW43 remain pending. Seven of eight SUMO references have completion receipts. No failed markers; approximately48.4GiB free. Main generation/evaluation remains0/112, with utility/factorial queues still waiting. Based on current throughput, training alone needs roughly70–90more minutes; generation/evaluation are additional, not completed outcomes. Exact observation timestamp and steps: eight-fits-complete.json. No new GAF quality claim, no duplicate queue and no running-source changes.
