@@ -1,0 +1,64 @@
+{
+  "checked_utc": "2026-11-09T02:23:28.569139+00:00",
+  "free_bytes": 53556830208,
+  "output_bytes": 73768985,
+  "failures": {},
+  "scenes": {
+    "380201": {
+      "catalog_progress": {
+        "done": 45,
+        "supported": 43,
+        "seconds": 325.8407652452588
+      },
+      "simulation_summary": {
+        "time": "22108.50",
+        "loaded": "7522",
+        "inserted": "7318",
+        "running": "3486",
+        "waiting": "1",
+        "ended": "3838",
+        "arrived": "3832",
+        "collisions": "0",
+        "teleports": "23",
+        "halting": "146",
+        "stopped": "2184",
+        "meanWaitingTime": "0.38",
+        "meanTravelTime": "547.52",
+        "meanSpeed": "10.16",
+        "meanSpeedRelative": "0.68",
+        "discarded": "6",
+        "duration": "24"
+      }
+    },
+    "380202": {
+      "catalog_progress": {
+        "done": 46,
+        "supported": 44,
+        "seconds": 325.4094542115927
+      },
+      "simulation_summary": {
+        "time": "22016.00",
+        "loaded": "7053",
+        "inserted": "7028",
+        "running": "3409",
+        "waiting": "3",
+        "ended": "3624",
+        "arrived": "3619",
+        "collisions": "0",
+        "teleports": "12",
+        "halting": "91",
+        "stopped": "2140",
+        "meanWaitingTime": "0.37",
+        "meanTravelTime": "541.64",
+        "meanSpeed": "11.07",
+        "meanSpeedRelative": "0.74",
+        "discarded": "5",
+        "duration": "30"
+      }
+    }
+  },
+  "gpus": "0, 0 %, 0 MiB\n1, 0 %, 0 MiB\n2, 0 %, 0 MiB\n3, 0 %, 0 MiB\n",
+  "training-complete": true,
+  "generation-complete": false,
+  "complete": false
+}

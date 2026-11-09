@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "seconds": 17.92409473657608,
+  "model_sha256": "2f6834df5434e798528734b66c6d27f6cbae86263cf7c69f9ddfb6168a51c620",
+  "config_sha256": "e7311975d30cbd5e53dc4a39d1fbb3fdecc4a471c8fc917aeb233dc2a4748a79",
+  "steps": 4000,
+  "seed": 43,
+  "kind": "neural",
+  "validation_used": false
+}

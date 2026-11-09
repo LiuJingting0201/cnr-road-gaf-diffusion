@@ -1,0 +1,938 @@
+{
+  "complete": true,
+  "results": {
+    "Uniform": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.04444497485086526,
+          "nll": 0.7470879554748535,
+          "accuracy": 0.43603751063346863,
+          "brier": 0.5216789841651917,
+          "mean_confidence": 0.47832104563713074
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.024275877208750372,
+          "nll": 0.7655818462371826,
+          "accuracy": 0.47421228885650635,
+          "brier": 0.5293410420417786,
+          "mean_confidence": 0.47065937519073486
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.045006516345864,
+          "nll": 0.7535032033920288,
+          "accuracy": 0.43143734335899353,
+          "brier": 0.5245682001113892,
+          "mean_confidence": 0.4754319489002228
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.017993092817231965,
+          "nll": 0.7653711438179016,
+          "accuracy": 0.4889723062515259,
+          "brier": 0.5290204286575317,
+          "mean_confidence": 0.4709794521331787
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.04183199701163721,
+          "nll": 0.7553385496139526,
+          "accuracy": 0.4333474338054657,
+          "brier": 0.5250701308250427,
+          "mean_confidence": 0.47492972016334534
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.03638215161167435,
+          "nll": 0.767620325088501,
+          "accuracy": 0.4642527997493744,
+          "brier": 0.530153751373291,
+          "mean_confidence": 0.46984630823135376
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.03912847107442273,
+          "nll": 0.7511343955993652,
+          "accuracy": 0.438564270734787,
+          "brier": 0.5236119627952576,
+          "mean_confidence": 0.4763881266117096
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.023795097104735707,
+          "nll": 0.7615712881088257,
+          "accuracy": 0.49631786346435547,
+          "brier": 0.5274774432182312,
+          "mean_confidence": 0.47252243757247925
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.043286637291502034,
+          "nll": 0.7557474374771118,
+          "accuracy": 0.4330032467842102,
+          "brier": 0.525226354598999,
+          "mean_confidence": 0.47477346658706665
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.04444497485086526,
+          "nll": 0.7470879554748535,
+          "accuracy": 0.43603751063346863,
+          "brier": 0.5216789841651917,
+          "mean_confidence": 0.47832104563713074
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.06184715090792067,
+          "nll": 0.7525902390480042,
+          "accuracy": 0.5376593470573425,
+          "brier": 0.5241623520851135,
+          "mean_confidence": 0.4758376479148865
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.04773588783211588,
+          "nll": 0.754602313041687,
+          "accuracy": 0.4281266927719116,
+          "brier": 0.525010883808136,
+          "mean_confidence": 0.47498980164527893
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.04447717429459341,
+          "nll": 0.7771979570388794,
+          "accuracy": 0.46610936522483826,
+          "brier": 0.533825159072876,
+          "mean_confidence": 0.4661749005317688
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.03586343980398736,
+          "nll": 0.7429035305976868,
+          "accuracy": 0.4438164532184601,
+          "brier": 0.5203200578689575,
+          "mean_confidence": 0.4796799123287201
+        }
+      }
+    },
+    "ShortestCost": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.34005256172868703,
+          "nll": 0.4937019944190979,
+          "accuracy": 0.9740361571311951,
+          "brier": 0.3108305037021637,
+          "mean_confidence": 0.6339839100837708
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.36996896973708315,
+          "nll": 0.6162946820259094,
+          "accuracy": 0.9251776933670044,
+          "brier": 0.39683353900909424,
+          "mean_confidence": 0.5552072525024414
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.34907956132975504,
+          "nll": 0.5773885250091553,
+          "accuracy": 0.9314388632774353,
+          "brier": 0.37338700890541077,
+          "mean_confidence": 0.5823599696159363
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.4141780942536851,
+          "nll": 0.631603479385376,
+          "accuracy": 0.9565680027008057,
+          "brier": 0.4085227847099304,
+          "mean_confidence": 0.5423900485038757
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.40542302230129157,
+          "nll": 0.6144434809684753,
+          "accuracy": 0.9578778147697449,
+          "brier": 0.3964921534061432,
+          "mean_confidence": 0.5524550080299377
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.38398669881174763,
+          "nll": 0.6202312111854553,
+          "accuracy": 0.9366512298583984,
+          "brier": 0.39927637577056885,
+          "mean_confidence": 0.5526638031005859
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.3632718169817025,
+          "nll": 0.5717479586601257,
+          "accuracy": 0.9485286474227905,
+          "brier": 0.36981844902038574,
+          "mean_confidence": 0.5852562785148621
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.41171199668550634,
+          "nll": 0.6289938688278198,
+          "accuracy": 0.9552978277206421,
+          "brier": 0.40754956007003784,
+          "mean_confidence": 0.5435860753059387
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.4077440406919028,
+          "nll": 0.6143842935562134,
+          "accuracy": 0.960216224193573,
+          "brier": 0.39625611901283264,
+          "mean_confidence": 0.5524724721908569
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.34005256172868703,
+          "nll": 0.4937019944190979,
+          "accuracy": 0.9740361571311951,
+          "brier": 0.3108305037021637,
+          "mean_confidence": 0.6339839100837708
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.280667789808485,
+          "nll": 0.5912154912948608,
+          "accuracy": 0.8520802855491638,
+          "brier": 0.38127103447914124,
+          "mean_confidence": 0.5714125037193298
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.34248962605140276,
+          "nll": 0.5800065994262695,
+          "accuracy": 0.9235059022903442,
+          "brier": 0.3750441074371338,
+          "mean_confidence": 0.5810151100158691
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.4218538229346413,
+          "nll": 0.6397262811660767,
+          "accuracy": 0.9605202674865723,
+          "brier": 0.4115521311759949,
+          "mean_confidence": 0.5386663675308228
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.33482537958686714,
+          "nll": 0.6162436604499817,
+          "accuracy": 0.8867509365081787,
+          "brier": 0.4036749303340912,
+          "mean_confidence": 0.5519255995750427
+        }
+      }
+    },
+    "linear-42": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.06332725621625827,
+          "nll": 0.17966428399085999,
+          "accuracy": 0.9449186325073242,
+          "brier": 0.09831821173429489,
+          "mean_confidence": 0.8906322121620178
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.08201438009361044,
+          "nll": 0.31434890627861023,
+          "accuracy": 0.888818085193634,
+          "brier": 0.18210917711257935,
+          "mean_confidence": 0.8068029284477234
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.072883901778887,
+          "nll": 0.2674022614955902,
+          "accuracy": 0.9146409630775452,
+          "brier": 0.14938649535179138,
+          "mean_confidence": 0.8417580127716064
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.07856201022621612,
+          "nll": 0.3103530704975128,
+          "accuracy": 0.8925606608390808,
+          "brier": 0.18066684901714325,
+          "mean_confidence": 0.8139984011650085
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.07736309766425249,
+          "nll": 0.3041117191314697,
+          "accuracy": 0.8887955546379089,
+          "brier": 0.1757742315530777,
+          "mean_confidence": 0.8114330172538757
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.0841057657435709,
+          "nll": 0.321657657623291,
+          "accuracy": 0.8862296342849731,
+          "brier": 0.18680699169635773,
+          "mean_confidence": 0.8021237254142761
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.07878406677257037,
+          "nll": 0.272906094789505,
+          "accuracy": 0.9144859313964844,
+          "brier": 0.15246440470218658,
+          "mean_confidence": 0.8357015252113342
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.07630435006179016,
+          "nll": 0.30907341837882996,
+          "accuracy": 0.891952395439148,
+          "brier": 0.17979323863983154,
+          "mean_confidence": 0.8156481385231018
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.07813506973377261,
+          "nll": 0.3042179048061371,
+          "accuracy": 0.8900007605552673,
+          "brier": 0.1757279932498932,
+          "mean_confidence": 0.8118663430213928
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.06332725621625827,
+          "nll": 0.17966428399085999,
+          "accuracy": 0.9449186325073242,
+          "brier": 0.09831821173429489,
+          "mean_confidence": 0.8906322121620178
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.06869102327650936,
+          "nll": 0.2677888572216034,
+          "accuracy": 0.9053030610084534,
+          "brier": 0.15218114852905273,
+          "mean_confidence": 0.8366122245788574
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.0701442593715409,
+          "nll": 0.2648472487926483,
+          "accuracy": 0.9147145748138428,
+          "brier": 0.1479567438364029,
+          "mean_confidence": 0.8445674777030945
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.08558897748799188,
+          "nll": 0.31433579325675964,
+          "accuracy": 0.8944516181945801,
+          "brier": 0.18338580429553986,
+          "mean_confidence": 0.8088629841804504
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.09976207845185774,
+          "nll": 0.30088314414024353,
+          "accuracy": 0.852134644985199,
+          "brier": 0.1771807223558426,
+          "mean_confidence": 0.7982524037361145
+        }
+      }
+    },
+    "linear-43": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.07258024053245696,
+          "nll": 0.19606563448905945,
+          "accuracy": 0.9379121661186218,
+          "brier": 0.1082257553935051,
+          "mean_confidence": 0.8848073482513428
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.08021964935185162,
+          "nll": 0.322630375623703,
+          "accuracy": 0.8842213153839111,
+          "brier": 0.18807978928089142,
+          "mean_confidence": 0.8040012717247009
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.06857842502835867,
+          "nll": 0.25160762667655945,
+          "accuracy": 0.9197911024093628,
+          "brier": 0.13908074796199799,
+          "mean_confidence": 0.8512141108512878
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.07709677113986313,
+          "nll": 0.30109846591949463,
+          "accuracy": 0.8955179452896118,
+          "brier": 0.17421716451644897,
+          "mean_confidence": 0.8184213638305664
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.07961785008969935,
+          "nll": 0.3020075559616089,
+          "accuracy": 0.8915074467658997,
+          "brier": 0.17428414523601532,
+          "mean_confidence": 0.8118899464607239
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.08186341417997305,
+          "nll": 0.3303222358226776,
+          "accuracy": 0.8810670375823975,
+          "brier": 0.19308476150035858,
+          "mean_confidence": 0.7992039322853088
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.07579426972315675,
+          "nll": 0.25552189350128174,
+          "accuracy": 0.9211310148239136,
+          "brier": 0.1408831924200058,
+          "mean_confidence": 0.8459886908531189
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.07496632777418542,
+          "nll": 0.29990702867507935,
+          "accuracy": 0.8949558138847351,
+          "brier": 0.1734369546175003,
+          "mean_confidence": 0.819990336894989
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.08048502391261879,
+          "nll": 0.30215442180633545,
+          "accuracy": 0.8928017616271973,
+          "brier": 0.17427819967269897,
+          "mean_confidence": 0.8123172521591187
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.07258024053245696,
+          "nll": 0.19606563448905945,
+          "accuracy": 0.9379121661186218,
+          "brier": 0.1082257553935051,
+          "mean_confidence": 0.8848073482513428
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.06974790047623101,
+          "nll": 0.2736293375492096,
+          "accuracy": 0.9043118357658386,
+          "brier": 0.15619514882564545,
+          "mean_confidence": 0.8345639109611511
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.06553093810932029,
+          "nll": 0.2497897744178772,
+          "accuracy": 0.9191737771034241,
+          "brier": 0.13824380934238434,
+          "mean_confidence": 0.8536398410797119
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.08372777611553492,
+          "nll": 0.304806649684906,
+          "accuracy": 0.897264838218689,
+          "brier": 0.17664524912834167,
+          "mean_confidence": 0.8135374188423157
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.09860983624676656,
+          "nll": 0.2975400686264038,
+          "accuracy": 0.852134644985199,
+          "brier": 0.17446570098400116,
+          "mean_confidence": 0.798893392086029
+        }
+      }
+    },
+    "neural-42": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.0016474480035702532,
+          "nll": 0.0031491422560065985,
+          "accuracy": 0.999193549156189,
+          "brier": 0.001392834703437984,
+          "mean_confidence": 0.9975460767745972
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.008017277430481634,
+          "nll": 0.15505577623844147,
+          "accuracy": 0.9460983276367188,
+          "brier": 0.08541125804185867,
+          "mean_confidence": 0.9383339285850525
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.011769356068756889,
+          "nll": 0.11860375851392746,
+          "accuracy": 0.9601914882659912,
+          "brier": 0.0635288655757904,
+          "mean_confidence": 0.9484227299690247
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.009385394916941906,
+          "nll": 0.08970753103494644,
+          "accuracy": 0.969575822353363,
+          "brier": 0.04750007390975952,
+          "mean_confidence": 0.9630864262580872
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.016941889450675,
+          "nll": 0.11639267951250076,
+          "accuracy": 0.9630199670791626,
+          "brier": 0.06096778064966202,
+          "mean_confidence": 0.9468481540679932
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.009321260687693204,
+          "nll": 0.1558992713689804,
+          "accuracy": 0.9462137818336487,
+          "brier": 0.08562605082988739,
+          "mean_confidence": 0.9371595978736877
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.010773003511945836,
+          "nll": 0.11813241243362427,
+          "accuracy": 0.9589173197746277,
+          "brier": 0.06370966881513596,
+          "mean_confidence": 0.9481433629989624
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.009027487382804343,
+          "nll": 0.08963686227798462,
+          "accuracy": 0.9695461392402649,
+          "brier": 0.04725726693868637,
+          "mean_confidence": 0.9641087651252747
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.01752376739092685,
+          "nll": 0.11476010084152222,
+          "accuracy": 0.9647341370582581,
+          "brier": 0.05964924022555351,
+          "mean_confidence": 0.9477624297142029
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.0016474480035702532,
+          "nll": 0.0031491422560065985,
+          "accuracy": 0.999193549156189,
+          "brier": 0.001392834703437984,
+          "mean_confidence": 0.9975460767745972
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.007302068580666145,
+          "nll": 0.1496826708316803,
+          "accuracy": 0.9453604221343994,
+          "brier": 0.08404265344142914,
+          "mean_confidence": 0.9458141326904297
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.012349333485322939,
+          "nll": 0.1188230887055397,
+          "accuracy": 0.9607855081558228,
+          "brier": 0.06344512104988098,
+          "mean_confidence": 0.9485516548156738
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.011457407752207537,
+          "nll": 0.08992739021778107,
+          "accuracy": 0.9696661829948425,
+          "brier": 0.04825585335493088,
+          "mean_confidence": 0.9599071741104126
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.07241627761348696,
+          "nll": 0.16605032980442047,
+          "accuracy": 0.9108782410621643,
+          "brier": 0.10107358545064926,
+          "mean_confidence": 0.9190394282341003
+        }
+      }
+    },
+    "neural-43": {
+      "all": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.0034053080038089828,
+          "nll": 0.004034582059830427,
+          "accuracy": 1.0,
+          "brier": 0.001849921653047204,
+          "mean_confidence": 0.996595025062561
+        },
+        "motorcycle": {
+          "legs": 1253,
+          "parents": 1253,
+          "decisions": 27607,
+          "ece_10_bins": 0.008372437268157265,
+          "nll": 0.15496118366718292,
+          "accuracy": 0.9466136693954468,
+          "brier": 0.08532123267650604,
+          "mean_confidence": 0.9462419152259827
+        },
+        "private_car": {
+          "legs": 3305,
+          "parents": 3305,
+          "decisions": 86574,
+          "ece_10_bins": 0.0096225821499496,
+          "nll": 0.11845766752958298,
+          "accuracy": 0.9592602252960205,
+          "brier": 0.06369628757238388,
+          "mean_confidence": 0.9524954557418823
+        },
+        "bycicle": {
+          "legs": 658,
+          "parents": 658,
+          "decisions": 8087,
+          "ece_10_bins": 0.006624582826460556,
+          "nll": 0.0881565660238266,
+          "accuracy": 0.9696993827819824,
+          "brier": 0.0467175729572773,
+          "mean_confidence": 0.9660212397575378
+        },
+        "taxi_or_uber": {
+          "legs": 377,
+          "parents": 377,
+          "decisions": 5893,
+          "ece_10_bins": 0.007791199106229791,
+          "nll": 0.1139133870601654,
+          "accuracy": 0.9632577896118164,
+          "brier": 0.05993156135082245,
+          "mean_confidence": 0.9554671049118042
+        }
+      },
+      "unseen_od": {
+        "bus": {
+          "legs": 0,
+          "parents": 0,
+          "decisions": 0,
+          "ece_10_bins": null
+        },
+        "motorcycle": {
+          "legs": 1083,
+          "parents": 1083,
+          "decisions": 24323,
+          "ece_10_bins": 0.008372207456316574,
+          "nll": 0.15584219992160797,
+          "accuracy": 0.9465036988258362,
+          "brier": 0.08549122512340546,
+          "mean_confidence": 0.9454089403152466
+        },
+        "private_car": {
+          "legs": 1048,
+          "parents": 1048,
+          "decisions": 29057,
+          "ece_10_bins": 0.0076190628498167875,
+          "nll": 0.11867032200098038,
+          "accuracy": 0.9586278796195984,
+          "brier": 0.0640006810426712,
+          "mean_confidence": 0.9517104029655457
+        },
+        "bycicle": {
+          "legs": 498,
+          "parents": 498,
+          "decisions": 6142,
+          "ece_10_bins": 0.003966018394913138,
+          "nll": 0.0883127748966217,
+          "accuracy": 0.9702427387237549,
+          "brier": 0.046565424650907516,
+          "mean_confidence": 0.9672085642814636
+        },
+        "taxi_or_uber": {
+          "legs": 365,
+          "parents": 365,
+          "decisions": 5692,
+          "ece_10_bins": 0.008633964805778199,
+          "nll": 0.1123080849647522,
+          "accuracy": 0.964979887008667,
+          "brier": 0.058562856167554855,
+          "mean_confidence": 0.9563465714454651
+        }
+      },
+      "seen_od": {
+        "bus": {
+          "legs": 155,
+          "parents": 155,
+          "decisions": 4180,
+          "ece_10_bins": 0.0034053080038089828,
+          "nll": 0.004034582059830427,
+          "accuracy": 1.0,
+          "brier": 0.001849921653047204,
+          "mean_confidence": 0.996595025062561
+        },
+        "motorcycle": {
+          "legs": 170,
+          "parents": 170,
+          "decisions": 3284,
+          "ece_10_bins": 0.010770479609686433,
+          "nll": 0.149348646402359,
+          "accuracy": 0.9473135471343994,
+          "brier": 0.08423813432455063,
+          "mean_confidence": 0.9515504837036133
+        },
+        "private_car": {
+          "legs": 2257,
+          "parents": 2257,
+          "decisions": 57517,
+          "ece_10_bins": 0.010687742192867604,
+          "nll": 0.11835852265357971,
+          "accuracy": 0.9595564603805542,
+          "brier": 0.06355508416891098,
+          "mean_confidence": 0.9528560042381287
+        },
+        "bycicle": {
+          "legs": 160,
+          "parents": 160,
+          "decisions": 1945,
+          "ece_10_bins": 0.014899364619651894,
+          "nll": 0.08767026662826538,
+          "accuracy": 0.9680063128471375,
+          "brier": 0.04719119518995285,
+          "mean_confidence": 0.9623279571533203
+        },
+        "taxi_or_uber": {
+          "legs": 12,
+          "parents": 12,
+          "decisions": 201,
+          "ece_10_bins": 0.03793098236034112,
+          "nll": 0.1627412587404251,
+          "accuracy": 0.9108782410621643,
+          "brier": 0.10156300663948059,
+          "mean_confidence": 0.9287211894989014
+        }
+      }
+    }
+  },
+  "data_sha256": "e068be36fb93e8352e4015c7a6dfdb7de8592fa7349375819550e90f9a4e12f7",
+  "scope": "development branching decisions; equal parent then leg then branch per class; no checkpoint selection",
+  "model_hashes": {
+    "linear-42": "5dcc489cbf16837fcc470db28daf99612436b622d48ed1849e0a9e42e8d134ed",
+    "linear-43": "cd287b2b7e1852243348f3d056cefbba5eeb095beacaf9e347ca6552b54ec89e",
+    "neural-42": "6623cf03eb2773ff044ea01dbf9689c23b23de19151d49f226e10f652e9761a5",
+    "neural-43": "2f6834df5434e798528734b66c6d27f6cbae86263cf7c69f9ddfb6168a51c620"
+  },
+  "shared_route_val_legs": 2290
+}

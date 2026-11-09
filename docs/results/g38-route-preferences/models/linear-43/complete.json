@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "seconds": 16.116940654814243,
+  "model_sha256": "cd287b2b7e1852243348f3d056cefbba5eeb095beacaf9e347ca6552b54ec89e",
+  "config_sha256": "24ef39c7334fa462278755cfb6c977b464dfe4e3925f767d94b9a50f49c2a97e",
+  "steps": 4000,
+  "seed": 43,
+  "kind": "linear",
+  "validation_used": false
+}

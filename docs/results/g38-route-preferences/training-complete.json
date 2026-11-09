@@ -1,0 +1,45 @@
+{
+  "complete": true,
+  "fits": {
+    "linear-42": {
+      "complete": true,
+      "seconds": 17.154657021164894,
+      "model_sha256": "5dcc489cbf16837fcc470db28daf99612436b622d48ed1849e0a9e42e8d134ed",
+      "config_sha256": "7412a3c19302316d551e9f4072d44dc05d2ca5b9715bc5fad550949b88e89ae7",
+      "steps": 4000,
+      "seed": 42,
+      "kind": "linear",
+      "validation_used": false
+    },
+    "linear-43": {
+      "complete": true,
+      "seconds": 16.116940654814243,
+      "model_sha256": "cd287b2b7e1852243348f3d056cefbba5eeb095beacaf9e347ca6552b54ec89e",
+      "config_sha256": "24ef39c7334fa462278755cfb6c977b464dfe4e3925f767d94b9a50f49c2a97e",
+      "steps": 4000,
+      "seed": 43,
+      "kind": "linear",
+      "validation_used": false
+    },
+    "neural-42": {
+      "complete": true,
+      "seconds": 17.530079945921898,
+      "model_sha256": "6623cf03eb2773ff044ea01dbf9689c23b23de19151d49f226e10f652e9761a5",
+      "config_sha256": "7699cc7d8b657d993cfc1df4bdff3a61df377aec37a917e20dab77e6964052fb",
+      "steps": 4000,
+      "seed": 42,
+      "kind": "neural",
+      "validation_used": false
+    },
+    "neural-43": {
+      "complete": true,
+      "seconds": 17.92409473657608,
+      "model_sha256": "2f6834df5434e798528734b66c6d27f6cbae86263cf7c69f9ddfb6168a51c620",
+      "config_sha256": "e7311975d30cbd5e53dc4a39d1fbb3fdecc4a471c8fc917aeb233dc2a4748a79",
+      "steps": 4000,
+      "seed": 43,
+      "kind": "neural",
+      "validation_used": false
+    }
+  }
+}

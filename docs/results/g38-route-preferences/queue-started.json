@@ -1,0 +1,20 @@
+{
+  "started_unix": 1794190545.269387,
+  "pid": 224225,
+  "episodes": [
+    380201,
+    380202
+  ],
+  "source_hashes": {
+    "g38_pool.py": "9bd0c67b41f30003a4de628bf1eaad7092f47ea9be7d233ffe14b96077f43825",
+    "g38_run.py": "79cb2d56909a87fade8fdebace2add920b42520b3c1eb6d867f608e2e61117ca",
+    "g38_requests.py": "8960c0f235ff3adb96ed3f450ad272b8ea5fc073138162e503ad3ba0ae5a98ac",
+    "g38_policy.py": "15f56fe3f5c9a54c1a8342f271bf903b225f00aee0518b7c043887087a794026",
+    "g38_evaluate.py": "d6ba6050d240f6bcf3663b499a2266c2fe7fee4d2b25c76fa374310a7c12a2bf"
+  },
+  "max_hours": 12,
+  "min_free_gib": 12,
+  "max_output_gib": 12,
+  "route_fits": 4,
+  "new_diffusion_fits": 0
+}

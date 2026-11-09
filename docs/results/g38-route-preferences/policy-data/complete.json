@@ -1,0 +1,194 @@
+{
+  "complete": true,
+  "seconds": 79.53036510199308,
+  "summary": {
+    "train": {
+      "bus": {
+        "input_legs": 685,
+        "accepted_legs": 685,
+        "parents": 685,
+        "branch_decisions": 18638,
+        "all_transitions": 34953,
+        "unseen_od_legs": 0
+      },
+      "motorcycle": {
+        "input_legs": 6547,
+        "accepted_legs": 5218,
+        "parents": 5218,
+        "branch_decisions": 116626,
+        "all_transitions": 224476,
+        "unseen_od_legs": 0
+      },
+      "private_car": {
+        "input_legs": 18381,
+        "accepted_legs": 13547,
+        "parents": 13547,
+        "branch_decisions": 354680,
+        "all_transitions": 700720,
+        "unseen_od_legs": 0
+      },
+      "bycicle": {
+        "input_legs": 2744,
+        "accepted_legs": 2712,
+        "parents": 2712,
+        "branch_decisions": 33289,
+        "all_transitions": 62044,
+        "unseen_od_legs": 0
+      },
+      "taxi_or_uber": {
+        "input_legs": 1538,
+        "accepted_legs": 1534,
+        "parents": 1534,
+        "branch_decisions": 23130,
+        "all_transitions": 46345,
+        "unseen_od_legs": 0
+      }
+    },
+    "val": {
+      "bus": {
+        "input_legs": 155,
+        "accepted_legs": 155,
+        "parents": 155,
+        "branch_decisions": 4180,
+        "all_transitions": 7978,
+        "unseen_od_legs": 0
+      },
+      "motorcycle": {
+        "input_legs": 1591,
+        "accepted_legs": 1253,
+        "parents": 1253,
+        "branch_decisions": 27607,
+        "all_transitions": 53291,
+        "unseen_od_legs": 1083
+      },
+      "private_car": {
+        "input_legs": 4436,
+        "accepted_legs": 3305,
+        "parents": 3305,
+        "branch_decisions": 86574,
+        "all_transitions": 170712,
+        "unseen_od_legs": 1048
+      },
+      "bycicle": {
+        "input_legs": 668,
+        "accepted_legs": 658,
+        "parents": 658,
+        "branch_decisions": 8087,
+        "all_transitions": 15326,
+        "unseen_od_legs": 498
+      },
+      "taxi_or_uber": {
+        "input_legs": 380,
+        "accepted_legs": 377,
+        "parents": 377,
+        "branch_decisions": 5893,
+        "all_transitions": 11745,
+        "unseen_od_legs": 365
+      }
+    }
+  },
+  "rejections": [
+    {
+      "split": "train",
+      "class": "taxi_or_uber",
+      "reason": "no branching decision",
+      "n": 4
+    },
+    {
+      "split": "train",
+      "class": "bycicle",
+      "reason": "no branching decision",
+      "n": 28
+    },
+    {
+      "split": "train",
+      "class": "bycicle",
+      "reason": "fewer than two road edges",
+      "n": 4
+    },
+    {
+      "split": "train",
+      "class": "private_car",
+      "reason": "fewer than two road edges",
+      "n": 2240
+    },
+    {
+      "split": "train",
+      "class": "motorcycle",
+      "reason": "fewer than two road edges",
+      "n": 519
+    },
+    {
+      "split": "train",
+      "class": "private_car",
+      "reason": "non-first-passage segment",
+      "n": 2594
+    },
+    {
+      "split": "train",
+      "class": "motorcycle",
+      "reason": "non-first-passage segment",
+      "n": 809
+    },
+    {
+      "split": "train",
+      "class": "motorcycle",
+      "reason": "no branching decision",
+      "n": 1
+    },
+    {
+      "split": "val",
+      "class": "taxi_or_uber",
+      "reason": "no branching decision",
+      "n": 3
+    },
+    {
+      "split": "val",
+      "class": "bycicle",
+      "reason": "no branching decision",
+      "n": 9
+    },
+    {
+      "split": "val",
+      "class": "bycicle",
+      "reason": "fewer than two road edges",
+      "n": 1
+    },
+    {
+      "split": "val",
+      "class": "private_car",
+      "reason": "fewer than two road edges",
+      "n": 468
+    },
+    {
+      "split": "val",
+      "class": "motorcycle",
+      "reason": "fewer than two road edges",
+      "n": 122
+    },
+    {
+      "split": "val",
+      "class": "private_car",
+      "reason": "non-first-passage segment",
+      "n": 663
+    },
+    {
+      "split": "val",
+      "class": "motorcycle",
+      "reason": "non-first-passage segment",
+      "n": 216
+    }
+  ],
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "metadata_sha256": "933357d47bf8f041f69e4d213a8b83b074728eb2e5359f9151919270d7a4fe79",
+  "script_sha256": "15f56fe3f5c9a54c1a8342f271bf903b225f00aee0518b7c043887087a794026",
+  "features": 20,
+  "max_choices": 4,
+  "contexts": 331160,
+  "artifacts": {
+    "decisions.npz": "282ad489795f27297f28484fc1dcfbcfcbadb5507857c81ab3a124daa710b97a",
+    "legs.json": "744dc550770a9d8aefb5eccd1a236fadef94731850b99b4dc37030f10876a102"
+  },
+  "test_accessed": false,
+  "motion_used_as_feature": false
+}

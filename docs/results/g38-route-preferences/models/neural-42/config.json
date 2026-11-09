@@ -1,0 +1,12 @@
+{
+  "kind": "neural",
+  "seed": 42,
+  "steps": 4000,
+  "batch": 512,
+  "data_sha256": "e068be36fb93e8352e4015c7a6dfdb7de8592fa7349375819550e90f9a4e12f7",
+  "script_sha256": "15f56fe3f5c9a54c1a8342f271bf903b225f00aee0518b7c043887087a794026",
+  "features": 20,
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "checkpoint": "fixed_final",
+  "sampling": "class,parent,leg,branch each uniform; train only"
+}
