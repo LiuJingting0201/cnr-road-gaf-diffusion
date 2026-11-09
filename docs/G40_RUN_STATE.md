@@ -14,8 +14,9 @@ Base `/workspace/cnr-experiments/gaf-inloop-v1`:
   receipt releases finite pilots only; no formal generation-quality conclusion.
 - `g40p-job/g40p-data`: four1000-update pilots B/F-SV/J-SV/J-RAW, seed42,
   three1000-update priors plus B zero prior, implementation/training-side diagnostics.
-  Source2d3efc0,launchPID240691. Launch receipt is not evidence of completion.
+  Source2d3efc0,launchPID240691. Four fits/priors/diagnostics completed, but supervisor failed on a source-hash/local-artifact mix-up. Preserve failure; do not relaunch.
   Inspect queue.log, failed.json, model training.jsonl, prior and diagnostic receipts.
+- `g40pr-job`: newly implemented prior-only recovery, source4821c56; not launched at this checkpoint. Reuse four verified motion fits, test the already-declared5000-update prior budget, repeat identical training-only diagnostics. The1000-update prior sampled code magnitudes119–178 and worsened diagnostic noise MSE; formal release remains closed.
 - `g40-job`: formal snapshot not yet created/launched at this checkpoint. Planned
   eight arms×two seeds×5000updates,12priors×5000,8newSUMOreferences,128direct
   generation/evaluation cells and30independent utility fits. Requires actual pilot

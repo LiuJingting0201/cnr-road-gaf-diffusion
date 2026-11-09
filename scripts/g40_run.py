@@ -12,7 +12,7 @@ import g39_run as runner
 from g40_model import ARMS
 from g40_requests import EPISODES
 
-ROOT=Path('g40-data');PREP=Path('../g40a-job/g40a-data');PILOT=Path('../g40p-job/g40p-data')
+ROOT=Path('g40-data');PREP=Path('../g40a-job/g40a-data');PILOT=Path('../g40pr-job/g40pr-data')
 FROZEN=Path('../g35d-job/g35-data');BASE=Path('../g39r-job/g39-data')
 NETWORK=Path('../g30-job/g30-data/source/scenario/in/most.net.xml');POLICY=Path('../g38-job/g38-data/models')
 
