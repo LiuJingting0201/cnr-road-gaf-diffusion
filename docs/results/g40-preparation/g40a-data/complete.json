@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "seconds": 302.2040480300784,
+  "input_pipeline": "original",
+  "prefixes": {
+    "gaf-spatial": "2f3710e1eec4523afbf7c5a0f94120a026209018ef7e6b5173e375b86a63272e",
+    "gaf-speed": "5cb85ee7c23eb949646080e9e125ef8f78a4028666608298fdc95b26327a3d80",
+    "raw-spatial": "28e624b561564a9de9cba98e6c39b1b8816a7b975e1cc43a6b41092cb89cd192",
+    "raw-speed": "c61d4bd1b0d8b8e23bd615ed9ba856172014cc9c48062c564889e3e0fd19e185"
+  },
+  "audit_sha256": "1a44888a078a052b70c1464da601cc6feb16561f007f4a18c06c22db1ae82957",
+  "training_parents_audited": 500,
+  "new_diffusion_fit_started": false,
+  "next_action": "review preparation and finite pilot before formal G40 fits"
+}
