@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import subprocess
 import time
 import g39_run as runner
@@ -20,6 +21,8 @@ def main():
         'awaiting':'G40 complete.json','fits':30,'max_wait_hours':24,'max_fit_hours':4,
         'source_hashes':{str(p):runner.digest(p) for p in Path('scripts').glob('g40*.py')}},f,indent=2)
     started=time.monotonic()
+    def terminate(*_):runner.STOP.set();raise RuntimeError('G40 utility supervisor interrupted')
+    for sig in (signal.SIGTERM,signal.SIGINT):signal.signal(sig,terminate)
     try:
         while not (SOURCE/'complete.json').exists():
             if (SOURCE/'failed.json').exists():raise RuntimeError('G40 failed; utility does not proceed')
