@@ -1,0 +1,46 @@
+{
+  "observed_utc": "2026-11-09T10:06:20.730982+00:00",
+  "free_gib": 48.320404052734375,
+  "generated_complete": 4,
+  "evaluated_with_diagnostics": 4,
+  "active_generation": {
+    "390201/generated/V-43": {
+      "requests": 43,
+      "candidates": 172,
+      "seconds": 76.35100300610065
+    },
+    "390201/generated/V-42": {
+      "requests": 49,
+      "candidates": 196,
+      "seconds": 85.87435328960419
+    },
+    "390201/generated/SV-42": {
+      "requests": 51,
+      "candidates": 204,
+      "seconds": 86.52357016503811
+    },
+    "390201/generated/SV-43": {
+      "requests": 43,
+      "candidates": 172,
+      "seconds": 86.46723370999098
+    }
+  },
+  "failures": {
+    "g39r-job": [],
+    "g39ur-job": [],
+    "g39fr-job": []
+  },
+  "gpus": [
+    "0, 27 %, 468 MiB",
+    "1, 30 %, 426 MiB",
+    "2, 27 %, 468 MiB",
+    "3, 24 %, 426 MiB"
+  ],
+  "workers": [
+    "228063       03:31  0.5 /workspace/cnr-experiments/gaf-inloop-v1/g39r-job/.venv/bin/python -u scripts/g39_resume.py",
+    "228097       01:30  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/SV-43 --seed 43 --output g39-data/390201/generated/SV-43",
+    "228098       01:30  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/V-42 --seed 42 --output g39-data/390201/generated/V-42",
+    "228099       01:30  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/SV-42 --seed 42 --output g39-data/390201/generated/SV-42",
+    "228301       01:20  100 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/V-43 --seed 43 --output g39-data/390201/generated/V-43"
+  ]
+}

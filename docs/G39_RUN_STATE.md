@@ -9,9 +9,9 @@ Relative to the existing isolated experiment base:
 
 | Directory | Supervisor at launch | Work | Dependency |
 |---|---:|---|---|
-| g39-job/g39-data |225896|14 diffusion fits,2RAW teachers,8SUMO references,112generation/evaluation cells|Running|
-| g39u-job/g39u-data |226500|26 independent raw-series utility fits|G39 complete and GPUs free|
-| g39f-job/g39f-data |226501|4 expanded route×prior-duration×motion generation/evaluation cells|Utility complete and GPUs free|
+| g39r-job/g39-data |228063|Reuse14fits/2teachers/8references; complete112generation/evaluation cells|Recovered and running|
+| g39ur-job/g39u-data |228066|26 independent raw-series utility fits|Recovered G39 complete and GPUs free|
+| g39fr-job/g39f-data |228067|4 expanded route×prior-duration×motion generation/evaluation cells|Recovered utility complete and GPUs free|
 | g39m-job/g39m-data |226380|Existing-pool route-marginal mechanism|**Completed and reviewed**|
 
 PIDs are launch receipts, not evidence of current liveness. Inspect complete.json,
@@ -21,17 +21,22 @@ The supervisors are detached and their scientific dependencies run on the server
 they do not require an open local SSH connection. They stop on failures and bounded
 resource/time limits. No desktop job-watching automation was created.
 
-Main runtime snapshot is commit3fbf0d9 (321 hashed source/protocol files), follow-up
-snapshots34311f1 (328 files). Later reporting scripts and prose are separate; don't
-silently replace running source with latest Git. Old server project tree remains
-untouched. Free-space reserve12GiB; output caps main24GiB/utility4GiB/factorial6GiB.
+Original snapshots3fbf0d9(main) and34311f1(follow-ups) are preserved in the old
+failed g39/g39u/g39f directories. Recovery orchestration is commit6bebd6a;
+scientific scripts/protocols are copied and hash-checked unchanged. Do not rerun
+old failed supervisors or delete their failed.json markers. New utility uses
+--source ../g39r-job/g39-data; new factorial uses
+--dependency ../g39ur-job/g39u-data. Free-space reserve12GiB; output caps
+main24GiB/utility4GiB/factorial6GiB. See RECOVERY.md and recovery-live.json in
+G39 results for failure, deployment, source checks and launch receipts.
 
 ## What is already established
 
 - Latest stored check:14/14diffusion fits and2RAW teachers complete, artifact
   hashes and paired training checks verified. All8SUMO references completed.
-  Four generation workers are advancing; complete generation/evaluation0/112
-  at the handoff snapshot. See training-handoff.json in the G39 results.
+  Original queue stopped on an artifact/provenance hash mix-up after4pools.
+  Recovered main has4evaluations plus diagnostics verified and fresh generation
+  advancing; see recovery-progress.json for latest counters. No retraining.
   Physical-quality conclusions and performance optimization remain deferred.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
@@ -71,7 +76,8 @@ still require the next evidence-review pass; those are not already completed.
 ## Authorized next action after this batch
 
 2026-11-09 user instruction: leave this batch running, then optimize performance.
-Keep the deployed g39/g39u/g39f snapshots and their existing order unchanged.
+Keep the recovered g39r/g39ur/g39fr snapshots and their existing order unchanged.
+The receipt-verifier repair was necessary recovery, not a throughput optimization.
 The current cloud supervisors do not implement performance optimization; this is
 the next agent action after their completion and evidence review, not an already
 launched job or an installed desktop automation.

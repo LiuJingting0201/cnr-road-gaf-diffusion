@@ -1,0 +1,184 @@
+{
+  "observed_utc": "2026-11-09T10:04:53.898323+00:00",
+  "free_gib": 48.32046890258789,
+  "deployment": {
+    "observed_utc": "2026-11-09T10:01:59.966842+00:00",
+    "repair_commit": "6bebd6a",
+    "jobs": {
+      "g39r-job": {
+        "copied_from": "g39-job",
+        "unchanged_source_count": 320,
+        "patched_files": [
+          "g39_run.py",
+          "g39_resume.py",
+          "g39_receipt_checks.py"
+        ],
+        "source_manifest_sha256": "9667cc599375d367f41b060f4fb5e31ce32ee774434b1281634176ec8a54eec8"
+      },
+      "g39ur-job": {
+        "copied_from": "g39u-job",
+        "unchanged_source_count": 326,
+        "patched_files": [
+          "g39_run.py",
+          "g39_utility_run.py",
+          "g39_receipt_checks.py"
+        ],
+        "source_manifest_sha256": "03449add6de4dd1781d4d71cb2fcaad8212d9c73d95829b4ed1fe3264751d40f"
+      },
+      "g39fr-job": {
+        "copied_from": "g39f-job",
+        "unchanged_source_count": 326,
+        "patched_files": [
+          "g39_run.py",
+          "g39_factorial_run.py",
+          "g39_receipt_checks.py"
+        ],
+        "source_manifest_sha256": "de6b4b216f1849375f4fe0964c2413f5b487ffc5645eba0c0217dca8c96c33b6"
+      }
+    },
+    "checks": "G39 receipt checks passed: provenance, both manifest forms, corruption/missing files, failed marker, model and utility integrity"
+  },
+  "launch": {
+    "observed_utc": "2026-11-09T10:02:52.598031+00:00",
+    "jobs": {
+      "g39r-job": {
+        "pid": 228063,
+        "script": "g39_resume.py",
+        "args": []
+      },
+      "g39ur-job": {
+        "pid": 228066,
+        "script": "g39_utility_run.py",
+        "args": [
+          "--source",
+          "../g39r-job/g39-data"
+        ]
+      },
+      "g39fr-job": {
+        "pid": 228067,
+        "script": "g39_factorial_run.py",
+        "args": [
+          "--dependency",
+          "../g39ur-job/g39u-data"
+        ]
+      }
+    },
+    "original_failed_jobs_unchanged": true
+  },
+  "original_failures": {
+    "g39-job": {
+      "receipt": {
+        "complete": false,
+        "error": "FileNotFoundError(2, 'No such file or directory')",
+        "seconds": 11823.218754217029
+      },
+      "sha256": "26d9d87f6017db9295650a798ded3223014f85ad6a40dd6f70af1e8d246acf81",
+      "recorded_utc": "2026-11-09T09:08:09.190422+00:00"
+    },
+    "g39u-job": {
+      "receipt": {
+        "complete": false,
+        "error": "RuntimeError('G39 failed; utility does not proceed')",
+        "seconds": 10830.248538203537
+      },
+      "sha256": "6eb82c1e56945fc87d378b6c9945217abcccae9408730a18072790af0ebe044d",
+      "recorded_utc": "2026-11-09T09:08:15.275440+00:00"
+    },
+    "g39f-job": {
+      "receipt": {
+        "complete": false,
+        "error": "RuntimeError('Utility dependency failed; do not compete for GPUs')",
+        "seconds": 10860.204618506134
+      },
+      "sha256": "54ce7a11668a346943c72c0bb215c2266c14c1b2a675e66d0d4ab37aa1a8ca81",
+      "recorded_utc": "2026-11-09T09:08:43.387528+00:00"
+    }
+  },
+  "jobs": {
+    "g39r-job": {
+      "complete": false,
+      "failures": [],
+      "progress": null
+    },
+    "g39ur-job": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_G39",
+        "seconds": 120.0022302493453
+      }
+    },
+    "g39fr-job": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_for_GPU_dependency",
+        "seconds": 120.00205995887518
+      }
+    }
+  },
+  "evaluations_verified": {
+    "390201/evaluation/B-43": {
+      "complete": true,
+      "receipt_sha256": "6cd8634e37526850739973ff213c31ab3cc98e7a979973c2c3fe115f21579b97",
+      "diagnostics_sha256": "61f895330aa18a81ba1f669dc630d9a3294ee180549ffd02c7746265976351fe"
+    },
+    "390201/evaluation/S-43": {
+      "complete": true,
+      "receipt_sha256": "470b3ed33c1eebe91727d6c86005c3d92638fbddd9fc744d2e3a194fe051a427",
+      "diagnostics_sha256": "e742d95e95f4c6087f5398e2f1ccb3177a0f6014bf0454187881ba69a5aac483"
+    },
+    "390201/evaluation/B-42": {
+      "complete": true,
+      "receipt_sha256": "185f5325498ebdd97b2ed6784f6d5ef3447f951996e99af6ecd6b9c633960deb",
+      "diagnostics_sha256": "8edfdd9513b91b437550e972e11c83847593774dce96d48c492780292ad8e785"
+    },
+    "390201/evaluation/S-42": {
+      "complete": true,
+      "receipt_sha256": "0e6224433f60000e6a90340917982979300008098cb7c9fed0859bb8720bd4b2",
+      "diagnostics_sha256": "84b1ce8003284f94d697c06c06056d0b34e6138e52fb3c3b6e7c50b593dd130b"
+    }
+  },
+  "generation_cells_complete": 4,
+  "generation_progress": {},
+  "gpus": [
+    "0, 0 %, 0 MiB",
+    "1, 0 %, 0 MiB",
+    "2, 0 %, 0 MiB",
+    "3, 0 %, 0 MiB"
+  ],
+  "workers": [
+    "228063       02:04  0.8 /workspace/cnr-experiments/gaf-inloop-v1/g39r-job/.venv/bin/python -u scripts/g39_resume.py",
+    "228097       00:03 99.4 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-43 --model g39-data/models/SV-43 --seed 43 --output g39-data/390201/generated/SV-43",
+    "228098       00:03  102 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/V-42 --seed 42 --output g39-data/390201/generated/V-42",
+    "228099       00:03  102 .venv/bin/python -u scripts/g39_generate.py --catalog g39-data/390201/catalog --network ../g30-job/g30-data/source/scenario/in/most.net.xml --policy ../g38-job/g38-data/models/neural-42 --model g39-data/models/SV-42 --seed 42 --output g39-data/390201/generated/SV-42"
+  ],
+  "recovery_inputs": {
+    "complete": true,
+    "old_failure_sha256": "26d9d87f6017db9295650a798ded3223014f85ad6a40dd6f70af1e8d246acf81",
+    "old_queue_log_sha256": "0fa651523903cbd42acb05bccfa22287e2fb57ab6b51f57ce7f87d871c3e1f26",
+    "old_training_receipt_sha256": "c9997e99e29ee61c117827bb459992d3e138929f85bf944cca6eb611070d6020",
+    "reused_pools": [
+      {
+        "cell": "390201/B-42",
+        "receipt_sha256": "ce88a47b39719ba59e3a707e4016e746bcb53b8820a35f52f78c957459b5b21a"
+      },
+      {
+        "cell": "390201/B-43",
+        "receipt_sha256": "67dc1eb113426cd895f2b1c7f19f318a59559208697d0eb206f448a92346c770"
+      },
+      {
+        "cell": "390201/S-42",
+        "receipt_sha256": "a9c83f96d3268484e1c4aaed12a384b00a49c331700f433d774455d4bbecf4c6"
+      },
+      {
+        "cell": "390201/S-43",
+        "receipt_sha256": "5bed5c1d4bffe02f94e4fd84c0bdb64deee2a55370a4b4dfd929951a96c58b6e"
+      }
+    ],
+    "new_diffusion_training": false,
+    "old_tree_written": false,
+    "repair": "Separate local artifact manifests from upstream provenance hashes"
+  },
+  "unchanged_scientific_source_count": 319
+}

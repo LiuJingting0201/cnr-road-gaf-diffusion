@@ -42,3 +42,6 @@ environment mismatch did not affect any remote scientific run.
 
 Status: implementation and local checks complete; deployment, real-data
 verification and renewed progress are recorded separately after observation.
+
+
+Verified recovery: started2026-11-09 10:02:52UTC. All14models,2teachers,8references and4prior pools validated/reused;319scientific source hashes in the main queue match the original launch. New supervisors228063/228066/228067; dependency paths target recovered directories. By10:04:53UTC the first4real evaluations and their diagnostics passed provenance checks. Latest progress 2026-11-09T10:06:20.730982+00:00: 4complete pools, 4evaluations with diagnostics, 4partial generation cells; no failure markers in any recovery queue, free48.32GiB. First-pass failure recorded09:08:09UTC; recovery launch10:02:52UTC, about55minutes interruption. See recovery-live.json and recovery-progress.json. The fixed112cell comparison remains incomplete; no GAF effectiveness conclusion.

@@ -53,3 +53,6 @@ approximately2–2.5hours from this inspection, excluding generation/evaluation.
 
 
 2026-11-09T09:05:24.585546+00:00 training barrier passed:14/14 diffusion fits and2RAW teachers complete; model/config/stats hashes verified and supervisor paired initialization/data/token/statistics check passed. All8reference scenes are complete. Four generation workers have actually advanced to9–11requests/36–44candidates each in the first four cells, not just been launched. Complete generation/evaluation cells remain0/112 at this snapshot. No failure markers; free48.39GiB. Utility/factorial still await dependencies. Receipt:training-handoff.json. No quality conclusion or performance change; these remain pending the complete batch.
+
+
+Recovery update 2026-11-09T10:06:20.730982+00:00: original main queue failed on a local-artifact/upstream-model hash confusion at09:08UTC; dependent queues also stopped. Fixed6bebd6a, original failed snapshots preserved. Isolated g39r/g39ur/g39fr resumes original science, no retraining. First4evaluations and diagnostics verified; 4pools complete and 4new generation cells advancing. Remaining main generation/evaluation estimated2–3hours from recovery; entire batch with utility/factorial3–4hours, provisional and excluding later performance optimization. RECOVERY.md has details.
