@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "artifact_sha256": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+  "models": 16,
+  "priors": 16,
+  "generated_evaluation_cells": 128,
+  "utility_fits": 30,
+  "all_source_artifacts_verified": true,
+  "utility_metrics_independently_recomputed": true
+}

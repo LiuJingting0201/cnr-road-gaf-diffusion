@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "artifacts": {
+    "recomputed.json": "0434312d55584a2683db1e3fade89cc2d9de3742bde2b51a8e8735603291079c"
+  },
+  "evidence_sha256": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+  "source_sha256": "78e9e922bb6d3842f56b6c72defea48477ceb7082e409bb079c01b6b76f436a3"
+}

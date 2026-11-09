@@ -3,6 +3,35 @@
 \chapter{Complete numerical results and fixed cases}
 \label{app:native-results}
 
+\section{Final G40 physical endpoints, classes and coverage}
+The following tables retain all eight conditions, both fitted seeds and all five participant classes from the completed prospective comparison. The K1 tables concern the first direct draw; the all-four comparison weights the four draws equally inside each request. The ten physical summaries appear in their original units, without a cross-unit composite or a choice of favourable endpoints. Class-marginal distributions and request-paired discrepancies address different questions. Neither assumes a unique valid future trajectory for each OD request.
+
+\input{tables/g40-coverage}
+\FloatBarrier
+\input{tables/g40-seed-native}
+\FloatBarrier
+\input{tables/g40-class-speed}
+\input{tables/g40-class-acceleration}
+\FloatBarrier
+\input{tables/g40-physical-w1-1}
+\input{tables/g40-physical-w1-2}
+\FloatBarrier
+\input{tables/g40-physical-mae-1}
+\input{tables/g40-physical-mae-2}
+\FloatBarrier
+\input{tables/g40-diversity-decode}
+\FloatBarrier
+
+Per-cell support, all individual class results, coverage and provenance are available in \path{docs/results/g40-generative-conditioning/}. Missing endpoints retain their support counts. The nearest-shape diagnostic uses a fixed hash-ranked library of at most 512 training examples per class and normalized relative-time progress, not a search over every training coordinate sequence. A low reported near-shape rate cannot prove absence of memorization or establish privacy. Decoder clipping is a correction applied to the generated representation, not an observed traffic event.
+
+
+\section{Condition interventions and utility cohorts}
+\input{tables/g40-condition-all-1}
+\FloatBarrier
+\input{tables/g40-condition-all-2}
+\FloatBarrier
+\input{tables/g40-utility-cohorts}
+\FloatBarrier
 \section{G33: all physical summaries}
 Tables~\ref{tab:g33-all-physical-a} and~\ref{tab:g33-all-physical-b} retain all ten predefined physical summaries for all fourteen completed evaluations. They supplement the representative measures in the main text without selecting columns by the direction of an effect. Every entry is a five-class macro Wasserstein distance, with lower values indicating closer distributions. Each quantity retains its own unit; the columns are not combined into an overall score.
 
@@ -211,11 +240,11 @@ Each figure shows coordinate geometry, relative-time progress and a physical-tim
 \FloatBarrier
 
 \section{Historical evidence and reproduction scope}
-The earlier locked E7 evaluation is preserved in the repository, including its unfavorable feedback and augmentation findings. It began with 270 held-out participant IDs, of which 53 satisfied the strict moving-window generation eligibility rules. Its 512-point task, reference population and evaluation protocol differ from the present complete-journey experiment. The 53 eligible requests must not be presented as coverage of all 270, merged into the present 94-request quality population, or reused to select the current method after their results were exposed. The original report remains at \path{docs/results/final-test-e7/REPORT.md}.
+The earlier locked E7 evaluation is preserved in the repository, including its unfavorable feedback and augmentation findings. It began with 270 held-out participant IDs, of which 53 satisfied the strict moving-window generation eligibility rules. Its 512-point task, reference population and evaluation protocol differ from the present complete-journey experiment. The 53 eligible requests must not be presented as coverage of all 270, merged into either the G33 pilot or the final G40 quality population, or reused to select the current method after their results were exposed. The original report remains at \path{docs/results/final-test-e7/REPORT.md}.
 
 The paired-representation study G28 is also retained, at \path{docs/results/g28-paired-latents/REPORT.md}. It trained spatial and speed readers for matching participant labels and tested latent supervision in an earlier eight-class simulator corpus. Its planned comparisons did not establish stable independent physical gains from paired spatial--speed supervision. That result remains evidence about that corpus and intervention; it is neither erased by the current temporal-resolution result nor merged with terminal selection on native-demand trajectories. The present thesis distinguishes classification information, the mechanism used to transmit it, and physical generation quality across these stages.
 
-For the current experiment, \path{docs/G33_PROTOCOL.md} fixes the conditions and budgets, and \path{docs/results/g33-generation/report/summary.json} contains the numerical source of the G33 tables, including per-class support and provenance hashes. The G34 tables use \path{docs/results/g34-fixed-duration/attempt2/report/summary.json} under the separate \path{docs/G34_PROTOCOL.md}. \path{docs/results/g33-generation/paper-figures/complete.json} records the fixed case rule and figure hashes. The entry scripts \path{scripts/g33_train.py}, \path{scripts/g33_evaluate.py}, \path{scripts/g33_feedback.py} and \path{scripts/g33_plots.py} separate fitting, generation, feedback, evaluation and presentation. Reproduction requires the corresponding versioned source observations, public scenario and saved model artifacts; the manuscript does not embed raw participant records or access credentials. These relative repository paths identify the required evidence without relying on a particular server layout.
+For the temporal-resolution pilot, \path{docs/G33_PROTOCOL.md} fixes the conditions and budgets, and \path{docs/results/g33-generation/report/summary.json} contains the numerical source of the G33 tables, including per-class support and provenance hashes. The G34 tables use \path{docs/results/g34-fixed-duration/attempt2/report/summary.json} under the separate \path{docs/G34_PROTOCOL.md}. \path{docs/results/g33-generation/paper-figures/complete.json} records the fixed case rule and figure hashes. The entry scripts \path{scripts/g33_train.py}, \path{scripts/g33_evaluate.py}, \path{scripts/g33_feedback.py} and \path{scripts/g33_plots.py} separate fitting, generation, feedback, evaluation and presentation. Reproduction requires the corresponding versioned source observations, public scenario and saved model artifacts; the manuscript does not embed raw participant records or access credentials. These relative repository paths identify the required evidence without relying on a particular server layout.
 
 The original locked-result snapshot remains separately identified in the experiment repository~\cite{project}; its test population is not reused to select the present models.
 
@@ -234,6 +263,8 @@ The paired reader comparison is stronger evidence than comparing the pilot's sma
 Spatial macro F1 increases by 26.37 percentage points, with a paired parent-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. These intervals condition on the available public-demand cohort and fixed model fits; they do not quantify uncertainty over cities or training recipes. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. It does not identify a pure causal effect of sample count because the time coverage and number of CNN optimizer updates also changed.
 
 
+
+\fig{g35-confusion.pdf}{1}{Pre-adaptation spatial and speed readers on the same expanded development cohort. Each row is normalized within its true class. These are the original G35 checkpoints, not new evaluations of jointly adapted G40 encoders.}{g35-confusion}
 
 The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these readers from simulator observations to generated candidates.
 

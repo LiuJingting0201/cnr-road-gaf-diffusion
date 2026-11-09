@@ -1,0 +1,3114 @@
+{
+  "complete": true,
+  "evidence_sha256": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+  "source_sha256": "78e9e922bb6d3842f56b6c72defea48477ceb7082e409bb079c01b6b76f436a3",
+  "macro_endpoint_checks": 192,
+  "utility_confusion_formula_checks": 30,
+  "summary": {
+    "B": {
+      "physical/arc_length_m/mae": 65.70984743135611,
+      "physical/arc_length_m/w1": 61.077928089885894,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.215673374613004,
+      "physical/longest_steady_s/w1": 20.393346233230137,
+      "physical/longest_stop_s/mae": 41.28452660450145,
+      "physical/longest_stop_s/w1": 28.981423626468132,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16137585299473114,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.07933694694215881,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.541925376186488,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2791709732538105,
+      "physical/mean_speed_mps/mae": 2.741733804894327,
+      "physical/mean_speed_mps/w1": 1.4848135481929248,
+      "physical/speed_p95_mps/mae": 3.211891404560188,
+      "physical/speed_p95_mps/w1": 1.3993927566810158,
+      "physical/stop_episodes_per_minute/mae": 0.4348608951032097,
+      "physical/stop_episodes_per_minute/w1": 0.24877276871118514,
+      "physical/stopped_fraction/mae": 0.15036475821427026,
+      "physical/stopped_fraction/w1": 0.08947045912332187,
+      "selected_native_acceleration_w1": 0.17600058818522493,
+      "selected_native_speed_w1": 1.4379404975499368,
+      "weighted_native_acceleration_w1": 0.17098185277651645,
+      "weighted_native_speed_w1": 1.2945924543566987
+    },
+    "F-SV": {
+      "physical/arc_length_m/mae": 65.70629747867726,
+      "physical/arc_length_m/w1": 61.065497018233934,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.18150461939162,
+      "physical/longest_steady_s/w1": 20.473365460219178,
+      "physical/longest_stop_s/mae": 41.61940595975232,
+      "physical/longest_stop_s/w1": 29.29324699616689,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.1628870353000157,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08108054585413786,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5463775374358693,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28401505091466284,
+      "physical/mean_speed_mps/mae": 2.741605933581272,
+      "physical/mean_speed_mps/w1": 1.4847777703231595,
+      "physical/speed_p95_mps/mae": 3.193694179499802,
+      "physical/speed_p95_mps/w1": 1.360935423782402,
+      "physical/stop_episodes_per_minute/mae": 0.4364059534682097,
+      "physical/stop_episodes_per_minute/w1": 0.25135649965077844,
+      "physical/stopped_fraction/mae": 0.15035704838647737,
+      "physical/stopped_fraction/w1": 0.0893343655896173,
+      "selected_native_acceleration_w1": 0.1761066664387255,
+      "selected_native_speed_w1": 1.4354329489285451,
+      "weighted_native_acceleration_w1": 0.1709952119922514,
+      "weighted_native_speed_w1": 1.292163363155653
+    },
+    "J-S": {
+      "physical/arc_length_m/mae": 65.7247954151846,
+      "physical/arc_length_m/w1": 61.09297258379563,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.141306114551085,
+      "physical/longest_steady_s/w1": 20.44356132365227,
+      "physical/longest_stop_s/mae": 41.34687718069684,
+      "physical/longest_stop_s/w1": 29.02119790898816,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16122376453087697,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.07916675014282092,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5412129059623959,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.27922567196532444,
+      "physical/mean_speed_mps/mae": 2.7416717506440778,
+      "physical/mean_speed_mps/w1": 1.4847985861100013,
+      "physical/speed_p95_mps/mae": 3.2380468713100528,
+      "physical/speed_p95_mps/w1": 1.3794492282037347,
+      "physical/stop_episodes_per_minute/mae": 0.43468668304973335,
+      "physical/stop_episodes_per_minute/w1": 0.24897811319225235,
+      "physical/stopped_fraction/mae": 0.15010733797335826,
+      "physical/stopped_fraction/w1": 0.08924915565636339,
+      "selected_native_acceleration_w1": 0.1769442579640338,
+      "selected_native_speed_w1": 1.4390852202835378,
+      "weighted_native_acceleration_w1": 0.17184346618601143,
+      "weighted_native_speed_w1": 1.2966419941824563
+    },
+    "J-V": {
+      "physical/arc_length_m/mae": 65.74261921923771,
+      "physical/arc_length_m/w1": 61.10963110771922,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.302422999901715,
+      "physical/longest_steady_s/w1": 20.012424535603717,
+      "physical/longest_stop_s/mae": 42.004396069831444,
+      "physical/longest_stop_s/w1": 29.52231808074107,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.163473162361599,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08088761793171786,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5490519233897067,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2814519965341795,
+      "physical/mean_speed_mps/mae": 2.741570672656082,
+      "physical/mean_speed_mps/w1": 1.4847220528327907,
+      "physical/speed_p95_mps/mae": 3.170375289359557,
+      "physical/speed_p95_mps/w1": 1.3802503299342475,
+      "physical/stop_episodes_per_minute/mae": 0.4327889988358846,
+      "physical/stop_episodes_per_minute/w1": 0.24303950842701316,
+      "physical/stopped_fraction/mae": 0.15238278782804235,
+      "physical/stopped_fraction/w1": 0.09016458378215654,
+      "selected_native_acceleration_w1": 0.17920599481368457,
+      "selected_native_speed_w1": 1.4374014701596813,
+      "weighted_native_acceleration_w1": 0.17360754339095555,
+      "weighted_native_speed_w1": 1.2941789012821423
+    },
+    "J-SV": {
+      "physical/arc_length_m/mae": 65.70583987223213,
+      "physical/arc_length_m/w1": 61.08175562742904,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.02814705268072,
+      "physical/longest_steady_s/w1": 19.932369741756354,
+      "physical/longest_stop_s/mae": 41.920208763329896,
+      "physical/longest_stop_s/w1": 29.422794455501503,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16614003806082345,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.0819698811505708,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5576667861291522,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28382911841549274,
+      "physical/mean_speed_mps/mae": 2.7415413547112206,
+      "physical/mean_speed_mps/w1": 1.4847414026463128,
+      "physical/speed_p95_mps/mae": 3.1551493400706603,
+      "physical/speed_p95_mps/w1": 1.4117759195138813,
+      "physical/stop_episodes_per_minute/mae": 0.4339875783191981,
+      "physical/stop_episodes_per_minute/w1": 0.24490334489459215,
+      "physical/stopped_fraction/mae": 0.1516273078771586,
+      "physical/stopped_fraction/w1": 0.08923284298845738,
+      "selected_native_acceleration_w1": 0.18028940155235298,
+      "selected_native_speed_w1": 1.4401043835716751,
+      "weighted_native_acceleration_w1": 0.17291310256791628,
+      "weighted_native_speed_w1": 1.2980288980424242
+    },
+    "J-RAW": {
+      "physical/arc_length_m/mae": 65.72001738273737,
+      "physical/arc_length_m/w1": 61.076802485421844,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 35.550194819155735,
+      "physical/longest_steady_s/w1": 20.047448615411078,
+      "physical/longest_stop_s/mae": 41.790923909037296,
+      "physical/longest_stop_s/w1": 29.35185313160352,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.160470502175893,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.07963090116704921,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5403649895331204,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.27680466081658206,
+      "physical/mean_speed_mps/mae": 2.7416363580471335,
+      "physical/mean_speed_mps/w1": 1.4847621848358892,
+      "physical/speed_p95_mps/mae": 3.1859357328032445,
+      "physical/speed_p95_mps/w1": 1.4222858435438792,
+      "physical/stop_episodes_per_minute/mae": 0.4328022203037873,
+      "physical/stop_episodes_per_minute/w1": 0.2563228975786663,
+      "physical/stopped_fraction/mae": 0.15117468211183213,
+      "physical/stopped_fraction/w1": 0.08942318278063727,
+      "selected_native_acceleration_w1": 0.1806824471848158,
+      "selected_native_speed_w1": 1.4436772611793474,
+      "weighted_native_acceleration_w1": 0.1730116341914395,
+      "weighted_native_speed_w1": 1.3010578322786692
+    },
+    "J-SH": {
+      "physical/arc_length_m/mae": 65.7247637214981,
+      "physical/arc_length_m/w1": 61.102545194254446,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.21811028797484,
+      "physical/longest_steady_s/w1": 20.350481596147233,
+      "physical/longest_stop_s/mae": 41.493645019411275,
+      "physical/longest_stop_s/w1": 28.99780898324242,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.1624533558578273,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.079467295142981,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.546200173474604,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.2791765828054199,
+      "physical/mean_speed_mps/mae": 2.7416543446632953,
+      "physical/mean_speed_mps/w1": 1.4847979901573216,
+      "physical/speed_p95_mps/mae": 3.2206657627295323,
+      "physical/speed_p95_mps/w1": 1.3816289070552792,
+      "physical/stop_episodes_per_minute/mae": 0.4361942378597895,
+      "physical/stop_episodes_per_minute/w1": 0.2486677332760681,
+      "physical/stopped_fraction/mae": 0.15091096031695306,
+      "physical/stopped_fraction/w1": 0.0894039691674414,
+      "selected_native_acceleration_w1": 0.1745033071957291,
+      "selected_native_speed_w1": 1.4344860718789756,
+      "weighted_native_acceleration_w1": 0.16981872134782777,
+      "weighted_native_speed_w1": 1.2928940038953045
+    },
+    "C": {
+      "physical/arc_length_m/mae": 65.72170363371345,
+      "physical/arc_length_m/w1": 61.09320397209406,
+      "physical/duration_s/mae": 284.7413853527944,
+      "physical/duration_s/w1": 178.63360664000754,
+      "physical/longest_steady_s/mae": 36.17000801636444,
+      "physical/longest_steady_s/w1": 20.446175457024918,
+      "physical/longest_stop_s/mae": 41.42572540419677,
+      "physical/longest_stop_s/w1": 29.046301169590645,
+      "physical/mean_absolute_acceleration_mps2/mae": 0.16250519407356445,
+      "physical/mean_absolute_acceleration_mps2/w1": 0.08044280333093631,
+      "physical/mean_absolute_lag4_speed_change_mps/mae": 0.5447038033866312,
+      "physical/mean_absolute_lag4_speed_change_mps/w1": 0.28213758460848326,
+      "physical/mean_speed_mps/mae": 2.7416650383032692,
+      "physical/mean_speed_mps/w1": 1.4847977420687637,
+      "physical/speed_p95_mps/mae": 3.2293352269824847,
+      "physical/speed_p95_mps/w1": 1.3829288474945909,
+      "physical/stop_episodes_per_minute/mae": 0.4330576842099496,
+      "physical/stop_episodes_per_minute/w1": 0.24633571692644424,
+      "physical/stopped_fraction/mae": 0.1506081925358477,
+      "physical/stopped_fraction/w1": 0.08933418228011308,
+      "selected_native_acceleration_w1": 0.175780974103781,
+      "selected_native_speed_w1": 1.4385038295950816,
+      "weighted_native_acceleration_w1": 0.17037998031312487,
+      "weighted_native_speed_w1": 1.2974215525775277
+    }
+  },
+  "class_means": {
+    "B": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.20991550954179,
+        "motorcycle": 75.24410153260818,
+        "private_car": 126.37063041209854,
+        "bycicle": 23.31472879580776,
+        "taxi_or_uber": 57.40986090672424
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.170858070802794,
+        "motorcycle": 72.37953126415692,
+        "private_car": 111.91558140835662,
+        "bycicle": 21.271146685502487,
+        "taxi_or_uber": 53.65252302061064
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 41.968384502923975,
+        "motorcycle": 15.858842879256965,
+        "private_car": 54.582602339181285,
+        "bycicle": 49.569078947368425,
+        "taxi_or_uber": 19.099458204334365
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.259612573099414,
+        "motorcycle": 5.679663312693499,
+        "private_car": 35.75365497076024,
+        "bycicle": 29.615131578947373,
+        "taxi_or_uber": 8.658668730650156
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 50.74880691311613,
+        "motorcycle": 42.91382868937048,
+        "private_car": 26.744517543859647,
+        "bycicle": 45.24013157894737,
+        "taxi_or_uber": 40.775348297213625
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 31.604529553049293,
+        "motorcycle": 32.98985208118335,
+        "private_car": 17.630847953216374,
+        "bycicle": 32.29276315789474,
+        "taxi_or_uber": 30.389125386996906
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.0908678580715491,
+        "motorcycle": 0.24604776404816978,
+        "private_car": 0.13812911068256736,
+        "bycicle": 0.08937333661208388,
+        "taxi_or_uber": 0.2424611955592856
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.046221865124744826,
+        "motorcycle": 0.13161492484940548,
+        "private_car": 0.05770748759799569,
+        "bycicle": 0.03449754452017949,
+        "taxi_or_uber": 0.12664291261846858
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.34881791670431705,
+        "motorcycle": 0.757449466417344,
+        "private_car": 0.4636723504337209,
+        "bycicle": 0.2875845265164863,
+        "taxi_or_uber": 0.8521026208605718
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.18422480176182848,
+        "motorcycle": 0.43163094597096296,
+        "private_car": 0.20048926592325977,
+        "bycicle": 0.11942895685224228,
+        "taxi_or_uber": 0.46008089576075917
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.62301874762377,
+        "motorcycle": 3.313182775532326,
+        "private_car": 3.049821970014044,
+        "bycicle": 1.436639456248555,
+        "taxi_or_uber": 3.2860060750529407
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974332420216043,
+        "motorcycle": 1.9770874982244095,
+        "private_car": 2.0742405012893252,
+        "bycicle": 0.6191312260610503,
+        "taxi_or_uber": 2.0561752733682344
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.738871822724984,
+        "motorcycle": 4.038471902683614,
+        "private_car": 6.087533471878863,
+        "bycicle": 1.288565043123964,
+        "taxi_or_uber": 2.9060147823895166
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.630738274273278,
+        "motorcycle": 1.8138575211020802,
+        "private_car": 2.827718296802369,
+        "bycicle": 0.3756803395045694,
+        "taxi_or_uber": 1.348969351722782
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.28554733819195,
+        "motorcycle": 0.5246175061140484,
+        "private_car": 0.3336570927683201,
+        "bycicle": 0.44293365758963715,
+        "taxi_or_uber": 0.5875488808520928
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11640047067104713,
+        "motorcycle": 0.2908894834638801,
+        "private_car": 0.21070005389900323,
+        "bycicle": 0.2370293143097279,
+        "taxi_or_uber": 0.38884452121226737
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14353814539198426,
+        "motorcycle": 0.16511833922052588,
+        "private_car": 0.08364568198213461,
+        "bycicle": 0.15077955090312986,
+        "taxi_or_uber": 0.20874207357357663
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.044701827976786686,
+        "motorcycle": 0.11305232281291515,
+        "private_car": 0.053177157017647726,
+        "bycicle": 0.09374236355938312,
+        "taxi_or_uber": 0.14267862424987665
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07623316263088738,
+        "motorcycle": 0.32492020005647226,
+        "private_car": 0.14027825161467472,
+        "bycicle": 0.14655753541495545,
+        "taxi_or_uber": 0.19201379120913487
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5230013446007661,
+        "motorcycle": 1.9019585144051385,
+        "private_car": 1.993919433078154,
+        "bycicle": 0.6824014895692584,
+        "taxi_or_uber": 2.088421706096367
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07235369081941427,
+        "motorcycle": 0.31030332848080305,
+        "private_car": 0.13009295174408425,
+        "bycicle": 0.1481431372368509,
+        "taxi_or_uber": 0.1940161556014298
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.34646126198474464,
+        "motorcycle": 1.7251939749366816,
+        "private_car": 1.738584265560145,
+        "bycicle": 0.6175754166991476,
+        "taxi_or_uber": 2.045147352602775
+      }
+    },
+    "F-SV": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.24727112087769,
+        "motorcycle": 75.22669621333951,
+        "private_car": 126.33543762369456,
+        "bycicle": 23.30758724861525,
+        "taxi_or_uber": 57.41449518685926
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.210995246772804,
+        "motorcycle": 72.34260740854613,
+        "private_car": 111.85215374864936,
+        "bycicle": 21.27022723594478,
+        "taxi_or_uber": 53.65150145125659
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 40.96548663324979,
+        "motorcycle": 16.13234219126247,
+        "private_car": 54.087171052631575,
+        "bycicle": 50.75986842105263,
+        "taxi_or_uber": 18.96265479876161
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 23.396110066833753,
+        "motorcycle": 6.485111369109047,
+        "private_car": 34.0374634502924,
+        "bycicle": 29.825657894736846,
+        "taxi_or_uber": 8.62248452012384
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 51.46423611111111,
+        "motorcycle": 42.66962289301686,
+        "private_car": 26.589912280701753,
+        "bycicle": 45.81907894736842,
+        "taxi_or_uber": 41.55417956656347
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 32.348211675020885,
+        "motorcycle": 32.58074260405917,
+        "private_car": 17.61951754385965,
+        "bycicle": 32.516447368421055,
+        "taxi_or_uber": 31.40131578947369
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.0890765129980628,
+        "motorcycle": 0.25247101744960554,
+        "private_car": 0.135824394153386,
+        "bycicle": 0.08948057499563622,
+        "taxi_or_uber": 0.2475826769033879
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.04842512205745795,
+        "motorcycle": 0.13252169387113924,
+        "private_car": 0.05432220634564593,
+        "bycicle": 0.0355986370756089,
+        "taxi_or_uber": 0.13453506992083725
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.3429093277078908,
+        "motorcycle": 0.774566686702787,
+        "private_car": 0.4530001418227306,
+        "bycicle": 0.2867985861589109,
+        "taxi_or_uber": 0.8746129447870268
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.19464282796383647,
+        "motorcycle": 0.4279142539447733,
+        "private_car": 0.18432138900946118,
+        "bycicle": 0.12366636389269005,
+        "taxi_or_uber": 0.48953041976255324
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6229362870855404,
+        "motorcycle": 3.31284321014535,
+        "private_car": 3.049856817761482,
+        "bycicle": 1.4366446204031136,
+        "taxi_or_uber": 3.285748732510875
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974215867244151,
+        "motorcycle": 1.976823399082956,
+        "private_car": 2.074299711496012,
+        "bycicle": 0.619149795508765,
+        "taxi_or_uber": 2.056194358803649
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.7514365245142327,
+        "motorcycle": 4.094178626115471,
+        "private_car": 5.946516342984663,
+        "bycicle": 1.276178174871669,
+        "taxi_or_uber": 2.900161229012975
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.6238617786200938,
+        "motorcycle": 1.7865969703215596,
+        "private_car": 2.664526061936445,
+        "bycicle": 0.372596130604844,
+        "taxi_or_uber": 1.3570961774290675
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.2791348009313138,
+        "motorcycle": 0.5257642751066156,
+        "private_car": 0.3332175483823537,
+        "bycicle": 0.4631417460478967,
+        "taxi_or_uber": 0.5807713968728688
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11358790444813231,
+        "motorcycle": 0.29831137112087064,
+        "private_car": 0.21196974474074762,
+        "bycicle": 0.25663804158217235,
+        "taxi_or_uber": 0.3762754363619692
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14400327735412322,
+        "motorcycle": 0.16320571192175035,
+        "private_car": 0.08272328705710771,
+        "bycicle": 0.15393137062063308,
+        "taxi_or_uber": 0.20792159497877252
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.044730806320004535,
+        "motorcycle": 0.11165273324823694,
+        "private_car": 0.05318779573919707,
+        "bycicle": 0.09448731934295397,
+        "taxi_or_uber": 0.14261317329769396
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07797484026163927,
+        "motorcycle": 0.31926047802621066,
+        "private_car": 0.138184516437835,
+        "bycicle": 0.14486183595423818,
+        "taxi_or_uber": 0.2002516615137043
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5257323461771704,
+        "motorcycle": 1.9068253724188136,
+        "private_car": 1.9683974826905026,
+        "bycicle": 0.6844065663190292,
+        "taxi_or_uber": 2.0918029770372097
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07321022447743626,
+        "motorcycle": 0.3080636144046275,
+        "private_car": 0.12758460741972932,
+        "bycicle": 0.1494037640980724,
+        "taxi_or_uber": 0.19671384956139154
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.355164614775697,
+        "motorcycle": 1.7251955859120738,
+        "private_car": 1.7072946794891062,
+        "bycicle": 0.6166049496957869,
+        "taxi_or_uber": 2.0565569859056017
+      }
+    },
+    "J-S": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.24302797073947,
+        "motorcycle": 75.24742474748874,
+        "private_car": 126.41245732448067,
+        "bycicle": 23.316197428656537,
+        "taxi_or_uber": 57.404869604557575
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.198667029457155,
+        "motorcycle": 72.35748915416943,
+        "private_car": 111.9829257526273,
+        "bycicle": 21.276161694381486,
+        "taxi_or_uber": 53.64961928834278
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 41.805537280701756,
+        "motorcycle": 15.959440574475405,
+        "private_car": 54.14820906432749,
+        "bycicle": 49.93421052631579,
+        "taxi_or_uber": 18.859133126934985
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.330960213032583,
+        "motorcycle": 5.761126160990712,
+        "private_car": 36.15551900584796,
+        "bycicle": 29.256578947368425,
+        "taxi_or_uber": 8.713622291021673
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 50.80280910609858,
+        "motorcycle": 42.951388888888886,
+        "private_car": 26.80391081871345,
+        "bycicle": 45.358552631578945,
+        "taxi_or_uber": 40.81772445820433
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 31.83604845446951,
+        "motorcycle": 33.18608101135191,
+        "private_car": 17.57437865497076,
+        "bycicle": 32.27302631578948,
+        "taxi_or_uber": 30.236455108359138
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.08952126729250104,
+        "motorcycle": 0.24596448631909307,
+        "private_car": 0.13852557844574157,
+        "bycicle": 0.08893098034636009,
+        "taxi_or_uber": 0.24317651025068918
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.046332497230338526,
+        "motorcycle": 0.1313953536101487,
+        "private_car": 0.05717135224908434,
+        "bycicle": 0.03424657716010545,
+        "taxi_or_uber": 0.12668797046442762
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.3450172881170249,
+        "motorcycle": 0.7561571609787309,
+        "private_car": 0.4658932830512771,
+        "bycicle": 0.28666669455077937,
+        "taxi_or_uber": 0.8523301031141676
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.18610033511434868,
+        "motorcycle": 0.43186474679618375,
+        "private_car": 0.19819014971067736,
+        "bycicle": 0.1193780476460891,
+        "taxi_or_uber": 0.4605950805593234
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.622979063327422,
+        "motorcycle": 3.3129270450376023,
+        "private_car": 3.0498422802470255,
+        "bycicle": 1.4366085196500689,
+        "taxi_or_uber": 3.2860018449582706
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974100162256686,
+        "motorcycle": 1.976970099862352,
+        "private_car": 2.0743032166798177,
+        "bycicle": 0.6191342349314628,
+        "taxi_or_uber": 2.056175362850705
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.7513378047787076,
+        "motorcycle": 4.066233171318174,
+        "private_car": 6.170181040985345,
+        "bycicle": 1.288492995140958,
+        "taxi_or_uber": 2.9139893443270792
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.6366714308239865,
+        "motorcycle": 1.8094361606966587,
+        "private_car": 2.7278034647130673,
+        "bycicle": 0.3725299041727793,
+        "taxi_or_uber": 1.3508051806121812
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.28246947564581915,
+        "motorcycle": 0.5278695981058558,
+        "private_car": 0.33254559006644907,
+        "bycicle": 0.4543457500253565,
+        "taxi_or_uber": 0.5762030014051863
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11780193743659871,
+        "motorcycle": 0.2935731921363465,
+        "private_car": 0.20974873034766212,
+        "bycicle": 0.2522419509673088,
+        "taxi_or_uber": 0.3715247550733457
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14267330180221588,
+        "motorcycle": 0.1650215503252414,
+        "private_car": 0.08405293969792904,
+        "bycicle": 0.1504451797414955,
+        "taxi_or_uber": 0.20834371829990952
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.04418468186337704,
+        "motorcycle": 0.11244434209641992,
+        "private_car": 0.053361579282888996,
+        "bycicle": 0.09376726897168117,
+        "taxi_or_uber": 0.14248790606744982
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07650697641800598,
+        "motorcycle": 0.325159962182731,
+        "private_car": 0.14421264087857819,
+        "bycicle": 0.14648728870371003,
+        "taxi_or_uber": 0.1923544216371438
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5311497996830403,
+        "motorcycle": 1.8983364726072123,
+        "private_car": 1.9956372961759403,
+        "bycicle": 0.6825489925845829,
+        "taxi_or_uber": 2.087753540366913
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07286235642222269,
+        "motorcycle": 0.30883209175366966,
+        "private_car": 0.1342153550911924,
+        "bycicle": 0.14850156032888756,
+        "taxi_or_uber": 0.1948059673340848
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.35013530191786624,
+        "motorcycle": 1.7229238292873124,
+        "private_car": 1.7474859187986171,
+        "bycicle": 0.6170118746754177,
+        "taxi_or_uber": 2.0456530462330678
+      }
+    },
+    "J-V": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.25529081320452,
+        "motorcycle": 75.24240989306463,
+        "private_car": 126.42675918953023,
+        "bycicle": 23.328566426621027,
+        "taxi_or_uber": 57.46006977376812
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.21788938956172,
+        "motorcycle": 72.35069461569789,
+        "private_car": 112.0037188572522,
+        "bycicle": 21.287861003067206,
+        "taxi_or_uber": 53.68799167301705
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 39.85115653717627,
+        "motorcycle": 16.286775455796352,
+        "private_car": 52.89546783625731,
+        "bycicle": 53.12828947368421,
+        "taxi_or_uber": 19.350425696594428
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.96906067251462,
+        "motorcycle": 5.800535345717234,
+        "private_car": 33.527046783625735,
+        "bycicle": 29.378289473684216,
+        "taxi_or_uber": 8.387190402476781
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 52.731012426900584,
+        "motorcycle": 43.02785302717578,
+        "private_car": 26.52046783625731,
+        "bycicle": 46.14473684210526,
+        "taxi_or_uber": 41.59791021671827
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 32.27162437343358,
+        "motorcycle": 33.15812048503612,
+        "private_car": 17.809941520467838,
+        "bycicle": 32.88815789473685,
+        "taxi_or_uber": 31.483746130030962
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.08494781608283257,
+        "motorcycle": 0.2525680339606217,
+        "private_car": 0.1316608736077941,
+        "bycicle": 0.09308343029002089,
+        "taxi_or_uber": 0.25510565786672573
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.046248619186873445,
+        "motorcycle": 0.12876551229623343,
+        "private_car": 0.05734722390726664,
+        "bycicle": 0.037329465524253265,
+        "taxi_or_uber": 0.13474726874396256
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.32751454239680705,
+        "motorcycle": 0.7878160997586008,
+        "private_car": 0.43909456988984275,
+        "bycicle": 0.29890173019321215,
+        "taxi_or_uber": 0.8919326747100702
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.18856598996577137,
+        "motorcycle": 0.4256078471477665,
+        "private_car": 0.18870204957361372,
+        "bycicle": 0.12551308664851038,
+        "taxi_or_uber": 0.47887100933523563
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6230281499793286,
+        "motorcycle": 3.31278467897112,
+        "private_car": 3.0496902867486457,
+        "bycicle": 1.4366790407114278,
+        "taxi_or_uber": 3.2856712068698872
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974009180237519,
+        "motorcycle": 1.9769125171252502,
+        "private_car": 2.074155103574545,
+        "bycicle": 0.6191661888511035,
+        "taxi_or_uber": 2.055975536589303
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.7880352459021325,
+        "motorcycle": 3.896044570813855,
+        "private_car": 5.943947415978487,
+        "bycicle": 1.3057035066187628,
+        "taxi_or_uber": 2.9181457074845496
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.6414366478053379,
+        "motorcycle": 1.7599541975152921,
+        "private_car": 2.6869124495673136,
+        "bycicle": 0.3765052460390032,
+        "taxi_or_uber": 1.4364431087442904
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.26720546504477277,
+        "motorcycle": 0.5215547136578812,
+        "private_car": 0.3306626121870415,
+        "bycicle": 0.46840545161332825,
+        "taxi_or_uber": 0.5761167516763993
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11666233225800761,
+        "motorcycle": 0.30205889784300294,
+        "private_car": 0.20091743735192497,
+        "bycicle": 0.24049622747268318,
+        "taxi_or_uber": 0.35506264720944714
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14907192792438334,
+        "motorcycle": 0.16281772438270803,
+        "private_car": 0.08255608039404068,
+        "bycicle": 0.1589726619795651,
+        "taxi_or_uber": 0.2084955444595146
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.04491254257749605,
+        "motorcycle": 0.1130091351552839,
+        "private_car": 0.053607165132285875,
+        "bycicle": 0.09571165202027503,
+        "taxi_or_uber": 0.14358242402544186
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07584303308275393,
+        "motorcycle": 0.3228766860690239,
+        "private_car": 0.13882982430963073,
+        "bycicle": 0.15424097058047156,
+        "taxi_or_uber": 0.2042394600265426
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5243351595700606,
+        "motorcycle": 1.912768475379385,
+        "private_car": 1.9772692129625564,
+        "bycicle": 0.6863748479233859,
+        "taxi_or_uber": 2.086259654963019
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07186232391129678,
+        "motorcycle": 0.31285701346436595,
+        "private_car": 0.12842082275602107,
+        "bycicle": 0.15621856418405342,
+        "taxi_or_uber": 0.1986789926390405
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.35761766416402724,
+        "motorcycle": 1.7089378750049133,
+        "private_car": 1.726362957638327,
+        "bycicle": 0.6172326123470512,
+        "taxi_or_uber": 2.060743397256393
+      }
+    },
+    "J-SV": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.250920799781774,
+        "motorcycle": 75.18885867793016,
+        "private_car": 126.31332967912763,
+        "bycicle": 23.325427744749824,
+        "taxi_or_uber": 57.450662459571255
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.21908673376595,
+        "motorcycle": 72.35533775069904,
+        "private_car": 111.86541860396616,
+        "bycicle": 21.282775911089253,
+        "taxi_or_uber": 53.68615913762479
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 40.181832184628234,
+        "motorcycle": 16.37128052975576,
+        "private_car": 51.96107456140351,
+        "bycicle": 52.74013157894737,
+        "taxi_or_uber": 18.88641640866873
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.920846386800335,
+        "motorcycle": 6.025219298245614,
+        "private_car": 32.55866228070175,
+        "bycicle": 29.58881578947369,
+        "taxi_or_uber": 8.568304953560371
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 52.30436769005848,
+        "motorcycle": 43.27626203990368,
+        "private_car": 26.810855263157894,
+        "bycicle": 46.03947368421053,
+        "taxi_or_uber": 41.170085139318886
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 32.36607926065163,
+        "motorcycle": 33.2890544375645,
+        "private_car": 17.699744152046787,
+        "bycicle": 32.559210526315795,
+        "taxi_or_uber": 31.199883900928796
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.08726565098782335,
+        "motorcycle": 0.25765137128383286,
+        "private_car": 0.13397716694006495,
+        "bycicle": 0.09368251262986418,
+        "taxi_or_uber": 0.2581234884625319
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.04720163355686447,
+        "motorcycle": 0.13596955465007077,
+        "private_car": 0.0552916782673811,
+        "bycicle": 0.03720536567086267,
+        "taxi_or_uber": 0.134181173607675
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.3346815170141066,
+        "motorcycle": 0.8043705370416976,
+        "private_car": 0.4450376048589773,
+        "bycicle": 0.3008658985057861,
+        "taxi_or_uber": 0.9033783732251938
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.1900366019775508,
+        "motorcycle": 0.4400068926270275,
+        "private_car": 0.18614315479741253,
+        "bycicle": 0.1260863946584769,
+        "taxi_or_uber": 0.47687254801699597
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6229857565378407,
+        "motorcycle": 3.312842702120037,
+        "private_car": 3.0496754340962924,
+        "bycicle": 1.4366652184009758,
+        "taxi_or_uber": 3.285537662400958
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6973956154203018,
+        "motorcycle": 1.97697379923273,
+        "private_car": 2.074126688391493,
+        "bycicle": 0.6191822639412767,
+        "taxi_or_uber": 2.056028646245763
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.7972417690520095,
+        "motorcycle": 3.8820569375946428,
+        "private_car": 5.814757540984563,
+        "bycicle": 1.295085170901033,
+        "taxi_or_uber": 2.9866052818210527
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.6522940058973677,
+        "motorcycle": 1.8369170442658722,
+        "private_car": 2.7184170792455085,
+        "bycicle": 0.3965844494764444,
+        "taxi_or_uber": 1.454667018684213
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.26910749344571455,
+        "motorcycle": 0.525997855649901,
+        "private_car": 0.333687733482434,
+        "bycicle": 0.47140013756824306,
+        "taxi_or_uber": 0.5697446714496978
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11844223909760274,
+        "motorcycle": 0.3065504457839278,
+        "private_car": 0.20544854807767007,
+        "bycicle": 0.24065898376587952,
+        "taxi_or_uber": 0.3534165077478806
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14681970982852996,
+        "motorcycle": 0.16210327079925432,
+        "private_car": 0.08283337868810854,
+        "bycicle": 0.15938753367297004,
+        "taxi_or_uber": 0.20699264639693019
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.04358673025344893,
+        "motorcycle": 0.11143130902846261,
+        "private_car": 0.05363964341956278,
+        "bycicle": 0.0945300553801921,
+        "taxi_or_uber": 0.14297647686062048
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07745260681323583,
+        "motorcycle": 0.33132773286006534,
+        "private_car": 0.13568068941138467,
+        "bycicle": 0.1548789863802756,
+        "taxi_or_uber": 0.20210699229680354
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5230529012165354,
+        "motorcycle": 1.9196918157755374,
+        "private_car": 1.9719664246271709,
+        "bycicle": 0.6996264960761441,
+        "taxi_or_uber": 2.0861842801629877
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07221413579775916,
+        "motorcycle": 0.31298604147268744,
+        "private_car": 0.12663619741338,
+        "bycicle": 0.15489314632946632,
+        "taxi_or_uber": 0.19783599182628847
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.363004461862084,
+        "motorcycle": 1.7234513299304781,
+        "private_car": 1.719670272044621,
+        "bycicle": 0.6162157791131371,
+        "taxi_or_uber": 2.0678026472618005
+      }
+    },
+    "J-RAW": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.25998805873437,
+        "motorcycle": 75.26537034463833,
+        "private_car": 126.38869081606066,
+        "bycicle": 23.314614333233912,
+        "taxi_or_uber": 57.37142336101954
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.21496245614621,
+        "motorcycle": 72.35437773968441,
+        "private_car": 111.93085562588838,
+        "bycicle": 21.278631211874337,
+        "taxi_or_uber": 53.60518539351587
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 40.498222117794484,
+        "motorcycle": 15.775068799449604,
+        "private_car": 52.68859649122807,
+        "bycicle": 50.401315789473685,
+        "taxi_or_uber": 18.387770897832816
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 21.8155884502924,
+        "motorcycle": 6.251440488476092,
+        "private_car": 35.040570175438596,
+        "bycicle": 29.07894736842106,
+        "taxi_or_uber": 8.050696594427246
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 52.56824613617377,
+        "motorcycle": 43.07090643274854,
+        "private_car": 26.416666666666664,
+        "bycicle": 45.51315789473684,
+        "taxi_or_uber": 41.38564241486068
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 33.067917188805346,
+        "motorcycle": 33.26539387684899,
+        "private_car": 17.518640350877195,
+        "bycicle": 32.36842105263158,
+        "taxi_or_uber": 30.538893188854495
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.08517525003900575,
+        "motorcycle": 0.24932015417584008,
+        "private_car": 0.1357819525550868,
+        "bycicle": 0.08611467230230356,
+        "taxi_or_uber": 0.24596048180722885
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.04409587334438318,
+        "motorcycle": 0.13245151319488466,
+        "private_car": 0.05562669097202604,
+        "bycicle": 0.034426400255617155,
+        "taxi_or_uber": 0.131554028068335
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.32954930197699583,
+        "motorcycle": 0.7645205675107124,
+        "private_car": 0.46055799153980637,
+        "bycicle": 0.27542159950200873,
+        "taxi_or_uber": 0.8717754871360789
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.17860215016117925,
+        "motorcycle": 0.41809603451481014,
+        "private_car": 0.19517438381818572,
+        "bycicle": 0.11702805806733395,
+        "taxi_or_uber": 0.47512267752140114
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6229572358740056,
+        "motorcycle": 3.312909207122144,
+        "private_car": 3.0497498565589143,
+        "bycicle": 1.4365851740933802,
+        "taxi_or_uber": 3.2859803165872226
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974454313078916,
+        "motorcycle": 1.9769940425829164,
+        "private_car": 2.074177650378271,
+        "bycicle": 0.619096820648202,
+        "taxi_or_uber": 2.0560969792621653
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.8588546767051255,
+        "motorcycle": 3.852734238266198,
+        "private_car": 6.076580652378802,
+        "bycicle": 1.2926727217300995,
+        "taxi_or_uber": 2.8488363749359964
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.7170727518529383,
+        "motorcycle": 1.6997006127911933,
+        "private_car": 2.787573205511644,
+        "bycicle": 0.3821844336179042,
+        "taxi_or_uber": 1.5248982139457161
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.27591759324780485,
+        "motorcycle": 0.5292740087157614,
+        "private_car": 0.3314520199354316,
+        "bycicle": 0.44627834302986374,
+        "taxi_or_uber": 0.5810891365900748
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.12116112852831487,
+        "motorcycle": 0.32186268823153436,
+        "private_car": 0.22344113073831953,
+        "bycicle": 0.2411622140372809,
+        "taxi_or_uber": 0.3739873263578818
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14510157577711572,
+        "motorcycle": 0.16586528536241962,
+        "private_car": 0.08338364009491067,
+        "bycicle": 0.15114508264367812,
+        "taxi_or_uber": 0.21037782668103647
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.04533724302197435,
+        "motorcycle": 0.1143405413370946,
+        "private_car": 0.05434898870251929,
+        "bycicle": 0.09302837900099799,
+        "taxi_or_uber": 0.14006076184060007
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07705659983270682,
+        "motorcycle": 0.3415684697074392,
+        "private_car": 0.13852948330309195,
+        "bycicle": 0.14814444905098928,
+        "taxi_or_uber": 0.1981132340298517
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5463851873187611,
+        "motorcycle": 1.8782557482037592,
+        "private_car": 2.015837029225942,
+        "bycicle": 0.6792140341960413,
+        "taxi_or_uber": 2.098694306952233
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07282528309003786,
+        "motorcycle": 0.3106557141804398,
+        "private_car": 0.12824991538690309,
+        "bycicle": 0.15274934783122804,
+        "taxi_or_uber": 0.2005779104685887
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.3616381589935517,
+        "motorcycle": 1.7174967780668888,
+        "private_car": 1.7495828746236528,
+        "bycicle": 0.6145637109477221,
+        "taxi_or_uber": 2.0620076387615307
+      }
+    },
+    "J-SH": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.2393890028581,
+        "motorcycle": 75.25521313182522,
+        "private_car": 126.38995204225832,
+        "bycicle": 23.313131484047737,
+        "taxi_or_uber": 57.426132946501134
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.20637933480308,
+        "motorcycle": 72.38761741040952,
+        "private_car": 111.96896269873248,
+        "bycicle": 21.271576987282128,
+        "taxi_or_uber": 53.678189540045004
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 42.344131161236426,
+        "motorcycle": 15.30826453388373,
+        "private_car": 55.14016812865497,
+        "bycicle": 49.375,
+        "taxi_or_uber": 18.92298761609907
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.268092105263158,
+        "motorcycle": 5.712246302029584,
+        "private_car": 35.864948830409354,
+        "bycicle": 29.361842105263165,
+        "taxi_or_uber": 8.545278637770899
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 51.783014828738516,
+        "motorcycle": 42.86820605435157,
+        "private_car": 26.581323099415204,
+        "bycicle": 45.48684210526316,
+        "taxi_or_uber": 40.74883900928793
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 32.006793024227235,
+        "motorcycle": 32.73658410732715,
+        "private_car": 17.596673976608187,
+        "bycicle": 32.33552631578948,
+        "taxi_or_uber": 30.313467492260067
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.09046940700104777,
+        "motorcycle": 0.250403672759957,
+        "private_car": 0.13773499495508734,
+        "bycicle": 0.08952527429177347,
+        "taxi_or_uber": 0.24413343028127094
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.04512309464205988,
+        "motorcycle": 0.13312599008001016,
+        "private_car": 0.05733801105666241,
+        "bycicle": 0.03396242595712758,
+        "taxi_or_uber": 0.12778695397904494
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.34864006495756134,
+        "motorcycle": 0.7717410756397106,
+        "private_car": 0.46282413356350943,
+        "bycicle": 0.2880495831054165,
+        "taxi_or_uber": 0.8597460101068224
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.18062660458386384,
+        "motorcycle": 0.4349841854534845,
+        "private_car": 0.1974601187283083,
+        "bycicle": 0.11990986342859937,
+        "taxi_or_uber": 0.4629021418328435
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6230471641097006,
+        "motorcycle": 3.3128097536285956,
+        "private_car": 3.0497516786987786,
+        "bycicle": 1.436630037178572,
+        "taxi_or_uber": 3.28603308970083
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974792253755392,
+        "motorcycle": 1.9769737014001079,
+        "private_car": 2.0741658655595194,
+        "bycicle": 0.6191388027194639,
+        "taxi_or_uber": 2.0562323557319773
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.705235417265512,
+        "motorcycle": 4.038168064214047,
+        "private_car": 6.163904697132369,
+        "bycicle": 1.2882425355594103,
+        "taxi_or_uber": 2.907778099476323
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.6020304388183861,
+        "motorcycle": 1.779675433551411,
+        "private_car": 2.796513424377761,
+        "bycicle": 0.37575160554151465,
+        "taxi_or_uber": 1.3541736329873233
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.28370530595267895,
+        "motorcycle": 0.5285946096213584,
+        "private_car": 0.33396900935765084,
+        "bycicle": 0.4481583929415628,
+        "taxi_or_uber": 0.5865438714256965
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.11472838316059143,
+        "motorcycle": 0.2937943037630416,
+        "private_car": 0.2097815397154517,
+        "bycicle": 0.2411027278346454,
+        "taxi_or_uber": 0.3839317119066103
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.1457565675334752,
+        "motorcycle": 0.16615655290355796,
+        "private_car": 0.08338402790852097,
+        "bycicle": 0.15095476014385334,
+        "taxi_or_uber": 0.20830289309535774
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.044905601577194004,
+        "motorcycle": 0.11239546918853711,
+        "private_car": 0.05353289661722494,
+        "bycicle": 0.09358623451623269,
+        "taxi_or_uber": 0.14259964393801822
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07501372914499077,
+        "motorcycle": 0.3217833277554123,
+        "private_car": 0.1384590018818125,
+        "bycicle": 0.14397105152335232,
+        "taxi_or_uber": 0.19328942567307753
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5113973265386207,
+        "motorcycle": 1.902360192509037,
+        "private_car": 1.9876882260445592,
+        "bycicle": 0.682238275873242,
+        "taxi_or_uber": 2.088746338429419
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07188757502911731,
+        "motorcycle": 0.3072248568680674,
+        "private_car": 0.12927961774907928,
+        "bycicle": 0.1463135768823263,
+        "taxi_or_uber": 0.19438798021054857
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.3423260573345502,
+        "motorcycle": 1.7255104488010642,
+        "private_car": 1.734945805856166,
+        "bycicle": 0.6169159081203069,
+        "taxi_or_uber": 2.044771799364435
+      }
+    },
+    "C": {
+      "physical/arc_length_m/mae": {
+        "bus": 46.21224016484885,
+        "motorcycle": 75.24378175496847,
+        "private_car": 126.45512420285789,
+        "bycicle": 23.311996075171187,
+        "taxi_or_uber": 57.38537597072086
+      },
+      "physical/arc_length_m/w1": {
+        "bus": 46.17368675903285,
+        "motorcycle": 72.36586400565058,
+        "private_car": 112.02313655186826,
+        "bycicle": 21.268631173381134,
+        "taxi_or_uber": 53.634701370537485
+      },
+      "physical/duration_s/mae": {
+        "bus": 503.50177435004537,
+        "motorcycle": 246.0769090390393,
+        "private_car": 202.4492505224705,
+        "bycicle": 218.8307182719654,
+        "taxi_or_uber": 252.84827458045135
+      },
+      "physical/duration_s/w1": {
+        "bus": 248.69345100957563,
+        "motorcycle": 184.0630889525649,
+        "private_car": 134.71715416675215,
+        "bycicle": 143.09475824580943,
+        "taxi_or_uber": 182.5995808253356
+      },
+      "physical/longest_steady_s/mae": {
+        "bus": 42.44649906015037,
+        "motorcycle": 15.56186575507396,
+        "private_car": 54.2671783625731,
+        "bycicle": 49.661184210526315,
+        "taxi_or_uber": 18.91331269349845
+      },
+      "physical/longest_steady_s/w1": {
+        "bus": 22.205819235588972,
+        "motorcycle": 5.818831699346405,
+        "private_car": 36.24086257309942,
+        "bycicle": 29.47039473684211,
+        "taxi_or_uber": 8.494969040247678
+      },
+      "physical/longest_stop_s/mae": {
+        "bus": 51.08720760233918,
+        "motorcycle": 42.96264404884761,
+        "private_car": 26.762792397660817,
+        "bycicle": 45.50328947368421,
+        "taxi_or_uber": 40.81269349845201
+      },
+      "physical/longest_stop_s/w1": {
+        "bus": 31.891045321637428,
+        "motorcycle": 32.885567165462675,
+        "private_car": 17.552997076023395,
+        "bycicle": 32.43092105263158,
+        "taxi_or_uber": 30.470975232198146
+      },
+      "physical/mean_absolute_acceleration_mps2/mae": {
+        "bus": 0.09095141461364266,
+        "motorcycle": 0.24952670431417612,
+        "private_car": 0.13874713283321405,
+        "bycicle": 0.08973332863085244,
+        "taxi_or_uber": 0.24356738997593694
+      },
+      "physical/mean_absolute_acceleration_mps2/w1": {
+        "bus": 0.04648708064239112,
+        "motorcycle": 0.13667129409057208,
+        "private_car": 0.058816876308422666,
+        "bycicle": 0.03409446101380508,
+        "taxi_or_uber": 0.12614430459949064
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/mae": {
+        "bus": 0.349110348580376,
+        "motorcycle": 0.764547152585381,
+        "private_car": 0.4664405525855854,
+        "bycicle": 0.2883010244341693,
+        "taxi_or_uber": 0.8551199387476441
+      },
+      "physical/mean_absolute_lag4_speed_change_mps/w1": {
+        "bus": 0.18477908880506788,
+        "motorcycle": 0.4445543997582431,
+        "private_car": 0.20243808065728347,
+        "bycicle": 0.12005622190259874,
+        "taxi_or_uber": 0.458860131919223
+      },
+      "physical/mean_speed_mps/mae": {
+        "bus": 2.6229911652076128,
+        "motorcycle": 3.312950519789001,
+        "private_car": 3.0497409646258684,
+        "bycicle": 1.4366627166305828,
+        "taxi_or_uber": 3.285979825263282
+      },
+      "physical/mean_speed_mps/w1": {
+        "bus": 0.6974277055959743,
+        "motorcycle": 1.976998862537257,
+        "private_car": 2.0741655850595455,
+        "bycicle": 0.6191391567423212,
+        "taxi_or_uber": 2.05625740040872
+      },
+      "physical/speed_p95_mps/mae": {
+        "bus": 1.7348004464584987,
+        "motorcycle": 4.101540278588638,
+        "private_car": 6.104846734896697,
+        "bycicle": 1.2889774413922108,
+        "taxi_or_uber": 2.916511233576379
+      },
+      "physical/speed_p95_mps/w1": {
+        "bus": 0.613281114197824,
+        "motorcycle": 1.8203678352600794,
+        "private_car": 2.7533728918468268,
+        "bycicle": 0.3742964891396875,
+        "taxi_or_uber": 1.3533259070285364
+      },
+      "physical/stop_episodes_per_minute/mae": {
+        "bus": 0.2833758905682142,
+        "motorcycle": 0.525104837493211,
+        "private_car": 0.3299498351328698,
+        "bycicle": 0.4505441625513918,
+        "taxi_or_uber": 0.5763136953040614
+      },
+      "physical/stop_episodes_per_minute/w1": {
+        "bus": 0.12036991402801642,
+        "motorcycle": 0.2884783926113487,
+        "private_car": 0.2060426983908208,
+        "bycicle": 0.24163163933273432,
+        "taxi_or_uber": 0.375155940269301
+      },
+      "physical/stopped_fraction/mae": {
+        "bus": 0.14394103781067688,
+        "motorcycle": 0.16528982056050093,
+        "private_car": 0.08415255332883519,
+        "bycicle": 0.1512224999452634,
+        "taxi_or_uber": 0.20843505103396212
+      },
+      "physical/stopped_fraction/w1": {
+        "bus": 0.04423499037439233,
+        "motorcycle": 0.11307845590868894,
+        "private_car": 0.05335305616071785,
+        "bycicle": 0.09354589077197552,
+        "taxi_or_uber": 0.14245851818479074
+      },
+      "selected_native_acceleration_w1": {
+        "bus": 0.07664935537742537,
+        "motorcycle": 0.32507477644092136,
+        "private_car": 0.14075833352447872,
+        "bycicle": 0.14378379507624967,
+        "taxi_or_uber": 0.19263861009982983
+      },
+      "selected_native_speed_w1": {
+        "bus": 0.5209808181343908,
+        "motorcycle": 1.8962128611555358,
+        "private_car": 2.003420569743631,
+        "bycicle": 0.6822070918425294,
+        "taxi_or_uber": 2.089697807099321
+      },
+      "weighted_native_acceleration_w1": {
+        "bus": 0.07287503792305558,
+        "motorcycle": 0.30807610120992296,
+        "private_car": 0.13074955896667753,
+        "bycicle": 0.1459075204042663,
+        "taxi_or_uber": 0.19429168306170205
+      },
+      "weighted_native_speed_w1": {
+        "bus": 0.345764320535097,
+        "motorcycle": 1.7266569958068847,
+        "private_car": 1.7519507332723885,
+        "bycicle": 0.6169612101137986,
+        "taxi_or_uber": 2.045774503159469
+      }
+    }
+  },
+  "cohort_means": {
+    "B": {
+      "physical/arc_length_m/mae": [
+        67.3979121765712,
+        62.30690219131864,
+        52.45257064535894,
+        80.68200471217564
+      ],
+      "physical/arc_length_m/w1": [
+        59.8581365153208,
+        59.16036832662345,
+        49.066372672069406,
+        76.22683484552992
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        34.80813700918964,
+        36.223185414516685,
+        37.863066981178434,
+        35.96830409356725
+      ],
+      "physical/longest_steady_s/w1": [
+        17.41076441102757,
+        22.227210182318544,
+        23.25508870214753,
+        18.6803216374269
+      ],
+      "physical/longest_stop_s/mae": [
+        35.351363826232244,
+        43.227261781905746,
+        44.53857437711927,
+        42.02090643274854
+      ],
+      "physical/longest_stop_s/w1": [
+        23.21297619047619,
+        32.28457172342622,
+        33.500105656297606,
+        26.928040935672517
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.14777802832757822,
+        0.16169115018994298,
+        0.17799600658799558,
+        0.15803822687340782
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.0633507756657358,
+        0.08004982227737636,
+        0.11212679963590823,
+        0.06182039018961486
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.49561010203825084,
+        0.5561904866933586,
+        0.5949047734803921,
+        0.5209961425339507
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.22847908325119293,
+        0.27701242643047347,
+        0.38597517384909125,
+        0.22521720948448445
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7015711463408225,
+        2.7166770463371104,
+        2.815249900266313,
+        2.7334371266330626
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3832485335087268,
+        1.4956598681594788,
+        1.7837088803840997,
+        1.2766369107193938
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.3768331872924913,
+        3.3551553309778717,
+        3.1105178748568285,
+        3.0050592251135613
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4657650836696678,
+        1.4881929686911692,
+        1.4689136143312382,
+        1.1746993600319875
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.4489862280155977,
+        0.4204222769493281,
+        0.4293019560900224,
+        0.4407331193578906
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.20980402584701172,
+        0.2518459852401103,
+        0.3034124998172686,
+        0.23002856394034998
+      ],
+      "physical/stopped_fraction/mae": [
+        0.1392553180861041,
+        0.1408399605514644,
+        0.17511726942209924,
+        0.14624648479741326
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07276615092405174,
+        0.09080103401376743,
+        0.12149435623083571,
+        0.07282029532463259
+      ],
+      "selected_native_acceleration_w1": [
+        0.15131453576823498,
+        0.1770847044625497,
+        0.2238393318752407,
+        0.15176378063487436
+      ],
+      "selected_native_speed_w1": [
+        1.316230048182892,
+        1.3902008895113815,
+        1.805692093288255,
+        1.2396389592172188
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14762660974476544,
+        0.16898340031856118,
+        0.21669167242613685,
+        0.15062572861660234
+      ],
+      "weighted_native_speed_w1": [
+        1.0902056258649646,
+        1.2812475887028416,
+        1.6924330033088706,
+        1.1144835995501183
+      ]
+    },
+    "F-SV": {
+      "physical/arc_length_m/mae": [
+        67.3811539922228,
+        62.270378200697685,
+        52.45016783587281,
+        80.72348988591571
+      ],
+      "physical/arc_length_m/w1": [
+        59.82012869029904,
+        59.136945536381724,
+        49.04649811381909,
+        76.25841573243586
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        35.19451754385965,
+        36.16303749570003,
+        37.74543712221731,
+        35.623026315789474
+      ],
+      "physical/longest_steady_s/w1": [
+        17.242587719298246,
+        21.34963880288958,
+        23.85701017249005,
+        19.444225146198832
+      ],
+      "physical/longest_stop_s/mae": [
+        36.31112364243943,
+        43.66596147230822,
+        44.45952995233181,
+        42.041008771929825
+      ],
+      "physical/longest_stop_s/w1": [
+        24.22307435254804,
+        32.46883384932921,
+        33.68322890559733,
+        26.797850877192985
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.1507560453637771,
+        0.16392603615007972,
+        0.17850496713445466,
+        0.15836109255175126
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.06989423119656976,
+        0.07947397311065306,
+        0.1104696325224931,
+        0.06448434658683551
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.504015746566356,
+        0.5540680173357683,
+        0.5941314395522258,
+        0.5332949462891268
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.2510165393626439,
+        0.2711918855968375,
+        0.38050183158398715,
+        0.23334994711518284
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7013896040214025,
+        2.716478719188857,
+        2.8152201474579615,
+        2.733335263656868
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.383212247508823,
+        1.4956278675804373,
+        1.7836519307722658,
+        1.2766190354311118
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.3756394327527928,
+        3.28939278236786,
+        3.095321601970421,
+        3.0144229009081345
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4003814884715522,
+        1.4488373634355636,
+        1.4367510752438664,
+        1.1577717679786257
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.43932436564709554,
+        0.4236282758601482,
+        0.4461471755397734,
+        0.4365239968258218
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.20282137858631108,
+        0.258600257498559,
+        0.31628615509680275,
+        0.22771820742144083
+      ],
+      "physical/stopped_fraction/mae": [
+        0.13935465290269633,
+        0.14137039227658538,
+        0.1758261370478315,
+        0.1448770113187963
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07250476237418589,
+        0.09141240552591014,
+        0.12121063519782796,
+        0.07220965926054519
+      ],
+      "selected_native_acceleration_w1": [
+        0.15035526303969832,
+        0.17774415089960963,
+        0.22242974332108353,
+        0.15389750849451048
+      ],
+      "selected_native_speed_w1": [
+        1.3186541682307127,
+        1.3798609012056609,
+        1.805960965250821,
+        1.2372557610269859
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14574764856560468,
+        0.17149750481738285,
+        0.21518220227201637,
+        0.1515534923140017
+      ],
+      "weighted_native_speed_w1": [
+        1.1032673844068541,
+        1.2703302631165194,
+        1.6930523001880793,
+        1.1020035049111594
+      ]
+    },
+    "J-S": {
+      "physical/arc_length_m/mae": [
+        67.45981881912992,
+        62.296037407942784,
+        52.43475963395917,
+        80.70856579970652
+      ],
+      "physical/arc_length_m/w1": [
+        59.90744621643968,
+        59.184609179556354,
+        49.0528349900483,
+        76.22699994913819
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        34.64123015873016,
+        35.779102167182664,
+        38.4187810211804,
+        35.72611111111111
+      ],
+      "physical/longest_steady_s/w1": [
+        17.106150793650794,
+        21.864895080839357,
+        23.84167895228267,
+        18.96152046783626
+      ],
+      "physical/longest_stop_s/mae": [
+        35.49591896407686,
+        43.27894736842105,
+        44.56313946631284,
+        42.04950292397661
+      ],
+      "physical/longest_stop_s/w1": [
+        23.280162907268174,
+        32.30529755761955,
+        33.49883409504152,
+        27.000497076023393
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.1467112228672587,
+        0.16292005487724298,
+        0.178465743900638,
+        0.15679803647836824
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.06233555930439969,
+        0.08123456871906569,
+        0.11210515275663434,
+        0.06099171979118397
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.492095589460933,
+        0.5599025279587716,
+        0.5947151574988812,
+        0.5181383489309981
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.22520962169379424,
+        0.2799309462733726,
+        0.38563337280837423,
+        0.22612874708575678
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.701513132626077,
+        2.716667503868762,
+        2.81520479194654,
+        2.7333015741349325
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3832854335880704,
+        1.4957429926255088,
+        1.7836431598446763,
+        1.2765227583817493
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.4200060409164155,
+        3.384573800063605,
+        3.115623917278124,
+        3.031983726982067
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4005423772431278,
+        1.5034898389547582,
+        1.462833850121235,
+        1.1509308464958175
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.4467817322610321,
+        0.4168620002245599,
+        0.43863176700022305,
+        0.4364712327131184
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.2106828217480049,
+        0.24604158238337365,
+        0.3110901326980812,
+        0.2280979159395496
+      ],
+      "physical/stopped_fraction/mae": [
+        0.13908177206374003,
+        0.14091719004428394,
+        0.17434142282799636,
+        0.14608896695741275
+      ],
+      "physical/stopped_fraction/w1": [
+        0.072644469834614,
+        0.09097400882147255,
+        0.12080444310275265,
+        0.07257370086661435
+      ],
+      "selected_native_acceleration_w1": [
+        0.15478660479111042,
+        0.17750932352606777,
+        0.22456735954859794,
+        0.15091374399035906
+      ],
+      "selected_native_speed_w1": [
+        1.3188078288243446,
+        1.39316688772474,
+        1.802773143972191,
+        1.2415930206128754
+      ],
+      "weighted_native_acceleration_w1": [
+        0.15085913623474864,
+        0.17053731701752564,
+        0.21644762241270654,
+        0.14952978907906492
+      ],
+      "weighted_native_speed_w1": [
+        1.0911527884213335,
+        1.2868175080245383,
+        1.6935875705481827,
+        1.1150101097357703
+      ]
+    },
+    "J-V": {
+      "physical/arc_length_m/mae": [
+        67.42223363531893,
+        62.349603755983075,
+        52.452494206165476,
+        80.74614527948333
+      ],
+      "physical/arc_length_m/w1": [
+        59.8862072156483,
+        59.22687016750153,
+        49.051863498656985,
+        76.27358354907004
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        35.19701754385965,
+        36.86436188510492,
+        38.415052336724166,
+        34.73326023391813
+      ],
+      "physical/longest_steady_s/w1": [
+        17.424908103592315,
+        20.86513587891297,
+        22.726043048798466,
+        19.03361111111111
+      ],
+      "physical/longest_stop_s/mae": [
+        36.82955304928989,
+        44.129299965600275,
+        44.84234237554671,
+        42.21638888888889
+      ],
+      "physical/longest_stop_s/w1": [
+        24.14855889724311,
+        32.77942036463708,
+        34.15969949383262,
+        27.001593567251465
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.1500410934030359,
+        0.16365147793210028,
+        0.18289521144895374,
+        0.15730486666230614
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.06896974306603267,
+        0.07908253297002345,
+        0.11055885125995128,
+        0.06493934443086408
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.5044213115196681,
+        0.5541560311488666,
+        0.6138795602722015,
+        0.5237507906180903
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.2465940307072522,
+        0.26622208872624287,
+        0.3864043551410352,
+        0.22658751156218782
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7014092341200895,
+        2.716374090263948,
+        2.815252223503201,
+        2.7332471427370892
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3832553349743637,
+        1.4954176485782933,
+        1.7837422239476184,
+        1.2764730038308876
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.3173860804428257,
+        3.257555705196469,
+        3.0811256437669865,
+        3.0254337280319477
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4142409685418982,
+        1.4284492472005468,
+        1.436096182458783,
+        1.2422149215357619
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.44399979829430325,
+        0.4168608613011509,
+        0.4393964880320431,
+        0.4308988477160412
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.2049692061015046,
+        0.2431239862907292,
+        0.29723114307517057,
+        0.2268336982406483
+      ],
+      "physical/stopped_fraction/mae": [
+        0.14225841557809576,
+        0.14392236416776846,
+        0.1782329383330129,
+        0.1451174332332923
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07348272039106529,
+        0.0915102249506916,
+        0.12239451155768581,
+        0.07327087822918345
+      ],
+      "selected_native_acceleration_w1": [
+        0.1550813545824655,
+        0.17935796820048763,
+        0.22391423917120298,
+        0.15847041730058214
+      ],
+      "selected_native_speed_w1": [
+        1.3235225928636754,
+        1.3782416445372636,
+        1.8126575237495366,
+        1.2351841194882498
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14797371984274701,
+        0.17480506927712688,
+        0.218341053274074,
+        0.15331033116987433
+      ],
+      "weighted_native_speed_w1": [
+        1.101974727909733,
+        1.2702458096351252,
+        1.6933851607358585,
+        1.1111099068478527
+      ]
+    },
+    "J-SV": {
+      "physical/arc_length_m/mae": [
+        67.38997440896745,
+        62.27471931303642,
+        52.45101263045742,
+        80.70765313646723
+      ],
+      "physical/arc_length_m/w1": [
+        59.831164207330346,
+        59.15159268902726,
+        49.07277225144487,
+        76.27149336191367
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        35.27261278195489,
+        35.94717062263502,
+        38.219617671630054,
+        34.673187134502925
+      ],
+      "physical/longest_steady_s/w1": [
+        16.68076232247285,
+        19.99634502923977,
+        23.132547053909285,
+        19.91982456140351
+      ],
+      "physical/longest_stop_s/mae": [
+        36.91324770258981,
+        43.73811489508084,
+        44.75087596442086,
+        42.27859649122807
+      ],
+      "physical/longest_stop_s/w1": [
+        24.42198203842941,
+        32.57817337461301,
+        33.8874551575016,
+        26.803567251461992
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.1534312824806944,
+        0.16709547201103594,
+        0.1823362029918016,
+        0.16169719475976185
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.0697154123400065,
+        0.08165439014102241,
+        0.11205283816039524,
+        0.06445688396085907
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.5109896600615593,
+        0.5687057140751319,
+        0.615524277285903,
+        0.5354474930940148
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.24325265698060264,
+        0.26993449304986,
+        0.39179172132054496,
+        0.23033760231096342
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7013973049724402,
+        2.7164697802534667,
+        2.815274120747642,
+        2.733024212871334
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3832162990920924,
+        1.4956571316395628,
+        1.7836371682692584,
+        1.276455011584338
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.3200059939653475,
+        3.2160306691700193,
+        3.0536458253848733,
+        3.0309148717624006
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.442815338511688,
+        1.4768190966089059,
+        1.4649343292962318,
+        1.262534913638699
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.44657714550421845,
+        0.41761258897688164,
+        0.44287325689354695,
+        0.4288873219021453
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.2083208257813135,
+        0.25012621908579125,
+        0.2996602046863121,
+        0.2215061300249517
+      ],
+      "physical/stopped_fraction/mae": [
+        0.14070580388647616,
+        0.14343955053257165,
+        0.17768501664962658,
+        0.14467886043996006
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07208156386284283,
+        0.09061597055670778,
+        0.122008386425679,
+        0.07222545110859993
+      ],
+      "selected_native_acceleration_w1": [
+        0.15498405586252295,
+        0.1824816221034041,
+        0.22434252281788933,
+        0.1593494054255956
+      ],
+      "selected_native_speed_w1": [
+        1.321509111145155,
+        1.376089279798701,
+        1.8213034515453552,
+        1.2415156917974892
+      ],
+      "weighted_native_acceleration_w1": [
+        0.1464819246046183,
+        0.17493223568791166,
+        0.21825865612898748,
+        0.15197959385014767
+      ],
+      "weighted_native_speed_w1": [
+        1.1116287762944888,
+        1.2692512015611488,
+        1.6983077423398047,
+        1.1129278719742544
+      ]
+    },
+    "J-RAW": {
+      "physical/arc_length_m/mae": [
+        67.4044062008014,
+        62.315659829090016,
+        52.41793578541508,
+        80.74206771564295
+      ],
+      "physical/arc_length_m/w1": [
+        59.84664692491964,
+        59.18413981510711,
+        49.03047386927,
+        76.24594933239062
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        34.928736424394316,
+        35.24490884072927,
+        36.712367929627995,
+        35.31476608187135
+      ],
+      "physical/longest_steady_s/w1": [
+        16.76901211361738,
+        21.72512899896801,
+        22.85486387537471,
+        18.84078947368421
+      ],
+      "physical/longest_stop_s/mae": [
+        36.15384085213032,
+        44.00687134502924,
+        44.670293380510095,
+        42.332690058479535
+      ],
+      "physical/longest_stop_s/w1": [
+        23.86014411027569,
+        32.835560715514276,
+        33.66252641407441,
+        27.04918128654971
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.14819229298242012,
+        0.15760392742860013,
+        0.17528636787002413,
+        0.16079942042252765
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.062463224657976345,
+        0.07772764412444495,
+        0.1119686966519484,
+        0.06636403923382711
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.49591282522278823,
+        0.5421846164450216,
+        0.5895395841751265,
+        0.5338229322895455
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.21634949994705618,
+        0.26814896616285727,
+        0.38872431390527024,
+        0.2339958632511445
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7014247143861105,
+        2.7164823462693026,
+        2.815287178051448,
+        2.7333511934816728
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3833651886990606,
+        1.4955169736612128,
+        1.783689734738695,
+        1.2764768422445885
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.3737499169453096,
+        3.367931183620731,
+        3.0697676077370644,
+        2.932294222909872
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4773123079267467,
+        1.5846434286884046,
+        1.459463809398297,
+        1.1677238281620685
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.4457960229810264,
+        0.4181165284514273,
+        0.4362867886070088,
+        0.4310095411756866
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.2174494771792072,
+        0.2689745417603613,
+        0.3066056009549525,
+        0.23226197042014418
+      ],
+      "physical/stopped_fraction/mae": [
+        0.13885279111375484,
+        0.14243864990991126,
+        0.17491609854188647,
+        0.1484911888817759
+      ],
+      "physical/stopped_fraction/w1": [
+        0.0725045298325176,
+        0.09206012461050281,
+        0.11932928001071813,
+        0.0737987966688105
+      ],
+      "selected_native_acceleration_w1": [
+        0.15429387665200664,
+        0.18069334595972847,
+        0.22352844607290312,
+        0.16421412005462493
+      ],
+      "selected_native_speed_w1": [
+        1.3052070158645235,
+        1.4071426116184333,
+        1.8188640309750799,
+        1.2434953862593525
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14894223185082595,
+        0.1709748712074358,
+        0.2202475394001472,
+        0.151881894307349
+      ],
+      "weighted_native_speed_w1": [
+        1.096092219344481,
+        1.2844946948191986,
+        1.704967205075737,
+        1.1186772098752604
+      ]
+    },
+    "J-SH": {
+      "physical/arc_length_m/mae": [
+        67.40835451499635,
+        62.32304652629937,
+        52.447981520015944,
+        80.71967232468074
+      ],
+      "physical/arc_length_m/w1": [
+        59.86894437320457,
+        59.204853202400756,
+        49.07654348906347,
+        76.25983971234898
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        34.23106934001671,
+        36.216933264533886,
+        38.263181237407245,
+        36.16125730994152
+      ],
+      "physical/longest_steady_s/w1": [
+        16.949878863826235,
+        22.030469556243553,
+        23.559384982063,
+        18.86219298245614
+      ],
+      "physical/longest_stop_s/mae": [
+        35.752867585630746,
+        43.559038527691776,
+        44.679793847363506,
+        41.982880116959066
+      ],
+      "physical/longest_stop_s/w1": [
+        23.165398913951545,
+        32.49906260749914,
+        33.51278318344882,
+        26.81399122807018
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.14975037138220412,
+        0.16302911617478627,
+        0.17894525108083018,
+        0.1580886847934887
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.06296899935419613,
+        0.08018782130865576,
+        0.11191246791891751,
+        0.06279989199015458
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.5003905682905385,
+        0.560667904429274,
+        0.5972045673149607,
+        0.5265376538636429
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.22814650710633494,
+        0.2758794530106055,
+        0.3847574329545682,
+        0.22792293815017095
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.7015195630996414,
+        2.71655268454476,
+        2.815207778554864,
+        2.733337352453916
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.383270423643476,
+        1.4956714638661834,
+        1.78366361939692,
+        1.2765864537227067
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.396755584488443,
+        3.362301672980467,
+        3.120161650753546,
+        3.003444142695673
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4288289806155403,
+        1.493175047809999,
+        1.4789832728408179,
+        1.1255283269547596
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.4471506340470267,
+        0.41683510298597054,
+        0.43787075205339265,
+        0.44292046235276816
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.20606793154144495,
+        0.2410980958443619,
+        0.30974156680912684,
+        0.23776333890933862
+      ],
+      "physical/stopped_fraction/mae": [
+        0.13982096339200964,
+        0.1413434085357359,
+        0.17533672255353572,
+        0.14714274678653091
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07288766349868442,
+        0.09068560708391447,
+        0.12118932493919768,
+        0.072853281147969
+      ],
+      "selected_native_acceleration_w1": [
+        0.14574719043096307,
+        0.175733949690587,
+        0.22365523222979328,
+        0.15287685643157298
+      ],
+      "selected_native_speed_w1": [
+        1.3097214993553015,
+        1.3882071545352228,
+        1.8049839422301657,
+        1.2350316913952124
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14312166912616728,
+        0.16815152544506318,
+        0.2172521266296706,
+        0.15074956419041
+      ],
+      "weighted_native_speed_w1": [
+        1.088171482435332,
+        1.2820895793694074,
+        1.6914949938010087,
+        1.10981995997547
+      ]
+    },
+    "C": {
+      "physical/arc_length_m/mae": [
+        67.44567629400505,
+        62.287461078519065,
+        52.43654884635302,
+        80.71712831597667
+      ],
+      "physical/arc_length_m/w1": [
+        59.885757710568456,
+        59.18084525389959,
+        49.04707336821681,
+        76.25913955569139
+      ],
+      "physical/duration_s/mae": [
+        296.7595001032021,
+        274.3064282269316,
+        296.3971928459535,
+        271.50242023509037
+      ],
+      "physical/duration_s/w1": [
+        188.48730176387647,
+        159.06266730451117,
+        202.89264569926252,
+        164.09181179238004
+      ],
+      "physical/longest_steady_s/mae": [
+        34.648855472013366,
+        36.06118851049192,
+        38.111143053712716,
+        35.85884502923977
+      ],
+      "physical/longest_steady_s/w1": [
+        17.385605680868842,
+        21.920562435500518,
+        23.91761265909873,
+        18.56092105263158
+      ],
+      "physical/longest_stop_s/mae": [
+        35.72005847953216,
+        43.35754213966288,
+        44.55512555899553,
+        42.07017543859649
+      ],
+      "physical/longest_stop_s/w1": [
+        23.32399749373434,
+        32.378044375645,
+        33.50351368617623,
+        26.979649122807018
+      ],
+      "physical/mean_absolute_acceleration_mps2/mae": [
+        0.14885664900956927,
+        0.1629771048153667,
+        0.17994825593643488,
+        0.15823876653288688
+      ],
+      "physical/mean_absolute_acceleration_mps2/w1": [
+        0.0631016720618455,
+        0.08224557702158078,
+        0.1139103670551795,
+        0.06251359718513948
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/mae": [
+        0.4969861507817511,
+        0.5593361270644824,
+        0.5993722879843792,
+        0.5231206477159118
+      ],
+      "physical/mean_absolute_lag4_speed_change_mps/w1": [
+        0.22875111523118824,
+        0.28220567559631743,
+        0.38868078168021,
+        0.22891276592621732
+      ],
+      "physical/mean_speed_mps/mae": [
+        2.701542615675249,
+        2.7165529867362177,
+        2.815193392959738,
+        2.7333711578418733
+      ],
+      "physical/mean_speed_mps/w1": [
+        1.3832400829910183,
+        1.4956512102193547,
+        1.7836576954259171,
+        1.2766419796387647
+      ],
+      "physical/speed_p95_mps/mae": [
+        3.421956664242943,
+        3.3636848351291535,
+        3.1155705443398705,
+        3.016128864217971
+      ],
+      "physical/speed_p95_mps/w1": [
+        1.4056781646892642,
+        1.470244814698498,
+        1.5018883789953712,
+        1.15390403159523
+      ],
+      "physical/stop_episodes_per_minute/mae": [
+        0.443986991261624,
+        0.4220102084394202,
+        0.43185170478694046,
+        0.4343818323518138
+      ],
+      "physical/stop_episodes_per_minute/w1": [
+        0.20682710083556174,
+        0.24790182256288562,
+        0.3045378302631159,
+        0.22607611404421368
+      ],
+      "physical/stopped_fraction/mae": [
+        0.13933810818911477,
+        0.1410642046566196,
+        0.17533697921898114,
+        0.14669347807867536
+      ],
+      "physical/stopped_fraction/w1": [
+        0.07274613616052325,
+        0.09077423270331109,
+        0.12113532144950973,
+        0.07268103880710824
+      ],
+      "selected_native_acceleration_w1": [
+        0.14869808304123258,
+        0.17721153714041546,
+        0.22453431489121647,
+        0.15267996134225947
+      ],
+      "selected_native_speed_w1": [
+        1.3151101368264946,
+        1.3883763481613463,
+        1.8081112063145512,
+        1.2424176270779346
+      ],
+      "weighted_native_acceleration_w1": [
+        0.14513767736271543,
+        0.16892542645167521,
+        0.21733583726407849,
+        0.1501209801740304
+      ],
+      "weighted_native_speed_w1": [
+        1.0896053010603055,
+        1.284785960081857,
+        1.6970541697416544,
+        1.1182407794262936
+      ]
+    }
+  },
+  "utility": {
+    "only-B": {
+      "pooled_macro_f1_seeds": [
+        0.9367718662061473,
+        0.9233957848875504
+      ],
+      "pooled_macro_f1_mean": 0.9300838255468489,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9320241940053261,
+        0.917033462033462
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9245288280193941,
+      "class_f1_mean": [
+        0.9577540785882055,
+        0.8683195060775613,
+        0.9863013698630136,
+        0.9662162162162162,
+        0.8718279569892473
+      ]
+    },
+    "only-F-SV": {
+      "pooled_macro_f1_seeds": [
+        0.9343941815822454,
+        0.9182590081491604
+      ],
+      "pooled_macro_f1_mean": 0.9263265948657029,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9304131285381285,
+        0.9093521849042124
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9198826567211704,
+      "class_f1_mean": [
+        0.9577540785882055,
+        0.8696273025846066,
+        0.9863013698630136,
+        0.9556425309849967,
+        0.8623076923076922
+      ]
+    },
+    "only-J-RAW": {
+      "pooled_macro_f1_seeds": [
+        0.9311595462403528,
+        0.9261619502565409
+      ],
+      "pooled_macro_f1_mean": 0.9286607482484468,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9264569391837688,
+        0.9190573982353278
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9227571687095484,
+      "class_f1_mean": [
+        0.9577540785882055,
+        0.8642857142857143,
+        0.9796371714179933,
+        0.9624452520734321,
+        0.879181524876889
+      ]
+    },
+    "only-J-S": {
+      "pooled_macro_f1_seeds": [
+        0.929021784665209,
+        0.9287725372707916
+      ],
+      "pooled_macro_f1_mean": 0.9288971609680003,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9251205983053117,
+        0.9236120525161622
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9243663254107369,
+      "class_f1_mean": [
+        0.9523884250831711,
+        0.8742175273865416,
+        0.9863013698630136,
+        0.9594594594594594,
+        0.8721190230478156
+      ]
+    },
+    "only-J-SV": {
+      "pooled_macro_f1_seeds": [
+        0.9395834270100415,
+        0.9287071688093281
+      ],
+      "pooled_macro_f1_mean": 0.9341452979096848,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9341761963406052,
+        0.9222074781135183
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9281918372270618,
+      "class_f1_mean": [
+        0.9631805341551105,
+        0.8761238761238761,
+        0.9863013698630136,
+        0.9694796837653981,
+        0.8756410256410256
+      ]
+    },
+    "only-J-V": {
+      "pooled_macro_f1_seeds": [
+        0.9235095101913591,
+        0.9287071688093281
+      ],
+      "pooled_macro_f1_mean": 0.9261083395003435,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9183389173075576,
+        0.9222074781135183
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.920273197710538,
+      "class_f1_mean": [
+        0.9550863238960957,
+        0.8642857142857143,
+        0.9796371714179933,
+        0.9587087087087087,
+        0.872823779193206
+      ]
+    },
+    "only-empirical": {
+      "pooled_macro_f1_seeds": [
+        0.9305703560830649,
+        0.9362771585473211
+      ],
+      "pooled_macro_f1_mean": 0.933423757315193,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9126538629419467,
+        0.9196370574396052
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9161454601907759,
+      "class_f1_mean": [
+        0.9826589595375722,
+        0.8534504710975299,
+        0.958904109589041,
+        0.9933333333333334,
+        0.8787719130184883
+      ]
+    },
+    "plus-B": {
+      "pooled_macro_f1_seeds": [
+        0.9600751868314894,
+        0.96502692981177
+      ],
+      "pooled_macro_f1_mean": 0.9625510583216297,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9509935086594932,
+        0.9571059921586853
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9540497504090892,
+      "class_f1_mean": [
+        1.0,
+        0.9073562310830372,
+        0.972972972972973,
+        0.9900653594771243,
+        0.9423607280750138
+      ]
+    },
+    "plus-F-SV": {
+      "pooled_macro_f1_seeds": [
+        0.9625945945945946,
+        0.9465540325506862
+      ],
+      "pooled_macro_f1_mean": 0.9545743135726403,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.954074390521759,
+        0.9372824786232219
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9456784345724905,
+      "class_f1_mean": [
+        0.9941860465116279,
+        0.891689497716895,
+        0.9694796837653981,
+        0.9866666666666667,
+        0.9308496732026144
+      ]
+    },
+    "plus-J-RAW": {
+      "pooled_macro_f1_seeds": [
+        0.9679678157291546,
+        0.9652329884587949
+      ],
+      "pooled_macro_f1_mean": 0.9666004020939747,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9622110665669229,
+        0.9574142932399242
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9598126799034236,
+      "class_f1_mean": [
+        0.9970760233918128,
+        0.9225806451612903,
+        0.9762824048538334,
+        1.0,
+        0.9370629370629371
+      ]
+    },
+    "plus-J-S": {
+      "pooled_macro_f1_seeds": [
+        0.9682839338841172,
+        0.9707908050321054
+      ],
+      "pooled_macro_f1_mean": 0.9695373694581113,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.963929171780854,
+        0.9669523438514479
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.965440757816151,
+      "class_f1_mean": [
+        0.9883720930232558,
+        0.9373311252505883,
+        0.9797288042733872,
+        0.9833995584988963,
+        0.9588552662444287
+      ]
+    },
+    "plus-J-SV": {
+      "pooled_macro_f1_seeds": [
+        0.9523203552615938,
+        0.9573614095462665
+      ],
+      "pooled_macro_f1_mean": 0.9548408824039301,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9429514782296775,
+        0.9505860756414874
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9467687769355825,
+      "class_f1_mean": [
+        0.9912620699034407,
+        0.8991932059447982,
+        0.9588552662444287,
+        0.9900220750551876,
+        0.9348717948717948
+      ]
+    },
+    "plus-J-V": {
+      "pooled_macro_f1_seeds": [
+        0.9575611469858045,
+        0.9495323798000749
+      ],
+      "pooled_macro_f1_mean": 0.9535467633929398,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9479116059379218,
+        0.9396439224459359
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9437777641919288,
+      "class_f1_mean": [
+        0.9970760233918128,
+        0.891801948051948,
+        0.962163438828531,
+        0.9933333333333334,
+        0.9233590733590733
+      ]
+    },
+    "plus-empirical": {
+      "pooled_macro_f1_seeds": [
+        0.9518156120895847,
+        0.9315251619943632
+      ],
+      "pooled_macro_f1_mean": 0.9416703870419739,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9391791606508677,
+        0.9172153895681281
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9281972751094979,
+      "class_f1_mean": [
+        0.9884055031605989,
+        0.8802952503209243,
+        0.9287452207160236,
+        0.9899328859060403,
+        0.9209730751062825
+      ]
+    },
+    "real": {
+      "pooled_macro_f1_seeds": [
+        0.9439102378820295,
+        0.9442226388915159
+      ],
+      "pooled_macro_f1_mean": 0.9440664383867727,
+      "nonbus_parent_equal_macro_f1_seeds": [
+        0.9324849324849325,
+        0.9285067970141077
+      ],
+      "nonbus_parent_equal_macro_f1_mean": 0.9304958647495201,
+      "class_f1_mean": [
+        0.9913294797687862,
+        0.8796618996114249,
+        0.9145746339990944,
+        1.0,
+        0.9347661785545583
+      ]
+    }
+  },
+  "coverage_episode_totals": {
+    "requested": 800,
+    "generated": 784,
+    "physical_pairs": 755,
+    "route_pairs": 755,
+    "catalog_contains_exact_reference": 476
+  },
+  "sampling_costs": {
+    "B": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 2826.775800280273,
+      "seconds_per_candidate_including_cell_load_and_export": 0.45069767223856394,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 0
+    },
+    "F-SV": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3083.7356179729104,
+      "seconds_per_candidate_including_cell_load_and_export": 0.4916670309268033,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "J-S": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3131.291864864528,
+      "seconds_per_candidate_including_cell_load_and_export": 0.4992493406990638,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "J-V": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3047.0948567315936,
+      "seconds_per_candidate_including_cell_load_and_export": 0.485825072820726,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "J-SV": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3059.4339954182506,
+      "seconds_per_candidate_including_cell_load_and_export": 0.4877924099837772,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "J-RAW": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3061.7787019833922,
+      "seconds_per_candidate_including_cell_load_and_export": 0.4881662471274541,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "J-SH": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 3109.258176922798,
+      "seconds_per_candidate_including_cell_load_and_export": 0.4957363164736604,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 313600
+    },
+    "C": {
+      "cells": 16,
+      "candidates": 6272,
+      "summed_cell_seconds": 2844.379262380302,
+      "seconds_per_candidate_including_cell_load_and_export": 0.45350434668053285,
+      "motion_network_forwards": 627200,
+      "prior_network_forwards": 0
+    }
+  },
+  "limits": [
+    "Independent scalar recomputation of exported aggregates/confusions; source artifact and prediction verification are performed upstream.",
+    "Four OD cohorts with repeated windows and shared bus services; counts are not independent domains.",
+    "No fitting, model selection, endpoint changes or automatic scientific superiority claim."
+  ]
+}

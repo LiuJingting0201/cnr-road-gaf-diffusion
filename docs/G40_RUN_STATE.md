@@ -1,3 +1,12 @@
+# G40 current state — scientific work complete, manuscript QA in progress
+
+2026-11-10 Beijing time. All 16 motion fits, 12 learned priors, eight references, 128 generation/evaluation cells and 30 utility fits are complete. Full evidence has been reviewed; see [REPORT](results/g40-generative-conditioning/REPORT.md). Independent recomputation and condition/cohort summaries are retained under `completed/`. No additional training is queued. Final v20 PDF/ZIP layout verification and delivery remain.
+
+Primary conclusion: no overall GAF motion-quality gain; spatial-only augmentation has a small pooled, cohort-dependent effect. Preserve all controls and adverse findings. Do not restart old queues, open old frozen tests or search parameters for a favorable outcome.
+
+---
+Historical execution checkpoints (superseded by the state above):
+
 # G40 resumption entry — 2026-11-10 Beijing
 
 Latest user instruction: continue experiments, revise the thesis after evidence review.

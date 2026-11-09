@@ -90,11 +90,11 @@ def main(a):
                 values=np.sort(accel);axs[1,2].plot(values,np.arange(1,len(values)+1)/len(values),**kw)
         axs[1,0].set(title='Whole-trip progress',xlabel='Elapsed time (s)',ylabel='Fraction of distance')
         axs[1,1].set(title='Whole-trip speed',xlabel='Elapsed time (s)',ylabel='One-second speed (m/s)')
-        axs[1,2].set(title='Acceleration distribution',xlabel='One-second acceleration (m/s²)',ylabel='Empirical CDF')
+        axs[1,2].set(title='Acceleration distribution',xlabel='One-second acceleration\n(m/s²)',ylabel='Empirical CDF')
         for ax in axs[1]:ax.grid(alpha=.2)
         handles,labels=axs[1,0].get_legend_handles_labels();fig.legend(handles,labels,ncol=6,loc='lower center',frameon=False)
         fig.suptitle(NAMES[label]+': first direct draws on a new request',fontsize=14)
-        fig.subplots_adjust(top=.91,bottom=.12,wspace=.36,hspace=.5)
+        fig.subplots_adjust(top=.91,bottom=.15,wspace=.36,hspace=.5)
         output(fig,'g40-journey-'+cls)
         rendered={key:images(t) for key,t in tracks.items()}
         fig,axs=plt.subplots(6,3,figsize=(7.8,11.2),gridspec_kw={'width_ratios':[1,1,1.55]})

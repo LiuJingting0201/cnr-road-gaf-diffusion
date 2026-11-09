@@ -1,0 +1,8 @@
+{
+  "pid": 256437,
+  "started_unix": 1794257740.0363867,
+  "source_manifest_sha256": "c1a4ea8f1957b06aac9f131f092f2e2fce44c27bdfac39ed6394abc5b50f0a37",
+  "new_fitting": false,
+  "max_active_seconds": 1800,
+  "recovery": "Same presentation sources; enable GPU0 required by inherited speed-image conversion. Failed attempt preserved."
+}

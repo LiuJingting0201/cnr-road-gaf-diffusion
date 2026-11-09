@@ -1,0 +1,1980 @@
+{
+  "complete": true,
+  "source_sha256": "fc560aaa14a54b656f22929442dd144d01534900fa195b80afe8e07bd620007a",
+  "evidence_sha256": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+  "tables": [
+    "g40-physical-w1-1",
+    "g40-physical-w1-2",
+    "g40-physical-mae-1",
+    "g40-physical-mae-2",
+    "g40-class-speed",
+    "g40-class-acceleration",
+    "g40-seed-native",
+    "g40-coverage",
+    "g40-diversity-decode"
+  ],
+  "scope": "Presentation of already declared endpoints; no changed sample or metric rules.",
+  "physical_support_counts_by_class_cell": {
+    "duration_s": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "arc_length_m": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "mean_speed_mps": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "speed_p95_mps": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "stopped_fraction": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "mean_absolute_acceleration_mps2": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "longest_stop_s": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "stop_episodes_per_minute": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "longest_steady_s": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    },
+    "mean_absolute_lag4_speed_change_mps": {
+      "B": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "F-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-S": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-V": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SV": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-RAW": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "J-SH": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      },
+      "C": {
+        "bus": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "motorcycle": [
+          17,
+          18,
+          19
+        ],
+        "private_car": [
+          18,
+          19
+        ],
+        "bycicle": [
+          19
+        ],
+        "taxi_or_uber": [
+          17,
+          19
+        ]
+      }
+    }
+  },
+  "constant_speed_fallbacks": {
+    "B": 0,
+    "F-SV": 0,
+    "J-S": 0,
+    "J-V": 0,
+    "J-SV": 0,
+    "J-RAW": 0,
+    "J-SH": 0,
+    "C": 0
+  },
+  "artifacts": {
+    "g40-physical-w1-1.tex": "77f4048f4cb91c65da3fe97864335645985e7239dbbb9f50837c31f593f61d3d",
+    "g40-diversity-decode.tex": "33d3378cc6e446425f89c07ff4e69deba01d11a0cb70867858ea50bffd98e9d3",
+    "g40-seed-native.tex": "9fbcbbdb5236d30d4f7d71c9b174f9d12c0d83c60e6dd1b4205b021da96a5874",
+    "g40-class-acceleration.tex": "16357e6555372bcd32d662e95aac27f3c6465c6f5eb30fc79349243a2e0edfd7",
+    "g40-physical-w1-2.tex": "9def28fe6f4557ee5fa7d8a1e090a172ca1b4928ebefac0668e2d4a693e1b382",
+    "g40-physical-mae-2.tex": "0a24309293ea78c908304423019a4b77d0dd053c1f18a7467b5897ed5a5530e4",
+    "g40-physical-mae-1.tex": "961df76c5ceb371abe0d08e4bc01d487c041fd7934481db9f50ffc9bd8487f8a",
+    "g40-class-speed.tex": "a1a504900d22ca6c3ff33f88fd9da6ba074b33e746a36ed26463e9d10491d520",
+    "g40-coverage.tex": "60c89c8178d8a27f22c30de121206611c3be3847287f7c41d1c51d3c2ba6e8c7"
+  }
+}

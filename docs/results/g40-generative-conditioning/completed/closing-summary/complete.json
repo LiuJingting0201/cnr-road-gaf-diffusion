@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "source_sha256": "35d29b6ca6ae2f79cb27da4301d119e1b960a18901d381853e0fc4bde9f2bfce",
+  "artifacts": {
+    "summary.json": "018be57e97fbd03bf764094e279e907c1a53cd2835884924cd0f5ee2ec12f701",
+    "g40-condition-use.tex": "0f1e6891c10d27c822cd86a0a54c2510200f429177ac6a5400a8b9ed54245798",
+    "g40-utility-cohorts.tex": "02d944e54e2323e049d8218873fb28917bcd964abab440af389ce55df76a2fb3",
+    "g40-condition-all-2.tex": "1c1027a25d29172173dbd6eaf88f435cd70d0e95949fd91ea52188334b6349b9",
+    "g40-condition-all-1.tex": "a944819c23e348bb44d99b64c7e8b703e380f43cd17194e9710ef568d79bf606"
+  }
+}

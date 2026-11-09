@@ -1,130 +1,84 @@
-\chapter{Protocol for complete-journey generation}
+\chapter{Experimental protocol and independent evaluation}
 \label{ch:native-protocol}
 
-The protocol first defines the pilot and its fixed-duration control. Sections~\ref{sec:expanded-protocol} and \ref{sec:statistical-perspectives} then specify the expanded replication and distinguish its predeclared endpoints from the later exploratory audit.
+The final experiment tests complete trajectory synthesis with learned GAF-derived conditions. Earlier studies establish the source domain, temporal representation, route module and feedback controls. Their observations remain available, but are not pooled with the new comparison. Methods, budgets, request selection and endpoints for G40 were fixed before examining its prospective generation outcomes.
 
-\section{Pilot data, partitions and observation units}
-The pilot experiment uses native trajectories from the public Monaco SUMO Traffic scenario~\cite{most}. These are simulator observations, not measurements from vehicles on physical roads. The source CNR data motivates the inherited representation and class definitions; the current complete-journey models are fitted on directly extracted SUMO vehicle legs. A bus leg is a completed scheduled service including intermediate stops. Ordinary vehicle legs are bounded by departure, arrival or activity events, rather than selected as the longest convenient moving segment.
+\section{Learning observations and information boundaries}
+All G40 motion arms use the same expanded native-demand corpus: 29,895 training legs from 24,073 parents, with the original physical clock and in-leg stops retained. The 7,230 development legs are not used to choose G40 checkpoints or coefficients. The older exposed test and previous evaluation cohorts are not reopened for method selection. Train-only quantities include coordinate and channel parameters, motion normalization, duration regression, class feature means and code-prior standardization.
 
-The retained vehicle cohort contains 1,051 legs: 925 for training and 126 for development. Each vehicle leg in this cohort has a different parent identity, and parent identities do not cross these partitions. All nevertheless originate from one traffic realization; distinct participants are not independent simulation episodes. Pedestrians are outside the declared five-class vehicle generation task. Table~\ref{tab:native-cohort} reports the actual imbalance instead of implying a balanced dataset.
+The original G35 spatial and speed readers are self-trained ResNet18 models with ImageNet initialization, 50 epochs, batch 64, AdamW learning rate $2\times10^{-4}$ and weight decay $10^{-4}$. Their fixed final epoch, inverse-square-root class weights and unaugmented images match the recorded protocol. The RAW controls use the same labelled cohort, 50 epochs and final-checkpoint rule, but a separate one-dimensional architecture without ImageNet pretraining. Epoch and label matching therefore do not imply architectural or computational equivalence.
 
-\begin{table}[htbp]
-\centering
-\caption{Complete vehicle legs used by both diffusion versions and both GAF readers. The source spelling \texttt{bycicle} is retained in machine-readable labels.}
-\label{tab:native-cohort}
-\begin{tabular}{lrr}
-\toprule
-Participant class & Training & Development\\
-\midrule
-Bus & 81 & 12\\
-Motorcycle & 226 & 43\\
-Private car & 457 & 50\\
-Bicycle & 92 & 14\\
-Taxi or ride-hailing vehicle & 69 & 7\\
-\midrule
-Total & 925 & 126\\
-\bottomrule
-\end{tabular}
-\end{table}
+Training uses an observed route and duration paired with its motion target. Prospective generation receives only a map-derived catalog, class, declared road permissions and available public stop anchors. Duration and latent condition are sampled. The public generation entry point rejects undeclared trajectory or code inputs. Reference coordinates, accepted-reference status and realised travel times cannot repair a generation request. The training-side reconstruction and condition-intervention diagnostics are kept outside prospective synthesis.
 
-Native quarter-second samples, stopped intervals and long journeys are retained. An event endpoint can occur up to one sampling interval beyond the last observation; no coordinate is invented there. The observed span defines the supervised duration. Map-constructor success is not a training admission criterion: supervised route--motion pairs come directly from the accepted observations. Training-only normalization, duration regression and empirical donors are fitted after selecting training rows. The older frozen test trajectories are not reopened for this experiment's model or parameter selection.
+\section{Fixed model fits and matched sampling}
+The eight arms in Table~\ref{tab:g40-arms} each have seeds 42 and 43. For a seed, all arms start from the corresponding completed G39 B final EMA model, which was trained from initialization for 10,000 updates on the same motion corpus. G40 adds 5,000 motion updates to every arm. The 1,000-update pilots do not supply warm starts or selectable checkpoints.
 
-\section{Fixed fits and comparison budget}
-The two clock versions each have two independent model fits, with seeds 42 and 43, giving four fits in total. Each receives 10,000 AdamW updates with an effective batch of 64, learning rate $2\times10^{-4}$, weight decay $10^{-4}$ and gradient norm clipping at one. Classes are drawn uniformly, then a training journey is drawn within the chosen class. Length-sorted microbatches obey a 32,768-token budget and a maximum of 32 trajectories. The final exponential moving average, updated with weight 0.001 per step, is the only generation checkpoint; development quality does not select an earlier checkpoint.
+Motion fitting uses effective batch 64, uniform class sampling followed by a training leg within class, FP32 arithmetic and physical-time-weighted noise loss. Selected examples are length-sorted into microbatches capped at 32 rows and 32,768 padded temporal values. AdamW uses motion learning rate $2\times10^{-4}$, encoder learning rate $5\times10^{-5}$, weight decay $10^{-4}$, global gradient clipping at one and EMA update weight 0.001. Frozen prefixes and all BatchNorm running statistics remain unchanged. Every comparison uses final EMA weights. No new reference result selects an earlier training step.
 
-Both GAF readers use ResNet18 with ImageNet initialization, seed 42, 50 epochs, batch size 64 and the same AdamW learning rate and weight decay. Cross-entropy class weights are proportional to inverse square-root training frequency. The epoch-50 model is fixed, with no validation checkpoint search, temperature fitting or image augmentation. Accuracy, macro-F1, per-class recall, negative log likelihood, Brier score and 15-bin expected calibration error characterize these components~\cite{calibration}; none is a substitute for generated-trajectory quality.
+Common initialization, valid-token totals, normalizers and final training random states are checked across the arms for each seed. Code sampling uses a separate random stream. This verifies declared pairing without asserting that arbitrary GPU reruns are bitwise reproducible. Training and sampling cost, encoder parameters and peak allocated memory are reported separately from quality.
 
-Each model generates eight candidates per map-ready request using 100 DDIM steps. The empirical comparator selects the eight same-class training routes closest in absolute log length ratio, breaks equal distances by stable identity, and samples one of their whole motion profiles for each candidate. It transfers normalized progress to the common sampled duration and requested route. This preserves training motion structure and supplies a substantive non-neural comparison. The same request and candidate identifiers couple duration draws across all generators. Equal updates or candidate counts do not imply equal computation: valid tokens, memory, elapsed training and sampling time, and teacher calls are reported separately.
+Each active code prior is fitted for 5,000 updates, with balanced batch 256, AdamW learning rate $2\times10^{-4}$, weight decay $10^{-4}$, clipping at one and EMA weight 0.001. B uses no code; C uses a deterministic class lookup. The remaining six arms require twelve learned priors across the two seeds. No code prior uses development or prospective reference trajectories.
 
-\section{A prospective simulator reference}
-One new SUMO run provides a reference independent of model fitting. Before simulation, a manifest fixes 100 requests: all 24 public bus services and 19 requests for each of the other four classes. Non-bus requests are selected deterministically from explicit public vehicle plans without activity stops, using source parents assigned to the development partition; source test parents are excluded. They are not class-labelled random origin--destination routes. Concrete vehicle types are drawn deterministically from their source families, preserving actual SUMO vehicle-class permissions: an Uber-labelled passenger vehicle does not acquire taxi-lane access merely through its label.
+Each supported request receives four direct trajectory draws per arm and seed. Route, duration and initial motion-noise keys are common across arms. Each learned-prior draw uses 50 latent DDIM updates and every motion draw uses 100 temporal DDIM updates. The first draw, K1, is the primary delivered-data comparison. Equal-weight distributions over all four draws and within-request diversity are secondary. There is no terminal GAF selection in G40, and no reference-dependent replacement of a failed slot. Equal motion-forward counts do not imply equal total computation because the learned-prior arms add latent sampling.
 
-Endpoints specify a permitted lane and position on the first and last planned edges. The starting position is $\min(20\,\mathrm{m},L_{\mathrm{lane}}/2)$ and the endpoint is the end of the chosen final lane. Public bus stop order and relative schedule semantics are retained. New target departures lie between 18,000 and 18,600 seconds; simulation runs from 14,400 to 23,000 seconds with step 0.25 seconds and seed 330201. Native background demand is retained, while rerouting is disabled only for the new targets. FCD output is restricted to those targets~\cite{sumodocs}. The controlled departures and endpoints make this a new reference experiment, not an exact reconstruction of the source CNR run.
+\section{Eight prospective SUMO references}
+The final reference set comprises episodes 400201--400208 on the unchanged public MoST network. Four non-bus source-parent cohorts use selection seeds 40001--40004. Each cohort is simulated in two departure windows beginning at 18,000 and 32,400 seconds, with 600-second target departure spans and the frozen background-demand rules. A manifest contains 100 requests: the 24 public bus services and 19 source plans for each of the four other classes. All eight manifests are frozen before the first new outcome.
 
-All 100 targets arrived, and their realised edge sequences matched their plans. Predeclared continuity and event checks accepted 97 references: two bus services and one motorcycle were rejected. Independently, the map interface constructed 97 of the 100 planned geometries. These are different success sets: their intersection contains 94 requests before any candidate-level generation or metric-support failure. Coverage therefore always starts at 100, while each quality statistic reports its own paired support. Reference failures are not filled by a new simulation, and unsupported map requests are not replaced by easier ones. One accepted reference contains an emergency stop; it remains in the declared cohort rather than being removed after inspecting quality.
+Non-bus source parents are disjoint from training and from the G36/G38/G39 evaluation cohorts. The two windows within a cohort deliberately reuse its underlying non-bus plans. Public bus service templates are shared across cohorts and with the learning domain. New simulator seeds and target instances do not create unseen cities or unseen bus lines. Four OD cohorts, rather than eight fully independent transport domains or sixteen independent model/scene cells, define the main grouping for uncertainty descriptions.
 
-Generation does not consult reference trajectories, arrival times or realized future paths. Reference data are opened for evaluation only after a completed candidate archive is saved. Nevertheless the experiment is a development replication on the same map and public demand templates. A new random seed is not evidence of unseen-line or unseen-city generalization, and shared templates can overlap training geometry.
+SUMO exports are sampled at 0.25 seconds. Reference extraction applies its fixed continuity, arrival and service-event rules; catalog construction independently applies geometric support rules. Every scene retains the original 100-request denominator, and physical measures report the intersection appropriate to their support. Unsupported requests and rejected references are retained as coverage outcomes without substitute trajectories. The generator does not see the intersection before sampling. Exact reference-route membership in the catalog is reported separately; absence of the reference route does not by itself make a different permitted path incorrect.
 
 \section{Physical quality beyond travel distance}
-Evaluation computes motion from the returned coordinates and timestamps, independently of the GAF readers. Cumulative planar distance is interpolated onto integer seconds, giving speeds $v_j=d(j+1)-d(j)$ and accelerations $a_j=v_{j+1}-v_j$. Table~\ref{tab:native-endpoints} defines the ten fixed journey summaries. Only complete one-second intervals contribute to these summaries; full observed duration and planar distance retain the final fractional interval.
+The primary endpoints are native-resolution speed and acceleration distribution distances. An interval has speed $v_i=\|X_i-X_{i-1}\|/\Delta t_i$; successive speed differences are divided by $(\Delta t_i+\Delta t_{i-1})/2$ for acceleration. Coordinates and timestamps are processed identically for SUMO references and model output. Simulator-internal speed fields and either GAF reader's probabilities are not physical ground truth for this comparison.
 
-\begin{table}[htbp]
-\centering
-\caption{The ten fixed physical summaries. Thresholds define descriptive states rather than asserting vehicle-specific physical limits.}
-\label{tab:native-endpoints}
-\small
-\begin{tabularx}{\textwidth}{@{}lX@{}}
-\toprule
-Summary & Definition\\
-\midrule
-Duration; planar distance & Full timestamp span; sum of consecutive planar displacements.\\
-Mean; 95th-percentile speed & Mean and empirical 0.95 quantile of $v_j$.\\
-Mean absolute acceleration & Mean of $|a_j|$ on the one-second clock.\\
-Stopped fraction; longest stop & Fraction and longest run with $v_j<0.3\,\mathrm{m/s}$.\\
-Stop episodes per minute & Number of stopped runs divided by observed one-second time, multiplied by 60.\\
-Longest steady interval & Longest run with $v_{j+1}\geq0.3\,\mathrm{m/s}$ and $|a_j|<0.5\,\mathrm{m/s^2}$.\\
-Four-second speed change & Mean of $|v_{j+4}-v_j|$.\\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-For each class and summary, generated and reference distributions are compared by one-dimensional Wasserstein distance,
+Per-class distributions are compared using the first Wasserstein distance,
 \begin{equation}
- W_1(F,G)=\int_{-\infty}^{\infty}|F(x)-G(x)|\,\mathrm{d}x.
+ W_1(F,G)=\int_{-\infty}^{\infty}|F(x)-G(x)|\,\mathrm dx.
  \label{eq:native-wasserstein}
 \end{equation}
-The unit is the summary's original physical unit. Metrics with different units are not added into an arbitrary overall score. A short journey that cannot support a summary remains in coverage and is marked unsupported for that metric. For $N_c$ jointly supported requests of class $c$, with $K_r$ supported generated candidates in request $r$, candidate mass is $1/(N_cK_r)$ and reference mass is $1/N_c$. Partial candidate failures therefore cannot give a request less weight merely because fewer candidates survived. A five-class macro average is defined only when all five classes have support; available-class summaries are labelled separately.
+Requests have equal mass inside a class; candidates divide their request's mass; native observations are weighted by represented physical time. All five classes then receive equal weight. A longer trace or a frequent private-car class therefore cannot dominate merely through its number of coordinates. Missing support is reported rather than silently averaging a smaller set of classes. Distances retain their physical units and are not added into a cross-unit composite score.
 
-Native-resolution distributions provide a complementary check. For an interval $\Delta t_i$, speed is $\|X_i-X_{i-1}\|/\Delta t_i$; acceleration divides successive speed differences by $(\Delta t_i+\Delta t_{i-1})/2$. Their Wasserstein distances first weight requests equally, then candidates within a request equally, then observations by their physical interval length. This exposes rapid fluctuations that one-second summaries and the speed GAF can suppress. Generated and reference durations differ, so framewise coordinate error is not treated as the primary synthesis metric.
+The source FCD coordinates have centimetre-level reporting precision. Differentiation can amplify quantization on a quarter-second clock. Coarser-clock movement summaries therefore remain visible alongside the original native endpoints; they do not replace them after seeing outcomes. Cumulative planar distance $d(t)$ is interpolated at integer seconds, with $v_j=d(j+1)-d(j)$ and $a_j=v_{j+1}-v_j$. Only complete one-second intervals contribute to these summaries; duration and planar distance retain the fractional endpoint. Speed and stopped-state summaries need one complete interval, acceleration and steady movement need two, and the four-second lag summary needs five. Each endpoint retains its own support count; an unsupported short journey is not replaced by a zero.
 
-\section{Diversity, selection and interpretation}
-Within a request, candidate pairs are compared using 129 relative-time coordinate positions, 257 relative-time progress values and duration differences. Pair distances are averaged within each request before summarizing across requests. The nearest same-class training progress profile provides a descriptive memorization check, with its associated duration difference. Geometry overlap alone cannot establish memorization when the route was supplied as a condition, and no unvalidated privacy threshold is inferred from the nearest-neighbour statistic.
+\tab{Fixed per-journey motion summaries. Thresholds describe states rather than class-specific safety limits.}{native-endpoints}{\begin{tabularx}{\linewidth}{lX}\toprule
+Summary & Definition\\\midrule
+Duration; planar distance & Full timestamp span; sum of planar displacements\\
+Mean; 95th-percentile speed & Mean and 0.95 quantile of one-second speed\\
+Mean absolute acceleration & Mean of $|a_j|$ on the one-second clock\\
+Stopped fraction; longest stop & Fraction and longest run with $v_j<0.3$ m/s\\
+Stop episodes per minute & Number of stopped runs per observed minute\\
+Longest steady movement & Longest run with $v_{j+1}\geq0.3$ m/s and $|a_j|<0.5$ m/s$^2$\\
+Four-second speed change & Mean of $|v_{j+4}-v_j|$\\\bottomrule
+\end{tabularx}}
 
-The main comparison has two panels: all unselected candidates from the empirical and two diffusion generators, followed by Uniform, S, V and SV outputs from the shared pool of each native-clock model. Terminal selection cannot change the quality of its shared pool; its effect concerns the delivered samples. With one selected sample per request, within-pool diversity is no longer estimable, so the selected class distributions, nearest-training comparisons and selection frequencies must be read alongside the original pool diversity.
+The shared route/duration draws make travel distance and duration controls rather than evidence of a new GAF duration model. Different movement distributions on those conditions remain possible. Distributional disagreement is not a framewise prediction error against a unique future: several journeys can be valid for the same request.
 
-Both model seeds are reported separately. The single reference episode does not justify confidence intervals that pretend requests are independent simulation replications. Failures, support, coverage and cost accompany quality results. Improved teacher probability alone supports only successful score optimization; useful GAF feedback requires independent motion improvements with any coverage or diversity tradeoff disclosed. These chapters specify that comparison without presuming its outcome or claiming an unperformed downstream augmentation or in-loop guidance result.
-
-\section{A subsequent fixed-duration development control}
-After examining the G33 comparison, a bounded follow-up, G34, tests feedback when candidates cannot compete through different total durations. Its protocol is fixed before generating the new pools. For each request and model seed, the predetermined G33 Uniform permutation identifies one candidate slot. Replaying that slot's training-prior draw supplies a single duration $T$ for all eight new candidates. Neither a reference duration nor a teacher score chooses $T$. The same native-clock models, seeds 42 and 43, route conditions, initial-noise keys, $K=8$ and 100 DDIM steps are retained. Other candidates can have a different sequence length because their former duration draws have been replaced; equal candidate and denoising-call counts do not imply equal tensor computation.
-
-The original Uniform slot provides an exact consistency control: its timestamp--coordinate array must remain bitwise identical to the corresponding G33 output. The completed run verifies this for all 97 map-ready requests in each seed, with zero maximum absolute difference. It also verifies that every candidate and each of the four selected outputs uses that request's common duration. No diffusion model, CNN or duration prior is refitted, and no scoring weight or guidance step is searched. Uniform, S, V and SV operate on the same new pool using the unchanged terminal-selection rule.
-
-The follow-up comprises two pools of 776 candidates and eight selected-set evaluations. All retain the original 100-request denominator, 97 generated requests and 94 paired references. The same physical metrics, support rules and diversity diagnostics apply; constant duration across strategies is a control, not a feedback improvement. Because the reference was already analyzed in G33 and motivated this question, G34 is a development mechanism comparison, not a new blind replication. It is reported alongside the original experiment rather than replacing it. Both comparisons concern terminal feedback; neither supplies an in-loop guidance or new downstream-augmentation result.
-
-\section{Expanded-model replication and fixed candidate controls}
-\label{sec:expanded-protocol}
-
-The expanded classification audit first evaluates pilot and expanded readers on exactly the same 7,230 development legs. Saved expanded-model predictions are verified against their checkpoint and input hashes; old readers only perform inference. Training parents of both reader versions are disjoint from these development parents. Some old development identities reappear as new stochastic realizations, so this is not a wholly unseen source-template population. Reported parent-bootstrap intervals condition on the existing public domain and fixed models, with 2,000 paired resamples. Leg-weighted results are accompanied by equal-parent sensitivity results.
-
-The generation replication freezes 100 requests per scene before simulator output is available: 24 public bus services and 19 held-out source plans for each other class. The same underlying plans appear in both scenes, with distinct target identities, independent simulator seeds and departure windows of 18,000--18,600 and 32,400--33,000 seconds. The scenes therefore vary traffic context and realization together; they are not an isolated intervention on clock time. Non-bus requests use complete single-leg plans without internal activity parking. The broader training activity-chain support must not be mistaken for a full activity-chain generation evaluation.
-
-Two pilot and two expanded native-time models generate eight candidates per supported request using 100 DDIM steps. One duration is sampled from the corresponding training-side prior and held fixed across the eight candidates. Each model era retains its own prior; the old/new generator comparison consequently tests the complete factorized system. A reference future path, duration or class score never enters sampling. Model seeds, selection rules and experiment limits are locked before outcomes.
-
-For each expanded-generator pool, both old and expanded teacher pairs apply Uniform, spatial S, velocity V and equal-weight SV selection to the exact same trajectories. This is the primary teacher contrast: it holds the generator, candidate budget and duration fixed. Pilot-generator pools additionally receive pilot-teacher selection as a baseline. The unchanged Uniform selections are checked array by array across teacher pairs. Eight full-pool and 48 selected-set quality evaluations result, with no success-based replacement of requests.
-
-\tab{Information and controls in the expanded replication.}{g36-controls}{\begin{tabularx}{\linewidth}{lX}\toprule
-Quantity & Fixed or varied \\
-\midrule
-Reference & Two new SUMO episodes; shared public plans and map \\
-Generators & Pilot/expanded native models; seeds 42 and 43 \\
-Candidates & Eight per route/class; 100 DDIM steps \\
-Duration & Fixed within each pool; sampled from that generator's prior \\
-Teacher contrast & Old/new readers applied to the same expanded pool \\
-Policies & Uniform, spatial, velocity, equal-weight dual \\
-Quality & Independent coordinates; no selecting CNN as ground truth \\
-Coverage & All 100 requests retained in each scene denominator \\
-\bottomrule\end{tabularx}}
-
-\section{Distributional fidelity and request-level agreement}
+\section{Coverage, diversity and statistical perspective}
 \label{sec:statistical-perspectives}
+All classes, scenes, seeds and declared motion endpoints are retained. The primary grid has 128 model/scene cells and 640 class rows. Aggregate differences average classes, model seeds, windows and cohorts equally. A descriptive bootstrap resamples the four cohort means 2,000 times using a fixed seed. With only four shared-domain cohorts, its intervals do not justify a broad population-level significance claim or treat every candidate as an independent experiment. The sixteen cell-level directions remain visible alongside the aggregates.
 
-The primary $W_1$ analysis weights classes and requests equally. Candidates divide their request's mass; native intervals are weighted by duration.
+Request-level mean absolute discrepancies in physical summaries complement class-marginal distribution distances. The former preserve request correspondence, whereas the latter compare delivered populations. One stochastic reference is not the only acceptable movement for that request. The two perspectives can consequently disagree without one being a coding error.
 
-For scalar movement summaries, a second, already recorded quantity compares corresponding requests:
-\begin{equation}
- \operatorname{MAE}_c(f)=\frac{1}{|Q_c|}\sum_{q\in Q_c}
- \frac{1}{K_q}\sum_{k=1}^{K_q}|f(\widehat{\mathcal T}_{qk})-f(\mathcal T_q)|.
-\end{equation}
-Here $K_q=1$ after selection. MAE preserves request identity; marginal $W_1$ measures population agreement. One stochastic reference is not a route's unique permissible future, so neither measure alone establishes generative quality.
+Within-request diversity compares 129 relative-time coordinate positions and 257 relative-time progress values, as well as duration variation and effective route counts. Candidate-pair quantities are averaged within a request before averaging requests. Larger differences are not automatically better: they can reflect plausible alternatives or implausible variability. A nearest same-class training-progress comparison describes proximity to stored motion shapes, without claiming privacy or proving absence of memorization. Decoder clipping and constant-progress fallbacks are counted.
 
-The post-hoc audit retains every endpoint, averaging five-class macro errors equally over four scene/seed cells before taking percentage changes. Two generator seeds are technical replications, not additional traffic scenes. Improving-cell counts are descriptive. Duration, route length and predominantly fixed mean speed remain controls.
+\section{Independent synthetic-data augmentation}
+In the plots, ``real'' denotes observed SUMO journeys, not field-collected road traffic. The downstream task predicts the five participant classes from raw time series, using a network independent of the GAF readers and their weights. Its input has 257 relative-time positions with three channels: $x$, $y$ and speed derived from coordinates. A 64-channel temporal convolution followed by four residual blocks with dilations 1, 2, 4 and 8 feeds concatenated mean/max pooling and a five-class head. This task tests one practical use of synthetic data; it does not assess every motion dependency or substitute for native-resolution quality.
+
+The observed-data training subset contains 1,000 distinct parents, balanced at 200 per class by a fixed identity hash. Training-only normalization comes from these rows. Synthetic sets contain 1,000 matched identities, also balanced by class, selected without quality scores from the first two OD cohorts and both generator seeds. B, F-SV, J-S, J-V, J-SV and J-RAW share the same selected request/draw identities. A resampling control bootstraps the same 1,000 observed rows; it is distinct from the earlier empirical motion-transfer generator.
+
+There are fifteen regimes: observed-only; synthetic-only for six model arms plus the resampling control; and observed-plus-source for those seven sources. Each has downstream seeds 4001 and 4002, giving thirty fits. All receive 2,000 AdamW updates, balanced batch 64, learning rate $2\times10^{-4}$, weight decay $10^{-4}$ and gradient clipping at one. A seed shares its initialization across regimes. The final checkpoint is fixed before loading evaluation trajectories.
+
+The last two OD cohorts, each with both windows, supply the observed SUMO evaluation journeys. Non-bus parents are disjoint from the synthetic-condition cohorts, and no evaluation source parent is in the 1,000 observed training parents. Shared bus templates remain a limitation. Pooled macro F1, class F1, episode results and equal-parent non-bus results are retained. Both downstream seeds are shown without treating two fits as a precise population confidence interval.
+
+The generator and its encoders used all 29,895 labelled training legs. Comparison with an observed-only learner trained on 1,000 parents is consequently not a strict 1,000-label experiment. A gain over observed-only would establish utility under the declared upstream information budget. A GAF-specific gain additionally requires comparison with B, RAW and resampling, alongside physical quality.
+
+\section{Mechanism checks and earlier evidence}
+\label{sec:expanded-protocol}
+Before formal generation, a fixed 500-training-parent audit checks original encoding reproduction and sensitivity to time warping, within-second perturbations and smoothing. It compares centered feature changes with physical changes without labelling the perturbations as new transport classes. Four 1,000-update motion pilots check implementation, code use and prior behaviour. Their failures are retained; the single prior recovery uses the already declared 5,000-update formal prior budget and does not refit motion or inspect new reference quality.
+
+Before any formal generation outcomes, a final-model condition audit is also fixed. It uses 25 training parents, five per class, at noise indices 50, 250, 500, 750 and 950. Assigned code, a same-class other-parent code, zero code and sampled-prior code are compared under identical route, duration and noisy motion input. All arms and seeds are included. Zeroing a code retains the learned adapter and its biases. These noise indices are diagnostic locations, not selected guidance times. The audit measures in-sample condition use and prior mismatch; it cannot establish held-out synthesis quality.
+
+A further read-only audit uses the recorded code magnitudes and decoder counters from every completed prospective draw. It reports fixed quantiles and exceedance of the observed training-code maximum. That maximum is a descriptive reference, not the support boundary of a learned distribution or a criterion for excluding generated data. This audit was specified before inspecting any prospective quality outcomes and adds no new fitting or selection.
+
+The temporal-resolution pilot, source-demand study, route-choice study and earlier GAF controls retain their original populations and budgets. They motivate the final mechanism, but a favorable cell from an earlier round is not combined with a favorable G40 cell to create a new method. Fixed example selection uses episode 400201, model seed 42 and the first lexicographic request per class supported by the reference and every arm. Candidate zero supplies the displayed sample. Both image views are recomputed from those outputs, with no score-based example search or contrast enhancement.
+

@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "aggregate_sha256": "80f56e12bbaf09a3da9ef23ef8381c1ed13480f9e6f9c173dbd4371ca74cefdf",
+  "all_stages_sha256": {
+    "complete": true,
+    "seconds": 14627.653202295303,
+    "primary_receipt_sha256": "b3cc6c58e3b78779fa8102133c42da8853004992373aaaaaff3bc611ddbe03b9",
+    "utility_receipt_sha256": "ab617953f548c7551a6f9b54e66541cb2ecfbabe9733381911546774a6ba1ead",
+    "next_action": "scientific evidence review then thesis update; no autonomous success claim"
+  },
+  "sampling_audit_sha256": "3bd1a2936183d11766afd446c0cf380cde3ae7eea846950530c253e4eaebd603",
+  "raw_data_or_weights_downloaded": false
+}

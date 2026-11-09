@@ -43,7 +43,7 @@ def main(a):
     box(.15,6.7,2.1,.85,'Observed timed XY');box(3,7.15,2.7,.7,'Original Hilbert image','#f0e8f4');box(3,6.1,2.7,.7,'Derived speed image','#e2f0ec')
     arrow(2.33,7.2,2.9,7.5);arrow(2.33,7,2.9,6.45)
     box(6.4,6.6,2.2,.9,'Partly trainable CNNs\n32D + 32D codes');arrow(5.8,7.5,6.3,7.15);arrow(5.8,6.45,6.3,6.9)
-    box(9.4,6.55,2.3,1.,'Motion denoiser\n+ class-preservation loss','#e5edf5');arrow(8.7,7.05,9.3,7.05)
+    box(9.4,6.55,2.3,1.,'Joint training objective\nNoise loss + class CE','#e5edf5');arrow(8.7,7.05,9.3,7.05)
     ax.text(7.5,5.8,'Denoising gradients reach CNN tails',ha='center',fontsize=9,color='#40586a')
     ax.plot([.1,11.8],[5.4,5.4],c='#ccd4da',lw=1)
     ax.text(.1,5.05,'New synthesis: available conditions and sampled codes only',weight='bold')

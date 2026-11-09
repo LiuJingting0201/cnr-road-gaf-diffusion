@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "seconds": 40.556685730814934,
+  "fixed_case_tracks_and_image_arrays_identical": true,
+  "numeric_matrices_identical": true,
+  "source_manifest_sha256": "c1a4ea8f1957b06aac9f131f092f2e2fce44c27bdfac39ed6394abc5b50f0a37",
+  "review_receipt_sha256": "b401c767683a80a5108eef148024f20a6fea7b4ac0be209d2d1b1b7a43fabaf9",
+  "artifacts": {
+    "journey-figures/complete.json": "1b66bf792df7d11dd1fc282635e75bf07f793eb6b905ec8c6ac6dfffeb8ddbf5",
+    "paper-assets/complete.json": "a031604d55835567dc1b84674cbf801378be2be0c3255fd9a2886364855beab6",
+    "tables/complete.json": "c01067b3a9bcdd3aa8f38129d5021c65a51f091f05a0dd6bc9dff201594b119e"
+  }
+}
