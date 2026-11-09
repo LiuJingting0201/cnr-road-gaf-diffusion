@@ -57,6 +57,7 @@ def report(source,old,out,plot=False):
             ax.axhline(0,color='black',linewidth=.7);ax.set_xticks(x,['Spatial','Speed','Both']);ax.set_ylabel('W1 change versus learned-route baseline (%)');ax.set_title(title);ax.grid(axis='y',alpha=.2)
         axes[0].legend(fontsize=8);fig.suptitle('GAF reweighting after controlling route choice\nNegative values improve; exposed G38 diagnostic',fontsize=11)
         fig.savefig(out/'route-marginal-control.svg');fig.savefig(out/'route-marginal-control.png',dpi=160);plt.close(fig)
+        svg=out/'route-marginal-control.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     print(json.dumps(summary,indent=2))
 
 
