@@ -132,3 +132,21 @@ checks. This is a single bounded training-only prerequisite, not a held-out qual
 sweep. It changes no formal5000-update budget, architecture or endpoint. Original
 1000-update prior results remain visible. Formal release depends on actual review;
 if extrapolation persists, diagnose before more generation.
+
+## Registered final-model mechanism audit — 2026-11-10
+
+Before any formal generation-quality outcomes are available, fix one secondary
+training-side condition intervention. After the full scientific and figure queues
+close, audit all eight arms and two seeds on the same 25 training parents selected
+by the pilot rule (five per class, stable SHA order). At fixed diffusion noise
+indices 50/250/500/750/950, compare assigned training code, a cyclic same-class
+other-parent code, zero code, and the sampled prior, holding route, duration and
+noisy motion input fixed. Report every noise MSE and prediction-change RMS with
+physical-time weights. These indices diagnose the denoiser; they are not selected
+guidance intervention times. SH retains its assigned wrong-trip code.
+
+No parameter fitting, synthesis reranking, endpoint changes or future evaluation
+GAF inputs are allowed. These are in-sample mechanism checks, not independent
+quality evidence or a checkpoint-selection rule. Bound the new isolated audit to
+four GPU workers, 30 active minutes, 1 GiB output and a 12 GiB reserve; it waits
+for the existing figure queue to finish, avoiding resource interference.
