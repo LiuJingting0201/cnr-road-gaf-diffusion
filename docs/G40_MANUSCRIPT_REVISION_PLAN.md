@@ -79,3 +79,11 @@ Build a clean self-contained Overleaf package and PDF, resolve references, rende
 pages, inspect figure legibility and tables, compare clean ZIP build page text, record
 hashes and counts. Keep raw trajectories, weights and credentials out of public code
 and manuscript packages. Push code, aggregate evidence, figures and final sources.
+
+Packaging preflight: `thesis/tools/package_thesis.py` collects actual LaTeX inputs
+from the compiler recorder, builds a clean source ZIP, checks rebuilt PDF page text,
+counts citations/figures/tables and records every input/output hash. Tested against
+unchanged v19: 109 PDF pages/75 main pages/31 figures/22 tables/52 cited entries,
+zero overfull/undefined warnings and identical clean-build page text. This is a
+build check only; it does not mark the forthcoming manuscript scientifically or
+visually reviewed. Temporary preflight output is not a new delivered thesis version.
