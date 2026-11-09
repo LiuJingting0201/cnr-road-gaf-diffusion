@@ -86,6 +86,9 @@ The scientific supervisors do not implement performance optimization. Candidate
 code is now prepared separately in `g39perf-job`; its CPU-only synthetic input
 fixture passed exact value/layout and RNG checks, with307 original Python source
 hashes verified. No performance fit has run at this preparation checkpoint.
+The waiting controller was launched12:14:25UTC as PID235671; live progress confirmed
+`waiting_for_entire_G39_batch`. Receipt: `results/g39-performance/launch.json`.
+This process is only waiting; the review gate remains closed.
 `docs/G39_PERFORMANCE_PROTOCOL.md` defines a finite controller gated on all three
 scientific completions **and an actual completed-batch review receipt**. Inspect
 its launch/progress markers before any start; do not duplicate it. Preparation is

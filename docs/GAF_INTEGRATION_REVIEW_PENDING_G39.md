@@ -37,6 +37,14 @@ sensitivity to native0.25s acceleration or short stop/start events. Time compres
 can weaken those signals. A single global teacher feature and native physical
 quality metrics may therefore respond to different aspects of a journey.
 
+The inherited spatial compression is not simply deletion of all repeated positions:
+it rescales run lengths, removes excess duplicates and may mirror-duplicate short
+sequences. Some temporal order/relative occupancy survives; absolute timing is not
+guaranteed. The existing deterministic counterexample in `G28_AUDIT.md` maps a
+traversal and its twice-duration version to the same compressed sequence. This is
+an already-established encoding limitation, not a new empirical G39 result or proof
+that spatial GAF contains no movement information.
+
 ## Differentiability is a real implementation boundary
 
 Original spatial Hilbert quantization, squeeze/duplication and uint8 image conversion
@@ -69,6 +77,19 @@ local windows only under a predeclared limited protocol. Include a direct raw-sp
 or raw-series auxiliary control with the same examples, updates and conditioning.
 This asks whether the GAF transformation adds more than extra supervision.
 
+A distinct alternative is to use a sampled GAF latent as an explicit motion-style
+condition, rather than treating it only as an auxiliary target. Training may use
+the feature of that training journey; synthesis must draw a feature from a
+training-only conditional distribution given available class/map/route information,
+never from the held-out journey it is meant to synthesize. Fix map/class/noise and
+vary the latent to test whether output stopping and acceleration respond coherently.
+Compare with class-centroid, shuffled same-class and raw-series latent conditions.
+This requires checking latent support and diversity: stronger feature consistency
+can collapse motion toward a class prototype. It is not automatically classifier
+guidance, nor proof that a class-discriminative feature is a sufficient motion code.
+Choose between this intervention and output-loss intervention using the full batch
+and sensitivity audit; do not launch both as an unbounded exploratory sweep.
+
 The next protocol must account for earlier G24 sampled guidance and G27 continuous
 angular-loss experiments. Repeating them under a new name is not a new contribution.
 Native physical-time data, direct decoded-output supervision and a measured teacher
@@ -94,6 +115,19 @@ confirm on fresh OD cohorts/independent simulator episodes after locking the nex
 protocol. Historical frozen tests stay unopened. Update thesis claims only after
 completed results support them. A useful final story is not guaranteed by a useful
 classifier, and this audit does not claim that a proposed change will succeed.
+
+## Decision checks after the pending batch
+
+| Completed evidence | What it supports doing next |
+|---|---|
+| Hidden GAF alignment matches centroid/shuffle/raw controls and lacks physical improvement | Retire this integration as the default; do not merely increase its weight. |
+| Utility improves while physical dynamics do not | Report that restricted utility result; investigate physical fidelity separately, without calling the trajectories generally better. |
+| Expanded-pool gains survive fixed joint route/duration marginals | Test an intervention directly on output motion, conditional on teacher sensitivity and fair raw-series controls. |
+| Gains occur only when route or duration marginals may change | Target that upstream component first; do not attribute the change to finer motion generation. |
+| Neither motion effects nor teacher sensitivity are adequate | Repair/validate the representation or its temporal scale before spending on another full diffusion comparison. |
+
+These are mechanism-dependent priorities, not an automatic winner-selection rule.
+All five classes and adverse endpoints remain visible whichever priority is chosen.
 
 ## Relevant research analogies, with limited scope
 
