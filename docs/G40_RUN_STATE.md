@@ -69,3 +69,16 @@ UTC2026-11-09T19:30:19: all8reference episodes and8catalogs are complete;
 38/128 generation/evaluation cells closed, no failures,34.75GiBfree. The same
 four-GPU sampler queue continues. No generation-quality values have been read
 for scientific decisions; utility remains downstream of primary closure.
+
+Staged only, not launched: `g40-sampling-audit-job` contains the registered
+metadata audit (source script978d8b9d...); run after all-stages closure.
+`g40-layout-job` contains three presentation-only sources from2f2f1ce: larger
+journey/GAF labels, three fixed endpoint-pair class panels, and the full numerical
+supplement. Its dependencies are the immutable g40-review-job snapshot, whose
+manifest SHA is2a5e508d139ab3f9baf3e1e1907129e75419dafe5f51665977412b8917766e8e.
+Run only after review closure, into new layout outputs; compare all fixed-case
+track/image hashes and numerical matrices with the original review assets. Both
+staging receipts are in results/g40-postprocessing. No additional model fits.
+
+UTC2026-11-09T20:29:50:106/128evaluationcells,0utilityfits,no failures,33.73GiBfree.
+The existing read-only SSH watcher remains active in desktop process session80619.
