@@ -1,0 +1,125 @@
+{
+  "complete": true,
+  "original_controls_exactly_equal": true,
+  "summary": {
+    "R": {
+      "weighted_native_speed_w1": {
+        "mean": 1.167275003820781,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.17191842843076066,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03457696860230628,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      }
+    },
+    "Global-S": {
+      "weighted_native_speed_w1": {
+        "mean": 1.2124692526114471,
+        "percent_vs_R": 3.87177388727884,
+        "improved_cells": 1
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.16774412390896135,
+        "percent_vs_R": -2.4280727551441617,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03732444612134546,
+        "percent_vs_R": 7.9459756887303445,
+        "improved_cells": 2
+      }
+    },
+    "FixedRoute-S": {
+      "weighted_native_speed_w1": {
+        "mean": 1.199109803447422,
+        "percent_vs_R": 2.7272750228041875,
+        "improved_cells": 1
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.16715723452712897,
+        "percent_vs_R": -2.7694494110322987,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03457696860230628,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      }
+    },
+    "Global-V": {
+      "weighted_native_speed_w1": {
+        "mean": 1.287111330952657,
+        "percent_vs_R": 10.266331990286925,
+        "improved_cells": 1
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.17155378487821463,
+        "percent_vs_R": -0.21210265582022325,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03626343505144872,
+        "percent_vs_R": 4.877427135211465,
+        "improved_cells": 0
+      }
+    },
+    "FixedRoute-V": {
+      "weighted_native_speed_w1": {
+        "mean": 1.2462429208995551,
+        "percent_vs_R": 6.765151041553397,
+        "improved_cells": 2
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.17229803016208733,
+        "percent_vs_R": 0.22080339774601665,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03457696860230628,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      }
+    },
+    "Global-SV": {
+      "weighted_native_speed_w1": {
+        "mean": 1.223676971254511,
+        "percent_vs_R": 4.83193482676425,
+        "improved_cells": 1
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.1663185054011303,
+        "percent_vs_R": -3.2573139952158825,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.034730261685505755,
+        "percent_vs_R": 0.4433387002851674,
+        "improved_cells": 1
+      }
+    },
+    "FixedRoute-SV": {
+      "weighted_native_speed_w1": {
+        "mean": 1.2141895500080775,
+        "percent_vs_R": 4.019151102673613,
+        "improved_cells": 0
+      },
+      "weighted_native_acceleration_w1": {
+        "mean": 0.1672887461630114,
+        "percent_vs_R": -2.6929528788787405,
+        "improved_cells": 2
+      },
+      "route_edge_usage_js": {
+        "mean": 0.03457696860230628,
+        "percent_vs_R": 0.0,
+        "improved_cells": 0
+      }
+    }
+  }
+}
