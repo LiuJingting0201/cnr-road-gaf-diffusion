@@ -1,0 +1,62 @@
+{
+  "complete": true,
+  "arms": [
+    "B",
+    "S",
+    "V",
+    "SV"
+  ],
+  "steps": 2,
+  "same_initial_backbone": true,
+  "identical_first_denoising_loss": true,
+  "first_steps": [
+    {
+      "step": 1,
+      "loss": 0.9280535578727722,
+      "denoising_loss": 0.9280535578727722,
+      "auxiliary_loss": 0.0,
+      "gradient_norm": 2.2648751735687256,
+      "elapsed_s": 17.6479696854949,
+      "updates_per_s": 0.05666374193864993,
+      "microbatches": 2,
+      "valid_tokens_seen": 20550,
+      "gpu_max_allocated_bytes": 406724608
+    },
+    {
+      "step": 1,
+      "loss": 0.978221595287323,
+      "denoising_loss": 0.9280535578727722,
+      "auxiliary_loss": 0.5016802996397018,
+      "gradient_norm": 2.265317678451538,
+      "elapsed_s": 17.686491183936596,
+      "updates_per_s": 0.05654032728143557,
+      "microbatches": 2,
+      "valid_tokens_seen": 20550,
+      "gpu_max_allocated_bytes": 405944832
+    },
+    {
+      "step": 1,
+      "loss": 0.9767346084117889,
+      "denoising_loss": 0.9280535578727722,
+      "auxiliary_loss": 0.48681042343378067,
+      "gradient_norm": 2.2656424045562744,
+      "elapsed_s": 17.742412604391575,
+      "updates_per_s": 0.056362120659536545,
+      "microbatches": 2,
+      "valid_tokens_seen": 20550,
+      "gpu_max_allocated_bytes": 405944832
+    },
+    {
+      "step": 1,
+      "loss": 0.9774780571460724,
+      "denoising_loss": 0.9280535578727722,
+      "auxiliary_loss": 0.49424536526203156,
+      "gradient_norm": 2.2652359008789062,
+      "elapsed_s": 17.735909342765808,
+      "updates_per_s": 0.05638278707191768,
+      "microbatches": 2,
+      "valid_tokens_seen": 20550,
+      "gpu_max_allocated_bytes": 406275072
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "pid": 225896,
+  "started_unix": 1794203465.9299877,
+  "commit": "3fbf0d9",
+  "source_files_verified": 321,
+  "preflight_paired_route_duration": true,
+  "detached": true,
+  "planned_diffusion_fits": 14
+}
