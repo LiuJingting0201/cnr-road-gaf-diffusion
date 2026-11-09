@@ -5,6 +5,12 @@ next round around road-conditioned diffusion trajectory synthesis and genuine
 GAF utility. This note records code-level mechanisms while results are pending.
 It neither selects a favorable result nor authorizes a new scientific run.
 
+Progress update: full G39 main and utility outcomes are now checked and recorded
+in `results/g39-native-alignment/completed-main` and `completed-utility`.
+Hidden alignment has no overall physical improvement; synthetic augmentation is
+useful, with speed-GAF and RAW augmentation numerically close. Factorial remains
+pending, so the next scientific protocol is still not locked.
+
 ## The thesis question stays unchanged
 
 Given map/OD, participant class and applicable public service conditions, synthesize

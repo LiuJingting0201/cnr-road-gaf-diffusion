@@ -41,7 +41,14 @@ G39 results for failure, deployment, source checks and launch receipts.
   `results/g39-native-alignment/completed-main`. SV speedW1+0.743%, acceleration
   +0.466% versus B; V's small acceleration gain is matched by SH. No overall
   GAF-specific motion-quality gain is established. No new failures or retraining.
-  Utility has entered CPU cache preparation; factorial still waits for utility.
+  Utility26/26 fits have now completed; all model/prediction hashes, shared384-row
+  evaluation identity/label order and recomputed macro/per-class F1 were verified.
+  Mean macroF1 real91.25%, real+B93.17%, real+V94.10%, real+RAW94.06%: synthetic
+  augmentation has utility here, but a GAF-specific advantage over RAW is not
+  established. Full outcomes: `results/g39-native-alignment/completed-utility`.
+  Factorial is now running four GPU cells; at12:46UTC each had57–62requests,
+  1592–1752candidates, no failures,46.68GiB free. These are generation progress
+  counts, not completed/evaluated cells. Performance still waits for full closure.
   User-requested interim look on the first2complete OD cohorts is recorded in
   interim-two-cohorts/REPORT.md: GAF primary distances are slightly worse, with
   mixed small stopping effects. Full-batch interpretation and performance testing
