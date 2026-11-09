@@ -30,6 +30,18 @@ head may predict class/route features without preserving detailed temporal behav
 Class, route and duration are already provided as conditions, so conditional
 predictability and redundancy are plausible explanations to test.
 
+A descriptive audit of the exact29,895 training targets now quantifies one part
+of this hypothesis. With class-equal weighting, class means explain54.42% of
+spatial-target variance and67.21% of speed-target variance. With original row
+weighting these are31.94% and39.55%; the large private-car group explains the
+weighting difference. These are variance fractions, not accuracy or proportions
+of useful physical information. Substantial within-class variation remains, and
+its sensitivity to relevant movement must still be measured. Do not conclude
+that the teacher encodes only the label or that redundancy alone caused failure.
+`scripts/g39_target_variance.py` verifies the existing training-feature receipts;
+the full by-class result is `results/g39-native-alignment/completed-main/target-variance.json`.
+No fitting, new sampling or development target access is involved.
+
 G39 deliberately pairs route and sampled total duration across arms. Spatial GAF
 information about route geometry therefore cannot change route preference in this
 comparison. Nor can a better motion loss repair a wrong total-duration prior when

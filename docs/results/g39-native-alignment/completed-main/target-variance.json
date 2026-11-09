@@ -1,0 +1,98 @@
+{
+  "complete": true,
+  "views": {
+    "spatial": {
+      "source_sha256": "b89378a12fe857c51721b16cb66f0fee659e29937ea907e4b0a9e22953745891",
+      "rows": 29895,
+      "weighting": {
+        "row": {
+          "class_mean_explained_fraction": 0.3193735571175228,
+          "total_variance": 0.9959982523588191,
+          "within_class_variance": 0.6779027476201469,
+          "class_centroid_cosine_distance": 0.469820430855385
+        },
+        "class_equal": {
+          "class_mean_explained_fraction": 0.5442371502589636,
+          "total_variance": 0.8685461950930422,
+          "within_class_variance": 0.3958510890073392,
+          "class_centroid_cosine_distance": 0.24971788435180156
+        }
+      },
+      "by_class": {
+        "0": {
+          "n": 685,
+          "class_centroid_cosine_distance_mean": 0.07839272171258926,
+          "within_class_squared_distance_to_mean": 0.15063998103141785
+        },
+        "1": {
+          "n": 6547,
+          "class_centroid_cosine_distance_mean": 0.30783218145370483,
+          "within_class_squared_distance_to_mean": 0.5209038257598877
+        },
+        "2": {
+          "n": 18381,
+          "class_centroid_cosine_distance_mean": 0.6230639815330505,
+          "within_class_squared_distance_to_mean": 0.8579192161560059
+        },
+        "3": {
+          "n": 2744,
+          "class_centroid_cosine_distance_mean": 0.12904000282287598,
+          "within_class_squared_distance_to_mean": 0.2414286583662033
+        },
+        "4": {
+          "n": 1538,
+          "class_centroid_cosine_distance_mean": 0.11026052385568619,
+          "within_class_squared_distance_to_mean": 0.20836377143859863
+        }
+      }
+    },
+    "speed": {
+      "source_sha256": "7a5b6679795c86bc85384fd6f7a42c0e3e835ebf5a6b6a52dfbad4c806742cbd",
+      "rows": 29895,
+      "weighting": {
+        "row": {
+          "class_mean_explained_fraction": 0.3954997739764463,
+          "total_variance": 0.9846842137160912,
+          "within_class_variance": 0.5952418297532024,
+          "class_centroid_cosine_distance": 0.3996007079861997
+        },
+        "class_equal": {
+          "class_mean_explained_fraction": 0.6720578395591843,
+          "total_variance": 0.9142692383759861,
+          "within_class_variance": 0.2998274292576,
+          "class_centroid_cosine_distance": 0.1868662817100277
+        }
+      },
+      "by_class": {
+        "0": {
+          "n": 685,
+          "class_centroid_cosine_distance_mean": 0.05680491402745247,
+          "within_class_squared_distance_to_mean": 0.1103830635547638
+        },
+        "1": {
+          "n": 6547,
+          "class_centroid_cosine_distance_mean": 0.21301335096359253,
+          "within_class_squared_distance_to_mean": 0.3806520402431488
+        },
+        "2": {
+          "n": 18381,
+          "class_centroid_cosine_distance_mean": 0.5611255764961243,
+          "within_class_squared_distance_to_mean": 0.8073891401290894
+        },
+        "3": {
+          "n": 2744,
+          "class_centroid_cosine_distance_mean": 0.03274864703416824,
+          "within_class_squared_distance_to_mean": 0.06442483514547348
+        },
+        "4": {
+          "n": 1538,
+          "class_centroid_cosine_distance_mean": 0.07063896209001541,
+          "within_class_squared_distance_to_mean": 0.13628804683685303
+        }
+      }
+    }
+  },
+  "scope": "Existing G39 train-only targets; descriptive variance decomposition. No training, model selection, or development targets.",
+  "normalization": "Exact G39 row-weighted global mean subtraction followed by unit length. Report both row and class-equal descriptive weighting.",
+  "limits": "Between-class variance is redundancy with known labels, but remaining variance is not automatically useful movement information. No causal failure attribution."
+}
