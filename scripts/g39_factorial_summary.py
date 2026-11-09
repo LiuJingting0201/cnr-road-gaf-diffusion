@@ -75,7 +75,7 @@ def summarize(source, output):
     fields = list(rows[0])
     assert all(set(row) == set(fields) for row in rows)
     with (output/'all-class-metrics.csv').open('w', newline='') as file:
-        writer = csv.DictWriter(file, fields); writer.writeheader(); writer.writerows(rows)
+        writer = csv.DictWriter(file, fields, lineterminator='\n'); writer.writeheader(); writer.writerows(rows)
     lines = ['# Complete G39 route × duration mechanism diagnostic', '',
         'All four cells and ten equal-pool policies are retained. Negative changes mean lower distribution distance; effective-route count is diversity, not an error.', '',
         '| Policy | Weighted speed W1 | Δ% | Weighted acceleration W1 | Δ% | Lower speed / acceleration cells | Route JS Δ% |',

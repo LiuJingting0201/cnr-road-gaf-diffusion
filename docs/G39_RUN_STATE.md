@@ -1,5 +1,15 @@
 # G39 continuation entry point
 
+Latest override,2026-11-09: the entire recovered scientific batch is complete and
+reviewed (112main cells,26utility fits,4factorial cells). See
+`results/g39-native-alignment/completed-batch/INTERPRETATION.md` and the full
+`verified-aggregates.json`; do not relaunch scientific queues. The user now
+prioritizes the thesis/GAF mechanism. Performance has not been released or measured;
+inspect the existing waiting controller before resuming it. The selected next
+technical design is `G40_GAF_GENERATIVE_CONDITIONING_DESIGN.md`, not yet implemented
+or launched. It extends the earlier tentative head-retention idea with encoders
+trained for generation and a sampleable conditional code prior.
+
 This is the current authorized experiment round, superseding old E2/G35/G38
 launch instructions. Read G39_PROTOCOL.md and G39_UTILITY_PROTOCOL.md first.
 
@@ -9,9 +19,9 @@ Relative to the existing isolated experiment base:
 
 | Directory | Supervisor at launch | Work | Dependency |
 |---|---:|---|---|
-| g39r-job/g39-data |228063|Reuse14fits/2teachers/8references; complete112generation/evaluation cells|Recovered and running|
-| g39ur-job/g39u-data |228066|26 independent raw-series utility fits|Recovered G39 complete and GPUs free|
-| g39fr-job/g39f-data |228067|4 expanded route×prior-duration×motion generation/evaluation cells|Recovered utility complete and GPUs free|
+| g39r-job/g39-data |228063|Reuse14fits/2teachers/8references; complete112generation/evaluation cells|Completed and verified|
+| g39ur-job/g39u-data |228066|26 independent raw-series utility fits|Completed and verified|
+| g39fr-job/g39f-data |228067|4 expanded route×prior-duration×motion generation/evaluation cells|Completed and verified|
 | g39m-job/g39m-data |226380|Existing-pool route-marginal mechanism|**Completed and reviewed**|
 
 PIDs are launch receipts, not evidence of current liveness. Inspect complete.json,
@@ -46,13 +56,15 @@ G39 results for failure, deployment, source checks and launch receipts.
   Mean macroF1 real91.25%, real+B93.17%, real+V94.10%, real+RAW94.06%: synthetic
   augmentation has utility here, but a GAF-specific advantage over RAW is not
   established. Full outcomes: `results/g39-native-alignment/completed-utility`.
-  Factorial is now running four GPU cells; at12:46UTC each had57–62requests,
-  1592–1752candidates, no failures,46.68GiB free. These are generation progress
-  counts, not completed/evaluated cells. Performance still waits for full closure.
+  Factorial4/4 is complete; all10,784candidates and evaluation sources verified.
+  Fixed joint route/T speed-score weighting changes speedW1−0.12% and acceleration
+  −0.13%, improving1/4 and2/4cells respectively. Spatial/dual weighted endpoints
+  worsen overall. No stable physical benefit from class-score ranking established.
+  Performance still waits for its unreleased review gate; no benchmark has run.
   User-requested interim look on the first2complete OD cohorts is recorded in
   interim-two-cohorts/REPORT.md: GAF primary distances are slightly worse, with
-  mixed small stopping effects. Full-batch interpretation and performance testing
-  remain deferred until utility/factorial closure; no live protocol change.
+  mixed small stopping effects. Full-batch interpretation is now recorded; original
+  protocol and scientific snapshots remain unchanged.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
   in each class; nonbus OD cohorts separated. Public bus templates still shared.

@@ -1,0 +1,2811 @@
+{
+  "complete": true,
+  "source_sha256": "0b1492caf82ce4a158b7ed52a2f6568f559f857377c120fef0f9d3e4bad58ba2",
+  "cells": 4,
+  "class_rows": 200,
+  "all_methods": [
+    "R",
+    "Global-S",
+    "Global-V",
+    "Global-SV",
+    "FixedRoute-S",
+    "FixedRoute-V",
+    "FixedRoute-SV",
+    "FixedRouteT-S",
+    "FixedRouteT-V",
+    "FixedRouteT-SV"
+  ],
+  "scope": "Exposed G38 scenes, frozen G35 generator; exploratory mechanism diagnostic, not independent confirmation.",
+  "mechanism_estimand": "Weighted native physical-time distributions with exactly held joint route/prior-T marginals. K1 selected metrics are secondary realizations; their selected route/T can change.",
+  "weighting": "class macro within each cell, then equal two scenes and two seeds; not individual-trajectory significance",
+  "factorial_generation": {
+    "380201/42": {
+      "requested": 100,
+      "generated": 98,
+      "candidates": 2680,
+      "seconds": 1094.492138966918,
+      "joint_route_duration_max_abs_error": 1.6653345369377348e-16,
+      "network_forwards": 268000,
+      "reference_opened": false
+    },
+    "380201/43": {
+      "requested": 100,
+      "generated": 98,
+      "candidates": 2680,
+      "seconds": 1094.5599263831973,
+      "joint_route_duration_max_abs_error": 1.1102230246251565e-16,
+      "network_forwards": 268000,
+      "reference_opened": false
+    },
+    "380202/42": {
+      "requested": 100,
+      "generated": 98,
+      "candidates": 2712,
+      "seconds": 1208.2307027876377,
+      "joint_route_duration_max_abs_error": 1.1102230246251565e-16,
+      "network_forwards": 271200,
+      "reference_opened": false
+    },
+    "380202/43": {
+      "requested": 100,
+      "generated": 98,
+      "candidates": 2712,
+      "seconds": 1089.2522565424442,
+      "joint_route_duration_max_abs_error": 1.1102230246251565e-16,
+      "network_forwards": 271200,
+      "reference_opened": false
+    }
+  },
+  "methods": {
+    "R": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.2579656235081016,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.1738681517013865,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.410882704025251,
+          "R_mean": 1.410882704025251,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.17138080062779518,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.034576968602306274,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1763955875524859,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.48274707295085223,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 0.0
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07420504604500418,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 0.0
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6211398612638086,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.08067856646812083,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436476,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.674905600781339,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 0.0
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.29985564899045114,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": 0.0
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.799744272258922,
+            "R_mean": 1.799744272258922,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.2749985519287477,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.037398691641413524,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.9149308470586666,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.0
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1432481273290814,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.0
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.1727571464164206,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14536752376710657,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104065,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5133706130172755,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": 0.0
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1622084277508754,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.0
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6667106262991896,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1606546011564709,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.019943836425372678,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.703873983732375,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 0.0
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.18982350839152035,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 0.0
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7940616138879135,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.19520475981852994,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "Global-S": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.3411115783590861,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 6.6095569940229915,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0661454143454352,
+            "380201/43": 0.1462296735284514,
+            "380202/42": 0.06537911987805722,
+            "380202/43": 0.05482961165199374
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17729476323516358,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 1.9708103526988596,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.0030085249175132167,
+            "380201/43": 0.005962486061332872,
+            "380202/42": 0.0047431994053931115,
+            "380202/43": -7.764249130876033e-06
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.4697266466913774,
+          "R_mean": 1.410882704025251,
+          "relative_percent": 4.170718267241114,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.06891202594032464,
+            "380201/43": 0.14224000656747693,
+            "380202/42": 0.1215152564981481,
+            "380202/43": 0.040532533539205495
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.18801614584409881,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 9.706656262175063,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.013411407171831952,
+            "380201/43": 0.020401315022364863,
+            "380202/42": 0.031408068295474934,
+            "380202/43": 0.0013205903755428017
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03519773764205381,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 1.7953252261279307,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.001376234470134692,
+            "380201/43": 8.057966287237234e-05,
+            "380202/42": 0.0020070507805224763,
+            "380202/43": -0.0009807887545393856
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0053941611520942,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.15941096112750408,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0008342248285742038,
+            "380201/43": 0.0016639398042013198,
+            "380202/42": 0.0032496531673380513,
+            "380202/43": 0.0006528128746579043
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1704005065350613,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": -0.5096143746932458,
+          "lower_than_R_cells": 3,
+          "paired_cell_deltas": {
+            "380201/42": -0.008826390758743585,
+            "380201/43": -0.01348485859350057,
+            "380202/42": 0.0025701757452130103,
+            "380202/43": -0.0042392504626669325
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5403015610880753,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 11.922286298995854
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07517365070533918,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 1.3053083475584204
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6568794627286543,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 5.753873433936074
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07837050207010043,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -2.8608148347955553
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007910255973368233,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 0.24967374426434485
+          },
+          "expected_detour": {
+            "mean": 1.004668935350992,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": -0.019550808570201195
+          },
+          "effective_route_count": {
+            "mean": 1.0606105025407506,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.6034215008388077
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7713345155414453,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 5.757274601931139
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.2971100733349357,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -0.915632460071758
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8796487792793823,
+            "R_mean": 1.799744272258922,
+            "relative_percent": 4.439770041338664
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.3027806255826747,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 10.102625435324232
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03806618801744148,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 1.784812106337963
+          },
+          "expected_detour": {
+            "mean": 1.0038038810961176,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.02178061950672827
+          },
+          "effective_route_count": {
+            "mean": 1.2405212514927908,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.4742275367611626
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.9220600399215437,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.3722950556584115
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14404715298765433,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.5577913467150086
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.1765814937017742,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": 0.17601356376442112
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14634859486136606,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 0.6748901465992274
+          },
+          "route_edge_usage_js": {
+            "mean": 0.050769582766734704,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.2003132992940193
+          },
+          "expected_detour": {
+            "mean": 1.0057976252863448,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": 0.003433857965395859
+          },
+          "effective_route_count": {
+            "mean": 1.1175976599007598,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": -0.09926420024753968
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5111518990745897,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.43218561530928845
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16009779543759106,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": -1.3011853592008849
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5164371262549476,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -22.53953876187449
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.16175613347975296,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.6856525212179942
+          },
+          "route_edge_usage_js": {
+            "mean": 0.021832445580272374,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 9.469638211116681
+          },
+          "expected_detour": {
+            "mean": 1.0053449525248928,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.3549692071593169
+          },
+          "effective_route_count": {
+            "mean": 1.0960082987137307,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 1.702203821372561
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.9607098761697765,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 15.073643643222745
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.21004514371029764,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 10.652861434353621
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.1190863714921284,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 18.116699843984364
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.2508248732265999,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 28.493215769828883
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05741021587245227,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.7485374163963554
+          },
+          "expected_detour": {
+            "mean": 1.0073554115021233,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.4375099568026286
+          },
+          "effective_route_count": {
+            "mean": 1.3372648200272748,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": -4.254748123083541
+          }
+        }
+      }
+    },
+    "Global-V": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.2876307565417444,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 2.3581831235511386,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.13982734785332518,
+            "380201/43": 0.03985911768861472,
+            "380202/42": 0.18766161766405876,
+            "380202/43": 0.030967144635222876
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17235440799666782,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": -0.870627363266907,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.014524658269909202,
+            "380201/43": -0.007198287069597076,
+            "380202/42": 0.010484748934848492,
+            "380202/43": 0.005183221585783049
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.3600910164608926,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -3.5999936365687657,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.31426640261801286,
+            "380201/43": -0.11594468306158068,
+            "380202/42": 0.17722580944279076,
+            "380202/43": 0.04981852597936942
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.1730949609175052,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 1.0002055559495515,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.01819992129040296,
+            "380201/43": 0.005867550582376757,
+            "380202/42": 0.018790224968439462,
+            "380202/43": 0.000398786898426845
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03484933104432316,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 0.7876990176597598,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0001256133752691596,
+            "380201/43": 0.0005386840776688828,
+            "380202/42": 9.1615325404866e-05,
+            "380202/43": 0.00033353698972463097
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0038949688150034,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.010058371663101973,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.00023177993207812442,
+            "380201/43": 1.85665779131039e-05,
+            "380202/42": -4.047885418545505e-05,
+            "380202/43": 0.00019399367060302097
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.178573915760287,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.18516970233908303,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.004383233469241743,
+            "380201/43": -0.004527600551658795,
+            "380202/42": 0.00553475632356526,
+            "380202/43": 0.003322923590056037
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.7641289963314055,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 58.28764981640817
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07623974805194352,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 2.741999520767524
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6999846790103743,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 12.693569140151983
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07780129335300709,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -3.5663413978118452
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007875419283944026,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": -0.19182483187085708
+          },
+          "expected_detour": {
+            "mean": 1.0048577171369675,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": -0.0007640350402904339
+          },
+          "effective_route_count": {
+            "mean": 1.0540375343900865,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": -0.020052511335078016
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6085172858260446,
+            "R_mean": 1.674905600781339,
+            "relative_percent": -3.9637048753269677
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.2890267580513244,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -3.6113679950954047
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.698160075135187,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -5.644368407753464
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.27199501548626503,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": -1.0922008212104761
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03790275153499586,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 1.3478008760717142
+          },
+          "expected_detour": {
+            "mean": 1.0037065463317534,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.012081915774619922
+          },
+          "effective_route_count": {
+            "mean": 1.2384267153196156,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.30458360378191607
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8288952473025528,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": -4.492882857272074
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14179880976864637,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": -1.0117532336779145
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8396110595085435,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -15.332872680103371
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1433410373021893,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": -1.3940434647314315
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05097619378401258,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.6080867639184584
+          },
+          "expected_detour": {
+            "mean": 1.0060244598744728,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": 0.025987339063648918
+          },
+          "effective_route_count": {
+            "mean": 1.1235670532961706,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.4343328301298133
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5093459709556802,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.7839642471821451
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16265616725242685,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.27602727414328676
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6667106262991896,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1606546011564709,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994170077244036,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": -0.010708335581810502
+          },
+          "expected_detour": {
+            "mean": 1.0017848935583413,
+            "R_mean": 1.001788910372334,
+            "relative_percent": -0.00040096411042522817
+          },
+          "effective_route_count": {
+            "mean": 1.0774508066688924,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": -0.01980671501902176
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7272662822930394,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 1.3728890037643993
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.19205055685899802,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 1.173220580711365
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8959886423511678,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 5.681356073516786
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.21168285728959363,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 8.44144245579994
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05755058984622299,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.9948781126262185
+          },
+          "expected_detour": {
+            "mean": 1.0031012271734823,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.013350145888613163
+          },
+          "effective_route_count": {
+            "mean": 1.3993874691266697,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.19309840380075105
+          }
+        }
+      }
+    },
+    "Global-SV": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.311714586363755,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 4.27268932085465,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.10525679747728645,
+            "380201/43": 0.1442834016564214,
+            "380202/42": 0.1716316541359989,
+            "380202/43": 0.004337593107478943
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.1752760259252496,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 0.8097366942055428,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.004460636334278512,
+            "380201/43": -0.002464567083255542,
+            "380202/42": 0.010077283816147836,
+            "380202/43": 0.00247941649683861
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.3305342991637161,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -5.694903242650906,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.36060977170137454,
+            "380201/43": -0.16642330362577806,
+            "380202/42": 0.1733177902454066,
+            "380202/43": 0.032321665635607455
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.18434398822325151,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 7.56396722851691,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.007490592731796447,
+            "380201/43": 0.009854312485915256,
+            "380202/42": 0.03013018879523488,
+            "380202/43": 0.019358841832471663
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03424635937002113,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": -0.9561544740596339,
+          "lower_than_R_cells": 3,
+          "paired_cell_deltas": {
+            "380201/42": -0.0003236023605520666,
+            "380201/43": -2.0915432089894936e-05,
+            "380202/42": 0.00015479204112557599,
+            "380202/43": -0.0011327111776241877
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0042255080384854,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.04298736130987635,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.00030092779802903813,
+            "380201/43": 0.00023614062608601216,
+            "380202/42": 0.000940082876470294,
+            "380202/43": 0.0002488669197513449
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1627392053109595,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": -1.1608664964426363,
+          "lower_than_R_cells": 4,
+          "paired_cell_deltas": {
+            "380201/42": -0.005526996569173548,
+            "380201/43": -0.02577069150588618,
+            "380202/42": -0.009869418892991089,
+            "380202/43": -0.013458421998054693
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.6659103397153416,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 37.941869982738766
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07736119523294027,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 4.253281085523408
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5378259425805977,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": -13.413069081365247
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07887367371916945,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -2.237140331025289
+          },
+          "route_edge_usage_js": {
+            "mean": 0.00783411646171751,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": -0.7152711611509543
+          },
+          "expected_detour": {
+            "mean": 1.0048505246260924,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": -0.0014798036311214346
+          },
+          "effective_route_count": {
+            "mean": 1.045918658609957,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": -0.7901624435530552
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6716764725200608,
+            "R_mean": 1.674905600781339,
+            "relative_percent": -0.19279464226352738
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.29211465628417066,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -2.5815730776934553
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7678813065592105,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -1.7704162858492856
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.3005963044737909,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 9.30832266770465
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03798764159752657,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 1.5747875935340883
+          },
+          "expected_detour": {
+            "mean": 1.0036510800070642,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.006555098570282247
+          },
+          "effective_route_count": {
+            "mean": 1.2418152921325312,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.579036489870699
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8509520928405838,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": -3.341047762448135
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14319245325531665,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": -0.038865481038263816
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.906926525879217,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -12.234713896840443
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14905079065090832,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 2.5337618667170103
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05072831976381117,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.11887544624715751
+          },
+          "expected_detour": {
+            "mean": 1.0059701472165636,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": 0.020587194783816543
+          },
+          "effective_route_count": {
+            "mean": 1.1220729459410927,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.3007763370450389
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5089964222849428,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.8520531992713631
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1603666792661686,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": -1.135420958234934
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5770257764797482,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -13.451840465970754
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.16125268712100652,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.37228063200822614
+          },
+          "route_edge_usage_js": {
+            "mean": 0.0204369773689151,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.47264835623624
+          },
+          "expected_detour": {
+            "mean": 1.0028068927948377,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.10161645951194398
+          },
+          "effective_route_count": {
+            "mean": 1.082687959632827,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.4661658809977043
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8610376044578456,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 9.22389931567591
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.20334514558765188,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 7.123267982299897
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8630119443198083,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 3.8432532025738153
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.23194648515138244,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 18.822146225844616
+          },
+          "route_edge_usage_js": {
+            "mean": 0.0542447416581353,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": -4.806517419667767
+          },
+          "expected_detour": {
+            "mean": 1.0038488955478695,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.08789578185728342
+          },
+          "effective_route_count": {
+            "mean": 1.3212011702383897,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": -5.40487050128834
+          }
+        }
+      }
+    },
+    "FixedRoute-S": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.3190237117448675,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 4.853716754714865,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.02719535513761917,
+            "380201/43": 0.10670325660484359,
+            "380202/42": 0.055043041505803525,
+            "380202/43": 0.05529069969879741
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17766137165200097,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 2.1816646197109213,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.005823777807885122,
+            "380201/43": 0.005130394199704014,
+            "380202/42": 0.006042471024872181,
+            "380202/43": -0.001823763230003439
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.4544821098996294,
+          "R_mean": 1.410882704025251,
+          "relative_percent": 3.0902218696132078,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.001660117526667504,
+            "380201/43": 0.03581789212188724,
+            "380202/42": 0.12038519064864195,
+            "380202/43": 0.016534423200317505
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.18422691939071262,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 7.495658040959108,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.009198873466160551,
+            "380201/43": 0.010613947287166497,
+            "380202/42": 0.030779564849617858,
+            "380202/43": 0.0007920894487249142
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03457696860230628,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 6.938893903907228e-18,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 6.938893903907228e-18
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1763955875524859,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5301516849072998,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 9.819761654209703
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07506831559311622,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 1.163356933419979
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6404188957197533,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 3.1038153656277157
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07774938039036504,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -3.6306868180574603
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436478,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7715996879373679,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 5.773106682007723
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.3033397900894977,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": 1.1619394567942587
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.867758069462196,
+            "R_mean": 1.799744272258922,
+            "relative_percent": 3.779081186790356
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.30682537485036,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 11.573451095792908
+          },
+          "route_edge_usage_js": {
+            "mean": 0.037398691641413524,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.9225633763934713,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.3985798937088614
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1440376829651715,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.5511804243529594
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.1765814937017742,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": 0.17601356376442112
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14634859486136606,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 0.6748901465992274
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104063,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5139535262157396,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": 0.11354627313748811
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.15878119771419769,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": -2.1128557154510896
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5463401704968277,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -18.05437787462909
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1601573423946012,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": -0.30952039860059344
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.856850283270459,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 8.978146329987723
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.2070798718980218,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 9.090741000798142
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.0413119201175958,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 13.781595030834293
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.23005390445687085,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 17.852610085296106
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "FixedRoute-V": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.2910424058564258,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 2.62938682347158,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.13067202682497858,
+            "380201/43": 0.04614019156717952,
+            "380202/42": 0.18644999115380856,
+            "380202/43": 0.030388973497286864
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17262606369766975,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": -0.714385004707474,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.014359526070831213,
+            "380201/43": -0.00655028596746729,
+            "380202/42": 0.010995192212206156,
+            "380202/43": 0.004946267811225341
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.372448477966282,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -2.724126247300085,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.31324970162804844,
+            "380201/43": -0.11594468306158068,
+            "380202/42": 0.22563895447438376,
+            "380202/43": 0.04981852597936942
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.17645637951850962,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 2.9615796355961566,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.017777646379465162,
+            "380201/43": 0.005867550582376757,
+            "380202/42": 0.03181362446151931,
+            "380202/43": 0.000398786898426845
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03457696860230628,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 1.3877787807814457e-17
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.176395587552486,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 4.440892098500626e-16,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.756566693926849,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 56.721135418230496
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07617609789015745,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 2.6562234648542127
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6999846790103743,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 12.693569140151983
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07780129335300709,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -3.5663413978118452
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436478,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6183348379268492,
+            "R_mean": 1.674905600781339,
+            "relative_percent": -3.377549327442675
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.28998451548740006,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -3.291961827727785
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.758676506424678,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -2.281866733360871
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.28827426485261487,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 4.827557392850168
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03739869164141353,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8399046204464602,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": -3.9179601042746093
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14196130291662237,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": -0.8983184886618645
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8396110595085435,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -15.332872680103371
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1433410373021893,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": -1.3940434647314315
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827662,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": -1.1102230246251565e-14
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104063,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5092467729460565,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.8032871314899825
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1626605375745993,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.2787215374642882
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6667106262991896,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1606546011564709,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7311591040359136,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 1.6013578799865202
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.19234786461956957,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 1.3298438372778332
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8972595185886232,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 5.752194010609779
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.21221070092826588,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 8.711847562295794
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "FixedRoute-SV": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.304682162742954,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 3.7136578585170943,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.11635995695409718,
+            "380201/43": 0.12478155425300486,
+            "380202/42": 0.1666756060694975,
+            "380202/43": 0.011768953571003271
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17561579899516888,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 1.0051566527168987,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.004134537798262866,
+            "380201/43": -0.001954819249349815,
+            "380202/42": 0.010730991127700873,
+            "380202/43": 0.002348955095041322
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.3337145836276096,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -5.469492267321763,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.3588301262553997,
+            "380201/43": -0.12686632466137837,
+            "380202/42": 0.1733177902454066,
+            "380202/43": 0.0037061790808063932
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.1830594679869579,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 6.814454895987132,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.008074993221893034,
+            "380201/43": 0.008237935794702278,
+            "380202/42": 0.03013018879523488,
+            "380202/43": 0.0164215380686068
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03457696860230628,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 1.3877787807814457e-17
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1763955875524859,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.6637402566395337,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 37.49234202132763
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07725129762343853,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 4.105181171354366
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5378259425805977,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": -13.413069081365247
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07887367371916945,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -2.237140331025289
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436478,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6844365734528042,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 0.5690453639308979
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.2949532498456548,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -1.6349197226404266
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7678813065592105,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -1.7704162858492856
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.3005963044737909,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 9.30832266770465
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03739869164141353,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8579570973135828,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": -2.9752379743944957
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1433313219767408,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.058077302098547
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.906926525879217,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -12.234713896840443
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14905079065090832,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 2.5337618667170103
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104065,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5111576666225786,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.43106214858902314
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16003108066647143,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": -1.342314400425615
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5770257764797482,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -13.451840465970754
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.16125268712100652,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.37228063200822614
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.8061192196862697,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 6.000751049084285
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.20251204486353883,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 6.684386238319728
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8789133666392748,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 4.729589669302325
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.22552388396991438,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 15.5319594560964
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "FixedRouteT-S": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.278069249866057,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 1.5981061789186457,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.022874238808612724,
+            "380201/43": 0.03168385089087433,
+            "380202/42": 0.01379060059925974,
+            "380202/43": 0.012065815133074587
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17602861982282345,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 1.2425899167246568,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.0007155549728870281,
+            "380201/43": 0.0005734700506382917,
+            "380202/42": 0.009772111850643722,
+            "380202/43": -0.0024192643884212994
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.3751258615529116,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -2.534359686338561,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.18711089198791053,
+            "380201/43": -0.08083268898861284,
+            "380202/42": 0.048564724567241147,
+            "380202/43": 0.07635148651992552
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.17546153764896258,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 2.3810934516696136,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.007822171961053864,
+            "380201/43": 0.0016078239724924281,
+            "380202/42": 0.014010127930219718,
+            "380202/43": 0.008527168143011327
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03457696860230628,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 1.3877787807814457e-17
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": -2.220446049250313e-16,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1763955875524859,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.4983535194362445,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": 3.2328412454157185
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07420944486723527,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": 0.005927928713123087
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6479857578265108,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 4.322037311867244
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07847857599636505,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -2.7268586541198347
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436478,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7188242361891752,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 2.6221558628348074
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.29731642021000126,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -0.8468170564733035
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7502232822748354,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -2.751557026595297
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.2942275144845977,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 6.992386840215881
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03739869164141353,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018053,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.915799325146965,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.04535297395371618
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14374785211478394,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.3488525784037133
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.1765814937017742,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": 0.17601356376442112
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14634859486136606,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": 0.6748901465992274
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104063,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5195264418409415,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": 1.1991003512035636
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16300193254959902,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.48918839158116345
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.574540627689638,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -13.824588205706789
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.16421488577943075,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 2.2161112083508128
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7378427267169596,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 1.9936182668964353
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.20186744937249773,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 6.34481002012468
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7262981462718001,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": -3.7770981270405235
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.19403811712305324,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": -0.597650742000988
+          },
+          "route_edge_usage_js": {
+            "mean": 0.056983671768032075,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "FixedRouteT-V": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.2564376485648032,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": -0.12146396648242686,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.0047551010708257735,
+            "380201/43": 0.0011182557349525002,
+            "380202/42": -0.012486628745095096,
+            "380202/43": 0.0005013721661231152
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.17363730071381245,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": -0.13277359039884917,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.0016502496664231037,
+            "380201/43": -0.0031562864669034407,
+            "380202/42": 0.0033204996666706676,
+            "380202/43": 0.0005626325163596568
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.4015635253711825,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -0.660521149453519,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.03372117040079514,
+            "380201/43": -0.10331116361711468,
+            "380202/42": 0.05007150473082245,
+            "380202/43": 0.049684114670813906
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.1773148194582681,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 3.4624758483655427,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.00637730758756011,
+            "380201/43": 0.005431656295519061,
+            "380202/42": 0.023860230100192864,
+            "380202/43": 0.0008214965137399166
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.03457696860230628,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 1.3877787807814457e-17
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.1763955875524859,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 0.0
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.4628023909099098,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": -4.131497249486782
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.07403180514123461,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": -0.2334624301216559
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5800655739404365,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": -6.612727645557948
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07394697007748591,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -8.343723352217502
+          },
+          "route_edge_usage_js": {
+            "mean": 0.007890555328436478,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6666984936750189,
+            "R_mean": 1.674905600781339,
+            "relative_percent": -0.4900041591891169
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.30034869425447147,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": 0.1644275389442562
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7368551792346916,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -3.4943349448917083
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.2978280038714042,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 8.301662602416759
+          },
+          "route_edge_usage_js": {
+            "mean": 0.037398691641413524,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.928526783304293,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.7099961999416093
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14255157645324334,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": -0.4862547865899014
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.113086462716258,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -2.7463116988743375
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14271273176443816,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": -1.826262107155141
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104063,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5125914676885235,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": -0.15177053555377462
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16251576264057943,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.189469125596875
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6667106262991896,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": 0.0
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1606546011564709,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 0.0
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.711569107246271,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 0.4516251546396344
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.18873866507953338,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": -0.5715010333437909
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.9110997846653361,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 6.523642770762428
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.21143179042154142,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": 8.312825270293999
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717694,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    },
+    "FixedRouteT-SV": {
+      "endpoints": {
+        "weighted_native_speed_w1": {
+          "mean": 1.269342432291598,
+          "R_mean": 1.2579656235081016,
+          "relative_percent": 0.90438153244361,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.013676021504145819,
+            "380201/43": 0.025216488597610942,
+            "380202/42": 0.0033643459264668385,
+            "380202/43": 0.003250379105761869
+          }
+        },
+        "weighted_native_acceleration_w1": {
+          "mean": 0.174921337462508,
+          "R_mean": 0.1738681517013865,
+          "relative_percent": 0.6057381704559051,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": 0.0015944130465833373,
+            "380201/43": -0.0032599354840610606,
+            "380202/42": 0.008052890970004306,
+            "380202/43": -0.002174625488040649
+          }
+        },
+        "selected_native_speed_w1": {
+          "mean": 1.386623520763416,
+          "R_mean": 1.410882704025251,
+          "relative_percent": -1.7194330324287965,
+          "lower_than_R_cells": 2,
+          "paired_cell_deltas": {
+            "380201/42": -0.12652766070929222,
+            "380201/43": -0.11949556873538758,
+            "380202/42": 0.08474011650323732,
+            "380202/43": 0.06424637989410376
+          }
+        },
+        "selected_native_acceleration_w1": {
+          "mean": 0.17770215775823195,
+          "R_mean": 0.17138080062779518,
+          "relative_percent": 3.6884861707266126,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": -0.00604684239748518,
+            "380201/43": 0.0032157410040886403,
+            "380202/42": 0.019181918118472974,
+            "380202/43": 0.008934611796670627
+          }
+        },
+        "route_edge_usage_js": {
+          "mean": 0.034576968602306274,
+          "R_mean": 0.034576968602306274,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 6.938893903907228e-18,
+            "380202/43": 6.938893903907228e-18
+          }
+        },
+        "expected_detour": {
+          "mean": 1.0037940034834012,
+          "R_mean": 1.0037940034834012,
+          "relative_percent": 0.0,
+          "lower_than_R_cells": 1,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": -2.220446049250313e-16
+          }
+        },
+        "effective_route_count": {
+          "mean": 1.176395587552486,
+          "R_mean": 1.1763955875524859,
+          "relative_percent": 2.220446049250313e-14,
+          "lower_than_R_cells": 0,
+          "paired_cell_deltas": {
+            "380201/42": 0.0,
+            "380201/43": 0.0,
+            "380202/42": 0.0,
+            "380202/43": 2.220446049250313e-16
+          }
+        }
+      },
+      "by_class": {
+        "bus": {
+          "weighted_native_speed_w1": {
+            "mean": 0.46502492523585004,
+            "R_mean": 0.48274707295085223,
+            "relative_percent": -3.6711041263644217
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.0731807341812034,
+            "R_mean": 0.07420504604500418,
+            "relative_percent": -1.3803803358326205
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.6808395666333529,
+            "R_mean": 0.6211398612638086,
+            "relative_percent": 9.611314470798193
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.07563066768003787,
+            "R_mean": 0.08067856646812083,
+            "relative_percent": -6.25680277806816
+          },
+          "route_edge_usage_js": {
+            "mean": 0.00789055532843648,
+            "R_mean": 0.007890555328436476,
+            "relative_percent": 4.440892098500626e-14
+          },
+          "expected_detour": {
+            "mean": 1.0048653946606905,
+            "R_mean": 1.0048653946606905,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0542489377778343,
+            "R_mean": 1.0542489377778343,
+            "relative_percent": 0.0
+          }
+        },
+        "motorcycle": {
+          "weighted_native_speed_w1": {
+            "mean": 1.6977351751882417,
+            "R_mean": 1.674905600781339,
+            "relative_percent": 1.3630364837428965
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.2995772573183906,
+            "R_mean": 0.29985564899045114,
+            "relative_percent": -0.09284189675861088
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.7392323598605053,
+            "R_mean": 1.799744272258922,
+            "relative_percent": -3.3622505892165533
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.319457933447205,
+            "R_mean": 0.2749985519287477,
+            "relative_percent": 16.167132956386165
+          },
+          "route_edge_usage_js": {
+            "mean": 0.03739869164141353,
+            "R_mean": 0.037398691641413524,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.0035852940018055,
+            "R_mean": 1.0035852940018055,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.2346661247422013,
+            "R_mean": 1.2346661247422013,
+            "relative_percent": 0.0
+          }
+        },
+        "private_car": {
+          "weighted_native_speed_w1": {
+            "mean": 1.928948457054923,
+            "R_mean": 1.9149308470586666,
+            "relative_percent": 0.7320165121256217
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.14341639240645315,
+            "R_mean": 0.1432481273290814,
+            "relative_percent": 0.11746406777464191
+          },
+          "selected_native_speed_w1": {
+            "mean": 2.0745742937449907,
+            "R_mean": 2.1727571464164206,
+            "relative_percent": -4.518813933410149
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.14424275928624564,
+            "R_mean": 0.14536752376710657,
+            "relative_percent": -0.7737384882904985
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05066808784827663,
+            "R_mean": 0.05066808784827663,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0057630888104063,
+            "R_mean": 1.0057630888104065,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.1187081365856457,
+            "R_mean": 1.1187081365856457,
+            "relative_percent": 0.0
+          }
+        },
+        "bycicle": {
+          "weighted_native_speed_w1": {
+            "mean": 0.5175680160124556,
+            "R_mean": 0.5133706130172755,
+            "relative_percent": 0.8176165305821437
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.16277641395595066,
+            "R_mean": 0.1622084277508754,
+            "relative_percent": 0.3501582580823559
+          },
+          "selected_native_speed_w1": {
+            "mean": 0.5745780191581729,
+            "R_mean": 0.6667106262991896,
+            "relative_percent": -13.818979855238101
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.1654889865211624,
+            "R_mean": 0.1606546011564709,
+            "relative_percent": 3.0091795254485243
+          },
+          "route_edge_usage_js": {
+            "mean": 0.01994383642537268,
+            "R_mean": 0.019943836425372678,
+            "relative_percent": 2.220446049250313e-14
+          },
+          "expected_detour": {
+            "mean": 1.001788910372334,
+            "R_mean": 1.001788910372334,
+            "relative_percent": 0.0
+          },
+          "effective_route_count": {
+            "mean": 1.0776642565570504,
+            "R_mean": 1.0776642565570504,
+            "relative_percent": 0.0
+          }
+        },
+        "taxi_or_uber": {
+          "weighted_native_speed_w1": {
+            "mean": 1.7374355879665202,
+            "R_mean": 1.703873983732375,
+            "relative_percent": 1.9697233806356795
+          },
+          "weighted_native_acceleration_w1": {
+            "mean": 0.1956558894505422,
+            "R_mean": 0.18982350839152035,
+            "relative_percent": 3.0725283229895206
+          },
+          "selected_native_speed_w1": {
+            "mean": 1.8638933644200593,
+            "R_mean": 1.7940616138879135,
+            "relative_percent": 3.8923830704349793
+          },
+          "selected_native_acceleration_w1": {
+            "mean": 0.18369044185650885,
+            "R_mean": 0.19520475981852994,
+            "relative_percent": -5.898584631197146
+          },
+          "route_edge_usage_js": {
+            "mean": 0.05698367176803207,
+            "R_mean": 0.05698367176803207,
+            "relative_percent": 0.0
+          },
+          "expected_detour": {
+            "mean": 1.0029673295717692,
+            "R_mean": 1.0029673295717694,
+            "relative_percent": -2.220446049250313e-14
+          },
+          "effective_route_count": {
+            "mean": 1.3966904820996981,
+            "R_mean": 1.3966904820996981,
+            "relative_percent": 0.0
+          }
+        }
+      }
+    }
+  }
+}
