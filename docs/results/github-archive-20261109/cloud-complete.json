@@ -1,0 +1,26 @@
+{
+  "cloud_archives_complete": true,
+  "private_release_published": false,
+  "local_archive_status": "uploading; do not infer complete",
+  "cloud": {
+    "cloud_file_paths": 10464,
+    "cloud_logical_bytes": 72288926594,
+    "overlapping_snapshot_paths": 314,
+    "changed_snapshot_paths": [],
+    "free_gib_after": 49.62206268310547
+  },
+  "verified_cloud_assets": 118,
+  "uploaded_cloud_bytes": 56989427873,
+  "cloud_restore": {
+    "restored": true,
+    "verified_unique_files": 54,
+    "verified_logical_files": 56,
+    "source": "Actual download from private GitHub Release",
+    "archive_group": "00-current-models",
+    "archive_bytes": 280864088,
+    "stream_sha256": "97e3c35cb404adee3ec271f06f834e383b58f6843a859f546731bebd550c06a7",
+    "weights_loaded": false,
+    "scientific_targets_decoded": false,
+    "all_restored_file_hashes_rechecked": true
+  }
+}

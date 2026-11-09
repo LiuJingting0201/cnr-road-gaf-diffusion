@@ -30,3 +30,9 @@ Large artifacts are Release attachments rather than ordinary Git blobs. [GitHub 
 ## Verified recovery tooling
 
 `scripts/archive_verify_restore.py` verifies per-part, full-stream and per-file SHA256 before or during restoration, reconstructs exact duplicate paths and preserves ordinary file modes. It rejects path traversal, non-regular tar members, corrupt content and existing restore destinations. The private Release includes a standalone copy and `RESTORE.md`. Full Git history is preserved as a private bundle rather than publishing all historical refs to the public code repository.
+
+## Cloud closure checkpoint (2026-11-09)
+
+All three cloud archive queues are now complete:118verified assets,53.08GiB,10,464distinct archived paths/72.29GBlogical cloud content. The supplemental archive restores all170initially excluded GAF image-cache files, the closed G38 snapshot and the old server working tree’s uncommitted source/logs plus its independent Git history. Initial active-file/cache exclusions above describe the first snapshot, not the final combined coverage. The old tree was never modified;314overlapping snapshot paths have identical hashes.
+
+Actual GitHub download and full restoration of the current-model group succeeded:56logical/54unique files, all final file hashes rechecked, no weights deserialized or targets decoded. Local1,455file archival upload is still pending at this checkpoint; the Release stays draft until it is fully verified. Machine-readable evidence: `results/github-archive-20261109/cloud-complete.json` and `cloud-restore-checks.json`.

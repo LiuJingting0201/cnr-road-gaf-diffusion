@@ -41,7 +41,7 @@ class API:
     def __init__(self,secret=None):self.secret=secret if secret is not None else token()
     def request(self,method,path,data=None,host='api.github.com',file=None):
         assert host in {'api.github.com','uploads.github.com'}
-        conn=http.client.HTTPSConnection(host,timeout=1200)
+        conn=http.client.HTTPSConnection(host,timeout=1200 if file else 120)
         headers={'Authorization':'Bearer '+self.secret,'Accept':'application/vnd.github+json',
                  'X-GitHub-Api-Version':'2022-11-28','User-Agent':'cnr-reproducibility-archive'}
         body=json.dumps(data).encode() if data is not None else None
@@ -79,20 +79,21 @@ class API:
         path=Path(path);assert path.is_file() and path.stat().st_size<2*1024**3
         checksum=sha(path);expected='sha256:'+checksum
         for attempt in range(3):
-            existing=[a for a in self.assets(release['id']) if a['name']==path.name]
-            if existing:
-                a=existing[0]
-                if a['state']=='uploaded':
-                    assert a.get('digest')==expected and a['size']==path.stat().st_size,'Asset collision/checksum differs'
-                    return a
-                # Only a failed, incomplete upload of this exact current name.
-                assert a['state']=='starter'
-                self.request('DELETE',f'/repos/{REPO}/releases/assets/{a["id"]}')
             try:
+                existing=[a for a in self.assets(release['id']) if a['name']==path.name]
+                if existing:
+                    a=existing[0]
+                    if a['state']=='uploaded':
+                        assert a.get('digest')==expected and a['size']==path.stat().st_size,'Asset collision/checksum differs'
+                        return a
+                    # Only this uploader's failed, incomplete exact-name upload.
+                    # Never run two uploaders for the same asset concurrently.
+                    assert a['state']=='starter'
+                    self.request('DELETE',f'/repos/{REPO}/releases/assets/{a["id"]}')
                 a=self.request('POST',f'/repos/{REPO}/releases/{release["id"]}/assets?name='+urllib.parse.quote(path.name),host='uploads.github.com',file=path)
                 assert a['state']=='uploaded' and a['size']==path.stat().st_size and a.get('digest')==expected
                 return a
-            except (OSError,http.client.HTTPException,RuntimeError):
+            except (OSError,http.client.HTTPException,RuntimeError,json.JSONDecodeError):
                 if attempt==2:raise
                 time.sleep(5*(attempt+1))
 
