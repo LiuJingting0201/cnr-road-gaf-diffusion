@@ -136,3 +136,18 @@ but its image-model setting does not validate our global class-feature targets.
 [DOODL](https://arxiv.org/abs/2303.13703) discusses limits of guidance through approximate
 denoised outputs; it does not prove a particular trajectory guidance schedule works.
 The local ablations and output-quality measurements remain the deciding evidence.
+
+A closely related recent preprint is
+[RECON: Representation Conditioning for Generation](https://arxiv.org/abs/2610.20608).
+It retains the alignment projector and feeds its predicted representation into
+later denoising layers at inference. Its training uses clean encoder features with
+a noise-level gate to address a train/inference mismatch. This is image-domain
+evidence, not a validated trajectory method; its reported convergence gains cannot
+be transferred to our hardware or dataset. It motivates testing **predicted GAF
+feature feedback into the trajectory decoder**, with matched generic/raw-feature
+controls and an explicit train/inference consistency check. That would be an
+adaptation of existing representation-conditioning ideas, not a claim to invent
+the general mechanism. Unlike image inversion, discrete original Hilbert/GAF need
+only supply training targets; no coordinate derivative through that encoder is
+claimed. Retaining predicted features is distinct from running the actual CNN
+gradient on a generated trajectory, and should be named accordingly.

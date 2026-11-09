@@ -70,6 +70,15 @@ Neither establishes the achieved speedup; publish actual receipts when complete.
 Mixed precision, changed microbatches, compilation and batched sampling are outside
 this first benchmark because they need additional numerical and quality checks.
 
+Preparation follow-up: the now-completed utility cache builder has the same
+per-trajectory NPZ decompression issue. A separate candidate applies the same
+one-load-per-array fix to `g39_utility.py`. After full-batch review, one CPU-only
+cache reconstruction may compare every numeric/identity array and normalizer with
+the completed original cache, with a120s cap and no retraining. Keep it outside
+the paired GPU timing window. The existing performance snapshot/controller is
+unchanged. Adopt this fix only after exact cache equality; do not quote a controlled
+speedup from uninstrumented historical preparation timestamps.
+
 Public artifacts: code, fixed protocol, aggregate timings, numerical comparisons
 and failure logs without individual trajectories. Raw data and checkpoints stay
 on the server or in the already-authorized private artifact repository.

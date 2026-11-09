@@ -79,11 +79,12 @@ def prepare(root,data,out):
             for folder in folders:
                 rec=json.loads((folder/'complete.json').read_text());assert digest(folder/'samples.npz')==rec['artifacts']['samples.npz']
                 with np.load(folder/'samples.npz',allow_pickle=False) as f:
-                    for j,k in enumerate(selected):
-                        where,i,label=candidates[a][k]
-                        assert label==y[j]
-                        if where!=folder:continue
-                        lo,hi=f['offsets'][i:i+2];txy=f['txy'][lo:hi];values[j]=series(txy[:,0],txy[:,1:])
+                    offsets,txy_all=f['offsets'],f['txy']
+                for j,k in enumerate(selected):
+                    where,i,label=candidates[a][k]
+                    assert label==y[j]
+                    if where!=folder:continue
+                    lo,hi=offsets[i:i+2];txy=txy_all[lo:hi];values[j]=series(txy[:,0],txy[:,1:])
             assert all(v is not None for v in values);parts[a]=normalize(np.stack(values))
         for name,x in parts.items():
             np.savez_compressed(out/f'{name}.npz',x=x,y=y)

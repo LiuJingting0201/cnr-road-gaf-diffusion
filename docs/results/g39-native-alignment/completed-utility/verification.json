@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "verified_fits": 26,
+  "model_prediction_artifacts_verified": true,
+  "same_evaluation_identity_label_order": true,
+  "macro_perclass_f1_recomputed": true,
+  "evaluation_n": 384,
+  "source_receipt_sha256": "099b53985f9e890c08e61f5712a740be441edd4b792d832e71a5dbea962407f9",
+  "cache_receipt": {
+    "complete": true,
+    "real_n": 1000,
+    "synthetic_n_each": 1000,
+    "classes": 5,
+    "evaluation_support": {
+      "390205": {
+        "admitted": 98,
+        "requested": 100
+      },
+      "390206": {
+        "admitted": 94,
+        "requested": 100
+      },
+      "390207": {
+        "admitted": 97,
+        "requested": 100
+      },
+      "390208": {
+        "admitted": 95,
+        "requested": 100
+      }
+    },
+    "mean_xy": [
+      4514.59716796875,
+      2000.405029296875
+    ],
+    "sd_xy": [
+      1453.705322265625,
+      964.0344848632812
+    ],
+    "normalizer_real_train_only": true,
+    "nonbus_condition_parent_disjoint": true,
+    "shared_bus_templates": true,
+    "source_G39_sha256": "155093b761f87b99a92f29e7b6c512556ac8dbea7d0d17ac6042e4454a08cf5a",
+    "artifacts": {
+      "real.npz": {
+        "sha256": "64399124cf51b4ecccbe92ac114f2bca5cc5e9eb773386654eff3dee021b1ff8"
+      },
+      "empirical.npz": {
+        "sha256": "ebd5bd88368b1b2d602b5337210d927b44e5b68287c2d9ad900f376164b54caa"
+      },
+      "B.npz": {
+        "sha256": "463a331c5ea963a7d7c6317ef9bb027afd2f2421a588dde37540c2ed670e0c2d"
+      },
+      "S.npz": {
+        "sha256": "7e36b7297b98da4a4ad95eca8837e080f06188e867bd85baf13de587f1e29156"
+      },
+      "V.npz": {
+        "sha256": "11bf4f40dbf46158d2e3dcf4c59f44d567ed5f8c46693ba726dc28bee133294b"
+      },
+      "SV.npz": {
+        "sha256": "588efd8a2cd02582d6707d790f3e6c1b0b4d052c34ad89d68e2c23a9eac049e2"
+      },
+      "RAW.npz": {
+        "sha256": "afd3492a70e32aaf1e677d9e7fe4cc269b6e96fc5053c5c777ce098568f68757"
+      },
+      "evaluation.npz": {
+        "sha256": "d7f52e20e38111b5b22badf790244e1d76e42efd3211d633229f445956e665eb"
+      }
+    },
+    "evaluation_loaded_for_training": false
+  },
+  "scope": "Two held-out OD cohorts, shared bus service templates; no new fitting or outcome-based selection."
+}
