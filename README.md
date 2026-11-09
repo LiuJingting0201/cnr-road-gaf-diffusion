@@ -1,5 +1,13 @@
 # CNR Road / GAF Trajectory Diffusion
 
+## Current deliverables and archive (2026-11-09)
+
+- [Thesis v19 PDF](deliverables/thesis-v19/Road_Conditioned_Diffusion_Thesis_v19.pdf) and [Overleaf source ZIP](deliverables/thesis-v19/PoliTo_Thesis_v19_Overleaf.zip). This is the existing research draft; G38 has not yet been incorporated.
+- [G38 protocol](docs/G38_PROTOCOL.md) and [verified running status](docs/results/g38-route-preferences/STATUS.md): learned route preferences followed by frozen temporal diffusion and matched GAF controls.
+- [Archive index and restore instructions](docs/GITHUB_ARCHIVE.md). This code repository is public. Full datasets/checkpoints are held in the separately private `LiuJingting0201/cnr-road-gaf-artifacts` repository.
+- [Early standalone working notes](docs/archive/early-local-notes/), retained as historical notes rather than current conclusions.
+
+
 毕设目标：给定路网、起点和交通类别，扩散合成满足路网约束、运动合理性和类别语义的新轨迹；承接组内 Hilbert/GAF 表示与分类研究，验证其在生成与下游增广中的作用。
 
 ## 当前主线：承接原GAF工作开展扩散轨迹合成
