@@ -91,7 +91,9 @@ duration marginals. The generator remains route-policy + duration-prior + diffus
 Primary quality endpoints: class-macro native speed W1 and acceleration W1; retain
 both. Secondary: stop fraction, stop/start frequency, longest stop/cruise, speed
 quantiles, one-second acceleration, duration, road legality, decode clamping,
-candidate diversity and nearest training-motion distance. Reference is one SUMO
+candidate diversity and nearest training-motion distance. The latter uses normalized
+257-point progress, up to512 SHA-ranked train legs per class, with a 1e-4 shape
+distance diagnostic threshold; it is not a full spatial memorization/privacy test. Reference is one SUMO
 realization, so pointwise disagreement does not mean an alternative is invalid.
 Report every class, scene, seed and endpoint, equal request/physical time within
 trajectory. Report paired scene deltas and cohort-paired bootstrap intervals
