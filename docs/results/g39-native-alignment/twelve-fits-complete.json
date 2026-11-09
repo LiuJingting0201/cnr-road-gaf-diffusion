@@ -1,0 +1,176 @@
+{
+  "observed_utc": "2026-11-09T08:51:30.778140+00:00",
+  "free_gib": 48.39616012573242,
+  "fits": {
+    "B-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.9560700431466
+    },
+    "B-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2798.5856924131513
+    },
+    "P-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2851.1800867691636
+    },
+    "P-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2949.695791386068
+    },
+    "S-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2892.3171733617783
+    },
+    "S-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2752.597233131528
+    },
+    "SH-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2936.6122078225017
+    },
+    "SH-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2947.7820089906454
+    },
+    "SV-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2951.7541911303997
+    },
+    "SV-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2950.7591203078628
+    },
+    "V-42": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2891.6507056951523
+    },
+    "V-43": {
+      "complete": true,
+      "artifact_hashes_verified": true,
+      "steps": 10000,
+      "elapsed_s": 2846.8637280017138
+    }
+  },
+  "active_fits": {
+    "RAW-42": {
+      "step": 7700,
+      "elapsed_s": 2250.3367505297065,
+      "updates_per_s": 3.4217101054708805
+    },
+    "RAW-43": {
+      "step": 7200,
+      "elapsed_s": 2072.193387389183,
+      "updates_per_s": 3.4745791796351067
+    }
+  },
+  "references": {
+    "390201": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390202": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390203": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390204": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390205": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390206": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390207": {
+      "complete": true,
+      "catalog_complete": true
+    },
+    "390208": {
+      "complete": true,
+      "catalog_complete": true
+    }
+  },
+  "queues": {
+    "g39": {
+      "complete": false,
+      "failures": [],
+      "progress": null
+    },
+    "g39u": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_G39",
+        "seconds": 9810.230188019574
+      }
+    },
+    "g39f": {
+      "complete": false,
+      "failures": [],
+      "progress": {
+        "stage": "waiting_for_GPU_dependency",
+        "seconds": 9810.185803256929
+      }
+    }
+  },
+  "generation_cells_complete": 0,
+  "evaluation_cells_complete": 0,
+  "training_progress": {
+    "complete": false,
+    "finished": [
+      "fit-B-43",
+      "fit-B-42",
+      "fit-V-42",
+      "fit-S-42",
+      "raw-spatial-None",
+      "raw-speed-None",
+      "fit-S-43",
+      "fit-V-43",
+      "fit-SV-42",
+      "fit-SV-43",
+      "fit-P-42",
+      "fit-P-43",
+      "fit-SH-42",
+      "fit-SH-43"
+    ],
+    "pending": [],
+    "active": {
+      "train-RAW-42": 227554,
+      "train-RAW-43": 227621
+    },
+    "seconds": 10817.205417253077,
+    "free_bytes": 51964981248,
+    "output_bytes": 1207805440
+  }
+}

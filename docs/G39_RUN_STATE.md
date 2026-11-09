@@ -28,9 +28,11 @@ untouched. Free-space reserve12GiB; output caps main24GiB/utility4GiB/factorial6
 
 ## What is already established
 
-- Actual four-card progress, not just PIDs: first fits beyond5,400updates at the
-  latest stored snapshot; no failure marker. Exact short-test initialization and
-  denoising loss equality, nonzero auxiliary gradient, padding/EMA/export checks.
+- Latest stored check:12/14diffusion fits complete with artifact hashes verified;
+  RAW42/RAW43 are the last active training jobs. All8SUMO references completed,
+  generation/evaluation0/112. See twelve-fits-complete.json in the G39 results.
+  Exact short-test initialization/denoising equality, auxiliary gradient and
+  padding/EMA/export checks passed; performance optimization remains deferred.
 - Full raw-series downstream-cache fixture passed without opening fresh outcomes.
 - G35 train-parent vs planned utility-evaluation source-parent metadata overlap0
   in each class; nonbus OD cohorts separated. Public bus templates still shared.
