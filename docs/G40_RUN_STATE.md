@@ -22,6 +22,12 @@ Base `/workspace/cnr-experiments/gaf-inloop-v1`:
   generation/evaluation cells and30independent utility fits. Has actual pilot
   review tied to the formal source manifest; fresh G39B start, not pilot checkpoints.
 
+- `g40-review-job/g40-review-data`: sourcef434847,PID242645; waiting for formal
+  all-stages-complete.json, then verifies every source artifact and recomputes
+  downstream predictions, produces fixed five-class journey/GAF figures plus
+  all-arm aggregate plots/tables. This does not interpret results or edit thesis
+  prose automatically; a review is still required. Max24h wait/1h active/free12GiB.
+
 No desktop milestone automation. Existing detached cloud supervisors own their
 children and stop on bounds/failure. Preserve all old work trees/failure receipts.
 Do not start a duplicate queue. Historical frozen tests stay closed. Public repository
@@ -37,3 +43,5 @@ primary speed/acceleration and all motion/diversity controls, then update LaTeX,
 trajectory/GAF figures, abstract and discussion together and render-review the PDF.
 
 Formal launch receipt does not prove progress or completion. Inspect live logs before reporting. The cloud queue includes utility after128cells close; all-stages-complete.json is required before final scientific interpretation and thesis revision. Main complete.json closes the primary stage only and remains immutable.
+
+Latest live check at formal elapsed~18minutes: B42/B43 3700/3600updates; F-SV42/43 3200/3300. Four GPU processes active,2/8references and1/8catalog complete, no failures. First eight request manifests are frozen and train-parent checks passed. These are progress counts, not completed-model quality evidence.
