@@ -1,30 +1,36 @@
-# G38 running: route models trained, generation-quality evaluation pending
+# G38 completed: learned routing helps edge-use agreement; GAF remains a trade-off
 
-2026-11-09. Protocol and full finite dependency queue were committed/pushed as2199ad4 before execution. Isolated cloud directory `g38-job`; old worktrees and frozen tests unchanged. The queue launches independent CPU route construction/reference simulation and four GPU fits, then four diffusion-generation cells and evaluation without a local connection.
+2026-11-09. The finite queue completed in 65.22 minutes. All four generation/evaluation cells are present, with ten matched selectors per cell. The original pre-execution protocol is unchanged. Full class/endpoint results are in `generation-complete.json`; `generation-macro.csv` contains every cell rather than only an average. Launch-time training/resource evidence remains in `LAUNCH_STATUS.md`.
 
-## Completed route training
+## What changed
 
-The input has29,895 training legs from24,073 parents. The first-passage road-choice interface accepts23,696 legs/parents with546,363 branching decisions. Development support is5,748 legs/parents and132,341 decisions, of which2,994 legs have a class/OD edge pair absent from accepted training. All five classes remain. Rejections are fully retained in `policy-data/complete.json`:2,763 training legs have fewer than two edges,3,403 have non-first-passage segments and33 have no branching decision. This policy does not cover journeys that reach the same goal edge and then leave it before the final arrival; that coverage limitation is material and not a claim that those journeys are invalid.
+The four route-policy fits completed as previously reported (neural development decision accuracy96.76/96.78%). Existing native-clock diffusion and spatial/speed GAF networks were frozen. This isolates the learned route preference and its GAF reweighting; it is not new diffusion training or sampling-time guidance. Two new SUMO scenes share public OD/service plans. Models42/43 pair route and diffusion seeds; four cells are not four independent scenes.
 
-Four fixed fits (linear/neural × seeds42/43) ran on separate L20 devices,4,000 updates each. Their measured training times were16.12–17.92seconds; these are small road-choice networks, not new diffusion fits. Existing full-trajectory diffusion and GAF models remain frozen to isolate route learning. Input preparation took79.53seconds. Every fit has a final checkpoint receipt, SHA256 and complete scalar training trace; no validation-based checkpoint selection.
+## Complete comparison
 
-Class-macro development branching-decision results, equal parent then leg then decision within class:
+The table is a descriptive, equally weighted average across the two scenes and two model seeds, after class-macro averaging within each cell. Weighted native W1 measures the full probability-weighted candidate distribution; it is distinct from the single sampled output. Both are retained in the full results. Lower W1/JS is better; effective route count describes retained route diversity rather than correctness.
 
-| Policy | Accuracy | NLL | Brier score | ECE (10 bins) |
+| Selector | Speed W1 (m/s) | Acceleration W1 (m/s²) | Edge-use JS | Effective routes |
 |---|---:|---:|---:|---:|
-| Uniform reachable successor |45.28%|0.7574|0.5259|0.0347|
-| Static shortest remaining cost |94.90%|0.5867|0.3772|0.3757|
-| Linear42 |90.59%|0.2752|0.1573|0.0748|
-| Linear43 |90.58%|0.2747|0.1568|0.0756|
-| Neural42 |96.76%|0.0966|0.0518|0.0096|
-| Neural43 |96.78%|0.0959|0.0515|0.0072|
+| Uniform | 1.0511 | 0.1758 | 0.10177 | 3.454 |
+| Shortest | 1.2033 | 0.1744 | 0.04000 | 1.000 |
+| Linear | 1.1438 | 0.1724 | 0.04931 | 1.656 |
+| R | 1.1673 | 0.1719 | 0.03458 | 1.176 |
+| S | 1.1150 | 0.1770 | 0.09677 | 2.748 |
+| V | 1.2442 | 0.1747 | 0.10120 | 3.015 |
+| SV | 1.1952 | 0.1721 | 0.09422 | 2.672 |
+| R+S | 1.2125 | 0.1677 | 0.03732 | 1.159 |
+| R+V | 1.2871 | 0.1716 | 0.03626 | 1.195 |
+| R+SV | 1.2237 | 0.1663 | 0.03473 | 1.175 |
 
-The strong shortest-cost accuracy is important: most held-out decisions already align with static routing. The neural improvement is about1.9percentage points, not evidence that every route is better. ShortestCost probabilities use a fixed1km softmax scale, so its NLL/calibration gap is not a temperature-matched learned-baseline comparison; the fitted linear control is reported alongside it. Uniform accuracy uses deterministic tie-breaking among equal-probability successors. These are road-choice prediction metrics, **not GAF classifier accuracy, whole-route accuracy or trajectory-quality results**. Per-class and seen/unseen-OD values are in `policy-evaluation/complete.json`; buses share public service templates across splits.
+R is the neural route policy. S/V are spatial/speed GAF, SV averages their log scores. All methods share the same eight-candidate pool, fixed coefficient1, and candidate-count correction per route. No strength or checkpoint is selected after viewing these outcomes.
 
-## Running and resource scope
+## Interpretation and coverage
 
-Two new SUMO episodes and two map-only route catalogs proceed on CPU. Four sampling cells are queued after catalogs complete; physical and route-distribution evaluation follows completed generation and references. Ten selectors share each8-candidate pool, including learned routing without GAF and its spatial/speed/combined GAF extensions. Unequal candidates per route are corrected before stochastic selection. No evaluation result or GAF benefit claim is available at this checkpoint.
+R reduces average edge-use JS versus the shortest-route control by13.57%, while retaining about1.18 effective routes versus1.00 for Shortest. Against the same Shortest control, mean speed W1 decreases2.99% (all four cells) and acceleration W1 decreases1.40% (three of four cells). This is finite-catalog distributional agreement, not proof of correct individual route choice or population route-frequency calibration. The uniform catalog policy has substantially more route diversity and lower aggregate speed W1, so learned routing is not an across-the-board improvement.
 
-At launch, approximately50GiB was free. The entire new root has a12GiB output limit and12GiB minimum-free guard, plus a12hour timeout. The user-facing initial runtime estimate is1–2hours for the whole queue, informed by the previous65minute experiment; it is an estimate, not a guarantee. GPU idle intervals during CPU work are expected. The two simulation clocks have been observed advancing; background teleport counts are present and must not be misreported as zero incidents or automatically attributed to target trajectories. Reference acceptance retains the existing explicit quality checks and all request denominators.
+Adding spatial GAF to R lowers aggregate acceleration W1 by2.43% but raises speed W1 by3.87% and edge-use JS by7.95%. The averages conceal a scene reversal: acceleration improves8.09/8.34% in scene380201 and worsens4.09/8.96% in380202. R+SV likewise improves acceleration8.05/10.21% in the first scene but worsens0.86/10.80% in the second. Consequently this experiment does not establish a stable incremental GAF gain beyond learned routing. Full adverse endpoints and all five classes remain reported; no new GAF-weight sweep is started.
 
-Runtime hashes of all five new scripts match local committed sources. Checks passed for masked/ordered goal decisions, permutation invariance, candidate-multiplicity correction, coupled random selection, common fallback, edge-occurrence mass/JS/native weighting, eight inherited reference cases and33 geometry cases. Raw arrays, per-participant metadata, candidate tracks and model weights remain on the cloud. The checked resource/stage snapshot is `current.json`; its timestamp is explicit and is not a live dashboard.
+Each scene requests100 journeys:24 public bus plans and19 for each other class. The route catalog supports98, including22 buses; the two unsupported bus plans remain in the denominator. Paired physical/route support is97 in380201 and92 in380202; the later scene has19 supported buses and16 taxi/uber references. The catalog contains an exact reference route for64/97 and61/92 paired requests. Valid alternate routes are not errors solely because they differ from the reference. Per-class nearest-catalog overlap and all support counts remain in the full JSON.
+
+The old frozen test is not used. These independent simulator realizations still share the same map and public service/OD templates; the simulator references do not provide a general stochastic within-OD route-frequency ground truth. The existing v19 thesis is not silently rewritten as universal GAF success. This result and the full closed snapshot are included in the2026-11-09 GitHub archive.
