@@ -64,3 +64,8 @@ Manuscript revision map is G40_MANUSCRIPT_REVISION_PLAN.md. Its source-level
 clarifications include G35 subsecond speed fallback and exact route-policy scoring.
 Reproducible package builder passed the unchanged v19 clean-build preflight;
 thesis prose, figures and delivered version are still unchanged pending evidence.
+
+UTC2026-11-09T19:30:19: all8reference episodes and8catalogs are complete;
+38/128 generation/evaluation cells closed, no failures,34.75GiBfree. The same
+four-GPU sampler queue continues. No generation-quality values have been read
+for scientific decisions; utility remains downstream of primary closure.

@@ -123,3 +123,10 @@ pilot's prior-range issue reappears under prospective route/duration conditions.
 Methods, data, protocol, introduction and literature edits are prepared under
 `/tmp/cnr-v20-draft` only; the actual manuscript is unchanged. These drafts contain
 no new G40 quality conclusions and need integration/review after complete evidence.
+
+The additional presentation-only builder `thesis/tools/build_g40_supplement.py`
+will render the fixed ten physical endpoints as both class-marginal W1 and
+request-paired MAE, both native endpoints by all five classes, both fitted seeds,
+per-episode coverage and diversity/decoder accounting. It reads only the verified
+closed export. These are existing endpoints, not a new metric selection or
+post-hoc exclusion rule. Short-trip support remains endpoint-specific.
