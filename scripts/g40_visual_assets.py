@@ -13,6 +13,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
+from map_speed import map_speed, speed_limit
 import torch
 from g33_evaluate import read_pool, signals
 from g33_train import digest, save
@@ -73,10 +74,11 @@ def main(a):
         allxy=np.concatenate([v[:,1:] for v in tracks.values()]);origin=allxy.min(0);span=np.maximum(allxy.max(0)-origin,1)
         pad=max(60,.08*span.max());lo=origin-pad;hi=allxy.max(0)+pad
         nearby=[p-origin for p in lanes if np.all(p.max(0)>=lo) and np.all(p.min(0)<=hi)]
-        fig,axs=plt.subplots(2,3,figsize=(10.5,7))
+        vmax=speed_limit(tracks)
+        fig,axs=plt.subplots(2,3,figsize=(10.5,8.2))
         for ax,key in zip(axs[0],('SUMO','B','J-SV')):
             t=tracks[key];ax.add_collection(LineCollection(nearby,colors='#dce1e5',linewidths=.35))
-            points=ax.scatter(t[:,1]-origin[0],t[:,2]-origin[1],c=t[:,0]/t[-1,0],s=4,cmap='viridis',vmin=0,vmax=1,rasterized=True)
+            points=ax.scatter(t[:,1]-origin[0],t[:,2]-origin[1],c=map_speed(t),s=4,cmap='viridis',vmin=0,vmax=vmax,rasterized=True)
             ax.scatter(*(t[0,1:]-origin),marker='o',s=28,facecolor='white',edgecolor='black',zorder=5)
             ax.scatter(*(t[-1,1:]-origin),marker='x',s=30,c='black',zorder=5)
             ax.set(xlim=(-pad,span[0]+pad),ylim=(-pad,span[1]+pad),xlabel='Local east (m)',ylabel='Local north (m)',title=key)
@@ -94,7 +96,8 @@ def main(a):
         for ax in axs[1]:ax.grid(alpha=.2)
         handles,labels=axs[1,0].get_legend_handles_labels();fig.legend(handles,labels,ncol=6,loc='lower center',frameon=False)
         fig.suptitle(NAMES[label]+': first direct draws on a new request',fontsize=14)
-        fig.subplots_adjust(top=.91,bottom=.15,wspace=.36,hspace=.5)
+        fig.subplots_adjust(top=.91,bottom=.15,wspace=.36,hspace=.95)
+        fig.colorbar(points,cax=fig.add_axes([.32,.535,.36,.017]),orientation='horizontal',label='One-second speed (m/s)')
         output(fig,'g40-journey-'+cls)
         rendered={key:images(t) for key,t in tracks.items()}
         fig,axs=plt.subplots(6,3,figsize=(7.8,11.2),gridspec_kw={'width_ratios':[1,1,1.55]})

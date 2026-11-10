@@ -4,20 +4,21 @@ Rule fixed before rendering: morning episode 360201, expanded seed42/teachers,
 first lexicographic jointly supported request per class; all five classes kept.
 Only figures and hash provenance leave the server, never trajectory archives.
 """
-import hashlib,json,xml.etree.ElementTree as ET
+import hashlib,json,os,xml.etree.ElementTree as ET
 from pathlib import Path
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
+from map_speed import map_speed, speed_limit
 import torch
 from g33_evaluate import read_pool,digest,CLASSES,signals
 from g36_feedback import spatial_sequence
 from g23_modes import speed_series
 from g28_teachers import image_inputs
 from cnr.original_gaf import encode_frozen
-R=Path('g36-data/360201');O=Path('g36-data/visual-v18-final');O.mkdir(exist_ok=False)
+R=Path('g36-data/360201');O=Path(os.environ.get('G36_VISUAL_OUTPUT','g36-data/visual-v18-final'));O.mkdir(exist_ok=False)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.titlesize':11,'pdf.fonttype':42,'axes.spines.top':False,'axes.spines.right':False})
 methods=['Uniform','S','V','SV'];names=['Bus','Motorcycle','Private car','Bicycle','Taxi / ride-hailing'];colors={'SUMO':'#20252c','Uniform':'#73808a','S':'#9556ac','V':'#118576','SV':'#cc6137'}
 inputs={};figures=[]
@@ -58,13 +59,14 @@ for label,cls in enumerate(CLASSES):
  cand=[i for i,r in enumerate(pool['request_ids']) if str(r)==ident];assert len(cand)==8
  mi=maps[ident];route=mp['vertices'][mp['offsets'][mi]:mp['offsets'][mi+1]];origin=route.min(0);span=np.maximum(route.max(0)-origin,1);pad=max(60,.1*span.max());lo=origin-pad;hi=route.max(0)+pad
  nearby=[l-origin for l in lanes if np.all(l.max(0)>=lo) and np.all(l.min(0)<=hi)]
+ vmax=speed_limit(tracks)
  fig,axs=plt.subplots(2,2,figsize=(8,7.5));mapaxes=axs[0]
  for ax,key,title in zip(mapaxes,['SUMO','Uniform'],['Independent SUMO realization','Diffusion output: Uniform']):
   t=tracks[key];ax.add_collection(LineCollection(nearby,colors='#d9dfe3',linewidths=.4));ax.plot(*(route-origin).T,color='#8495a3',lw=2.8,alpha=.55)
-  p=ax.scatter(t[:,1]-origin[0],t[:,2]-origin[1],c=t[:,0]/t[-1,0],s=5,cmap='viridis',vmin=0,vmax=1,rasterized=True)
+  p=ax.scatter(t[:,1]-origin[0],t[:,2]-origin[1],c=map_speed(t),s=5,cmap='viridis',vmin=0,vmax=vmax,rasterized=True)
   ax.scatter(*(t[0,1:]-origin),marker='o',s=36,facecolor='white',edgecolor='black',zorder=5);ax.scatter(*(t[-1,1:]-origin),marker='x',s=40,c='black',zorder=5)
   ax.set(xlim=(-pad,span[0]+pad),ylim=(-pad,span[1]+pad),xlabel='Local east (m)',ylabel='Local north (m)',title=title);ax.set_aspect('equal',adjustable='box')
- fig.colorbar(p,ax=list(mapaxes),orientation='horizontal',fraction=.045,pad=.17,label='Elapsed fraction of each trip',shrink=.75)
+ fig.colorbar(p,ax=list(mapaxes),orientation='horizontal',fraction=.045,pad=.17,label='One-second speed (m/s)',shrink=.75)
  for i in cand:
   t=track(pool,i);arc=np.r_[0,np.cumsum(np.linalg.norm(np.diff(t[:,1:],axis=0),axis=1))];axs[1,0].plot(t[:,0],arc/arc[-1],c='#b7c7d2',lw=.75,alpha=.8)
  for m,t in tracks.items():

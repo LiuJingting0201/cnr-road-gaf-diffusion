@@ -1,0 +1,322 @@
+{
+  "complete": true,
+  "rule": "episode360201, expanded native seed42 and expanded teachers, first lexicographic jointly supported request per class, all five retained; illustrative not inferential",
+  "inputs_sha256": {
+    "g36-data/360201/pools/new-42/samples.npz": "005b4f7df002695f14074fcd6489e203572204f3146d4d587d52a053c9f3d15f",
+    "g36-data/360201/reference/references.npz": "5dc3ee15ce8c1b5c15d4ea0d888b05819354431ab2fe8a8a78a739b7a20c3aa3",
+    "g36-data/360201/selected/new-42-new/Uniform/samples.npz": "4f148041a867682c4b84728da61b2853f2e7d54722996375906abf07e03d6b04",
+    "g36-data/360201/selected/new-42-new/S/samples.npz": "d3d5692e43e791ae643914a19d8f3e6b085af0c88383f370a595d6e5af91a80d",
+    "g36-data/360201/selected/new-42-new/V/samples.npz": "c2ffbe834722a57787f79ef15a006fc2296b3f02afa5b42ec9b06728bcda81f9",
+    "g36-data/360201/selected/new-42-new/SV/samples.npz": "d56eb31758d7a0b66cdf58538d11cc8efda1a9df4d01477277ce3ededb3c0bc4",
+    "g36-data/360201/maps/maps.npz": "9e2cc614a29367b58ff227d53f51d8101c7e795cfa3481880bba3e07df7a4850",
+    "../g35d-job/g35-data/gaf-cache/complete.json": "05317df345b3bf6fe9977be1854ea0711d7ff7e12a3329b001d2a522acfc56ea",
+    "g36-data/360201/selected/new-42-new/encoding-status.json": "e57ceb7f1ee65055ef529f36545c8a47a8fa54255f3603572a8873f3d7cec786",
+    "g36-data/360201/selected/new-42-new/scores.npz": "f7db47aa855899cc40601d1a876c9edb588cbda6791c7e80fd82ea1a25e37c0e",
+    "../g30-job/g30-data/source/scenario/in/most.net.xml": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0"
+  },
+  "script_sha256": "0f800084fd861bd642082f019d6ceaa04f45cc19e77bbfb0f9e5fe9107a0118a",
+  "figures": [
+    "g36-journey-bus",
+    "g36-gaf-bus",
+    "g36-gaf-construction",
+    "g36-eight-candidates",
+    "g36-journey-motorcycle",
+    "g36-gaf-motorcycle",
+    "g36-journey-private_car",
+    "g36-gaf-private_car",
+    "g36-journey-bycicle",
+    "g36-gaf-bycicle",
+    "g36-journey-taxi_or_uber",
+    "g36-gaf-taxi_or_uber"
+  ],
+  "cases": [
+    {
+      "class": "bus",
+      "request_sha256": "68c17a9bb5dda6f901769255e5def819e5be8ca0cc653de9651533afea5fd4ea",
+      "eligible": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 2315.0,
+          "points": 9261,
+          "spatial_image_sha256": "ce5b975bf928c363df401d06ff18fe5c9f81ca06a4e94859c6830c1f9279bd2f",
+          "coordinate_clipped": 0
+        },
+        "Uniform": {
+          "duration_s": 1235.6390262518335,
+          "points": 4944,
+          "spatial_image_sha256": "22edf042f793c5a65ddf3213ed51f07187914c62f0306941ab61be7aa88f454c",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "55cf6c7aa200e749586c1c0ddf1dbba1dedbf509482d2b007b0c22085ac136a5",
+          "scores": [
+            0.9914934635162354,
+            1.596359652467072e-05
+          ]
+        },
+        "S": {
+          "duration_s": 1235.6390262518335,
+          "points": 4944,
+          "spatial_image_sha256": "82fe5b999280c9c779e84b7da250625969bcab52859dd7701df4ee2803ce8486",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "6110abe2bc8bf08ac6f18a2e7a20b69f723f537fbcf61e92a699bdb8d7d048b6",
+          "scores": [
+            0.9992493987083435,
+            4.530676960712299e-06
+          ]
+        },
+        "V": {
+          "duration_s": 1235.6390262518335,
+          "points": 4944,
+          "spatial_image_sha256": "22edf042f793c5a65ddf3213ed51f07187914c62f0306941ab61be7aa88f454c",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "55cf6c7aa200e749586c1c0ddf1dbba1dedbf509482d2b007b0c22085ac136a5",
+          "scores": [
+            0.9914934635162354,
+            1.596359652467072e-05
+          ]
+        },
+        "SV": {
+          "duration_s": 1235.6390262518335,
+          "points": 4944,
+          "spatial_image_sha256": "22edf042f793c5a65ddf3213ed51f07187914c62f0306941ab61be7aa88f454c",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "55cf6c7aa200e749586c1c0ddf1dbba1dedbf509482d2b007b0c22085ac136a5",
+          "scores": [
+            0.9914934635162354,
+            1.596359652467072e-05
+          ]
+        }
+      }
+    },
+    {
+      "class": "motorcycle",
+      "request_sha256": "aff542c569af38f244513a725875d86b04681a55bc984cedd9bd009a9819d83b",
+      "eligible": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 396.0,
+          "points": 1585,
+          "spatial_image_sha256": "bf5c1c5279bd7a19efacce20e02da0eaf44a46fb6781179083e0c67d2f9b799d",
+          "coordinate_clipped": 0
+        },
+        "Uniform": {
+          "duration_s": 591.3944254330445,
+          "points": 2367,
+          "spatial_image_sha256": "4423703d00562129c8be1e48076b8643efb36c7f6f551243709b822700a37222",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "83c54b860af2c3690729bf97f0dc59bf5b7d64b4fce8fee96f6c4ab63c231f95",
+          "scores": [
+            0.999993085861206,
+            0.989639401435852
+          ]
+        },
+        "S": {
+          "duration_s": 591.3944254330445,
+          "points": 2367,
+          "spatial_image_sha256": "ec88bf3b37f5791c81b20d01e93c3d64547e8409ec327846c3184a3d6ab11adf",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "220a43f935d741c3fde158ec97602ed2fb0e1d2c45972c5144171177aeb3957f",
+          "scores": [
+            0.9999996423721313,
+            0.9999991655349731
+          ]
+        },
+        "V": {
+          "duration_s": 591.3944254330445,
+          "points": 2367,
+          "spatial_image_sha256": "ec88bf3b37f5791c81b20d01e93c3d64547e8409ec327846c3184a3d6ab11adf",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "220a43f935d741c3fde158ec97602ed2fb0e1d2c45972c5144171177aeb3957f",
+          "scores": [
+            0.9999996423721313,
+            0.9999991655349731
+          ]
+        },
+        "SV": {
+          "duration_s": 591.3944254330445,
+          "points": 2367,
+          "spatial_image_sha256": "ec88bf3b37f5791c81b20d01e93c3d64547e8409ec327846c3184a3d6ab11adf",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "220a43f935d741c3fde158ec97602ed2fb0e1d2c45972c5144171177aeb3957f",
+          "scores": [
+            0.9999996423721313,
+            0.9999991655349731
+          ]
+        }
+      }
+    },
+    {
+      "class": "private_car",
+      "request_sha256": "4b8a21ffacefa3388a8b546b63025c82e0defd6b9e7534525de03992a0e1b4cb",
+      "eligible": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 747.25,
+          "points": 2990,
+          "spatial_image_sha256": "71ca246885f0a5e21032bdf971911e0e6d5b719678e0b765b0869567402dc076",
+          "coordinate_clipped": 0
+        },
+        "Uniform": {
+          "duration_s": 834.0723188455387,
+          "points": 3338,
+          "spatial_image_sha256": "9674dcca0dbceaa1572ea9c4e0d4d1a9f0538ea68c7607b77f81c3a42bbf8f81",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "cc5a785122ae0f75832dd14b26f3b5dcdc02867842b8b82da96242759dafc23c",
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        "S": {
+          "duration_s": 834.0723188455387,
+          "points": 3338,
+          "spatial_image_sha256": "9674dcca0dbceaa1572ea9c4e0d4d1a9f0538ea68c7607b77f81c3a42bbf8f81",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "cc5a785122ae0f75832dd14b26f3b5dcdc02867842b8b82da96242759dafc23c",
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        "V": {
+          "duration_s": 834.0723188455387,
+          "points": 3338,
+          "spatial_image_sha256": "9674dcca0dbceaa1572ea9c4e0d4d1a9f0538ea68c7607b77f81c3a42bbf8f81",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "cc5a785122ae0f75832dd14b26f3b5dcdc02867842b8b82da96242759dafc23c",
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        "SV": {
+          "duration_s": 834.0723188455387,
+          "points": 3338,
+          "spatial_image_sha256": "9674dcca0dbceaa1572ea9c4e0d4d1a9f0538ea68c7607b77f81c3a42bbf8f81",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "cc5a785122ae0f75832dd14b26f3b5dcdc02867842b8b82da96242759dafc23c",
+          "scores": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "class": "bycicle",
+      "request_sha256": "17eaee61f33a46314f13cf5a2a3996b4fba32b2e769b9f0b9089269d22fa8f23",
+      "eligible": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 363.75,
+          "points": 1456,
+          "spatial_image_sha256": "198566fc5d603ebe92ca4a94f00942372e3e0dc4ae89b6be1a2616bc43acf414",
+          "coordinate_clipped": 0
+        },
+        "Uniform": {
+          "duration_s": 586.0925855392885,
+          "points": 2346,
+          "spatial_image_sha256": "d5087928a3891e93242314b866233c370207dbc7869db2f790097a45f8ae7254",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "77aaa9fc32ec1a561a10c59866d68e505a49ab46b3d75d4451e4a6c0d8bca5fb",
+          "scores": [
+            2.5891331745242496e-08,
+            1.0
+          ]
+        },
+        "S": {
+          "duration_s": 586.0925855392885,
+          "points": 2346,
+          "spatial_image_sha256": "b406f738b8b9edb18aea6676a3d4ff07033d78e5a9fcde66ec74c8b4063a2367",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "c8355b0389f1080130a5b0ec82f27ca7a453057c203923e20ac8ce27ff6ca693",
+          "scores": [
+            3.150271004415117e-05,
+            1.0
+          ]
+        },
+        "V": {
+          "duration_s": 586.0925855392885,
+          "points": 2346,
+          "spatial_image_sha256": "d5087928a3891e93242314b866233c370207dbc7869db2f790097a45f8ae7254",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "77aaa9fc32ec1a561a10c59866d68e505a49ab46b3d75d4451e4a6c0d8bca5fb",
+          "scores": [
+            2.5891331745242496e-08,
+            1.0
+          ]
+        },
+        "SV": {
+          "duration_s": 586.0925855392885,
+          "points": 2346,
+          "spatial_image_sha256": "b406f738b8b9edb18aea6676a3d4ff07033d78e5a9fcde66ec74c8b4063a2367",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "c8355b0389f1080130a5b0ec82f27ca7a453057c203923e20ac8ce27ff6ca693",
+          "scores": [
+            3.150271004415117e-05,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "class": "taxi_or_uber",
+      "request_sha256": "8da1752a19e638089482b6b71bbaaad015bf85eea013f75b83712c41da464bcf",
+      "eligible": 19,
+      "tracks": {
+        "SUMO": {
+          "duration_s": 233.75,
+          "points": 936,
+          "spatial_image_sha256": "b3255c049e53855de5d9f73fbf009cd04cdf737039cd0a6069df177c2cf1d60b",
+          "coordinate_clipped": 0
+        },
+        "Uniform": {
+          "duration_s": 209.20502465541645,
+          "points": 838,
+          "spatial_image_sha256": "370bced5fae5af4171d5ef3c0a2b2ab072c5eaa2352c2a5f82fd359c50aca429",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "0b362f0ab9d0fb94e4f2752857fadfa957764fa8a877c03db3f5c4310607200e",
+          "scores": [
+            0.30676665902137756,
+            0.999835729598999
+          ]
+        },
+        "S": {
+          "duration_s": 209.20502465541645,
+          "points": 838,
+          "spatial_image_sha256": "8f3193981705847a45dcbc7d57e8e4d7e5526be4b14ccad5eed7afe9a902d885",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "0cc5df89ff55aa2b135f5b9639414b39e63d44060a85654b606144c6eeea171a",
+          "scores": [
+            0.9999997615814209,
+            0.08242803066968918
+          ]
+        },
+        "V": {
+          "duration_s": 209.20502465541645,
+          "points": 838,
+          "spatial_image_sha256": "ac7145079d5a014f39da7c574b58118b9f2c411e1ab7dd78a1e00fff57f8b307",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "17402aab1a605b0152f187429e66945943c33dd622f17dd252de7c5cdc98a62f",
+          "scores": [
+            0.9471917748451233,
+            0.9999977350234985
+          ]
+        },
+        "SV": {
+          "duration_s": 209.20502465541645,
+          "points": 838,
+          "spatial_image_sha256": "49e938ac296e22487bbe0bed49f405f09dd3032ab0896d8f6e9fd887ce4b9b98",
+          "coordinate_clipped": 0,
+          "candidate_sha256": "3376f36e56bd7e7abbc73267f2f7ac4e4566ac507773494d044d2b1ae8a0b539",
+          "scores": [
+            0.9999972581863403,
+            0.9999648332595825
+          ]
+        }
+      }
+    }
+  ],
+  "spatial_hash_checks": "every plotted generated image equals recorded scoring image",
+  "speed_images": "exact image_inputs inverse ImageNet normalization; no per-panel contrast scaling",
+  "scope": "read-only completed artifacts, no fitting/scoring/selection/test access"
+}

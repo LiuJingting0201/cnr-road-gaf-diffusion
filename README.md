@@ -4,10 +4,10 @@ Map-, OD- and participant-class-conditioned synthesis of complete timestamped tr
 
 ## Current work — 2026-11-10
 
-G40 scientific work is complete: 16 motion fits, 12 learned code priors, eight prospective SUMO reference episodes, 128 generation/evaluation cells, 50,176 generated candidates and 30 independent downstream fits. Thesis v23 presents these results as a standalone study: 112 PDF pages, 63 main-text pages, 34 figures, 29 tables and 54 cited entries. All pages were rendered and reviewed; the clean Overleaf ZIP rebuild matches the delivered PDF page text.
+G40 scientific work is complete: 16 motion fits, 12 learned code priors, eight prospective SUMO reference episodes, 128 generation/evaluation cells, 50,176 generated candidates and 30 independent downstream fits. Thesis v24 presents these results as a standalone study: 130 PDF pages, 80 main-text pages, 45 figures, 29 tables and 54 cited entries. All pages were rendered and reviewed; the clean Overleaf ZIP rebuild matches the delivered PDF page text.
 
 - [Complete G40 interpretation and evidence](docs/results/g40-generative-conditioning/REPORT.md)
-- [Thesis v23 PDF](deliverables/thesis-v23/Road_Conditioned_Diffusion_Thesis_v23.pdf), [Overleaf ZIP](deliverables/thesis-v23/PoliTo_Thesis_v23_Overleaf.zip), and [source/build instructions](thesis/README.md)
+- [Thesis v24 PDF](deliverables/thesis-v24/Road_Conditioned_Diffusion_Thesis_v24.pdf), [Overleaf ZIP](deliverables/thesis-v24/PoliTo_Thesis_v24_Overleaf.zip), and [source/build instructions](thesis/README.md)
 - [Execution state](docs/G40_RUN_STATE.md), [taskbook](docs/THESIS_TASKBOOK.md), [experiment log](docs/EXPERIMENT_LOG.md)
 - [Fixed execution protocol](docs/G40_EXECUTION_PROTOCOL.md) and [generative-conditioning design](docs/G40_GAF_GENERATIVE_CONDITIONING_DESIGN.md)
 

@@ -31,6 +31,8 @@ The evidence concerns five participant classes on one SUMO road network with sha
 
 Road adherence is enforced by the path decoder. The system models individual journeys without joint traffic interactions, lateral behavior or evolving signal-state conditioning. Generalization to field GPS data, new cities and unseen services remains outside the evaluated scope. The representation controls also have distinct meanings: joint adaptation combines denoising and class losses without a separate class-loss-only variant; raw-series encoders differ in architecture and pretraining; same-class shuffling retains approximate trip scale. These conditions qualify the attribution of differences among interfaces.
 
+The route policy operates over a finite catalog, and nearest-shape analysis uses a fixed training-profile library. These choices define the spatial support and similarity reference of the evaluation. Candidate-selection illustrations and joint-conditioning examples retain their respective model populations and request protocols.
+
 \section{Conclusion}
 This thesis delivers a road-conditioned diffusion framework for complete multi-class traffic trajectories. Native physical timing and learned route preferences connect movement generation to the road network and observed travel behavior. The resulting synthetic journeys support both physical evaluation and downstream data augmentation.
 
