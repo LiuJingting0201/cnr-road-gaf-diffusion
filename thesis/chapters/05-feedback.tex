@@ -21,19 +21,19 @@ The three channels are stacked and scaled to integer RGB values. Historical proc
 
 Figure~\ref{fig:encoding} follows one saved bus candidate from its decoded coordinates to its three-channel classifier input. The strong blocks span multiple index pairs. Their presence is compatible with repeated quantized positions and with sequence adjustment. Inspecting a block alone does not reveal how many seconds the bus spent in a location.
 
-\fig{encoding.pdf}{1}{The inherited encoder applied to the fixed seed-42 bus candidate selected by GAF. Channel panels show the actual quantized inputs of the frozen classifier. Coordinates in the first panel are relative to its start for display.}{encoding}
+\fig{encoding.pdf}{1}{The inherited encoder applied to the fixed seed-42 bus candidate selected by GAF. Channel panels show the actual quantized inputs of the frozen classifier. Coordinates in the first panel are relative to its start for display}{encoding}
 
 \section{Testing the recognition time scale}
 We first ask whether a classifier trained on entire observed tracks can be used on a generated window. The complete-vehicle experiment crosses two grid resolutions with random or ImageNet initialization. Each setting has three seeds and is evaluated at epoch 50. The finer, pretrained model gives 75.71\% validation accuracy and 60.09\% macro-F1. The distinction between these metrics already suggests uneven recognition across participant classes.
 
-\tab{Full-track recognition on validation IDs, in percent. Each entry is the mean across three trained models.}{e1}{\begin{tabular}{llrr}\toprule Grid & Initialization & Accuracy & Macro-F1\\\midrule
+\tab{Full-track recognition on validation IDs, in percent. Each entry is the mean across three trained models}{e1}{\begin{tabular}{llrr}\toprule Grid & Initialization & Accuracy & Macro-F1\\\midrule
 $32\times32$ & Random &51.80&38.81\\
 $32\times32$ & ImageNet &72.74&58.80\\
 $64\times64$ & Random &62.95&44.44\\
 $64\times64$ & ImageNet &75.71&60.09\\\bottomrule\end{tabular}}
 Transfer to partial trajectories is poor even at the longest window. On 512 points, a full-track model yields 18.26\% macro-F1. Training at the intended horizon gives 59.12\%. At 64 points the corresponding values are 11.39\% and 28.63\%. Both changes are relevant to synthesis: a classifier trained on the same representation can react very differently when the duration of the source sequence changes. Table~\ref{tab:e2} reports the common validation cohort as well as the horizon-specific values.
 
-\tab{Validation macro-F1 for the inherited image representation. The fixed-ID comparison uses the same 164 validation participants at each length. Training eligibility still varies with length.}{e2}{\begin{tabular}{rrrrr}\toprule &\multicolumn{2}{c}{All eligible IDs} &\multicolumn{2}{c}{Common IDs}\\
+\tab{Validation macro-F1 for the inherited image representation. The fixed-ID comparison uses the same 164 validation participants at each length. Training eligibility still varies with length}{e2}{\begin{tabular}{rrrrr}\toprule &\multicolumn{2}{c}{All eligible IDs} &\multicolumn{2}{c}{Common IDs}\\
 Points & Full track & Matched & Full track & Matched\\\midrule
 64&11.39&28.63&5.28&21.66\\
 224&13.61&42.37&10.82&38.81\\

@@ -17,7 +17,7 @@ The optional condition $h$ represents the learned spatial and speed views descri
 
 The factorization defines a modular generative model in which route selection establishes spatial support, the duration prior determines the journey's temporal scale, and diffusion models its progress profile. Road-coordinate decoding combines these outputs into a complete timestamped trajectory. This decomposition also supports controlled experiments: matching route and duration draws isolates changes in the generated motion profile.
 
-\fig{g40-framework.pdf}{1}{Implemented training and out-of-sample synthesis. Observed training trajectories produce the two image views and generative conditions; new synthesis samples conditions from a training-only prior. Route choice, duration, motion diffusion and coordinate decoding have distinct responsibilities. The learned condition enters every denoising block, coupling representation learning to complete-journey generation.}{g40-framework}
+\fig{g40-framework.pdf}{1}{Implemented training and out-of-sample synthesis. Observed training trajectories produce the two image views and generative conditions; new synthesis samples conditions from a training-only prior. Route choice, duration, motion diffusion and coordinate decoding have distinct responsibilities. The learned condition enters every denoising block, coupling representation learning to complete-journey generation}{g40-framework}
 
 Training uses observed route--motion pairs, whereas test-time routes are constructed from the road network and request attributes. This distinction makes the learned temporal model usable for new journeys within the available road catalog~\cite{difftraj,diffrn}.
 
@@ -61,9 +61,9 @@ With $\Delta t_i=t_i-t_{i-1}$, define the dimensionless relative speed and its t
  u_i=\log(1+r_i),\qquad z_{0,i}=\frac{u_i-\mu}{\sigma}.
  \label{eq:native-target}
 \end{equation}
-Thus $r_i=1$ is constant progress at the journey's average rate, and $r_i=0$ represents a stop. The logarithm moderates the upper tail without removing zero motion. Training-only $\mu$ and $\sigma$ assign equal mass to each trajectory and weight its intervals by $\Delta t_i/T$. Both clock versions use this target definition, with their own fitted normalization. Together, the two representations form a matched comparison on the current network.
+Thus $r_i=1$ is constant progress at the journey's average rate, and $r_i=0$ represents a stop. The logarithm moderates the upper tail without removing zero motion. The training-derived parameters $\mu$ and $\sigma$ assign equal mass to each trajectory and weight its intervals by $\Delta t_i/T$. Both clock versions use this target definition, with their own fitted normalization. Together, the two representations form a matched comparison on the current network.
 
-\section{Class-Conditioned Travel Duration Prior}
+\section{Class-conditioned travel duration prior}
 Within each class, a ridge regression relates log travel time to centred log route length. For training journey $j$ of class $c$,
 \begin{equation}
  \log T_j=a_c+b_c(\log L_j-\bar\ell_c)+e_j,
@@ -115,6 +115,6 @@ After undoing standardization, the decoder clips $u_i$ to $[0,8]$ and constructs
 \end{equation}
 The initial progress is zero and the final progress is one. If total mass is below $10^{-12}$, the decoder falls back to constant progress in physical time. Decoder diagnostics record negative-value truncation, upper clipping and constant-progress fallback. The normalization couples the whole journey: a local mass change can alter progress elsewhere. Endpoint completion follows from normalization, while the learned mass profile determines acceleration and stop timing.
 
-Coordinates are interpolated along all retained vertices of the constructed map path. The motion model generates longitudinal progress along the selected route. For the relative-time model, progress is first interpolated onto the same quarter-second output clock; the exact fractional endpoint remains. Thus both methods deliver comparable timestamped coordinates. Permitted lanes, directed connections and source stop anchors are handled by the route constructor. This geometric constraint is shared with the empirical baseline and all GAF selectors.
+The decoded longitudinal progress is mapped onto the full-resolution polyline by interpolating among all retained vertices of the constructed route. For the relative-time model, progress is first interpolated onto the same quarter-second output clock; the exact fractional endpoint remains. Thus both methods deliver comparable timestamped coordinates. Permitted lanes, directed connections and source stop anchors are handled by the route constructor. This geometric constraint is shared with the empirical baseline and all GAF selectors.
 
 The baseline generates complete journeys using class, route and duration alone. The GAF-conditioned variants retain the same target, physical-time grid, sampler and decoder, while adding a sampled condition at every denoising step. Chapter~\ref{ch:native-feedback} describes how that condition is learned and generated without future trajectory access. Earlier terminal-selection experiments remain separate controls on this synthesis system.

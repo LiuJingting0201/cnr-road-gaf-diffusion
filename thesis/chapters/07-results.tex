@@ -12,17 +12,17 @@ All 53 qualified requests completed eight path slots. Each of the three diffusio
 
 All candidates in both families passed the directed graph audit, all could be encoded and none reached the path-end cap. The final masks needed no fallback. The common result has a straightforward interpretation: both motion models operate through a shared permitted-path decoder on the selected population. A geometric advantage of one over the other cannot be identified from two identical pass rates. The coverage result also distinguishes the successful generation of complete pools from the eligibility of only 53 of the original 270 IDs.
 
-\fig{map_examples.pdf}{.94}{First served condition of each supported class at seed 42. Each row compares three ways to select from the same eight blue candidates. Gray lanes are permitted for that class, green marks the given start, and orange marks the selected trace. Each panel uses local SUMO metres.}{map}
+\fig{map_examples.pdf}{.94}{First served condition of each supported class at seed 42. Each row compares three ways to select from the same eight blue candidates. Gray lanes are permitted for that class, green marks the given start, and orange marks the selected trace. Each panel uses local SUMO metres}{map}
 Figure~\ref{fig:map} uses a fixed rule established before viewing results. In the bus example random and GAF selection chose the same candidate. For the motorcycle, each selector chose a different candidate. For the private car, random and GAF again coincide. The map shows the spatial consequences of a selection and the routes available to it. It cannot by itself tell whether a bus accelerates realistically. Appendix~\ref{app:cases} plots the timing of these same examples and gives class-level distributions using all eligible participants.
 
 \section{Learning motion beyond empirical transfer}
 Table~\ref{tab:w1} compares the complete candidate populations. Every method has access to identical geometry. The learned model improves the point estimate for speed and travel distance, while the empirical transfer baseline has the smaller acceleration discrepancy. Only the travel comparison has a paired interval entirely above zero. It is reasonable to say that diffusion brought the travel-distance distribution closer on the strict test population, conditional on the recorded models and paths.
 
-\tab{Final all-candidate comparisons. Distances are equally weighted across the five supported classes. Positive paired differences favor diffusion.}{w1}{\begin{tabularx}{\linewidth}{Xrrr}\toprule Quantity & Diffusion & Empirical & Difference [95\% interval]\\\midrule
+\tab{Final all-candidate comparisons. Distances are equally weighted across the five supported classes. Positive paired differences favor diffusion}{w1}{\begin{tabularx}{\linewidth}{Xrrr}\toprule Quantity & Diffusion & Empirical & Difference [95\% interval]\\\midrule
 Speed (m/s) &1.244&1.446& $0.203$ [$-0.018$, $0.993$]\\
 Acceleration (m/s$^2$) &0.269&0.239& $-0.030$ [$-0.081$, $0.046$]\\
 Travel (m) &177.414&201.119& $23.706$ [$7.857$, $132.912$]\\\bottomrule\end{tabularx}}
-\fig{paired_w1.pdf}{1}{Empirical-minus-diffusion differences in the final test. The three panels use different physical units. Bars are vehicle-level percentile intervals conditional on fixed models, routes and candidate draws.}{w1}
+\fig{paired_w1.pdf}{1}{Empirical-minus-diffusion differences in the final test. The three panels use different physical units. Bars are vehicle-level percentile intervals conditional on fixed models, routes and candidate draws}{w1}
 
 It is informative to compare directions across development and test, without pooling the populations. On validation the empirical-minus-diffusion acceleration difference was $0.0373$ metres per second squared, interval $[0.0017,0.0799]$. On test the direction reversed and the interval spans zero. The validation travel difference was $6.99$ metres with an interval spanning zero, whereas the test travel interval excludes zero. These changes underscore why selecting the most favorable validation metric and reporting it alone would have been misleading.
 
@@ -38,7 +38,7 @@ The empirical comparator copied a complete training profile by construction. The
 \section{Recognition and the effect of selection}
 On all 182 encodable test windows, the self-trained GAF family achieved mean accuracy of 64.29\% and macro-F1 of 53.38\%. The corresponding coordinate TCN achieved 78.57\% and 72.92\%. These are observed-window recognition results, not measures of synthetic trajectory quality. The gap matters when comparing auditors. Each has different errors and access to different features. No auditor is a ground-truth labeler for generated movement.
 
-\tab{Equal-budget selection on the final diffusion pools. Audit columns are class-macro agreement percentages with the requested label. They are distinct from six-class recognition F1.}{select}{\begin{tabular}{lrrrr}\toprule Selector & GAF audit & TCN audit & Speed $\W$ & Travel $\W$\\\midrule
+\tab{Equal-budget selection on the final diffusion pools. Audit columns are class-macro agreement percentages with the requested label. They are distinct from six-class recognition F1}{select}{\begin{tabular}{lrrrr}\toprule Selector & GAF audit & TCN audit & Speed $\W$ & Travel $\W$\\\midrule
 Random &51.85&89.86&1.402&206.00\\
 GAF &70.45&78.10&1.410&191.52\\
 TCN &47.32&93.18&1.444&209.30\\
@@ -48,14 +48,14 @@ When the selector optimizes image-based class scores, agreement with a separate 
 There is some metric-specific variation beyond classifier agreement. In the diffusion pools, GAF selection has a smaller travel discrepancy than random selection, 191.52 versus 206.00 metres, with little change in speed discrepancy. Applying the same selector to empirical motions increases travel discrepancy from 233.89 to 252.55 metres. No predeclared paired interval establishes a travel improvement from GAF selection. These comparisons are descriptive and give no basis for transferring the apparent improvement from one generator to another.
 
 \section{Using synthetic samples for training}
-\tab{Six-class macro-F1 on held-out observed windows. Each cell averages three final learner seeds. Added examples use training IDs only and each augmented group has the same class inventory.}{utility}{\begin{tabular}{lrr}\toprule Training group & TCN (\%) & GRU (\%)\\\midrule
+\tab{Six-class macro-F1 on held-out observed windows. Each cell averages three final learner seeds. Added examples use training IDs only and each augmented group has the same class inventory}{utility}{\begin{tabular}{lrr}\toprule Training group & TCN (\%) & GRU (\%)\\\midrule
 Observed only &76.92&64.38\\
 Repeat observed &72.77&59.70\\
 Time warp &73.32&63.14\\
 Random synthetic &70.29&60.82\\
 GAF-selected synthetic &71.69&62.68\\
 TCN-selected synthetic &72.08&61.20\\\bottomrule\end{tabular}}
-\fig{utility.pdf}{1}{Change in macro-F1 relative to training on observed data alone. All learners have equal training budgets. The interval accounts for paired resampling of observed test vehicles; the augmentation generator is fixed.}{utility}
+\fig{utility.pdf}{1}{Change in macro-F1 relative to training on observed data alone. All learners have equal training budgets. The interval accounts for paired resampling of observed test vehicles; the augmentation generator is fixed}{utility}
 The TCN lost 5.23 percentage points when trained with GAF-selected synthetic data, with a paired interval of $[-9.01,-1.65]$. The GRU lost 1.70 points, with interval $[-6.42,3.13]$. Compared with random synthetic selection, GAF selection had positive point differences of 1.40 and 1.86 points, but both intervals include zero. There is insufficient evidence that GAF is a better augmentation rule than random selection for these learners.
 
 The GRU performed better with GAF-selected traces than with repeated source vehicles by 2.98 points, with interval $[0.28,5.95]$. This single contrast is compatible with the observed-only and time-warp groups still doing better in point estimates. Choosing repeated source vehicles as the sole baseline would make the usefulness claim depend on an unusually weak comparator. The six-way table preserves this distinction.

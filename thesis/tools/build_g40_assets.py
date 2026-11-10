@@ -52,7 +52,7 @@ def main(a):
     box(9.3,3.65,2.4,1.1,'Motion diffusion\n100 DDIM steps\nCode at every step','#e5edf5');arrow(8.6,4.2,9.2,4.2)
     box(9.3,1.65,2.4,1.,'Road decoder\nComplete timed XY','#e2f0ec');arrow(10.5,3.55,10.5,2.75)
     box(3.1,1.65,5.4,1.,'Independent physical quality, diversity, coverage\nReal-data augmentation on separate cohorts')
-    arrow(9.2,2.15,8.6,2.15);ax.text(.2,.65,'No target future GAF at synthesis. No image inversion. No terminal GAF ranking in G40.',fontsize=10)
+    arrow(9.2,2.15,8.6,2.15);ax.text(.2,.65,'Out-of-sample inference: requires only map, OD, class, and sampled latent codes.',fontsize=10)
     finish(fig,'g40-framework')
     # Four independent OD cohorts; intervals are explicitly descriptive.
     fig,axs=plt.subplots(1,2,figsize=(10,4.2));xx=np.arange(len(ARMS)-1)

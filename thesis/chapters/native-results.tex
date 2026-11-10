@@ -17,7 +17,7 @@ The temporal and routing controls use their original matched populations and bud
 Table~\ref{tab:g40-primary} gives absolute primary distances and their paired contrasts against B. The dual-view J-SV condition changes native speed distance from 1.437941 to 1.440104~m/s and acceleration distance from 0.176001 to 0.180289~m/s$^2$: increases of 0.150\% and 2.437\%, respectively. The acceleration increase occurs in all four cohort means. Only four of the sixteen scene/seed cells improve that endpoint. Equal weighting over all four generated draws also leaves both dual-view distances above baseline.
 
 \input{tables/g40-primary}
-\fig{g40-primary.pdf}{1}{First-draw native motion distances relative to B. Bars are mean differences with equal weighting across classes, seeds, windows and test groups divided by the overall B mean; points are the four cohort differences with the same denominator. Whiskers are descriptive cohort-bootstrap intervals. Lower is better. Intervals summarize variability across the four same-network cohorts.}{g40-primary}
+\fig{g40-primary.pdf}{1}{First-draw native motion distances relative to B. Bars are mean differences with equal weighting across classes, seeds, windows and test groups divided by the overall B mean; points are the four cohort differences with the same denominator. Whiskers are descriptive cohort-bootstrap intervals. Lower is better. Intervals summarize variability across the four same-network cohorts}{g40-primary}
 
 Spatial J-S alone changes speed by $+0.080\%$ and acceleration by $+0.536\%$. Speed-only J-V changes them by $-0.037\%$ and $+1.821\%$. Frozen F-SV has a small speed reduction and essentially unchanged acceleration. RAW also increases both primary distances. Across these interfaces, the differences are small and mostly adverse.
 
@@ -26,17 +26,17 @@ Same-class wrong-trip J-SH reduces speed and acceleration distances by 0.240\% a
 \subsection{All five classes and longer-timescale motion}
 Figure~\ref{fig:g40-class-native} shows the class-specific responses. J-SV reduces private-car acceleration distance by 3.28\%, while increasing it for buses, motorcycles, bicycles and taxi/ride-hailing by 1.60\%, 1.97\%, 5.68\% and 5.26\%. Spatial-only J-S has its largest acceleration increase for private cars; speed-only J-V increases bicycle and taxi distances. The effects depend on both representation and participant class.
 
-\fig{g40-class-motion-1.pdf}{.96}{All five classes and seven condition contrasts against B: native speed and acceleration. Values are percentage changes in each class's distance, averaged over both model seeds and all eight episodes. Blue is lower distance. The fixed color range is shared; printed values are not clipped. Absolute values and both seeds are in the appendix.}{g40-class-native}
+\fig{g40-class-motion-1.pdf}{.96}{All five classes and seven condition contrasts against B: native speed and acceleration. Values are percentage changes in each class's distance, averaged over both model seeds and all eight episodes. Blue is lower distance. The fixed color range is shared; printed values are not clipped. Absolute values and both seeds are in the appendix}{g40-class-native}
 
 The longer-timescale summaries show a similar tradeoff. J-SV reduces longest-steady-motion distance by 2.26\% and stop-episode-frequency distance by 1.56\%, while increasing longest-stop distance by 1.52\%, one-second mean-absolute-acceleration distance by 3.32\%, and four-second speed-change distance by 1.67\%. The differences extend across native and coarser physical clocks.
 
-\fig{g40-class-motion-2.pdf}{.96}{All-class one-second mean absolute acceleration and stopped-fraction distribution distances. These coarser-clock summaries complement the native endpoints. Per-endpoint support is retained in the evidence files.}{g40-class-coarse}
-\fig{g40-class-motion-3.pdf}{.96}{All-class longest-stop and longest-steady-movement distances. Different aspects of stop organization can change in opposite directions. These panels retain the same seven contrasts and five classes as the primary comparison.}{g40-class-runs}
+\fig{g40-class-motion-2.pdf}{.96}{All-class one-second mean absolute acceleration and stopped-fraction distribution distances. These coarser-clock summaries complement the native endpoints. Per-endpoint support is retained in the evidence files}{g40-class-coarse}
+\fig{g40-class-motion-3.pdf}{.96}{All-class longest-stop and longest-steady-movement distances. Different aspects of stop organization can change in opposite directions. These panels retain the same seven contrasts and five classes as the primary comparison}{g40-class-runs}
 
 Duration is identical across model variants by the paired sampling design. Its shared distance of 178.63 seconds is therefore a limitation of the common duration component, not a GAF effect. Generated planar-distance discrepancies are also almost unchanged; small differences arise because finite-time planar chords need not sum to the exact constructed route arc length. The appendix provides all ten physical summaries, request-paired discrepancies and four-draw results.
 \FloatBarrier
 \section{Complete generated trajectories and their GAF views}
-The next ten figures show one fixed-order case for every class. The rule is episode 400201, model seed 42, first lexicographic jointly supported request per class, candidate zero. It was fixed before rendering. The displayed subset comprises the reference and B, J-S, J-V, J-SV and J-RAW; all eight model variants remain in the numerical comparison. Maps show the reference, B and J-SV, while the time curves show all displayed model model variants.
+The next ten figures show one fixed-order case for every class. The rule is episode 400201, model seed 42, first lexicographic jointly supported request per class, candidate zero. It was fixed before rendering. The displayed subset comprises the reference and B, J-S, J-V, J-SV and J-RAW; all eight model variants remain in the numerical comparison. Maps show the reference, B and J-SV, while the time curves show all displayed model variants.
 
 Map colors encode coordinate-derived one-second speed in metres per second, with a common scale across the reference and model variants in each case. The one-second speeds are interpolated onto the trajectory timestamps for spatial display; a circle marks the start and a cross the end. Curve comparisons use the whole elapsed-time axis. Their acceleration distributions use complete one-second increments for readability and do not replace the quarter-second primary metric. The examples compare timing and speed structure alongside the population statistics; individual stop sequences vary across stochastic realizations.
 
@@ -44,78 +44,78 @@ Each companion image figure uses GASF/GADF/MTF channels computed from those same
 
 \subsection{Bus: shared service geometry and variable dwell organization}
 The bus reference lasts 2,328 seconds, compared with 2,560.27 seconds for the generated journeys. The shared transit corridor produces closely related spatial images, while the speed curves reveal how the models distribute moving and stationary periods over the longer sampled duration. Although the generated progress curves largely overlap, the image panels retain visible differences in whole-trip movement organization. This distinction helps explain the class-level results: recognizable bus geometry can coexist with differences in acceleration and dwell timing, making the physical-time profiles essential to interpreting the spatial encoding.
-\fig{g40-journey-bus.pdf}{1}{Fixed bus case: complete road geometry, cumulative progress, one-second speed and acceleration distribution. Route adherence belongs to the shared decoder; the condition variants are compared under common sampled route and duration.}{g40-journey-bus}
-\fig{g40-gaf-bus.pdf}{.93}{Spatial and speed image views reconstructed from the fixed bus reference and generated outputs. The corresponding full-trip speed traces expose timing differences that can be difficult to infer from the spatial image alone.}{g40-gaf-bus}
+\fig{g40-journey-bus.pdf}{1}{Fixed bus case: complete road geometry, cumulative progress, one-second speed and acceleration distribution. Route adherence belongs to the shared decoder; the condition variants are compared under common sampled route and duration}{g40-journey-bus}
+\fig{g40-gaf-bus.pdf}{.93}{Spatial and speed image views reconstructed from the fixed bus reference and generated outputs. The corresponding full-trip speed traces expose timing differences that can be difficult to infer from the spatial image alone}{g40-gaf-bus}
 \FloatBarrier
 
 \subsection{Motorcycle: route alternatives and the time axis}
 The motorcycle reference lasts 266.75 seconds, whereas the generated journeys last 355.31 seconds and follow a different permitted route. Reading the map and time curves together distinguishes this route-choice variation from changes in movement along the generated path. The spatial images encode the alternative geometry, while the velocity images summarize the resulting speed pattern over the complete journey. Across conditioning variants, the generated curves remain similar, consistent with the small aggregate changes in motion quality. Thus the example connects two sources of variation that are evaluated separately: selection among feasible routes and temporal behavior conditional on the selected route.
-\fig{g40-journey-motorcycle.pdf}{1}{Fixed motorcycle case. Full time axes retain the difference between reference and generated duration; no time alignment is used to make the curves agree.}{g40-journey-motorcycle}
-\fig{g40-gaf-motorcycle.pdf}{.93}{Fixed motorcycle output representations. Spatial and speed images encode different aspects of the same complete journey.}{g40-gaf-motorcycle}
+\fig{g40-journey-motorcycle.pdf}{1}{Fixed motorcycle case. Full time axes retain the difference between reference and generated duration; no time alignment is used to make the curves agree}{g40-journey-motorcycle}
+\fig{g40-gaf-motorcycle.pdf}{.93}{Fixed motorcycle output representations. Spatial and speed images encode different aspects of the same complete journey}{g40-gaf-motorcycle}
 \FloatBarrier
 
 \subsection{Private car: marginal acceleration and stop timing}
 The private-car reference lasts 631.75 seconds, compared with 763.90 seconds for the generated journeys. Similar acceleration CDFs accompany speed peaks and stationary intervals that occur at different elapsed times, illustrating how agreement in a marginal distribution can coexist with differences in temporal organization. The GAF panels summarize these patterns through pairwise sequence relations, complementing the explicit speed curves. This case is consistent with the class-level acceleration improvement for joint conditioning while also showing why request-level timing summaries remain useful alongside distribution distances.
-\fig{g40-journey-private_car.pdf}{1}{Fixed private-car case. The empirical acceleration CDF summarizes the movement distribution, while the full speed trace shows its temporal organization.}{g40-journey-private-car}
-\fig{g40-gaf-private_car.pdf}{.93}{Fixed private-car GAF views and their source speed curves. The same frozen image conversion is applied to the reference and every generated row.}{g40-gaf-private-car}
+\fig{g40-journey-private_car.pdf}{1}{Fixed private-car case. The empirical acceleration CDF summarizes the movement distribution, while the full speed trace shows its temporal organization}{g40-journey-private-car}
+\fig{g40-gaf-private_car.pdf}{.93}{Fixed private-car GAF views and their source speed curves. The same frozen image conversion is applied to the reference and every generated row}{g40-gaf-private-car}
 \FloatBarrier
 
 \subsection{Bicycle: a visible shared travel-time limitation}
 The bicycle reference lasts 778.50 seconds, whereas the generated journeys last 499.15 seconds. Covering the selected path within this shorter duration raises the generated speed level across all conditioning variants, producing the steep progress curves visible in the figure. Both the velocity images and their source curves reflect this shared shift, while the spatial images retain the route's broader organization. Because route and duration are matched across variants, the example locates the dominant discrepancy in the common duration component. The adverse class-level acceleration changes further show that recognizable image structure and accurate physical movement assess different aspects of the generated journey.
-\fig{g40-journey-bycicle.pdf}{1}{Fixed bicycle case. The shorter common generated duration and higher speed level remain visible. The case illustrates the effect of the common sampled duration.}{g40-journey-bicycle}
-\fig{g40-gaf-bycicle.pdf}{.93}{Fixed bicycle spatial and speed images. An image can preserve class-related structure while the associated physical-time profile remains mismatched.}{g40-gaf-bicycle}
+\fig{g40-journey-bycicle.pdf}{1}{Fixed bicycle case. The shorter common generated duration and higher speed level remain visible. The case illustrates the effect of the common sampled duration}{g40-journey-bicycle}
+\fig{g40-gaf-bycicle.pdf}{.93}{Fixed bicycle spatial and speed images. An image can preserve class-related structure while the associated physical-time profile remains mismatched}{g40-gaf-bicycle}
 \FloatBarrier
 
 \subsection{Taxi and ride-hailing: service labels and geometry}
 The taxi/ride-hailing reference lasts 293 seconds and the generated journeys 345.18 seconds. Different permitted route choices produce distinct spatial patterns, while modest changes in the generated speed plateaus are visible across conditioning variants. Taxi and ride-hailing labels describe a service category whose vehicles can share road access and motion characteristics with private cars; consequently, route geometry alone provides a weaker discriminative signal for this class. The spatial classification results and the mixed motion-quality response are consistent with that overlap, making the combined map, image and physical-time views particularly informative for interpreting this example.
-\fig{g40-journey-taxi_or_uber.pdf}{1}{Fixed taxi/ride-hailing case: a permitted route alternative and its generated motion. Route-use distributions characterize alternative paths, while motion distributions characterize travel along them.}{g40-journey-taxi}
-\fig{g40-gaf-taxi_or_uber.pdf}{.93}{Fixed taxi/ride-hailing output images. The five class-specific pairs are retained in their predetermined order, including cases with clear timing discrepancies.}{g40-gaf-taxi}
+\fig{g40-journey-taxi_or_uber.pdf}{1}{Fixed taxi/ride-hailing case: a permitted route alternative and its generated motion. Route-use distributions characterize alternative paths, while motion distributions characterize travel along them}{g40-journey-taxi}
+\fig{g40-gaf-taxi_or_uber.pdf}{.93}{Fixed taxi/ride-hailing output images. The five class-specific pairs are retained in their predetermined order, including cases with clear timing discrepancies}{g40-gaf-taxi}
 \FloatBarrier
 \FloatBarrier
-\section{Candidate Diversity and GAF-Based Selection Across Vehicle Classes}
+\section{Candidate diversity and GAF-based selection across vehicle classes}
 \label{sec:selection-visual-comparison}
 The joint-conditioning results can be interpreted alongside the earlier candidate-selection experiment, where GAF scores act on a fixed set of generated journeys. The following panels retain the archived morning-episode outputs from the expanded native model with seed 42. Each class uses its first lexicographically ordered request supported by the reference, map and all four selection policies. Thus the visual comparison covers the same five participant classes under a common display rule.
 
 Each trajectory panel links the road geometry to elapsed-time progress and speed. Map colors show one-second speed on a shared scale within each case, revealing where slow movement and cruising occur along the route. The eight candidate curves show the movement variation available for a fixed request, while the highlighted outputs identify Uniform, spatial, velocity and joint selection. The companion GAF panels show the corresponding spatial and velocity images together with their source movement profiles. These figures expose how different selection criteria use the available candidate variation and complement the main experiment, in which sampled representation codes influence denoising itself.
 
-\subsection{Bus: Candidate Movement and Image Structure}
+\subsection{Bus: candidate movement and image structure}
 The bus case illustrates substantial variation in stop organization within a shared service corridor. The selected speed curves differ in cruising level and the placement of repeated stationary intervals, although their cumulative progress reaches the endpoint at the common sampled duration. The independent reference spreads movement over a longer elapsed-time axis. Reading the GAF panels beside these curves links spatial service structure to whole-trip motion, while the complete pool below shows the alternatives from which each policy selects.
 
-\fig{g36-journey-bus.pdf}{1}{Bus: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections.}{selection-journey-bus}
-\fig{g36-gaf-bus.pdf}{.96}{Bus: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion.}{selection-gaf-bus}
+\fig{g36-journey-bus.pdf}{1}{Bus: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections}{selection-journey-bus}
+\fig{g36-gaf-bus.pdf}{.96}{Bus: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion}{selection-gaf-bus}
 \FloatBarrier
 
-\subsection{Motorcycle: Candidate Movement and Image Structure}
+\subsection{Motorcycle: candidate movement and image structure}
 The motorcycle candidates share their road geometry but distribute stationary intervals differently along the journey. The highlighted selections retain different stop sequences, with visibly similar cruising plateaus over much of the trip. Their progress curves reveal cumulative timing differences that are less apparent in the map overlays. The paired image panels show how these movement patterns enter the spatial and velocity classifiers, connecting image-based selection to the actual delivered trajectory.
 
-\fig{g36-journey-motorcycle.pdf}{1}{Motorcycle: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections.}{selection-journey-motorcycle}
-\fig{g36-gaf-motorcycle.pdf}{.96}{Motorcycle: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion.}{selection-gaf-motorcycle}
+\fig{g36-journey-motorcycle.pdf}{1}{Motorcycle: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections}{selection-journey-motorcycle}
+\fig{g36-gaf-motorcycle.pdf}{.96}{Motorcycle: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion}{selection-gaf-motorcycle}
 \FloatBarrier
 
-\subsection{Private Car: Candidate Movement and Image Structure}
+\subsection{Private car: candidate movement and image structure}
 The private-car selections largely overlap in the displayed speed and progress panels, despite visible variation among the pale candidate curves. This makes the case informative about agreement between selection criteria: different policies can retain the same output or motions with nearly identical profiles. The independent reference has distinct speed peaks and stationary periods. Comparing the corresponding GAF rows therefore helps distinguish agreement among selectors from agreement with observed movement.
 
-\fig{g36-journey-private_car.pdf}{1}{Private Car: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections.}{selection-journey-private_car}
-\fig{g36-gaf-private_car.pdf}{.96}{Private Car: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion.}{selection-gaf-private_car}
+\fig{g36-journey-private_car.pdf}{1}{Private Car: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections}{selection-journey-private_car}
+\fig{g36-gaf-private_car.pdf}{.96}{Private Car: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion}{selection-gaf-private_car}
 \FloatBarrier
 
-\subsection{Bicycle: Candidate Movement and Image Structure}
+\subsection{Bicycle: candidate movement and image structure}
 The bicycle reference progresses faster than the displayed generated selections, whose speed profiles remain at a lower level over most of the journey. Spatial, velocity and joint selection alter the positions and depths of brief slowdowns while retaining that common scale. This contrasts with the main-conditioning bicycle example, where the generated journey is shorter and faster than its reference. Together, the two fixed requests illustrate why class-level conclusions require the distributional metrics alongside individual trajectories.
 
-\fig{g36-journey-bycicle.pdf}{1}{Bicycle: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections.}{selection-journey-bycicle}
-\fig{g36-gaf-bycicle.pdf}{.96}{Bicycle: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion.}{selection-gaf-bycicle}
+\fig{g36-journey-bycicle.pdf}{1}{Bicycle: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections}{selection-journey-bycicle}
+\fig{g36-gaf-bycicle.pdf}{.96}{Bicycle: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion}{selection-gaf-bycicle}
 \FloatBarrier
 
-\subsection{Taxi and Ride-Hailing: Candidate Movement and Image Structure}
+\subsection{Taxi and ride-hailing: candidate movement and image structure}
 The taxi/ride-hailing pool displays clear differences among the selected speed profiles. Joint selection favors a higher cruising plateau, whereas spatial selection retains a lower-speed pattern; their cumulative progress curves consequently separate during the trip. The maps remain closely aligned because the candidates traverse the same requested route. The GAF panels make this temporal choice visible in image space and show how class scores can select different movement styles from one road-constrained pool.
 
-\fig{g36-journey-taxi_or_uber.pdf}{1}{Taxi and Ride-Hailing: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections.}{selection-journey-taxi_or_uber}
-\fig{g36-gaf-taxi_or_uber.pdf}{.96}{Taxi and Ride-Hailing: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion.}{selection-gaf-taxi_or_uber}
+\fig{g36-journey-taxi_or_uber.pdf}{1}{Taxi and Ride-Hailing: complete reference and generated journeys in the candidate-selection experiment. Pale curves retain the candidate pool; highlighted curves identify the four recorded selections}{selection-journey-taxi_or_uber}
+\fig{g36-gaf-taxi_or_uber.pdf}{.96}{Taxi and Ride-Hailing: spatial and velocity GAF representations of the reference and recorded selections, paired with their source movement curves. Classifier scores describe the selection criterion}{selection-gaf-taxi_or_uber}
 \FloatBarrier
 
-\subsection{Inspecting the Complete Candidate Pool}
+\subsection{Inspecting the complete candidate pool}
 The bus pool makes the selection mechanism explicit: every candidate has its own speed sequence and associated spatial and velocity images, while the policy tags locate the retained outputs. A common road request can therefore produce multiple temporal realizations, and different GAF criteria can favor the same realization or different ones. This candidate-level view connects the generated dataset to the selection analysis and clarifies the contrast with learned latent conditioning.
-\fig{g36-eight-candidates.pdf}{1}{Complete bus candidate pool from the candidate-selection experiment. Every generated speed profile is paired with its two image representations; tags identify the recorded policy choices.}{selection-complete-pool}
+\fig{g36-eight-candidates.pdf}{1}{Complete bus candidate pool from the candidate-selection experiment. Every generated speed profile is paired with its two image representations; tags identify the recorded policy choices}{selection-complete-pool}
 \FloatBarrier
 
 \section{Synthetic-data augmentation}
@@ -124,7 +124,7 @@ Table~\ref{tab:g40-utility} retains every downstream regime, including synthetic
 Spatial J-S augmentation reaches 96.95\%, 0.699 percentage points above B. The direction is positive for both downstream training seeds. J-RAW reaches 96.66\%, leaving a much smaller spatial-versus-RAW contrast of 0.294 points. The two-seed non-bus vehicle-equal F1 is 96.54\% for J-S and 95.41\% for B, so the pooled signal is not solely a bus-class effect. The physical and downstream measurements therefore yield different model rankings.
 
 \input{tables/g40-utility}
-\fig{g40-augmentation.pdf}{1}{Independent augmentation on observed SUMO references. Left: pooled macro F1, with both learner seeds shown. Right: mean per-class F1. ``Real'' denotes simulator observations. All methods share downstream training budgets; the upstream generator uses the full labelled training corpus.}{g40-augmentation}
+\fig{g40-augmentation.pdf}{1}{Independent augmentation on observed SUMO references. Left: pooled macro F1, with both learner seeds shown. Right: mean per-class F1. ``Real'' denotes simulator observations. All methods share downstream training budgets; the upstream generator uses the full labelled training corpus}{g40-augmentation}
 
 The augmentation effect varies by evaluation cohort. Averaging episode macro F1 across the two windows and learner seeds, J-S minus B is $-0.755$ percentage points in cohort 3 and $+2.091$ points in cohort 4. Table~\ref{tab:g40-utility-cohorts} gives these episode-equal summaries for all fifteen regimes. The pooled gain is concentrated in cohort 4.
 
@@ -134,7 +134,7 @@ Dual-view J-SV yields 95.48\% macro F1 and speed-only J-V yields 95.35\%, both b
 \section{Representation sensitivity and condition use}
 The pre-generation 500-vehicle sensitivity audit shows that whole-trip time warping changes both feature views. Within-second perturbations can substantially alter native acceleration while leaving the speed features almost unchanged, as expected from one-second averaging and relative-profile compression. Smoothing affects both views differently. The perturbations characterize the temporal detail retained by each view.
 
-\fig{g40-sensitivity.pdf}{1}{Training-side representation audit, fixed before test results. Feature changes and native acceleration changes are measured for the same perturbations. The panels report their respective units. The views respond differently across physical time scales.}{g40-sensitivity}
+\fig{g40-sensitivity.pdf}{1}{Training-side representation audit, fixed before test results. Feature changes and native acceleration changes are measured for the same perturbations. The panels report their respective units. The views respond differently across physical time scales}{g40-sensitivity}
 
 The final-model perturbation audit confirms that the code path is active. B is exactly invariant to the four perturbations; C is invariant to same-class exchange and its deterministic prior, as expected. Changing the code changes predictions in J-S, J-V and J-SV. At noise index 500, the J-SV mean prediction RMS changes by 0.012684 for a same-class exchange and 0.013908 for a sampled prior code relative to its assigned training code. The corresponding MSE values are shown in Table~\ref{tab:g40-condition-use}.
 

@@ -2,7 +2,7 @@
 \label{ch:intro}
 Consider four buses travelling between the same two points. Their common road is 2.34 kilometres long. The generated buses arrive after 228, 242, 280 and 308 seconds. A fixed two-minute observation would end before any of them arrived. Figure~\ref{fig:whole-opening} shows the output of the complete-journey sampling program. The endpoint is prescribed, while the model samples the clock and how progress is distributed over it.
 
-\fig{complete-trip.pdf}{1.0}{Four complete generated bus journeys on the same preplanned MoST route. The vertical marker indicates the earlier experimental window. The coloured endpoints in the right panel show the four arrival times. This is the first supported bus example used to check the packaged model.}{whole-opening}
+\fig{complete-trip.pdf}{1.0}{Four complete generated bus journeys on the same preplanned MoST route. The vertical marker indicates the earlier experimental window. The coloured endpoints in the right panel show the four arrival times. This is the first supported bus example used to check the packaged model}{whole-opening}
 
 The primary deliverable is a complete timestamped trip for a participant class on a permitted origin-to-destination route. The earlier fixed-window study supplies a controlled comparison of motion before arrival. The road network specifies where a trip can go; it leaves open how long it takes and how the participant moves on the way. We learn a distribution over these possibilities. The group's earlier recognition work motivates learning from spatial and speed representations of the same journey. We study both feedback on sampled trips and direct supervision of the denoiser using these learned representations.
 

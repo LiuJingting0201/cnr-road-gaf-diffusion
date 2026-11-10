@@ -1,4 +1,4 @@
-> 当前入口（2026-11-10）：G40 科学实验已全部完成，完整八臂证据已人工审阅。主结论为未建立总体 GAF 运动质量收益；空间条件增广平均有小幅收益，但两个评价 OD 群组方向相反。论文 v24 与逐页图表/交付核验已完成（130页、45图、29表、54条引用），PDF/Overleaf包在 `deliverables/thesis-v24`。本轮结束，不自动追加训练；不重启早期 E1–E5 或已关闭队列。见 `docs/G40_RUN_STATE.md`、`docs/results/g40-generative-conditioning/REPORT.md`。以下初始任务书和历次变更保留作为历史。
+> 当前入口（2026-11-10）：G40 科学实验已全部完成，完整八臂证据已人工审阅。主结论为未建立总体 GAF 运动质量收益；空间条件增广平均有小幅收益，但两个评价 OD 群组方向相反。论文 v25 与逐页图表/交付核验已完成（131页、45图、29表、54条引用），PDF/Overleaf包在 `deliverables/thesis-v25`。本轮结束，不自动追加训练；不重启早期 E1–E5 或已关闭队列。见 `docs/G40_RUN_STATE.md`、`docs/results/g40-generative-conditioning/REPORT.md`。以下初始任务书和历次变更保留作为历史。
 
 # 路网条件扩散与 Hilbert GAF 类别反馈轨迹合成任务书
 

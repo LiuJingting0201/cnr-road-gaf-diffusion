@@ -16,13 +16,13 @@ SH & 11.11 & 12.13 & 0.244 & 4.806\\
 Empirical & 10.84 & 11.73 & 0.149 & 5.394\\
 \bottomrule
 \end{tabular}
-\caption{All-candidate complete-trip evaluation on new traffic. Diversity is the class-macro mean pairwise RMS difference between full-trip speed profiles within the same request and model seed. Each variant contributes 3,072 candidates.}
+\caption{All-candidate complete-trip evaluation on new traffic. Diversity is the class-macro mean pairwise RMS difference between full-trip speed profiles within the same request and model seed. Each variant contributes 3,072 candidates}
 \label{tab:paired-results}
 \end{table}
 
 For the prespecified SV--B contrast, the longest-cruise discrepancy changed by $-0.441$ seconds (95\% interval $-0.776$ to $+0.295$) and duration discrepancy by $+0.023$ seconds ($-0.086$ to $+0.232$). Neither co-primary outcome established an improvement. Comparisons with the single-view, class-centroid and shuffled-pair controls likewise failed to establish an additional physical benefit. The six-motor-vehicle analysis gave the same qualitative conclusion. Diversity remained close across learned model variants. Against empirical transfer, SV had a four-second speed-change discrepancy higher by 0.094 m/s, with an interval from 0.021 to 0.131. This baseline remains a strong comparator for the learned temporal distribution.
 
-\fig{paired-representations.pdf}{1.0}{Matched physical discrepancies, paired effect intervals and within-request diversity. The highlighted contrast is the prespecified paired-teacher model against denoising alone. All intervals condition on two trained seeds.}{paired-results}
+\fig{paired-representations.pdf}{1.0}{Matched physical discrepancies, paired effect intervals and within-request diversity. The highlighted contrast is the prespecified paired-teacher model against denoising alone. All intervals condition on two trained seeds}{paired-results}
 
 The separate seed-43 velocity classifier classified generated first draws with macro F1 of 50.0\% for B and 53.0\% for SV. SH also reached 52.6\%. Those score changes did not establish improved physical fidelity. On real fresh references the same classifier achieved 60.4\%, while its spatial counterpart achieved 21.7\%. Directed-road or sidewalk audits passed 384 of 384 first draws for V and 383 of 384 for each other learned variant, each retaining a private-car failure. Endpoint arrival was exact by construction for all candidates, which is distinct from passing the discrete lane audit.
 

@@ -10,7 +10,7 @@ We introduced an explicit spatial speed effect. A training-only table estimates 
 Both comparison model variants started from the same respective G17 weights and used the same training windows, class sampling, noise, optimizer and 10,000 additional updates. There were two seeds per variant and 63,717 eligible SUMO training windows. The control used ordinary physical arc increments. The change therefore measures the combined effect of the calibrated spatial transformation and training in that coordinate. historical dataset A is a separate simulator population that had already been examined during development. Both test sets remained reserved for their original purposes.
 
 \begin{table}[htbp]\centering\small
-\caption{Two motion-pattern errors on historical dataset A. For each class we compare the generated and reference means, take the absolute difference, and then average over the five classes. Lower is better. Intervals resample the eight simulation episodes jointly, conditional on the two fits.}
+\caption{Two motion-pattern errors on historical dataset A. For each class we compare the generated and reference means, take the absolute difference, and then average over the five classes. Lower is better. Intervals resample the eight simulation episodes jointly, conditional on the two fits}
 \begin{tabular}{lrrr}\toprule
 Physical error & Control & Road model & Paired change [95\%]\\\midrule
 Bend speed gap (m/s) & 1.77 & 0.42 & $-1.35$ [$-1.63$,$-0.99$]\\

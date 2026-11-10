@@ -5,13 +5,13 @@ The larger of the two supplied tables is \texttt{midimost\_with\_class2.csv}. Ea
 
 The other file, \texttt{vehicle\_positions\_TS\_New.csv}, already uses the five-column schema. It has more participants but a single participant type. Its median trajectory has 173 points compared with 1,363 in the principal file. An apparent increase in sample size from pooling these sources would therefore change the class distribution, sampling regime and spatial support at the same time. The two tables are audited separately. All model fitting and all headline results in this thesis use the principal table.
 
-\tab{The supplied simulation exports. The median refers to the number of original rows per ID, before extracting continuous windows.}{sources}{\begin{tabularx}{\linewidth}{Xrrr}\toprule Export & Rows & IDs & Classes\\\midrule
+\tab{The supplied simulation exports. The median refers to the number of original rows per ID, before extracting continuous windows}{sources}{\begin{tabularx}{\linewidth}{Xrrr}\toprule Export & Rows & IDs & Classes\\\midrule
 MoST principal & 4,840,789 & 2,685 & 6\\
 TS secondary & 2,189,591 & 12,061 & 1\\\bottomrule\end{tabularx}}
 
 Class imbalance appears at several different stages. Private cars are the largest class in the original MoST table. Pedestrians constitute a substantial fraction of all IDs, but few pedestrian IDs provide an encodable 512-point test window, and the explicit lane route generator targets five non-pedestrian classes. Counting all rows would give particularly long traces more weight. Counting IDs, windows and synthesis requests separately exposes these changes in the definition of the population.
 
-\tab{Participant counts across stages. The first column counts all original MoST IDs. The next three concern different subsets, not a single sequential funnel.}{cohorts}{\begin{tabular}{lrrrr}\toprule & All IDs & Generator train & Test windows & Test requests\\\midrule
+\tab{Participant counts across stages. The first column counts all original MoST IDs. The next three concern different subsets, not a single sequential funnel}{cohorts}{\begin{tabular}{lrrrr}\toprule & All IDs & Generator train & Test windows & Test requests\\\midrule
 Pedestrian &789&0&12&0\\
 Bus &139&57&13&7\\
 Motorcycle &370&66&31&4\\
@@ -25,7 +25,7 @@ The original network file, route definitions and simulation version were not del
 
 A systematic sample took every thousandth CSV row. For each location we measured distance to the nearest lane centerline, including internal lanes, without fitting an offset or rotation. All 4,841 sampled principal positions were within five metres. The median distance was about 0.004 metres and the 95th percentile about 1.16 metres. For the secondary export only 11.2\% of its 2,190 sampled positions were within five metres. Distances above 100 metres were censored in this exploratory audit. The agreement justifies using the public network as a geometric reference for the first table. It cannot identify the precise version of the simulation or prove that every traffic rule in the downloaded configuration was active.
 
-\fig{map-alignment.pdf}{1}{Systematic sample of 4,841 observed MoST positions superimposed on the public lane network in the unchanged local coordinate frame. The map supports a geometric alignment decision, not a version match.}{alignment}
+\fig{map-alignment.pdf}{1}{Systematic sample of 4,841 observed MoST positions superimposed on the public lane network in the unchanged local coordinate frame. The map supports a geometric alignment decision, not a version match}{alignment}
 Spatial agreement also says little about imbalance. Sampling every thousandth row favors participants present for longer periods. The result supports a coordinate-frame decision and does not estimate the probability that a uniformly sampled vehicle has a reconstructible route. That probability requires whole-sequence checks on held-out IDs, which lead to a much smaller population.
 
 \section{Participant splits and continuous windows}

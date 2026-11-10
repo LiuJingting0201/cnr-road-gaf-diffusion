@@ -9,12 +9,12 @@ The corpus is generated with SUMO on the public Monaco SUMO Traffic (MoST) scena
 
 Each observation follows \texttt{time,id,x,y,type}, with time in seconds and coordinates in local planar metres. Speed and acceleration for evaluation are derived from positions and timestamps consistently for simulated and generated trajectories. A supplementary comparison of archived exports and demand configurations is provided in Appendix~\ref{app:source-comparison}.
 
-The main corpus uses a ten-hour observation interval, simulation seconds 14,400--50,400, at a 0.25-second step. Two training realizations and one development realization retain the same public map and demand families. Each training source vehicle is assigned a realization before its motion is inspected, so a second seed is not counted as another copy of the same independent source vehicle. Known identities retain their earlier partition; original-test source vehicles are excluded by stored identity metadata without reading their frozen trajectories.
+The main corpus uses a ten-hour observation interval, simulation seconds 14,400--50,400, at a 0.25-second step. Two training realizations and one development realization retain the same public map and demand families. Each training vehicle is assigned to one simulation realization using its identity, ensuring that repeated simulation seeds retain a single source-vehicle identity for partitioning. Existing identities keep their assigned split, and stored identity metadata excludes original-test vehicles from the learning corpus.
 
 A vehicle's daily schedule is segmented into complete, continuous trip legs using departure, activity-stop boundaries and final arrival. For private vehicles, consecutive activities delimit separate legs; for buses, intermediate service stops remain within the journey until its terminal arrival. A source vehicle may therefore contribute several completed legs, each corresponding to the generator's output unit. The five-class synthesis task covers vehicle journeys, while pedestrian walking stages are excluded.
 
 \input{tables/g35-cohort}
-\fig{g35-corpus.pdf}{1}{Expanded native-demand complete-leg counts. The logarithmic axis makes minority support visible while retaining the private-car majority. Legs, source vehicles and independently simulated traffic realizations are different observation units.}{g35-corpus}
+\fig{g35-corpus.pdf}{1}{Expanded native-demand complete-leg counts. The logarithmic axis makes minority support visible while retaining the private-car majority. Legs, source vehicles and independently simulated traffic realizations are different observation units}{g35-corpus}
 
 There are 29,895 training legs from 24,073 source vehicles and 7,230 development legs from 5,842 source vehicles. The recorded coordinate counts are approximately 65.1 million and 15.8 million. Median training duration is 549 seconds, the 95th percentile is 1,152.75 seconds and the longest retained leg lasts 3,037.25 seconds. These counts describe the retained cohort, not a balanced set of independent scenes.
 
@@ -22,25 +22,25 @@ Continuity and event checks establish completed observations. Their numerical ex
 
 Short complete legs are retained through a constant mean-speed fallback when the image representation requires a longer speed sequence. In the expanded image cache, 2,454 training and 527 development examples use this subsecond fallback, ensuring exact alignment between the populations used by the image classifiers and the motion generator. Constant images, clipping and fallback frequencies are recorded as preprocessing statistics.
 
-\section{Decoupling Route Geometry, Progress, and Temporal Resolution}
+\section{Decoupling route geometry, progress, and temporal resolution}
 For observed positions $\mathbf x_i$, cumulative planar distance and normalized progress are
 \begin{equation}
  a_0=0,\qquad a_i=\sum_{j=1}^{i}\|\mathbf x_j-\mathbf x_{j-1}\|_2,
  \qquad s_i=a_i/a_n.
  \label{eq:native-observed-progress}
 \end{equation}
-Repeated positions contribute zero progress while retaining elapsed time. All nonduplicate spatial vertices are stored in double precision for piecewise-linear coordinate reconstruction. A separate 129-point equal-arc summary conditions the neural network. The decoder retains the full-resolution polyline alongside this compact conditioning summary.
+Repeated positions contribute zero progress while retaining elapsed time. All nonduplicate spatial vertices are stored in double precision for piecewise-linear coordinate reconstruction. A separate 129-point equal-arc-length summary conditions the neural network. The decoder retains the full-resolution polyline alongside this compact conditioning summary.
 
 The native clock retains quarter-second samples and an exact fractional final interval when required at synthesis. The temporal-resolution pilot compares it with 257 equally spaced relative-time points. The same number of relative points gives a long trip a coarser physical resolution, which can remove movement details before learning begins. Reconstruction checks identify this representational limit; matched trained models test whether retaining finer detail actually improves generated motion.
 
 The temporal pilot uses 925 training and 126 development vehicle legs, with two models for each clock. The expanded-corpus comparison is a separate study in which coverage and optimization exposure both increase.
 
-\section{Dual Trajectory-Image Representations}
-The spatial view starts only from ordered XY observations. Frozen coordinate bounds, the recursive Hilbert mapping and squeeze/mirror procedure produce the scalar sequence used for GASF, GADF and MTF. Hilbert indexing preserves observation order. The spatial classifier receives the coordinate-derived image. Position repetition and traversal can still affect its image through the sampling pattern.
+\section{Dual trajectory-image representations}
+The spatial view transforms ordered XY observations into a scalar sequence using frozen coordinate bounds, recursive Hilbert indexing and the squeeze/mirror procedure before constructing GASF, GADF and MTF channels. Because the mapping preserves observation order, repeated positions and traversal patterns influence the image through the original sampling sequence, providing the spatial classifier with a coordinate-derived representation of the journey.
 
 The speed view derives one-second arc increments from the same XY/time observations and summarizes them at 128 relative sequence positions, with a fixed 35 m/s normalization scale. It predicts the same participant labels through a separate classifier. The two views are deterministic transformations of one observation, with different quantization and temporal losses. Their effects on synthesis are evaluated through the generative comparison. Chapter~\ref{ch:native-feedback} specifies their exact construction and generative use.
 
-\section{Out-of-Sample Evaluation Episodes}
+\section{Out-of-sample evaluation episodes}
 The final request set contains eight fresh SUMO episodes organized into four non-bus OD-source vehicle cohorts and paired departure windows. Each manifest fixes 24 public bus services and 19 requests for each other class. Non-bus plans are complete single-leg requests without internal activity parking. Their source vehicles are disjoint from training and earlier evaluated non-bus cohorts. The public bus templates and map remain shared.
 
 The generator sees endpoints, declared permissions and ordered public bus stop anchors. Its interior path is constructed from the network. The reference simulator uses its frozen public plans and background demand, while the generator samples from a network-only catalog. A different permitted route can be a valid outcome. Catalog membership of the reference route, geometric support and accepted physical references are separate coverage quantities.

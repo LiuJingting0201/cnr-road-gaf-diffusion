@@ -48,7 +48,7 @@ SV & Both paired features & Joint contribution\\
 SH & Features from another matched trip & Pairing contribution\\
 \bottomrule
 \end{tabular}
-\caption{Matched training controls. SH permutes trips within participant class and route-length quartile. All model variants contain identical projection heads and start from identical denoiser weights within each seed.}
+\caption{Matched training controls. SH permutes trips within participant class and route-length quartile. All model variants contain identical projection heads and start from identical denoiser weights within each seed}
 \end{table}
 
 Each variant uses two training seeds, 12,000 updates and the same class-balanced batches. SH disrupts both exact route information and individual motion, so its contrast identifies paired-trip information rather than isolating a causal motion effect. The six-mode condition studied previously is excluded from this comparison. An existing empirical transfer comparator samples normalized profiles from 32 nearby training routes of the requested class and rescales duration by route length.

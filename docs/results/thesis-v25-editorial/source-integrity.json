@@ -1,0 +1,266 @@
+{
+  "metadata.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "main.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "abstract.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "cover.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "references.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-utility.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g36-five-class-native.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-condition-use.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/auxiliary.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/recall.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-training-costs.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-class-acceleration.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/selection.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g35-five-class-readers.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g28-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/downstream.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-utility-cohorts.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-primary.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g35-readers.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/case-pages.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-diversity-decode.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-physical-w1-1.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g36-w1.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-physical-w1-2.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-class-speed.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-seed-native.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-condition-all-2.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g35-cohort.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-condition-all-1.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g36-generator.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-physical-mae-2.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-coverage.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g36-mae.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "tables/g40-physical-mae-1.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/01-introduction.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/complete-trips.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/class-contrasts.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/two-gafs.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/expanded-corpus.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/closed-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-feedback.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/results-detail.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/03-data.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-appendix.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/06-protocol.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-method.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/bend-feedback.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-introduction.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/05-feedback.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-data.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/scale-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/04-generation.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/08-intervention.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/07-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/expanded-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/paired-representations.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/review-comparison.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/utility-detail.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-discussion.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/02-background.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/08-discussion.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/motion-detail.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-results.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/geometry-detail.tex": {
+    "changed": false,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/native-protocol.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  },
+  "chapters/appendix.tex": {
+    "changed": true,
+    "original_math_reference_and_numeric_values_preserved": true
+  }
+}

@@ -29,13 +29,13 @@ These one-second increments are expressed in metres per second and resampled to 
 
 The angular normalization is $u_i=\operatorname{clip}(v_i/35,0,1)$, with a common absolute scale across classes. Values above 35 metres per second are counted. The MTF uses eight fixed bins on this normalized interval. The two angular channels are mapped from $[-1,1]$ to $[0,1]$; the resulting image is resized from $128\times128$ to $224\times224$. Both representations then use the same ImageNet channel normalization before entering a ResNet18~\cite{resnet}.
 
-The speed image retains absolute speed scale but compresses temporal detail. One-second averaging and the 128-point summary emphasize whole-trip movement over quarter-second fluctuations. Its input consists of the resampled speed profile. The representation summarizes whole-trip speed structure.
+The speed image retains absolute speed scale but compresses temporal detail. One-second averaging and the 128-point summary emphasize whole-trip movement over quarter-second fluctuations. The resampled speed profile summarizes the structure and scale of movement over the complete journey.
 
 \FloatBarrier
 \section{From a generated journey to the two image views}
-Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row ends in the three channels that the corresponding class classifier receives. The image is computed from the generated journey.
+Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row displays the resulting GASF, GADF and MTF channels supplied to the respective ResNet-18 classifier.
 
-\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one preliminary candidate-selection bus journey, used to illustrate the unchanged encoding. The spatial row uses Hilbert run compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion.  }{g36-gaf-construction}
+\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one preliminary candidate-selection bus journey, used to illustrate the unchanged encoding. The spatial row uses Hilbert run compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion}{g36-gaf-construction}
 
 The two sequences have different coordinates on their horizontal axes. The spatial sequence index follows run compression, whereas the speed sequence index follows relative-time resampling. Their off-diagonal image patterns relate pairs of sequence positions. Visible image differences reveal which patterns each representation retains. The empirical question is whether the resulting representations provide useful constraints for generating motion. Chapter~\ref{ch:native-results} links complete generated journeys and their output image views to independent population-level quality statistics. The output images visualize these measured trajectory properties.
 
@@ -79,12 +79,12 @@ Gradients update the CNN tail and projection weights. The discrete Hilbert, comp
 
 Joint adaptation updates the encoder through both denoising and classification objectives. The frozen-classifier comparison measures their combined effect. Recognition scores reported for the original classifiers refer to their pre-adaptation checkpoints.
 
-\section{Conditional Latent Diffusion Prior for Test-Time Synthesis}
+\section{Conditional latent diffusion prior for test-time synthesis}
 Observed training trajectories supply the codes used in joint fitting. A conditional prior learns their distribution and supplies codes for out-of-sample synthesis.
 
 After motion fitting, the final exponential-moving-average encoder is frozen and all training codes are extracted. Each active dimension is standardized by its training mean and standard deviation, with a standard-deviation floor of $10^{-3}$. A conditional latent diffusion model then fits the distribution of these codes given class, the route's 129 two-dimensional points and the existing five-component route/duration context. It uses a 256-dimensional hidden state, four residual MLP blocks, the same 1,000-index linear noise schedule, and a fixed 5,000-update budget. The noise loss is evaluated over the active dimensions.
 
-At synthesis, 50 DDIM updates sample a code from this prior; 100 separate DDIM updates generate motion conditional on that code. Route, duration and motion-noise keys are matched across the experimental model variants. The code prior and motion model use independent request-keyed random streams. The sampled code is held fixed through the motion denoising process. Inference uses the latent prior and temporal denoiser.
+At synthesis, 50 DDIM updates sample a code from this prior; 100 separate DDIM updates generate motion conditional on that code. Route, duration and motion-noise keys are matched across the experimental model variants. Independent request-keyed random streams separate code sampling from motion noise, while the sampled representation remains fixed throughout temporal denoising; inference therefore combines the latent prior with the conditioned motion model.
 
 The encoder, conditional diffusion decoder and learned code prior follow the general construction of Diffusion Autoencoders~\cite{diffae}. Here the construction operates on road-conditioned variable-length motion and prescribed spatial and speed image views. The latent prior samples the condition, and the temporal decoder generates progress.
 
@@ -93,7 +93,7 @@ The code prior is checked through training-side perturbations and out-of-sample 
 \section{Representation controls}
 Table~\ref{tab:g40-arms} separates the main method from its controls. Every variant continues from the corresponding same-seed frozen-feature alignment baseline and uses the same motion target and sampling budget. A zero-initialized adapter and identical training streams make the starting point explicit.
 
-\tab{conditioning configurations and their roles. B bypasses the code adapter. All other model variants use the same 64-dimensional interface; an inactive view is zero.}{g40-arms}{\begin{tabularx}{\linewidth}{lXX}\toprule
+\tab{Conditioning configurations and their roles. Variant \texttt{B} bypasses the code adapter. All other model variants use the same 64-dimensional interface; an inactive view is zero}{g40-arms}{\begin{tabularx}{\linewidth}{lXX}\toprule
 Variant & Condition source & Question isolated\\\midrule
 B & No additional code & Class/route/duration diffusion baseline\\
 F-SV & Frozen spatial and speed CNNs; learned projections & Is fixed recognition sufficient as a condition?\\

@@ -1,4 +1,4 @@
-# Road-conditioned diffusion thesis — research draft v24
+# Road-conditioned diffusion thesis — research draft v25
 
 English master's thesis, using the Politecnico di Torino TOPtesi layout documented in TEMPLATE.md. Administrative cover fields remain intentional placeholders for the candidate, programme, supervisor, academic year and session.
 

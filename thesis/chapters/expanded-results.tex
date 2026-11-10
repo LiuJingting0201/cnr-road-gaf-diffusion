@@ -3,7 +3,7 @@ The negative short-budget comparison motivated one bounded follow-up. We fixed 2
 
 \begin{table}[htbp]
 \centering\small
-\caption{Five-class macro Wasserstein discrepancy in 127.75-second travel distance (metres, lower is better). C is evaluated on the same five classes as A, D and B.}
+\caption{Five-class macro Wasserstein discrepancy in 127.75-second travel distance (metres, lower is better). C is evaluated on the same five classes as A, D and B}
 \begin{tabular}{lrrrr}\toprule
 Development population & A & D & B & C\\\midrule
 historical dataset B, 3,000 updates & 323.2 & 420.1 & 399.9 & 413.4\\
@@ -18,7 +18,7 @@ On historical dataset B the augmented model reduced travel discrepancy by 69.2 m
 \section{The eight-class deliverable}
 The trained C model takes a supported start and class and returns four sampled timed trajectories. Figure~\ref{fig:scaled-eight} shows the first supported validation request per class with a model seed fixed before evaluation. The curves display variation in motion along a common spatial opportunity within each panel. Different panels involve different roads and cannot identify the effect of switching a label on a common road.
 
-\fig{expanded-motion.pdf}{.92}{Cumulative distance for four diffusion draws from each illustrated request after 20,000 updates. The common axes show the scale difference between walking and motorized movement. All draws for the fixed request are included.}{scaled-eight}
+\fig{expanded-motion.pdf}{.92}{Cumulative distance for four diffusion draws from each illustrated request after 20,000 updates. The common axes show the scale difference between walking and motorized movement. All draws for the fixed request are included}{scaled-eight}
 
 Across both seeds, the archive contains 1,400 trajectories from 175 starts. All 1,232 motor-vehicle and bicycle trajectories passed the directed lane audit. The 168 pedestrian samples stayed within the two-metre sidewalk tolerance (0.01 m numerical allowance). The pedestrian check covers a single segment; 301 attempted starts did not meet its planning rule before the quota was reached or the search exhausted. Seven samples reached the end of their planned path, all in the bicycle class; all seven remain in the dataset. In the 3,000-update eight-class run there had been 45 caps, including 28 pedestrian cases. Geographical feasibility can therefore coexist with truncated motion. Per-class travel discrepancy also varied, ranging from 8.1 metres on the restricted pedestrian requests to 197.9 metres for buses. Bus schedules and passenger stops would be relevant conditions for a more realistic bus service.
 

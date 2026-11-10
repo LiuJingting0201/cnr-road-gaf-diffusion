@@ -3,7 +3,7 @@
 \chapter{Complete numerical results and fixed cases}
 \label{app:native-results}
 
-\section{Complete Physical Results and Class-Specific Coverage}
+\section{Complete physical results and class-specific coverage}
 The following tables retain all eight conditions, both fitted seeds and all five participant classes from the completed out-of-sample comparison. The K1 tables concern the first direct draw; the all-four comparison weights the four draws equally inside each request. The ten physical summaries appear in their original units, without a cross-unit composite or a choice of favourable endpoints. Class-marginal distributions and request-paired discrepancies address different questions. Both accommodate alternative realizations of each OD request.
 
 \input{tables/g40-coverage}
@@ -32,7 +32,7 @@ Per-cell support, all individual class results, coverage and provenance are avai
 \FloatBarrier
 \input{tables/g40-utility-cohorts}
 \FloatBarrier
-\section{Temporal-Resolution Pilot Study: all physical summaries}
+\section{Temporal-resolution pilot study: all physical summaries}
 Tables~\ref{tab:g33-all-physical-a} and~\ref{tab:g33-all-physical-b} retain all ten predefined physical summaries for all fourteen completed evaluations. They supplement the representative measures in the main text without selecting columns by the direction of an effect. Every entry is a five-class macro Wasserstein distance, with lower values indicating closer distributions. Each quantity retains its own unit; the columns are not combined into an overall score.
 
 Every row begins with the same 100 out-of-sample requests and uses the same 94 paired requests for these quality measures: 19 buses, 18 motorcycles, and 19 participants in each remaining class. Map construction supports 97 requests and reference extraction accepts 97, but their supported sets differ. Each full-pool row contains 776 generated trajectories, of which 752 belong to the paired requests ($94\times8$). Each terminal-selection row contains 97 delivered trajectories, of which 94 have accepted references. These denominators distinguish generation coverage from quality support; none of the six unsupported requests is replaced. The eight selection rows reuse candidates, so their outputs are not additional independent generations.
@@ -41,7 +41,7 @@ In the tables, ``257'' and ``Native'' denote the relative and quarter-second dif
 
 \begin{table}[htbp]
 \centering
-\caption{Complete macro physical distances, part I: trip scale and one-second motion summaries. Every row has 94 paired requests out of the original 100.}
+\caption{Complete macro physical distances, part I: trip scale and one-second motion summaries. Every row has 94 paired requests out of the original 100}
 \label{tab:g33-all-physical-a}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -73,7 +73,7 @@ N43 / SV & 68.0578 & 4.4888 & 23.0170 & 0.2141 & 0.8416\\
 
 \begin{table}[htbp]
 \centering
-\caption{Complete macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances use fractions, not percentage points. Every row has 94 paired requests out of the original 100.}
+\caption{Complete macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances use fractions, not percentage points. Every row has 94 paired requests out of the original 100}
 \label{tab:g33-all-physical-b}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -105,12 +105,12 @@ N43 / SV & 0.0561 & 0.0198 & 1.7139 & 10.7994 & 0.1169\\
 
 Duration and distance retain the complete observed span. The remaining summaries use complete one-second intervals; for example, ``Four-second change'' denotes the mean absolute four-second lag difference in speed, not acceleration over a four-second sampling interval. Precise state thresholds and support rules are defined in Chapter~\ref{ch:native-protocol}. All unselected generators share the duration prior, explaining the identical duration distances within a seed. Selection can change the distribution of durations retained from that pool.
 
-\section{Temporal-Resolution Pilot Study: native-resolution distances by participant class}
+\section{Temporal-resolution pilot study:\texorpdfstring{\\}{ }native-resolution distances by participant class}
 Table~\ref{tab:g33-class-native} reports interval-distribution distances for the six full-pool generators. These are computed at the native output resolution, including fractional terminal intervals, and therefore address a different question from the one-second journey summaries. Requests have equal mass within a class; candidate mass is divided within a request, and speed or acceleration samples are then weighted by their physical interval length. Class-specific tables characterize how the aggregate response varies across participants and movement properties.
 
 \begin{table}[htbp]
 \centering
-\caption{Class-wise native speed and acceleration $W_1$ for every full-pool generator. Each cell lists speed (m/s) above acceleration (m/s$^2$). The 94 paired requests comprise 19 buses, 18 motorcycles and 19 members of each other class; each row has 776 generated and 752 paired trajectories.}
+\caption{Class-wise native speed and acceleration $W_1$ for every full-pool generator. Each cell lists speed (m/s) above acceleration (m/s$^2$). The 94 paired requests comprise 19 buses, 18 motorcycles and 19 members of each other class; each row has 776 generated and 752 paired trajectories}
 \label{tab:g33-class-native}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -130,17 +130,17 @@ Empirical / 43 & \shortstack{1.2757\\0.4483} & \shortstack{0.6626\\0.4308} & \sh
 \end{table}
 \FloatBarrier
 
-\section{Fixed-Duration Control Study: Complete Results}
+\section{Fixed-duration control study: complete results}
 \label{sec:g34-appendix}
 Tables~\ref{tab:g34-all-physical-a} and~\ref{tab:g34-all-physical-b} report all ten predefined physical summaries for the fixed-duration control study's two full pools and eight terminal selections. Table~\ref{tab:g34-class-native} gives the corresponding native speed and acceleration distances for every class. N42 and N43 denote the same native-clock models used in the temporal-resolution pilot study; ``all'' denotes a full pool, and U, S, V and SV retain their earlier definitions. Every row has 94 paired requests out of the original 100. A full pool contains 776 generated trajectories and 752 paired trajectories; a selected set contains 97 and 94, respectively. The class counts remain 19 buses, 18 motorcycles and 19 members of each other class. All reported metrics have that support.
 
-The fixed-duration control study fixes one training-prior duration per request and model seed before scoring the shared candidate pool. Its reference episode is the already analyzed the temporal-resolution pilot study episode, not a new blind sample. The following tables use the completed attempt2 summary and retain each metric's units; all distances are lower-is-better. Values are rounded to four decimal places for presentation.
+The fixed-duration control study fixes one training-prior duration per request and model seed before scoring the shared candidate pool. The study reuses the reference episode from the temporal-resolution pilot study. The following tables report the complete evaluation metrics in their native physical units; all distances are lower-is-better. Values are rounded to four decimal places for presentation.
 
 % the fixed-duration control study numerical source: docs/results/g34-fixed-duration/attempt2/report/summary.json
 % SHA256: 331066df7fc8130fa8f16c925a9aa0f067c71d8a6cf14a71b3e48ea87dfb8744
 \begin{table}[htbp]
 \centering
-\caption{Complete the fixed-duration control study macro physical distances, part I: trip scale and one-second motion summaries. Each row covers 94 paired requests out of 100.}
+\caption{Fixed-duration control study: complete macro physical distances, part I: trip scale and one-second motion summaries. Each row covers 94 paired requests out of 100}
 \label{tab:g34-all-physical-a}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -167,7 +167,7 @@ N43 / SV & 51.5908 & 4.4905 & 22.0246 & 0.2114 & 0.3587\\
 
 \begin{table}[htbp]
 \centering
-\caption{Complete the fixed-duration control study macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances are fractions, not percentage points. Each row covers 94 paired requests out of 100.}
+\caption{Fixed-duration control study: complete macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances are fractions, not percentage points. Each row covers 94 paired requests out of 100}
 \label{tab:g34-all-physical-b}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -194,7 +194,7 @@ N43 / SV & 0.0604 & 0.0165 & 2.1182 & 7.2901 & 0.0883\\
 
 \begin{table}[htbp]
 \centering
-\caption{Complete class-wise the fixed-duration control study native speed and acceleration $W_1$. Each cell lists speed (m/s) above acceleration (m/s$^2$), using the same 94-request paired population as the macro tables. Both full pools and all terminal policies are included.}
+\caption{Fixed-duration control study: class-wise native speed and acceleration $W_1$. Each cell lists speed (m/s) above acceleration (m/s$^2$), using the same 94-request paired population as the macro tables. Both full pools and all terminal policies are included}
 \label{tab:g34-class-native}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -219,24 +219,24 @@ N43 / SV & \shortstack{0.6200\\0.0828} & \shortstack{0.9857\\0.1880} & \shortsta
 \end{table}
 \FloatBarrier
 
-\section{Five the temporal-resolution pilot study cases selected before visual inspection}
-For the temporal-resolution pilot study model seed 42, the case for each class is the lexicographically first request with an accepted reference and outputs from all four terminal policies. This rule is based on request order and common support, not physical quality, teacher confidence or visual appearance. The five plots illustrate the same declared conditions and the consequences of selecting different candidates; they are not five independent tests of a method advantage.
+\section{Five fixed-order cases from the temporal-resolution pilot study}
+For model seed 42 in the temporal-resolution pilot study, the case for each class is the lexicographically first request with an accepted reference and outputs from all four terminal policies. This rule is based on request order and common support, not physical quality, teacher confidence or visual appearance. The five plots illustrate the same declared conditions and the consequences of selecting different candidates; they are not five independent tests of a method advantage.
 
 Each figure shows coordinate geometry, relative-time progress and a physical-time speed curve. Speed is derived from cumulative planar distance over complete one-second intervals, with the final partial second omitted from that panel. The one-second curves emphasize longer movement patterns, complementing the native quarter-second metrics. Different selected durations are allowed in the temporal-resolution pilot study. The shared route produces near-coincident map traces, while temporal curves distinguish movement along it.
 
-\fig{g33-case-bus.pdf}{1.0}{Bus. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-bus}
+\fig{g33-case-bus.pdf}{1.0}{Bus. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal}{g33-case-bus}
 \FloatBarrier
 
-\fig{g33-case-motorcycle.pdf}{1.0}{Motorcycle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-motorcycle}
+\fig{g33-case-motorcycle.pdf}{1.0}{Motorcycle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal}{g33-case-motorcycle}
 \FloatBarrier
 
-\fig{g33-case-private_car.pdf}{1.0}{Private car. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-private_car}
+\fig{g33-case-private_car.pdf}{1.0}{Private car. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal}{g33-case-private_car}
 \FloatBarrier
 
-\fig{g33-case-bycicle.pdf}{1.0}{Bicycle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-bycicle}
+\fig{g33-case-bycicle.pdf}{1.0}{Bicycle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal}{g33-case-bycicle}
 \FloatBarrier
 
-\fig{g33-case-taxi_or_uber.pdf}{1.0}{Taxi or ride-hailing vehicle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-taxi_or_uber}
+\fig{g33-case-taxi_or_uber.pdf}{1.0}{Taxi or ride-hailing vehicle. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal}{g33-case-taxi_or_uber}
 \FloatBarrier
 
 \section{Historical evidence and reproduction scope}
@@ -258,13 +258,13 @@ The full-day expansion completed all four 10,000-step diffusion fits and both fi
 The paired classifier comparison is stronger evidence than comparing the pilot's small development set with the expanded set. Both old and new checkpoints see the same 7,230 complete development legs, and the original training populations remain separate from that cohort. Table~\ref{tab:g35-readers} and Figure~\ref{fig:g35-teacher-comparison} show a substantial recognition improvement in both representations.
 
 \input{tables/g35-readers}
-\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded classifiers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better.}{g35-teacher-comparison}
+\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded classifiers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better}{g35-teacher-comparison}
 
 Spatial macro F1 increases by 26.37 percentage points, with a paired source vehicle-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. The intervals characterize variability within the available public-demand dataset and fixed model fits. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. The comparison combines changes in sample count, temporal coverage and CNN optimization exposure.
 
 
 
-\fig{g35-confusion.pdf}{1}{Pre-adaptation spatial and speed classifiers on the same expanded development cohort. Each row is normalized within its true class. These are the pre-trained classifier checkpoints, not new evaluations of jointly adapted encoders.}{g35-confusion}
+\fig{g35-confusion.pdf}{1}{Pre-adaptation spatial and speed classifiers on the same expanded development cohort. Each row is normalized within its true class. These are the pre-trained classifier checkpoints, not new evaluations of jointly adapted encoders}{g35-confusion}
 
 The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these classifiers from simulator observations to generated candidates.
 
@@ -274,7 +274,7 @@ The confusion matrices explain why overall accuracy alone would be incomplete. S
 \section{Supporting old/new generator comparison}
 \label{sec:corpus-generator-supplement}
 \input{tables/g36-generator}
-\fig{g36-generator-context.pdf}{1}{Expanded versus pilot native-time generation on two new SUMO scenes. Bars show changes in full-pool five-class macro distances; negative is better. Each model uses its own training-side duration prior. The reversal across scenes prevents a universal expansion claim.}{g36-generator-context}
+\fig{g36-generator-context.pdf}{1}{Expanded versus pilot native-time generation on two new SUMO scenes. Bars show changes in full-pool five-class macro distances; negative is better. Each model uses its own training-side duration prior. The reversal across scenes prevents a universal expansion claim}{g36-generator-context}
 
 Expansion changes the generator's applicability across the observed contexts. In the later scene, native-speed distribution error falls by 57.2\% and 65.5\% for the two model seeds, while acceleration error falls by 15.7\% and 5.6\%. In the morning scene, speed error instead rises by 4.7\% and 12.2\%, and acceleration error rises by 22.0\% and 34.4\%. The signs agree across seeds within each scene, but there are only two simulator realizations and the underlying public plans are shared.
 
@@ -288,7 +288,7 @@ This contrast is consistent with sensitivity to demand and temporal coverage, bu
 
 The central comparison applies old and expanded classifiers to the same expanded-generator candidates. Duration, geometry, candidate noise and the requested class are unchanged by the teacher contrast. Uniform controls are verified identical array by array. The experiment therefore distinguishes improving the generator from improving the criterion used to select its outputs.
 
-\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded classifier. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix.}{g36-teacher-effects}
+\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded classifier. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix}{g36-teacher-effects}
 
 The physical ranking varies across metrics despite stronger recognition. For example, the expanded spatial classifier reduces longest-stop request error by 6.4\% relative to the pilot spatial classifier on these same pools, but raises stopped-fraction error by 1.1\% and stop-frequency error by 2.8\%. The expanded velocity classifier reduces mean-absolute-acceleration request error by 2.8\% but increases longest-stop error by 4.1\% relative to the pilot velocity classifier. These comparisons evaluate a fixed generator and its selectors through independently measured physical properties.
 
@@ -299,8 +299,8 @@ The physical ranking varies across metrics despite stronger recognition. For exa
 
 The post-hoc request-level analysis suggests a more precise mechanism to test. Spatial feedback reduces longest-stop MAE in all four scene/seed cells, with an aggregate reduction of 7.6\%. This differs from its class-marginal longest-stop W1, which improves in three cells and decreases by 4.6\% in the aggregate. The distinction matters: the first statement concerns correspondence to the same request's reference, while the second concerns the distribution of that scalar over requests.
 
-\fig{g36-class-stopping.pdf}{1}{Class-specific longest-stop request error after expanded GAF selection. The same five classes and all three policies are retained. The bus improvement coexists with a motorcycle cost; percentage reductions across classes are not a single common-unit effect size.}{g36-class-stopping}
-\fig{g36-stopping-blocks.pdf}{1}{Expanded spatial feedback versus Uniform for buses and motorcycles, shown separately in every scene/seed cell. The two classes illustrate opposing directions found in the complete class table. Connecting lines identify the paired scene and seed results.}{g36-stopping-blocks}
+\fig{g36-class-stopping.pdf}{1}{Class-specific longest-stop request error after expanded GAF selection. The same five classes and all three policies are retained. The bus improvement coexists with a motorcycle cost; percentage reductions across classes are not a single common-unit effect size}{g36-class-stopping}
+\fig{g36-stopping-blocks.pdf}{1}{Expanded spatial feedback versus Uniform for buses and motorcycles, shown separately in every scene/seed cell. The two classes illustrate opposing directions found in the complete class table. Connecting lines identify the paired scene and seed results}{g36-stopping-blocks}
 
 For buses, the spatial longest-stop request error falls by 20.7\%, with all four cells improving. For motorcycles it rises by 5.3\%, with all four cells worsening. The dual policy's corresponding bus reduction is 21.1\%; that small difference from spatial-only feedback is not evidence of representation synergy. These observations motivate class-sensitive stopping analysis, but the metric does not determine whether the longest stop occurs at the correct bus station. It also does not distinguish a service stop from waiting in traffic.
 
@@ -308,24 +308,24 @@ A mechanism claim therefore requires a fresh, fixed comparison of stop location,
 
 Full-pool pair diversity describes the variation available before selection. Conditional pair diversity is evaluated on the full candidate pool, while the selected output contains one trajectory per request. The common 97-request map coverage is unchanged by selection and belongs to the geometric interface.
 
-\section{Frozen-Feature Supervision and Candidate Selection}
+\section{Frozen-feature supervision and candidate selection}
 
 The frozen-feature alignment study includes seven model variants, two fitted seeds and eight new reference episodes. Its 800 declared episode requests yield 782 route-supported requests and 754 physical pairs; 470 realised reference routes are present in their catalogs. The dual-view SV variant gives K1 speed/acceleration distances of 1.29337/0.18761 compared with 1.28383/0.18674 for B: increases of 0.743\% and 0.466\%. The speed-only variant slightly improves primary acceleration, but the same-class shuffled control changes it by a similar amount and the four-draw weighted comparison reverses the apparent speed-only advantage. Frozen-feature supervision produces mixed movement-quality responses across the reported endpoints.
 
 Longer-timescale changes are also mixed. SV reduces longest-stop distance by 1.44\%, while mean absolute acceleration on the one-second clock worsens by 4.86\% and four-second speed-change distance worsens by 5.23\%. Bicycle and motorcycle gains coexist with adverse bus and private-car results. The complete endpoints remain in the experiment records rather than being condensed into a favourable class score.
 
-A separate same-pool diagnostic on the already exposed the route-preference evaluation scenes distinguishes global GAF weighting from weighting with fixed route and route--duration marginals. It uses four scene/seed cells and 10,784 candidates. Under the fixed joint marginals, speed-GAF weighting changes native speed/acceleration distances by only $-0.12\%/-0.13\%$, with improvements in one and two of the four cells respectively. Spatial and dual-view weighting worsen both macro endpoints. The preserved marginals are distributional constraints; an individual coupled random draw need not retain the same route and duration.
+A separate same-pool diagnostic on the route-preference evaluation scenes distinguishes global GAF weighting from weighting with fixed route and route--duration marginals. It uses four scene/seed cells and 10,784 candidates. Under the fixed joint marginals, speed-GAF weighting changes native speed/acceleration distances by only $-0.12\%/-0.13\%$, with improvements in one and two of the four cells respectively. Spatial and dual-view weighting worsen both macro endpoints. The preserved marginals are distributional constraints; an individual coupled random draw need not retain the same route and duration.
 
-\fig{g39-fixed-marginals.pdf}{1}{Closed mechanism diagnostic: changes under global, fixed-route and fixed-route--duration weighting of identical candidate pools. The last comparison preserves the joint route/time marginal rather than asserting that each selected sample is identical. These reused scenes are development evidence; the small residual speed-view effects are not independent confirmation of guidance.}{g39-fixed-marginals}
+\fig{g39-fixed-marginals.pdf}{1}{Closed mechanism diagnostic: changes under global, fixed-route and fixed-route--duration weighting of identical candidate pools. The last comparison preserves the joint route/time marginal rather than asserting that each selected sample is identical. These reused scenes are development evidence; the small residual speed-view effects are not independent confirmation of guidance}{g39-fixed-marginals}
 
 Independent augmentation nevertheless gives a useful, narrower finding. Across two raw-series learner seeds, real-only training reaches 91.25\% macro F1, real plus baseline diffusion data 93.17\%, real plus speed-aligned data 94.10\%, and real plus RAW-aligned data 94.06\%. Real plus dual-view data reaches 93.57\%; synthetic-only regimes remain below real-only. Thus diffusion samples can help this downstream task, while the almost equal speed-GAF and RAW results do not demonstrate an image-specific advantage. The generator has access to the full labelled corpus, so this is not a strict low-label learning claim.
 
-\fig{g39-alignment-utility.pdf}{1}{Frozen-feature alignment (left) and independent augmentation (right), with both downstream seeds shown. The evaluation model reads raw time series and is independent of the GAF classifiers. Task performance and physical fidelity show different responses to feature alignment.}{g39-alignment-utility}
+\fig{g39-alignment-utility.pdf}{1}{Frozen-feature alignment (left) and independent augmentation (right), with both downstream seeds shown. The evaluation model reads raw time series and is independent of the GAF classifiers. Task performance and physical fidelity show different responses to feature alignment}{g39-alignment-utility}
 
 The main experiment extends these fixed-classifier controls to jointly trained generative conditions.
 
-\section{Implementation and Computational Performance}
-The prior pilot also matters. With 1,000 prior updates, sampled absolute codes reached approximately 119--178. The single declared-budget recovery used 5,000 updates and reduced the sampled pilot range substantially without refitting motion. The formal experiment uses that previously declared budget. Its largest recorded absolute code is approximately 6.50; some out-of-sample samples still exceed their variant's observed training-code maximum. Counts are 31, 35, 14, 70, 18 and 86 out of 6,272 for F-SV, J-S, J-V, J-SV, J-RAW and J-SH. All samples are retained when reporting empirical code-range exceedance. Code-range statistics complement the motion-quality evaluation.
+\section{Implementation and computational performance}
+The latent-prior pilot identified a strong dependence on fitting budget: after 1,000 updates, sampled absolute codes reached approximately 119--178, whereas extending prior fitting to the declared 5,000-update budget substantially reduced this range while retaining the motion model. The formal experiment therefore uses that budget and records a largest absolute code of approximately 6.50. Relative to each variant's observed training-code maximum, exceedance counts are 31, 35, 14, 70, 18 and 86 out of 6,272 for F-SV, J-S, J-V, J-SV, J-RAW and J-SH. All generated samples are retained, so these code-range statistics complement the motion-quality evaluation by describing the prior's sampled representation space.
 
 A separate completed performance study reduces a repeated-archive evaluation unit from 104.168 to 10.017 seconds while reproducing its metrics and diagnostic JSON exactly. That I/O change is adopted. Proposed training caching gives no end-to-end speedup in the bounded benchmark and fails strict state equality, including non-identical repeats of the original implementation; it is not adopted.
 
@@ -333,7 +333,7 @@ Reproducibility checks link the final results to saved model configurations, gen
 
 \section{Supplementary dataset and demand comparison}\label{app:source-comparison}
 \subsection{Archived trajectory exports and spatial alignment}
-The archived reference dataset (CNR export), \textit{the primary archived MoST export}, contains 4,840,789 observations from 2,685 identifiers and six participant classes. A second export, \textit{the secondary single-class export}, contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
+The primary archived MoST reference dataset (CNR export) contains 4,840,789 observations from 2,685 identifiers and six participant classes. A secondary single-class export contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
 
 The canonical record is \texttt{time,id,x,y,type}, with seconds and local planar metres. The principal export additionally contains simulator speed and the label \texttt{class2}; its class is mapped to the common type field. Speed for physical comparisons is derived from positions and timestamps on both observed and generated data, avoiding comparison between an internal simulator state and a numerical coordinate derivative.
 
@@ -344,7 +344,7 @@ A controlled comparison evaluates class-permitted random routes against activity
 
 The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image classifier. The readouts evaluate recognition on observed trajectories.
 
-\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed classifier seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
+\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed classifier seeds}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
 Readout & Archived data & Random demand & Native MoST\\\midrule
 Spatial geometry &79.12&34.85&76.95\\
 Physical motion &88.08&80.57&90.35\\

@@ -5,7 +5,7 @@ The experiment snapshot for this thesis is \texttt{6031e3f}. The frozen run used
 
 The network file is identified by SHA-256 prefix \texttt{a06b5c0765fb2d49}. The locked machine manifest has prefix \texttt{2ef4bddc8b727bc5}. These prefixes identify the full hashes in the experiment records. Changing a lane connection or polyline can alter a route while leaving the filename unchanged. The code checks paths, counts and weights so that two variants cannot silently consume different inputs.
 
-\tab{Execution stages. An empirical seed selects a resampling realization, whereas a training seed identifies a separately fitted network.}{work}{\begin{tabularx}{\linewidth}{lX}\toprule Stage & Unit of work\\\midrule
+\tab{Execution stages. An empirical seed selects a resampling realization, whereas a training seed identifies a separately fitted network}{work}{\begin{tabularx}{\linewidth}{lX}\toprule Stage & Unit of work\\\midrule
 E1 & 12 auxiliary CNN fits. Two grids, two initialization choices and three seeds. Full-vehicle classification.\\
 E2 & Nine horizon-matched CNN fits plus transfer evaluation. Three horizons, three seeds and one common validation cohort.\\
 E3 & Three motion diffusion models, 20,000 updates each. Each produces 511 incremental distances.\\
@@ -16,7 +16,7 @@ the earlier exploratory evaluation & Lock manifest, checks, one held-out evaluat
 The historical short-horizon coordinate and displacement-image studies explain why the representation was changed. Their validation numbers refer to different data and are kept separate from the formal long-window results.
 
 \section{Run parameters}
-\tab{Parameters of the main comparison. The actual length of a path can be smaller than its budget.}{params}{\begin{tabularx}{\linewidth}{lX}\toprule Item & Locked value\\\midrule
+\tab{Parameters of the main comparison. The actual length of a path can be smaller than its budget}{params}{\begin{tabularx}{\linewidth}{lX}\toprule Item & Locked value\\\midrule
 Horizon & 512 samples at 0.25 seconds, 511 increments\\
 Path & Up to 4,096 m and 1,025 interpolation points\\
 Successor prior & Class-conditioned counts, 0.1 smoothing per permitted successor\\
@@ -58,7 +58,7 @@ The five panels below use the first served condition per class at generator seed
 \section{Auditor confusion and imbalance}
 The confusion summaries retain errors hidden by aggregate accuracy. Each matrix averages the row proportions of three separately trained networks on the same 182 vehicles. A cell is the share of participants of the true class predicted as the column class. Row counts are 12, 13, 31, 103, 15 and 8. An error on one taxi changes taxi recall by 12.5 points for one model.
 
-\fig{confusion.pdf}{1}{Final auxiliary classification on observed windows. Rows are true classes and columns are predictions. Each cell averages percentages across the three frozen seeds.}{confusion}
+\fig{confusion.pdf}{1}{Final auxiliary classification on observed windows. Rows are true classes and columns are predictions. Each cell averages percentages across the three frozen seeds}{confusion}
 \input{tables/auxiliary}
 These matrices use observed-window recognition. The audit percentages on generated traces use requested classes on the five-class subset and two audit seeds per family. Accuracy across observed windows, six-class macro-F1 and class-macro agreement on generated candidates measure different outcomes.
 
@@ -87,7 +87,7 @@ Particle-based diffusion methods motivate intermediate scoring \cite{tds}. Our f
 
 Controls keep the same initial noise, routes, number of denoiser evaluations ($8\times100$ per request) and stochastic transition. Identity keeps each source vehicle once. Uniform resampling isolates the effect of resampling itself. Wrong-label resampling scores the next moving class in a fixed cyclic order. Terminal ranking uses probability-weighted selection from the identity pool. Scored methods evaluate eight images for their decision; image evaluation adds overhead relative to an unguided run. One common random slot is returned per request for the in-loop model variants. Diversity describes eight trajectories before the single-output choice. The terminal control uses a weighted draw here, whereas the earlier locked selector used a maximum. Each comparison below is internal to this development study.
 
-\tab{Three-seed development results, with one fixed path per request. Agreement is class-macro accuracy of the independent TCN; pair distance measures diversity of the full pool in metres.}{inloop}{\begin{tabular}{lrrrrr}\toprule Decision & TCN (\%) & Speed $\W$ & Accel. $\W$ & Travel $\W$ & Pair dist.\\\midrule
+\tab{Three-seed development results, with one fixed path per request. Agreement is class-macro accuracy of the independent TCN; pair distance measures diversity of the full pool in metres}{inloop}{\begin{tabular}{lrrrrr}\toprule Decision & TCN (\%) & Speed $\W$ & Accel. $\W$ & Travel $\W$ & Pair dist.\\\midrule
 Identity &71.9&0.883&0.221&120.7&80.8\\
 Uniform &73.3&1.010&0.202&124.6&69.8\\
 In-loop GAF &73.3&0.945&0.229&104.1&50.3\\
@@ -112,12 +112,12 @@ We kept 33 development requests and three frozen generators. Three new noise dra
 
 The primary comparison uses class-macro travel-distance Wasserstein error. For each model and class, the three returned draws per participant contribute to the generated distribution, compared with the observed reference for each participant. We compute the distance before averaging over classes and models. Paired intervals resample whole participants 1,000 times. Within each turn group resampling is stratified by class, and the two groups are drawn independently for the interaction. Generation seeds and noise draws remain fixed. Error differences below are intermediate minus terminal; negative values favor intermediate scoring.
 
-\tab{Travel discrepancy differences in metres. Brackets give conditional 95\% intervals for the complete cohort. Group-specific distances are recomputed within each group; their mean need not equal the complete-cohort distance.}{timing}{\begin{tabular}{rrrr}\toprule Update & All 33 requests & Lower turn & Higher turn\\\midrule
+\tab{Travel discrepancy differences in metres. Brackets give conditional 95\% intervals for the complete cohort. Group-specific distances are recomputed within each group; their mean need not equal the complete-cohort distance}{timing}{\begin{tabular}{rrrr}\toprule Update & All 33 requests & Lower turn & Higher turn\\\midrule
 40 & $-0.9$ [$-8.8$, $12.5$] & $+12.7$ & $-0.7$\\
 76 & $+6.1$ [$-12.3$, $12.0$] & $+3.6$ & $-5.2$\\
 91 & $+0.04$ [$-4.8$, $4.2$] & $-5.5$ & $+2.7$\\\bottomrule\end{tabular}}
 
-\fig{g9-timing.pdf}{1}{Motion discrepancies by decision time and route group. Each row gives the intermediate-minus-terminal effect and its conditional vehicle interval. Negative values favor intermediate scoring. Low and high refer to relative turn burden within participant class.}{timinggroups}
+\fig{g9-timing.pdf}{1}{Motion discrepancies by decision time and route group. Each row gives the intermediate-minus-terminal effect and its conditional vehicle interval. Negative values favor intermediate scoring. Low and high refer to relative turn burden within participant class}{timinggroups}
 At update 76 on higher-turn roads, intermediate scoring reduced speed discrepancy by 0.107 m/s, interval $[-0.243,-0.005]$. Its travel difference in the same group was $-5.2$ metres, interval $[-23.0,7.6]$. The speed interaction (higher-turn difference minus lower-turn difference) was $-0.133$ m/s, interval $[-0.313,0.004]$. The subgroup observation is a candidate for replication; it does not establish turn burden as a reliable decision rule. At update 40 on lower-turn roads the acceleration discrepancy fell by 0.025 m/s$^2$, interval $[-0.037,-0.006]$, while travel discrepancy increased by 12.7 metres, interval $[1.7,25.4]$. This is a direct example of improving one aspect of motion at the expense of another.
 
 Speed, acceleration and near-stop fraction discrepancies showed no consistent overall improvement across timings. At update 91 the complete-cohort travel difference was close to zero. Using the aggressive terminal maximum as an alternative comparator gave travel differences of $-5.0$, $+11.5$ and $+1.8$ metres, with intervals spanning zero each time. All 891 returned trajectories per primary policy passed the road audit, and none exhausted its path. Mean distance between independently returned draws was 77.9 versus 76.8 metres at update 40, 72.8 versus 74.6 at update 76 and 74.6 versus 73.5 at update 91. This compares delivered samples across draws, in contrast to the earlier diagnostic measuring diversity within a particle pool.
@@ -138,9 +138,9 @@ Each policy produced nine draws per request across three frozen models and three
 \subsection{The prespecified speed effect did not replicate}
 On high-turn roads the speed distances were 1.3080 m/s with intermediate scoring and 1.3135 m/s with terminal scoring. The paired difference was $-0.0054$ m/s, interval $[-0.0468,+0.0206]$, compared with $-0.107$ m/s in development. The three generator-specific differences were $-0.0340$, $+0.0070$ and $+0.0107$ m/s. Omitting individual episodes produced point differences ranging from $-0.0139$ to $+0.0059$ m/s. The primary replication criterion was not met. The small point difference and interval crossing zero do not establish equivalence of the policies.
 
-\fig{g10-replication.pdf}{1}{Higher-turn group at update 76. Points and intervals are intermediate minus terminal discrepancies. The development intervals resample vehicles and the independent SUMO intervals resample complete traffic episodes. Negative differences favor intermediate scoring.}{sumorep}
+\fig{g10-replication.pdf}{1}{Higher-turn group at update 76. Points and intervals are intermediate minus terminal discrepancies. The development intervals resample vehicles and the independent SUMO intervals resample complete traffic episodes. Negative differences favor intermediate scoring}{sumorep}
 
-\tab{Independent SUMO motion-quality comparisons on 120 higher-turn requests. Stop discrepancy is absolute error in the fraction of near-stationary intervals, expressed in percentage points.}{sumoind}{\begin{tabular}{lrrl}\toprule Metric & In-loop & Terminal & Difference [95\% interval]\\\midrule
+\tab{Independent SUMO motion-quality comparisons on 120 higher-turn requests. Stop discrepancy is absolute error in the fraction of near-stationary intervals, expressed in percentage points}{sumoind}{\begin{tabular}{lrrl}\toprule Metric & In-loop & Terminal & Difference [95\% interval]\\\midrule
 Speed $\W$ (m/s) &1.3080&1.3135&$-0.0054$ [$-0.0468$, $+0.0206$]\\
 Accel. $\W$ (m/s$^2$) &0.3061&0.3009&$+0.0051$ [$-0.0014$, $+0.0110$]\\
 Travel $\W$ (m) &149.61&152.74&$-3.13$ [$-7.59$, $+0.21$]\\
