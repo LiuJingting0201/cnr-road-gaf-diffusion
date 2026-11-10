@@ -1,10 +1,10 @@
-# Road-conditioned diffusion thesis — research draft v25
+# Road-conditioned diffusion thesis — research draft v26
 
 English master's thesis, using the Politecnico di Torino TOPtesi layout documented in TEMPLATE.md. Administrative cover fields remain intentional placeholders for the candidate, programme, supervisor, academic year and session.
 
 ## Editorial revision
 
-v23 refactors the LaTeX manuscript into academic prose with descriptive experiment names, standard machine-learning terminology and expanded trajectory case analyses. The supplied abstract and introduction guide the revision, with existing citation keys and mathematical notation retained. All equations, original inline mathematics, cross-reference commands, table values and figure/input paths are checked against the previous version.
+v26 organizes the thesis around three research questions: topology-aware route choice, physical-time diffusion for complete motion, and the additional value of GAF-derived conditions. The introduction, result ordering, discussion and conclusion follow this sequence. Existing experiments, numerical tables and figures remain unchanged.
 
 ## Current scope
 

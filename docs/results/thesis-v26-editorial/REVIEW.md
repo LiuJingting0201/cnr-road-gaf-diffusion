@@ -1,0 +1,7 @@
+# Thesis v26: three-question synthesis narrative
+
+The thesis now asks how diffusion can generate complete road-constrained traffic journeys. Its three research questions and contributions concern: (1) permitted routes and learned route preference; (2) native physical-time variable-length motion diffusion; and (3) the incremental value of GAF-derived conditions.
+
+The abstract and introduction foreground the generator. Chapter 7 now reports route choice before temporal resolution, followed by the representation comparison. Chapter 8 answers RQ1–RQ3 explicitly and concludes with the complete synthesis system and the measured effects of its design choices. The temporal-resolution result remains attributed to the matched pilot; the route-divergence result remains attributed to its separate route-preference experiment. GAF physical results and cohort-dependent utility findings remain explicit without framing the whole project as an unsuccessful GAF improvement attempt.
+
+All numerical tables, plot assets, methods, protocols, references and display equations are unchanged. No experiments were launched. The final document has 132 PDF pages, 82 main-text pages, 45 figures, 29 tables and 54 cited entries. Compilation has zero overfull/undefined warnings. The independently extracted Overleaf package rebuilds to identical page text. Nine contact sheets covering all pages and two 140-dpi detail pages were visually checked.
