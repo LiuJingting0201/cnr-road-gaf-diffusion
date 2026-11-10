@@ -10,7 +10,7 @@ The original spatial pipeline has a further limitation. It quantizes positions i
 \section{Correcting the comparison}
 Earlier experiments used a spatial teacher trained for eight participant classes and a speed teacher trained for six motion modes. The subsequent angular-field training objective compared field values directly. Those experiments addressed candidate feedback, mode guidance and image reconstruction. Here both teachers learn the same participant-class task, and the generator receives supervision from their hidden representations.
 
-A preprocessing audit also found that earlier native spatial training appended the prescribed endpoints to the recorded observations, whereas later reference scoring used the recorded positions directly. For the new fits both spatial training and reference evaluation encode raw quarter-second positions consistently. On 96 prespecified monitor journeys, the earlier frozen reader classified 30.2\% correctly from raw observations and 31.3\% with appended endpoints. This small audit identifies a real preprocessing difference without explaining the overall recognition difficulty by itself.
+A preprocessing audit also found that earlier native spatial training appended the prescribed endpoints to the recorded observations, whereas later reference scoring used the recorded positions directly. For the new fits both spatial training and reference evaluation encode raw quarter-second positions consistently. On 96 prespecified monitor journeys, the earlier frozen classifier classified 30.2\% correctly from raw observations and 31.3\% with appended endpoints. This small audit identifies a real preprocessing difference without explaining the overall recognition difficulty by itself.
 
 We also passed the true training targets through the progress representation and route decoder. On the monitor population, mean speed-profile reconstruction errors ranged from 0.02 m/s for pedestrians to 0.26 m/s for motorcycles. Values for buses, private cars and trucks were approximately 0.16, 0.21 and 0.19 m/s. These errors arise before fitting a denoiser. The observed quarter-second path, the one-second progress target and the prescribed route polyline are distinct approximations. The new latent loss compares learned representations of complete observations to noisy denoiser states, while independent physical evaluation remains on decoded positions.
 
@@ -38,7 +38,7 @@ The two-view loss averages the terms to keep the total coefficient fixed. No gra
 \centering\small
 \begin{tabular}{lll}
 \toprule
-Arm & Additional supervision & Question\\
+Variant & Additional supervision & Question\\
 \midrule
 B & None & Denoising baseline\\
 P & Class centroids in both spaces & Repeated class supervision\\
@@ -48,10 +48,10 @@ SV & Both paired features & Joint contribution\\
 SH & Features from another matched trip & Pairing contribution\\
 \bottomrule
 \end{tabular}
-\caption{Matched training controls. SH permutes trips within participant class and route-length quartile. All arms contain identical projection heads and start from identical denoiser weights within each seed.}
+\caption{Matched training controls. SH permutes trips within participant class and route-length quartile. All model variants contain identical projection heads and start from identical denoiser weights within each seed.}
 \end{table}
 
-Each arm uses two training seeds, 12,000 updates and the same class-balanced batches. SH disrupts both exact route information and individual motion, so its contrast identifies paired-trip information rather than isolating a causal motion effect. The six-mode condition studied previously is excluded from this comparison. An existing empirical transfer comparator samples normalized profiles from 32 nearby training routes of the requested class and rescales duration by route length.
+Each variant uses two training seeds, 12,000 updates and the same class-balanced batches. SH disrupts both exact route information and individual motion, so its contrast identifies paired-trip information rather than isolating a causal motion effect. The six-mode condition studied previously is excluded from this comparison. An existing empirical transfer comparator samples normalized profiles from 32 nearby training routes of the requested class and rescales duration by route length.
 
 \section{Independent assessment of the generated dataset}
 The primary population uses eight new SUMO demand seeds on the same map. We select six admitted requests per participant class and episode by ID, giving 384 requests. Each generator seed supplies four draws per request. All candidates enter the physical comparison. The main contrast is SV against B, with class-macro Wasserstein discrepancies in arrival time and the longest steady-moving interval as co-primary outcomes. Supporting measures include four-second speed changes, absolute acceleration, stopped-time fraction, upper-tail speed and within-request diversity. The paired uncertainty calculation resamples whole simulation episodes and conditions on the two fitted seeds.

@@ -33,14 +33,14 @@ The speed image retains absolute speed scale but compresses temporal detail. One
 
 \FloatBarrier
 \section{From a generated journey to the two image views}
-Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row ends in the three channels that the corresponding class reader receives. The image is computed from the generated journey.
+Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row ends in the three channels that the corresponding class classifier receives. The image is computed from the generated journey.
 
-\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one earlier G36 generated bus journey, used to illustrate the unchanged encoding. The spatial row uses Hilbert run compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion. These are channel intensities, not a common physical scale across the two encoders. No per-image contrast enhancement is applied.}{g36-gaf-construction}
+\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one preliminary candidate-selection bus journey, used to illustrate the unchanged encoding. The spatial row uses Hilbert run compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion.  }{g36-gaf-construction}
 
 The two sequences have different coordinates on their horizontal axes. The spatial sequence index follows run compression, whereas the speed sequence index follows relative-time resampling. Their off-diagonal image patterns relate pairs of sequence positions. Consequently, a visible image difference need not imply a better trajectory: it first establishes that the representation distinguishes the inputs. The empirical question is whether the resulting representations provide useful constraints for generating motion. Chapter~\ref{ch:native-results} links complete generated journeys and their output image views to independent population-level quality statistics. Output images shown there are visualizations, not future observations supplied to synthesis.
 
 \section{Recognition and the limits of score-based feedback}
-The spatial and speed readers are separately trained on the same participant labels. Their different inputs remain separate: a speed sequence is never appended to the spatial classifier. Recognition measures participant-related information in recorded journeys. Its use for synthesis is evaluated through the conditioning experiments and independent motion metrics.
+The spatial and speed classifiers are separately trained on the same participant labels. Their different inputs remain separate: a speed sequence is never appended to the spatial classifier. Recognition measures participant-related information in recorded journeys. Its use for synthesis is evaluated through the conditioning experiments and independent motion metrics.
 
 The earlier terminal experiments therefore compare matched candidates. Their scores are the floored log target-class probabilities,
 \begin{equation}
@@ -49,7 +49,7 @@ The earlier terminal experiments therefore compare matched candidates. Their sco
 \end{equation}
 Single-view policies use one score and the dual-view policy uses their equal-weight mean. The fixed candidate pool and common random keys prevent a larger sampling budget from being mistaken for a feedback advantage. The later route-and-duration control distinguishes global reweighting from reweighting that preserves those marginals. For that diagnostic, weighted distributions are the mechanism endpoint: an individual coupled random selection can differ even when the marginals are preserved exactly.
 
-A second precursor fits the motion model against frozen reader features. This tests whether a class representation can provide a useful training target, but the reader itself cannot adapt its representation to trajectory reconstruction. The final experiment changes that interface: GAF-derived codes become sampled conditions of the generator, and the encoder's final stage is trained with the denoiser. Terminal ranking, frozen-feature alignment and learned generative conditioning are distinct interventions; their different populations are not pooled into a single effect estimate.
+A second precursor fits the motion model against frozen classifier features. This tests whether a class representation can provide a useful training target, but the classifier itself cannot adapt its representation to trajectory reconstruction. The final experiment changes that interface: GAF-derived codes become sampled conditions of the generator, and the encoder's final stage is trained with the denoiser. Terminal ranking, frozen-feature alignment and learned generative conditioning are distinct perturbations; their different populations are not pooled into a single effect estimate.
 
 \section{Generation-trained spatial and speed conditions}
 Let $E_S(X)$ be the spatial image and $E_V(X)$ the speed image. For each active view, a CNN produces a pooled 512-dimensional feature $f_{\psi,v}(E_v(X))$. A separate bottleneck projects it through widths $512\rightarrow128\rightarrow32$, using SiLU and a final LayerNorm:
@@ -60,7 +60,7 @@ Let $E_S(X)$ be the spatial image and $E_V(X)$ the speed image. For each active 
 \end{equation}
 An inactive view contributes 32 zeros. The dimensionality of the denoiser interface consequently stays fixed across single- and dual-view conditions. Each view supplies a learned global condition.
 
-In a joint arm, the final ResNet residual stage, class head and bottleneck are trainable. The earlier convolutional stages are frozen, as are all BatchNorm running statistics. Exact cached prefix activations reduce repeated image processing: their pooled teacher features and cached spatial image bytes were checked against the existing training artifacts. The input encoding remains fixed.
+In a joint variant, the final ResNet residual stage, class head and bottleneck are trainable. The earlier convolutional stages are frozen, as are all BatchNorm running statistics. Exact cached prefix activations reduce repeated image processing: their pooled teacher features and cached spatial image bytes were checked against the existing training artifacts. The input encoding remains fixed.
 
 The 64-dimensional code passes through a $64\rightarrow128\rightarrow128$ adapter and is added to the existing diffusion-step, class, route and context embedding. Every residual denoising block receives the resulting condition at every sampling step. The adapter's final layer is initialized to zero, reproducing the common starting denoiser exactly before adaptation. The added condition therefore starts without an arbitrary perturbation of the pretrained generator.
 
@@ -75,26 +75,26 @@ For active views $\mathcal V$, the joint fitting objective is
 \end{equation}
 The first term is the physical-time-weighted noise-prediction loss in Equation~\ref{eq:native-loss}. The class heads $g_{\psi,v}$ act on the pooled CNN features, not on the 32-dimensional bottlenecks. The auxiliary term retains participant recognition as an explicit training task while denoising can adapt features that help reconstruct motion. The fixed coefficient is not chosen from the new generation results.
 
-Gradients update the CNN tail and projection weights. They do not differentiate the discrete Hilbert indexing, squeeze procedure or byte conversion with respect to coordinates. This distinction retains the discrete image construction without requiring a smooth mathematical inverse of its images. It also distinguishes the method from applying a classifier gradient to an intermediate noisy trajectory~\cite{cg,univ}. The experiment contains no specially chosen guidance timestep.
+Gradients update the CNN tail and projection weights. They do not differentiate the discrete Hilbert indexing, squeeze procedure or byte conversion with respect to coordinates. This distinction retains the discrete image construction without requiring a smooth mathematical inverse of its images. It also distinguishes the method from applying a classifier gradient to an intermediate noisy trajectory~\cite{cg,univ}.
 
-Joint adaptation updates the encoder through both denoising and classification objectives. The frozen-reader comparison measures their combined effect. Recognition scores reported for the original readers refer to their pre-adaptation checkpoints.
+Joint adaptation updates the encoder through both denoising and classification objectives. The frozen-classifier comparison measures their combined effect. Recognition scores reported for the original classifiers refer to their pre-adaptation checkpoints.
 
-\section{Sampling conditions without an observed future}
-Observed training trajectories supply the codes used in joint fitting. A conditional prior learns their distribution and supplies codes for prospective synthesis.
+\section{Conditional Latent Diffusion Prior for Test-Time Synthesis}
+Observed training trajectories supply the codes used in joint fitting. A conditional prior learns their distribution and supplies codes for out-of-sample synthesis.
 
 After motion fitting, the final exponential-moving-average encoder is frozen and all training codes are extracted. Each active dimension is standardized by its training mean and standard deviation, with a standard-deviation floor of $10^{-3}$. A conditional latent diffusion model then fits the distribution of these codes given class, the route's 129 two-dimensional points and the existing five-component route/duration context. It uses a 256-dimensional hidden state, four residual MLP blocks, the same 1,000-index linear noise schedule, and a fixed 5,000-update budget. Its active-dimension noise loss does not train on inactive zero dimensions.
 
-At synthesis, 50 DDIM updates sample a code from this prior; 100 separate DDIM updates generate motion conditional on that code. Route, duration and motion-noise keys are matched across the experimental arms. The code prior has its own request-keyed random stream and cannot advance the motion-noise stream. The sampled code is held fixed through the motion denoising process. The image encoders and class heads need not run during prospective synthesis.
+At synthesis, 50 DDIM updates sample a code from this prior; 100 separate DDIM updates generate motion conditional on that code. Route, duration and motion-noise keys are matched across the experimental model variants. The code prior has its own request-keyed random stream and cannot advance the motion-noise stream. The sampled code is held fixed through the motion denoising process. The image encoders and class heads need not run during out-of-sample synthesis.
 
 The encoder, conditional diffusion decoder and learned code prior follow the general construction of Diffusion Autoencoders~\cite{diffae}. Here the construction operates on road-conditioned variable-length motion and prescribed spatial and speed image views. The latent prior samples the condition, and the temporal decoder generates progress.
 
-The code prior is checked through training-side interventions and prospective code-range statistics. Pilot settings and numerical diagnostics are reported in Appendix~\ref{app:native-results}.
+The code prior is checked through training-side perturbations and out-of-sample code-range statistics. Pilot settings and numerical diagnostics are reported in Appendix~\ref{app:native-results}.
 
 \section{Representation controls}
-Table~\ref{tab:g40-arms} separates the main method from its controls. Every arm continues from the corresponding same-seed G39 baseline and uses the same motion target and sampling budget. A zero-initialized adapter and identical training streams make the starting point explicit.
+Table~\ref{tab:g40-arms} separates the main method from its controls. Every variant continues from the corresponding same-seed frozen-feature alignment baseline and uses the same motion target and sampling budget. A zero-initialized adapter and identical training streams make the starting point explicit.
 
-\tab{G40 conditions and their roles. B bypasses the code adapter. All other arms use the same 64-dimensional interface; an inactive view is zero.}{g40-arms}{\begin{tabularx}{\linewidth}{lXX}\toprule
-Arm & Condition source & Question isolated\\\midrule
+\tab{conditioning configurations and their roles. B bypasses the code adapter. All other model variants use the same 64-dimensional interface; an inactive view is zero.}{g40-arms}{\begin{tabularx}{\linewidth}{lXX}\toprule
+Variant & Condition source & Question isolated\\\midrule
 B & No additional code & Class/route/duration diffusion baseline\\
 F-SV & Frozen spatial and speed CNNs; learned projections & Is fixed recognition sufficient as a condition?\\
 J-S & Joint spatial CNN tail and projection & What does the spatial view contribute?\\
@@ -105,6 +105,6 @@ J-SH & Same-class, approximately length/duration-matched wrong-trip images & Doe
 C & Training class-mean CNN features & Is extra class information sufficient?\\\bottomrule
 \end{tabularx}}
 
-The shuffled arm preserves its wrong-trip associations when extracting codes and fitting the prior; it is not silently repaired at deployment. Its auxiliary labels remain unchanged. The shuffle breaks exact example pairing while deliberately retaining class and approximate trip scale; it need not remove every route or service correlation. The class-centroid arm learns projections of fixed training class means and uses a deterministic class-code lookup at sampling. The baseline and centroid arms have no learned code prior. RAW uses different pretraining and encoder architecture, so it is an alternative representation control, not a perfectly isolated test of angular transforms alone. Parameter counts and computation accompany its comparison.
+The shuffled variant preserves its wrong-trip associations when extracting codes and fitting the prior; it is not silently repaired at deployment. Its auxiliary labels remain unchanged. The shuffle breaks exact example pairing while deliberately retaining class and approximate trip scale; it need not remove every route or service correlation. The class-centroid variant learns projections of fixed training class means and uses a deterministic class-code lookup at sampling. The baseline and centroid model variants have no learned code prior. RAW uses different pretraining and encoder architecture, so it is an alternative representation control, not a perfectly isolated test of angular transforms alone. Parameter counts and computation accompany its comparison.
 
 Evaluation compares direct trajectory outputs under matched sampling budgets. Single-view and joint conditions measure the contribution of each representation; frozen, raw-series, shuffled and centroid conditions provide complementary controls. Physical distributions, diversity, coverage and downstream augmentation characterize the resulting synthetic data.

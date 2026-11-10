@@ -3,8 +3,8 @@
 \chapter{Complete numerical results and fixed cases}
 \label{app:native-results}
 
-\section{Final G40 physical endpoints, classes and coverage}
-The following tables retain all eight conditions, both fitted seeds and all five participant classes from the completed prospective comparison. The K1 tables concern the first direct draw; the all-four comparison weights the four draws equally inside each request. The ten physical summaries appear in their original units, without a cross-unit composite or a choice of favourable endpoints. Class-marginal distributions and request-paired discrepancies address different questions. Neither assumes a unique valid future trajectory for each OD request.
+\section{Complete Physical Results and Class-Specific Coverage}
+The following tables retain all eight conditions, both fitted seeds and all five participant classes from the completed out-of-sample comparison. The K1 tables concern the first direct draw; the all-four comparison weights the four draws equally inside each request. The ten physical summaries appear in their original units, without a cross-unit composite or a choice of favourable endpoints. Class-marginal distributions and request-paired discrepancies address different questions. Neither assumes a unique valid future trajectory for each OD request.
 
 \input{tables/g40-coverage}
 \FloatBarrier
@@ -22,20 +22,20 @@ The following tables retain all eight conditions, both fitted seeds and all five
 \input{tables/g40-diversity-decode}
 \FloatBarrier
 
-Per-cell support, all individual class results, coverage and provenance are available in \path{docs/results/g40-generative-conditioning/}. Missing endpoints retain their support counts. The nearest-shape diagnostic uses a fixed hash-ranked library of at most 512 training examples per class and normalized relative-time progress, not a search over every training coordinate sequence. A low reported near-shape rate cannot prove absence of memorization or establish privacy. Decoder clipping is a correction applied to the generated representation, not an observed traffic event.
+Per-cell support, all individual class results, coverage and provenance are available in \textit{the accompanying reproducibility archive}. Missing endpoints retain their support counts. The nearest-shape diagnostic uses a fixed hash-ranked library of at most 512 training examples per class and normalized relative-time progress, not a search over every training coordinate sequence. A low reported near-shape rate cannot prove absence of memorization or establish privacy. Decoder clipping is a correction applied to the generated representation, not an observed traffic event.
 
 
-\section{Condition interventions and utility cohorts}
+\section{Condition perturbations and utility cohorts}
 \input{tables/g40-condition-all-1}
 \FloatBarrier
 \input{tables/g40-condition-all-2}
 \FloatBarrier
 \input{tables/g40-utility-cohorts}
 \FloatBarrier
-\section{G33: all physical summaries}
+\section{Temporal-Resolution Pilot Study: all physical summaries}
 Tables~\ref{tab:g33-all-physical-a} and~\ref{tab:g33-all-physical-b} retain all ten predefined physical summaries for all fourteen completed evaluations. They supplement the representative measures in the main text without selecting columns by the direction of an effect. Every entry is a five-class macro Wasserstein distance, with lower values indicating closer distributions. Each quantity retains its own unit; the columns are not combined into an overall score.
 
-Every row begins with the same 100 prospective requests and uses the same 94 paired requests for these quality measures: 19 buses, 18 motorcycles, and 19 participants in each remaining class. Map construction supports 97 requests and reference extraction accepts 97, but their supported sets differ. Each full-pool row contains 776 generated trajectories, of which 752 belong to the paired requests ($94\times8$). Each terminal-selection row contains 97 delivered trajectories, of which 94 have accepted references. These denominators distinguish generation coverage from quality support; none of the six unsupported requests is replaced. The eight selection rows reuse candidates, so their outputs are not additional independent generations.
+Every row begins with the same 100 out-of-sample requests and uses the same 94 paired requests for these quality measures: 19 buses, 18 motorcycles, and 19 participants in each remaining class. Map construction supports 97 requests and reference extraction accepts 97, but their supported sets differ. Each full-pool row contains 776 generated trajectories, of which 752 belong to the paired requests ($94\times8$). Each terminal-selection row contains 97 delivered trajectories, of which 94 have accepted references. These denominators distinguish generation coverage from quality support; none of the six unsupported requests is replaced. The eight selection rows reuse candidates, so their outputs are not additional independent generations.
 
 In the tables, ``257'' and ``Native'' denote the relative and quarter-second diffusion models, and ``Empirical'' denotes whole-motion transfer from training journeys. N42 and N43 identify the native models; U, S, V and SV denote Uniform, spatial, speed and joint terminal selection. Seed numbers refer to fitted diffusion models and their matched empirical draws, not independent reference episodes. All columns have full five-class support in this completed cohort. The figures and tables remain descriptive for one new simulator episode.
 
@@ -105,7 +105,7 @@ N43 / SV & 0.0561 & 0.0198 & 1.7139 & 10.7994 & 0.1169\\
 
 Duration and distance retain the complete observed span. The remaining summaries use complete one-second intervals; for example, ``Four-second change'' denotes the mean absolute four-second lag difference in speed, not acceleration over a four-second sampling interval. Precise state thresholds and support rules are defined in Chapter~\ref{ch:native-protocol}. All unselected generators share the duration prior, explaining the identical duration distances within a seed. Selection can change the distribution of durations retained from that pool.
 
-\section{G33: native-resolution distances by participant class}
+\section{Temporal-Resolution Pilot Study: native-resolution distances by participant class}
 Table~\ref{tab:g33-class-native} reports interval-distribution distances for the six full-pool generators. These are computed at the native output resolution, including fractional terminal intervals, and therefore address a different question from the one-second journey summaries. Requests have equal mass within a class; candidate mass is divided within a request, and speed or acceleration samples are then weighted by their physical interval length. A macro improvement does not imply improvement in every class or every other motion property.
 
 \begin{table}[htbp]
@@ -130,17 +130,17 @@ Empirical / 43 & \shortstack{1.2757\\0.4483} & \shortstack{0.6626\\0.4308} & \sh
 \end{table}
 \FloatBarrier
 
-\section{Fixed-duration control: complete G34 tables}
+\section{Fixed-Duration Control Study: Complete Results}
 \label{sec:g34-appendix}
-Tables~\ref{tab:g34-all-physical-a} and~\ref{tab:g34-all-physical-b} report all ten predefined physical summaries for G34's two full pools and eight terminal selections. Table~\ref{tab:g34-class-native} gives the corresponding native speed and acceleration distances for every class. N42 and N43 denote the same native-clock models used in G33; ``all'' denotes a full pool, and U, S, V and SV retain their earlier definitions. Every row has 94 paired requests out of the original 100. A full pool contains 776 generated trajectories and 752 paired trajectories; a selected set contains 97 and 94, respectively. The class counts remain 19 buses, 18 motorcycles and 19 members of each other class. All reported metrics have that support.
+Tables~\ref{tab:g34-all-physical-a} and~\ref{tab:g34-all-physical-b} report all ten predefined physical summaries for the fixed-duration control study's two full pools and eight terminal selections. Table~\ref{tab:g34-class-native} gives the corresponding native speed and acceleration distances for every class. N42 and N43 denote the same native-clock models used in the temporal-resolution pilot study; ``all'' denotes a full pool, and U, S, V and SV retain their earlier definitions. Every row has 94 paired requests out of the original 100. A full pool contains 776 generated trajectories and 752 paired trajectories; a selected set contains 97 and 94, respectively. The class counts remain 19 buses, 18 motorcycles and 19 members of each other class. All reported metrics have that support.
 
-G34 fixes one training-prior duration per request and model seed before scoring the shared candidate pool. Its reference episode is the already analyzed G33 episode, not a new blind sample. The following tables use the completed attempt2 summary and retain each metric's units; all distances are lower-is-better. Values are rounded to four decimal places for presentation.
+The fixed-duration control study fixes one training-prior duration per request and model seed before scoring the shared candidate pool. Its reference episode is the already analyzed the temporal-resolution pilot study episode, not a new blind sample. The following tables use the completed attempt2 summary and retain each metric's units; all distances are lower-is-better. Values are rounded to four decimal places for presentation.
 
-% G34 numerical source: docs/results/g34-fixed-duration/attempt2/report/summary.json
+% the fixed-duration control study numerical source: docs/results/g34-fixed-duration/attempt2/report/summary.json
 % SHA256: 331066df7fc8130fa8f16c925a9aa0f067c71d8a6cf14a71b3e48ea87dfb8744
 \begin{table}[htbp]
 \centering
-\caption{Complete G34 macro physical distances, part I: trip scale and one-second motion summaries. Each row covers 94 paired requests out of 100.}
+\caption{Complete the fixed-duration control study macro physical distances, part I: trip scale and one-second motion summaries. Each row covers 94 paired requests out of 100.}
 \label{tab:g34-all-physical-a}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -167,7 +167,7 @@ N43 / SV & 51.5908 & 4.4905 & 22.0246 & 0.2114 & 0.3587\\
 
 \begin{table}[htbp]
 \centering
-\caption{Complete G34 macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances are fractions, not percentage points. Each row covers 94 paired requests out of 100.}
+\caption{Complete the fixed-duration control study macro physical distances, part II: acceleration, stopped motion and upper speed. Stopped-fraction distances are fractions, not percentage points. Each row covers 94 paired requests out of 100.}
 \label{tab:g34-all-physical-b}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -194,7 +194,7 @@ N43 / SV & 0.0604 & 0.0165 & 2.1182 & 7.2901 & 0.0883\\
 
 \begin{table}[htbp]
 \centering
-\caption{Complete class-wise G34 native speed and acceleration $W_1$. Each cell lists speed (m/s) above acceleration (m/s$^2$), using the same 94-request paired population as the macro tables. Both full pools and all terminal policies are included.}
+\caption{Complete class-wise the fixed-duration control study native speed and acceleration $W_1$. Each cell lists speed (m/s) above acceleration (m/s$^2$), using the same 94-request paired population as the macro tables. Both full pools and all terminal policies are included.}
 \label{tab:g34-class-native}
 \small
 \setlength{\tabcolsep}{3pt}
@@ -219,10 +219,10 @@ N43 / SV & \shortstack{0.6200\\0.0828} & \shortstack{0.9857\\0.1880} & \shortsta
 \end{table}
 \FloatBarrier
 
-\section{Five G33 cases selected before visual inspection}
-For G33 model seed 42, the case for each class is the lexicographically first request with an accepted reference and outputs from all four terminal policies. This rule is based on request order and common support, not physical quality, teacher confidence or visual appearance. The five plots illustrate the same declared conditions and the consequences of selecting different candidates; they are not five independent tests of a method advantage.
+\section{Five the temporal-resolution pilot study cases selected before visual inspection}
+For the temporal-resolution pilot study model seed 42, the case for each class is the lexicographically first request with an accepted reference and outputs from all four terminal policies. This rule is based on request order and common support, not physical quality, teacher confidence or visual appearance. The five plots illustrate the same declared conditions and the consequences of selecting different candidates; they are not five independent tests of a method advantage.
 
-Each figure shows coordinate geometry, relative-time progress and a physical-time speed curve. Speed is derived from cumulative planar distance over complete one-second intervals, with the final partial second omitted from that panel. It is not the original quarter-second speed signal and cannot display all fluctuations measured by the native-interval metrics. Different selected durations are allowed in G33. Near-coincident map traces are expected under a common route condition and do not establish that the selected timing is equally realistic.
+Each figure shows coordinate geometry, relative-time progress and a physical-time speed curve. Speed is derived from cumulative planar distance over complete one-second intervals, with the final partial second omitted from that panel. It is not the original quarter-second speed signal and cannot display all fluctuations measured by the native-interval metrics. Different selected durations are allowed in the temporal-resolution pilot study. Near-coincident map traces are expected under a common route condition and do not establish that the selected timing is equally realistic.
 
 \fig{g33-case-bus.pdf}{1.0}{Bus. Fixed seed-42 case: the first request by identifier order with a reference and all four policy outputs, not a visually selected success. Speed summarizes complete one-second intervals and omits the final partial second; it is not the native quarter-second signal.}{g33-case-bus}
 \FloatBarrier
@@ -240,11 +240,11 @@ Each figure shows coordinate geometry, relative-time progress and a physical-tim
 \FloatBarrier
 
 \section{Historical evidence and reproduction scope}
-The earlier locked E7 evaluation is preserved in the repository, including its unfavorable feedback and augmentation findings. It began with 270 held-out participant IDs, of which 53 satisfied the strict moving-window generation eligibility rules. Its 512-point task, reference population and evaluation protocol differ from the present complete-journey experiment. The 53 eligible requests must not be presented as coverage of all 270, merged into either the G33 pilot or the final G40 quality population, or reused to select the current method after their results were exposed. The original report remains at \path{docs/results/final-test-e7/REPORT.md}.
+The earlier exploratory evaluation is preserved in the repository, including its unfavorable feedback and augmentation findings. It began with 270 held-out participant IDs, of which 53 satisfied the strict moving-window generation eligibility rules. Its 512-point task, reference population and evaluation protocol differ from the present complete-journey experiment. The 53 eligible requests must not be presented as coverage of all 270, merged into either the temporal-resolution pilot study or the main conditioning evaluation population, or reused to select the current method after their results were exposed. The original report remains at \textit{the accompanying reproducibility archive}.
 
-The paired-representation study G28 is also retained, at \path{docs/results/g28-paired-latents/REPORT.md}. It trained spatial and speed readers for matching participant labels and tested latent supervision in an earlier eight-class simulator corpus. Its planned comparisons did not establish stable independent physical gains from paired spatial--speed supervision. That result remains evidence about that corpus and intervention; it is neither erased by the current temporal-resolution result nor merged with terminal selection on native-demand trajectories. The present thesis distinguishes classification information, the mechanism used to transmit it, and physical generation quality across these stages.
+The earlier paired-representation evaluation is also documented in the accompanying reproducibility archive. It trained spatial and speed classifiers for matching participant labels and tested latent supervision in an earlier eight-class simulator corpus. Its planned comparisons did not establish stable independent physical gains from paired spatial--speed supervision. That result remains evidence about that corpus and perturbation; it is neither erased by the current temporal-resolution result nor merged with terminal selection on native-demand trajectories. The present thesis distinguishes classification information, the mechanism used to transmit it, and physical generation quality across these stages.
 
-For the temporal-resolution pilot, \path{docs/G33_PROTOCOL.md} fixes the conditions and budgets, and \path{docs/results/g33-generation/report/summary.json} contains the numerical source of the G33 tables, including per-class support and provenance hashes. The G34 tables use \path{docs/results/g34-fixed-duration/attempt2/report/summary.json} under the separate \path{docs/G34_PROTOCOL.md}. \path{docs/results/g33-generation/paper-figures/complete.json} records the fixed case rule and figure hashes. The entry scripts \path{scripts/g33_train.py}, \path{scripts/g33_evaluate.py}, \path{scripts/g33_feedback.py} and \path{scripts/g33_plots.py} separate fitting, generation, feedback, evaluation and presentation. Reproduction requires the corresponding versioned source observations, public scenario and saved model artifacts; the manuscript does not embed raw participant records or access credentials. These relative repository paths identify the required evidence without relying on a particular server layout.
+The accompanying reproducibility archive contains the experimental protocols, complete numerical reports, model configurations and fixed-example selection rules. Separate training, generation, evaluation and presentation programs reproduce the temporal-resolution and fixed-duration studies using versioned scenario data and saved model artifacts. This organization links the supplementary results to their computational provenance.
 
 The original locked-result snapshot remains separately identified in the experiment repository~\cite{project}; its test population is not reused to select the present models.
 
@@ -253,20 +253,20 @@ The original locked-result snapshot remains separately identified in the experim
 \section{Expanded recognition on a common development population}
 \label{sec:corpus-reader-supplement}
 
-The full-day expansion completed all four 10,000-step diffusion fits and both fixed 50-epoch GAF readers. The native models took 2,771.9 and 2,750.8 seconds, approximately 46 minutes each; the 257-point controls took approximately 319 seconds each. Model capacity remains 891,969 parameters. The larger corpus and longer native sequences change data exposure and computational cost, so equal update counts alone do not imply equal computation. No new 257-point generation-quality claim follows merely from completing those fits.
+The full-day expansion completed all four 10,000-step diffusion fits and both fixed 50-epoch GAF classifiers. The native models took 2,771.9 and 2,750.8 seconds, approximately 46 minutes each; the 257-point controls took approximately 319 seconds each. Model capacity remains 891,969 parameters. The larger corpus and longer native sequences change data exposure and computational cost, so equal update counts alone do not imply equal computation. No new 257-point generation-quality claim follows merely from completing those fits.
 
-The paired reader comparison is stronger evidence than comparing the pilot's small development set with the expanded set. Both old and new checkpoints see the same 7,230 complete development legs, and the original training populations remain separate from that cohort. Table~\ref{tab:g35-readers} and Figure~\ref{fig:g35-teacher-comparison} show a substantial recognition improvement in both representations.
+The paired classifier comparison is stronger evidence than comparing the pilot's small development set with the expanded set. Both old and new checkpoints see the same 7,230 complete development legs, and the original training populations remain separate from that cohort. Table~\ref{tab:g35-readers} and Figure~\ref{fig:g35-teacher-comparison} show a substantial recognition improvement in both representations.
 
 \input{tables/g35-readers}
-\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded readers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better.}{g35-teacher-comparison}
+\fig{g35-teacher-comparison.pdf}{1}{Pilot and expanded classifiers evaluated on identical development inputs. Old/new refers to training corpus and optimization exposure, not different evaluation sets. Higher is better.}{g35-teacher-comparison}
 
-Spatial macro F1 increases by 26.37 percentage points, with a paired parent-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. These intervals condition on the available public-demand cohort and fixed model fits; they do not quantify uncertainty over cities or training recipes. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. It does not identify a pure causal effect of sample count because the time coverage and number of CNN optimizer updates also changed.
+Spatial macro F1 increases by 26.37 percentage points, with a paired source vehicle-bootstrap 95\% interval of 24.54--28.16 points. Velocity macro F1 increases by 28.52 points, with an interval of 27.27--29.73 points. These intervals condition on the available public-demand cohort and fixed model fits; they do not quantify uncertainty over cities or training recipes. The improved recognition supports the decision to preserve native demand and expand complete-trip coverage. It does not identify a pure causal effect of sample count because the time coverage and number of CNN optimizer updates also changed.
 
 
 
-\fig{g35-confusion.pdf}{1}{Pre-adaptation spatial and speed readers on the same expanded development cohort. Each row is normalized within its true class. These are the original G35 checkpoints, not new evaluations of jointly adapted G40 encoders.}{g35-confusion}
+\fig{g35-confusion.pdf}{1}{Pre-adaptation spatial and speed classifiers on the same expanded development cohort. Each row is normalized within its true class. These are the pre-trained classifier checkpoints, not new evaluations of jointly adapted encoders.}{g35-confusion}
 
-The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these readers from simulator observations to generated candidates.
+The confusion matrices explain why overall accuracy alone would be incomplete. Spatial private-car F1 is 95.20\%, but taxi/ride-hailing F1 is 45.85\%. The velocity values are 92.23\% and 81.07\%, respectively. Spatial training accuracy is 97.22\%, compared with 86.17\% on development; the corresponding velocity figures are 92.39\% and 89.13\%. Generalization gaps, calibration error and shared route templates remain relevant when transferring these classifiers from simulator observations to generated candidates.
 
 \FloatBarrier
 
@@ -283,14 +283,14 @@ This contrast is consistent with sensitivity to demand and temporal coverage, bu
 \FloatBarrier
 
 \FloatBarrier
-\section{Does a more accurate GAF reader improve selection?}
+\section{Does a more accurate GAF classifier improve selection?}
 \label{sec:corpus-teacher-supplement}
 
-The central comparison applies old and expanded readers to the same expanded-generator candidates. Duration, geometry, candidate noise and the requested class are unchanged by the teacher contrast. Uniform controls are verified identical array by array. The experiment therefore distinguishes improving the generator from improving the criterion used to select its outputs.
+The central comparison applies old and expanded classifiers to the same expanded-generator candidates. Duration, geometry, candidate noise and the requested class are unchanged by the teacher contrast. Uniform controls are verified identical array by array. The experiment therefore distinguishes improving the generator from improving the criterion used to select its outputs.
 
-\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded reader. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix.}{g36-teacher-effects}
+\fig{g36-teacher-effects.pdf}{1}{Expanded versus pilot teachers on identical expanded-generator pools: changes in request-level error for five motion summaries. Negative values favour the expanded classifier. These post-hoc equal-cell summaries expose gains and costs; they are not significance tests or a replacement for the full distributional matrix.}{g36-teacher-effects}
 
-A higher recognition score does not induce a uniformly better physical ordering. For example, the expanded spatial reader reduces longest-stop request error by 6.4\% relative to the pilot spatial reader on these same pools, but raises stopped-fraction error by 1.1\% and stop-frequency error by 2.8\%. The expanded velocity reader reduces mean-absolute-acceleration request error by 2.8\% but increases longest-stop error by 4.1\% relative to the pilot velocity reader. These comparisons concern the selector with a fixed generator; they do not reuse the classifier's own target probability as a quality label.
+A higher recognition score does not induce a uniformly better physical ordering. For example, the expanded spatial classifier reduces longest-stop request error by 6.4\% relative to the pilot spatial classifier on these same pools, but raises stopped-fraction error by 1.1\% and stop-frequency error by 2.8\%. The expanded velocity classifier reduces mean-absolute-acceleration request error by 2.8\% but increases longest-stop error by 4.1\% relative to the pilot velocity classifier. These comparisons concern the selector with a fixed generator; they do not reuse the classifier's own target probability as a quality label.
 
 
 \FloatBarrier
@@ -308,32 +308,32 @@ A mechanism claim therefore requires a fresh, fixed comparison of stop location,
 
 Full-pool pair diversity describes the variation available before selection. With one retained sample per request, conditional pair diversity is undefined, not zero; across-request dispersion cannot replace it. The common 97-request map coverage is unchanged by selection and belongs to the geometric interface.
 
-\section{Frozen-reader supervision and fixed-marginal selection}
+\section{Frozen-Feature Supervision and Candidate Selection}
 
-The completed G39 frozen-feature alignment study includes seven arms, two fitted seeds and eight new reference episodes. Its 800 declared episode requests yield 782 route-supported requests and 754 physical pairs; 470 realised reference routes are present in their catalogs. The dual-view SV arm gives K1 speed/acceleration distances of 1.29337/0.18761 compared with 1.28383/0.18674 for B: increases of 0.743\% and 0.466\%. The speed-only arm slightly improves primary acceleration, but the same-class shuffled control changes it by a similar amount and the four-draw weighted comparison reverses the apparent speed-only advantage. Frozen-feature supervision does not establish a general improvement of motion.
+The frozen-feature alignment study includes seven model variants, two fitted seeds and eight new reference episodes. Its 800 declared episode requests yield 782 route-supported requests and 754 physical pairs; 470 realised reference routes are present in their catalogs. The dual-view SV variant gives K1 speed/acceleration distances of 1.29337/0.18761 compared with 1.28383/0.18674 for B: increases of 0.743\% and 0.466\%. The speed-only variant slightly improves primary acceleration, but the same-class shuffled control changes it by a similar amount and the four-draw weighted comparison reverses the apparent speed-only advantage. Frozen-feature supervision does not establish a general improvement of motion.
 
 Longer-timescale changes are also mixed. SV reduces longest-stop distance by 1.44\%, while mean absolute acceleration on the one-second clock worsens by 4.86\% and four-second speed-change distance worsens by 5.23\%. Bicycle and motorcycle gains coexist with adverse bus and private-car results. The complete endpoints remain in the experiment records rather than being condensed into a favourable class score.
 
-A separate same-pool diagnostic on the already exposed G38 scenes distinguishes global GAF weighting from weighting with fixed route and route--duration marginals. It uses four scene/seed cells and 10,784 candidates. Under the fixed joint marginals, speed-GAF weighting changes native speed/acceleration distances by only $-0.12\%/-0.13\%$, with improvements in one and two of the four cells respectively. Spatial and dual-view weighting worsen both macro endpoints. The preserved marginals are distributional constraints; an individual coupled random draw need not retain the same route and duration.
+A separate same-pool diagnostic on the already exposed the route-preference evaluation scenes distinguishes global GAF weighting from weighting with fixed route and route--duration marginals. It uses four scene/seed cells and 10,784 candidates. Under the fixed joint marginals, speed-GAF weighting changes native speed/acceleration distances by only $-0.12\%/-0.13\%$, with improvements in one and two of the four cells respectively. Spatial and dual-view weighting worsen both macro endpoints. The preserved marginals are distributional constraints; an individual coupled random draw need not retain the same route and duration.
 
 \fig{g39-fixed-marginals.pdf}{1}{Closed mechanism diagnostic: changes under global, fixed-route and fixed-route--duration weighting of identical candidate pools. The last comparison preserves the joint route/time marginal rather than asserting that each selected sample is identical. These reused scenes are development evidence; the small residual speed-view effects are not independent confirmation of guidance.}{g39-fixed-marginals}
 
 Independent augmentation nevertheless gives a useful, narrower finding. Across two raw-series learner seeds, real-only training reaches 91.25\% macro F1, real plus baseline diffusion data 93.17\%, real plus speed-aligned data 94.10\%, and real plus RAW-aligned data 94.06\%. Real plus dual-view data reaches 93.57\%; synthetic-only regimes remain below real-only. Thus diffusion samples can help this downstream task, while the almost equal speed-GAF and RAW results do not demonstrate an image-specific advantage. The generator has access to the full labelled corpus, so this is not a strict low-label learning claim.
 
-\fig{g39-alignment-utility.pdf}{1}{Completed G39 frozen-feature alignment (left) and independent augmentation (right), with both downstream seeds shown. The evaluation model reads raw time series and is independent of the GAF readers. Better task performance does not override adverse physical endpoints or establish that GAF is necessary.}{g39-alignment-utility}
+\fig{g39-alignment-utility.pdf}{1}{Frozen-feature alignment (left) and independent augmentation (right), with both downstream seeds shown. The evaluation model reads raw time series and is independent of the GAF classifiers. Better task performance does not override adverse physical endpoints or establish that GAF is necessary.}{g39-alignment-utility}
 
-The main experiment extends these fixed-reader controls to jointly trained generative conditions.
+The main experiment extends these fixed-classifier controls to jointly trained generative conditions.
 
-\section{Implementation and execution diagnostics}
-The prior pilot also matters. With 1,000 prior updates, sampled absolute codes reached approximately 119--178. The single declared-budget recovery used 5,000 updates and reduced the sampled pilot range substantially without refitting motion. The formal experiment uses that previously declared budget. Its largest recorded absolute code is approximately 6.50; some prospective samples still exceed their arm's observed training-code maximum. Counts are 31, 35, 14, 70, 18 and 86 out of 6,272 for F-SV, J-S, J-V, J-SV, J-RAW and J-SH. Exceeding an empirical maximum is not an invalidity threshold, and no samples are removed on that basis. Finite ranges alone do not establish an accurate code distribution.
+\section{Implementation and Computational Performance}
+The prior pilot also matters. With 1,000 prior updates, sampled absolute codes reached approximately 119--178. The single declared-budget recovery used 5,000 updates and reduced the sampled pilot range substantially without refitting motion. The formal experiment uses that previously declared budget. Its largest recorded absolute code is approximately 6.50; some out-of-sample samples still exceed their variant's observed training-code maximum. Counts are 31, 35, 14, 70, 18 and 86 out of 6,272 for F-SV, J-S, J-V, J-SV, J-RAW and J-SH. Exceeding an empirical maximum is not an invalidity threshold, and no samples are removed on that basis. Finite ranges alone do not establish an accurate code distribution.
 
-A separate completed performance study reduces a repeated-archive evaluation unit from 104.168 to 10.017 seconds while reproducing its metrics and diagnostic JSON exactly. That I/O change is adopted. Proposed training caching gives no end-to-end speedup in the bounded benchmark and fails strict state equality, including non-identical repeats of the original implementation; it is not adopted. The measured evaluation improvement must not be described as a tenfold training acceleration.
+A separate completed performance study reduces a repeated-archive evaluation unit from 104.168 to 10.017 seconds while reproducing its metrics and diagnostic JSON exactly. That I/O change is adopted. Proposed training caching gives no end-to-end speedup in the bounded benchmark and fails strict state equality, including non-identical repeats of the original implementation; it is not adopted.
 
-The final scientific queue completes without failure. Pilot verification errors, the unstable short-prior result and a presentation-only CUDA dependency failure remain recorded with their recoveries. Figure layout changes preserve the fixed-case coordinate/image hashes and numerical matrices.
+Reproducibility checks link the final results to saved model configurations, generated trajectories and numerical summaries. The archive retains pilot diagnostics and implementation corrections, while presentation verification checks that figure layout changes preserve the underlying coordinate arrays, image values and numerical matrices.
 
 \section{Supplementary dataset and demand comparison}\label{app:source-comparison}
 \subsection{Archived trajectory exports and spatial alignment}
-The archived reference dataset (CNR export), \nolinkurl{midimost_with_class2.csv}, contains 4,840,789 observations from 2,685 identifiers and six participant classes. A second export, \nolinkurl{vehicle_positions_TS_New.csv}, contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
+The archived reference dataset (CNR export), \textit{the primary archived MoST export}, contains 4,840,789 observations from 2,685 identifiers and six participant classes. A second export, \textit{the secondary single-class export}, contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
 
 The canonical record is \texttt{time,id,x,y,type}, with seconds and local planar metres. The principal export additionally contains simulator speed and the label \texttt{class2}; its class is mapped to the common type field. Speed for physical comparisons is derived from positions and timestamps on both observed and generated data, avoiding comparison between an internal simulator state and a numerical coordinate derivative.
 
@@ -342,9 +342,9 @@ No original network, route file or simulation configuration accompanied the tabl
 \subsection{Demand structure and participant recognition}
 A controlled comparison evaluates class-permitted random routes against activity-based demand and the archived reference dataset. Road permissions determine feasible paths, while public services and activity plans introduce class-related spatial patterns.
 
-The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image reader. The readouts evaluate recognition on observed trajectories.
+The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image classifier. The readouts evaluate recognition on observed trajectories.
 
-\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed reader seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
+\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed classifier seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
 Readout & Archived data & Random demand & Native MoST\\\midrule
 Spatial geometry &79.12&34.85&76.95\\
 Physical motion &88.08&80.57&90.35\\

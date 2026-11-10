@@ -1,10 +1,10 @@
-# Road-conditioned diffusion thesis — research draft v22
+# Road-conditioned diffusion thesis — research draft v23
 
 English master's thesis, using the Politecnico di Torino TOPtesi layout documented in TEMPLATE.md. Administrative cover fields remain intentional placeholders for the candidate, programme, supervisor, academic year and session.
 
 ## Editorial revision
 
-v22 uses a standalone academic narrative. Prior trajectory-image studies appear as author-attributed related work; method sections specify the spatial and speed encodings directly. The main data chapter starts with the SUMO/MoST learning corpus, while archived-data alignment and demand diagnostics are documented in the appendix. This is a presentation revision with unchanged experiments, numerical results and scientific figures.
+v23 refactors the LaTeX manuscript into academic prose with descriptive experiment names, standard machine-learning terminology and expanded trajectory case analyses. The supplied abstract and introduction guide the revision, with existing citation keys and mathematical notation retained. All equations, original inline mathematics, cross-reference commands, table values and figure/input paths are checked against the previous version.
 
 ## Current scope
 
