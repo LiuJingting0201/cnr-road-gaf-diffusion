@@ -624,3 +624,6 @@ G40正式训练全部闭合：16个5000步运动拟合、12个学习先验及4�
 
 
 2026-11-10 v21论文编辑完成：按用户要求收敛故事，重写摘要和讨论，正文直接陈述方法、数值、解释，压缩重复“不能证明”，将G39前置探索及先验/执行诊断移附录。无新增实验/模块。全部已追踪图表文件与v20逐字节一致，主指标哈希不变；保留五类轨迹/GAF固定案例、八臂和增广群组反向结果。最终112PDF页/65正文页/34图/29表/54引用；112页80dpi渲染7张联系表检查，8页140dpi细查，无裁切重叠；LaTeX无overfull/undefined，独立解包重建文本一致。交付deliverables/thesis-v21与review-2/outputs/thesis-v21；审阅回执docs/results/thesis-v21-editorial。科学队列维持闭合。
+
+
+2026-11-10 v22编辑完成：按用户要求去除正文CNR项目背景及反复“inherited/group”表述，前作按作者方法正常引用。摘要/引言重写相关段落，数据章从实际SUMO/MoST训练语料展开；原始两表空间核验和需求对照移附录A.14，保留共享ID信息及全部数值，CNR仅在附录数据标识出现一次。方法明确CNN由本研究训练，无未提供权重的项目日志叙述。125个图表资产与v21逐字节一致、主指标哈希未改。最终111PDF页/63正文页/34图/29表/54引用；7联系表全页检查，最终8页140dpi复核，无overfull/undefined；干净Overleaf包重建文本一致。PDF/ZIP在deliverables/thesis-v22及review-2/outputs/thesis-v22，回执docs/results/thesis-v22-editorial。无新增训练或服务器变更。

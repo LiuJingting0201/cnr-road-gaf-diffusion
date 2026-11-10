@@ -1,35 +1,14 @@
 \chapter{Data and complete-trip representation}
 \label{ch:native-data}
 
-The study distinguishes supplied source observations, newly simulated learning data, prospective simulator references and model-generated trajectories. They have different roles. The original CNR-associated tables motivate the application and inherited encoding. Native MoST demand supplies complete training journeys. New SUMO runs provide reference observations for fixed requests. Diffusion outputs are the synthetic data to be evaluated; they are not additional simulator observations.
+This chapter describes the simulation scenario, the complete-journey learning population and the representations used by the generator. Native activity-based demand provides training and development trajectories. Separate SUMO runs provide reference observations for evaluation requests. The diffusion model produces the synthetic trajectories compared with those references.
 
-\section{The supplied exports and their spatial frame}
-The principal supplied file, \nolinkurl{midimost_with_class2.csv}, contains 4,840,789 observations from 2,685 identifiers and six participant classes. The secondary \nolinkurl{vehicle_positions_TS_New.csv} contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
-
-The canonical record is \texttt{time,id,x,y,type}, with seconds and local planar metres. The principal export additionally contains simulator speed and the label \texttt{class2}; its class is mapped to the common type field. Speed for physical comparisons is derived from positions and timestamps on both observed and generated data, avoiding comparison between an internal simulator state and a numerical coordinate derivative.
-
-No original network, route file or simulation configuration accompanied the tables. A check against the public Monaco SUMO Traffic network supports alignment of the principal source~\cite{most}: all 4,841 systematically sampled principal positions lie within five metres of a lane centreline, compared with 11.2\% of the 2,190-point secondary sample. This identifies a useful projected spatial frame without recovering the original run settings. The positions are not treated as longitude and latitude, and map proximity alone is not a directed-road feasibility proof.
-
-\section{Preserving participant-related demand structure}
-An early expansion used arbitrary class-permitted routes. Permission alone did not reproduce the source transport services: a vehicle allowed to use bus roads does not automatically follow a public line or its stop pattern. A source-controlled recognition study therefore compared CNR observations, random-demand SUMO and native MoST activity/service demand before expanding the generator's training data.
-
-The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image reader. The readouts evaluate recognition on observed trajectories.
-
-\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed reader seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
-Readout & CNR & Random demand & Native MoST\\\midrule
-Spatial geometry &79.12&34.85&76.95\\
-Physical motion &88.08&80.57&90.35\\
-Inherited Hilbert--GAF &59.88&30.15&58.69\\\bottomrule
-\end{tabularx}}
-
-Spatial information and GAF recognition both recover under native demand, while random demand still retains substantial motion-related class information. The source comparison identifies domain mismatch as a contributor to low spatial recognition in the initial expansion. Service routes, stops, density and activity chains change together in this comparison.
-
-The native source is fixed to public revision \texttt{b29b2f65}, using the unchanged map, 24 bus services and 181 stops together with activities, parking and background traffic. It is a documented new simulation domain, not recovery of the original CNR configuration. In the matched source diagnosis, 204 of 257 validation entities share source identity with CNR and native validation bus lines are represented in training. That study concerns recovery of domain structure, not unseen-line validation.
-
-Participant labels and SUMO permission classes remain separate. Source vehicle types retain their actual physical and behavioural parameters~\cite{sumovtypes}. A taxi/ride-hailing label does not change a passenger-permission vehicle into a taxi-permission vehicle. Such distinctions affect route construction and prevent manufactured label differences from being presented as learned transport behaviour.
-
-\section{Expanded native-demand learning population}
+\section{Simulation scenario and learning population}
 \label{sec:expanded-native-data}
+The corpus is generated with SUMO on the public Monaco SUMO Traffic (MoST) scenario~\cite{most,sumodocs}. Scenario revision \texttt{b29b2f65} provides the road network, activity-based demand, parking, background traffic, 24 bus services and 181 stops. Vehicle types retain their scenario-defined physical and behavioral parameters~\cite{sumovtypes}. Participant labels and road-permission classes are recorded separately; in particular, taxi/ride-hailing labels can belong to vehicles with passenger permissions.
+
+Each observation follows \texttt{time,id,x,y,type}, with time in seconds and coordinates in local planar metres. Speed and acceleration for evaluation are derived from positions and timestamps consistently for simulated and generated trajectories. A supplementary comparison of archived exports and demand configurations is provided in Appendix~\ref{app:source-comparison}.
+
 The main corpus uses a ten-hour observation interval, simulation seconds 14,400--50,400, at a 0.25-second step. Two training realizations and one development realization retain the same public map and demand families. Each training parent is assigned a realization before its motion is inspected, so a second seed is not counted as another copy of the same independent parent. Known identities retain their earlier partition; original-test parents are excluded by stored identity metadata without reading their frozen trajectories.
 
 For ordinary vehicles, departure, activity-stop boundaries and final arrival define complete legs. Intermediate bus service stops remain inside a bus leg. A parent can therefore contribute several completed activity legs, but a complete leg is not a full person's day of travel. The output unit of the generator is this complete vehicle journey. Pedestrian walking stages are outside the declared five-class synthesis task.
@@ -57,7 +36,7 @@ The native clock retains quarter-second samples and an exact fractional final in
 The temporal pilot uses 925 training and 126 development vehicle legs, with two models for each clock. The expanded-corpus comparison is a separate study in which coverage and optimization exposure both increase.
 
 \section{Two image views with a common source}
-The spatial view starts only from ordered XY observations. Frozen coordinate bounds, the original recursive Hilbert mapping and squeeze/mirror procedure produce the scalar sequence used for GASF, GADF and MTF. Observation order is preserved; points are not sorted by Hilbert value. No speed, acceleration or duration column is appended to the spatial reader. Position repetition and traversal can still affect its image through the sampling pattern.
+The spatial view starts only from ordered XY observations. Frozen coordinate bounds, the recursive Hilbert mapping and squeeze/mirror procedure produce the scalar sequence used for GASF, GADF and MTF. Observation order is preserved; points are not sorted by Hilbert value. No speed, acceleration or duration column is appended to the spatial reader. Position repetition and traversal can still affect its image through the sampling pattern.
 
 The speed view derives one-second arc increments from the same XY/time observations and summarizes them at 128 relative sequence positions, with a fixed 35 m/s normalization scale. It predicts the same participant labels through a separate reader. The two views are deterministic transformations of one observation, with different quantization and temporal losses. Their effects on synthesis are evaluated through the generative comparison. Chapter~\ref{ch:native-feedback} specifies their exact construction and generative use.
 

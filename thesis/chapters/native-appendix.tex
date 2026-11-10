@@ -304,7 +304,7 @@ The post-hoc request-level analysis suggests a more precise mechanism to test. S
 
 For buses, the spatial longest-stop request error falls by 20.7\%, with all four cells improving. For motorcycles it rises by 5.3\%, with all four cells worsening. The dual policy's corresponding bus reduction is 21.1\%; that small difference from spatial-only feedback is not evidence of representation synergy. These observations motivate class-sensitive stopping analysis, but the metric does not determine whether the longest stop occurs at the correct bus station. It also does not distinguish a service stop from waiting in traffic.
 
-A mechanism claim therefore requires a fresh, fixed comparison of stop location, service-stop coverage and non-service waiting, alongside the complete class matrix. The present finding was identified after inspecting results, and its consistency over two generator seeds cannot supply an independent confirmatory test. It is valuable as a specific link between the spatial trajectory representation and an output motion property, not as proof that the group encoding has become a universal realism objective.
+A mechanism claim therefore requires a fresh, fixed comparison of stop location, service-stop coverage and non-service waiting, alongside the complete class matrix. The present finding was identified after inspecting results, and its consistency over two generator seeds cannot supply an independent confirmatory test. It is valuable as a specific link between the spatial trajectory representation and an output motion property, not as proof that the spatial encoding has become a universal realism objective.
 
 Full-pool pair diversity describes the variation available before selection. With one retained sample per request, conditional pair diversity is undefined, not zero; across-request dispersion cannot replace it. The common 97-request map coverage is unchanged by selection and belongs to the geometric interface.
 
@@ -330,3 +330,29 @@ The prior pilot also matters. With 1,000 prior updates, sampled absolute codes r
 A separate completed performance study reduces a repeated-archive evaluation unit from 104.168 to 10.017 seconds while reproducing its metrics and diagnostic JSON exactly. That I/O change is adopted. Proposed training caching gives no end-to-end speedup in the bounded benchmark and fails strict state equality, including non-identical repeats of the original implementation; it is not adopted. The measured evaluation improvement must not be described as a tenfold training acceleration.
 
 The final scientific queue completes without failure. Pilot verification errors, the unstable short-prior result and a presentation-only CUDA dependency failure remain recorded with their recoveries. Figure layout changes preserve the fixed-case coordinate/image hashes and numerical matrices.
+
+\section{Supplementary dataset and demand comparison}\label{app:source-comparison}
+\subsection{Archived trajectory exports and spatial alignment}
+The archived reference dataset (CNR export), \nolinkurl{midimost_with_class2.csv}, contains 4,840,789 observations from 2,685 identifiers and six participant classes. A second export, \nolinkurl{vehicle_positions_TS_New.csv}, contains 2,189,591 observations from 12,061 identifiers but only one recorded class. Their spatial support, durations and label composition differ. The secondary table is not pooled into the labelled complete-journey experiment.
+
+The canonical record is \texttt{time,id,x,y,type}, with seconds and local planar metres. The principal export additionally contains simulator speed and the label \texttt{class2}; its class is mapped to the common type field. Speed for physical comparisons is derived from positions and timestamps on both observed and generated data, avoiding comparison between an internal simulator state and a numerical coordinate derivative.
+
+No original network, route file or simulation configuration accompanied the tables. A check against the public Monaco SUMO Traffic network supports alignment of the principal source~\cite{most}: all 4,841 systematically sampled principal positions lie within five metres of a lane centreline, compared with 11.2\% of the 2,190-point secondary sample. This identifies a useful projected spatial frame without recovering the original run settings. The positions are not treated as longitude and latitude, and map proximity alone is not a directed-road feasibility proof.
+
+\subsection{Demand structure and participant recognition}
+A controlled comparison evaluates class-permitted random routes against activity-based demand and the archived reference dataset. Road permissions determine feasible paths, while public services and activity plans introduce class-related spatial patterns.
+
+The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image reader. The readouts evaluate recognition on observed trajectories.
+
+\tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed reader seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
+Readout & Archived data & Random demand & Native MoST\\\midrule
+Spatial geometry &79.12&34.85&76.95\\
+Physical motion &88.08&80.57&90.35\\
+Hilbert--GAF &59.88&30.15&58.69\\\bottomrule
+\end{tabularx}}
+
+Spatial information and GAF recognition both recover under native demand, while random demand still retains substantial motion-related class information. The source comparison identifies domain mismatch as a contributor to low spatial recognition in the initial expansion. Service routes, stops, density and activity chains change together in this comparison.
+
+The native source is fixed to public revision \texttt{b29b2f65}, using the unchanged map, 24 bus services and 181 stops together with activities, parking and background traffic. These simulations use a separately specified configuration. In the matched source diagnosis, 204 of 257 validation entities share source identity with the archived dataset and native validation bus lines are represented in training. That study concerns recovery of domain structure, not unseen-line validation.
+
+Participant labels and SUMO permission classes remain separate. Source vehicle types retain their actual physical and behavioural parameters~\cite{sumovtypes}. A taxi/ride-hailing label does not change a passenger-permission vehicle into a taxi-permission vehicle. Such distinctions affect route construction and prevent manufactured label differences from being presented as learned transport behaviour.

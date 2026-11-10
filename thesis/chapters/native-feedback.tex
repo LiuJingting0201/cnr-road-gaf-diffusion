@@ -2,7 +2,7 @@
 \label{ch:native-feedback}
 
 \section{Two representations of the same journey}
-The inherited work represents trajectories as images for participant classification~\cite{salvadori,ferreira,original}. This thesis reuses that spatial encoding and trains its own classifiers; no group CNN weights were supplied. A second view represents the journey's speed sequence. Both views predict the same five participant classes. Their role is to test whether class information learned from source trajectories can improve synthetic data, rather than to generate images and invert them into coordinates.
+Two image representations summarize each training journey. The spatial view uses ordered Hilbert coordinates and GAF channels following trajectory-recognition methods~\cite{salvadori,ferreira,original}. The speed view applies image transforms to the journey's derived speed sequence. Separate CNNs are trained on the same five participant classes; their encoders subsequently provide conditions for trajectory diffusion.
 
 For a scalar sequence $a_1,\ldots,a_q$, let $u_i\in[0,1]$ be its normalized value and $\phi_i=\arccos u_i$. The two angular fields used here are
 \begin{equation}
@@ -12,10 +12,10 @@ For a scalar sequence $a_1,\ldots,a_q$, let $u_i\in[0,1]$ be its normalized valu
 \end{equation}
 A third channel is a Markov transition field. If $b_i$ denotes a sequence value's bin and $P_{ab}$ is the row-normalized count of adjacent transitions from bin $a$ to bin $b$, then $H_{ij}=P_{b_i b_j}$. The angular construction follows time-series imaging~\cite{wang}. For brevity, ``GAF feedback'' refers to the implemented three-channel GASF/GADF/MTF representation, including the transition channel.
 
-\section{Inherited spatial encoding}
-The spatial input consists only of the ordered coordinate samples. Frozen coordinate bounds map them into the unit square, with out-of-range values clipped and counted. The inherited recursive Hilbert function assigns a scalar index to each point. Its precision parameter is $0.0009$, corresponding to a $64\times64$ spatial grid. The temporal order is preserved: points are not sorted by Hilbert index.
+\section{Spatial Hilbert--GAF encoding}
+The spatial input consists only of the ordered coordinate samples. Frozen coordinate bounds map them into the unit square, with out-of-range values clipped and counted. The recursive Hilbert function assigns a scalar index to each point. Its precision parameter is $0.0009$, corresponding to a $64\times64$ spatial grid. The temporal order is preserved: points are not sorted by Hilbert index.
 
-The original squeeze procedure compresses repeated-index runs, followed by mirror duplication when necessary, to obtain 224 values. This is not uniform time resampling or a learned encoder. If the inherited procedure cannot reach the required length, the case is reported as an encoding failure. The scalar sequence is mapped to GASF, GADF and an eight-bin uniform MTF. The angular channels use per-sequence scaling to $[0,1]$, while the frozen channel bounds convert the three fields to an unsigned eight-bit RGB image. Coordinate and channel parameters are inherited from the earlier training-only encoding metadata; they are not refitted on the new references or generated candidates.
+The squeeze procedure compresses repeated-index runs, followed by mirror duplication when necessary, to obtain 224 values. This is not uniform time resampling or a learned encoder. If the procedure cannot reach the required length, the case is reported as an encoding failure. The scalar sequence is mapped to GASF, GADF and an eight-bin uniform MTF. The angular channels use per-sequence scaling to $[0,1]$, while the frozen channel bounds convert the three fields to an unsigned eight-bit RGB image. Coordinate and channel parameters are estimated from training data and held fixed for evaluation and generated samples.
 
 This branch receives no additional velocity, acceleration, duration or participant feature. Nevertheless it is not invariant to motion. Different speeds change the number and order of sampled coordinates within quantized cells, and the run compression preserves some of that structure. Conversely, quantization and compression can map distinct motion profiles to the same image. On a fixed route, spatial feedback may therefore have little ability to rank the candidate pool even when it classifies trajectories from different routes well. Image hashes and the number of distinct spatial images in each pool make this limitation observable.
 
@@ -35,9 +35,9 @@ The speed image retains absolute speed scale but compresses temporal detail. One
 \section{From a generated journey to the two image views}
 Figure~\ref{fig:g36-gaf-construction} makes the implemented representation concrete using an actual completed diffusion sample. The top row starts from its ordered Hilbert sequence; the lower row starts from speed computed from the same timestamped coordinates. Each row ends in the three channels that the corresponding class reader receives. The image is computed from the generated journey.
 
-\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one earlier G36 generated bus journey, used to illustrate the unchanged encoding. The spatial row uses original Hilbert compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion. These are channel intensities, not a common physical scale across the two encoders. No per-image contrast enhancement is applied.}{g36-gaf-construction}
+\fig{g36-gaf-construction.pdf}{1}{Exact representation channels of one earlier G36 generated bus journey, used to illustrate the unchanged encoding. The spatial row uses Hilbert run compression and frozen channel conversion; the speed row uses the 128-value absolute-speed summary and the implemented resize. Each field is shown with a common display range of $[0,1]$ after its implemented conversion. These are channel intensities, not a common physical scale across the two encoders. No per-image contrast enhancement is applied.}{g36-gaf-construction}
 
-The two sequences have different coordinates on their horizontal axes. The spatial sequence index follows inherited compression, whereas the speed sequence index follows relative-time resampling. Their off-diagonal image patterns relate pairs of sequence positions. Consequently, a visible image difference need not imply a better trajectory: it first establishes that the representation distinguishes the inputs. The empirical question is whether the resulting representations provide useful constraints for generating motion. Chapter~\ref{ch:native-results} links complete generated journeys and their output image views to independent population-level quality statistics. Output images shown there are visualizations, not future observations supplied to synthesis.
+The two sequences have different coordinates on their horizontal axes. The spatial sequence index follows run compression, whereas the speed sequence index follows relative-time resampling. Their off-diagonal image patterns relate pairs of sequence positions. Consequently, a visible image difference need not imply a better trajectory: it first establishes that the representation distinguishes the inputs. The empirical question is whether the resulting representations provide useful constraints for generating motion. Chapter~\ref{ch:native-results} links complete generated journeys and their output image views to independent population-level quality statistics. Output images shown there are visualizations, not future observations supplied to synthesis.
 
 \section{Recognition and the limits of score-based feedback}
 The spatial and speed readers are separately trained on the same participant labels. Their different inputs remain separate: a speed sequence is never appended to the spatial classifier. Recognition measures participant-related information in recorded journeys. Its use for synthesis is evaluated through the conditioning experiments and independent motion metrics.
@@ -52,7 +52,7 @@ Single-view policies use one score and the dual-view policy uses their equal-wei
 A second precursor fits the motion model against frozen reader features. This tests whether a class representation can provide a useful training target, but the reader itself cannot adapt its representation to trajectory reconstruction. The final experiment changes that interface: GAF-derived codes become sampled conditions of the generator, and the encoder's final stage is trained with the denoiser. Terminal ranking, frozen-feature alignment and learned generative conditioning are distinct interventions; their different populations are not pooled into a single effect estimate.
 
 \section{Generation-trained spatial and speed conditions}
-Let $E_S(X)$ be the inherited spatial image and $E_V(X)$ the speed image. For each active view, a CNN produces a pooled 512-dimensional feature $f_{\psi,v}(E_v(X))$. A separate bottleneck projects it through widths $512\rightarrow128\rightarrow32$, using SiLU and a final LayerNorm:
+Let $E_S(X)$ be the spatial image and $E_V(X)$ the speed image. For each active view, a CNN produces a pooled 512-dimensional feature $f_{\psi,v}(E_v(X))$. A separate bottleneck projects it through widths $512\rightarrow128\rightarrow32$, using SiLU and a final LayerNorm:
 \begin{equation}
  h_v=P_v\bigl(f_{\psi,v}(E_v(X))\bigr),\qquad
  h=[h_S;h_V]\in\mathbb R^{64}.
@@ -60,7 +60,7 @@ Let $E_S(X)$ be the inherited spatial image and $E_V(X)$ the speed image. For ea
 \end{equation}
 An inactive view contributes 32 zeros. The dimensionality of the denoiser interface consequently stays fixed across single- and dual-view conditions. Each view supplies a learned global condition.
 
-In a joint arm, the final ResNet residual stage, class head and bottleneck are trainable. The earlier convolutional stages are frozen, as are all BatchNorm running statistics. Exact cached prefix activations reduce repeated image processing: their pooled teacher features and original spatial image bytes were checked against the existing training artifacts. The original trajectory encoding is retained.
+In a joint arm, the final ResNet residual stage, class head and bottleneck are trainable. The earlier convolutional stages are frozen, as are all BatchNorm running statistics. Exact cached prefix activations reduce repeated image processing: their pooled teacher features and cached spatial image bytes were checked against the existing training artifacts. The input encoding remains fixed.
 
 The 64-dimensional code passes through a $64\rightarrow128\rightarrow128$ adapter and is added to the existing diffusion-step, class, route and context embedding. Every residual denoising block receives the resulting condition at every sampling step. The adapter's final layer is initialized to zero, reproducing the common starting denoiser exactly before adaptation. The added condition therefore starts without an arbitrary perturbation of the pretrained generator.
 
@@ -75,7 +75,7 @@ For active views $\mathcal V$, the joint fitting objective is
 \end{equation}
 The first term is the physical-time-weighted noise-prediction loss in Equation~\ref{eq:native-loss}. The class heads $g_{\psi,v}$ act on the pooled CNN features, not on the 32-dimensional bottlenecks. The auxiliary term retains participant recognition as an explicit training task while denoising can adapt features that help reconstruct motion. The fixed coefficient is not chosen from the new generation results.
 
-Gradients update the CNN tail and projection weights. They do not differentiate the discrete Hilbert indexing, squeeze procedure or byte conversion with respect to coordinates. This distinction preserves the inherited construction without requiring a smooth mathematical inverse of its images. It also distinguishes the method from applying a classifier gradient to an intermediate noisy trajectory~\cite{cg,univ}. The experiment contains no specially chosen guidance timestep.
+Gradients update the CNN tail and projection weights. They do not differentiate the discrete Hilbert indexing, squeeze procedure or byte conversion with respect to coordinates. This distinction retains the discrete image construction without requiring a smooth mathematical inverse of its images. It also distinguishes the method from applying a classifier gradient to an intermediate noisy trajectory~\cite{cg,univ}. The experiment contains no specially chosen guidance timestep.
 
 Joint adaptation updates the encoder through both denoising and classification objectives. The frozen-reader comparison measures their combined effect. Recognition scores reported for the original readers refer to their pre-adaptation checkpoints.
 
@@ -97,7 +97,7 @@ Table~\ref{tab:g40-arms} separates the main method from its controls. Every arm 
 Arm & Condition source & Question isolated\\\midrule
 B & No additional code & Class/route/duration diffusion baseline\\
 F-SV & Frozen spatial and speed CNNs; learned projections & Is fixed recognition sufficient as a condition?\\
-J-S & Joint spatial CNN tail and projection & What does the inherited spatial view contribute?\\
+J-S & Joint spatial CNN tail and projection & What does the spatial view contribute?\\
 J-V & Joint speed CNN tail and projection & What does the derived motion view contribute?\\
 J-SV & Both jointly adapted views & Does combining views help beyond either alone?\\
 J-RAW & Separate raw position and speed encoders & Is an image representation necessary for the observed gain?\\
