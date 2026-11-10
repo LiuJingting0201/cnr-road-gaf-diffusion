@@ -1,6 +1,10 @@
-# Road-conditioned diffusion thesis — research draft v20
+# Road-conditioned diffusion thesis — research draft v21
 
 English master's thesis, using the Politecnico di Torino TOPtesi layout documented in TEMPLATE.md. Administrative cover fields remain intentional placeholders for the candidate, programme, supervisor, academic year and session.
+
+## Editorial revision
+
+v21 presents the completed work as a thesis: methods, measured results and interpretation. Repeated disclaimers and operational chronology are condensed; fixed-reader precursor studies and execution diagnostics move to the appendix. All numerical tables, scientific figure assets and experimental records are retained unchanged. No new model or experiment is introduced.
 
 ## Current scope
 

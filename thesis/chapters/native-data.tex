@@ -13,7 +13,7 @@ No original network, route file or simulation configuration accompanied the tabl
 \section{Preserving participant-related demand structure}
 An early expansion used arbitrary class-permitted routes. Permission alone did not reproduce the source transport services: a vehicle allowed to use bus roads does not automatically follow a public line or its stop pattern. A source-controlled recognition study therefore compared CNR observations, random-demand SUMO and native MoST activity/service demand before expanding the generator's training data.
 
-The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image reader. These are recognition results on observations, not quality scores for diffusion samples.
+The comparison matched six labels and class counts, with 1,983 training and 257 validation entities per source. Original spatial encoding, ResNet18 architecture, fitting budget and final-checkpoint rule were fixed; two classifier seeds were used. Table~\ref{tab:native-source-diagnosis} separates an information readout from the image reader. The readouts evaluate recognition on observed trajectories.
 
 \tab{Matched source diagnosis. Values are validation macro F1 in percent; the Hilbert--GAF row averages two fixed reader seeds.}{native-source-diagnosis}{\begin{tabularx}{\linewidth}{Xrrr}\toprule
 Readout & CNR & Random demand & Native MoST\\\midrule
@@ -22,7 +22,7 @@ Physical motion &88.08&80.57&90.35\\
 Inherited Hilbert--GAF &59.88&30.15&58.69\\\bottomrule
 \end{tabularx}}
 
-Spatial information and GAF recognition both recover under native demand, while random demand still retains substantial motion-related class information. Low spatial recognition therefore cannot be attributed to the image encoder alone. The comparison supports a domain mismatch in the initial expansion. It does not isolate service routes, stops, density and activity chains as separate causes, or establish equivalence between CNR and native MoST.
+Spatial information and GAF recognition both recover under native demand, while random demand still retains substantial motion-related class information. The source comparison identifies domain mismatch as a contributor to low spatial recognition in the initial expansion. Service routes, stops, density and activity chains change together in this comparison.
 
 The native source is fixed to public revision \texttt{b29b2f65}, using the unchanged map, 24 bus services and 181 stops together with activities, parking and background traffic. It is a documented new simulation domain, not recovery of the original CNR configuration. In the matched source diagnosis, 204 of 257 validation entities share source identity with CNR and native validation bus lines are represented in training. That study concerns recovery of domain structure, not unseen-line validation.
 
@@ -54,12 +54,12 @@ Repeated positions contribute zero progress while retaining elapsed time. All no
 
 The native clock retains quarter-second samples and an exact fractional final interval when required at synthesis. The temporal-resolution pilot compares it with 257 equally spaced relative-time points. The same number of relative points gives a long trip a coarser physical resolution, which can remove movement details before learning begins. Reconstruction checks identify this representational limit; matched trained models test whether retaining finer detail actually improves generated motion.
 
-The pilot uses 925 training and 126 development vehicle legs, with two models for each clock. It remains a controlled representation study on that cohort. The later expanded models do not turn its numbers into a repeated large-corpus clock comparison. Likewise, the earlier/current corpus contrast changes coverage and optimization exposure together and does not establish a scaling law.
+The temporal pilot uses 925 training and 126 development vehicle legs, with two models for each clock. The expanded-corpus comparison is a separate study in which coverage and optimization exposure both increase.
 
 \section{Two image views with a common source}
 The spatial view starts only from ordered XY observations. Frozen coordinate bounds, the original recursive Hilbert mapping and squeeze/mirror procedure produce the scalar sequence used for GASF, GADF and MTF. Observation order is preserved; points are not sorted by Hilbert value. No speed, acceleration or duration column is appended to the spatial reader. Position repetition and traversal can still affect its image through the sampling pattern.
 
-The speed view derives one-second arc increments from the same XY/time observations and summarizes them at 128 relative sequence positions, with a fixed 35 m/s normalization scale. It predicts the same participant labels through a separate reader. The two views are deterministic transformations of one observation, with different quantization and temporal losses. Their resemblance or class accuracy cannot establish that either improves generation. Chapter~\ref{ch:native-feedback} specifies their exact construction and generative use.
+The speed view derives one-second arc increments from the same XY/time observations and summarizes them at 128 relative sequence positions, with a fixed 35 m/s normalization scale. It predicts the same participant labels through a separate reader. The two views are deterministic transformations of one observation, with different quantization and temporal losses. Their effects on synthesis are evaluated through the generative comparison. Chapter~\ref{ch:native-feedback} specifies their exact construction and generative use.
 
 \section{Prospective reference requests}
 The final request set contains eight fresh SUMO episodes organized into four non-bus OD-parent cohorts and paired departure windows. Each manifest fixes 24 public bus services and 19 requests for each other class. Non-bus plans are complete single-leg requests without internal activity parking. Their source parents are disjoint from training and earlier evaluated non-bus cohorts. The public bus templates and map remain shared.
