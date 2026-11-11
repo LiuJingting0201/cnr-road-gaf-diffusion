@@ -1,5 +1,6 @@
 """Four paired development arms using the author's full coordinate denoiser."""
 import json
+import os
 import sys
 from types import SimpleNamespace
 import numpy as np
@@ -12,7 +13,8 @@ from utils.utils import p_xt
 
 arm=sys.argv[1]
 steps=int(sys.argv[2])
-torch.manual_seed(42)
+training_seed=int(os.environ.get("DIFFTRAJ_TRAINING_SEED","42"))
+torch.manual_seed(training_seed)
 d=np.load('pilot.npz')
 def tensor(key):
     return torch.from_numpy(d[key]).cuda()
@@ -76,11 +78,13 @@ with torch.no_grad():
             z=p_xt(z,predict(z,t,batch),t,torch.full_like(t,max(-1,t0-5)),beta,0.)
         outs.append(z*sd+mu)
     generated=torch.cat(outs)
+    if '--save-draws' in sys.argv:
+        np.savez_compressed(f'private-{arm}-{steps}.npz', generated=generated.cpu().numpy(), reference=xy[i].cpu().numpy(), ids=i.cpu().numpy(), labels=d['classes'][y[i].cpu().numpy()], dt=dt[i].cpu().numpy())
     def speeds(seq):
         return (seq.diff().norm(dim=1)/dt[i,None]).cpu().numpy()
     actual=speeds(xy[i]); synth=speeds(generated)
     score=lambda a,b:float(wasserstein_distance(a.ravel(),b.ravel()))
-    summary=dict(arm=arm,updates=steps,train=len(ids),validation=len(valid),evaluated=len(i),speed_w1_mps=score(actual,synth),length_w1_m=score(actual.sum(1)*dt[i].cpu().numpy(),synth.sum(1)*dt[i].cpu().numpy()),classes={str(c):score(actual[m],synth[m]) for k,c in enumerate(d['classes']) if (m:=(y[i].cpu().numpy()==k)).any()})
+    summary=dict(arm=arm,training_seed=training_seed,updates=steps,train=len(ids),validation=len(valid),evaluated=len(i),speed_w1_mps=score(actual,synth),length_w1_m=score(actual.sum(1)*dt[i].cpu().numpy(),synth.sum(1)*dt[i].cpu().numpy()),classes={str(c):score(actual[m],synth[m]) for k,c in enumerate(d['classes']) if (m:=(y[i].cpu().numpy()==k)).any()})
     # Fix spatial bounds and length bins on training data, with an overflow cell.
     from scipy.spatial.distance import jensenshannon
     bounds = xy[train].amin((0,2)), xy[train].amax((0,2))

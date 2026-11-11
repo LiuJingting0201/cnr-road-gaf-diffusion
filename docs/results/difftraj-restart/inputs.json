@@ -1,0 +1,26 @@
+{
+  "uci339_zip": {
+    "sha256": "a33e2a5e145607ae2bad0db5d21b7548c88b7e0f9db1ce15839f24c4c61f8c76",
+    "bytes": 534065916
+  },
+  "eligible_packed": {
+    "sha256": "8a8e887aac3aef99f7c0678219022a82ea0b0007437caa3610dbcd20c9b97a32",
+    "bytes": 33431358
+  },
+  "released_model": {
+    "sha256": "ffd0cd74e7c9175951ab39d99b071c82e3cbbcd40952266252687dd1bc958296",
+    "bytes": 64890353
+  },
+  "released_headers": {
+    "sha256": "bc4608e709db30dbdfeddb1e631b8698be86691d825302a0fee512082bf8b1e3",
+    "bytes": 640128
+  },
+  "official_sampler": {
+    "sha256": "27b8864cbc328e50be212653d2b13efec4d637c9c535350cee55a4352eb03458",
+    "bytes": 5911
+  },
+  "sumo_export": {
+    "sha256": "2dddc627721dfd37a4ee084c20e87beaf2dfbf7a91f87db03c9628dd835afdf8",
+    "bytes": 304202507
+  }
+}

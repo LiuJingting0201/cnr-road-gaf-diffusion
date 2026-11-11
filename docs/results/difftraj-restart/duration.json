@@ -1,0 +1,42 @@
+[
+  {
+    "n": 32,
+    "duration_s_range": [
+      7.0,
+      275.5
+    ],
+    "median_reference_step_m": 4.517971992492676,
+    "median_generated_step_m": 31.351879119873047,
+    "speed_w1_mps": 139.54935604473204
+  },
+  {
+    "n": 32,
+    "duration_s_range": [
+      285.0,
+      462.25
+    ],
+    "median_reference_step_m": 22.421146392822266,
+    "median_generated_step_m": 44.67605209350586,
+    "speed_w1_mps": 38.265591737380426
+  },
+  {
+    "n": 32,
+    "duration_s_range": [
+      480.0,
+      778.5
+    ],
+    "median_reference_step_m": 36.16840744018555,
+    "median_generated_step_m": 67.80461120605469,
+    "speed_w1_mps": 19.795269432113287
+  },
+  {
+    "n": 32,
+    "duration_s_range": [
+      785.75,
+      2346.25
+    ],
+    "median_reference_step_m": 43.227630615234375,
+    "median_generated_step_m": 55.288814544677734,
+    "speed_w1_mps": 8.93896281731703
+  }
+]

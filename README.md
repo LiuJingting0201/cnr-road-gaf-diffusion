@@ -1,4 +1,4 @@
-> 2026-11-11 导师修订目标：复现 DiffTraj，评估速度与车型扩展。[当前任务书与研究报告](docs/DIFFTRAJ_STUDY.md)。以下为旧项目记录。
+> 2026-11-11 导师修订目标：复现 DiffTraj，评估速度与车型扩展。[当前任务书与研究报告](docs/DIFFTRAJ_STUDY.md)。[英文阶段报告与轨迹图](deliverables/difftraj-progress/DiffTraj_progress.pdf) · [实测指标](docs/results/difftraj-restart)。以下为旧项目记录。
 
 # CNR Road / GAF Trajectory Diffusion
 

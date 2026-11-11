@@ -1,0 +1,12 @@
+{
+  "trips": 16,
+  "points": 4311,
+  "mean_lon_lat": [
+    104.07849984095779,
+    30.673680268332067
+  ],
+  "seed": 42,
+  "steps": 100,
+  "mode": "eval",
+  "request_selection": "first 16 public headers"
+}

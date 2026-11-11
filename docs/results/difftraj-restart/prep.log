@@ -1,0 +1,1 @@
+{np.str_('bus'): np.int64(136), np.str_('bycicle'): np.int64(173), np.str_('motorcycle'): np.int64(351), np.str_('private_car'): np.int64(1039), np.str_('taxi_or_uber'): np.int64(92)} 1416 375

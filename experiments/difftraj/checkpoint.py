@@ -21,7 +21,7 @@ cells = json.loads(Path('process/Traj_Generation.ipynb').read_text())['cells']
 env = {'__name__': '__main__'}
 for cell in cells:
     if cell['cell_type'] == 'code':
-        code = ''.join(cell['source']).replace('utils.Traj_UNe import', 'utils.Traj_UNet import').replace('from tqdm.notebook import tqdm','from tqdm import tqdm').replace("torch.load('./model.pt')","torch.load('./model.pt', weights_only=True)").replace("plt.savefig('Chengdu_traj.png')", f"plt.savefig({str(out/'chengdu.png')!r})")
+        code = ''.join(cell['source']).replace('utils.Traj_UNe import', 'utils.Traj_UNet import').replace('from tqdm.notebook import tqdm','def tqdm(items): return items').replace("torch.load('./model.pt')","torch.load('./model.pt', weights_only=True)").replace("plt.savefig('Chengdu_traj.png')", f"plt.savefig({str(out/'chengdu.png')!r})")
         exec(compile(code, 'author_notebook', 'exec'), env)
 trips = env['Gen_traj']
 points = np.concatenate(trips)

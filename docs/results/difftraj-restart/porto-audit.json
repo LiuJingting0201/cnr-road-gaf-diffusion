@@ -1,0 +1,11 @@
+{
+  "source": "UCI 339, train.csv",
+  "counts": {
+    "records": 1710670,
+    "fewer_than_120": 1655393,
+    "missing_flag": 10
+  },
+  "eligible": 55267,
+  "taxis": 439,
+  "median_original_points": 155.0
+}

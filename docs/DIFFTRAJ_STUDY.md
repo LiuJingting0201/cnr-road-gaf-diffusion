@@ -63,3 +63,26 @@ A second experiment evaluated the original coordinate model on 32 development tr
 GAF and the prior road-conditioned study are archived as earlier project work.
 
 The 8,000-update coordinate baseline reduced speed W1 from 709.73 to 51.64 m/s, median generated speed from 128.99 to 20.99 m/s, and out-of-bounds fraction from 88.38% to 8.23%. Length W1 fell from 142.82 to 11.38 km. This establishes substantial training-budget dependence on the same 128 development requests. Three further fits give each feature extension the same 8,000 updates.
+
+A length-stratified check localized part of the remaining discrepancy. Across four equal-sized groups ordered by reference trip duration, baseline speed W1 was 139.55, 38.27, 19.80 and 8.94 m/s. In the shortest group the median displacement per model interval was 31.35 m for generated trips and 4.52 m for the references. The five-class trace figure shows how position jitter accumulates into implausible travel distances. Report duration alongside class because unequal trip lengths change the physical meaning of a model interval.
+
+The authors report that the Chengdu and Xi’an data require a license. Their public clarification also confirms that total distance is cumulative, mean speed is cumulative distance divided by duration, the input point count is taken before interpolation, and both city models were trained for 200 epochs. Porto offers a same-paper public-data replication target from Appendix C, Table 5, with published DiffTraj scores of .0087, .0132, .0242 and .847. Its 15-second GPS cadence gives a different meaning to a 120-point minimum than the quarter-second simulation export. Keep the public-data result under its own population and comparison. [Dataset access clarification](https://github.com/Yasoz/DiffTraj/issues/17#issuecomment-2264427889) · [Attribute definitions](https://github.com/Yasoz/DiffTraj/issues/10#issuecomment-2151257183) · [Training schedule](https://github.com/Yasoz/DiffTraj/issues/16#issuecomment-2264565082) · [UCI Porto data](https://archive.ics.uci.edu/dataset/339/)
+
+## Paired replication and public-data baseline
+
+Two seed-matched comparisons at 8,000 updates are now complete. In the table below each pair gives training seeds 42 and 43, with identical evaluation requests and sampling noise.
+
+| Condition | Speed W1 (m/s) | Length W1 (km) | Density JS |
+|---|---:|---:|---:|
+| Original coordinate model | 51.64 / 9.89 | 11.38 / 0.98 | .119 / .140 |
+| Speed supervision | 14.34 / 5.42 | 1.09 / 0.89 | .167 / .204 |
+| Class embedding | 55.74 / 32.22 | 13.35 / 4.56 | .146 / .136 |
+| Both | 98.31 / 99.66 | 18.03 / 15.24 | .166 / .160 |
+
+Speed supervision alone reduced speed and length W1 in both seeds and increased density error in both. The class-only and combined fits increased speed W1 relative to their respective baselines. The large variation across training seeds and the reuse of 128 development requests qualify the magnitude and population of the effects.
+
+The UCI Porto train.csv contains 1,710,670 rows, including ten missing-data flags. Applying the original minimum of 120 points to complete, finite traces retained 55,267 trips from 439 taxis. The packed input preserves every retained published coordinate to its source precision. The Porto runner uses a 200-point coordinate model, 500 diffusion steps, guidance scale 3, AdamW at 0.0002, and 200 epochs from scratch. Global batches of 1,024 are distributed over four GPUs with gradient accumulation. Output weights follow the raw-parameter checkpoint used by the released training script. Taxi-level splits, training-only standardization, local civil-time departure bins, geographic segment lengths and exact original point counts define this reproduction. Our length bins are training quantiles and the pattern diagnostic uses the 20 most frequently occupied cells. These two implementation choices are reported because their exact original settings were not released. The final scoring script samples 3,000 held-out Porto requests, restores their original lengths and computes density, OD and length divergence and pattern overlap. Porto results are compared with Appendix C, Table 5. Chengdu and Xi’an remain the two-city Table 1 target.
+
+The official Chengdu notebook replay has now completed on an L20 using the checksum-verified released model. It generated 500 trajectories with 141,747 positions and a median of 259 original-length samples per trip. Mean longitude and latitude were 104.07485 and 30.68083. The runner fixed the import typo, omitted the optional notebook progress bar and kept the released model mode and sampler equations. The output map and summary are in results/difftraj-restart/chengdu-released. A separately executed CPU diagnostic on the first 16 headers also returned finite coordinates.
+
+Porto preprocessing assigns 46,470 trips to training, 5,241 to development and 3,556 to the reserve set, with disjoint source taxis. Its training min/max bounding box encloses a very wide area, placing 92.4% of training observations in one 16-by-16 cell. A secondary density measure uses the training 1st–99th percentile bounds and explicitly counts overflow. Both scores are defined before any generated Porto results are evaluated.
