@@ -70,6 +70,11 @@ with torch.no_grad():
     torch.manual_seed(173)
     valid=torch.where(~train)[0]
     i=valid[torch.randperm(len(valid),device='cuda')[:128]]
+    extra='--remaining' in sys.argv
+    if extra:
+        # Exclude the original scored requests and the 32 reconstruction-diagnostic requests.
+        used=torch.cat([i,valid[:32]])
+        i=valid[~torch.isin(valid,used)]
     outs=[]
     for batch in i.split(16):
         z=torch.randn_like(x[batch])
@@ -103,4 +108,4 @@ with torch.no_grad():
     summary['reference_speed_median_mps']=float(np.median(actual))
     summary['generated_speed_median_mps']=float(np.median(synth))
     summary['per_class_counts']={str(c):int((y[i]==k).sum()) for k,c in enumerate(d['classes'])}
-    with open(f'{arm}-{steps}.json','w') as f: json.dump(summary,f,indent=2)
+    with open(f'{arm}-{steps}'+('-remaining' if extra else '')+'.json','w') as f: json.dump(summary,f,indent=2)
