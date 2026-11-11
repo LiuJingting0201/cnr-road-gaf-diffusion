@@ -1,0 +1,18 @@
+{
+  "50": {
+    "noise_mse": 0.0501646026968956,
+    "position_rmse_m": 134.43435668945312,
+    "trip_center_rmse_m": 47.210609436035156
+  },
+  "250": {
+    "noise_mse": 0.009014335460960865,
+    "position_rmse_m": 773.6246948242188,
+    "trip_center_rmse_m": 518.1754150390625
+  },
+  "495": {
+    "noise_mse": 0.003819642588496208,
+    "position_rmse_m": 58247.17578125,
+    "trip_center_rmse_m": 50009.48828125
+  },
+  "oracle_position_rmse_m": 1.2024072475469438e-06
+}

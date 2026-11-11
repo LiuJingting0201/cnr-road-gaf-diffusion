@@ -1,0 +1,30 @@
+{
+  "arm": "B",
+  "updates": 2000,
+  "train": 1416,
+  "validation": 375,
+  "evaluated": 128,
+  "speed_w1_mps": 709.7328691325786,
+  "length_w1_m": 142815.09662652016,
+  "classes": {
+    "bus": 124.95973236816998,
+    "bycicle": 966.8568339080276,
+    "motorcycle": 227.19431609494973,
+    "private_car": 836.6409924212246,
+    "taxi_or_uber": 1839.0210613409995
+  },
+  "density_js": 0.6411789080872244,
+  "od_js": 0.6931471805599454,
+  "length_js": 0.36602009255700635,
+  "outside_fraction": 0.88375,
+  "mean_class_speed_w1": 798.9345872266742,
+  "reference_speed_median_mps": 11.357481002807617,
+  "generated_speed_median_mps": 128.990966796875,
+  "per_class_counts": {
+    "bus": 9,
+    "bycicle": 17,
+    "motorcycle": 28,
+    "private_car": 69,
+    "taxi_or_uber": 5
+  }
+}

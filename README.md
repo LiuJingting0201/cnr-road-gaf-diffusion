@@ -1,3 +1,5 @@
+> 2026-11-11 导师修订目标：复现 DiffTraj，评估速度与车型扩展。[当前任务书与研究报告](docs/DIFFTRAJ_STUDY.md)。以下为旧项目记录。
+
 # CNR Road / GAF Trajectory Diffusion
 
 Map-, OD- and participant-class-conditioned synthesis of complete timestamped traffic journeys. The main learned motion component is temporal diffusion. Output follows `time,id,x,y,type`.
