@@ -85,10 +85,11 @@ def train():
     world=int(os.environ['WORLD_SIZE'])
     torch.cuda.set_device(rank)
     torch.distributed.init_process_group('nccl')
-    torch.manual_seed(42)
+    train_seed=int(os.environ.get('PORTO_TRAIN_SEED', '42'))
+    torch.manual_seed(train_seed)
     fast='--large-microbatch' in sys.argv
     net=DistributedDataParallel(model(),device_ids=[rank],find_unused_parameters=not fast)
-    torch.manual_seed(42+rank)
+    torch.manual_seed(train_seed+rank)
     data=np.load('prepared.npz')
     keep=data['split']<8
     x=torch.tensor(((data['xy'][keep]-data['mean'])/data['std']).astype('f')).cuda().transpose(1,2)
@@ -117,7 +118,7 @@ def train():
     for epoch in range(begin,epochs+1):
         lr=optim.param_groups[0]['lr']
         norms=[]
-        gen=torch.Generator().manual_seed(42+epoch)
+        gen=torch.Generator().manual_seed(train_seed+epoch)
         order=torch.randperm(len(x),generator=gen)
         loss_total=0.
         for group in order.split(1024):
@@ -147,7 +148,7 @@ def train():
             states=[None]*world
             torch.distributed.all_gather_object(states,torch.cuda.get_rng_state())
         if rank==0:
-            log=dict(epoch=epoch,rank0_mean_noise_loss=loss_total/(len(order)//world),elapsed_s=time.monotonic()-start)
+            log=dict(epoch=epoch,train_seed=train_seed,rank0_mean_noise_loss=loss_total/(len(order)//world),elapsed_s=time.monotonic()-start)
             if not np.isfinite(log['rank0_mean_noise_loss']):
                 raise FloatingPointError(log)
             if stable:
@@ -204,6 +205,8 @@ def score():
                 t=torch.full((len(z),),step,device='cuda')
                 z=p_xt(z,net(z,t,batch),t,torch.full_like(t,max(-1,step-5)),beta,0.)
             generated.extend(z.transpose(1,2).cpu().numpy()*norm_std+norm_mean)
+    if '--save-draws' in sys.argv:
+        np.savez('draws.npz', ids=ids, xy=np.asarray(generated))
     lo,hi=data['lo'],data['hi']
     ref=[delta[ends[i]:ends[i+1]].cumsum(0)*1e-6 for i in ids]
     synth=[resample_trajectory(g,int(sizes[i])) for i,g in zip(ids,generated)]
