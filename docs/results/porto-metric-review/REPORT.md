@@ -8,6 +8,8 @@ Each row uses 3,000 conditional requests. Both model arms use identical observed
 | 42-long-on-mixed | 0.02719 | 0.40879 | 0.04955 | 0.70 | 1.349 | 4.08 / 5.62 |
 | 42-mixed-on-long | 0.02886 | 0.40086 | 0.00352 | 0.75 | 3.756 | 13.96 / 12.86 |
 | 42-mixed-on-mixed | 0.01680 | 0.34243 | 0.00179 | 0.80 | 0.442 | 4.08 / 3.88 |
+| 43-mixed-on-long | 0.02417 | 0.39680 | 0.00226 | 0.80 | 11.987 | 13.96 / 12.92 |
+| 43-mixed-on-mixed | 0.01644 | 0.34524 | 0.00091 | 0.75 | 0.436 | 4.08 / 3.93 |
 
 ## Benchmark scores under the historical per-arm grids
 
@@ -16,6 +18,7 @@ Each row uses 3,000 conditional requests. Both model arms use identical observed
 | Published Table 5 | .0087 | .0132 | .0242 | .847 |
 | 42-long-on-long | 0.01357 | 0.00594 | 0.00635 | 0.75 |
 | 42-mixed-on-mixed | 0.01416 | 0.00202 | 0.00179 | 0.45 |
+| 43-mixed-on-mixed | 0.00919 | 0.00195 | 0.00091 | 0.55 |
 
 The local historical grids and bins come from each training arm. The shared city-core table above holds their physical scale fixed. The exact published boundaries, bins, n, and Porto sample selection have not been identified.
 
@@ -29,6 +32,8 @@ Twenty disjoint random half-splits of the 3,000 real trips, 1,500 per group. Ent
 | 42-long-on-mixed | 0.90 | 0.70 | 0.318 | 1.341 |
 | 42-mixed-on-long | 0.85 | 0.75 | 1.370 | 3.827 |
 | 42-mixed-on-mixed | 0.90 | 0.80 | 0.318 | 0.472 |
+| 43-mixed-on-long | 0.85 | 0.75 | 1.370 | 11.904 |
+| 43-mixed-on-mixed | 0.90 | 0.75 | 0.318 | 0.462 |
 
 ## Interpretation
 
@@ -45,3 +50,14 @@ The heatmaps use the mixed-training core, longitude and latitude axes, and one c
 ![Porto lengths](porto-length.png)
 
 See [measurement protocol and sources](PROTOCOL.md) and the per-arm aggregate JSON records for full-grid scores, overflow, and split quantiles.
+
+## Independent training repeat
+
+Mixed training uses the same data, budget and 512 validation cases with fresh initialization, minibatch order and training noise. Sampling noise and requests are fixed. The two seeds measure sensitivity to training randomness.
+
+| Test population | Core hotspot F1, seed 42 → 43 | Length W1 (km), seed 42 → 43 | Length JS, seed 42 → 43 |
+|---|---:|---:|---:|
+| mixed | 0.80 → 0.75 | 0.442 → 0.436 | 0.00179 → 0.00091 |
+| long | 0.75 → 0.80 | 3.756 → 11.987 | 0.00352 → 0.00226 |
+
+On long requests at seed 43 the observed and generated 99th-percentile lengths are 164.6 and 387.4 km, with maxima of 613.7 and 8927.1 km. The final length bin groups all sufficiently long journeys. W1 retains the size of tail errors. Both seeds support similar typical mixed-population mileage. Rare long-request failures limit use on that population.

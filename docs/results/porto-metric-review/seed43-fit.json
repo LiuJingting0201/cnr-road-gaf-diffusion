@@ -1,0 +1,7 @@
+{
+  "training_seed": 43,
+  "epochs": 200,
+  "elapsed_seconds": 1771.6469317674637,
+  "best_epoch": 198,
+  "best_validation_noise_mse": 0.023678401485085487
+}

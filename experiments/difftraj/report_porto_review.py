@@ -40,4 +40,14 @@ lines += ['', '## Interpretation', '',
           '', 'The heatmaps use the mixed-training core, longitude and latitude axes, and one colour scale across all panels. Length curves interpolate empirical percentiles, with the horizontal display limited to the central distribution. Full-distribution scores include the tails.', '',
           '![Porto density](porto-density.png)', '', '![Porto lengths](porto-length.png)', '',
           'See [measurement protocol and sources](PROTOCOL.md) and the per-arm aggregate JSON records for full-grid scores, overflow, and split quantiles.']
+if '43-mixed-on-mixed' in records:
+    lines.extend(['', '## Independent training repeat', '',
+                  'Mixed training uses the same data, budget and 512 validation cases with fresh initialization, minibatch order and training noise. Sampling noise and requests are fixed. The two seeds measure sensitivity to training randomness.', '',
+                  '| Test population | Core hotspot F1, seed 42 → 43 | Length W1 (km), seed 42 → 43 | Length JS, seed 42 → 43 |',
+                  '|---|---:|---:|---:|'])
+    for cohort in ('mixed','long'):
+        a,b = [records[f'{seed}-mixed-on-{cohort}']['grids']['core']['all'] for seed in (42,43)]
+        lines.append(f"| {cohort} | {a['pattern']:.2f} → {b['pattern']:.2f} | {a['length_w1_km']:.3f} → {b['length_w1_km']:.3f} | {a['length']:.5f} → {b['length']:.5f} |")
+    tails=records['43-mixed-on-long']['plot']['km_quantiles']
+    lines += ['',f'On long requests at seed 43 the observed and generated 99th-percentile lengths are {tails[0][99]:.1f} and {tails[1][99]:.1f} km, with maxima of {tails[0][-1]:.1f} and {tails[1][-1]:.1f} km. The final length bin groups all sufficiently long journeys. W1 retains the size of tail errors. Both seeds support similar typical mixed-population mileage. Rare long-request failures limit use on that population.']
 (out/'REPORT.md').write_text('\n'.join(lines)+'\n')
