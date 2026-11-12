@@ -1,0 +1,10 @@
+{
+  "epoch": 200,
+  "requests": 3000,
+  "density_js": 0.015253586863001765,
+  "trip_js": 0.010292354803509752,
+  "length_js": 0.14404387189673146,
+  "top20_cell_f1": 0.75,
+  "generated_outside_fraction": 0.006602799341931774,
+  "core_density_js_with_overflow": 0.04235748054758543
+}
