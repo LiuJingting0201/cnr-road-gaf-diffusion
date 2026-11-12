@@ -99,7 +99,24 @@ def train():
     import time
     start=time.monotonic()
     epochs=2 if '--timing-run' in sys.argv else 200
-    for epoch in range(1,epochs+1):
+    stable='--stabilized' in sys.argv
+    begin=1
+    best=float('inf')
+    if stable:
+        from porto_validation import Validation,save
+        if rank==0: validation=Validation(data,alpha)
+        scheduler=torch.optim.lr_scheduler.CosineAnnealingLR(optim,T_max=epochs,eta_min=2e-5)
+        if '--resume' in sys.argv:
+            last=torch.load('last.pt',weights_only=True,map_location='cpu')
+            net.module.load_state_dict(last['weights'])
+            optim.load_state_dict(last['optimizer'])
+            scheduler.load_state_dict(last['scheduler'])
+            torch.cuda.set_rng_state(last['rng'][rank])
+            begin=last['epoch']+1
+            best=last['best']
+    for epoch in range(begin,epochs+1):
+        lr=optim.param_groups[0]['lr']
+        norms=[]
         gen=torch.Generator().manual_seed(42+epoch)
         order=torch.randperm(len(x),generator=gen)
         loss_total=0.
@@ -121,11 +138,26 @@ def train():
                     loss=(net(z,t,h[idx])-e).square().mean()
                     (loss*(len(idx)/len(local))).backward()
                     loss_total+=float(loss.detach())*len(idx)
+            if stable:
+                norm=torch.nn.utils.clip_grad_norm_(net.parameters(),1.,error_if_nonfinite=True)
+                norms.append(float(norm))
             optim.step()
+        if stable:
+            scheduler.step()
+            states=[None]*world
+            torch.distributed.all_gather_object(states,torch.cuda.get_rng_state())
         if rank==0:
             log=dict(epoch=epoch,rank0_mean_noise_loss=loss_total/(len(order)//world),elapsed_s=time.monotonic()-start)
             if not np.isfinite(log['rank0_mean_noise_loss']):
                 raise FloatingPointError(log)
+            if stable:
+                val=validation.measure(net.module)
+                weights=dict(weights=net.module.state_dict(),epoch=epoch,val_loss=val)
+                if val<best:
+                    best=val
+                    save(weights,'best.pt')
+                save(dict(**weights,optimizer=optim.state_dict(),scheduler=scheduler.state_dict(),rng=states,best=best),'last.pt')
+                log.update(lr=lr,grad_norm_max=max(norms),clipped_steps=sum(n>1 for n in norms),val_loss=val,best_val_loss=best)
             with open('epochs.jsonl','a') as f:
                 print(json.dumps(log),file=f)
             if epoch==1 or epoch%10==0:
@@ -149,8 +181,11 @@ def score():
     norm_mean=data['mean']
     norm_std=data['std']
     h=torch.tensor(data['h'][ids]).cuda()
-    ck=torch.load('checkpoint.pt',weights_only=True)
-    if not dev and ck['epoch']!=200:
+    best='--best' in sys.argv
+    if best and not dev and torch.load('checkpoint.pt',weights_only=True,map_location='cpu')['epoch']!=200:
+        raise ValueError('Finish the declared budget before scoring the best checkpoint')
+    ck=torch.load('best.pt' if best else 'checkpoint.pt',weights_only=True)
+    if not dev and not best and ck['epoch']!=200:
         raise ValueError('Final comparison uses the declared training budget')
     net=model().eval()
     net.load_state_dict(ck['weights'])
