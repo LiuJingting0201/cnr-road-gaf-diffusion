@@ -1,0 +1,23 @@
+{
+  "original": {
+    "n": 28,
+    "linked": 27,
+    "reasonable": 27,
+    "walk": 1,
+    "passed": 1
+  },
+  "very_fast": {
+    "n": 28,
+    "linked": 27,
+    "reasonable": 0,
+    "walk": 1,
+    "passed": 0
+  },
+  "outside": {
+    "n": 28,
+    "linked": 0,
+    "reasonable": 0,
+    "walk": 0,
+    "passed": 0
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "all": {
+    "trips": 470,
+    "intervals": 93530,
+    "n": 94000,
+    "linked": 89433,
+    "reasonable": 88959,
+    "walk": 233,
+    "pass08": 147,
+    "passed": 177,
+    "pass12": 190,
+    "projected": 90818,
+    "projected_within50": 90764,
+    "matched_offset_p50_p95": [
+      7.1184325,
+      34.944762499999996
+    ],
+    "errors": {
+      "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 1
+    }
+  },
+  "classes": {
+    "bike": {
+      "trips": 234,
+      "intervals": 46566,
+      "n": 46800,
+      "linked": 44408,
+      "reasonable": 43964,
+      "walk": 102,
+      "pass08": 32,
+      "passed": 56,
+      "pass12": 66,
+      "projected": 45207,
+      "projected_within50": 45168,
+      "matched_offset_p50_p95": [
+        9.152974,
+        37.85417629999996
+      ],
+      "errors": {}
+    },
+    "bus": {
+      "trips": 141,
+      "intervals": 28059,
+      "n": 28200,
+      "linked": 27052,
+      "reasonable": 27033,
+      "walk": 81,
+      "pass08": 75,
+      "passed": 76,
+      "pass12": 78,
+      "projected": 27396,
+      "projected_within50": 27384,
+      "matched_offset_p50_p95": [
+        6.3845665,
+        30.65664725
+      ],
+      "errors": {}
+    },
+    "car": {
+      "trips": 40,
+      "intervals": 7960,
+      "n": 8000,
+      "linked": 7191,
+      "reasonable": 7188,
+      "walk": 12,
+      "pass08": 12,
+      "passed": 12,
+      "pass12": 12,
+      "projected": 7345,
+      "projected_within50": 7344,
+      "matched_offset_p50_p95": [
+        5.047362,
+        27.714891399999992
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 1
+      }
+    },
+    "taxi": {
+      "trips": 55,
+      "intervals": 10945,
+      "n": 11000,
+      "linked": 10782,
+      "reasonable": 10774,
+      "walk": 38,
+      "pass08": 28,
+      "passed": 33,
+      "pass12": 34,
+      "projected": 10870,
+      "projected_within50": 10868,
+      "matched_offset_p50_p95": [
+        5.088598,
+        26.11931214999999
+      ],
+      "errors": {}
+    }
+  }
+}

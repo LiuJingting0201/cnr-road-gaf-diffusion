@@ -1,0 +1,100 @@
+{
+  "all": {
+    "trips": 470,
+    "intervals": 93530,
+    "n": 94000,
+    "linked": 32231,
+    "reasonable": 9644,
+    "walk": 0,
+    "pass08": 0,
+    "passed": 0,
+    "pass12": 0,
+    "projected": 54330,
+    "projected_within50": 54324,
+    "matched_offset_p50_p95": [
+      21.903069000000002,
+      46.77196124999999
+    ],
+    "errors": {
+      "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 10
+    }
+  },
+  "classes": {
+    "bike": {
+      "trips": 234,
+      "intervals": 46566,
+      "n": 46800,
+      "linked": 18113,
+      "reasonable": 4581,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 28733,
+      "projected_within50": 28730,
+      "matched_offset_p50_p95": [
+        21.631607,
+        46.6975846
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 1
+      }
+    },
+    "bus": {
+      "trips": 141,
+      "intervals": 28059,
+      "n": 28200,
+      "linked": 7355,
+      "reasonable": 2444,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 13881,
+      "projected_within50": 13880,
+      "matched_offset_p50_p95": [
+        22.310573,
+        46.800185
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 9
+      }
+    },
+    "car": {
+      "trips": 40,
+      "intervals": 7960,
+      "n": 8000,
+      "linked": 2567,
+      "reasonable": 1166,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 4553,
+      "projected_within50": 4551,
+      "matched_offset_p50_p95": [
+        22.516174,
+        46.717526799999995
+      ],
+      "errors": {}
+    },
+    "taxi": {
+      "trips": 55,
+      "intervals": 10945,
+      "n": 11000,
+      "linked": 4196,
+      "reasonable": 1453,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 7163,
+      "projected_within50": 7163,
+      "matched_offset_p50_p95": [
+        21.988208,
+        46.9605752
+      ],
+      "errors": {}
+    }
+  }
+}

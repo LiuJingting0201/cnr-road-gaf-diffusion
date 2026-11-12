@@ -1,0 +1,90 @@
+{
+  "Beijing-B-42": {
+    "points_outside": 925,
+    "trips_outside": 6,
+    "in_bounds": 464,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 0,
+    "paired_worsened_intervals_trips": 0
+  },
+  "Beijing-B-43": {
+    "points_outside": 2334,
+    "trips_outside": 15,
+    "in_bounds": 455,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 0,
+    "paired_worsened_intervals_trips": 0
+  },
+  "Beijing-C-42": {
+    "points_outside": 968,
+    "trips_outside": 6,
+    "in_bounds": 464,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 215,
+    "paired_worsened_intervals_trips": 244
+  },
+  "Beijing-C-43": {
+    "points_outside": 1971,
+    "trips_outside": 13,
+    "in_bounds": 457,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 100,
+    "paired_worsened_intervals_trips": 338
+  },
+  "Beijing-V-42": {
+    "points_outside": 2484,
+    "trips_outside": 14,
+    "in_bounds": 456,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 207,
+    "paired_worsened_intervals_trips": 253
+  },
+  "Beijing-V-43": {
+    "points_outside": 3066,
+    "trips_outside": 17,
+    "in_bounds": 453,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 396,
+    "paired_worsened_intervals_trips": 65
+  },
+  "Beijing-VC-42": {
+    "points_outside": 5795,
+    "trips_outside": 36,
+    "in_bounds": 434,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 109,
+    "paired_worsened_intervals_trips": 355
+  },
+  "Beijing-VC-43": {
+    "points_outside": 8768,
+    "trips_outside": 55,
+    "in_bounds": 415,
+    "in_bounds_pass": 0,
+    "paired_improved_intervals_trips": 91,
+    "paired_worsened_intervals_trips": 359
+  },
+  "Beijing-real": {
+    "points_outside": 218,
+    "trips_outside": 4,
+    "in_bounds": 466,
+    "in_bounds_pass": 177
+  },
+  "Porto-gen-42": {
+    "points_outside": 2286,
+    "trips_outside": 6,
+    "in_bounds": 2994,
+    "in_bounds_pass": 156
+  },
+  "Porto-gen-43": {
+    "points_outside": 1580,
+    "trips_outside": 3,
+    "in_bounds": 2997,
+    "in_bounds_pass": 131
+  },
+  "Porto-real": {
+    "points_outside": 2208,
+    "trips_outside": 6,
+    "in_bounds": 2994,
+    "in_bounds_pass": 2233
+  }
+}

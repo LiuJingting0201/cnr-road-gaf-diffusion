@@ -1,0 +1,102 @@
+{
+  "all": {
+    "trips": 470,
+    "intervals": 93530,
+    "n": 94000,
+    "linked": 52264,
+    "reasonable": 39322,
+    "walk": 0,
+    "pass08": 0,
+    "passed": 0,
+    "pass12": 0,
+    "projected": 65334,
+    "projected_within50": 65252,
+    "matched_offset_p50_p95": [
+      22.678489,
+      46.69541875
+    ],
+    "errors": {
+      "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 7
+    }
+  },
+  "classes": {
+    "bike": {
+      "trips": 234,
+      "intervals": 46566,
+      "n": 46800,
+      "linked": 28989,
+      "reasonable": 20679,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 34546,
+      "projected_within50": 34494,
+      "matched_offset_p50_p95": [
+        22.652517500000002,
+        46.56566525
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 4
+      }
+    },
+    "bus": {
+      "trips": 141,
+      "intervals": 28059,
+      "n": 28200,
+      "linked": 13874,
+      "reasonable": 10561,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 18031,
+      "projected_within50": 18007,
+      "matched_offset_p50_p95": [
+        22.846577,
+        46.882134
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 2
+      }
+    },
+    "car": {
+      "trips": 40,
+      "intervals": 7960,
+      "n": 8000,
+      "linked": 3493,
+      "reasonable": 3091,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 4872,
+      "projected_within50": 4868,
+      "matched_offset_p50_p95": [
+        22.809248,
+        46.7550458
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 1
+      }
+    },
+    "taxi": {
+      "trips": 55,
+      "intervals": 10945,
+      "n": 11000,
+      "linked": 5908,
+      "reasonable": 4991,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 7885,
+      "projected_within50": 7883,
+      "matched_offset_p50_p95": [
+        22.303059,
+        46.84032679999999
+      ],
+      "errors": {}
+    }
+  }
+}

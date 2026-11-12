@@ -1,0 +1,44 @@
+{
+  "all": {
+    "trips": 3000,
+    "intervals": 148454,
+    "n": 151454,
+    "linked": 108469,
+    "reasonable": 102441,
+    "walk": 273,
+    "pass08": 112,
+    "passed": 156,
+    "pass12": 187,
+    "projected": 127644,
+    "projected_within50": 127574,
+    "matched_offset_p50_p95": [
+      21.1967855,
+      46.32354085
+    ],
+    "errors": {
+      "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 4
+    }
+  },
+  "classes": {
+    "taxi": {
+      "trips": 3000,
+      "intervals": 148454,
+      "n": 151454,
+      "linked": 108469,
+      "reasonable": 102441,
+      "walk": 273,
+      "pass08": 112,
+      "passed": 156,
+      "pass12": 187,
+      "projected": 127644,
+      "projected_within50": 127574,
+      "matched_offset_p50_p95": [
+        21.1967855,
+        46.32354085
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 4
+      }
+    }
+  }
+}
