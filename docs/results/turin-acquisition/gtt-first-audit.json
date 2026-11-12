@@ -1,0 +1,49 @@
+{
+  "feed": "20261112",
+  "service_dates": [
+    "20261112"
+  ],
+  "counts": {
+    "points": 91781,
+    "groups": 2525,
+    "matched_groups": 2525,
+    "break_gap": 1333,
+    "class_consistent": 2322,
+    "class_conflict": 2,
+    "break_speed": 27
+  },
+  "modes": {
+    "bus": {
+      "matched_groups": 1980,
+      "segments": 1801,
+      "points": 67573,
+      "terminal_covered": 711,
+      "vehicles": 430,
+      "routes": 82
+    },
+    "tram": {
+      "matched_groups": 545,
+      "segments": 523,
+      "points": 18823,
+      "terminal_covered": 220,
+      "vehicles": 118,
+      "routes": 8
+    }
+  },
+  "reported_speed_points": 0,
+  "interfix_seconds_p10_50_90": [
+    55,
+    63,
+    76
+  ],
+  "segment_duration_seconds_p10_50_90": [
+    910,
+    2191,
+    3876
+  ],
+  "interval_speed_mps_p10_50_90": [
+    0.05,
+    3.53,
+    6.95
+  ]
+}
