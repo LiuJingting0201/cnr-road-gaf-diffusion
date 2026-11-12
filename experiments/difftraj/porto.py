@@ -183,6 +183,19 @@ def score():
     js=lambda x,y:float(jensenshannon(x,y)**2)
     top=lambda hist:set(np.argsort(-hist,kind='stable')[:20])
     result=dict(epoch=ck['epoch'],requests=len(ids),density_js=js(a[0],b[0]),trip_js=js(a[1],b[1]),length_js=js(lh(a[2]),lh(b[2])),top20_cell_f1=len(top(a[0])&top(b[0]))/20,generated_outside_fraction=float(np.any((np.concatenate(synth)<lo)|(np.concatenate(synth)>hi),axis=1).mean()))
+    if '--cutoff-comparison' in sys.argv:
+        from scipy.stats import wasserstein_distance
+        shared=np.load('../shared-bins.npz')
+        for label in shared.files:
+            edges=shared[label]
+            hist=lambda x:np.bincount(np.digitize(x,edges),minlength=len(edges)+1)
+            result['length_js_'+label+'_bins']=js(hist(a[2]),hist(b[2]))
+        moving=a[2]>0
+        result['reference_median_m']=float(np.median(a[2]))
+        result['generated_median_m']=float(np.median(b[2]))
+        result['median_length_ratio_moving']=float(np.median(b[2][moving]/a[2][moving]))
+        result['length_w1_m']=float(wasserstein_distance(a[2],b[2]))
+        result['mean_signed_m']=float(np.mean(b[2]-a[2]))
     result['model']='unconditional' if '--unconditional' in sys.argv else 'conditional'
     # Issue 15 adds a pseudocount to each raw count before normalization.
     result['density_js_issue15']=js(a[0]+1e-6,b[0]+1e-6)
