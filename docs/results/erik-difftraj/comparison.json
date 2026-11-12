@@ -1,0 +1,30 @@
+[
+  {
+    "epoch": 200,
+    "requests": 3000,
+    "density_js": 0.01593750922655452,
+    "trip_js": 0.0691318630058467,
+    "length_js": 0.02335971861398116,
+    "top20_cell_f1": 0.85,
+    "generated_outside_fraction": 0.017234508087833087,
+    "model": "conditional",
+    "density_js_issue15": 0.015937508236117937,
+    "trip_js_pseudocount_sensitivity": 0.06912956212981214,
+    "request_index_sha256": "968657226aec0b91e7e50ca5ececa510c51f6d49362602e2083781542aadc412",
+    "core_density_js_with_overflow": 0.09984655043367277
+  },
+  {
+    "epoch": 200,
+    "requests": 3000,
+    "density_js": 0.13085423224706538,
+    "trip_js": 0.2778487176255699,
+    "length_js": 0.11860724165389251,
+    "top20_cell_f1": 0.6,
+    "generated_outside_fraction": 0.019809330311791825,
+    "model": "unconditional",
+    "density_js_issue15": 0.1308542293418204,
+    "trip_js_pseudocount_sensitivity": 0.27784050714432845,
+    "request_index_sha256": "968657226aec0b91e7e50ca5ececa510c51f6d49362602e2083781542aadc412",
+    "core_density_js_with_overflow": 0.1376006526699763
+  }
+]
