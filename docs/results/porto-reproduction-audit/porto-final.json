@@ -1,0 +1,14 @@
+{
+  "epoch": 200,
+  "requests": 3000,
+  "density_js": 0.015253586863001765,
+  "trip_js": 0.010292354803509752,
+  "length_js": 0.14404387189673146,
+  "top20_cell_f1": 0.75,
+  "generated_outside_fraction": 0.006602799341931774,
+  "model": "conditional",
+  "density_js_issue15": 0.015253586487868117,
+  "trip_js_pseudocount_sensitivity": 0.010292004918254147,
+  "request_index_sha256": "a05bb3bed293112eb6368895a98430838a06b805894c3ac291b066df8ae6e223",
+  "core_density_js_with_overflow": 0.04235748054758543
+}

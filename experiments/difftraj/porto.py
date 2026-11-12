@@ -86,7 +86,8 @@ def train():
     torch.cuda.set_device(rank)
     torch.distributed.init_process_group('nccl')
     torch.manual_seed(42)
-    net=DistributedDataParallel(model(),device_ids=[rank],find_unused_parameters=True)
+    fast='--large-microbatch' in sys.argv
+    net=DistributedDataParallel(model(),device_ids=[rank],find_unused_parameters=not fast)
     torch.manual_seed(42+rank)
     data=np.load('prepared.npz')
     keep=data['split']<8
@@ -97,7 +98,8 @@ def train():
     from contextlib import nullcontext
     import time
     start=time.monotonic()
-    for epoch in range(1,201):
+    epochs=2 if '--timing-run' in sys.argv else 200
+    for epoch in range(1,epochs+1):
         gen=torch.Generator().manual_seed(42+epoch)
         order=torch.randperm(len(x),generator=gen)
         loss_total=0.
@@ -107,7 +109,7 @@ def train():
             if n==0:
                 continue
             local=group[:n].reshape(world,-1)[rank].cuda()
-            opt_batches=local.split(32)
+            opt_batches=local.split(256 if fast else 32)
             optim.zero_grad()
             for j,idx in enumerate(opt_batches):
                 with net.no_sync() if j+1<len(opt_batches) else nullcontext():
@@ -152,11 +154,16 @@ def score():
         raise ValueError('Final comparison uses the declared training budget')
     net=model().eval()
     net.load_state_dict(ck['weights'])
+    if '--mode-check' in sys.argv:
+        if not dev: raise ValueError('Use development requests for the sampling-mode diagnostic')
+        net.train('--notebook-mode' in sys.argv)
     beta=schedule()
     torch.manual_seed(42)
     generated=[]
     with torch.no_grad():
-        for batch in h.split(32):
+        for batch_number,batch in enumerate(h.split(32)):
+            if '--mode-check' in sys.argv:
+                torch.manual_seed(42+batch_number)
             z=torch.randn(len(batch),2,200,device='cuda')
             for step in reversed(range(0,500,5)):
                 t=torch.full((len(z),),step,device='cuda')
@@ -191,6 +198,12 @@ def score():
         c[np.any((points<low)|(points>high),axis=1)]=256
         return np.bincount(c,minlength=257)
     result['core_density_js_with_overflow']=js(core_counts(ref),core_counts(synth))
+    if '--audit-lengths' in sys.argv:
+        from porto_audit_lengths import audit
+        dev_ids=np.flatnonzero(data['split']==8)
+        dev_lengths=[arc_length(delta[ends[i]:ends[i+1]].cumsum(0)*1e-6) for i in dev_ids]
+        report=audit(ref,synth,data['xy'][ids],generated,np.asarray(lengths),data['h'][ids],arc_length,dev_lengths)
+        Path('length-audit.json').write_text(json.dumps(report,indent=2))
     Path('development.json' if dev else ('geolife-final.json' if 'duration' in raw.files else 'porto-final.json')).write_text(json.dumps(result,indent=2))
     print(result)
 

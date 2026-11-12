@@ -1,0 +1,5 @@
+{"micro": 32, "unused": true, "median_s": 0.492559514939785, "samples_per_s": 2078.9365933275762, "peak_GiB": 1.398801326751709}
+{"micro": 32, "unused": false, "median_s": 0.4573539234697819, "samples_per_s": 2238.966252287234, "peak_GiB": 1.4015326499938965}
+{"micro": 128, "unused": false, "median_s": 0.18358605355024338, "samples_per_s": 5577.765740902286, "peak_GiB": 4.460265159606934}
+{"micro": 256, "unused": false, "median_s": 0.17624691501259804, "samples_per_s": 5810.03077374038, "peak_GiB": 8.481342315673828}
+{"micro": 32, "unused": true, "median_s": 0.46985790878534317, "samples_per_s": 2179.3822788834213, "peak_GiB": 1.400674819946289}

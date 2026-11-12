@@ -651,3 +651,5 @@ G40正式训练全部闭合：16个5000步运动拟合、12个学习先验及4�
 Porto 已在隔离目录完成输入SHA校验、拆分和4卡DDP训练启动。前两轮完成并保存首轮权重；首轮另对256个开发请求完成采样和全部指标计算，评价程序可用。正式200轮后自动取3000个留出请求计算最终指标。实测阶段记录 porto-training-progress.json 和 porto-dev-first.json。首轮开发结果不作正式同文献比较。
 
 2026-11-12 Torino acquisition. Collected five public OpenStreetMap GPS API pages for a Turin centre bounding box. Coverage in results/turin-acquisition/coverage.json. Converted continuous timestamped runs to a local CSV with unknown mode. Runs are clipped by the query area. Separate private server collector checks GTT vehicle positions once per minute for 24 hours, recording upstream feed timestamps, missing entities and deduplicated observations. First valid server response contained zero vehicles. A 2017 historical GTT campaign is described by UrbanGeoBigData, without a verified public raw download.
+
+Porto 原权重 3000 请求复算与原结果一致。距离条件中位误差 0.14 m；生成/观测长度中位比 1.63，固定200点时为2.17。10/20/40分箱、独立观测参照、开发集采样模式和多尺度路径核查见 results/porto-reproduction-audit/REPORT.md。四卡全局 batch 1024 下，每卡32改为256并关闭未用参数遍历，短跑吞吐约2.7倍，两个真实训练轮共17.15s。优化路径独立启用，未用短跑指标替代复现结果。
