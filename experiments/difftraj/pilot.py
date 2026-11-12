@@ -70,6 +70,8 @@ with torch.no_grad():
     torch.manual_seed(173)
     valid=torch.where(~train)[0]
     i=valid[torch.randperm(len(valid),device='cuda')[:128]]
+    if '--all-validation' in sys.argv:
+        i=valid
     extra='--remaining' in sys.argv
     if extra:
         # Exclude the original scored requests and the 32 reconstruction-diagnostic requests.

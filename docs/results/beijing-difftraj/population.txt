@@ -1,0 +1,24 @@
+{
+  "bike": {
+    "segments": 1486,
+    "people": 21
+  },
+  "bus": {
+    "segments": 1959,
+    "people": 26
+  },
+  "car": {
+    "segments": 699,
+    "people": 20
+  },
+  "motorcycle": {
+    "segments": 0,
+    "people": 0
+  },
+  "taxi": {
+    "segments": 338,
+    "people": 15
+  }
+}
+{'bike': 1252, 'bus': 1818, 'car': 659, 'taxi': 283} 24
+{'bike': 234, 'bus': 141, 'car': 40, 'taxi': 55} 10

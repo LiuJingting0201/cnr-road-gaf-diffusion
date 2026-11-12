@@ -1,0 +1,5 @@
+# Beijing GeoLife vehicle-mode experiment
+
+Source: Microsoft GeoLife 1.3, recorded trajectories with reported mode intervals inside the Beijing study bounds. We resample each eligible segment onto 200 elapsed-time positions. The speed target uses distance integrated along the original GPS polyline over each new interval. Local east and north coordinates are in metres. Speed is derived from GPS positions and timestamps.
+
+The fixed SHA-256 partition of participant paths assigns 24 people and 4,012 segments to training, and 10 people and 470 segments to validation. Training statistics determine standardization and spatial grids. Each run evaluates all 470 held-out segments using the same trip descriptors and sampling noise. No motorcycle segment meets eligibility criteria. The initial four arms use identical settings to the SUMO extension pilot, with 8,000 updates at batch size 16. The second paired training seed follows on each GPU. Assess speed W1 jointly with length W1, spatial density JS, and per-class support.
