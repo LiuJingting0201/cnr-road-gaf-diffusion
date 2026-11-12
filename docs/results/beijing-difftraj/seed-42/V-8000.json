@@ -1,0 +1,29 @@
+{
+  "arm": "V",
+  "training_seed": 42,
+  "updates": 8000,
+  "train": 4012,
+  "validation": 470,
+  "evaluated": 470,
+  "speed_w1_mps": 24.113173347915126,
+  "length_w1_m": 14699.902046414634,
+  "classes": {
+    "bike": 25.00487920956216,
+    "bus": 23.943515662914926,
+    "car": 24.80312099788467,
+    "taxi": 20.252530729021476
+  },
+  "density_js": 0.14783902811999752,
+  "od_js": 0.29939549286022477,
+  "length_js": 0.346492044016394,
+  "outside_fraction": 0.012893617021276596,
+  "mean_class_speed_w1": 23.501011649845804,
+  "reference_speed_median_mps": 3.227952480316162,
+  "generated_speed_median_mps": 14.169134140014648,
+  "per_class_counts": {
+    "bike": 234,
+    "bus": 141,
+    "car": 40,
+    "taxi": 55
+  }
+}
