@@ -1,0 +1,9 @@
+# Diagnose the Porto large-microbatch training failure
+
+The archived small-microbatch checkpoint has length JS 0.1442 on the paired long cohort. The 256-per-card run has 0.5563. Both use the same 46,470 training trips and 200 epochs. Ranking the cutoff arms alone cannot attribute this failure to the 120-point rule.
+
+Epoch-level logs show 0.01037 at 145, 0.01246 at 146, 0.70663 at 147 and 0.97472 at 148 (rank-0 training noise MSE). The prior saving policy overwrote intermediate weights and did not save AdamW or per-rank RNG states. The triggering update in the original run cannot be recovered exactly.
+
+The published implementation samples antithetic noise levels across a whole batch on one GPU. The local DDP code pairs locally per microbatch, so changing per-card microbatch from 32 to 256 changes time/noise and dropout draws and reduction order at a fixed global batch. The upstream trainer updates an EMA helper but saves raw model weights. Both local comparisons use raw weights. Sampling-mode sensitivity, length bin sensitivity, unknown Porto selection, local split and distance diagnostics are described in the preceding audit. These differences have distinct evidence and should not be conflated.
+
+The instrumented replay reruns one fast fit with the same split/seed and records every update's synchronized pre-clipping gradient norm, maximum per-rank loss, prediction magnitude and maximum input/continuous-header magnitudes. Branch at epoch 140 with weights, optimizer and four CUDA RNG states. Compare an unclipped trajectory and an explicitly modified global norm-1 branch through epoch 165 using the same epoch permutations. Save intermediate weights around epochs 145–150. Rank-0 epoch averages from the original run and per-update worst-rank losses from the replay are distinct summaries. If the failure does not recur, the replay cannot establish the cause of the prior failure.
