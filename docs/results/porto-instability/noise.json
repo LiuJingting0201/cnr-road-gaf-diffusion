@@ -1,0 +1,54 @@
+{
+  "../difftraj-nov11/porto/checkpoint.pt": {
+    "0": {
+      "noise_mse": 0.26385733485221863,
+      "clean_rmse_standardized": 0.005137387663125992,
+      "mean_pred": 0.017887141555547714,
+      "sd_pred": 0.8420917391777039
+    },
+    "50": {
+      "noise_mse": 0.034864392131567,
+      "clean_rmse_standardized": 0.07037485390901566,
+      "mean_pred": 0.006843737792223692,
+      "sd_pred": 0.9599370360374451
+    },
+    "250": {
+      "noise_mse": 0.003955840598791838,
+      "clean_rmse_standardized": 0.3034346401691437,
+      "mean_pred": 0.00017092257621698081,
+      "sd_pred": 0.9853367209434509
+    },
+    "495": {
+      "noise_mse": 0.00020347304234746844,
+      "clean_rmse_standardized": 7.518855094909668,
+      "mean_pred": 0.00842418521642685,
+      "sd_pred": 0.988922655582428
+    }
+  },
+  "../porto-cutoff-v1/long/checkpoint.pt": {
+    "0": {
+      "noise_mse": 0.40402811765670776,
+      "clean_rmse_standardized": 0.006357165984809399,
+      "mean_pred": -0.0056393938139081,
+      "sd_pred": 0.7965717911720276
+    },
+    "50": {
+      "noise_mse": 0.04859163984656334,
+      "clean_rmse_standardized": 0.08308205753564835,
+      "mean_pred": 0.010921738110482693,
+      "sd_pred": 0.9625061750411987
+    },
+    "250": {
+      "noise_mse": 0.008421111851930618,
+      "clean_rmse_standardized": 0.4427213668823242,
+      "mean_pred": 0.00938428658992052,
+      "sd_pred": 0.9857888221740723
+    },
+    "495": {
+      "noise_mse": 0.004355671349912882,
+      "clean_rmse_standardized": 34.7877082824707,
+      "mean_pred": 0.006440542638301849,
+      "sd_pred": 0.9879872798919678
+    }
+  }
+}

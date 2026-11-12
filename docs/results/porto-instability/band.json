@@ -1,0 +1,22 @@
+{
+  "high0-low0": {
+    "median_length_ratio": 1.506813484559609,
+    "median_generated_km": 23.80008172097115,
+    "mean_excess_km": 11.108086946720839
+  },
+  "high1-low1": {
+    "median_length_ratio": 86.4956931278352,
+    "median_generated_km": 1387.3982710310565,
+    "mean_excess_km": 2299.45677603834
+  },
+  "high0-low1": {
+    "median_length_ratio": 5.571431863026079,
+    "median_generated_km": 87.25782675405802,
+    "mean_excess_km": 83.49699886346751
+  },
+  "high1-low0": {
+    "median_length_ratio": 30.440206267488012,
+    "median_generated_km": 531.8066250098284,
+    "mean_excess_km": 1348.229541610335
+  }
+}
