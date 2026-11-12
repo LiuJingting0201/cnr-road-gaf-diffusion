@@ -30,10 +30,15 @@ torch.nn.init.zeros_(emb.weight)
 optim=torch.optim.AdamW([*net.parameters(),*emb.parameters()],lr=2e-4)
 beta=torch.linspace(.0001,.05,500,device='cuda')
 abar=(1-beta).cumprod(0)
+condition_y=y
+if '--target-class' in sys.argv:
+    assert '--evaluate' in sys.argv and '--save-draws' in sys.argv
+    target=sys.argv[sys.argv.index('--target-class')+1]
+    condition_y=torch.full_like(y,list(d['classes']).index(target))
 def predict(z,t,i):
     cond=net.guide_emb(h[i])
     if 'C' in arm:
-        cond=cond+emb(y[i])
+        cond=cond+emb(condition_y[i])
     a=net.unet(z,t,cond)
     b=net.unet(z,t,net.place_emb(torch.zeros_like(h[i])))
     return a+3*(a-b)
