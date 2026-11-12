@@ -1,0 +1,43 @@
+{
+  "original": {
+    "total": 4482,
+    "train": 4012,
+    "validation": 470,
+    "people": 34,
+    "files": 2374,
+    "classes": {
+      "bike": 1486,
+      "bus": 1959,
+      "car": 699,
+      "taxi": 338
+    }
+  },
+  "added": {
+    "total": 782,
+    "train": 717,
+    "validation": 65,
+    "people": 37,
+    "files": 589,
+    "classes": {
+      "bike": 242,
+      "bus": 357,
+      "car": 130,
+      "taxi": 53
+    }
+  },
+  "expanded": {
+    "total": 5264,
+    "train": 4729,
+    "validation": 535,
+    "people": 44,
+    "files": 2543,
+    "classes": {
+      "bike": 1728,
+      "bus": 2316,
+      "car": 829,
+      "taxi": 391
+    }
+  },
+  "new_source_files": 169,
+  "sha256": "931d1425ca5714b737bb3b05158488bc288e01c5000cd385af3400cc648e5bf1"
+}

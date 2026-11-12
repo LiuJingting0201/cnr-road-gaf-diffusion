@@ -19,6 +19,14 @@ d=np.load('pilot.npz')
 def tensor(key):
     return torch.from_numpy(d[key]).cuda()
 xy,v,h,dt,y,train=map(tensor,['xy','v','h','dt','y','train'])
+# A constant standardized input carries no trip-specific information.
+header_ablation=os.environ.get('GEOLIFE_HEADER','full')
+if header_ablation=='no_mean':
+    h[:,5]=0
+elif header_ablation=='no_distance_cues':
+    h[:,[1,4,5]]=0
+elif header_ablation!='full':
+    raise ValueError(header_ablation)
 mu=xy[train].mean((0,2))[None,:,None]
 sd=xy[train].std((0,2))[None,:,None]
 x=(xy-mu)/sd

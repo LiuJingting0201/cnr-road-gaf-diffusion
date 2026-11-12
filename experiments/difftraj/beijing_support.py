@@ -10,6 +10,7 @@ epoch = datetime(1899, 12, 30)
 def serial(s):
     return (datetime.strptime(s, '%Y/%m/%d %H:%M:%S') - epoch).total_seconds()
 classes = {'bus', 'bike', 'car', 'taxi', 'motorcycle'}
+minimum=int(sys.argv[3]) if len(sys.argv)>3 else 120
 records=[]
 counts = defaultdict(int)
 users = defaultdict(set)
@@ -24,7 +25,7 @@ with zipfile.ZipFile(sys.argv[1]) as z:
         for n in (name for name in names if name.startswith(parent+'/Trajectory/') and name.endswith('.plt')):
             with z.open(n) as f:
                 data = np.loadtxt(f, delimiter=',', skiprows=6, usecols=(0,1,4),ndmin=2)
-            if len(data)<120:
+            if len(data)<minimum:
                 continue
             lat,lon,t=data.T
             t=np.rint(t*86400)
@@ -33,7 +34,7 @@ with zipfile.ZipFile(sys.argv[1]) as z:
             key=np.where(valid,idx,-1)
             cuts=np.flatnonzero((np.diff(key)!=0)|(np.diff(t)>120)|(np.diff(t)<=0))+1
             for a,b in zip(np.r_[0,cuts],np.r_[cuts,len(t)]):
-                if b-a>=120 and key[a]>=0 and (mode:=intervals[key[a]][2]) in classes:
+                if b-a>=minimum and key[a]>=0 and (mode:=intervals[key[a]][2]) in classes:
                     if len(sys.argv)>2:
                         # Local east/north in metres, origin 116 E, 40 N.
                         points=np.column_stack([(lon[a:b]-116)*111195*np.cos(np.deg2rad(40)),(lat[a:b]-40)*111195])
@@ -45,14 +46,14 @@ with zipfile.ZipFile(sys.argv[1]) as z:
                             dt=times[-1]/199
                             v=np.diff(np.interp(grid,times,arc))/dt
                             h=[int((t[a]+8*3600)//300)%288,arc[-1],times[-1],len(times),arc[-1]/(len(times)-1),arc[-1]/times[-1]]
-                            records.append((xy,v,h,dt,mode,parent))
+                            records.append((xy,v,h,dt,mode,parent,n,int(a),int(b)))
                     counts[mode]+=1
                     users[mode].add(parent)
 print(json.dumps({k:{'segments':counts[k],'people':len(users[k])} for k in sorted(classes)},indent=2))
 
 if records:
     import hashlib
-    xy,v,h,dt,mode,person=map(np.asarray,zip(*records))
+    xy,v,h,dt,mode,person,source,start_row,end_row=map(np.asarray,zip(*records))
     train=np.array([int(hashlib.sha256(u.encode()).hexdigest()[:8],16)%5!=0 for u in person])
     classes,y=np.unique(mode,return_inverse=True)
     lo=xy[train].min((0,2)); hi=xy[train].max((0,2))
@@ -65,4 +66,4 @@ if records:
         assert len(np.unique(y[mask]))==len(classes)
         print(dict(zip(classes.tolist(),np.bincount(y[mask]).tolist())),len(np.unique(person[mask])))
     assert not set(person[train]) & set(person[~train])
-    np.savez_compressed(sys.argv[2],xy=xy.astype('f'),v=v.astype('f'),h=h.astype('f'),dt=dt.astype('f'),y=y,classes=classes,train=train)
+    np.savez_compressed(sys.argv[2],xy=xy.astype('f'),v=v.astype('f'),h=h.astype('f'),dt=dt.astype('f'),y=y,classes=classes,train=train,person=person,source=source,start_row=start_row,end_row=end_row)
