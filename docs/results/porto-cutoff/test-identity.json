@@ -1,0 +1,14 @@
+{
+  "long": {
+    "requests": 3000,
+    "ordered_original_traces_sha256": "5bb2da0c5db466986d85e688f5b5c3029623439d0f18f19698d2a8448ea9d821",
+    "median_original_points": 151.0,
+    "at_least_120": 3000
+  },
+  "mixed": {
+    "requests": 3000,
+    "ordered_original_traces_sha256": "512528975a513aa93e4cd4b7b3a0a977995447eb09bf621fd63932b114c37e1f",
+    "median_original_points": 43.0,
+    "at_least_120": 99
+  }
+}
