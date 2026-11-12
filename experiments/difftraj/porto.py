@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 import numpy as np
 import torch
 from torch.nn.parallel import DistributedDataParallel
-from utils.Traj_UNet import Guide_UNet
+from utils.Traj_UNet import Guide_UNet, Model
 from utils.config import args
 from utils.utils import p_xt, resample_trajectory
 
@@ -40,14 +40,15 @@ def prepare():
     xy=np.empty((len(sizes),200,2),dtype=np.float32)
     start=0
     head=np.empty((len(sizes),8),dtype=np.float32)
-    tz=ZoneInfo('Europe/Lisbon')
+    durations=raw['duration'] if 'duration' in raw.files else None
+    tz=ZoneInfo('Asia/Shanghai' if durations is not None else 'Europe/Lisbon')
     for i,n in enumerate(sizes):
         tr=delta[start:start+n].cumsum(0)*1e-6
         start+=n
         xy[i]=resample_trajectory(tr,200)
         stamp=datetime.fromtimestamp(int(stamps[i]),tz)
         length=arc_length(tr)
-        duration=(n-1)*15.
+        duration=durations[i] if durations is not None else (n-1)*15.
         head[i,:6]=[stamp.hour*12+stamp.minute//5,length,duration,n,length/(n-1),length/duration]
     # One taxi belongs to one partition throughout. All transformations use training data.
     split=np.array([int(hashlib.sha256(str(t).encode()).hexdigest()[:8],16)%10 for t in taxi])
@@ -63,7 +64,16 @@ def prepare():
 
 
 def model():
-    return Guide_UNet(SimpleNamespace(**{k:SimpleNamespace(**v) for k,v in args.items()})).cuda()
+    config=SimpleNamespace(**{k:SimpleNamespace(**v) for k,v in args.items()})
+    if '--unconditional' in sys.argv:
+        class Unconditional(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.unet=Model(config)
+            def forward(self,x,t,head):
+                return self.unet(x,t,extra_embed=None)
+        return Unconditional().cuda()
+    return Guide_UNet(config).cuda()
 
 
 def schedule():
@@ -166,6 +176,11 @@ def score():
     js=lambda x,y:float(jensenshannon(x,y)**2)
     top=lambda hist:set(np.argsort(-hist,kind='stable')[:20])
     result=dict(epoch=ck['epoch'],requests=len(ids),density_js=js(a[0],b[0]),trip_js=js(a[1],b[1]),length_js=js(lh(a[2]),lh(b[2])),top20_cell_f1=len(top(a[0])&top(b[0]))/20,generated_outside_fraction=float(np.any((np.concatenate(synth)<lo)|(np.concatenate(synth)>hi),axis=1).mean()))
+    result['model']='unconditional' if '--unconditional' in sys.argv else 'conditional'
+    # Issue 15 adds a pseudocount to each raw count before normalization.
+    result['density_js_issue15']=js(a[0]+1e-6,b[0]+1e-6)
+    result['trip_js_pseudocount_sensitivity']=js(a[1]+1e-6,b[1]+1e-6)
+    result['request_index_sha256']=hashlib.sha256(ids.astype('<i8').tobytes()).hexdigest()
     # Training-only audit found that one cell holds 92.4% of observed points
     # under full min/max bounds. Keep that primary score and report a city-core
     # sensitivity on exactly the same trajectories, including an overflow cell.
@@ -176,7 +191,7 @@ def score():
         c[np.any((points<low)|(points>high),axis=1)]=256
         return np.bincount(c,minlength=257)
     result['core_density_js_with_overflow']=js(core_counts(ref),core_counts(synth))
-    Path('development.json' if dev else 'porto-final.json').write_text(json.dumps(result,indent=2))
+    Path('development.json' if dev else ('geolife-final.json' if 'duration' in raw.files else 'porto-final.json')).write_text(json.dumps(result,indent=2))
     print(result)
 
 
