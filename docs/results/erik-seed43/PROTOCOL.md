@@ -1,0 +1,5 @@
+# Beijing GeoLife independent retraining
+
+Repeat the earlier conditional and unconditional DiffTraj fits on Erik's published segments. Reuse the exact prepared arrays (62,175 training, 4,164 development, 3,165 held out). Change training seed 42 to 43 for initialization, order and noise. Preserve four-device DDP, global batch 1,024, per-device microbatch 32, constant AdamW learning rate 0.0002, 200 epochs and final weights. Sample the identical 3,000 requests with the original sampling seed and sampler. Both arms restore the original sample count. This repeat measures variation under the Beijing training recipe. Report density, OD and length JS, top-20 overlap and overflow. Check whether conditional beats unconditional at both seeds and give changes in absolute scores. Beijing is an external validation dataset with no published DiffTraj benchmark values.
+
+Copy porto.py and run_erik_seed_repeat.sh into a new isolated experiment directory and run bash run_erik_seed_repeat.sh. Each arm verifies the archived request-index hash and model identity before emitting paired.json and its completion marker.
