@@ -649,3 +649,5 @@ G40正式训练全部闭合：16个5000步运动拟合、12个学习先验及4�
 固定权重复核另外226个开发车辆，排除原128个评分请求和32个诊断请求并去重。速度监督对速度W1的改善在两个种子再次出现（51.89→14.42、9.03→5.07 m/s），密度误差均上升；长度在第二种子0.85→1.02 km略变差。仅车型及联合条件的速度W1均高于各自基线。已更新阶段报告，避免把速度上的收益推广到全部质量指标。
 
 Porto 已在隔离目录完成输入SHA校验、拆分和4卡DDP训练启动。前两轮完成并保存首轮权重；首轮另对256个开发请求完成采样和全部指标计算，评价程序可用。正式200轮后自动取3000个留出请求计算最终指标。实测阶段记录 porto-training-progress.json 和 porto-dev-first.json。首轮开发结果不作正式同文献比较。
+
+2026-11-12 Torino acquisition. Collected five public OpenStreetMap GPS API pages for a Turin centre bounding box. Coverage in results/turin-acquisition/coverage.json. Converted continuous timestamped runs to a local CSV with unknown mode. Runs are clipped by the query area. Separate private server collector checks GTT vehicle positions once per minute for 24 hours, recording upstream feed timestamps, missing entities and deduplicated observations. First valid server response contained zero vehicles. A 2017 historical GTT campaign is described by UrbanGeoBigData, without a verified public raw download.

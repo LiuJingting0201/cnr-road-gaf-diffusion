@@ -1,0 +1,14 @@
+{
+  "source": "OpenStreetMap public GPS trackpoints, contributors",
+  "bbox": [
+    7.665,
+    45.057,
+    7.695,
+    45.08
+  ],
+  "pages": 5,
+  "unique_timestamped_points": 24780,
+  "segments_min120": 62,
+  "retained_points": 21435,
+  "labels": "unknown; geographically clipped fragments"
+}
