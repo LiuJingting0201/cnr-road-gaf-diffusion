@@ -33,7 +33,16 @@ Long trips, seed 43 & \multicolumn{4}{c}{Independent training repeat in progress
 \bottomrule\end{tabular}
 \end{center}
 
-The seed-42 model recovered 15 of the 20 observed hotspot cells. The OD and length divergences were numerically smaller than the published values, while density error was larger and hotspot overlap lower. Exact Porto eligibility, grid bounds, length bins and hotspot count in the original evaluation remain unresolved. These choices affect the numerical comparison.
+\textbf{How the grid changes hotspot F1.} We scored the same 3,000 seed-42 draws against the same observed journeys three times. Each grid divides the specified longitude and latitude ranges into 16 equal intervals per axis. We count GPS points in each cell and rank the cells separately for observed and generated trips. Both hotspot sets contain 20 cells, so F1 equals the number of shared cells divided by 20.
+
+\begin{center}\small
+\begin{tabular}{lrr}\toprule
+Training coordinates used to set grid edges & Shared cells & Pattern F1\\\midrule
+Long trips, full min--max (primary) & 15/20 & 0.750\\
+All eligible lengths sampled for training, full min--max & 17/20 & \textbf{0.850}\\
+Same sample, 1st--99th percentile per axis & 15/20 & 0.750\\\bottomrule
+\end{tabular}\end{center}
+The shared full-range grid places two additional cells in the overlap. Only the scoring boundaries change; all three rows evaluate the long-trip model. Full-range grids clip outlying points to the edge; the percentile grid excludes overflow from hotspot ranking. The shared-grid score is close to the published 0.847, whose Porto boundaries and hotspot count remain unspecified.
 
 \textbf{What does the length score mean in kilometres?} The observed median was 13.96 km, compared with 12.39 km for the generated sample. Across requests, generated length averaged 2.01 km below observed length. The first Wasserstein distance between the distributions was 2.28 km: this measures the average separation of corresponding length quantiles. A small binned JS therefore coexists with a measurable shortfall in distance.
 
