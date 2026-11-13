@@ -49,9 +49,27 @@ For seed 42 the shared full-range grid places two additional cells in the overla
 \textbf{Conclusion.} We reproduced the conditional training and sampling procedure on public Porto GPS data under an explicit long-trip rule. Both fits generated shorter median trips and recovered 15 to 17 of the 20 observed hotspots across the specified grids. The scope of this result is journeys of at least 120 recorded positions. 
 
 \newpage
-\section*{Turin buses: data, training and evaluation}
-The GTT vehicle-position feed supplied 354,114 distinct GPS fixes in a 24-hour collection covering the 12 November service day. Matching vehicle positions to the official timetable and fleet catalogue yielded 3,262 bus journey candidates with terminal coverage. Both ends had to lie within 200 m of the scheduled terminals, observed endpoint times within 15 minutes of schedule, and observed duration at least 70\% of scheduled duration. The median bus journey contains 46 positions. The median interval across retained bus and tram segments was 63 s. A 120-point cutoff would remove every eligible bus journey.
+\section*{Turin: collecting vehicle positions and reconstructing trips}
+The Turin transport operator, Gruppo Torinese Trasporti (GTT), publishes a live snapshot of vehicle positions. To build a journey history, a Python collector on the research server requested the \href{https://percorsieorari.gtt.to.it/das_gtfsrt/vehicle_position.aspx}{GTT vehicle-position feed}, processed the response and waited 60 seconds before the next request. Each response was a binary GTFS Realtime Protocol Buffers message containing reports from multiple vehicles. The collector archived each distinct nonempty payload as a compressed \texttt{.pb.gz} file and decoded the position reports into SQLite.
 
+\textbf{Observation format.} One SQLite row represents one vehicle fix. The fields below are listed in storage order.
+
+\begin{center}\small
+\begin{tabular}{lp{.54\linewidth}}\toprule
+Field & Meaning\\\midrule
+\texttt{vehicle, trip, service\_date, route} & Vehicle ID, scheduled trip ID, service date and route ID.\\
+\texttt{t} & Vehicle-reported Unix timestamp in seconds. Fetch time was recorded separately for each poll.\\
+\texttt{lat, lon} & Latitude and longitude in decimal degrees.\\
+\texttt{speed} & Optional reported speed in m/s. Empty for all fixes on this service day.\\\bottomrule
+\end{tabular}\end{center}
+Repeated snapshots could contain the same fix. The key (vehicle, trip, service date, vehicle timestamp) prevented double counting. From 02:47 on 12 November to 02:46 on 13 November 2026 (Turin time), 1,393 polls yielded 354,114 distinct fixes from 643 vehicles on 94 routes. Of those polls, 110 returned no vehicles. The median interval between successive observations was 63 seconds.
+
+\textbf{Journey reconstruction.} Fixes were grouped by vehicle, service date and trip, then sorted by vehicle timestamp. GTT's static GTFS timetable supplied the active service, route type and scheduled terminals. A new segment began at a gap over 180 seconds, a nonpositive time interval or implied speed over 35 m/s. Retained segments contained at least ten fixes, ten minutes and 500 m of travel. Each endpoint had to lie within 200 m of its scheduled terminal and within 15 minutes of its scheduled time; observed duration had to cover at least 70\% of the scheduled duration. Checking bus routes against the operator's fleet catalogue yielded 3,262 bus journey candidates.
+
+\textbf{Analysis and model formats.} The cleaned gzip-compressed CSV retained one row per fix, with segment ID, vehicle mode, fleet and terminal-check fields. Its interval speed is the great-circle distance between successive fixes divided by their actual timestamp difference. For training, each segment became an ordered longitude--latitude sequence in a compressed NumPy archive (\texttt{.npz}), with vehicle ID, start time, elapsed duration and original point count. A median bus journey contained 46 reported positions. Interpolation to 200 model positions was applied only after reconstruction.
+
+\newpage
+\section*{Turin buses: training and evaluation}
 Splitting by vehicle gave 2,555 training, 366 development and 341 reserved journeys. Both fits used the Porto network and eight trip attributes, measured elapsed duration and local departure time. Only buses entered the experiment; no vehicle-class input was supplied. At global batch 1,024, 200 epochs on Turin data give 600 optimizer updates. Reducing the batch to 56 gives 9,200 updates, matching the Porto count. The smaller batch also changes gradient variability. The two training seeds used identical evaluation requests and sampling noise.
 
 \begin{center}\small
