@@ -20,15 +20,15 @@
 \newcommand{\paper}{https://arxiv.org/html/2304.11582}
 \newcommand{\record}{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/tree/main/docs/results}
 \begin{document}
-{\small\sffamily\color{accent} MASTER'S THESIS EXPERIMENT REPORT\hfill 13 NOVEMBER 2026\par}
+{\small\sffamily\color{accent} MASTER'S THESIS EXPERIMENT REPORT\hfill 14 NOVEMBER 2026\par}
 \vspace{7pt}
 {\LARGE\sffamily\bfseries\color{ink}Reproducing conditional DiffTraj\\on simulated vehicle trajectories\par}
 {\sffamily Jingting Liu\par}
 \subh{Experimental question}
-Can the published DiffTraj training and sampling procedure generate vehicle trajectories with the same spatial and distance distributions as a supplied traffic simulation? I first trained the released architecture on the supplied vehicle records. I then repeated the experiment on two nested sets of complete taxi journeys generated with SUMO. Each training set has two independently trained models.
+Can the published DiffTraj training and sampling procedure generate vehicle trajectories with the same spatial and distance distributions as a supplied traffic simulation? I first trained the released architecture on the supplied vehicle records. I then repeated the experiment on two nested sets of complete taxi journeys generated with SUMO. Each training set has two independently trained models. A paired optimizer repeat uses the same 20,000 taxi trips and the same seeds.
 
 \subh{What was reproduced}
-Zhu et al. train a diffusion model to generate a sequence of locations from a trip description. Their main experiments use taxi GPS from Chengdu and Xi'an. I verified the authors' public Chengdu checkpoint and request file by drawing 500 trajectories (141,747 output positions), then retrained the same conditional network from scratch on the SUMO coordinates. The checkpoint exercise verifies sampling. \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/blob/main/docs/results/difftraj-restart/chengdu-released/chengdu.png}{Chengdu samples}. The original observed Chengdu and Xi'an evaluation trips are needed to independently reproduce the numerical scores of Table~1. On the new 10,000-taxi training set, both seeds recovered a trip-length distribution close to the observed one. Reproducing the joint origin--destination frequencies proved harder. \href{\paper}{DiffTraj, Sections 4--5 and Appendices A--C}. \href{\repo}{Author release}.
+Zhu et al. train a diffusion model to generate a sequence of locations from a trip description. Their main experiments use taxi GPS from Chengdu and Xi'an. I verified the authors' public Chengdu checkpoint and request file by drawing 500 trajectories (141,747 output positions), then retrained the same conditional network from scratch on the SUMO coordinates. The checkpoint exercise verifies sampling. \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/blob/main/docs/results/difftraj-restart/chengdu-released/chengdu.png}{Chengdu samples}. The original observed Chengdu and Xi'an evaluation trips are needed to independently reproduce the numerical scores of Table~1. On the new 10,000-taxi training set, both seeds recovered a trip-length distribution close to the observed one. On 20,000 trips, an optimizer change recovered an unstable repeat: the two corrected seeds both generated a median journey of 5.08 km against an observed 5.59 km. Reproducing the joint origin--destination frequencies proved harder. \href{\paper}{DiffTraj, Sections 4--5 and Appendices A--C}. \href{\repo}{Author release}.
 
 \subh{Why generate a second dataset?}
 The supplied export yielded 1,478 training vehicle tracks, including only 69 identified as taxi or ride-hailing. Splitting those tracks into shorter windows would reuse the same journeys and change their endpoints. In a discussion about how many trips survive preprocessing, the repository owner suggested checking what a lower point cutoff would retain and described training collections on the order of 100,000 trajectories as useful in practice. This motivated generating additional independent trips while keeping the original point-count filter. I chose a balanced five-class archive so the same simulations can support a later vehicle-class experiment. Here only its taxi subset enters training, matching the vehicle type used in DiffTraj's main study.
@@ -84,7 +84,7 @@ Supplied vehicles & 32 & 200 & 9,400 & 2\\
 Simulated taxis, 10,000 & 220 & 200 & 9,200 & 1\\
 Simulated taxis, 20,000 & 440 & 200 & 9,200 & 1\\\bottomrule
 \end{tabular}\end{center}
-All runs use seeds 42 and 43, AdamW at a fixed learning rate of $2\times10^{-4}$, 500 diffusion noise levels ($\beta$ from 0.0001 to 0.05) and 100 DDIM reverse updates with stride 5 and $\eta=0$. The final epoch's ordinary weights are scored. The runs share the denoising objective, conditioning architecture and sampling schedule. The three batch sizes give comparable counts of optimizer updates. The 20,000-trip run sees twice as many examples per epoch as the 10,000-trip run and its gradient estimates use larger batches.
+The six original fits use seeds 42 and 43, AdamW at a fixed learning rate of $2\times10^{-4}$, 500 diffusion noise levels ($\beta$ from 0.0001 to 0.05) and 100 DDIM reverse updates with stride 5 and $\eta=0$. The final epoch's ordinary weights are scored. The runs share the denoising objective, conditioning architecture and sampling schedule. The three batch sizes give comparable counts of optimizer updates. The 20,000-trip run sees twice as many examples per epoch as the 10,000-trip run and its gradient estimates use larger batches.
 
 \subh{Implementation choices to reproduce a run}
 The released denoiser is imported directly. Local code adapts input units, vehicle or episode splits, feature normalization, batching and evaluator boundaries to the datasets. Sampling runs in evaluation mode with dropout disabled. The public demonstration notebook leaves its model in training mode. Coordinates are planar metres. A separate alignment check supports using MoST as a reference map for the supplied export. \href{https://github.com/Yasoz/DiffTraj/blob/27d25a9eb4cb94bcbe76068d5c8825f713a7ac2c/utils/Traj_UNet.py}{Released U-Net and guidance}. \href{https://github.com/Yasoz/DiffTraj/blob/27d25a9eb4cb94bcbe76068d5c8825f713a7ac2c/utils/config.py}{Released configuration}.
@@ -130,7 +130,40 @@ For the same request 501, the seed-42 errors fall to 178 m at departure and 206 
 
 The observed points concentrate along narrow corridors. Both 10,000-taxi samples reproduce the main concentration of trips but spread positions over more of the map. For the same 532,033 positions per panel, the observations occupy 4,559 cells, while seeds 42 and 43 occupy 9,007 and 9,621. With 20,000 training trips, seed 43 puts 10.87\% of positions outside the map window, compared with 0.22\% for seed 42. These patterns explain why this run also deserves inspection at the level of individual requests.
 
-The 50 m cells resolve the spatial patterns in the figure. The numerical density error in the next table uses the $16\times16$ grid specified for scoring. \href{https://arxiv.org/html/2304.11582\#S5.F2}{Published geographic comparison}.
+The 50 m cells resolve the spatial patterns in the figure. The numerical density error in the score tables uses the $16\times16$ grid specified for scoring. \href{https://arxiv.org/html/2304.11582\#S5.F2}{Published geographic comparison}.
+
+\newpage
+\heading{Repeat training on the same 20,000 taxi journeys}
+The original seed-43 loss rose sharply at epoch 134. To test whether it could recover, I reran both seeds from initialization on the same training file with the same network, loss, batch of 440 and 9,200 updates. Before each AdamW update I clipped the global gradient norm at 1.0. The learning rate followed a cosine schedule from $2\times10^{-4}$ to $2\times10^{-5}$ over 200 epochs. These two changes form one intervention.
+
+\pic{stability-loss.png}{69mm}
+\figcap{8}{Training noise MSE before and after the optimizer change. Both corrected runs remained below 0.010 over epochs 100--200. The final MSE was 0.00793 for seed 42 and 0.00786 for seed 43.}
+
+\subh{Comparison at a fixed training budget}
+The primary rows compare the final weights at epoch 200. Every row below uses the same 1,000 development requests, initial sampling noise, grid and distance bins. I also saved the weights with the smallest denoising MSE on 512 fixed development trips with fixed noise. That subset overlaps the evaluation population, so the selected checkpoint is an additional diagnostic.
+\input{stability-table.tex}
+Seed 43 recovered on all four distributional metrics. Its trip-length Wasserstein distance dropped from 32.62 to 0.48 km. For seed 42, density and OD improved and hotspot F1 stayed at 0.90. Its length Wasserstein distance rose modestly from 0.36 to 0.46 km. Both corrected runs generated a median trip length of 5.08 km, against an observed 5.59 km.
+
+\newpage
+\heading{Paired draws after the optimizer change}
+\pic{stability-maps-43.png}{141mm}
+\figcap{9}{Seed 43 at epoch 200. The top row uses original training and the bottom row uses clipping and cosine decay. Each column uses identical observed positions, sampling noise and axis limits. The columns are requests 1, 501 and 1,000 in the original evaluation order.}
+
+For request 501 the original sample started 1,555 m and ended 1,532 m from the observed positions. After retraining those discrepancies fell to 195 m and 95 m. Across all 1,000 requests, median start and end discrepancies fell from 1,542 and 1,710 m to 225 and 213 m. Both endpoints landed in their requested cells on 563 trips, up from one trip. The model was given the endpoint cells and trip summaries; exact endpoint coordinates only enter this comparison after generation.
+
+\newpage
+\heading{Effect on the previously better-performing seed}
+\pic{stability-maps-42.png}{141mm}
+\figcap{10}{Seed 42 at epoch 200, using the same three requests as Figure 9. Within each column, the original and corrected draws share the same map extent.}
+
+For request 501 the end discrepancy fell from 206 to 96 m, while the start discrepancy rose from 178 to 229 m. Over all requests the median start and end discrepancies fell from 315 and 301 m to 232 and 218 m. Joint endpoint-cell hits rose from 236 to 545 out of 1,000. The small deterioration in seed 42's distance distribution coexists with better aggregate endpoint placement.
+
+\newpage
+\heading{City-wide distribution after retraining}
+\pic{stability-occupancy.png}{130mm}
+\figcap{11}{All 1,000 development requests, with 532,033 evaluated positions in each panel. The two rows show the two training seeds. All panels use the same 50 m cells, map extent and colour scale. Each panel's denominator includes points outside the displayed map.}
+
+For seed 43, positions beyond the map window fell from 57,807 to 167 (10.87\% to 0.031\%). For seed 42 they fell from 1,178 to 95 (0.221\% to 0.018\%). This check preserves every generated point, including positions that the example maps cannot show at city scale. The two corrected runs now give similar city-wide distributions and endpoint errors on the shared requests.
 
 \newpage
 \heading{Comparison with the published experiment}
@@ -147,9 +180,11 @@ Supplied vehicles, 43 & .0690 & .5564 & .0536 & .800\\
 Simulated taxis 10,000, 42 & .0191 & .4166 & .0193 & .750\\
 Simulated taxis 10,000, 43 & .0130 & .4156 & .0237 & .800\\
 Simulated taxis 20,000, 42 & .0211 & .4031 & .0101 & .900\\
-Simulated taxis 20,000, 43 & .1531 & .6374 & .3499 & .500\\\bottomrule
+Simulated taxis 20,000, 43 & .1531 & .6374 & .3499 & .500\\
+20,000 taxis, corrected, 42 & .0038 & .2466 & .0124 & .900\\
+20,000 taxis, corrected, 43 & .0029 & .2285 & .0118 & .950\\\bottomrule
 \end{tabular}\end{center}
-Both 10,000-taxi fits produced length JS near the published main-city values (.0169--.0203), and hotspot overlap in a similar range. The largest remaining gap is joint OD error: about .416 in both fits, compared with .0154 and .0165 in the paper's main cities. These reference values come from GPS observations in different cities.
+Both 10,000-taxi fits produced length JS near the published main-city values (.0169--.0203), and hotspot overlap in a similar range. The corrected 20,000-taxi runs give lower density and length JS and higher hotspot F1 than the reported values in both main cities. Joint OD error remains the largest gap, at .2466 and .2285 versus .0154 and .0165. These reference values come from GPS observations in different cities.
 
 \subh{Matching the published evaluation count}
 For a separate check, the frozen 10,000-taxi models generated one sample for each of 3,000 journeys from 44 fresh episodes. At the paper's main evaluation count, density / OD / length JS and hotspot F1 were .0204 / .3154 / .0175 / .750 for seed 42 and .0114 / .3006 / .0212 / .850 for seed 43. OD error remains well above the published values on this independent sample. The cohort and sample count both change relative to the 1,000-trip development table.
@@ -157,6 +192,6 @@ For a separate check, the frozen 10,000-taxi models generated one sample for eac
 \subh{Why the results differ}
 \textbf{Demand and sample size.} The paper lists roughly 3.49 million Chengdu trips and 2.18 million Xi'an trips and describes evaluation samples of 3,000 for its main experiments. The supplied evaluation has 177 mixed-vehicle requests. Comparing 177 observed development trips against 177 observed reserved trips already gives OD JS .5144. In the expanded experiment the 1,000 observed taxi trips occupy 817 OD pairs. The most common pair occurs only eight times. Sparse support makes the empirical joint histogram sensitive to endpoint shifts and sample composition. Independent observed samples provide context. Generating from the same requests is a different comparison.
 
-\textbf{Training variability and measurement.} The 20,000-trip loss spike coincides with poorer generated distances and endpoints. The supplied source also mixes vehicle classes and uses a finer observation clock. Changing from that source to the new taxi set changes both population and demand. The paired 10,000 versus 20,000 experiment is the closer test of expansion. The paper specifies $16\times16$ cells, but city bounds, distance-bin edges and hotspot count affect comparisons. Their separate effects would require matched city data and published bin definitions. Across two seeds, the 10,000-taxi model most consistently reproduces trip lengths. Joint OD placement remains the main quantitative gap. A same-data comparison to Table~1 requires the licensed city trajectories and their evaluation cohorts.
+\textbf{Training variability and measurement.} The 20,000-trip loss spike coincides with poorer generated distances and endpoints. The supplied source also mixes vehicle classes and uses a finer observation clock. Changing from that source to the new taxi set changes both population and demand. The paired 10,000 versus 20,000 experiment is the closer test of expansion. City bounds, distance bins and hotspot counts affect the comparison with Table~1. After retraining, both 20,000-taxi seeds give similar trip lengths. Joint OD frequencies remain the largest discrepancy.
 
 \end{document}

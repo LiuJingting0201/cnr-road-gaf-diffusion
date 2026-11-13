@@ -1,0 +1,56 @@
+{
+  "reference_sha256": "ca11fba3e0428bc6aba5815e65ee3d9fc4c7c4fd3de65f88ed3c881b4bac565e",
+  "request_sha256": "86067c2c0089283c4ac9ae1f2f2771227be609cd0e872e071e6a91f33a832475",
+  "shared_sampler_ast_sha256": "ee59c23722894458dcbc26f73410079ca9993e09bd9327685c1a685ac1eed733",
+  "grid_bounds_m": [
+    -50,
+    10000,
+    -50,
+    6400
+  ],
+  "cell_m": 50,
+  "checkpoint": "final epoch 200",
+  "requests": 1000,
+  "rows": {
+    "42": {
+      "observed": {
+        "points": 532033,
+        "outside_points": 0,
+        "outside_percent": 0.0,
+        "occupied_cells": 4559
+      },
+      "original": {
+        "points": 532033,
+        "outside_points": 1178,
+        "outside_percent": 0.2214148370495815,
+        "occupied_cells": 9547
+      },
+      "stabilized": {
+        "points": 532033,
+        "outside_points": 95,
+        "outside_percent": 0.01785603524593399,
+        "occupied_cells": 7971
+      }
+    },
+    "43": {
+      "observed": {
+        "points": 532033,
+        "outside_points": 0,
+        "outside_percent": 0.0,
+        "occupied_cells": 4559
+      },
+      "original": {
+        "points": 532033,
+        "outside_points": 57807,
+        "outside_percent": 10.865303468017961,
+        "occupied_cells": 21401
+      },
+      "stabilized": {
+        "points": 532033,
+        "outside_points": 167,
+        "outside_percent": 0.03138903037969449,
+        "occupied_cells": 8197
+      }
+    }
+  }
+}
