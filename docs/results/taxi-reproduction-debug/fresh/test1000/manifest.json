@@ -1,0 +1,28 @@
+{
+  "trips": 1000,
+  "episodes_used": [
+    3310000,
+    3310001,
+    3310002,
+    3310003,
+    3310004,
+    3310005,
+    3310006,
+    3310007,
+    3310008,
+    3310009,
+    3310010,
+    3310011,
+    3310012,
+    3310013,
+    3310014
+  ],
+  "old_ids_checked": 110000,
+  "old_distinct_geometry_hashes_checked": 110000,
+  "dropped_exact_duplicates": 0,
+  "source_network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "raw_sha256": "b54a7b6d3d841466de010604a807010b406131aafb61350243a16534e1566821",
+  "observations_sha256": "7584f5ecb8051f1905bd166e8d2d043bb799c924ff5a88b2e3337e152c4a5023",
+  "ordered_id_sha256": "abef88758aa8bf00ffc083f745034195b5024cfca8ee2a087ba81f8996cbd635",
+  "same_synthetic_clock_offset": true
+}

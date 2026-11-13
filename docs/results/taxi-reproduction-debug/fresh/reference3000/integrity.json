@@ -1,0 +1,15 @@
+{
+  "trips": 3000,
+  "points": 1587296,
+  "episodes": 44,
+  "observed_start_minus_offset_equals_sim_start": true,
+  "maximum_coordinate_decode_error_m": 0.00046875000043655746,
+  "coordinates_unit": "metres",
+  "native_columns": [
+    "simulation_seconds",
+    "x_m",
+    "y_m",
+    "speed_mps"
+  ],
+  "model_score_evaluated": false
+}
