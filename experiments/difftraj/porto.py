@@ -190,7 +190,7 @@ def score():
     ends=np.r_[0,sizes.cumsum()]
     delta=raw['delta']
     rng=np.random.default_rng(42)
-    ids=rng.choice(ids,len(ids) if '--all-holdout' in sys.argv else (256 if dev else 3000),replace=False)
+    ids=rng.choice(ids,len(ids) if any(k in sys.argv for k in ('--all-holdout','--all-validation','--matched-reserve')) else (256 if dev else 3000),replace=False)
     coords=data['xy']
     norm_mean=data['mean']
     norm_std=data['std']
@@ -234,7 +234,7 @@ def score():
     js=lambda x,y:float(jensenshannon(x,y)**2)
     top=lambda hist:set(np.argsort(-hist,kind='stable')[:20])
     result=dict(epoch=ck['epoch'],requests=len(ids),density_js=js(a[0],b[0]),trip_js=js(a[1],b[1]),length_js=js(lh(a[2]),lh(b[2])),top20_cell_f1=len(top(a[0])&top(b[0]))/20,generated_outside_fraction=float(np.any((np.concatenate(synth)<lo)|(np.concatenate(synth)>hi),axis=1).mean()))
-    if dev:
+    if dev or '--matched-reserve' in sys.argv:
         from scipy.stats import wasserstein_distance
         result.update(reference_median_m=float(np.median(a[2])),generated_median_m=float(np.median(b[2])),length_w1_m=float(wasserstein_distance(a[2],b[2])))
     if '--all-holdout' in sys.argv:

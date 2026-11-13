@@ -20,6 +20,6 @@ for part,tag,n in [('train',0,10000),('validation',8,1000),('test',9,1000)]:
                 assert len(track)>=120 and np.all(np.diff(track[:,0])==1)
                 xy=np.rint(track[:,1:3]*100).astype('i4')
                 blocks.append(np.diff(xy,axis=0,prepend=np.zeros((1,2),dtype='i4')))
-                ids.append(key);lens.append(len(track));times.append(seed%1440*60+int(track[0,0]));splits.append(tag)
+                ids.append(key);lens.append(len(track));times.append(int(track[0,0]));splits.append(tag)
 assert len(set(ids))==12000
 np.savez_compressed('observations.npz',delta=np.concatenate(blocks),length=lens,taxi=ids,start=times,duration=np.array(lens)-1,timezone='UTC',planar_unit_m=.01,episode_split=splits)

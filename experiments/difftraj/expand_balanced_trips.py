@@ -1,6 +1,6 @@
 """Grow training to 20k/class while keeping old training IDs and frozen evaluation IDs."""
 from pathlib import Path
-from collections import Counter
+from collections import Counter,defaultdict
 from concurrent.futures import ProcessPoolExecutor
 from functools import partial
 import json,hashlib
@@ -38,6 +38,18 @@ def main():
     assert set(count.values())=={20000}
     for part in ['train','validation','test']:
         xs,hs,ids,labels=zip(*groups[part]);x=np.asarray(xs);h=np.asarray(hs).copy()
+        # Historical shards may encode the episode seed in the departure field.
+        # Recover the first observed timestamp from each selected native trip.
+        by_episode=defaultdict(dict)
+        for i,key in enumerate(ids):by_episode[key.split('_')[0]][key]=i
+        for ep,want in by_episode.items():
+            pack=old/ep/'trips.npz'
+            if not pack.exists():pack=Path(ep)/'trips.npz'
+            with np.load(pack) as z:
+                starts=np.r_[0,z['h'][:-1,3].astype(int).cumsum()]
+                time=z['raw'][starts,0]
+                for key,t in zip(z['ids'],time):
+                    if key in want:h[want[key],0]=int(t//300)%288
         if part=='train':
             mu=x.mean((0,1),dtype='d');sd=x.std((0,1),dtype='d')
             lo=x.min((0,1));hi=x.max((0,1));hm=h[:,1:].mean(0);hd=h[:,1:].std(0).clip(1e-7)

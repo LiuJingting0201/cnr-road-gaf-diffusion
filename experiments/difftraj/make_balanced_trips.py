@@ -56,7 +56,7 @@ def episode(seed, per_class=None):
         steps=np.linalg.norm(np.diff(xy,axis=0),axis=1);L=float(steps.sum());dur=float(t[-1]-t[0])
         if L<100 or steps.max()>65:continue
         idx=np.linspace(0,n-1,200);coords.append(np.column_stack([np.interp(idx,np.arange(n),col) for col in xy.T]))
-        ids.append(ident);classes.append(ident.split('_')[1]);headers.append([int((seed%1440*60+dep)//300)%288,L,dur,n,L/(n-1),L/dur]);raw.append(v)
+        ids.append(ident);classes.append(ident.split('_')[1]);headers.append([int(dep//300)%288,L,dur,n,L/(n-1),L/dur]);raw.append(v)
     np.savez_compressed(out/'pending.npz',ids=ids,classes=classes,h=headers,xy=np.asarray(coords,dtype='f'),raw=np.concatenate(raw))
     (out/'pending.npz').replace(pack); (out/'fcd.xml.gz').unlink()
     print(seed,dict(Counter(classes)),round(time.monotonic()-start,1),flush=True)
