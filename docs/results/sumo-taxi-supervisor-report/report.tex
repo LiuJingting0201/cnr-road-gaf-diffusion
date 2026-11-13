@@ -37,6 +37,15 @@ The supplied export yielded 1,478 training vehicle tracks, including only 69 ide
 \figcap{1}{The repository owner's original Chinese reply, 10 July 2025. The scale mentioned is approximately 100,000 trajectories in total. The comment gives an order of magnitude, with no per-class target. \href{\issue}{Open the original GitHub comment}.}
 
 \newpage
+\heading{Sampling from the authors' Chengdu checkpoint}
+The public release supplies trained model weights and request attributes. I first loaded those files and sampled 500 Chengdu trips with seed 42 using the released demonstration. Restoring each trajectory to its requested point count gave 141,747 positions. The median trip had 259 positions. This is a direct run of the published sampling example before any training on SUMO.
+
+\pic{chengdu-checkpoint.png}{109mm}
+\figcap{2}{Five hundred generated Chengdu taxi trajectories from the authors' weights, overlaid in longitude (horizontal) and latitude (vertical). Darker lines indicate repeated paths. \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/blob/main/docs/results/difftraj-restart/chengdu-released/summary.json}{Archived run summary}.}
+
+The sample concentrates along several recurring corridors. Calculating the four distributional errors also requires the corresponding observed GPS sequences. The public request vectors describe each trip in aggregate and cannot supply its observed point density or full path. For the SUMO retraining experiments, both the observed reference coordinates and the generated coordinates are available, so all four measures and the paired maps can be reported.
+
+\newpage
 \heading{Data and preprocessing}
 \subh{Supplied vehicle observations}
 The input for this experiment was \texttt{midimost\_with\_class2.csv}. Each row contains simulation time, vehicle ID, planar position, simulator speed and a class label. I removed pedestrians, grouped by vehicle ID, sorted by time and collapsed duplicate timestamps. Each retained trajectory needed at least 120 original observations, finite coordinates, movement and no gap over two seconds. Of 1,896 vehicle IDs, 43 fell below the point cutoff. The remaining 1,853 tracks contain private cars, motorcycles, bicycles, buses and taxis or ride-hailing vehicles. A vehicle-ID split gave 1,478 training, 198 development and 177 reserved tracks. These tracks span the portions of a vehicle's journey visible in the export. The separate passenger-only file \texttt{vehicle\_positions\_TS\_New.csv} was outside this experiment.
@@ -83,7 +92,7 @@ The released denoiser is imported directly. Local code adapts input units, vehic
 \newpage
 \heading{What the denoising loss shows}
 \pic{training-loss.png}{105mm}
-\figcap{2}{Training noise-prediction MSE by epoch for all six fits. The value is averaged over the first training rank in the original logs. The supplied runs used two ranks; the taxi runs used one. The objective measures noise prediction on perturbed training tracks. The maps on the next pages use full reverse sampling from noise.}
+\figcap{3}{Training noise-prediction MSE by epoch for all six fits. The value is averaged over the first training rank in the original logs. The supplied runs used two ranks; the taxi runs used one. The objective measures noise prediction on perturbed training tracks. The maps on the next pages use full reverse sampling from noise.}
 
 At 10,000 taxi trips, both runs ended with a noise MSE of approximately 0.010 and produced similar distance distributions. At 20,000 trips, seed 43 rose from 0.0102 at epoch 126 to 1.063 at epoch 134. It returned to 0.0199 by epoch 200. Seed 42 ended at 0.0092. The change in seed 43 also appeared in the generated trips: the median rose to 24.97 km, compared with 5.59 km in the observations for those same requests. The loss spike dates the instability in that fit. The logs do not distinguish its possible causes.
 
@@ -95,7 +104,7 @@ For the supplied tracks, the original network file was unavailable. A coordinate
 \newpage
 \heading{Generated trajectories on the supplied data}
 \pic{maps-supplied.png}{140mm}
-\figcap{3}{Supplied simulation, small-batch training. Each column overlays the observed vehicle coordinates and the generated coordinates for the same held-out request. Requests 1, 89 and 177 are a bus, a motorcycle and a private car. These are the first, middle and last entries in saved order. Marker pairs show the departure and arrival offsets in metres.}
+\figcap{4}{Supplied simulation, small-batch training. Each column overlays the observed vehicle coordinates and the generated coordinates for the same held-out request. Requests 1, 89 and 177 are a bus, a motorcycle and a private car. These are the first, middle and last entries in saved order. Marker pairs show the departure and arrival offsets in metres.}
 
 \subh{What the full set shows}
 In the middle column, both seeds place the motorcycle destination within 405 m of its observation, but the origins are 3.13 km and 2.48 km away. The bus in the first column ends within 95 m for seed 43. The 177 observed tracks had a median length of 5.86 km. The generated medians were 10.52 km for seed 42 and 5.66 km for seed 43. Across the full distributions, the corresponding length Wasserstein distances were 6.97 and 0.49 km. This distance measures the average displacement between corresponding quantiles of the two length distributions. A median alone would conceal the much broader spread of one run.
@@ -103,21 +112,21 @@ In the middle column, both seeds place the motorcycle destination within 405 m o
 \newpage
 \heading{Generated trajectories from 10,000 taxi journeys}
 \pic{maps-taxi-10k.png}{140mm}
-\figcap{4}{Taxi draws from the 10,000-trip training subset. The three requests come from the saved development set, in fixed order. Figure 5 repeats these same requests after expanding the training data, so a change in shape can be examined for the same physical request and sampling noise, at the same map scale. Each model uses its own training normalization.}
+\figcap{5}{Taxi draws from the 10,000-trip training subset. The three requests come from the saved development set, in fixed order. Figure 6 repeats these same requests after expanding the training data, so a change in shape can be examined for the same physical request and sampling noise, at the same map scale. Each model uses its own training normalization.}
 
 For request 501, the observed journey is 2.82 km. Seed 42 starts 329 m from its observed origin and finishes 381 m from the observed destination. The 1,000 observed journeys have a median length of 5.59 km. Length Wasserstein distances are 0.64 and 0.66 km over the two seeds. Start-position median errors are 295 and 319 m; end-position median errors are 321 and 309 m. The evaluation grid cells are roughly 623 m wide and 393 m high. At this resolution, both ends fall in the requested cells for 24.7\% and 22.6\% of draws. A discrepancy of a few hundred metres can cross a cell boundary.
 
 \newpage
 \heading{Generated trajectories from 20,000 taxi journeys}
 \pic{maps-taxi-20k.png}{140mm}
-\figcap{5}{Taxi draws from the expanded 20,000-trip training subset. The two seeds and the request order correspond to Figure 4. Both fits are included in the quantitative comparison.}
+\figcap{6}{Taxi draws from the expanded 20,000-trip training subset. The two seeds and the request order correspond to Figure 5. Both fits are included in the quantitative comparison.}
 
 For the same request 501, the seed-42 errors fall to 178 m at departure and 206 m at arrival. Seed 43 instead misses both endpoints by about 1.5 km. Across all 1,000 requests, seed 42 generated a median of 5.91 km. Its length Wasserstein distance fell to 0.36 km. Seed 43 produced a median of 24.97 km and a length Wasserstein distance of 32.62 km. The percentage of requests with both endpoints in the requested cells was 23.6\% for seed 42 and 0.1\% for seed 43. On these identical development requests the original optimization schedule gave very different results across seeds.
 
 \newpage
 \heading{Where the complete evaluation sets put their points}
 \pic{occupancy.png}{132mm}
-\figcap{6}{Observed and generated point distributions for all scored requests, following the geographic comparison in DiffTraj Figure 2. Every panel uses the same city extent, 50 m cells and logarithmic colour scale. The two observed taxi panels use the same trips. The printed outside fraction includes all positions beyond the displayed extent.}
+\figcap{7}{Observed and generated point distributions for all scored requests, following the geographic comparison in DiffTraj Figure 2. Every panel uses the same city extent, 50 m cells and logarithmic colour scale. The two observed taxi panels use the same trips. The printed outside fraction includes all positions beyond the displayed extent.}
 
 The observed points concentrate along narrow corridors. Both 10,000-taxi samples reproduce the main concentration of trips but spread positions over more of the map. For the same 532,033 positions per panel, the observations occupy 4,559 cells, while seeds 42 and 43 occupy 9,007 and 9,621. With 20,000 training trips, seed 43 puts 10.87\% of positions outside the map window, compared with 0.22\% for seed 42. These patterns explain why this run also deserves inspection at the level of individual requests.
 
@@ -141,6 +150,9 @@ Simulated taxis 20,000, 42 & .0211 & .4031 & .0101 & .900\\
 Simulated taxis 20,000, 43 & .1531 & .6374 & .3499 & .500\\\bottomrule
 \end{tabular}\end{center}
 Both 10,000-taxi fits produced length JS near the published main-city values (.0169--.0203), and hotspot overlap in a similar range. The largest remaining gap is joint OD error: about .416 in both fits, compared with .0154 and .0165 in the paper's main cities. These reference values come from GPS observations in different cities.
+
+\subh{Matching the published evaluation count}
+For a separate check, the frozen 10,000-taxi models generated one sample for each of 3,000 journeys from 44 fresh episodes. At the paper's main evaluation count, density / OD / length JS and hotspot F1 were .0204 / .3154 / .0175 / .750 for seed 42 and .0114 / .3006 / .0212 / .850 for seed 43. OD error remains well above the published values on this independent sample. The cohort and sample count both change relative to the 1,000-trip development table.
 
 \subh{Why the results differ}
 \textbf{Demand and sample size.} The paper lists roughly 3.49 million Chengdu trips and 2.18 million Xi'an trips and describes evaluation samples of 3,000 for its main experiments. The supplied evaluation has 177 mixed-vehicle requests. Comparing 177 observed development trips against 177 observed reserved trips already gives OD JS .5144. In the expanded experiment the 1,000 observed taxi trips occupy 817 OD pairs. The most common pair occurs only eight times. Sparse support makes the empirical joint histogram sensitive to endpoint shifts and sample composition. Independent observed samples provide context. Generating from the same requests is a different comparison.
