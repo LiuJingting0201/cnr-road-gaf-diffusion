@@ -675,3 +675,5 @@ Mean-speed ablation completed on the original Beijing split. On the same 94 obse
 Expanded Beijing rhythm study finished four full-header fits and fixed-noise bus/bike swaps for 535 requests. Paired differences and class-specific quality checks in results/beijing-rhythm/REPORT.md. Turin first 24-hour collection closed with 354114 distinct fixes; 4170 terminal-covered class-consistent segments (3262 bus, 908 tram). Aggregates in results/turin-acquisition/full-day.json.
 
 Expanded Beijing motion audit: 535 round trips through normalization, 96 matched requests at eight noise levels for four fixed checkpoints. See results/beijing-motion-audit for known-noise, teacher-forced and free-running physical summaries. Late free-chain clean estimates retain excessive interval displacement.
+
+Turin bus-only DiffTraj completed two 200-epoch fits on 2,555 training journeys; both scored the same 341 reserved requests. Four distribution metrics, physical lengths, real/real control and matched-size Porto re-evaluation archived under results/turin-bus-only.
