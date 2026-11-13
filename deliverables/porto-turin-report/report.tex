@@ -9,16 +9,16 @@
 Jingting Liu
 
 \section*{Question and data}
-Given the attributes of a long taxi journey, how closely do trajectories sampled by DiffTraj reproduce the lengths and spatial distribution of observed journeys? Zhu et al. studied taxi GPS trajectories from Chengdu and Xi'an in their main experiment and reported an additional Porto comparison in Appendix C, Table 5, where DiffTraj was compared with VAE, TrajGAN, DiffWave and Diff-LSTM on four distributional measures. The Porto experiment reproduces the published benchmark under a documented long-trip rule. A second experiment applies the same generator to observed Turin bus journeys.
+Given a taxi's starting area, destination, travel time and distance, can DiffTraj generate journeys that resemble recorded trips? Zhu et al. tested this on Porto taxis in Appendix C of their 2023 paper. We repeated the experiment on long Porto journeys, then trained the same model on a day of bus journeys that we recorded in Turin.
 
-The UCI Porto taxi trajectory corpus (source linked below) records taxi positions at 15-second intervals. Each row describes a journey with a taxi identifier, departure timestamp and ordered longitude--latitude polyline. From 1,710,670 rows, we retained complete, finite tracks containing at least 120 original positions before interpolation. At the native cadence, 120 positions span 29 min 45 s. The resulting 55,267 journeys from 439 taxis represent the long-trip population. The paper describes a 120-point rule in Appendix B.1, but gives no separate retained count or exact split for Porto.
+The UCI Porto dataset contains one GPS trace per taxi journey, with positions recorded every 15 seconds. We kept complete traces with valid coordinates and at least 120 recorded positions. At this sampling rate, the shortest eligible trace spans 29 minutes and 45 seconds. We chose the cutoff described in Appendix B.1 of the paper. The authors report their Porto scores separately in Table 5 and do not give the exact set of Porto trips they used.
 
-We partitioned by taxi identity to keep vehicles disjoint. The training partition contained 46,470 journeys, the development partition 5,241 and the reserved partition 3,556. We used 512 fixed development requests for checkpoint selection and sampled 3,000 reserved journeys for the final comparison.
+Of the 1,710,670 original records, 55,267 journeys from 439 taxis met our criteria. We split the journeys by taxi ID so that each taxi appeared in only one set. This gave 46,470 training, 5,241 development and 3,556 test journeys. We used 512 development journeys to choose the model checkpoint and the same 3,000 test journeys to score both runs.
 
 \section*{Model and training}
-DiffTraj represents each journey as two coordinate channels interpolated to 200 positions. During training, Gaussian noise is added to an observed trajectory. A temporal U-Net takes the noisy coordinates, the noise level and a trip header and predicts the injected noise by minimizing mean squared error. The header specifies departure-time bin, distance, duration, original point count, average displacement, average speed, and origin and destination cells. Sampling begins with Gaussian noise and iteratively denoises it. We restore the original sample count before scoring. Supplying distance and endpoints makes this an evaluation of conditional generation.
+We interpolated each trip to 200 longitude--latitude pairs. During training, we added Gaussian noise to these coordinates and trained a temporal U-Net to predict the added noise. The network also received eight trip attributes: departure time bin, distance, duration, original point count, average displacement between observations, average speed, origin cell and destination cell. To generate a trip, the model starts with random noise and removes it over 100 steps using the supplied attributes. We then interpolated the generated coordinates back to the trip's original point count. Since the model receives the target distance, the length score measures how closely its sampled path follows that request.
 
-We trained the released coordinate architecture from scratch for 200 epochs with 500 noise levels, 100 reverse sampling steps and global batch size 1,024 on four NVIDIA L20 GPUs (256 journeys per GPU). Inputs were normalized from training data. The authors' published training loop uses fixed-rate AdamW and saves ordinary network weights every ten epochs. Following instability in an earlier local fit, the two runs reported here used AdamW, gradient clipping at norm 1 and cosine learning-rate decay from 0.0002 to 0.00002. Epochs 193 and 179 minimized fixed development noise loss for seeds 42 and 43, respectively. The second fit changed initialization, training order and training noise while retaining the data, validation rule, sampling noise and evaluation requests.
+We trained the released network from scratch twice, with seeds 42 and 43. Both runs used 200 epochs, 500 noise levels and a total batch size of 1,024 across four NVIDIA L20 GPUs. We normalized the inputs using training data. The authors' training script uses AdamW with a fixed learning rate. After an earlier Porto run produced unstable results, we clipped the gradient norm at 1 and used a cosine schedule to reduce the learning rate from 0.0002 to 0.00002. The lowest development noise-prediction loss occurred at epoch 193 for seed 42 and epoch 179 for seed 43. Both checkpoints were evaluated with the same requests and sampling noise.
 
 \newpage
 \section*{Results against the published Porto benchmark}
@@ -42,11 +42,9 @@ Long trips, full min--max (primary) & 15/20: 0.750 & 16/20: 0.800\\
 All eligible lengths sampled for training, full min--max & 17/20: \textbf{0.850} & 16/20: 0.800\\
 Same sample, 1st--99th percentile per axis & 15/20: 0.750 & 16/20: 0.800\\\bottomrule
 \end{tabular}\end{center}
-For seed 42 the shared full-range grid places two additional cells in the overlap. Seed 43 has 16 overlapping cells on every grid. Only the scoring boundaries change; all three rows evaluate the long-trip model. Full-range grids clip outlying points to the edge; the percentile grid excludes overflow from hotspot ranking. The shared-grid score is close to the published 0.847, whose Porto boundaries and hotspot count remain unspecified.
+For seed 42, moving the grid boundaries increased the overlap from 15 to 17 cells. Seed 43 recovered 16 cells on all three grids. The generated journeys were identical across grid definitions for each seed. The full-range grids assign points outside the bounds to the nearest edge cell. The percentile grid counts those points separately and excludes them from the hotspot ranking. The published F1 is 0.847. The paper does not specify the Porto boundaries or how many hotspots were counted, so the closest numerical match (0.850) has no special status.
 
-\textbf{What does the length score mean in kilometres?} The observed median was 13.96 km, compared with 12.39 and 12.64 km for seeds 42 and 43. Across requests, generated length averaged 2.01 and 1.51 km below observed length. The first Wasserstein distance between the distributions was 2.28 and 1.92 km, respectively: this measures the average separation of corresponding length quantiles. A small binned JS therefore coexists with a measurable shortfall in distance.
-
-\textbf{Conclusion.} We reproduced the conditional training and sampling procedure on public Porto GPS data under an explicit long-trip rule. Both fits generated shorter median trips and recovered 15 to 17 of the 20 observed hotspots across the specified grids. The scope of this result is journeys of at least 120 recorded positions. 
+\textbf{Trip length in kilometres.} The observed median was 13.96 km. The generated medians were 12.39 km for seed 42 and 12.64 km for seed 43. The Wasserstein distance (W1), which measures the average gap between corresponding quantiles of two length distributions, was 2.28 km and 1.92 km, respectively. Both runs therefore produced a shorter typical trip, even though their length histograms scored well by JS divergence.
 
 \newpage
 \section*{Turin: collecting vehicle positions and reconstructing trips}
@@ -70,7 +68,9 @@ Repeated snapshots could contain the same fix. The key (vehicle, trip, service d
 
 \newpage
 \section*{Turin buses: training and evaluation}
-Splitting by vehicle gave 2,555 training, 366 development and 341 reserved journeys. Both fits used the Porto network and eight trip attributes, measured elapsed duration and local departure time. Only buses entered the experiment; no vehicle-class input was supplied. At global batch 1,024, 200 epochs on Turin data give 600 optimizer updates. Reducing the batch to 56 gives 9,200 updates, matching the Porto count. The smaller batch also changes gradient variability. The two training seeds used identical evaluation requests and sampling noise.
+We kept each Turin vehicle in a single split, giving 2,555 training, 366 development and 341 test journeys. We trained new weights on the bus data using the same network and eight trip attributes as in Porto. Duration came from the vehicle timestamps and departure time was expressed in Turin local time. All journeys were bus trips, so the model received no vehicle-class label.
+
+With a batch of 1,024, the Turin training set filled only three batches per epoch. Over 200 epochs the model therefore updated its weights 600 times, compared with 9,200 updates in Porto. We repeated training with a batch of 56, which gave 46 updates per epoch and 9,200 in total. We kept the journeys, epoch count and evaluation requests fixed. Changing batch size affects both the number of updates and the gradient used at each update.
 
 \begin{center}\small
 \begin{tabular}{lrrrr}\toprule
@@ -84,7 +84,7 @@ Observed development vs. reserved & .0587 & .3136 & .0895 & .75\\\bottomrule
 
 Both smaller-batch models recovered 19 of the 20 observed hotspots. Generated median lengths were 10.01 and 10.34 km against 11.13 km observed. At seed 43 the fraction of generated points outside the training bounds fell from 70.41\% to 0.36\%. Length W1 fell from 8.86 to 0.54 km at seed 42 and from 95.80 to 0.51 km at seed 43.
 
-For an equal-size comparison, 50 subsets of 341 Porto requests gave median length JS of .0157 and .0121 and OD JS of .0124 and .0126 for seeds 42 and 43. Turin showed larger errors on both measures. The observed Turin OD divergence of .3136 between disjoint vehicle groups illustrates the variation in route coverage within this service day. Later collection dates are reserved for a separate assessment of generalization.
+For an equal-size comparison, 50 subsets of 341 Porto requests gave median length JS of .0157 and .0121 and OD JS of .0124 and .0126 for seeds 42 and 43. Turin showed larger errors on both measures. The observed Turin OD divergence of .3136 between disjoint vehicle groups illustrates the variation in route coverage within this service day. These results cover one service day. Testing on another date would show whether the same pattern holds when the vehicles and services in operation change.
 
 {\small \section*{Sources}
 Zhu et al., \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9b4a28fb9eebe0430c3312a4898a41-Abstract.html}{DiffTraj}, NeurIPS 2023, especially Appendices B.1, B.2 and C.1.\\
@@ -100,7 +100,7 @@ Zhu et al., \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9
 \small Figure 1. The first three reserved requests in the fixed evaluation order. Observed and generated positions (batch 56, seed 42) share local axes relative to the observed start. Dots mark departures. Connecting consecutive GPS fixes shows the sampled path at the reporting cadence.
 
 \begin{center}\includegraphics[width=.96\linewidth]{density.pdf}\end{center}
-Figure 2. Point occupancy across all 341 requests at seed 42. Each panel uses the same 16 by 16 training grid and colour scale. The full-batch comparison in the table shows why hotspot overlap alone can conceal errors in origin--destination pairs.
+Figure 2. Share of GPS points in each grid cell for the 341 test journeys. The observed trips and both sets of seed-42 samples use the same grid and colour scale. A bright cell marks a frequently visited area; it can contain points from journeys with different origins and destinations.
 
 \begin{center}\includegraphics[width=.80\linewidth]{length.pdf}\end{center}
 Figure 3. Empirical journey-length distributions for the same requests and seed. The logarithmic distance axis includes the upper tail. At batch 56 the generated median is closer to the observed median.
