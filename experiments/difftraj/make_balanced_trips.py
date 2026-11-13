@@ -70,7 +70,7 @@ def main():
                 for s in batch:
                     with np.load(f'{s}/trips.npz') as d:counts.update(d['classes'].tolist())
                 used+=batch;seed+=8
-                if seed-start>400:raise RuntimeError(counts)
+                if seed-start>800:raise RuntimeError(counts)
         state[split]=(used,target)
     seen=set()
     for split,(seeds,target) in state.items():
