@@ -9,16 +9,16 @@
 Jingting Liu
 
 \section*{Question and data}
-Given the attributes of a long taxi journey, how closely do trajectories sampled by DiffTraj reproduce the lengths and spatial distribution of observed journeys? Zhu et al. studied taxi GPS trajectories from Chengdu and Xi'an in their main experiment and reported an additional Porto comparison in Appendix C, Table 5. This report examines the Porto benchmark.
+Given the attributes of a long taxi journey, how closely do trajectories sampled by DiffTraj reproduce the lengths and spatial distribution of observed journeys? Zhu et al. studied taxi GPS trajectories from Chengdu and Xi'an in their main experiment and reported an additional Porto comparison in Appendix C, Table 5, where DiffTraj was compared with VAE, TrajGAN, DiffWave and Diff-LSTM on four distributional measures. This report examines the Porto benchmark.
 
-The public Porto corpus records taxi positions at 15-second intervals. Each row describes a journey with a taxi identifier, departure timestamp and ordered longitude--latitude polyline. From 1,710,670 rows, we retained complete, finite tracks containing at least 120 original positions before interpolation. At the native cadence, 120 positions span 29 min 45 s. The resulting 55,267 journeys from 439 taxis represent the long-trip population. The paper describes a 120-point rule in Appendix B.1, but gives no separate retained count or exact split for Porto.
+The UCI Porto taxi trajectory corpus (source linked below) records taxi positions at 15-second intervals. Each row describes a journey with a taxi identifier, departure timestamp and ordered longitude--latitude polyline. From 1,710,670 rows, we retained complete, finite tracks containing at least 120 original positions before interpolation. At the native cadence, 120 positions span 29 min 45 s. The resulting 55,267 journeys from 439 taxis represent the long-trip population. The paper describes a 120-point rule in Appendix B.1, but gives no separate retained count or exact split for Porto.
 
 We partitioned by taxi identity to keep vehicles disjoint. The training partition contained 46,470 journeys, the development partition 5,241 and the reserved partition 3,556. We used 512 fixed development requests for checkpoint selection and sampled 3,000 reserved journeys for the final comparison.
 
 \section*{Model and training}
 DiffTraj represents each journey as two coordinate channels interpolated to 200 positions. During training, Gaussian noise is added to an observed trajectory. A temporal U-Net takes the noisy coordinates, the noise level and a trip header and predicts the injected noise by minimizing mean squared error. The header specifies departure-time bin, distance, duration, original point count, average displacement, average speed, and origin and destination cells. Sampling begins with Gaussian noise and iteratively denoises it. We restore the original sample count before scoring. Supplying distance and endpoints makes this an evaluation of conditional generation.
 
-We trained the released coordinate architecture from scratch for 200 epochs with 500 noise levels, 100 reverse sampling steps and global batch size 1,024 on four GPUs. Inputs were normalized from training data. Our stabilized fit used AdamW, gradient clipping at norm 1 and cosine learning-rate decay from 0.0002 to 0.00002. For seed 42, epoch 193 minimized fixed development noise loss. The second fit changes initialization, training order and training noise while retaining the data, validation rule, sampling noise and evaluation requests.
+We trained the released coordinate architecture from scratch for 200 epochs with 500 noise levels, 100 reverse sampling steps and global batch size 1,024 on four NVIDIA L20 GPUs (256 journeys per GPU). Inputs were normalized from training data. The authors' published training loop uses fixed-rate AdamW and saves ordinary network weights every ten epochs. Following instability in an earlier local fit, the two runs reported here used AdamW, gradient clipping at norm 1 and cosine learning-rate decay from 0.0002 to 0.00002. Epochs 193 and 179 minimized fixed development noise loss for seeds 42 and 43, respectively. The second fit changed initialization, training order and training noise while retaining the data, validation rule, sampling noise and evaluation requests.
 
 \newpage
 \section*{Results against the published Porto benchmark}
@@ -29,24 +29,24 @@ Density and OD errors compare point occupancy and ordered origin--destination ce
  & Density JS $\downarrow$ & OD JS $\downarrow$ & Length JS $\downarrow$ & Pattern F1 $\uparrow$\\\midrule
 Published Table 5 & .00870 & .01320 & .02420 & .847\\
 Long trips, seed 42 & .01357 & .00594 & .00635 & .750\\
-Long trips, seed 43 & \multicolumn{4}{c}{Independent training repeat in progress}\\
+Long trips, seed 43 & .00944 & .00698 & .00395 & .800\\
 \bottomrule\end{tabular}
 \end{center}
 
-\textbf{How the grid changes hotspot F1.} We scored the same 3,000 seed-42 draws against the same observed journeys three times. Each grid divides the specified longitude and latitude ranges into 16 equal intervals per axis. We count GPS points in each cell and rank the cells separately for observed and generated trips. Both hotspot sets contain 20 cells, so F1 equals the number of shared cells divided by 20.
+\textbf{How the grid changes hotspot F1.} We scored each set of 3,000 draws against identical observed journeys under three grid definitions. Each grid divides the specified longitude and latitude ranges into 16 equal intervals per axis. We count GPS points in each cell and rank the cells separately for observed and generated trips. Both hotspot sets contain 20 cells, so F1 equals the number of shared cells divided by 20.
 
 \begin{center}\small
 \begin{tabular}{lrr}\toprule
-Training coordinates used to set grid edges & Shared cells & Pattern F1\\\midrule
-Long trips, full min--max (primary) & 15/20 & 0.750\\
-All eligible lengths sampled for training, full min--max & 17/20 & \textbf{0.850}\\
-Same sample, 1st--99th percentile per axis & 15/20 & 0.750\\\bottomrule
+Training coordinates used to set grid edges & Seed 42: hits / F1 & Seed 43: hits / F1\\\midrule
+Long trips, full min--max (primary) & 15/20: 0.750 & 16/20: 0.800\\
+All eligible lengths sampled for training, full min--max & 17/20: \textbf{0.850} & 16/20: 0.800\\
+Same sample, 1st--99th percentile per axis & 15/20: 0.750 & 16/20: 0.800\\\bottomrule
 \end{tabular}\end{center}
-The shared full-range grid places two additional cells in the overlap. Only the scoring boundaries change; all three rows evaluate the long-trip model. Full-range grids clip outlying points to the edge; the percentile grid excludes overflow from hotspot ranking. The shared-grid score is close to the published 0.847, whose Porto boundaries and hotspot count remain unspecified.
+For seed 42 the shared full-range grid places two additional cells in the overlap. Seed 43 has 16 overlapping cells on every grid. Only the scoring boundaries change; all three rows evaluate the long-trip model. Full-range grids clip outlying points to the edge; the percentile grid excludes overflow from hotspot ranking. The shared-grid score is close to the published 0.847, whose Porto boundaries and hotspot count remain unspecified.
 
-\textbf{What does the length score mean in kilometres?} The observed median was 13.96 km, compared with 12.39 km for the generated sample. Across requests, generated length averaged 2.01 km below observed length. The first Wasserstein distance between the distributions was 2.28 km: this measures the average separation of corresponding length quantiles. A small binned JS therefore coexists with a measurable shortfall in distance.
+\textbf{What does the length score mean in kilometres?} The observed median was 13.96 km, compared with 12.39 and 12.64 km for seeds 42 and 43. Across requests, generated length averaged 2.01 and 1.51 km below observed length. The first Wasserstein distance between the distributions was 2.28 and 1.92 km, respectively: this measures the average separation of corresponding length quantiles. A small binned JS therefore coexists with a measurable shortfall in distance.
 
-\textbf{Conclusion.} We reproduced the conditional training and sampling procedure on public Porto GPS data under an explicit long-trip rule. The first fit captured much of the observed length distribution and hotspot ranking while tending to generate shorter journeys. The scope of this result is journeys of at least 120 recorded positions. \input{repeat-note.tex}
+\textbf{Conclusion.} We reproduced the conditional training and sampling procedure on public Porto GPS data under an explicit long-trip rule. Both fits generated shorter median trips and recovered 15 to 17 of the 20 observed hotspots across the specified grids. The scope of this result is journeys of at least 120 recorded positions. 
 
 \section*{Sources}
 Zhu et al., \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9b4a28fb9eebe0430c3312a4898a41-Abstract.html}{DiffTraj}, NeurIPS 2023, especially Appendices B.1, B.2 and C.1.\\
