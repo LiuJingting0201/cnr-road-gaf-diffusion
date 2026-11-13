@@ -1,0 +1,218 @@
+[
+  {
+    "city": "SUMO",
+    "seed": 42,
+    "split": "development",
+    "n": 1000,
+    "draw_id_sha256": "9414f2eebab7609cd185435fd3d80061494237e67988411b65d0907e5d745d3b",
+    "reference_sha256": "14282b1f91859288bc3216b12d1220da936e9cbf3c3be2308739ebac63af9e2b",
+    "grid_full_minmax_coordinates": {
+      "low": [
+        -0.1277889460325241,
+        75.0199966430664
+      ],
+      "high": [
+        9975.365234375,
+        6356.52001953125
+      ]
+    },
+    "requested_vs_observed_cell_mismatches": [
+      0,
+      0
+    ],
+    "distribution": {
+      "density_js": 0.019119340340806583,
+      "od_js": 0.41664224371246056,
+      "top20_cell_f1": 0.75,
+      "length_js": 0.019253069126891613
+    },
+    "origin_error_m": {
+      "50": 295.0560046240893,
+      "90": 636.730415723486,
+      "95": 750.2578047705947
+    },
+    "destination_error_m": {
+      "50": 321.49264307410135,
+      "90": 660.6883909406399,
+      "95": 790.2715018612132
+    },
+    "requested_cell_hits": {
+      "origin": 497,
+      "destination": 464,
+      "both": 247
+    },
+    "requested_cell_hits_strict_inside": {
+      "origin": 496,
+      "destination": 461,
+      "both": 245
+    },
+    "both_endpoints_within_m": {
+      "100": 9,
+      "250": 151,
+      "500": 615,
+      "1000": 963
+    }
+  },
+  {
+    "city": "SUMO",
+    "seed": 43,
+    "split": "development",
+    "n": 1000,
+    "draw_id_sha256": "9414f2eebab7609cd185435fd3d80061494237e67988411b65d0907e5d745d3b",
+    "reference_sha256": "14282b1f91859288bc3216b12d1220da936e9cbf3c3be2308739ebac63af9e2b",
+    "grid_full_minmax_coordinates": {
+      "low": [
+        -0.1277889460325241,
+        75.0199966430664
+      ],
+      "high": [
+        9975.365234375,
+        6356.52001953125
+      ]
+    },
+    "requested_vs_observed_cell_mismatches": [
+      0,
+      0
+    ],
+    "distribution": {
+      "density_js": 0.012992558621421811,
+      "od_js": 0.4156485116359407,
+      "top20_cell_f1": 0.8,
+      "length_js": 0.02365736201413956
+    },
+    "origin_error_m": {
+      "50": 319.32754742218856,
+      "90": 644.8215984642127,
+      "95": 787.5921291199863
+    },
+    "destination_error_m": {
+      "50": 308.9250938662219,
+      "90": 651.1894241954859,
+      "95": 809.9294390282411
+    },
+    "requested_cell_hits": {
+      "origin": 480,
+      "destination": 456,
+      "both": 226
+    },
+    "requested_cell_hits_strict_inside": {
+      "origin": 480,
+      "destination": 451,
+      "both": 225
+    },
+    "both_endpoints_within_m": {
+      "100": 10,
+      "250": 152,
+      "500": 659,
+      "1000": 964
+    }
+  },
+  {
+    "city": "Porto",
+    "seed": 42,
+    "split": "reserve",
+    "n": 1000,
+    "draw_id_sha256": "9414f2eebab7609cd185435fd3d80061494237e67988411b65d0907e5d745d3b",
+    "reference_sha256": "82fe12072cc2a49833dbd0a6202eb41b8363cd8eb044a4740c69420cc2be5c7f",
+    "grid_full_minmax_coordinates": {
+      "low": [
+        -9.446430206298828,
+        38.564674377441406
+      ],
+      "high": [
+        -6.261874198913574,
+        42.149932861328125
+      ]
+    },
+    "requested_vs_observed_cell_mismatches": [
+      0,
+      0
+    ],
+    "distribution": {
+      "density_js": 0.029489165088845967,
+      "od_js": 0.020535587932433836,
+      "top20_cell_f1": 0.7,
+      "length_js": 0.006531364718813259
+    },
+    "origin_error_m": {
+      "50": 2827.992744954361,
+      "90": 6350.868927912,
+      "95": 8899.145805942402
+    },
+    "destination_error_m": {
+      "50": 3826.859839427829,
+      "90": 11017.104745846544,
+      "95": 13741.952197183955
+    },
+    "requested_cell_hits": {
+      "origin": 941,
+      "destination": 914,
+      "both": 872
+    },
+    "requested_cell_hits_strict_inside": {
+      "origin": 941,
+      "destination": 914,
+      "both": 872
+    },
+    "both_endpoints_within_m": {
+      "100": 0,
+      "250": 0,
+      "500": 2,
+      "1000": 11
+    }
+  },
+  {
+    "city": "Porto",
+    "seed": 43,
+    "split": "reserve",
+    "n": 1000,
+    "draw_id_sha256": "9414f2eebab7609cd185435fd3d80061494237e67988411b65d0907e5d745d3b",
+    "reference_sha256": "82fe12072cc2a49833dbd0a6202eb41b8363cd8eb044a4740c69420cc2be5c7f",
+    "grid_full_minmax_coordinates": {
+      "low": [
+        -9.446430206298828,
+        38.564674377441406
+      ],
+      "high": [
+        -6.261874198913574,
+        42.149932861328125
+      ]
+    },
+    "requested_vs_observed_cell_mismatches": [
+      0,
+      0
+    ],
+    "distribution": {
+      "density_js": 0.037161587002019325,
+      "od_js": 0.02268261009131123,
+      "top20_cell_f1": 0.55,
+      "length_js": 0.010891636182057334
+    },
+    "origin_error_m": {
+      "50": 3012.753490245031,
+      "90": 6903.062821863894,
+      "95": 9903.368334597057
+    },
+    "destination_error_m": {
+      "50": 5008.4837373394585,
+      "90": 12528.264477354938,
+      "95": 17406.651318869623
+    },
+    "requested_cell_hits": {
+      "origin": 924,
+      "destination": 885,
+      "both": 839
+    },
+    "requested_cell_hits_strict_inside": {
+      "origin": 924,
+      "destination": 885,
+      "both": 839
+    },
+    "both_endpoints_within_m": {
+      "100": 0,
+      "250": 0,
+      "500": 0,
+      "1000": 5
+    }
+  }
+]

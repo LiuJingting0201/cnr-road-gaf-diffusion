@@ -1,0 +1,66 @@
+{
+  "parameters": {
+    "network": {
+      "edges": 11123,
+      "taxi_lane_shapes": 12678,
+      "directed_transitions": 13402,
+      "map_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0"
+    },
+    "observation_period_seconds": 15,
+    "retain_terminal": true,
+    "radius_m": 50.0,
+    "maximum_candidate_edges_per_point": 32,
+    "speed_ceiling_mps": 40.0,
+    "route_limit": "min(1500 m, 3 times observed chord + 100 m)",
+    "reverse_tolerance_m": 1.0,
+    "whole_trip": "all intervals supported by one candidate sequence; same-edge lane positioning and choice are approximated at edge level",
+    "density_diagnostic": "198 interior points of the common representation (observed xy interpolated to 200 points, generated original 200) to nearest taxi-permitted lane"
+  },
+  "counts": {
+    "real": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 35816,
+      "reasonable": 35773,
+      "walk": 934,
+      "passed": 911,
+      "observations": 36885,
+      "projected_within50": 36885,
+      "capped_points": 5400,
+      "interior_points": 198000,
+      "interior_within10": 198000,
+      "interior_within50": 198000,
+      "interior_all50": 1000
+    },
+    "42": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 23469,
+      "reasonable": 23269,
+      "walk": 6,
+      "passed": 5,
+      "observations": 36885,
+      "projected_within50": 31809,
+      "capped_points": 2234,
+      "interior_points": 198000,
+      "interior_within10": 81350,
+      "interior_within50": 172608,
+      "interior_all50": 82
+    },
+    "43": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 22851,
+      "reasonable": 22498,
+      "walk": 3,
+      "passed": 0,
+      "observations": 36885,
+      "projected_within50": 32224,
+      "capped_points": 2373,
+      "interior_points": 198000,
+      "interior_within10": 82707,
+      "interior_within50": 174817,
+      "interior_all50": 62
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "parameters": {
+    "network": {
+      "edges": 11123,
+      "taxi_lane_shapes": 12678,
+      "directed_transitions": 13402,
+      "map_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0"
+    },
+    "observation_period_seconds": 15,
+    "retain_terminal": true,
+    "radius_m": 50.0,
+    "maximum_candidate_edges_per_point": 16,
+    "speed_ceiling_mps": 40.0,
+    "route_limit": "min(1500 m, 3 times observed chord + 100 m)",
+    "reverse_tolerance_m": 1.0,
+    "whole_trip": "all intervals supported by one candidate sequence; same-edge lane positioning and choice are approximated at edge level",
+    "central_intervals": "actual elapsed interval midpoint in inclusive [10%,90%] of duration",
+    "density_diagnostic": "198 interior points of the common representation (observed xy interpolated to 200 points, generated original 200) to nearest taxi-permitted lane"
+  },
+  "counts": {
+    "real": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 35802,
+      "reasonable": 35783,
+      "walk": 922,
+      "passed": 910,
+      "observations": 36885,
+      "central_intervals": 28323,
+      "central_linked": 28258,
+      "central_walk": 935,
+      "central_reasonable": 28245,
+      "projected_within50": 36885,
+      "capped_points": 16376,
+      "interior_points": 198000,
+      "interior_within10": 198000,
+      "interior_within50": 198000,
+      "interior_all50": 1000
+    },
+    "42": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 23154,
+      "reasonable": 22928,
+      "walk": 5,
+      "passed": 4,
+      "observations": 36885,
+      "central_intervals": 28323,
+      "central_linked": 18862,
+      "central_walk": 16,
+      "central_reasonable": 18686,
+      "projected_within50": 31809,
+      "capped_points": 9497,
+      "interior_points": 198000,
+      "interior_within10": 81350,
+      "interior_within50": 172608,
+      "interior_all50": 82
+    },
+    "43": {
+      "trips": 1000,
+      "intervals": 35885,
+      "linked": 22449,
+      "reasonable": 22087,
+      "walk": 1,
+      "passed": 0,
+      "observations": 36885,
+      "central_intervals": 28323,
+      "central_linked": 18246,
+      "central_walk": 8,
+      "central_reasonable": 17989,
+      "projected_within50": 32224,
+      "capped_points": 9859,
+      "interior_points": 198000,
+      "interior_within10": 82707,
+      "interior_within50": 174817,
+      "interior_all50": 62
+    }
+  }
+}

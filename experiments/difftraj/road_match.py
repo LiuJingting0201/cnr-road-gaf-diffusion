@@ -14,10 +14,14 @@ def init(config):
     global actor
     actor=Actor(str(config))
 
-def match(job):
+def match(job, *, with_interior=False):
     points,dt,mode=job
     n=len(points)
     row=dict(mode=mode,n=n,offsets=[],linked=0,reasonable=0,walk=0,pass08=0,passed=0,pass12=0)
+    if with_interior:
+        fraction = (np.arange(n-1) + 0.5) / (n-1)
+        interior = (fraction >= 0.1) & (fraction <= 0.9)
+        row.update(interior_intervals=int(interior.sum()), interior_linked=0, interior_walk=0)
     request=dict(shape=[dict(lon=float(x),lat=float(y)) for x,y in points],
                  costing=PROFILES[mode],shape_match='map_snap',units='kilometers',
                  trace_options=dict(gps_accuracy=10,search_radius=50),
@@ -49,6 +53,9 @@ def match(job):
     row['linked']=int(connected.sum())
     row['reasonable']=int(np.sum(connected&(speed<=CAP[mode])))
     row['walk']=int(connected.all())
+    if with_interior:
+        row['interior_linked'] = int(connected[interior].sum())
+        row['interior_walk'] = int(connected[interior].all())
     for factor,key in [(0.8,'pass08'),(1.,'passed'),(1.2,'pass12')]:
         row[key]=int(np.all(connected&(speed<=factor*CAP[mode])))
     return row

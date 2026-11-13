@@ -1,0 +1,99 @@
+{
+  "request_index_sha256": "9414f2eebab7609cd185435fd3d80061494237e67988411b65d0907e5d745d3b",
+  "requests": 1000,
+  "dt_s": 15,
+  "bounds_lonlat": [
+    -8.82,
+    40.9,
+    -8.2,
+    41.42
+  ],
+  "interior": "interval midpoint in [10%,90%] of elapsed time",
+  "threshold_m": 50,
+  "gps_accuracy_m": 10,
+  "interval_speed_ceiling_mps": 40,
+  "graph_sha256": "dec551eb4178c97593d97af1aafe3c5b702c1acd6baabe830f9b609b146d8676",
+  "results": {
+    "observed": {
+      "trips": 1000,
+      "intervals": 188173,
+      "n": 189173,
+      "linked": 168620,
+      "reasonable": 167953,
+      "walk": 650,
+      "pass08": 366,
+      "passed": 489,
+      "pass12": 538,
+      "projected": 170420,
+      "projected_within50": 170297,
+      "matched_offset_p50_p95": [
+        3.722579,
+        26.6142867
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 2
+      },
+      "interior_intervals": 150647,
+      "interior_linked": 133677,
+      "interior_walk": 707,
+      "entirely_in_box": 951,
+      "points_outside_box": 15524,
+      "fully_in_box_walk": 650,
+      "fully_in_box_passed": 489
+    },
+    "42": {
+      "trips": 1000,
+      "intervals": 188173,
+      "n": 189173,
+      "linked": 110630,
+      "reasonable": 105376,
+      "walk": 2,
+      "pass08": 1,
+      "passed": 2,
+      "pass12": 2,
+      "projected": 135549,
+      "projected_within50": 135392,
+      "matched_offset_p50_p95": [
+        21.863151,
+        46.4710184
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 2
+      },
+      "interior_intervals": 150647,
+      "interior_linked": 87523,
+      "interior_walk": 7,
+      "entirely_in_box": 937,
+      "points_outside_box": 14865,
+      "fully_in_box_walk": 2,
+      "fully_in_box_passed": 2
+    },
+    "43": {
+      "trips": 1000,
+      "intervals": 188173,
+      "n": 189173,
+      "linked": 94276,
+      "reasonable": 88174,
+      "walk": 0,
+      "pass08": 0,
+      "passed": 0,
+      "pass12": 0,
+      "projected": 121646,
+      "projected_within50": 121533,
+      "matched_offset_p50_p95": [
+        22.284921500000003,
+        46.6117345
+      ],
+      "errors": {
+        "Map Match algorithm failed to find path: map_snap algorithm failed to snap the shape points to the correct shape.": 6
+      },
+      "interior_intervals": 150647,
+      "interior_linked": 74988,
+      "interior_walk": 2,
+      "entirely_in_box": 943,
+      "points_outside_box": 15624,
+      "fully_in_box_walk": 0,
+      "fully_in_box_passed": 0
+    }
+  }
+}

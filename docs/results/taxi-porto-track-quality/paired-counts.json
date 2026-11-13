@@ -1,0 +1,34 @@
+{
+  "SUMO-42": {
+    "n": 1000,
+    "walk": 5,
+    "both_requested_cells_and_walk": 2,
+    "both_within_500m_and_walk": 3,
+    "observed_walk": 922,
+    "generated_and_observed_walk": 5
+  },
+  "SUMO-43": {
+    "n": 1000,
+    "walk": 1,
+    "both_requested_cells_and_walk": 0,
+    "both_within_500m_and_walk": 1,
+    "observed_walk": 922,
+    "generated_and_observed_walk": 1
+  },
+  "Porto-42": {
+    "n": 1000,
+    "walk": 2,
+    "both_requested_cells_and_walk": 2,
+    "both_within_500m_and_walk": 0,
+    "observed_walk": 650,
+    "generated_and_observed_walk": 2
+  },
+  "Porto-43": {
+    "n": 1000,
+    "walk": 0,
+    "both_requested_cells_and_walk": 0,
+    "both_within_500m_and_walk": 0,
+    "observed_walk": 650,
+    "generated_and_observed_walk": 0
+  }
+}
