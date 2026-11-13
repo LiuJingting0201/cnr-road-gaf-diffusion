@@ -38,3 +38,16 @@ The local full grid has 16 × 16 cells, approximately 623.5 × 392.6 metres. The
 ### How much additional support does 20k buy?
 
 Holding the 10k grid fixed, 86.0% of the 1,000 development requests have their exact OD pair in the 10k training set, 68.4% have at least two examples, 37.0% at least five and 12.5% at least ten. The nested 20k cohort raises these fractions to 92.7%, 84.9%, 60.8% and 34.2%. Reconstructing the expanded pack's unstandardized endpoints produced exactly the same OD IDs for all 10,000 shared training journeys. Training frequency is a measure of data support; prediction improvement must be evaluated separately. [Measured coverage](DEV_SUPPORT.json).
+
+### Fixed-weight development intervention
+
+On 1,000 identical development requests and generation noise, replace every unsupported departure index with the most frequent training bin, 234. Leave all seven other conditions, weights and 100 reverse steps fixed. Both endpoints hit is the fraction of requests with both generated endpoint cells equal to their requested cells. This diagnostic tests immediate clock sensitivity; it does not retrain the network on meaningful local times.
+
+| Seed | Header | Density JS | OD JS | Length JS | Top-20 F1 | Both endpoints hit |
+|---:|---|---:|---:|---:|---:|---:|
+| 42 | Original | .0160 | .4087 | .0257 | .85 | 24.0% |
+| 42 | Training modal bin | .0157 | .3882 | .0246 | .85 | 27.1% |
+| 43 | Original | .0307 | .4555 | .0105 | .85 | 17.9% |
+| 43 | Training modal bin | .0288 | .4531 | .0113 | .85 | 18.1% |
+
+Both OD scores improve slightly with supported time input. Substantial error persists. [Frozen-weight results](CLOCK_INTERVENTION.json).
