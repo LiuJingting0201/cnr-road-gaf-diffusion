@@ -26,6 +26,12 @@ def arc_length(track):
     return float((12742000*np.arcsin(np.sqrt(np.clip(a,0,1)))).sum())
 
 
+def track_geometry(raw):
+    if 'planar_unit_m' in raw.files:
+        return float(raw['planar_unit_m']), lambda track: float(np.linalg.norm(np.diff(track,axis=0),axis=1).sum())
+    return 1e-6,arc_length
+
+
 def grid(trips, lo, hi):
     q=np.floor((trips-lo)/(hi-lo)*16).astype(np.int64)
     return np.clip(q[...,0],0,15)*16+np.clip(q[...,1],0,15)
@@ -33,6 +39,7 @@ def grid(trips, lo, hi):
 
 def prepare():
     raw=np.load('observations.npz')
+    unit,length_fn=track_geometry(raw)
     sizes=raw['length']
     taxi=raw['taxi']
     stamps=raw['start']
@@ -43,11 +50,11 @@ def prepare():
     durations=raw['duration'] if 'duration' in raw.files else None
     tz=ZoneInfo(str(raw['timezone']) if 'timezone' in raw.files else ('Asia/Shanghai' if durations is not None else 'Europe/Lisbon'))
     for i,n in enumerate(sizes):
-        tr=delta[start:start+n].cumsum(0)*1e-6
+        tr=delta[start:start+n].cumsum(0)*unit
         start+=n
         xy[i]=resample_trajectory(tr,200)
         stamp=datetime.fromtimestamp(int(stamps[i]),tz)
-        length=arc_length(tr)
+        length=length_fn(tr)
         duration=durations[i] if durations is not None else (n-1)*15.
         head[i,:6]=[stamp.hour*12+stamp.minute//5,length,duration,n,length/(n-1),length/duration]
     # One taxi belongs to one partition throughout. All transformations use training data.
@@ -176,6 +183,7 @@ def score():
     dev='--development' in sys.argv
     ids=np.flatnonzero(data['split']==(8 if dev else 9))
     raw=np.load('observations.npz')
+    unit,length_fn=track_geometry(raw)
     sizes=raw['length']
     ends=np.r_[0,sizes.cumsum()]
     delta=raw['delta']
@@ -211,14 +219,14 @@ def score():
     if '--save-draws' in sys.argv:
         np.savez('draws.npz', ids=ids, xy=np.asarray(generated))
     lo,hi=data['lo'],data['hi']
-    ref=[delta[ends[i]:ends[i+1]].cumsum(0)*1e-6 for i in ids]
+    ref=[delta[ends[i]:ends[i+1]].cumsum(0)*unit for i in ids]
     synth=[resample_trajectory(g,int(sizes[i])) for i,g in zip(ids,generated)]
     def counts(trips):
         cells=[grid(tr,lo,hi) for tr in trips]
-        return np.bincount(np.concatenate(cells),minlength=256),np.bincount([int(c[0]*256+c[-1]) for c in cells],minlength=256**2),np.array([arc_length(tr) for tr in trips])
+        return np.bincount(np.concatenate(cells),minlength=256),np.bincount([int(c[0]*256+c[-1]) for c in cells],minlength=256**2),np.array([length_fn(tr) for tr in trips])
     a,b=counts(ref),counts(synth)
     train=np.flatnonzero(data['split']<8)
-    lengths=[arc_length(delta[ends[i]:ends[i+1]].cumsum(0)*1e-6) for i in train]
+    lengths=[length_fn(delta[ends[i]:ends[i+1]].cumsum(0)*unit) for i in train]
     bins=np.unique(np.quantile(lengths,np.linspace(0,1,21)[1:-1]))
     lh=lambda n:np.bincount(np.digitize(n,bins),minlength=len(bins)+1)
     js=lambda x,y:float(jensenshannon(x,y)**2)
@@ -235,7 +243,7 @@ def score():
         other=select.choice(dev_ids,n,replace=False)
         cond=select.choice(len(ids),n,replace=False)
         test=counts([ref[k] for k in cond])
-        obs=counts([delta[ends[k]:ends[k+1]].cumsum(0)*1e-6 for k in other])
+        obs=counts([delta[ends[k]:ends[k+1]].cumsum(0)*unit for k in other])
         result.update(reference_median_m=float(np.median(a[2])),generated_median_m=float(np.median(b[2])),length_w1_m=float(wasserstein_distance(a[2],b[2])),real_real_n=n,real_real=[js(test[0],obs[0]),js(test[1],obs[1]),js(lh(test[2]),lh(obs[2])),len(top(test[0])&top(obs[0]))/20])
     if '--cutoff-comparison' in sys.argv:
         from scipy.stats import wasserstein_distance
@@ -268,7 +276,7 @@ def score():
     if '--audit-lengths' in sys.argv:
         from porto_audit_lengths import audit
         dev_ids=np.flatnonzero(data['split']==8)
-        dev_lengths=[arc_length(delta[ends[i]:ends[i+1]].cumsum(0)*1e-6) for i in dev_ids]
+        dev_lengths=[length_fn(delta[ends[i]:ends[i+1]].cumsum(0)*unit) for i in dev_ids]
         report=audit(ref,synth,data['xy'][ids],generated,np.asarray(lengths),data['h'][ids],arc_length,dev_lengths)
         Path('length-audit.json').write_text(json.dumps(report,indent=2))
     Path('development.json' if dev else ('geolife-final.json' if 'duration' in raw.files else 'porto-final.json')).write_text(json.dumps(result,indent=2))
