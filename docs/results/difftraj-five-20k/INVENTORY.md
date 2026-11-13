@@ -11,3 +11,5 @@
 The 10k and 20k releases overlap by design. Bus service geometry and stop order come from the native routes; schedules are synthetic. Taxi demand uses the SUMO taxi class and synthetic reachable OD requests, without dispatch orders. Five classes share the network, not the original CNR demand. New native trajectory shards live alongside the 20k pack and reused shards remain under the 10k root. Resolve raw records by episode prefix. Do not delete the 10k raw shards. The G35 job directories contain related project material and recovery intermediates. Size alone does not establish that their contents can be removed.
 
 Sources: [G15 window inventory](../g15-balanced-sumo/REPORT.md), [G35 counts](../g35-training/STATUS.md), [10k eligibility](../difftraj-five-10k/PROTOCOL.md), [supplied-data baseline](../sumo-original/REPORT.md).
+
+For new training use the [native-clock edition](../taxi-reproduction-debug/LOCAL_CLOCK_RELEASES.md). The corrected 10k and 20k server packs share original coordinate/ID assets and carry their own verified header files.
