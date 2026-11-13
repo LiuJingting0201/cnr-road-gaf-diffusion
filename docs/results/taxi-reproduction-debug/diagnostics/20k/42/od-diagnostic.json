@@ -1,0 +1,229 @@
+{
+  "n": 1000,
+  "reference_sha256": "14282b1f91859288bc3216b12d1220da936e9cbf3c3be2308739ebac63af9e2b",
+  "q10_q50_q90_origin_error_m": [
+    116.18769241020026,
+    315.1851087764684,
+    659.9615775285133
+  ],
+  "q10_q50_q90_destination_error_m": [
+    110.33758419479679,
+    301.26848693228965,
+    634.7538554184815
+  ],
+  "length_w1_km": 0.358095319292501,
+  "q10_q50_q90_real_length_km": [
+    2.9450862873715797,
+    5.588304564197326,
+    8.679622132064175
+  ],
+  "q10_q50_q90_generated_length_km": [
+    3.362448477984309,
+    5.911409386950795,
+    9.094899496666423
+  ],
+  "native": {
+    "length_js": 0.01107016628101613,
+    "bin_edges_m": [
+      2449.974532924837,
+      2876.881396265114,
+      3233.0806101045055,
+      3577.7885260459825,
+      3923.1752496675663,
+      4277.789557910421,
+      4614.535034258813,
+      4957.053575798876,
+      5311.542819638198,
+      5673.37875745775,
+      6002.682557004145,
+      6356.279333566092,
+      6696.6326325821165,
+      7042.422601364603,
+      7397.17161138119,
+      7797.230516337354,
+      8259.12201887904,
+      8839.788584977643,
+      9668.53363841118
+    ],
+    "full": {
+      "n": 1000,
+      "lo": [
+        -0.1277889460325241,
+        75.0199966430664
+      ],
+      "hi": [
+        9976.240234375,
+        6356.52001953125
+      ],
+      "density_js": 0.021061895313563374,
+      "od_js": 0.40313479958936643,
+      "marginal_origin_js": 0.04232193565142087,
+      "marginal_destination_js": 0.03194934851135197,
+      "top20_cell_f1": 0.9,
+      "real_nonempty_cells": 118,
+      "generated_nonempty_cells": 139,
+      "real_od": {
+        "distinct": 817,
+        "max_count": 8,
+        "pair_collision_probability": 0.00048648648648648646,
+        "singleton_trips": 674
+      },
+      "generated_od": {
+        "distinct": 852,
+        "max_count": 6,
+        "pair_collision_probability": 0.0003783783783783784,
+        "singleton_trips": 731
+      },
+      "generated_mass_on_observed_od": 0.432,
+      "origin_hit": 0.458,
+      "destination_hit": 0.482,
+      "joint_hit": 0.236,
+      "origin_within_one_cell": 0.967,
+      "destination_within_one_cell": 0.971,
+      "joint_within_one_cell": 0.94,
+      "outside_points_real": 3.7591653149334723e-06,
+      "outside_points_generated": 0.006016544086551022
+    },
+    "core": {
+      "n": 1000,
+      "lo": [
+        1380.2685913085938,
+        339.76567626953124
+      ],
+      "hi": [
+        7605.7018164062465,
+        5363.963452148436
+      ],
+      "density_js": 0.03168582817535946,
+      "od_js": 0.5171331318902939,
+      "marginal_origin_js": 0.06200245325770799,
+      "marginal_destination_js": 0.0707061998355118,
+      "top20_cell_f1": 0.65,
+      "real_nonempty_cells": 156,
+      "generated_nonempty_cells": 179,
+      "real_od": {
+        "distinct": 890,
+        "max_count": 6,
+        "pair_collision_probability": 0.0002902902902902903,
+        "singleton_trips": 803
+      },
+      "generated_od": {
+        "distinct": 873,
+        "max_count": 8,
+        "pair_collision_probability": 0.0003783783783783784,
+        "singleton_trips": 782
+      },
+      "generated_mass_on_observed_od": 0.279,
+      "origin_hit": 0.186,
+      "destination_hit": 0.202,
+      "joint_hit": 0.05,
+      "origin_within_one_cell": 0.715,
+      "destination_within_one_cell": 0.777,
+      "joint_within_one_cell": 0.562,
+      "outside_points_real": 0.04485436053778619,
+      "outside_points_generated": 0.06648459775991339
+    }
+  },
+  "common": {
+    "length_js": 0.010091452760720532,
+    "bin_edges_m": [
+      2460.9450534271527,
+      2880.833920403925,
+      3259.8449908988505,
+      3579.197594394342,
+      3930.902500980419,
+      4286.793856211434,
+      4613.492709522982,
+      4938.280156995427,
+      5296.129969417876,
+      5646.762958230369,
+      5982.570557558841,
+      6341.94984808882,
+      6684.343213507799,
+      7002.325637250687,
+      7376.116801904191,
+      7766.305038292933,
+      8245.897082818561,
+      8844.500193079644,
+      9608.656519080412
+    ],
+    "full": {
+      "n": 1000,
+      "lo": [
+        -0.1277889460325241,
+        75.0199966430664
+      ],
+      "hi": [
+        9975.365234375,
+        6356.52001953125
+      ],
+      "density_js": 0.02106080036323677,
+      "od_js": 0.40313479958936643,
+      "marginal_origin_js": 0.042423470116726585,
+      "marginal_destination_js": 0.03204064679974497,
+      "top20_cell_f1": 0.9,
+      "real_nonempty_cells": 118,
+      "generated_nonempty_cells": 139,
+      "real_od": {
+        "distinct": 817,
+        "max_count": 8,
+        "pair_collision_probability": 0.00048648648648648646,
+        "singleton_trips": 674
+      },
+      "generated_od": {
+        "distinct": 852,
+        "max_count": 6,
+        "pair_collision_probability": 0.0003783783783783784,
+        "singleton_trips": 731
+      },
+      "generated_mass_on_observed_od": 0.432,
+      "origin_hit": 0.457,
+      "destination_hit": 0.482,
+      "joint_hit": 0.236,
+      "origin_within_one_cell": 0.967,
+      "destination_within_one_cell": 0.971,
+      "joint_within_one_cell": 0.94,
+      "outside_points_real": 3.7591653149334723e-06,
+      "outside_points_generated": 0.006016544086551022
+    },
+    "core": {
+      "n": 1000,
+      "lo": [
+        1374.6377807617187,
+        340.0322830200195
+      ],
+      "hi": [
+        7604.054208984375,
+        5344.0960693359375
+      ],
+      "density_js": 0.03153195449100858,
+      "od_js": 0.5177100912876598,
+      "marginal_origin_js": 0.06188496405820835,
+      "marginal_destination_js": 0.0700601940584226,
+      "top20_cell_f1": 0.7,
+      "real_nonempty_cells": 157,
+      "generated_nonempty_cells": 180,
+      "real_od": {
+        "distinct": 898,
+        "max_count": 6,
+        "pair_collision_probability": 0.0002682682682682683,
+        "singleton_trips": 817
+      },
+      "generated_od": {
+        "distinct": 878,
+        "max_count": 8,
+        "pair_collision_probability": 0.00037237237237237235,
+        "singleton_trips": 792
+      },
+      "generated_mass_on_observed_od": 0.279,
+      "origin_hit": 0.188,
+      "destination_hit": 0.201,
+      "joint_hit": 0.049,
+      "origin_within_one_cell": 0.718,
+      "destination_within_one_cell": 0.772,
+      "joint_within_one_cell": 0.562,
+      "outside_points_real": 0.045254711643826606,
+      "outside_points_generated": 0.06672330475741166
+    }
+  }
+}
