@@ -1,0 +1,235 @@
+{
+  "method": "Released conditional DiffTraj coordinate network; epoch-200 ordinary parameters.",
+  "published_experiments": {
+    "metric_order": [
+      "density",
+      "trip",
+      "length",
+      "pattern"
+    ],
+    "pattern_definition": "F1 between the top-n visited cells. Appendix B.2 leaves n unspecified.",
+    "Chengdu": {
+      "table": 1,
+      "scores": [
+        0.0055,
+        0.0154,
+        0.0169,
+        0.823
+      ],
+      "source": "https://arxiv.org/html/2304.11582#S5.T1"
+    },
+    "Xian": {
+      "table": 1,
+      "scores": [
+        0.0126,
+        0.0165,
+        0.0203,
+        0.764
+      ],
+      "source": "https://arxiv.org/html/2304.11582#S5.T1"
+    },
+    "Porto": {
+      "table": 5,
+      "scores": [
+        0.0087,
+        0.0132,
+        0.0242,
+        0.847
+      ],
+      "source": "https://arxiv.org/html/2304.11582#A3.SS1"
+    }
+  },
+  "primary_scoring": "Supplied set uses its training bounds and length bins. Generated-taxi populations use the bounds and length bins of the original 10,000-trip training subset. Every taxi row uses the same ordered 1,000 reference tracks.",
+  "training": {
+    "position_channels": 2,
+    "model_positions": 200,
+    "diffusion_levels": 500,
+    "beta_start": 0.0001,
+    "beta_end": 0.05,
+    "network": "Guide_UNet",
+    "noise_prediction": "conditional + 3 * (conditional - zero-header branch)",
+    "objective": "mean squared error over sampled Gaussian noise and both coordinate channels at 200 positions",
+    "optimizer": "AdamW",
+    "constant_learning_rate": 0.0002,
+    "epochs": 200,
+    "checkpoint": "final ordinary parameters",
+    "sampling": "100 reverse steps, eta=0, eval mode, common noise seed 42"
+  },
+  "runs": [
+    {
+      "dataset": "supplied",
+      "seed": 42,
+      "train": 1478,
+      "batch": 32,
+      "gpus_per_fit": 2,
+      "optimizer_updates": 9400,
+      "eval_set": "reserved",
+      "n_eval": 177,
+      "metrics": {
+        "density_js": 0.11102081208455974,
+        "od_js": 0.5597281641365697,
+        "length_js": 0.20575118217752342,
+        "top20_cell_f1": 0.65
+      },
+      "native_metrics": {
+        "density_js": 0.11102081208455974,
+        "od_js": 0.5597281641365697,
+        "length_js": 0.20575118217752342,
+        "top20_cell_f1": 0.65
+      },
+      "observed_median_km": 5.859541697609167,
+      "generated_median_km": 10.518321778127103,
+      "length_w1_km": 6.965894179731744,
+      "training_loss_epoch1": 0.26396963865835227,
+      "training_loss_epoch200": 0.010227848169505999,
+      "original_epoch_log_sha256": "54b7c34cf45aa02c0b6460b4a62ec592ee63e26cd7a1a1c2f282b066e39b452a"
+    },
+    {
+      "dataset": "supplied",
+      "seed": 43,
+      "train": 1478,
+      "batch": 32,
+      "gpus_per_fit": 2,
+      "optimizer_updates": 9400,
+      "eval_set": "reserved",
+      "n_eval": 177,
+      "metrics": {
+        "density_js": 0.06899234951303954,
+        "od_js": 0.5563808781885103,
+        "length_js": 0.05359935182370699,
+        "top20_cell_f1": 0.8
+      },
+      "native_metrics": {
+        "density_js": 0.06899234951303954,
+        "od_js": 0.5563808781885103,
+        "length_js": 0.05359935182370699,
+        "top20_cell_f1": 0.8
+      },
+      "observed_median_km": 5.859541697609167,
+      "generated_median_km": 5.661121068365732,
+      "length_w1_km": 0.48948354090621177,
+      "training_loss_epoch1": 0.2547794422475024,
+      "training_loss_epoch200": 0.01024186400966328,
+      "original_epoch_log_sha256": "ccb9dd5db0731a2d6ba30e672ff2d5bd63cf3d8715e0ac795e3495c24612006d"
+    },
+    {
+      "dataset": "10k",
+      "seed": 42,
+      "train": 10000,
+      "batch": 220,
+      "gpus_per_fit": 1,
+      "optimizer_updates": 9200,
+      "eval_set": "development",
+      "n_eval": 1000,
+      "metrics": {
+        "density_js": 0.019119340340806583,
+        "od_js": 0.41664224371246056,
+        "length_js": 0.019253069126891613,
+        "top20_cell_f1": 0.75
+      },
+      "native_metrics": {
+        "density_js": 0.019119340340806583,
+        "od_js": 0.41664224371246056,
+        "length_js": 0.019253069126891613,
+        "top20_cell_f1": 0.75
+      },
+      "observed_median_km": 5.588304564197326,
+      "generated_median_km": 4.8965594037941464,
+      "length_w1_km": 0.635686954740231,
+      "training_loss_epoch1": 0.25912844023108483,
+      "training_loss_epoch200": 0.009933936586603522,
+      "original_epoch_log_sha256": "5d2092654b51777eb81a527da73e1ccd177940efb0d0421720b8a033fa7b7ba4"
+    },
+    {
+      "dataset": "10k",
+      "seed": 43,
+      "train": 10000,
+      "batch": 220,
+      "gpus_per_fit": 1,
+      "optimizer_updates": 9200,
+      "eval_set": "development",
+      "n_eval": 1000,
+      "metrics": {
+        "density_js": 0.012992558621421811,
+        "od_js": 0.4156485116359407,
+        "length_js": 0.02365736201413956,
+        "top20_cell_f1": 0.8
+      },
+      "native_metrics": {
+        "density_js": 0.012992558621421811,
+        "od_js": 0.4156485116359407,
+        "length_js": 0.02365736201413956,
+        "top20_cell_f1": 0.8
+      },
+      "observed_median_km": 5.588304564197326,
+      "generated_median_km": 6.3430814286434565,
+      "length_w1_km": 0.6557707366485681,
+      "training_loss_epoch1": 0.2603125401586294,
+      "training_loss_epoch200": 0.009823470742441713,
+      "original_epoch_log_sha256": "b2e57513a1103a9f0c7f2546ef2beb58326abf0116e146b3033e410bdbf3fb24"
+    },
+    {
+      "dataset": "20k",
+      "seed": 42,
+      "train": 20000,
+      "batch": 440,
+      "gpus_per_fit": 1,
+      "optimizer_updates": 9200,
+      "eval_set": "development",
+      "n_eval": 1000,
+      "metrics": {
+        "density_js": 0.02106080036323677,
+        "od_js": 0.40313479958936643,
+        "length_js": 0.010091452760720532,
+        "top20_cell_f1": 0.9
+      },
+      "native_metrics": {
+        "density_js": 0.021061895313563374,
+        "od_js": 0.40313479958936643,
+        "length_js": 0.01107016628101613,
+        "top20_cell_f1": 0.9
+      },
+      "observed_median_km": 5.588304564197326,
+      "generated_median_km": 5.911409386950794,
+      "length_w1_km": 0.358095319292501,
+      "training_loss_epoch1": 0.2619026743024588,
+      "training_loss_epoch200": 0.009221840001828968,
+      "original_epoch_log_sha256": "0567b9c4160c657ecc9c2d29c4f1e39dc6467edac930ac3964c8afad3231511d"
+    },
+    {
+      "dataset": "20k",
+      "seed": 43,
+      "train": 20000,
+      "batch": 440,
+      "gpus_per_fit": 1,
+      "optimizer_updates": 9200,
+      "eval_set": "development",
+      "n_eval": 1000,
+      "metrics": {
+        "density_js": 0.15311954676303274,
+        "od_js": 0.6374202310098891,
+        "length_js": 0.34994142133173695,
+        "top20_cell_f1": 0.5
+      },
+      "native_metrics": {
+        "density_js": 0.1531127641359009,
+        "od_js": 0.6374202310098891,
+        "length_js": 0.3502176503218508,
+        "top20_cell_f1": 0.5
+      },
+      "observed_median_km": 5.588304564197326,
+      "generated_median_km": 24.96947697760476,
+      "length_w1_km": 32.61993357188361,
+      "training_loss_epoch1": 0.25938198762536047,
+      "training_loss_epoch200": 0.01986349050812423,
+      "original_epoch_log_sha256": "c0515c19a6f681ee815c1aac8526ac616729b87a78d7723622e34709b9d61271"
+    }
+  ],
+  "supplied_real_development_vs_reserve_177_each": {
+    "density_js": 0.02237198629005983,
+    "od_js": 0.5144280041741317,
+    "length_js": 0.029453583752053557,
+    "top20_cell_f1": 0.9
+  },
+  "shared_taxi_observations_sha256": "14282b1f91859288bc3216b12d1220da936e9cbf3c3be2308739ebac63af9e2b"
+}

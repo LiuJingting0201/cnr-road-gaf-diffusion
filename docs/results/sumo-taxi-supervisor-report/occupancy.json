@@ -1,0 +1,78 @@
+{
+  "bounds_m": [
+    -50,
+    10000,
+    -50,
+    6400
+  ],
+  "cell_m": 50,
+  "normalization": "Counts / total positions in that panel, including off-map positions, multiplied by 1,000,000.",
+  "rows": {
+    "Supplied vehicles": {
+      "requests": 177,
+      "ordered_reference_sha256": "37e688451a74ab499a912c4fa6a21a6ff51990ea543c855ea6da4671cb56e5d2",
+      "observed": {
+        "points": 461252,
+        "outside_points": 0,
+        "occupied_cells": 2548,
+        "outside_percent": 0.0
+      },
+      "42": {
+        "points": 461252,
+        "outside_points": 5837,
+        "occupied_cells": 8878,
+        "outside_percent": 1.2654687676150997
+      },
+      "43": {
+        "points": 461252,
+        "outside_points": 2465,
+        "occupied_cells": 7099,
+        "outside_percent": 0.5344150269267125
+      }
+    },
+    "10k taxi model": {
+      "requests": 1000,
+      "ordered_reference_sha256": "ca11fba3e0428bc6aba5815e65ee3d9fc4c7c4fd3de65f88ed3c881b4bac565e",
+      "observed": {
+        "points": 532033,
+        "outside_points": 0,
+        "occupied_cells": 4559,
+        "outside_percent": 0.0
+      },
+      "42": {
+        "points": 532033,
+        "outside_points": 1330,
+        "occupied_cells": 9007,
+        "outside_percent": 0.2499844934430759
+      },
+      "43": {
+        "points": 532033,
+        "outside_points": 493,
+        "occupied_cells": 9621,
+        "outside_percent": 0.09266342501311009
+      }
+    },
+    "20k taxi model": {
+      "requests": 1000,
+      "ordered_reference_sha256": "ca11fba3e0428bc6aba5815e65ee3d9fc4c7c4fd3de65f88ed3c881b4bac565e",
+      "observed": {
+        "points": 532033,
+        "outside_points": 0,
+        "occupied_cells": 4559,
+        "outside_percent": 0.0
+      },
+      "42": {
+        "points": 532033,
+        "outside_points": 1178,
+        "occupied_cells": 9547,
+        "outside_percent": 0.2214148370495815
+      },
+      "43": {
+        "points": 532033,
+        "outside_points": 57807,
+        "occupied_cells": 21401,
+        "outside_percent": 10.865303468017961
+      }
+    }
+  }
+}

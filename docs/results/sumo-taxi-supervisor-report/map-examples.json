@@ -1,0 +1,174 @@
+{
+  "selection": "First, middle and last requests in the saved order. Same observed requests in both seeds; 10k and 20k share the same observed taxi journeys.",
+  "network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "groups": {
+    "supplied": [
+      {
+        "request": 1,
+        "model_seed": 42,
+        "source_class": "bus",
+        "observed_km": 3.2442524703283198,
+        "generated_200point_km": 3.6989098645556564,
+        "start_offset_m": 584.4266802359003,
+        "end_offset_m": 554.9053976064693
+      },
+      {
+        "request": 89,
+        "model_seed": 42,
+        "source_class": "motorcycle",
+        "observed_km": 5.970746183803951,
+        "generated_200point_km": 5.516798131330927,
+        "start_offset_m": 3133.414506676263,
+        "end_offset_m": 215.90005689599954
+      },
+      {
+        "request": 177,
+        "model_seed": 42,
+        "source_class": "car",
+        "observed_km": 8.014018612753862,
+        "generated_200point_km": 10.705352026141178,
+        "start_offset_m": 1278.2901248194157,
+        "end_offset_m": 820.3876082430445
+      },
+      {
+        "request": 1,
+        "model_seed": 43,
+        "source_class": "bus",
+        "observed_km": 3.2442524703283198,
+        "generated_200point_km": 3.297587974216978,
+        "start_offset_m": 376.4355038969212,
+        "end_offset_m": 95.01949189230125
+      },
+      {
+        "request": 89,
+        "model_seed": 43,
+        "source_class": "motorcycle",
+        "observed_km": 5.970746183803951,
+        "generated_200point_km": 3.4435403297025893,
+        "start_offset_m": 2475.0013732642733,
+        "end_offset_m": 405.30326333558764
+      },
+      {
+        "request": 177,
+        "model_seed": 43,
+        "source_class": "car",
+        "observed_km": 8.014018612753862,
+        "generated_200point_km": 6.31535589054375,
+        "start_offset_m": 713.7373146554298,
+        "end_offset_m": 424.36319898081973
+      }
+    ],
+    "taxi-10k": [
+      {
+        "request": 1,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 8.19696457365033,
+        "generated_200point_km": 7.071535857262986,
+        "start_offset_m": 327.7195653091496,
+        "end_offset_m": 61.21407960157378
+      },
+      {
+        "request": 501,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 2.8230784474979544,
+        "generated_200point_km": 2.971774931371366,
+        "start_offset_m": 328.68230696126375,
+        "end_offset_m": 381.1713735968249
+      },
+      {
+        "request": 1000,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 6.704547040693791,
+        "generated_200point_km": 5.868095795586766,
+        "start_offset_m": 332.91246722874985,
+        "end_offset_m": 558.5068941567612
+      },
+      {
+        "request": 1,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 8.19696457365033,
+        "generated_200point_km": 7.925177234668226,
+        "start_offset_m": 368.8660506164146,
+        "end_offset_m": 718.510794648822
+      },
+      {
+        "request": 501,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 2.8230784474979544,
+        "generated_200point_km": 4.037515561883087,
+        "start_offset_m": 261.0075856252316,
+        "end_offset_m": 269.21041846798437
+      },
+      {
+        "request": 1000,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 6.704547040693791,
+        "generated_200point_km": 6.3027300704761675,
+        "start_offset_m": 593.6385337187882,
+        "end_offset_m": 708.746009934828
+      }
+    ],
+    "taxi-20k": [
+      {
+        "request": 1,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 8.19696457365033,
+        "generated_200point_km": 8.65364542255077,
+        "start_offset_m": 378.67492621219446,
+        "end_offset_m": 303.24890493565107
+      },
+      {
+        "request": 501,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 2.8230784474979544,
+        "generated_200point_km": 3.4865180820896966,
+        "start_offset_m": 178.44114634028082,
+        "end_offset_m": 206.45952206271346
+      },
+      {
+        "request": 1000,
+        "model_seed": 42,
+        "source_class": "taxi",
+        "observed_km": 6.704547040693791,
+        "generated_200point_km": 6.610541223795914,
+        "start_offset_m": 405.8480925542352,
+        "end_offset_m": 477.4532481077879
+      },
+      {
+        "request": 1,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 8.19696457365033,
+        "generated_200point_km": 18.984137444978455,
+        "start_offset_m": 1728.0143182647512,
+        "end_offset_m": 1292.678869025832
+      },
+      {
+        "request": 501,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 2.8230784474979544,
+        "generated_200point_km": 22.63666824122547,
+        "start_offset_m": 1555.3218560296966,
+        "end_offset_m": 1532.398928332811
+      },
+      {
+        "request": 1000,
+        "model_seed": 43,
+        "source_class": "taxi",
+        "observed_km": 6.704547040693791,
+        "generated_200point_km": 45.5060340206643,
+        "start_offset_m": 4793.325188459378,
+        "end_offset_m": 8331.262864977189
+      }
+    ]
+  }
+}
