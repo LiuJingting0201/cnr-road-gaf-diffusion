@@ -21,6 +21,8 @@ def sample(head,z):
         for t0 in reversed(range(0,500,5)):
             t=torch.full((len(z),),t0,device='cuda')
             z=p_xt(z,net(z,t,head),t,torch.full_like(t,max(-1,t0-5)),beta,0.)
+    if '--map-examples' in sys.argv:
+        return z.transpose(1,2).cpu().numpy()*p['std']+p['mean']
     return z[:,:,[0,-1]].transpose(1,2).cpu().numpy()*p['std']+p['mean']
 train=np.flatnonzero(p['split']<8);test=np.flatnonzero(p['split']==9)
 freq=np.bincount(cells[train,0]*256+cells[train,1],minlength=65536)
@@ -39,6 +41,9 @@ for k,name in enumerate(['origin','destination']):
         j=eligible[np.argmin(np.where(mask,cost,np.inf))]
         ids.append(i);donors.append(j)
     ids=np.array(ids); donors=np.array(donors)
+    if '--map-examples' in sys.argv:
+        if name=='origin':continue
+        ids=ids[:32];donors=donors[:32]
     orig=[];alt=[]
     for start in range(0,len(ids),32):
         ix=ids[start:start+32];jx=donors[start:start+32]
@@ -47,10 +52,13 @@ for k,name in enumerate(['origin','destination']):
         z=torch.randn(len(ix),2,200,device='cuda')
         orig.extend(sample(a,z.clone()));alt.extend(sample(b,z.clone()))
     orig=np.array(orig);alt=np.array(alt)
+    if '--map-examples' in sys.argv:
+        np.savez(f'map-{seed}.npz',before=orig[:3],after=alt[:3],reference=xy[ids[:3]],A=center(cells[ids[:3],k]),B=center(cells[donors[:3],k]),O=center(cells[ids[:3],1-k]),width=w)
+        continue
     A=center(cells[ids,k]);B=center(cells[donors,k]);v=B-A;u=alt[:,k]-orig[:,k]
     ratio=(u*v).sum(1)/(v*v).sum(1); drift=np.linalg.norm(alt[:,1-k]-orig[:,1-k],axis=1)
     closer=np.linalg.norm(alt[:,k]-B,axis=1)<np.linalg.norm(orig[:,k]-B,axis=1)
     hit=grid(alt[:,k],lo,hi)==cells[donors,k]
     results[name]=dict(n=len(ids),median_target_m=float(np.median(np.linalg.norm(v,axis=1))),fraction_forward=float((ratio>0).mean()),median_projected_fraction=float(np.median(ratio)),median_moved_m=float(np.median(np.linalg.norm(u,axis=1))),median_other_end_drift_m=float(np.median(drift)),fraction_closer=float(closer.mean()),new_cell_hit=float(hit.mean()))
     np.savez(f'{seed}-{name}.npz',A=A[:6],B=B[:6],before=orig[:6,k],after=alt[:6,k])
-Path(f'{seed}.json').write_text(json.dumps(dict(coding=audit,results=results),indent=2))
+if '--map-examples' not in sys.argv:Path(f'{seed}.json').write_text(json.dumps(dict(coding=audit,results=results),indent=2))
