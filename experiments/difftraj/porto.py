@@ -115,13 +115,16 @@ def train():
             torch.cuda.set_rng_state(last['rng'][rank])
             begin=last['epoch']+1
             best=last['best']
+    global_batch=int(os.environ.get('DIFFTRAJ_GLOBAL_BATCH','1024'))
+    if global_batch < world or global_batch % world:
+        raise ValueError('Batch must be a positive multiple of world size')
     for epoch in range(begin,epochs+1):
         lr=optim.param_groups[0]['lr']
         norms=[]
         gen=torch.Generator().manual_seed(train_seed+epoch)
         order=torch.randperm(len(x),generator=gen)
         loss_total=0.
-        for group in order.split(1024):
+        for group in order.split(global_batch):
             # Distribute equal lengths across ranks, trimming at most world-1 examples per epoch.
             n=(len(group)//world)*world
             if n==0:
@@ -148,7 +151,7 @@ def train():
             states=[None]*world
             torch.distributed.all_gather_object(states,torch.cuda.get_rng_state())
         if rank==0:
-            log=dict(epoch=epoch,train_seed=train_seed,rank0_mean_noise_loss=loss_total/(len(order)//world),elapsed_s=time.monotonic()-start)
+            log=dict(epoch=epoch,train_seed=train_seed,global_batch=global_batch,rank0_mean_noise_loss=loss_total/(len(order)//world),elapsed_s=time.monotonic()-start)
             if not np.isfinite(log['rank0_mean_noise_loss']):
                 raise FloatingPointError(log)
             if stable:
@@ -221,6 +224,9 @@ def score():
     js=lambda x,y:float(jensenshannon(x,y)**2)
     top=lambda hist:set(np.argsort(-hist,kind='stable')[:20])
     result=dict(epoch=ck['epoch'],requests=len(ids),density_js=js(a[0],b[0]),trip_js=js(a[1],b[1]),length_js=js(lh(a[2]),lh(b[2])),top20_cell_f1=len(top(a[0])&top(b[0]))/20,generated_outside_fraction=float(np.any((np.concatenate(synth)<lo)|(np.concatenate(synth)>hi),axis=1).mean()))
+    if dev:
+        from scipy.stats import wasserstein_distance
+        result.update(reference_median_m=float(np.median(a[2])),generated_median_m=float(np.median(b[2])),length_w1_m=float(wasserstein_distance(a[2],b[2])))
     if '--all-holdout' in sys.argv:
         from scipy.stats import wasserstein_distance
         dev_ids=np.flatnonzero(data['split']==8)
