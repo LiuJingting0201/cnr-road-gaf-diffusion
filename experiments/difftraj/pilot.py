@@ -50,6 +50,11 @@ def predict(z,t,i):
     a=net.unet(z,t,cond)
     b=net.unet(z,t,net.place_emb(torch.zeros_like(h[i])))
     return a+3*(a-b)
+def rhythm(speed, interval):
+    slow=torch.sigmoid((1.-speed)/.4)
+    entries=((1-slow[:,:-2])*slow[:,1:-1]*slow[:,2:]).sum(1)*600/(199*interval)
+    return torch.stack((slow.mean(1),entries.log1p()),1)
+
 if '--evaluate' in sys.argv:
     net.load_state_dict(torch.load(f'{arm}-{steps}.pt',weights_only=True))
     emb.load_state_dict(torch.load(f'{arm}-{steps}-class.pt',weights_only=True))
@@ -70,6 +75,12 @@ else:
             # suppresses unstable clean estimates near the noise endpoint.
             residual=F.smooth_l1_loss(vel.log1p(),v[i].clamp_min(0).log1p(),reduction='none')
             loss=loss+.05*(a[:,0]*residual).mean()
+        if arm=='CR':
+            clean=(z-(1-a).sqrt()*pred)/a.sqrt()
+            speed=(clean.diff()*sd).norm(dim=1)/dt[i,None]
+            observed=xy[i].diff().norm(dim=1)/dt[i,None]
+            err=F.smooth_l1_loss(rhythm(speed,dt[i]),rhythm(observed,dt[i]),reduction='none')
+            loss=loss+.1*(a[:,0]*err).mean()
         if not loss.isfinite():
             raise FloatingPointError(f"nonfinite training loss at {step}")
         optim.zero_grad()
