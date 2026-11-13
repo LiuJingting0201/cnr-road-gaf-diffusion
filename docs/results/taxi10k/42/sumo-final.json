@@ -1,0 +1,24 @@
+{
+  "epoch": 200,
+  "requests": 1000,
+  "density_js": 0.013944878916835069,
+  "trip_js": 0.3903641763957851,
+  "length_js": 0.02522566531599402,
+  "top20_cell_f1": 0.95,
+  "generated_outside_fraction": 0.00032872988376259055,
+  "reference_median_m": 5638.371842907306,
+  "generated_median_m": 4839.357636873647,
+  "length_w1_m": 824.9846389421633,
+  "real_real_n": 1000,
+  "real_real": [
+    0.003934081464416445,
+    0.48697779985412976,
+    0.003604911061231284,
+    0.9
+  ],
+  "model": "conditional",
+  "density_js_issue15": 0.0139448784761515,
+  "trip_js_pseudocount_sensitivity": 0.3903319457150941,
+  "request_index_sha256": "8c2b0c429658cbdaf115bc6ce6900b84241e6d4d5c52c18ff45ed0f691cfaa81",
+  "core_density_js_with_overflow": 0.01698710381690499
+}

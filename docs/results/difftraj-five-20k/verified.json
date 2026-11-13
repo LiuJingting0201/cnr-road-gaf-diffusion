@@ -1,0 +1,47 @@
+{
+  "train": {
+    "n": 100000,
+    "episodes": 638,
+    "classes": {
+      "bicycle": 20000,
+      "bus": 20000,
+      "motorcycle": 20000,
+      "passenger": 20000,
+      "taxi": 20000
+    },
+    "source_episode_roots": [
+      "/workspace/cnr-experiments/difftraj-five-10k",
+      "/workspace/cnr-experiments/difftraj-five-20k"
+    ]
+  },
+  "validation": {
+    "n": 5000,
+    "episodes": 41,
+    "classes": {
+      "bicycle": 1000,
+      "bus": 1000,
+      "motorcycle": 1000,
+      "passenger": 1000,
+      "taxi": 1000
+    },
+    "source_episode_roots": [
+      "/workspace/cnr-experiments/difftraj-five-10k",
+      "/workspace/cnr-experiments/difftraj-five-20k"
+    ]
+  },
+  "test": {
+    "n": 5000,
+    "episodes": 40,
+    "classes": {
+      "bicycle": 1000,
+      "bus": 1000,
+      "motorcycle": 1000,
+      "passenger": 1000,
+      "taxi": 1000
+    },
+    "source_episode_roots": [
+      "/workspace/cnr-experiments/difftraj-five-10k",
+      "/workspace/cnr-experiments/difftraj-five-20k"
+    ]
+  }
+}
