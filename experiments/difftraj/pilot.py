@@ -90,6 +90,11 @@ else:
     torch.save(net.state_dict(),f'{arm}-{steps}.pt')
     torch.save(emb.state_dict(),f'{arm}-{steps}-class.pt')
 net.eval()
+if '--motion-audit' in sys.argv:
+    from motion_audit import audit
+    with torch.no_grad():
+        audit(xy,x,mu,sd,dt,v,train,abar,beta,predict,p_xt)
+    sys.exit()
 with torch.no_grad():
     torch.manual_seed(173)
     valid=torch.where(~train)[0]
