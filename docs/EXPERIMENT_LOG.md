@@ -677,3 +677,5 @@ Expanded Beijing rhythm study finished four full-header fits and fixed-noise bus
 Expanded Beijing motion audit: 535 round trips through normalization, 96 matched requests at eight noise levels for four fixed checkpoints. See results/beijing-motion-audit for known-noise, teacher-forced and free-running physical summaries. Late free-chain clean estimates retain excessive interval displacement.
 
 Turin bus-only DiffTraj completed two 200-epoch fits on 2,555 training journeys; both scored the same 341 reserved requests. Four distribution metrics, physical lengths, real/real control and matched-size Porto re-evaluation archived under results/turin-bus-only.
+
+2026-11-13. Submitted two SUMO taxi controls on the development server. One changes the observation cadence on identical trips and scores paired draws on a shared 15-second clock. The other matches Porto's minimum observation count and training duration-bin proportions on new, completed trips. Training, evaluation and reporting run on the server. Protocol in results/taxi-reproduction-debug/CADENCE_AND_DURATION.md.
