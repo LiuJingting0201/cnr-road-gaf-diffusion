@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\begin{document}
+{\small MASTER'S THESIS EXPERIMENT REPORT \hfill 13 November 2026}
+
+{\LARGE\bfseries Reproducing DiffTraj on long Porto taxi journeys\par}
+Jingting Liu
+
+\section*{Question and data}
+Given the attributes of a long taxi journey, how closely do trajectories sampled by DiffTraj reproduce the lengths and spatial distribution of observed journeys? Zhu et al. studied taxi GPS trajectories from Chengdu and Xi'an in their main experiment and reported an additional Porto comparison in Appendix C, Table 5. This report examines the Porto benchmark.
+
+The public Porto corpus records taxi positions at 15-second intervals. Each row describes a journey with a taxi identifier, departure timestamp and ordered longitude--latitude polyline. From 1,710,670 rows, we retained complete, finite tracks containing at least 120 original positions before interpolation. At the native cadence, 120 positions span 29 min 45 s. The resulting 55,267 journeys from 439 taxis represent the long-trip population. The paper describes a 120-point rule in Appendix B.1, but gives no separate retained count or exact split for Porto.
+
+We partitioned by taxi identity to keep vehicles disjoint. The training partition contained 46,470 journeys, the development partition 5,241 and the reserved partition 3,556. We used 512 fixed development requests for checkpoint selection and sampled 3,000 reserved journeys for the final comparison.
+
+\section*{Model and training}
+DiffTraj represents each journey as two coordinate channels interpolated to 200 positions. During training, Gaussian noise is added to an observed trajectory. A temporal U-Net takes the noisy coordinates, the noise level and a trip header and predicts the injected noise by minimizing mean squared error. The header specifies departure-time bin, distance, duration, original point count, average displacement, average speed, and origin and destination cells. Sampling begins with Gaussian noise and iteratively denoises it. We restore the original sample count before scoring. Supplying distance and endpoints makes this an evaluation of conditional generation.
+
+We trained the released coordinate architecture from scratch for 200 epochs with 500 noise levels, 100 reverse sampling steps and global batch size 1,024 on four GPUs. Inputs were normalized from training data. Our stabilized fit used AdamW, gradient clipping at norm 1 and cosine learning-rate decay from 0.0002 to 0.00002. For seed 42, epoch 193 minimized fixed development noise loss. The second fit changes initialization, training order and training noise while retaining the data, validation rule, sampling noise and evaluation requests.
+
+\newpage
+\section*{Results against the published Porto benchmark}
+Density and OD errors compare point occupancy and ordered origin--destination cell frequencies on a $16\times16$ grid. Length error compares distributions of cumulative journey distance. All three use Jensen--Shannon divergence (JS), with zero for identical distributions. Our length histogram uses 20 training-quantile bins. Our pattern F1 measures the overlap of the 20 most frequently visited cells.
+
+\begin{center}
+\begin{tabular}{lrrrr}\toprule
+ & Density JS $\downarrow$ & OD JS $\downarrow$ & Length JS $\downarrow$ & Pattern F1 $\uparrow$\\\midrule
+Published Table 5 & .00870 & .01320 & .02420 & .847\\
+Long trips, seed 42 & .01357 & .00594 & .00635 & .750\\
+Long trips, seed 43 & \multicolumn{4}{c}{Independent training repeat in progress}\\
+\bottomrule\end{tabular}
+\end{center}
+
+The seed-42 model recovered 15 of the 20 observed hotspot cells. The OD and length divergences were numerically smaller than the published values, while density error was larger and hotspot overlap lower. Exact Porto eligibility, grid bounds, length bins and hotspot count in the original evaluation remain unresolved. These choices affect the numerical comparison.
+
+\textbf{What does the length score mean in kilometres?} The observed median was 13.96 km, compared with 12.39 km for the generated sample. Across requests, generated length averaged 2.01 km below observed length. The first Wasserstein distance between the distributions was 2.28 km: this measures the average separation of corresponding length quantiles. A small binned JS therefore coexists with a measurable shortfall in distance.
+
+\textbf{Conclusion.} We reproduced the conditional training and sampling procedure on public Porto GPS data under an explicit long-trip rule. The first fit captured much of the observed length distribution and hotspot ranking while tending to generate shorter journeys. The scope of this result is journeys of at least 120 recorded positions. \input{repeat-note.tex}
+
+\section*{Sources}
+Zhu et al., \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9b4a28fb9eebe0430c3312a4898a41-Abstract.html}{DiffTraj}, NeurIPS 2023, especially Appendices B.1, B.2 and C.1.\\
+\href{https://archive.ics.uci.edu/dataset/339/}{UCI Porto taxi trajectory corpus}.\\
+\href{https://github.com/Yasoz/DiffTraj}{Author implementation} and \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/tree/main/docs/results/porto-metric-review}{local evaluation records}.
+\end{document}
