@@ -1,0 +1,30 @@
+{
+  "coding": {
+    "native": 0,
+    "prepared": 0,
+    "roundtrip": 0,
+    "total": 24000
+  },
+  "results": {
+    "origin": {
+      "n": 745,
+      "median_target_m": 2748.15625,
+      "fraction_forward": 1.0,
+      "median_projected_fraction": 0.9914474115007927,
+      "median_moved_m": 2779.4713620754005,
+      "median_other_end_drift_m": 212.62412715273396,
+      "fraction_closer": 1.0,
+      "new_cell_hit": 0.5436241610738255
+    },
+    "destination": {
+      "n": 710,
+      "median_target_m": 2711.3946704186546,
+      "fraction_forward": 1.0,
+      "median_projected_fraction": 0.9731991649685133,
+      "median_moved_m": 2658.4061142736973,
+      "median_other_end_drift_m": 215.86128530681194,
+      "fraction_closer": 0.9985915492957746,
+      "new_cell_hit": 0.43802816901408453
+    }
+  }
+}
