@@ -1,0 +1,64 @@
+{
+  "feed": "20261112",
+  "service_dates": [
+    "20261112"
+  ],
+  "counts": {
+    "points": 354114,
+    "groups": 8421,
+    "matched_groups": 8421,
+    "class_consistent": 8204,
+    "break_gap": 4922,
+    "break_speed": 52,
+    "class_conflict": 74
+  },
+  "modes": {
+    "bus": {
+      "matched_groups": 6616,
+      "segments": 6416,
+      "points": 262545,
+      "terminal_covered": 3262,
+      "vehicles": 500,
+      "routes": 86
+    },
+    "tram": {
+      "matched_groups": 1805,
+      "segments": 1862,
+      "points": 74085,
+      "terminal_covered": 937,
+      "vehicles": 136,
+      "routes": 8
+    }
+  },
+  "reported_speed_points": 0,
+  "interfix_seconds_p10_50_90": [
+    53,
+    63,
+    77
+  ],
+  "segment_duration_seconds_p10_50_90": [
+    1057,
+    2458,
+    4098
+  ],
+  "interval_speed_mps_p10_50_90": [
+    0.06,
+    3.48,
+    6.77
+  ],
+  "class_checked_terminal_segments": {
+    "bus": 3262,
+    "tram": 908
+  },
+  "polls": {
+    "total": 1393,
+    "empty": 110,
+    "errors": 0,
+    "vehicles": 643,
+    "routes": 94,
+    "window_rome": [
+      "2026-11-12T02:47:07+01:00",
+      "2026-11-13T02:46:49+01:00"
+    ]
+  }
+}
