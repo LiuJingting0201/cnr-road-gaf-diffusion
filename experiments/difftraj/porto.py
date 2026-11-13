@@ -59,6 +59,8 @@ def prepare():
         head[i,:6]=[stamp.hour*12+stamp.minute//5,length,duration,n,length/(n-1),length/duration]
     # One taxi belongs to one partition throughout. All transformations use training data.
     split=np.array([int(hashlib.sha256(str(t).encode()).hexdigest()[:8],16)%10 for t in taxi])
+    if 'episode_split' in raw.files:
+        split=raw['episode_split']
     train=split<8
     lo=xy[train].min((0,1));hi=xy[train].max((0,1))
     head[:,6]=grid(xy[:,0],lo,hi)
