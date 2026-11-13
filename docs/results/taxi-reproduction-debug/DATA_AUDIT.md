@@ -34,3 +34,7 @@ DiffTraj looks up departure time by discrete embedding. The condition rows selec
 The local full grid has 16 × 16 cells, approximately 623.5 × 392.6 metres. The 10,000 training journeys cover 3,698 distinct directed OD cells pairs. Development and reserved each cover 817 distinct pairs in 1,000 trips; 86.0% and 86.7% of their individual trips have a joint OD seen in training. All individual endpoint cell IDs occur in training. The most frequent training pair accounts for 0.31% of trips. Sparse joint distributions and training support affect sampling error even with correctly encoded endpoints.
 
 [Independent numerical audit](DATA_AUDIT.json). Reproduce by running `taxi_preprocessing_forensics.py /workspace/cnr-experiments` with NumPy and access to the private episode/fit files.
+
+### How much additional support does 20k buy?
+
+Holding the 10k grid fixed, 86.0% of the 1,000 development requests have their exact OD pair in the 10k training set, 68.4% have at least two examples, 37.0% at least five and 12.5% at least ten. The nested 20k cohort raises these fractions to 92.7%, 84.9%, 60.8% and 34.2%. Reconstructing the expanded pack's unstandardized endpoints produced exactly the same OD IDs for all 10,000 shared training journeys. Training frequency is a measure of data support; prediction improvement must be evaluated separately. [Measured coverage](DEV_SUPPORT.json).
