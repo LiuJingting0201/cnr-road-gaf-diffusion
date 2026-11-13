@@ -11,7 +11,7 @@ base=Path('/workspace/cnr-experiments/gaf-inloop-v1')
 src=base/'g30-job/g30-data/source/scenario/in'
 binary=base/'g10-env/sumo/bin/sumo'
 modes=['bus','motorcycle','passenger','bicycle','taxi']
-def episode(seed):
+def episode(seed, per_class=None):
     out=Path(str(seed));out.mkdir(exist_ok=True)
     pack=out/'trips.npz'
     if pack.exists():return
@@ -26,7 +26,7 @@ def episode(seed):
     jobs=[]
     for m in modes:
         edges=[e for e in net.getEdges() if e.allows(m) and e.getLength()>25]
-        for k in range(100):
+        for k in range(100 if per_class is None else per_class[m]):
             ident=f'{seed}_{m}_{k}'; depart=int(rng.integers(900))
             if m=='bus':
                 veh=ET.Element('vehicle',id=ident,type=m,depart=str(depart),route=routes[rng.integers(len(routes))].get('id'))
