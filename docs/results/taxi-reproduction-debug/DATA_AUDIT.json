@@ -1,0 +1,238 @@
+{
+  "spec": "Native XY and elapsed time in metres and seconds; regular interval 1 s. Each count refers to selected episode-local taxi IDs.",
+  "check": {
+    "non_arrival_or_gap": 0,
+    "negative_speed_or_nonfinite": 0,
+    "duration_mismatch": 0,
+    "under_120_native_points": 0,
+    "original_class_not_taxi": 0,
+    "synthetic_start_mismatch": 0,
+    "duplicate_200_point_geometry": 0
+  },
+  "input_shape": [
+    12000,
+    200,
+    2
+  ],
+  "max_component_rounding_m": 0.00046875000043655746,
+  "max_interpolated_component_error_m": 0.0004881831046077423,
+  "independently_recomputed_header_max_abs_diff": [
+    6.103819197855742e-06,
+    7.858981794228725e-07,
+    7.858981794228725e-07,
+    3.26606614811098e-05,
+    3.26606614811098e-05
+  ],
+  "endpoint_grid_independent_mismatches": 0,
+  "header_clock_bin_mismatches": 0,
+  "training_stat_diff_mean": 0.0,
+  "training_stat_diff_std": 0.0,
+  "global_grid_lo": [
+    -0.1277889460325241,
+    75.0199966430664
+  ],
+  "global_grid_hi": [
+    9975.365234375,
+    6356.52001953125
+  ],
+  "grid_cell_width_m": [
+    623.4683227539062,
+    392.59375
+  ],
+  "splits": {
+    "train": {
+      "n": 10000,
+      "episodes": 148,
+      "native_points_p10_p50_p90_p99": [
+        289.0,
+        529.0,
+        793.0,
+        1007.0100000000002
+      ],
+      "native_km_p10_p50_p90_p99": [
+        2.8808339204039246,
+        5.646762958230369,
+        8.844500193079645,
+        11.409649957677734
+      ],
+      "trip_mean_mps_p10_p50_p90_p99": [
+        9.134213639696938,
+        10.75094812001015,
+        12.308696164729048,
+        13.875721111150131
+      ],
+      "retention_200_p10_p50_p90_p99": [
+        0.9774433827538743,
+        0.9896528475695383,
+        0.9960842055575178,
+        0.9983501615762858
+      ],
+      "retention_roundtrip_p10_p50_p90_p99": [
+        0.9715834587657909,
+        0.9857594710996447,
+        0.9939077974466132,
+        0.9972149658278968
+      ],
+      "current_clock_bins": [
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240
+      ],
+      "local_simulation_clock_bins": [
+        0,
+        1,
+        2
+      ],
+      "current_time_bin_seen_train": 1.0,
+      "local_simulation_time_bin_seen_train": 1.0,
+      "distinct_OD": 3698,
+      "largest_OD_share": 0.0031,
+      "od_covered_by_training": 1.0,
+      "origin_covered_by_training": 1.0,
+      "dest_covered_by_training": 1.0
+    },
+    "validation": {
+      "n": 1000,
+      "episodes": 15,
+      "native_points_p10_p50_p90_p99": [
+        293.9,
+        525.5,
+        796.0,
+        966.02
+      ],
+      "native_km_p10_p50_p90_p99": [
+        2.9450862873715797,
+        5.588304564197326,
+        8.679622132064175,
+        11.26932366348397
+      ],
+      "trip_mean_mps_p10_p50_p90_p99": [
+        9.109170599532918,
+        10.702836090852042,
+        12.393831237622793,
+        13.765183599792824
+      ],
+      "retention_200_p10_p50_p90_p99": [
+        0.9782522488398582,
+        0.9897740504647665,
+        0.9959114581041306,
+        0.9980839322109861
+      ],
+      "retention_roundtrip_p10_p50_p90_p99": [
+        0.9723567356021176,
+        0.9859741283823014,
+        0.9936869345075588,
+        0.9968461409621812
+      ],
+      "current_clock_bins": [
+        192,
+        193,
+        194,
+        195,
+        196,
+        197
+      ],
+      "local_simulation_clock_bins": [
+        0,
+        1,
+        2
+      ],
+      "current_time_bin_seen_train": 0.0,
+      "local_simulation_time_bin_seen_train": 1.0,
+      "distinct_OD": 817,
+      "largest_OD_share": 0.008,
+      "od_covered_by_training": 0.86,
+      "origin_covered_by_training": 1.0,
+      "dest_covered_by_training": 1.0
+    },
+    "test": {
+      "n": 1000,
+      "episodes": 14,
+      "native_points_p10_p50_p90_p99": [
+        284.9,
+        539.0,
+        793.0,
+        987.0999999999999
+      ],
+      "native_km_p10_p50_p90_p99": [
+        2.9304893549701854,
+        5.638371842907306,
+        8.648250125971746,
+        11.107882214708804
+      ],
+      "trip_mean_mps_p10_p50_p90_p99": [
+        9.12608623743947,
+        10.649308311738974,
+        12.294353631019835,
+        13.54325213254127
+      ],
+      "retention_200_p10_p50_p90_p99": [
+        0.976893983669771,
+        0.989195757769803,
+        0.9961010792083511,
+        0.9981753648854977
+      ],
+      "retention_roundtrip_p10_p50_p90_p99": [
+        0.9705729390049065,
+        0.9852683228369501,
+        0.9940065701829544,
+        0.9969381260284346
+      ],
+      "current_clock_bins": [
+        176,
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "local_simulation_clock_bins": [
+        0,
+        1,
+        2
+      ],
+      "current_time_bin_seen_train": 0.0,
+      "local_simulation_time_bin_seen_train": 1.0,
+      "distinct_OD": 817,
+      "largest_OD_share": 0.004,
+      "od_covered_by_training": 0.867,
+      "origin_covered_by_training": 1.0,
+      "dest_covered_by_training": 1.0
+    }
+  },
+  "episode_split_intersection_sizes": [
+    0,
+    0,
+    0
+  ]
+}
