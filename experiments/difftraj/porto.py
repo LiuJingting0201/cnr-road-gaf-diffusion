@@ -41,7 +41,7 @@ def prepare():
     start=0
     head=np.empty((len(sizes),8),dtype=np.float32)
     durations=raw['duration'] if 'duration' in raw.files else None
-    tz=ZoneInfo('Asia/Shanghai' if durations is not None else 'Europe/Lisbon')
+    tz=ZoneInfo(str(raw['timezone']) if 'timezone' in raw.files else ('Asia/Shanghai' if durations is not None else 'Europe/Lisbon'))
     for i,n in enumerate(sizes):
         tr=delta[start:start+n].cumsum(0)*1e-6
         start+=n
@@ -177,7 +177,7 @@ def score():
     ends=np.r_[0,sizes.cumsum()]
     delta=raw['delta']
     rng=np.random.default_rng(42)
-    ids=rng.choice(ids,256 if dev else 3000,replace=False)
+    ids=rng.choice(ids,len(ids) if '--all-holdout' in sys.argv else (256 if dev else 3000),replace=False)
     coords=data['xy']
     norm_mean=data['mean']
     norm_std=data['std']
@@ -221,6 +221,16 @@ def score():
     js=lambda x,y:float(jensenshannon(x,y)**2)
     top=lambda hist:set(np.argsort(-hist,kind='stable')[:20])
     result=dict(epoch=ck['epoch'],requests=len(ids),density_js=js(a[0],b[0]),trip_js=js(a[1],b[1]),length_js=js(lh(a[2]),lh(b[2])),top20_cell_f1=len(top(a[0])&top(b[0]))/20,generated_outside_fraction=float(np.any((np.concatenate(synth)<lo)|(np.concatenate(synth)>hi),axis=1).mean()))
+    if '--all-holdout' in sys.argv:
+        from scipy.stats import wasserstein_distance
+        dev_ids=np.flatnonzero(data['split']==8)
+        n=min(len(dev_ids),len(ids))
+        select=np.random.default_rng(173)
+        other=select.choice(dev_ids,n,replace=False)
+        cond=select.choice(len(ids),n,replace=False)
+        test=counts([ref[k] for k in cond])
+        obs=counts([delta[ends[k]:ends[k+1]].cumsum(0)*1e-6 for k in other])
+        result.update(reference_median_m=float(np.median(a[2])),generated_median_m=float(np.median(b[2])),length_w1_m=float(wasserstein_distance(a[2],b[2])),real_real_n=n,real_real=[js(test[0],obs[0]),js(test[1],obs[1]),js(lh(test[2]),lh(obs[2])),len(top(test[0])&top(obs[0]))/20])
     if '--cutoff-comparison' in sys.argv:
         from scipy.stats import wasserstein_distance
         shared=np.load('../shared-bins.npz')
