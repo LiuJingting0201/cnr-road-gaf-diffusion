@@ -1,0 +1,48 @@
+{
+  "release": "",
+  "parent": "difftraj-five-20k-localclock-v1",
+  "geometry_unique": 210000,
+  "partitions": {
+    "train": {
+      "total": 200000,
+      "classes": {
+        "bicycle": 40000,
+        "bus": 40000,
+        "motorcycle": 40000,
+        "passenger": 40000,
+        "taxi": 40000
+      },
+      "episodes": 1164,
+      "inherited": 100000,
+      "new_rows_checked_against_native_and_arrival": 100000
+    },
+    "validation": {
+      "total": 5000,
+      "classes": {
+        "bicycle": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "passenger": 1000,
+        "taxi": 1000
+      },
+      "episodes": 41,
+      "inherited": 5000,
+      "new_rows_checked_against_native_and_arrival": 0
+    },
+    "test": {
+      "total": 5000,
+      "classes": {
+        "bicycle": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "passenger": 1000,
+        "taxi": 1000
+      },
+      "episodes": 40,
+      "inherited": 5000,
+      "new_rows_checked_against_native_and_arrival": 0
+    }
+  },
+  "geometry_definition": "SHA-256 of 200 two-dimensional native-metre float32 positions",
+  "frozen_check": "Unchanged membership, labels, shared original shard identity, uniqueness and file digests only. No holdout quality scores."
+}

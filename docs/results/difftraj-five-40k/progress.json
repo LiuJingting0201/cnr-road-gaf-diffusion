@@ -1,0 +1,27 @@
+{
+  "phase": "complete",
+  "counts": {
+    "bus": 40000,
+    "motorcycle": 40000,
+    "passenger": 40000,
+    "bicycle": 40000,
+    "taxi": 40000
+  },
+  "new_counts": {
+    "bus": 20000,
+    "motorcycle": 20000,
+    "passenger": 20000,
+    "bicycle": 20000,
+    "taxi": 20000
+  },
+  "target_per_class": 40000,
+  "workers": 12,
+  "done_episodes": 528,
+  "scheduled": [],
+  "elapsed_s": 1162.2,
+  "generated_this_run": 100000,
+  "free_gib": 21.0,
+  "updated_unix": 1794590734.351096,
+  "start_seed": 5100000,
+  "maximum_episodes": 3400
+}

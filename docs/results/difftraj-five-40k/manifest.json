@@ -1,0 +1,58 @@
+{
+  "parent": "/workspace/cnr-experiments/difftraj-five-20k-localclock-v1",
+  "new_episodes": 528,
+  "all_native_seconds": true,
+  "source_network_sha256": "a06b5c0765fb2d49d4ad33cf54048f15f2ff1592b2b3d0180dbeec4feb73bfc0",
+  "sumo_binary_sha256": "450cb887af6a08dac1f9bd0454effa6dea2bb4e9f19e67adcb64ca36ce490c3a",
+  "splits": {
+    "train": {
+      "n": 200000,
+      "episodes": 1164,
+      "classes": {
+        "bicycle": 40000,
+        "bus": 40000,
+        "motorcycle": 40000,
+        "passenger": 40000,
+        "taxi": 40000
+      },
+      "sha256": {
+        "traj.npy": "089d8bd21be4cc510862ef04877c64278fd48dc3e46040af87538a089f48c5eb",
+        "head.npy": "f718d5635e4f634f2b3d235736212056de90cd8926fdb1c0be52f82de6582904",
+        "index.npz": "35dfd0a5c888ea9c28effca740e601b4e87f55374bc6a03594290afc4fd48aa7"
+      }
+    },
+    "validation": {
+      "n": 5000,
+      "episodes": 41,
+      "classes": {
+        "bicycle": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "passenger": 1000,
+        "taxi": 1000
+      },
+      "sha256": {
+        "traj.npy": "fa5d5e7b48878e773b28d73cf4d4be82f6d7e9e7c2625427c4488c4bef771671",
+        "head.npy": "fa8cea93c779b2aeb29d63f53b1ce0ddfdb084f4d2ecd91e280886a1fdc83e46",
+        "index.npz": "f5722595769be71304ca33df4f0af272ac758b403f6b689f6fcfaabde32381be"
+      }
+    },
+    "test": {
+      "n": 5000,
+      "episodes": 40,
+      "classes": {
+        "bicycle": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "passenger": 1000,
+        "taxi": 1000
+      },
+      "sha256": {
+        "traj.npy": "a0d5e990a230ce72f00cf2bef5bbb31e10783fb0ba98c7aa390a816044109d2f",
+        "head.npy": "015825b6c6720b6cfdcf527803e0f09930b268bd935e0df071771ac9d451e15e",
+        "index.npz": "cf699296ae7d81ef612d08e87f7a9def78807dd3b16da3255024f59eb2801316"
+      }
+    }
+  },
+  "normalization_sha256": "19371cfb7d1583492dd64c94f3716662150942f1dc9f7fd965dcdecfe3ccb6c0"
+}
