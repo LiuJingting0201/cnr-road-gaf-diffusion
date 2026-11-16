@@ -124,8 +124,10 @@ def render(args):
                                     hspace=.27, wspace=.24)
         header = fig.add_subplot(grid[0, :])
         header.set_axis_off()
-        header.text(0, .58, f"Observed {NAMES[a].lower()} · {sample['request_id']} · request mean speed {sample['speed']:.1f} m/s",
+        header.text(0, .79, f"Observed {NAMES[a].lower()} · request mean speed {sample['speed']:.1f} m/s",
                     transform=header.transAxes, va='center', fontsize=10.8, weight='bold')
+        header.text(0, .15, f"SUMO trip {sample['request_id']}", transform=header.transAxes,
+                    va='center', fontsize=8.5)
         tags = [f'SUMO {NAMES[a].lower()}', f'{NAMES[a]} label', f'{NAMES[b]} label']
         handles = [Line2D([], [], color=c, ls=ls, lw=w, label=tag)
                    for (c, ls, w), tag in zip(STYLES, tags)]

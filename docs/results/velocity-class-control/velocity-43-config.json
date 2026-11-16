@@ -1,0 +1,25 @@
+{
+  "arm": "C",
+  "mode": "all",
+  "seed": 43,
+  "classes": [
+    "bicycle",
+    "bus",
+    "motorcycle",
+    "passenger",
+    "taxi"
+  ],
+  "epochs": 10,
+  "batch_size": 205,
+  "microbatch": 205,
+  "train_n": 200000,
+  "updates_per_epoch": 976,
+  "lr_start": 0.0002,
+  "lr_floor": 2e-05,
+  "gradient_norm_clip": 1.0,
+  "noise_levels": 500,
+  "speed_loss_weight": 0.0,
+  "train_index_sha256": "fb545a85ce37ecb423552e75d31c0c396a611e9029f9cdeaf3fad43bc4f5d87c",
+  "validation_index_sha256": "38a8dde118e925ef403f5fbe60eda373c3e51de3a26177364003a77a3ac9065b",
+  "release_manifest_sha256": "f145be0e6560d5fa433dce99569bab343f8b4c423f2db06dcbf16a9af98ff236"
+}

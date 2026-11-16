@@ -1,0 +1,46 @@
+{
+  "source_manifest_sha256": "2166be4362d59423b0df0b05ab27ca2e18df3f149270267bdf7bb8bc21318137",
+  "representation": "start_offset_then_199_interval_velocities_v1",
+  "mode": "all",
+  "classes": [
+    "bicycle",
+    "bus",
+    "motorcycle",
+    "passenger",
+    "taxi"
+  ],
+  "splits": {
+    "train": {
+      "rows": 200000,
+      "classes": {
+        "bicycle": 40000,
+        "bus": 40000,
+        "motorcycle": 40000,
+        "passenger": 40000,
+        "taxi": 40000
+      },
+      "max_abs_roundtrip_error_m": 8.513356442563236e-05
+    },
+    "validation": {
+      "rows": 5000,
+      "classes": {
+        "bicycle": 1000,
+        "bus": 1000,
+        "motorcycle": 1000,
+        "passenger": 1000,
+        "taxi": 1000
+      },
+      "max_abs_roundtrip_error_m": 6.432912869058782e-05
+    }
+  },
+  "files": {
+    "normalization.npz": "3f119457aa5aef14c1fa60e147d0070424b1a5b1bcd56e2bd8bbe7872fac1eaf",
+    "train/head.npy": "f718d5635e4f634f2b3d235736212056de90cd8926fdb1c0be52f82de6582904",
+    "train/index.npz": "35dfd0a5c888ea9c28effca740e601b4e87f55374bc6a03594290afc4fd48aa7",
+    "train/traj.npy": "ed22f3d11946caea9ea16f2f7e2a59e657196b6960324bdd0e165abe0018619f",
+    "validation/head.npy": "fa8cea93c779b2aeb29d63f53b1ce0ddfdb084f4d2ecd91e280886a1fdc83e46",
+    "validation/index.npz": "f5722595769be71304ca33df4f0af272ac758b403f6b689f6fcfaabde32381be",
+    "validation/traj.npy": "7b53d2a3c4192c6006c00567461201d28a37b6e1a4357372c88e24177871f224"
+  },
+  "normalization_fit": "all training trips pooled, separate offset and velocity statistics per axis"
+}
