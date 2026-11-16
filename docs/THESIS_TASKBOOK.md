@@ -1,3 +1,5 @@
+> 2026-11-16 按最新要求，单独检验五类 SUMO 车辆在固定 DiffTraj 请求下的车型控制。坐标扩散与二维速度扩散使用相同训练样本、预算、车型标签及采样请求。[预设实验方案](results/velocity-class-control/PROTOCOL.md)
+
 > 2026-11-11 导师修订目标：复现 DiffTraj，评估速度与车型扩展。[当前任务书与研究报告](DIFFTRAJ_STUDY.md)。以下为旧项目记录。
 
 > 当前入口（2026-11-10）：G40 科学实验已全部完成，完整八臂证据已人工审阅。主结论为未建立总体 GAF 运动质量收益；空间条件增广平均有小幅收益，但两个评价 OD 群组方向相反。论文 v26 与逐页图表/交付核验已完成（132页、45图、29表、54条引用），PDF/Overleaf包在 `deliverables/thesis-v26`。本轮结束，不自动追加训练；不重启早期 E1–E5 或已关闭队列。见 `docs/G40_RUN_STATE.md`、`docs/results/g40-generative-conditioning/REPORT.md`。以下初始任务书和历次变更保留作为历史。
