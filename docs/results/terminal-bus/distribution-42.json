@@ -1,0 +1,57 @@
+{
+  "requests": 1000,
+  "request_sha256": "c49aa496ad3121765521a425198fe793cb4c236120e32d1433fc4c6ee97ff7be",
+  "head_sha256": "15ea47d8a56b4ec108dd1e5a143a63b20a7e39aef3fa10ea76031c83cce175ed",
+  "noise_sha256": "f221c1c997a38ad338f319d2ecbe2607dd8f5918b92155e5acd204d12430b685",
+  "paper": {
+    "density_js": 0.0037217280734307455,
+    "od_js": 0.05580524142442184,
+    "length_js": 0.05279270700731276,
+    "hotspot_f1": 0.95,
+    "length_w1_m": 180.85273576339853,
+    "reference_median_length_m": 5274.305282144111,
+    "generated_median_length_m": 5284.750599491969,
+    "outside_fraction": 0.0019716334635665913,
+    "reference_occupied_od": 23,
+    "generated_occupied_od": 37,
+    "requests": 1000
+  },
+  "motion": {
+    "requests": 1000,
+    "speed_w1_mps": 0.7208948881717644,
+    "observed": {
+      "mean_speed_mps": 6.264245317270552,
+      "p90_speed_mps": 12.8369235201153,
+      "slow_time_percent": 33.991457286432144,
+      "slow_entries_per_10min": 6.924639327874543
+    },
+    "generated": {
+      "mean_speed_mps": 6.391376334161196,
+      "p90_speed_mps": 12.369503083064105,
+      "slow_time_percent": 21.896482412060298,
+      "slow_entries_per_10min": 7.363815021658776
+    },
+    "signed_error": {
+      "mean_speed_mps": 0.12713101689064388,
+      "p90_speed_mps": -0.46742043705119585,
+      "slow_time_percent": -12.094974874371847,
+      "slow_entries_per_10min": 0.43917569378423327
+    }
+  },
+  "spells": {
+    "observed": {
+      "entered": 12190,
+      "median_s": 29.00502512562814,
+      "p90_s": 34.040201005025125,
+      "at_least_30s_percent": 42.444626743232156
+    },
+    "generated": {
+      "entered": 10205,
+      "median_s": 20.743718592964825,
+      "p90_s": 30.0,
+      "at_least_30s_percent": 10.044096031357178
+    },
+    "duration_w1_s": 9.064190167377701
+  },
+  "paired_baseline": "A-42.npz"
+}
