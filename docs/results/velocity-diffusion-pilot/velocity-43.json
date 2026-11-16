@@ -1,0 +1,64 @@
+{
+  "requests": 1000,
+  "mode": "taxi",
+  "split": "validation",
+  "request_sha256": "e8a20bd36be465dc061184c533ec504fb89897b3bb4dcb992a6313fb5d8dc982",
+  "head_sha256": "e0b7a56fc57cb391195a3845b8cd533ccd064c03ab06ac94c84b891a1eee0cef",
+  "noise_sha256": "7501a8a3f4bbc8f4c372e4a9f9883d9b88e0954567daa109a4a42f0820c6766a",
+  "paper": {
+    "density_js": 0.04135015358223226,
+    "od_js": 0.3901946930962362,
+    "length_js": 0.0030501027516850357,
+    "hotspot_f1": 0.8,
+    "length_w1_m": 170.19500376855262,
+    "reference_median_length_m": 5588.304574340809,
+    "generated_median_length_m": 5425.378238352976,
+    "outside_fraction": 0.0066274084502277114,
+    "reference_occupied_od": 820,
+    "generated_occupied_od": 849,
+    "requests": 1000
+  },
+  "motion": {
+    "requests": 1000,
+    "speed_w1_mps": 0.20268276379684932,
+    "observed": {
+      "mean_speed_mps": 10.615813056904162,
+      "p90_speed_mps": 14.245538415809287,
+      "slow_time_percent": 2.414572864321604,
+      "slow_entries_per_10min": 1.0015207383065716
+    },
+    "generated": {
+      "mean_speed_mps": 10.481782267328075,
+      "p90_speed_mps": 13.937674400848048,
+      "slow_time_percent": 1.8698492462311518,
+      "slow_entries_per_10min": 0.8193445295113166
+    },
+    "signed_error": {
+      "mean_speed_mps": -0.13403078957608727,
+      "p90_speed_mps": -0.3078640149612397,
+      "slow_time_percent": -0.544723618090452,
+      "slow_entries_per_10min": -0.18217620879525498
+    },
+    "accel_w1_mps2": 0.03288942678574213
+  },
+  "endpoints": {
+    "start_error_m": {
+      "mean": 258.21894498778954,
+      "median": 245.85927146206228,
+      "p90": 435.15577696495643
+    },
+    "end_error_m": {
+      "mean": 457.5199533192428,
+      "median": 411.5187115732132,
+      "p90": 837.5243046283997
+    },
+    "net_displacement_error_m": {
+      "mean": 446.3042466683517,
+      "median": 398.6855612857462,
+      "p90": 808.2696347914742
+    },
+    "start_cell_hit": 0.89,
+    "end_cell_hit": 0.326,
+    "joint_cell_hit": 0.301
+  }
+}

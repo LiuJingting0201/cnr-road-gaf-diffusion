@@ -1,0 +1,27 @@
+{
+  "valid_vectors": 1000,
+  "median_net_bearing_error_degrees": 4.912131777855404,
+  "p90_net_bearing_error_degrees": 15.615211118985968,
+  "mean_velocity_vector_error_mps": 0.8827482963690654,
+  "duration_vs_vector_error_rank_correlation": 0.25966783583832215,
+  "duration_tertiles": [
+    {
+      "n": 334,
+      "min_s": 145,
+      "max_s": 420,
+      "median_displacement_error_m": 320.2715929307514
+    },
+    {
+      "n": 333,
+      "min_s": 423,
+      "max_s": 611,
+      "median_displacement_error_m": 401.7332020902668
+    },
+    {
+      "n": 333,
+      "min_s": 611,
+      "max_s": 1160,
+      "median_displacement_error_m": 457.36141098113114
+    }
+  ]
+}

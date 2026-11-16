@@ -1,0 +1,24 @@
+{
+  "source_manifest_sha256": "2166be4362d59423b0df0b05ab27ca2e18df3f149270267bdf7bb8bc21318137",
+  "representation": "start_offset_then_199_interval_velocities_v1",
+  "mode": "taxi",
+  "splits": {
+    "train": {
+      "rows": 40000,
+      "max_abs_roundtrip_error_m": 5.764168963651173e-05
+    },
+    "validation": {
+      "rows": 1000,
+      "max_abs_roundtrip_error_m": 5.159188640391221e-05
+    }
+  },
+  "files": {
+    "normalization.npz": "074d8500a8795a96e47b7f253805f8798217475df45dfd17d50b8e0fd779cc2e",
+    "train/head.npy": "de1179ae8845aebd2b421ba384ca28ce16ed4d8e3d42f860b475e81b164f6355",
+    "train/index.npz": "47769462f03b507795855803cbb3e6558d0b0b6fdd9d544b6a3f7a82d36ff627",
+    "train/traj.npy": "178dc044b683e9a03a4ea4f0a322f73781e9a7222a187b65a6787234e8736df1",
+    "validation/head.npy": "28f8a902766495b1262a47232894fb069ad138f35efa2a7c74bc824e886fd1fb",
+    "validation/index.npz": "f814dcfd806a0c12e5d81323be75c3983a096aac1f9802573139a4f44ddd27fd",
+    "validation/traj.npy": "6acc657c3ac8fe2691d097717dd17bfa347b9b4e542664de7fe00715fc02e455"
+  }
+}
