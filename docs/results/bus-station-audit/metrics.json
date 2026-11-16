@@ -1,0 +1,342 @@
+{
+  "SUMO": {
+    "15": {
+      "n": 10771,
+      "missed": 45,
+      "pass_only": 0,
+      "served": 10726,
+      "median_s": 30.0,
+      "mean_s": 29.560041021816147,
+      "at_least_25": 9129,
+      "paired": {
+        "ref_served": 10726,
+        "missed": 0,
+        "pass_only": 0,
+        "both": 10726,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 30.0,
+        "loss_seconds_by_reason": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "30": {
+      "n": 10771,
+      "missed": 101,
+      "pass_only": 0,
+      "served": 10670,
+      "median_s": 30.0,
+      "mean_s": 29.571883786316775,
+      "at_least_25": 9073,
+      "paired": {
+        "ref_served": 10670,
+        "missed": 0,
+        "pass_only": 0,
+        "both": 10670,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 30.0,
+        "loss_seconds_by_reason": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "50": {
+      "n": 10771,
+      "missed": 153,
+      "pass_only": 10,
+      "served": 10608,
+      "median_s": 30.0,
+      "mean_s": 29.603883861236802,
+      "at_least_25": 9018,
+      "paired": {
+        "ref_served": 10608,
+        "missed": 0,
+        "pass_only": 0,
+        "both": 10608,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 30.0,
+        "loss_seconds_by_reason": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "base-42": {
+    "15": {
+      "n": 10771,
+      "missed": 3903,
+      "pass_only": 3995,
+      "served": 2873,
+      "median_s": 12.0,
+      "mean_s": 13.548555516881308,
+      "at_least_25": 342,
+      "paired": {
+        "ref_served": 10726,
+        "missed": 3882,
+        "pass_only": 3986,
+        "both": 2858,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 12.0,
+        "loss_seconds_by_reason": [
+          113339,
+          116862,
+          48214
+        ]
+      }
+    },
+    "30": {
+      "n": 10771,
+      "missed": 1847,
+      "pass_only": 3737,
+      "served": 5187,
+      "median_s": 14.0,
+      "mean_s": 14.947368421052632,
+      "at_least_25": 718,
+      "paired": {
+        "ref_served": 10670,
+        "missed": 1807,
+        "pass_only": 3724,
+        "both": 5139,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          52188,
+          107607,
+          78957
+        ]
+      }
+    },
+    "50": {
+      "n": 10771,
+      "missed": 1058,
+      "pass_only": 3043,
+      "served": 6670,
+      "median_s": 14.0,
+      "mean_s": 15.346776611694153,
+      "at_least_25": 960,
+      "paired": {
+        "ref_served": 10608,
+        "missed": 994,
+        "pass_only": 3026,
+        "both": 6588,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          28640,
+          85930,
+          98348
+        ]
+      }
+    }
+  },
+  "speed-42": {
+    "15": {
+      "n": 10771,
+      "missed": 3920,
+      "pass_only": 3861,
+      "served": 2990,
+      "median_s": 13.0,
+      "mean_s": 13.904347826086957,
+      "at_least_25": 377,
+      "paired": {
+        "ref_served": 10726,
+        "missed": 3900,
+        "pass_only": 3852,
+        "both": 2974,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 13.0,
+        "loss_seconds_by_reason": [
+          113827,
+          112913,
+          49048
+        ]
+      }
+    },
+    "30": {
+      "n": 10771,
+      "missed": 1853,
+      "pass_only": 3539,
+      "served": 5379,
+      "median_s": 14.0,
+      "mean_s": 15.373489496188883,
+      "at_least_25": 809,
+      "paired": {
+        "ref_served": 10670,
+        "missed": 1815,
+        "pass_only": 3528,
+        "both": 5327,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          52462,
+          101679,
+          79533
+        ]
+      }
+    },
+    "50": {
+      "n": 10771,
+      "missed": 1066,
+      "pass_only": 2803,
+      "served": 6902,
+      "median_s": 14.0,
+      "mean_s": 15.860185453491741,
+      "at_least_25": 1127,
+      "paired": {
+        "ref_served": 10608,
+        "missed": 1001,
+        "pass_only": 2791,
+        "both": 6816,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          28811,
+          79032,
+          98140
+        ]
+      }
+    }
+  },
+  "base-43": {
+    "15": {
+      "n": 10771,
+      "missed": 4033,
+      "pass_only": 3734,
+      "served": 3004,
+      "median_s": 13.0,
+      "mean_s": 14.280958721704394,
+      "at_least_25": 435,
+      "paired": {
+        "ref_served": 10726,
+        "missed": 4009,
+        "pass_only": 3731,
+        "both": 2986,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 13.0,
+        "loss_seconds_by_reason": [
+          116665,
+          109782,
+          48193
+        ]
+      }
+    },
+    "30": {
+      "n": 10771,
+      "missed": 1749,
+      "pass_only": 3477,
+      "served": 5545,
+      "median_s": 14.0,
+      "mean_s": 15.753471596032462,
+      "at_least_25": 990,
+      "paired": {
+        "ref_served": 10670,
+        "missed": 1714,
+        "pass_only": 3455,
+        "both": 5501,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          49710,
+          99407,
+          80286
+        ]
+      }
+    },
+    "50": {
+      "n": 10771,
+      "missed": 811,
+      "pass_only": 2763,
+      "served": 7197,
+      "median_s": 15.0,
+      "mean_s": 16.146310962901207,
+      "at_least_25": 1302,
+      "paired": {
+        "ref_served": 10608,
+        "missed": 751,
+        "pass_only": 2735,
+        "both": 7122,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 14.0,
+        "loss_seconds_by_reason": [
+          21737,
+          77280,
+          100807
+        ]
+      }
+    }
+  },
+  "speed-43": {
+    "15": {
+      "n": 10771,
+      "missed": 4062,
+      "pass_only": 3580,
+      "served": 3129,
+      "median_s": 13.0,
+      "mean_s": 14.666986257590285,
+      "at_least_25": 501,
+      "paired": {
+        "ref_served": 10726,
+        "missed": 4038,
+        "pass_only": 3576,
+        "both": 3112,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 13.0,
+        "loss_seconds_by_reason": [
+          117507,
+          105170,
+          48967
+        ]
+      }
+    },
+    "30": {
+      "n": 10771,
+      "missed": 1757,
+      "pass_only": 3260,
+      "served": 5754,
+      "median_s": 15.0,
+      "mean_s": 16.30674313521029,
+      "at_least_25": 1163,
+      "paired": {
+        "ref_served": 10670,
+        "missed": 1719,
+        "pass_only": 3244,
+        "both": 5707,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 15.0,
+        "loss_seconds_by_reason": [
+          49855,
+          93117,
+          79905
+        ]
+      }
+    },
+    "50": {
+      "n": 10771,
+      "missed": 815,
+      "pass_only": 2467,
+      "served": 7489,
+      "median_s": 15.0,
+      "mean_s": 16.82748030444652,
+      "at_least_25": 1548,
+      "paired": {
+        "ref_served": 10608,
+        "missed": 756,
+        "pass_only": 2444,
+        "both": 7408,
+        "paired_reference_median": 30.0,
+        "paired_generated_median": 15.0,
+        "loss_seconds_by_reason": [
+          21897,
+          68749,
+          99310
+        ]
+      }
+    }
+  }
+}
