@@ -21,7 +21,7 @@ def speed_targets(head, labels, scale):
     classes = np.load(OLD/'prepared/train/y.npy')
     tracks = np.load(DATA/'train/traj.npy', mmap_mode='r')
     targets = np.empty((len(head), len(QUANTILES)))
-    for label in (0, 1):
+    for label in np.unique(labels):
         rows = np.flatnonzero(classes == label)
         mask = labels == label
         tree = cKDTree(train[rows][:, [2, 5]])

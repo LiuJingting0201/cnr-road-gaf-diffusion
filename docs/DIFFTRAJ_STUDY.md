@@ -1,5 +1,9 @@
 # DiffTraj reproduction and vehicle-motion extension
 
+## Current research questions across vehicle classes
+
+The two primary questions after reproduction are whether time-varying speed information improves generated trajectories and whether providing the vehicle class at generation improves their class-conditional distribution. Compare five equally weighted classes on matched requests and draws. Keep the original trip-average speed in every request. Report the four DiffTraj distribution measures alongside per-class speed and acceleration distributions. Aggregate with equal class weights and disclose differences of direction across classes and seeds. Bus dwell and station analyses are secondary diagnostics. [Factorial evaluation and scope](results/general-speed-class/REPORT.md).
+
 ## Problem and motivation
 
 A synthetic trajectory is an ordered sequence of positions. A user who specifies an origin, destination and trip duration can reasonably expect several possible trajectories. A pointwise average across these alternatives may describe none of the observed journeys. A generative model instead estimates a distribution and samples individual sequences from it. This report asks how closely DiffTraj can reproduce observed trajectory distributions and how speed supervision and participant class affect the samples.

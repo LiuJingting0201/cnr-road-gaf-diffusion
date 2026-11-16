@@ -1,0 +1,416 @@
+{
+  "seed": 42,
+  "method": "speed",
+  "classes": [
+    "bicycle",
+    "bus",
+    "motorcycle",
+    "passenger",
+    "taxi"
+  ],
+  "class_confusion": [
+    [
+      591,
+      5,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      600,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      0,
+      223,
+      177,
+      195
+    ],
+    [
+      2,
+      1,
+      177,
+      206,
+      214
+    ],
+    [
+      2,
+      0,
+      184,
+      208,
+      206
+    ]
+  ],
+  "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+  "ids_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+  "results": {
+    "provided": {
+      "bicycle": {
+        "requests": 600,
+        "speed_w1_mps": 0.5274432417532223,
+        "observed": {
+          "mean_speed_mps": 4.890613204823132,
+          "p90_speed_mps": 5.339785771625551,
+          "slow_time_percent": 1.2948073701842548,
+          "slow_entries_per_10min": 0.4895271403186206
+        },
+        "generated": {
+          "mean_speed_mps": 4.498179459762584,
+          "p90_speed_mps": 5.647029732159658,
+          "slow_time_percent": 1.6331658291457303,
+          "slow_entries_per_10min": 0.5042398808934014
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.39243374506054796,
+          "p90_speed_mps": 0.3072439605341071,
+          "slow_time_percent": 0.33835845896147543,
+          "slow_entries_per_10min": 0.014712740574780836
+        },
+        "accel_W1_mps2": 0.12211337047102569,
+        "paper": {
+          "density_js": 0.005553061974046818,
+          "od_js": 0.16052654670445643,
+          "length_js": 0.011671173450812632,
+          "hotspot_f1": 1.0,
+          "length_w1_m": 378.8935521652977,
+          "reference_median_length_m": 3758.916555771827,
+          "generated_median_length_m": 3425.0469157914863,
+          "outside_fraction": 0.0006960904917639293,
+          "reference_occupied_od": 423,
+          "generated_occupied_od": 425,
+          "requests": 600
+        }
+      },
+      "bus": {
+        "requests": 600,
+        "speed_w1_mps": 1.00573954092736,
+        "observed": {
+          "mean_speed_mps": 6.399814759526659,
+          "p90_speed_mps": 12.843674827261982,
+          "slow_time_percent": 33.356783919597994,
+          "slow_entries_per_10min": 6.792875428529692
+        },
+        "generated": {
+          "mean_speed_mps": 6.370518880994168,
+          "p90_speed_mps": 11.853685627777377,
+          "slow_time_percent": 18.06030150753768,
+          "slow_entries_per_10min": 6.984986075532661
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.029295878532490605,
+          "p90_speed_mps": -0.9899891994846044,
+          "slow_time_percent": -15.296482412060314,
+          "slow_entries_per_10min": 0.19211064700296898
+        },
+        "accel_W1_mps2": 0.1296526547614311,
+        "paper": {
+          "density_js": 0.005596229718948478,
+          "od_js": 0.04854943769310067,
+          "length_js": 0.08163055893027736,
+          "hotspot_f1": 0.9,
+          "length_w1_m": 251.17157685644167,
+          "reference_median_length_m": 5273.697116946734,
+          "generated_median_length_m": 5180.510138227738,
+          "outside_fraction": 0.0065689655762914455,
+          "reference_occupied_od": 23,
+          "generated_occupied_od": 42,
+          "requests": 600
+        }
+      },
+      "motorcycle": {
+        "requests": 600,
+        "speed_w1_mps": 0.8957101276740789,
+        "observed": {
+          "mean_speed_mps": 10.317584233799447,
+          "p90_speed_mps": 13.609111703650662,
+          "slow_time_percent": 2.082914572864318,
+          "slow_entries_per_10min": 0.8656779898098467
+        },
+        "generated": {
+          "mean_speed_mps": 9.738565115487873,
+          "p90_speed_mps": 13.563991972932763,
+          "slow_time_percent": 0.6951423785594624,
+          "slow_entries_per_10min": 0.1779895946829336
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.5790191183115745,
+          "p90_speed_mps": -0.04511973071789832,
+          "slow_time_percent": -1.3877721943048555,
+          "slow_entries_per_10min": -0.687688395126913
+        },
+        "accel_W1_mps2": 0.11055891505939695,
+        "paper": {
+          "density_js": 0.004579245254523019,
+          "od_js": 0.27136247029189775,
+          "length_js": 0.009202581176396496,
+          "hotspot_f1": 0.95,
+          "length_w1_m": 420.60507002370395,
+          "reference_median_length_m": 5658.089928947871,
+          "generated_median_length_m": 5264.3990454891145,
+          "outside_fraction": 0.0006701009339531767,
+          "reference_occupied_od": 512,
+          "generated_occupied_od": 525,
+          "requests": 600
+        }
+      },
+      "passenger": {
+        "requests": 600,
+        "speed_w1_mps": 0.8751034614894686,
+        "observed": {
+          "mean_speed_mps": 10.556873882731157,
+          "p90_speed_mps": 14.05297837895257,
+          "slow_time_percent": 2.284757118927971,
+          "slow_entries_per_10min": 0.9726568188366512
+        },
+        "generated": {
+          "mean_speed_mps": 10.059697268843793,
+          "p90_speed_mps": 14.127303076248488,
+          "slow_time_percent": 0.6206030150753762,
+          "slow_entries_per_10min": 0.14004606180631754
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.49717661388736367,
+          "p90_speed_mps": 0.07432469729591773,
+          "slow_time_percent": -1.6641541038525949,
+          "slow_entries_per_10min": -0.8326107570303337
+        },
+        "accel_W1_mps2": 0.19675771642172082,
+        "paper": {
+          "density_js": 0.005173791622485959,
+          "od_js": 0.257257540314147,
+          "length_js": 0.007719831310285208,
+          "hotspot_f1": 0.95,
+          "length_w1_m": 372.721881115127,
+          "reference_median_length_m": 5623.973863303814,
+          "generated_median_length_m": 5196.08934528071,
+          "outside_fraction": 0.00017851316996300468,
+          "reference_occupied_od": 533,
+          "generated_occupied_od": 524,
+          "requests": 600
+        }
+      },
+      "taxi": {
+        "requests": 600,
+        "speed_w1_mps": 1.0530222262412305,
+        "observed": {
+          "mean_speed_mps": 10.656384857985602,
+          "p90_speed_mps": 14.211535431094905,
+          "slow_time_percent": 2.3986599664991592,
+          "slow_entries_per_10min": 0.9798157266509234
+        },
+        "generated": {
+          "mean_speed_mps": 10.189534572434548,
+          "p90_speed_mps": 14.24976565919791,
+          "slow_time_percent": 0.633165829145728,
+          "slow_entries_per_10min": 0.16609481812075041
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.4668502855510539,
+          "p90_speed_mps": 0.03823022810300536,
+          "slow_time_percent": -1.7654941373534312,
+          "slow_entries_per_10min": -0.813720908530173
+        },
+        "accel_W1_mps2": 0.19307433941199695,
+        "paper": {
+          "density_js": 0.005153247886139225,
+          "od_js": 0.26363193113993166,
+          "length_js": 0.00836313760256337,
+          "hotspot_f1": 0.9,
+          "length_w1_m": 347.5089370845695,
+          "reference_median_length_m": 5588.304574340809,
+          "generated_median_length_m": 5228.88679441169,
+          "outside_fraction": 0.0007225276008657874,
+          "reference_occupied_od": 533,
+          "generated_occupied_od": 537,
+          "requests": 600
+        }
+      }
+    },
+    "header_only": {
+      "bicycle": {
+        "requests": 600,
+        "speed_w1_mps": 0.5299282271036281,
+        "observed": {
+          "mean_speed_mps": 4.890613204823132,
+          "p90_speed_mps": 5.339785771625551,
+          "slow_time_percent": 1.2948073701842548,
+          "slow_entries_per_10min": 0.4895271403186206
+        },
+        "generated": {
+          "mean_speed_mps": 4.500637479234166,
+          "p90_speed_mps": 5.658684450785462,
+          "slow_time_percent": 1.6390284757118943,
+          "slow_entries_per_10min": 0.5070761093240275
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.38997572558896554,
+          "p90_speed_mps": 0.3188986791599113,
+          "slow_time_percent": 0.3442211055276394,
+          "slow_entries_per_10min": 0.017548969005406867
+        },
+        "accel_W1_mps2": 0.12336209491868046,
+        "paper": {
+          "density_js": 0.005437557169258935,
+          "od_js": 0.16096258682426026,
+          "length_js": 0.011962529558985144,
+          "hotspot_f1": 1.0,
+          "length_w1_m": 377.69153744625686,
+          "reference_median_length_m": 3758.916555771827,
+          "generated_median_length_m": 3425.0469157914863,
+          "outside_fraction": 0.0006960904917639293,
+          "reference_occupied_od": 423,
+          "generated_occupied_od": 426,
+          "requests": 600
+        }
+      },
+      "bus": {
+        "requests": 600,
+        "speed_w1_mps": 1.00573954092736,
+        "observed": {
+          "mean_speed_mps": 6.399814759526659,
+          "p90_speed_mps": 12.843674827261982,
+          "slow_time_percent": 33.356783919597994,
+          "slow_entries_per_10min": 6.792875428529692
+        },
+        "generated": {
+          "mean_speed_mps": 6.370518880994168,
+          "p90_speed_mps": 11.853685627777377,
+          "slow_time_percent": 18.06030150753768,
+          "slow_entries_per_10min": 6.984986075532661
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.029295878532490605,
+          "p90_speed_mps": -0.9899891994846044,
+          "slow_time_percent": -15.296482412060314,
+          "slow_entries_per_10min": 0.19211064700296898
+        },
+        "accel_W1_mps2": 0.1296526547614311,
+        "paper": {
+          "density_js": 0.005596229718948478,
+          "od_js": 0.04854943769310067,
+          "length_js": 0.08163055893027736,
+          "hotspot_f1": 0.9,
+          "length_w1_m": 251.17157685644167,
+          "reference_median_length_m": 5273.697116946734,
+          "generated_median_length_m": 5180.510138227738,
+          "outside_fraction": 0.0065689655762914455,
+          "reference_occupied_od": 23,
+          "generated_occupied_od": 42,
+          "requests": 600
+        }
+      },
+      "motorcycle": {
+        "requests": 600,
+        "speed_w1_mps": 0.8452800028237768,
+        "observed": {
+          "mean_speed_mps": 10.317584233799447,
+          "p90_speed_mps": 13.609111703650662,
+          "slow_time_percent": 2.082914572864318,
+          "slow_entries_per_10min": 0.8656779898098467
+        },
+        "generated": {
+          "mean_speed_mps": 9.803613230484746,
+          "p90_speed_mps": 13.71924236560861,
+          "slow_time_percent": 0.7001675041876027,
+          "slow_entries_per_10min": 0.1576475965506288
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.5139710033147011,
+          "p90_speed_mps": 0.11013066195794785,
+          "slow_time_percent": -1.3827470686767152,
+          "slow_entries_per_10min": -0.7080303932592179
+        },
+        "accel_W1_mps2": 0.11274213204917875,
+        "paper": {
+          "density_js": 0.004680642331646354,
+          "od_js": 0.27247174875546665,
+          "length_js": 0.01006216330763611,
+          "hotspot_f1": 0.95,
+          "length_w1_m": 388.384901309697,
+          "reference_median_length_m": 5658.089928947871,
+          "generated_median_length_m": 5290.052867333077,
+          "outside_fraction": 0.00065813484584687,
+          "reference_occupied_od": 512,
+          "generated_occupied_od": 523,
+          "requests": 600
+        }
+      },
+      "passenger": {
+        "requests": 600,
+        "speed_w1_mps": 0.9100771303832808,
+        "observed": {
+          "mean_speed_mps": 10.556873882731157,
+          "p90_speed_mps": 14.05297837895257,
+          "slow_time_percent": 2.284757118927971,
+          "slow_entries_per_10min": 0.9726568188366512
+        },
+        "generated": {
+          "mean_speed_mps": 10.024358391742906,
+          "p90_speed_mps": 14.048452488638938,
+          "slow_time_percent": 0.6214405360133994,
+          "slow_entries_per_10min": 0.15204925956842855
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.532515490988251,
+          "p90_speed_mps": -0.00452589031363182,
+          "slow_time_percent": -1.6633165829145715,
+          "slow_entries_per_10min": -0.8206075592682227
+        },
+        "accel_W1_mps2": 0.19356326545062016,
+        "paper": {
+          "density_js": 0.005137914366570078,
+          "od_js": 0.2586810297886282,
+          "length_js": 0.007601694325753221,
+          "hotspot_f1": 0.95,
+          "length_w1_m": 389.224542631507,
+          "reference_median_length_m": 5623.973863303814,
+          "generated_median_length_m": 5182.960366175979,
+          "outside_fraction": 0.00017851316996300468,
+          "reference_occupied_od": 533,
+          "generated_occupied_od": 528,
+          "requests": 600
+        }
+      },
+      "taxi": {
+        "requests": 600,
+        "speed_w1_mps": 1.0779242564555822,
+        "observed": {
+          "mean_speed_mps": 10.656384857985602,
+          "p90_speed_mps": 14.211535431094905,
+          "slow_time_percent": 2.3986599664991592,
+          "slow_entries_per_10min": 0.9798157266509234
+        },
+        "generated": {
+          "mean_speed_mps": 10.157691704285975,
+          "p90_speed_mps": 14.172292267203199,
+          "slow_time_percent": 0.6080402010050252,
+          "slow_entries_per_10min": 0.15642368027449371
+        },
+        "signed_error": {
+          "mean_speed_mps": -0.49869315369962663,
+          "p90_speed_mps": -0.039243163891706345,
+          "slow_time_percent": -1.790619765494134,
+          "slow_entries_per_10min": -0.8233920463764297
+        },
+        "accel_W1_mps2": 0.19150080162400507,
+        "paper": {
+          "density_js": 0.005152878290738214,
+          "od_js": 0.2652232165606688,
+          "length_js": 0.008401694663250116,
+          "hotspot_f1": 0.9,
+          "length_w1_m": 364.71917985945004,
+          "reference_median_length_m": 5588.304574340809,
+          "generated_median_length_m": 5176.967876223367,
+          "outside_fraction": 0.0007256419439729675,
+          "reference_occupied_od": 533,
+          "generated_occupied_od": 535,
+          "requests": 600
+        }
+      }
+    }
+  }
+}
