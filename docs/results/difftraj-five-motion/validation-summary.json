@@ -1,0 +1,1913 @@
+{
+  "fits": 24,
+  "validation_requests_per_mode": 600,
+  "eligibility": "A and B train separately per mode; C and D train on all five modes with labels.",
+  "reference_by_mode": {
+    "bicycle": {
+      "request_sha256": "338e6a82f842674e113ba8f1f4b7ea662dcd6a8f1ef112918cb256dd2e7d84f4",
+      "noise_sha256": "2a5c4fd966152ce3c364e7ee2cad3054d1b0593ed0447c7723ce95738cc6bb51",
+      "reference_median_length_m": 3758.916555771827,
+      "reference_occupied_od": 423,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "observed_500_vs_500": {
+        "density_js": 0.007262398401274681,
+        "od_js": 0.4271365386849734,
+        "length_js": 0.010963810322156892,
+        "hotspot_f1": 0.95,
+        "length_w1_m": 174.36123402767285,
+        "reference_median_length_m": 3735.881392109018,
+        "generated_median_length_m": 3741.721613840208,
+        "outside_fraction": 0.0,
+        "reference_occupied_od": 365,
+        "generated_occupied_od": 373,
+        "requests": 500
+      }
+    },
+    "bus": {
+      "request_sha256": "84eee229255c255bb2b6dbfb754e3d91ecfd5ba945fe5c0f0763155e7ee7162a",
+      "noise_sha256": "fceb6575078339ea4d2f8444537dbe04f53a61613e2d1465a77b0f87e5ce4187",
+      "reference_median_length_m": 5273.697116946734,
+      "reference_occupied_od": 23,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "observed_500_vs_500": {
+        "density_js": 0.003080838337534033,
+        "od_js": 0.011085140798368502,
+        "length_js": 0.005658220026201015,
+        "hotspot_f1": 0.95,
+        "length_w1_m": 197.72319052417492,
+        "reference_median_length_m": 5274.755616908754,
+        "generated_median_length_m": 5274.1853193523775,
+        "outside_fraction": 0.0,
+        "reference_occupied_od": 23,
+        "generated_occupied_od": 23,
+        "requests": 500
+      }
+    },
+    "motorcycle": {
+      "request_sha256": "07628ad86bf10b7452ba216a500415c2b7fcfd836f0deb1745a39c2c61f596b5",
+      "noise_sha256": "d95b2445644afd2ea4b152cf6686d3d6ea21b77fc3d2723dc7949544bcf1e6d2",
+      "reference_median_length_m": 5658.089928947871,
+      "reference_occupied_od": 512,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "observed_500_vs_500": {
+        "density_js": 0.004568080087052382,
+        "od_js": 0.547071732562502,
+        "length_js": 0.0074757403753873235,
+        "hotspot_f1": 0.95,
+        "length_w1_m": 163.51921713982844,
+        "reference_median_length_m": 5773.556460272881,
+        "generated_median_length_m": 5599.634057900417,
+        "outside_fraction": 0.0,
+        "reference_occupied_od": 436,
+        "generated_occupied_od": 444,
+        "requests": 500
+      }
+    },
+    "passenger": {
+      "request_sha256": "17444f8e382196cea9e7966c44beedd86ce839a6229c543a5f35a1f346aadb21",
+      "noise_sha256": "bd9309460289823b5a4150b8317c62dcac169bd743eddf8dcc493cafda975f8e",
+      "reference_median_length_m": 5623.973863303814,
+      "reference_occupied_od": 533,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "observed_500_vs_500": {
+        "density_js": 0.0075456785594743316,
+        "od_js": 0.5769419287636666,
+        "length_js": 0.013678831781763979,
+        "hotspot_f1": 0.95,
+        "length_w1_m": 104.32366780439173,
+        "reference_median_length_m": 5625.843756100838,
+        "generated_median_length_m": 5665.973298629732,
+        "outside_fraction": 0.0,
+        "reference_occupied_od": 449,
+        "generated_occupied_od": 456,
+        "requests": 500
+      }
+    },
+    "taxi": {
+      "request_sha256": "539b1c2dd333c5ac3fe07c0cfd42588d45462422a7d026b285bb2bddbb4c35e5",
+      "noise_sha256": "43bf40b0f861a6fdf8b97a004472c5b4c6fafdd247e86cff16102a6709446d82",
+      "reference_median_length_m": 5588.304574340809,
+      "reference_occupied_od": 533,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "observed_500_vs_500": {
+        "density_js": 0.00438233335173486,
+        "od_js": 0.5659808198113677,
+        "length_js": 0.00831636873481181,
+        "hotspot_f1": 0.9,
+        "length_w1_m": 270.8257979394064,
+        "reference_median_length_m": 5660.877790618983,
+        "generated_median_length_m": 5528.844953143955,
+        "outside_fraction": 0.0,
+        "reference_occupied_od": 453,
+        "generated_occupied_od": 444,
+        "requests": 500
+      }
+    }
+  },
+  "protocol": {
+    "length_bins_m": [
+      2048.9185663976064,
+      2558.6399724340563,
+      2927.640156448736,
+      3273.8049705183403,
+      3613.6377224039816,
+      3949.8481165969724,
+      4107.193641244876,
+      4432.710244421175,
+      4784.3226264432615,
+      4975.0585924378975,
+      5297.85979057771,
+      5705.097353227744,
+      6085.058362293598,
+      6307.555594638673,
+      6696.765563655554,
+      7202.412094832215,
+      7779.116163814237,
+      8383.022766365904,
+      9538.871945800438
+    ],
+    "low_m": [
+      -0.163919597864151,
+      0.04442210868000984
+    ],
+    "high_m": [
+      9978.0,
+      6359.2900390625
+    ],
+    "pool_noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+    "eps_seed": 42,
+    "sampling": {
+      "steps": 100,
+      "stride": 5,
+      "eta": 0,
+      "batch": 64
+    },
+    "metric_protocol": "Paper metrics use native observed metre coordinates and generated coordinates interpolated to the corresponding native count; 16 x 16 training bounds, 20 training length-quantile bins, natural-log JS, top 20 occupied-cell F1.",
+    "motion_protocol": "Both paths on the same 200-point elapsed-time grid. Equal weight per trip for pooled 199-interval speed W1. Slow means below 1 m/s. An entry requires a preceding fast interval and two consecutive slow intervals."
+  },
+  "fit_records": {
+    "bicycle-A-42": {
+      "file": "runs/bicycle-A-42/eval/metrics.json",
+      "request_sha256": "338e6a82f842674e113ba8f1f4b7ea662dcd6a8f1ef112918cb256dd2e7d84f4",
+      "noise_sha256": "2a5c4fd966152ce3c364e7ee2cad3054d1b0593ed0447c7723ce95738cc6bb51",
+      "requests": 600
+    },
+    "bus-A-42": {
+      "file": "runs/bus-A-42/eval/metrics.json",
+      "request_sha256": "84eee229255c255bb2b6dbfb754e3d91ecfd5ba945fe5c0f0763155e7ee7162a",
+      "noise_sha256": "fceb6575078339ea4d2f8444537dbe04f53a61613e2d1465a77b0f87e5ce4187",
+      "requests": 600
+    },
+    "motorcycle-A-42": {
+      "file": "runs/motorcycle-A-42/eval/metrics.json",
+      "request_sha256": "07628ad86bf10b7452ba216a500415c2b7fcfd836f0deb1745a39c2c61f596b5",
+      "noise_sha256": "d95b2445644afd2ea4b152cf6686d3d6ea21b77fc3d2723dc7949544bcf1e6d2",
+      "requests": 600
+    },
+    "passenger-A-42": {
+      "file": "runs/passenger-A-42/eval/metrics.json",
+      "request_sha256": "17444f8e382196cea9e7966c44beedd86ce839a6229c543a5f35a1f346aadb21",
+      "noise_sha256": "bd9309460289823b5a4150b8317c62dcac169bd743eddf8dcc493cafda975f8e",
+      "requests": 600
+    },
+    "taxi-A-42": {
+      "file": "runs/taxi-A-42/eval/metrics.json",
+      "request_sha256": "539b1c2dd333c5ac3fe07c0cfd42588d45462422a7d026b285bb2bddbb4c35e5",
+      "noise_sha256": "43bf40b0f861a6fdf8b97a004472c5b4c6fafdd247e86cff16102a6709446d82",
+      "requests": 600
+    },
+    "bicycle-B-42": {
+      "file": "runs/bicycle-B-42/eval/metrics.json",
+      "request_sha256": "338e6a82f842674e113ba8f1f4b7ea662dcd6a8f1ef112918cb256dd2e7d84f4",
+      "noise_sha256": "2a5c4fd966152ce3c364e7ee2cad3054d1b0593ed0447c7723ce95738cc6bb51",
+      "requests": 600
+    },
+    "bus-B-42": {
+      "file": "runs/bus-B-42/eval/metrics.json",
+      "request_sha256": "84eee229255c255bb2b6dbfb754e3d91ecfd5ba945fe5c0f0763155e7ee7162a",
+      "noise_sha256": "fceb6575078339ea4d2f8444537dbe04f53a61613e2d1465a77b0f87e5ce4187",
+      "requests": 600
+    },
+    "motorcycle-B-42": {
+      "file": "runs/motorcycle-B-42/eval/metrics.json",
+      "request_sha256": "07628ad86bf10b7452ba216a500415c2b7fcfd836f0deb1745a39c2c61f596b5",
+      "noise_sha256": "d95b2445644afd2ea4b152cf6686d3d6ea21b77fc3d2723dc7949544bcf1e6d2",
+      "requests": 600
+    },
+    "passenger-B-42": {
+      "file": "runs/passenger-B-42/eval/metrics.json",
+      "request_sha256": "17444f8e382196cea9e7966c44beedd86ce839a6229c543a5f35a1f346aadb21",
+      "noise_sha256": "bd9309460289823b5a4150b8317c62dcac169bd743eddf8dcc493cafda975f8e",
+      "requests": 600
+    },
+    "taxi-B-42": {
+      "file": "runs/taxi-B-42/eval/metrics.json",
+      "request_sha256": "539b1c2dd333c5ac3fe07c0cfd42588d45462422a7d026b285bb2bddbb4c35e5",
+      "noise_sha256": "43bf40b0f861a6fdf8b97a004472c5b4c6fafdd247e86cff16102a6709446d82",
+      "requests": 600
+    },
+    "all-C-42": {
+      "file": "runs/all-C-42/eval/metrics.json",
+      "request_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+      "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+      "requests": 3000
+    },
+    "all-D-42": {
+      "file": "runs/all-D-42/eval/metrics.json",
+      "request_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+      "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+      "requests": 3000
+    },
+    "bicycle-A-43": {
+      "file": "runs/bicycle-A-43/eval/metrics.json",
+      "request_sha256": "338e6a82f842674e113ba8f1f4b7ea662dcd6a8f1ef112918cb256dd2e7d84f4",
+      "noise_sha256": "2a5c4fd966152ce3c364e7ee2cad3054d1b0593ed0447c7723ce95738cc6bb51",
+      "requests": 600
+    },
+    "bus-A-43": {
+      "file": "runs/bus-A-43/eval/metrics.json",
+      "request_sha256": "84eee229255c255bb2b6dbfb754e3d91ecfd5ba945fe5c0f0763155e7ee7162a",
+      "noise_sha256": "fceb6575078339ea4d2f8444537dbe04f53a61613e2d1465a77b0f87e5ce4187",
+      "requests": 600
+    },
+    "motorcycle-A-43": {
+      "file": "runs/motorcycle-A-43/eval/metrics.json",
+      "request_sha256": "07628ad86bf10b7452ba216a500415c2b7fcfd836f0deb1745a39c2c61f596b5",
+      "noise_sha256": "d95b2445644afd2ea4b152cf6686d3d6ea21b77fc3d2723dc7949544bcf1e6d2",
+      "requests": 600
+    },
+    "passenger-A-43": {
+      "file": "runs/passenger-A-43/eval/metrics.json",
+      "request_sha256": "17444f8e382196cea9e7966c44beedd86ce839a6229c543a5f35a1f346aadb21",
+      "noise_sha256": "bd9309460289823b5a4150b8317c62dcac169bd743eddf8dcc493cafda975f8e",
+      "requests": 600
+    },
+    "taxi-A-43": {
+      "file": "runs/taxi-A-43/eval/metrics.json",
+      "request_sha256": "539b1c2dd333c5ac3fe07c0cfd42588d45462422a7d026b285bb2bddbb4c35e5",
+      "noise_sha256": "43bf40b0f861a6fdf8b97a004472c5b4c6fafdd247e86cff16102a6709446d82",
+      "requests": 600
+    },
+    "bicycle-B-43": {
+      "file": "runs/bicycle-B-43/eval/metrics.json",
+      "request_sha256": "338e6a82f842674e113ba8f1f4b7ea662dcd6a8f1ef112918cb256dd2e7d84f4",
+      "noise_sha256": "2a5c4fd966152ce3c364e7ee2cad3054d1b0593ed0447c7723ce95738cc6bb51",
+      "requests": 600
+    },
+    "bus-B-43": {
+      "file": "runs/bus-B-43/eval/metrics.json",
+      "request_sha256": "84eee229255c255bb2b6dbfb754e3d91ecfd5ba945fe5c0f0763155e7ee7162a",
+      "noise_sha256": "fceb6575078339ea4d2f8444537dbe04f53a61613e2d1465a77b0f87e5ce4187",
+      "requests": 600
+    },
+    "motorcycle-B-43": {
+      "file": "runs/motorcycle-B-43/eval/metrics.json",
+      "request_sha256": "07628ad86bf10b7452ba216a500415c2b7fcfd836f0deb1745a39c2c61f596b5",
+      "noise_sha256": "d95b2445644afd2ea4b152cf6686d3d6ea21b77fc3d2723dc7949544bcf1e6d2",
+      "requests": 600
+    },
+    "passenger-B-43": {
+      "file": "runs/passenger-B-43/eval/metrics.json",
+      "request_sha256": "17444f8e382196cea9e7966c44beedd86ce839a6229c543a5f35a1f346aadb21",
+      "noise_sha256": "bd9309460289823b5a4150b8317c62dcac169bd743eddf8dcc493cafda975f8e",
+      "requests": 600
+    },
+    "taxi-B-43": {
+      "file": "runs/taxi-B-43/eval/metrics.json",
+      "request_sha256": "539b1c2dd333c5ac3fe07c0cfd42588d45462422a7d026b285bb2bddbb4c35e5",
+      "noise_sha256": "43bf40b0f861a6fdf8b97a004472c5b4c6fafdd247e86cff16102a6709446d82",
+      "requests": 600
+    },
+    "all-C-43": {
+      "file": "runs/all-C-43/eval/metrics.json",
+      "request_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+      "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+      "requests": 3000
+    },
+    "all-D-43": {
+      "file": "runs/all-D-43/eval/metrics.json",
+      "request_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+      "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+      "requests": 3000
+    }
+  },
+  "pooled_metrics": {
+    "all-C-42": {
+      "density_js": 0.003174617918643671,
+      "od_js": 0.14502303313281256,
+      "length_js": 0.0072166866465033465,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.7178665399525518,
+      "slow_time_abs_error_pp": 4.4182579564487074,
+      "slow_entries_abs_error_per_10min": 0.5971904078325414
+    },
+    "all-D-42": {
+      "density_js": 0.00301346187614876,
+      "od_js": 0.14044200084618313,
+      "length_js": 0.00795259056174205,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.7555332948844957,
+      "slow_time_abs_error_pp": 5.2681742043549225,
+      "slow_entries_abs_error_per_10min": 0.907674313425263
+    },
+    "all-C-43": {
+      "density_js": 0.0024368765772900007,
+      "od_js": 0.14459533309168837,
+      "length_js": 0.008070260642005063,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.6883197342825601,
+      "slow_time_abs_error_pp": 4.437185929648059,
+      "slow_entries_abs_error_per_10min": 0.6880740677351485
+    },
+    "all-D-43": {
+      "density_js": 0.0025492102313944835,
+      "od_js": 0.1456505140118399,
+      "length_js": 0.007053360068583975,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.7046844041303093,
+      "slow_time_abs_error_pp": 5.040033500837319,
+      "slow_entries_abs_error_per_10min": 0.9432295525180441
+    }
+  },
+  "macro_mode_metrics": {
+    "A-42": {
+      "density_js": 0.006989524237864457,
+      "od_js": 0.2239163740192137,
+      "length_js": 0.02176264737165782,
+      "hotspot_f1": 0.93,
+      "speed_w1_mps": 0.9629109991602823,
+      "slow_time_abs_error_pp": 3.6536013400335055,
+      "slow_entries_abs_error_per_10min": 0.5913238640382863
+    },
+    "B-42": {
+      "density_js": 0.007258539106072101,
+      "od_js": 0.23586132396106058,
+      "length_js": 0.02652869449165077,
+      "hotspot_f1": 0.9299999999999999,
+      "speed_w1_mps": 0.9773133108295298,
+      "slow_time_abs_error_pp": 4.40284757118928,
+      "slow_entries_abs_error_per_10min": 0.8571782935612624
+    },
+    "C-42": {
+      "density_js": 0.005214969613788652,
+      "od_js": 0.19965964607210754,
+      "length_js": 0.02431682309338857,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9170289656230959,
+      "slow_time_abs_error_pp": 4.418257956448903,
+      "slow_entries_abs_error_per_10min": 0.5971904078325375
+    },
+    "D-42": {
+      "density_js": 0.0051342920810796095,
+      "od_js": 0.19586344412890663,
+      "length_js": 0.023921294643720056,
+      "hotspot_f1": 0.96,
+      "speed_w1_mps": 0.9576056436330026,
+      "slow_time_abs_error_pp": 5.268174204355109,
+      "slow_entries_abs_error_per_10min": 0.9076743134252593
+    },
+    "A-43": {
+      "density_js": 0.007460879853717699,
+      "od_js": 0.22019322527236262,
+      "length_js": 0.020978103689649454,
+      "hotspot_f1": 0.92,
+      "speed_w1_mps": 0.9755139210548079,
+      "slow_time_abs_error_pp": 3.7242881072026806,
+      "slow_entries_abs_error_per_10min": 0.5642988447032562
+    },
+    "B-43": {
+      "density_js": 0.008031129371500583,
+      "od_js": 0.22258776054716273,
+      "length_js": 0.021360065286723216,
+      "hotspot_f1": 0.9299999999999999,
+      "speed_w1_mps": 0.9790946737773253,
+      "slow_time_abs_error_pp": 4.12093802345059,
+      "slow_entries_abs_error_per_10min": 0.607252314450628
+    },
+    "C-43": {
+      "density_js": 0.004428629808632643,
+      "od_js": 0.19682575978464847,
+      "length_js": 0.022841637664897003,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.8831481302381167,
+      "slow_time_abs_error_pp": 4.44958123953099,
+      "slow_entries_abs_error_per_10min": 0.6880740677351449
+    },
+    "D-43": {
+      "density_js": 0.004440773602018056,
+      "od_js": 0.202107706873356,
+      "length_js": 0.021514666043267138,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.8900583910747131,
+      "slow_time_abs_error_pp": 5.04003350083752,
+      "slow_entries_abs_error_per_10min": 0.9432295525180393
+    }
+  },
+  "per_mode": {
+    "bicycle-A-42": {
+      "density_js": 0.008357036679532697,
+      "od_js": 0.2044054028138237,
+      "length_js": 0.011864491487127642,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.5868847869579664,
+      "slow_time_abs_error_pp": 0.13819095477387067,
+      "slow_entries_abs_error_per_10min": 0.269131797939672,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.57853547713507,
+        "p90_speed_mps": 5.97042648215377,
+        "slow_time_percent": 1.1566164154103842,
+        "slow_entries_per_10min": 0.22039534237894862
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.3120777276880622,
+        "p90_speed_mps": 0.630640710528219,
+        "slow_time_percent": -0.13819095477387067,
+        "slow_entries_per_10min": -0.269131797939672
+      }
+    },
+    "bus-A-42": {
+      "density_js": 0.00392311679310533,
+      "od_js": 0.05823487545396405,
+      "length_js": 0.06224746374667957,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.7542763772194016,
+      "slow_time_abs_error_pp": 13.08291457286435,
+      "slow_entries_abs_error_per_10min": 0.241513741048359,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.5220528976899175,
+        "p90_speed_mps": 12.385832368368334,
+        "slow_time_percent": 20.273869346733644,
+        "slow_entries_per_10min": 7.034389169578051
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.1222381381632589,
+        "p90_speed_mps": -0.45784245889364783,
+        "slow_time_percent": -13.08291457286435,
+        "slow_entries_per_10min": 0.241513741048359
+      }
+    },
+    "motorcycle-A-42": {
+      "density_js": 0.009416424327589774,
+      "od_js": 0.2892534885120603,
+      "length_js": 0.010659314653197055,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1086876606548457,
+      "slow_time_abs_error_pp": 1.5276381909547705,
+      "slow_entries_abs_error_per_10min": 0.751868345843787,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.637118194861081,
+        "p90_speed_mps": 13.594720598816258,
+        "slow_time_percent": 0.5552763819095474,
+        "slow_entries_per_10min": 0.11380964396605965
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.6804660389383663,
+        "p90_speed_mps": -0.01439110483440409,
+        "slow_time_percent": -1.5276381909547705,
+        "slow_entries_per_10min": -0.751868345843787
+      }
+    },
+    "passenger-A-42": {
+      "density_js": 0.0069336441174814405,
+      "od_js": 0.2929958588693114,
+      "length_js": 0.014422483034805825,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1865322077592098,
+      "slow_time_abs_error_pp": 1.653266331658291,
+      "slow_entries_abs_error_per_10min": 0.8142347974254571,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.718594165724587,
+        "p90_speed_mps": 13.899210210069622,
+        "slow_time_percent": 0.6314907872696801,
+        "slow_entries_per_10min": 0.15842202141119405
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.8382797170065697,
+        "p90_speed_mps": -0.15376816888294798,
+        "slow_time_percent": -1.653266331658291,
+        "slow_entries_per_10min": -0.8142347974254571
+      }
+    },
+    "taxi-A-42": {
+      "density_js": 0.006317399271613041,
+      "od_js": 0.27469224444690904,
+      "length_js": 0.009619483936479,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1781739632099881,
+      "slow_time_abs_error_pp": 1.865996649916245,
+      "slow_entries_abs_error_per_10min": 0.8798706379341562,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.269242346071675,
+        "p90_speed_mps": 14.790680963965487,
+        "slow_time_percent": 0.5326633165829142,
+        "slow_entries_per_10min": 0.09994508871676726
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.3871425119139271,
+        "p90_speed_mps": 0.5791455328705819,
+        "slow_time_percent": -1.865996649916245,
+        "slow_entries_per_10min": -0.8798706379341562
+      }
+    },
+    "bicycle-B-42": {
+      "density_js": 0.009201895558213127,
+      "od_js": 0.21766539396131324,
+      "length_js": 0.016389693720492992,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.5861367695748677,
+      "slow_time_abs_error_pp": 0.2278056951423797,
+      "slow_entries_abs_error_per_10min": 0.24428420267409065,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.476312662799271,
+        "p90_speed_mps": 5.820536695776249,
+        "slow_time_percent": 1.0670016750418752,
+        "slow_entries_per_10min": 0.24524293764452995
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.41430054202386124,
+        "p90_speed_mps": 0.48075092415069776,
+        "slow_time_percent": -0.2278056951423797,
+        "slow_entries_per_10min": -0.24428420267409065
+      }
+    },
+    "bus-B-42": {
+      "density_js": 0.005175887961853167,
+      "od_js": 0.04889535436771229,
+      "length_js": 0.07791781001428104,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 0.897007245673119,
+      "slow_time_abs_error_pp": 16.60134003350085,
+      "slow_entries_abs_error_per_10min": 1.5265259371004003,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.570847979108579,
+        "p90_speed_mps": 12.406218823880412,
+        "slow_time_percent": 16.755443886097144,
+        "slow_entries_per_10min": 5.266349491429292
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.1710332195819202,
+        "p90_speed_mps": -0.43745600338156976,
+        "slow_time_percent": -16.60134003350085,
+        "slow_entries_per_10min": -1.5265259371004003
+      }
+    },
+    "motorcycle-B-42": {
+      "density_js": 0.009666002990363505,
+      "od_js": 0.31301664985088234,
+      "length_js": 0.012621990573382189,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.1251848374347482,
+      "slow_time_abs_error_pp": 1.594639865996646,
+      "slow_entries_abs_error_per_10min": 0.7978091176908598,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.715365843306735,
+        "p90_speed_mps": 13.786048294396718,
+        "slow_time_percent": 0.48827470686767177,
+        "slow_entries_per_10min": 0.06786887211898682
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.6022183904927125,
+        "p90_speed_mps": 0.17693659074605605,
+        "slow_time_percent": -1.594639865996646,
+        "slow_entries_per_10min": -0.7978091176908598
+      }
+    },
+    "passenger-B-42": {
+      "density_js": 0.005997962126218404,
+      "od_js": 0.29535636986085984,
+      "length_js": 0.015476042848553341,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.0946990159844614,
+      "slow_time_abs_error_pp": 1.7428810720267989,
+      "slow_entries_abs_error_per_10min": 0.8420667516750282,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.94288235720627,
+        "p90_speed_mps": 14.340333791578303,
+        "slow_time_percent": 0.5418760469011722,
+        "slow_entries_per_10min": 0.13059006716162305
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.6139915255248862,
+        "p90_speed_mps": 0.2873554126257325,
+        "slow_time_percent": -1.7428810720267989,
+        "slow_entries_per_10min": -0.8420667516750282
+      }
+    },
+    "taxi-B-42": {
+      "density_js": 0.006250946893712305,
+      "od_js": 0.3043728517645351,
+      "length_js": 0.010237935301544286,
+      "hotspot_f1": 0.85,
+      "speed_w1_mps": 1.1835386854804526,
+      "slow_time_abs_error_pp": 1.8475711892797284,
+      "slow_entries_abs_error_per_10min": 0.8752054586659331,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.332728379940052,
+        "p90_speed_mps": 14.78790796864027,
+        "slow_time_percent": 0.5510887772194308,
+        "slow_entries_per_10min": 0.1046102679849903
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.32365647804554953,
+        "p90_speed_mps": 0.5763725375453657,
+        "slow_time_percent": -1.8475711892797284,
+        "slow_entries_per_10min": -0.8752054586659331
+      }
+    },
+    "bicycle-C-42": {
+      "density_js": 0.00555589309049175,
+      "od_js": 0.1593713014035232,
+      "length_js": 0.012560155692284431,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.5506257128568407,
+      "slow_time_abs_error_pp": 0.02847571189279763,
+      "slow_entries_abs_error_per_10min": 0.1267220985121279,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.486190571382521,
+        "p90_speed_mps": 5.721551947363471,
+        "slow_time_percent": 1.2663316582914572,
+        "slow_entries_per_10min": 0.3628050418064927
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.40442263344061047,
+        "p90_speed_mps": 0.38176617573792004,
+        "slow_time_percent": -0.02847571189279763,
+        "slow_entries_per_10min": -0.1267220985121279
+      }
+    },
+    "bus-C-42": {
+      "density_js": 0.005608271601519177,
+      "od_js": 0.04854943769310067,
+      "length_js": 0.08438249309591751,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.0287676989508807,
+      "slow_time_abs_error_pp": 16.955611390284723,
+      "slow_entries_abs_error_per_10min": 0.48186460217686466,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.385855721691994,
+        "p90_speed_mps": 11.842561153838032,
+        "slow_time_percent": 16.40117252931327,
+        "slow_entries_per_10min": 6.3110108263528275
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.013959037834665011,
+        "p90_speed_mps": -1.0011136734239496,
+        "slow_time_percent": -16.955611390284723,
+        "slow_entries_per_10min": -0.48186460217686466
+      }
+    },
+    "motorcycle-C-42": {
+      "density_js": 0.00458546224740457,
+      "od_js": 0.27020722499096456,
+      "length_js": 0.00878521940561337,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9544330331758494,
+      "slow_time_abs_error_pp": 1.5075376884422087,
+      "slow_entries_abs_error_per_10min": 0.7110591876825929,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.74207177333907,
+        "p90_speed_mps": 13.601506341073401,
+        "slow_time_percent": 0.5753768844221092,
+        "slow_entries_per_10min": 0.1546188021272537
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.5755124604603772,
+        "p90_speed_mps": -0.0076053625772605216,
+        "slow_time_percent": -1.5075376884422087,
+        "slow_entries_per_10min": -0.7110591876825929
+      }
+    },
+    "passenger-C-42": {
+      "density_js": 0.005171725055579135,
+      "od_js": 0.257257540314147,
+      "length_js": 0.00807934954543573,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9353296431948376,
+      "slow_time_abs_error_pp": 1.7445561139028456,
+      "slow_entries_abs_error_per_10min": 0.851123058609608,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.067239359984667,
+        "p90_speed_mps": 14.189383489405518,
+        "slow_time_percent": 0.5402010050251252,
+        "slow_entries_per_10min": 0.12153376022704322
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.4896345227464902,
+        "p90_speed_mps": 0.136405110452948,
+        "slow_time_percent": -1.7445561139028456,
+        "slow_entries_per_10min": -0.851123058609608
+      }
+    },
+    "taxi-C-42": {
+      "density_js": 0.005153496073948625,
+      "od_js": 0.2629127259588022,
+      "length_js": 0.007776897727691799,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1159887399370712,
+      "slow_time_abs_error_pp": 1.85510887772194,
+      "slow_entries_abs_error_per_10min": 0.8151830921814942,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.195166044316789,
+        "p90_speed_mps": 14.30175871949369,
+        "slow_time_percent": 0.5435510887772192,
+        "slow_entries_per_10min": 0.16463263446942916
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.4612188136688129,
+        "p90_speed_mps": 0.09022328839878568,
+        "slow_time_percent": -1.85510887772194,
+        "slow_entries_per_10min": -0.8151830921814942
+      }
+    },
+    "bicycle-D-42": {
+      "density_js": 0.00567202158487516,
+      "od_js": 0.1651226884580945,
+      "length_js": 0.007955257282338507,
+      "hotspot_f1": 1.0,
+      "speed_w1_mps": 0.5028284573412724,
+      "slow_time_abs_error_pp": 0.32830820770519475,
+      "slow_entries_abs_error_per_10min": 0.2404409696141888,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.619834775806287,
+        "p90_speed_mps": 5.919032857826863,
+        "slow_time_percent": 0.9664991624790601,
+        "slow_entries_per_10min": 0.24908617070443181
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.2707784290168451,
+        "p90_speed_mps": 0.5792470862013124,
+        "slow_time_percent": -0.32830820770519475,
+        "slow_entries_per_10min": -0.2404409696141888
+      }
+    },
+    "bus-D-42": {
+      "density_js": 0.003561871045290052,
+      "od_js": 0.04921593168029503,
+      "length_js": 0.09062110761640513,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.1798095346106892,
+      "slow_time_abs_error_pp": 20.691792294807378,
+      "slow_entries_abs_error_per_10min": 1.8018630422956283,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.484422995652765,
+        "p90_speed_mps": 11.910712053008384,
+        "slow_time_percent": 12.664991624790614,
+        "slow_entries_per_10min": 4.991012386234064
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.08460823612610646,
+        "p90_speed_mps": -0.932962774253598,
+        "slow_time_percent": -20.691792294807378,
+        "slow_entries_per_10min": -1.8018630422956283
+      }
+    },
+    "motorcycle-D-42": {
+      "density_js": 0.005514731437050934,
+      "od_js": 0.24257253685302238,
+      "length_js": 0.00902943120972696,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9525286729055009,
+      "slow_time_abs_error_pp": 1.5670016750418723,
+      "slow_entries_abs_error_per_10min": 0.730584580530409,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.870502544333329,
+        "p90_speed_mps": 13.705777163048433,
+        "slow_time_percent": 0.5159128978224456,
+        "slow_entries_per_10min": 0.1350934092794377
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.4470816894661187,
+        "p90_speed_mps": 0.09666545939777116,
+        "slow_time_percent": -1.5670016750418723,
+        "slow_entries_per_10min": -0.730584580530409
+      }
+    },
+    "passenger-D-42": {
+      "density_js": 0.005927804248170633,
+      "od_js": 0.2606413262753276,
+      "length_js": 0.005530507008787092,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9753496340184011,
+      "slow_time_abs_error_pp": 1.8107202680066976,
+      "slow_entries_abs_error_per_10min": 0.8795885853695449,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.199422698632858,
+        "p90_speed_mps": 14.229511683579073,
+        "slow_time_percent": 0.4740368509212733,
+        "slow_entries_per_10min": 0.0930682334671063
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.35745118409829857,
+        "p90_speed_mps": 0.17653330462650274,
+        "slow_time_percent": -1.8107202680066976,
+        "slow_entries_per_10min": -0.8795885853695449
+      }
+    },
+    "taxi-D-42": {
+      "density_js": 0.004995032090011268,
+      "od_js": 0.2617647373777936,
+      "length_js": 0.006470170101342583,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.1775119192891494,
+      "slow_time_abs_error_pp": 1.9430485762144016,
+      "slow_entries_abs_error_per_10min": 0.8858943893165256,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.306541429709196,
+        "p90_speed_mps": 14.397723250511563,
+        "slow_time_percent": 0.4556113902847577,
+        "slow_entries_per_10min": 0.09392133733439781
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.34984342827640624,
+        "p90_speed_mps": 0.18618781941665752,
+        "slow_time_percent": -1.9430485762144016,
+        "slow_entries_per_10min": -0.8858943893165256
+      }
+    },
+    "bicycle-A-43": {
+      "density_js": 0.007509426411489321,
+      "od_js": 0.19647520029949483,
+      "length_js": 0.01135245769195644,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.576561939137482,
+      "slow_time_abs_error_pp": 0.2705192629815756,
+      "slow_entries_abs_error_per_10min": 0.3096065738660335,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.510687304566866,
+        "p90_speed_mps": 5.787446894584309,
+        "slow_time_percent": 1.0242881072026793,
+        "slow_entries_per_10min": 0.1799205664525871
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.37992590025626605,
+        "p90_speed_mps": 0.44766112295875793,
+        "slow_time_percent": -0.2705192629815756,
+        "slow_entries_per_10min": -0.3096065738660335
+      }
+    },
+    "bus-A-43": {
+      "density_js": 0.002218064880108079,
+      "od_js": 0.028988405109377384,
+      "length_js": 0.04943429050163149,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.7935084621395523,
+      "slow_time_abs_error_pp": 13.464824120603023,
+      "slow_entries_abs_error_per_10min": 0.1216786286379481,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.4948464233137635,
+        "p90_speed_mps": 12.369497161889129,
+        "slow_time_percent": 19.89195979899497,
+        "slow_entries_per_10min": 6.91455405716764
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.09503166378710493,
+        "p90_speed_mps": -0.4741776653728529,
+        "slow_time_percent": -13.464824120603023,
+        "slow_entries_per_10min": 0.1216786286379481
+      }
+    },
+    "motorcycle-A-43": {
+      "density_js": 0.010885232407405432,
+      "od_js": 0.29321893293159834,
+      "length_js": 0.014932825467332999,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.2056386248548925,
+      "slow_time_abs_error_pp": 1.497487437185927,
+      "slow_entries_abs_error_per_10min": 0.7198511024310219,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.486063943465858,
+        "p90_speed_mps": 13.247097647056963,
+        "slow_time_percent": 0.5854271356783908,
+        "slow_entries_per_10min": 0.1458268873788247
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.8315202903335894,
+        "p90_speed_mps": -0.3620140565936989,
+        "slow_time_percent": -1.497487437185927,
+        "slow_entries_per_10min": -0.7198511024310219
+      }
+    },
+    "passenger-A-43": {
+      "density_js": 0.010434413181558218,
+      "od_js": 0.3014666032830538,
+      "length_js": 0.01678307669137079,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1280660087291827,
+      "slow_time_abs_error_pp": 1.6373534338358446,
+      "slow_entries_abs_error_per_10min": 0.840280248428352,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.768411656936935,
+        "p90_speed_mps": 13.935929959793029,
+        "slow_time_percent": 0.6474036850921262,
+        "slow_entries_per_10min": 0.1323765704082992
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.7884622257942215,
+        "p90_speed_mps": -0.11704841915954134,
+        "slow_time_percent": -1.6373534338358446,
+        "slow_entries_per_10min": -0.840280248428352
+      }
+    },
+    "taxi-A-43": {
+      "density_js": 0.006257262388027446,
+      "od_js": 0.2808169847382888,
+      "length_js": 0.012387868095955552,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1737945704129302,
+      "slow_time_abs_error_pp": 1.7512562814070334,
+      "slow_entries_abs_error_per_10min": 0.8300776701529256,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.039358751213962,
+        "p90_speed_mps": 14.267651083609547,
+        "slow_time_percent": 0.647403685092126,
+        "slow_entries_per_10min": 0.14973805649799785
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.6170261067716396,
+        "p90_speed_mps": 0.05611565251464157,
+        "slow_time_percent": -1.7512562814070334,
+        "slow_entries_per_10min": -0.8300776701529256
+      }
+    },
+    "bicycle-B-43": {
+      "density_js": 0.008136682519371928,
+      "od_js": 0.19866189410997487,
+      "length_js": 0.01506757562057704,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.5737034514322017,
+      "slow_time_abs_error_pp": 0.28224455611390487,
+      "slow_entries_abs_error_per_10min": 0.29583766822266283,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.500551366464906,
+        "p90_speed_mps": 5.782020605893742,
+        "slow_time_percent": 1.01256281407035,
+        "slow_entries_per_10min": 0.19368947209595777
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.3900618383582257,
+        "p90_speed_mps": 0.44223483426819055,
+        "slow_time_percent": -0.28224455611390487,
+        "slow_entries_per_10min": -0.29583766822266283
+      }
+    },
+    "bus-B-43": {
+      "density_js": 0.00277252985030967,
+      "od_js": 0.022749741748353244,
+      "length_js": 0.061008042503085815,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.8693687960551677,
+      "slow_time_abs_error_pp": 15.165829145728665,
+      "slow_entries_abs_error_per_10min": 0.27239646016066743,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.481210274870436,
+        "p90_speed_mps": 12.235754151946365,
+        "slow_time_percent": 18.19095477386933,
+        "slow_entries_per_10min": 6.520478968369025
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.08139551534377709,
+        "p90_speed_mps": -0.6079206753156168,
+        "slow_time_percent": -15.165829145728665,
+        "slow_entries_per_10min": -0.27239646016066743
+      }
+    },
+    "motorcycle-B-43": {
+      "density_js": 0.010157396404625686,
+      "od_js": 0.29916704215247747,
+      "length_js": 0.009310697449578366,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.153920066539455,
+      "slow_time_abs_error_pp": 1.5778894472361769,
+      "slow_entries_abs_error_per_10min": 0.7403494938496438,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.630444697848581,
+        "p90_speed_mps": 13.433406570481191,
+        "slow_time_percent": 0.505025125628141,
+        "slow_entries_per_10min": 0.12532849596020296
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.6871395359508661,
+        "p90_speed_mps": -0.17570513316947078,
+        "slow_time_percent": -1.5778894472361769,
+        "slow_entries_per_10min": -0.7403494938496438
+      }
+    },
+    "passenger-B-43": {
+      "density_js": 0.011654792948185035,
+      "od_js": 0.29684562207932086,
+      "length_js": 0.014337745716949835,
+      "hotspot_f1": 0.9,
+      "speed_w1_mps": 1.1261902368674204,
+      "slow_time_abs_error_pp": 1.703517587939698,
+      "slow_entries_abs_error_per_10min": 0.8526562248518985,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.876162041057567,
+        "p90_speed_mps": 14.123191244043728,
+        "slow_time_percent": 0.5812395309882729,
+        "slow_entries_per_10min": 0.12000059398475273
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.68071184167359,
+        "p90_speed_mps": 0.07021286509115754,
+        "slow_time_percent": -1.703517587939698,
+        "slow_entries_per_10min": -0.8526562248518985
+      }
+    },
+    "taxi-B-43": {
+      "density_js": 0.007434245135010597,
+      "od_js": 0.2955145026456871,
+      "length_js": 0.007076265143425017,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.1722908179923819,
+      "slow_time_abs_error_pp": 1.8752093802345022,
+      "slow_entries_abs_error_per_10min": 0.8750217251682674,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.30017050858318,
+        "p90_speed_mps": 14.637942974817204,
+        "slow_time_percent": 0.523450586264657,
+        "slow_entries_per_10min": 0.10479400148265608
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.35621434940242125,
+        "p90_speed_mps": 0.4264075437222985,
+        "slow_time_percent": -1.8752093802345022,
+        "slow_entries_per_10min": -0.8750217251682674
+      }
+    },
+    "bicycle-C-43": {
+      "density_js": 0.004162674776957717,
+      "od_js": 0.17175405780282169,
+      "length_js": 0.009115562742464249,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.5237368354142752,
+      "slow_time_abs_error_pp": 0.030988274706866825,
+      "slow_entries_abs_error_per_10min": 0.1114134250028962,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.552653283324469,
+        "p90_speed_mps": 5.847454714143325,
+        "slow_time_percent": 1.3257956448911217,
+        "slow_entries_per_10min": 0.3781137153157244
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.33795992149866283,
+        "p90_speed_mps": 0.5076689425177738,
+        "slow_time_percent": 0.030988274706866825,
+        "slow_entries_per_10min": -0.1114134250028962
+      }
+    },
+    "bus-C-43": {
+      "density_js": 0.0035501919682456,
+      "od_js": 0.03801708289804396,
+      "length_js": 0.07267834002850367,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9573916739546912,
+      "slow_time_abs_error_pp": 17.164991624790634,
+      "slow_entries_abs_error_per_10min": 0.9897656636116459,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.441174333756085,
+        "p90_speed_mps": 12.045179755404812,
+        "slow_time_percent": 16.19179229480736,
+        "slow_entries_per_10min": 5.803109764918046
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.0413595742294266,
+        "p90_speed_mps": -0.79849507185717,
+        "slow_time_percent": -17.164991624790634,
+        "slow_entries_per_10min": -0.9897656636116459
+      }
+    },
+    "motorcycle-C-43": {
+      "density_js": 0.00538230164479772,
+      "od_js": 0.24256927154958527,
+      "length_js": 0.016093000728687076,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9284426503876008,
+      "slow_time_abs_error_pp": 1.535175879396982,
+      "slow_entries_abs_error_per_10min": 0.7234269307023184,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.777229646031579,
+        "p90_speed_mps": 13.611233475475832,
+        "slow_time_percent": 0.547738693467336,
+        "slow_entries_per_10min": 0.14225105910752825
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.5403545877678688,
+        "p90_speed_mps": 0.002121771825169816,
+        "slow_time_percent": -1.535175879396982,
+        "slow_entries_per_10min": -0.7234269307023184
+      }
+    },
+    "passenger-C-43": {
+      "density_js": 0.004913031770238385,
+      "od_js": 0.260774022719679,
+      "length_js": 0.00905039163697091,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.914734750213447,
+      "slow_time_abs_error_pp": 1.7294807370184238,
+      "slow_entries_abs_error_per_10min": 0.8115411104945023,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.11155919954635,
+        "p90_speed_mps": 14.169063381088314,
+        "slow_time_percent": 0.5552763819095472,
+        "slow_entries_per_10min": 0.16111570834214897
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.44531468318480627,
+        "p90_speed_mps": 0.11608500213574402,
+        "slow_time_percent": -1.7294807370184238,
+        "slow_entries_per_10min": -0.8115411104945023
+      }
+    },
+    "taxi-C-43": {
+      "density_js": 0.004134948882923797,
+      "od_js": 0.27101436395311246,
+      "length_js": 0.0072708931878591255,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.0914347412205692,
+      "slow_time_abs_error_pp": 1.787269681742041,
+      "slow_entries_abs_error_per_10min": 0.8042232088643615,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.22648624666855,
+        "p90_speed_mps": 14.351872012203154,
+        "slow_time_percent": 0.6113902847571182,
+        "slow_entries_per_10min": 0.17559251778656193
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.42989861131705176,
+        "p90_speed_mps": 0.1403365811082491,
+        "slow_time_percent": -1.787269681742041,
+        "slow_entries_per_10min": -0.8042232088643615
+      }
+    },
+    "bicycle-D-43": {
+      "density_js": 0.004639561782817571,
+      "od_js": 0.1824031323931171,
+      "length_js": 0.00576890218758135,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.4805314225608301,
+      "slow_time_abs_error_pp": 0.38274706867671837,
+      "slow_entries_abs_error_per_10min": 0.25145507442981163,
+      "motion_observed": {
+        "mean_speed_mps": 4.890613204823132,
+        "p90_speed_mps": 5.339785771625551,
+        "slow_time_percent": 1.2948073701842548,
+        "slow_entries_per_10min": 0.4895271403186206
+      },
+      "motion_generated": {
+        "mean_speed_mps": 4.683916676551395,
+        "p90_speed_mps": 6.006353151538192,
+        "slow_time_percent": 0.9120603015075365,
+        "slow_entries_per_10min": 0.23807206588880897
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.20669652827173657,
+        "p90_speed_mps": 0.6665673799126406,
+        "slow_time_percent": -0.38274706867671837,
+        "slow_entries_per_10min": -0.25145507442981163
+      }
+    },
+    "bus-D-43": {
+      "density_js": 0.004069337492839309,
+      "od_js": 0.04654533471173804,
+      "length_js": 0.07988132985585718,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.0543616365383262,
+      "slow_time_abs_error_pp": 19.46482412060302,
+      "slow_entries_abs_error_per_10min": 1.971626397634819,
+      "motion_observed": {
+        "mean_speed_mps": 6.399814759526659,
+        "p90_speed_mps": 12.843674827261982,
+        "slow_time_percent": 33.356783919597994,
+        "slow_entries_per_10min": 6.792875428529692
+      },
+      "motion_generated": {
+        "mean_speed_mps": 6.524376799143347,
+        "p90_speed_mps": 12.02090332586686,
+        "slow_time_percent": 13.891959798994973,
+        "slow_entries_per_10min": 4.821249030894873
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": 0.12456203961668866,
+        "p90_speed_mps": -0.8227715013951222,
+        "slow_time_percent": -19.46482412060302,
+        "slow_entries_per_10min": -1.971626397634819
+      }
+    },
+    "motorcycle-D-43": {
+      "density_js": 0.004917570083651864,
+      "od_js": 0.2582316537560304,
+      "length_js": 0.007407224916996709,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.8954864264097345,
+      "slow_time_abs_error_pp": 1.6172529313232786,
+      "slow_entries_abs_error_per_10min": 0.7699959873779947,
+      "motion_observed": {
+        "mean_speed_mps": 10.317584233799447,
+        "p90_speed_mps": 13.609111703650662,
+        "slow_time_percent": 2.082914572864318,
+        "slow_entries_per_10min": 0.8656779898098467
+      },
+      "motion_generated": {
+        "mean_speed_mps": 9.97484427963327,
+        "p90_speed_mps": 13.792351935619326,
+        "slow_time_percent": 0.4656616415410392,
+        "slow_entries_per_10min": 0.09568200243185203
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.3427399541661771,
+        "p90_speed_mps": 0.18324023196866435,
+        "slow_time_percent": -1.6172529313232786,
+        "slow_entries_per_10min": -0.7699959873779947
+      }
+    },
+    "passenger-D-43": {
+      "density_js": 0.0048310477315811765,
+      "od_js": 0.2578371109961224,
+      "length_js": 0.0064696607906428675,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 0.9035296946500102,
+      "slow_time_abs_error_pp": 1.796482412060299,
+      "slow_entries_abs_error_per_10min": 0.8653987895096029,
+      "motion_observed": {
+        "mean_speed_mps": 10.556873882731157,
+        "p90_speed_mps": 14.05297837895257,
+        "slow_time_percent": 2.284757118927971,
+        "slow_entries_per_10min": 0.9726568188366512
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.313630813054345,
+        "p90_speed_mps": 14.389682836061123,
+        "slow_time_percent": 0.48827470686767194,
+        "slow_entries_per_10min": 0.10725802932704831
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.24324306967681153,
+        "p90_speed_mps": 0.3367044571085529,
+        "slow_time_percent": -1.796482412060299,
+        "slow_entries_per_10min": -0.8653987895096029
+      }
+    },
+    "taxi-D-43": {
+      "density_js": 0.003746350919200361,
+      "od_js": 0.2655213025097721,
+      "length_js": 0.008046212465257593,
+      "hotspot_f1": 0.95,
+      "speed_w1_mps": 1.1163827752146644,
+      "slow_time_abs_error_pp": 1.9388609715242846,
+      "slow_entries_abs_error_per_10min": 0.8576715136379686,
+      "motion_observed": {
+        "mean_speed_mps": 10.656384857985602,
+        "p90_speed_mps": 14.211535431094905,
+        "slow_time_percent": 2.3986599664991592,
+        "slow_entries_per_10min": 0.9798157266509234
+      },
+      "motion_generated": {
+        "mean_speed_mps": 10.422780736228015,
+        "p90_speed_mps": 14.543234856807477,
+        "slow_time_percent": 0.4597989949748747,
+        "slow_entries_per_10min": 0.1221442130129549
+      },
+      "motion_signed_error": {
+        "mean_speed_mps": -0.23360412175758682,
+        "p90_speed_mps": 0.3316994257125714,
+        "slow_time_percent": -1.9388609715242846,
+        "slow_entries_per_10min": -0.8576715136379686
+      }
+    }
+  },
+  "within_training_population_effects": [
+    {
+      "seed": 42,
+      "mode": "bicycle",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0008448588786804292,
+        "od_js": 0.013259991147489547,
+        "length_js": 0.00452520223336535,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.0007480173830987091,
+        "slow_time_abs_error_pp": 0.08961474036850903,
+        "slow_entries_abs_error_per_10min": -0.024847595265581363
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "bus",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0012527711687478375,
+        "od_js": -0.00933952108625176,
+        "length_js": 0.01567034626760147,
+        "hotspot_f1": -0.04999999999999993,
+        "speed_w1_mps": 0.1427308684537174,
+        "slow_time_abs_error_pp": 3.5184254606365,
+        "slow_entries_abs_error_per_10min": 1.2850121960520413
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "motorcycle",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0002495786627737303,
+        "od_js": 0.02376316133882206,
+        "length_js": 0.0019626759201851335,
+        "hotspot_f1": 0.04999999999999993,
+        "speed_w1_mps": 0.016497176779902478,
+        "slow_time_abs_error_pp": 0.0670016750418756,
+        "slow_entries_abs_error_per_10min": 0.04594077184707279
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "passenger",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": -0.0009356819912630368,
+        "od_js": 0.002360510991548437,
+        "length_js": 0.0010535598137475163,
+        "hotspot_f1": 0.04999999999999993,
+        "speed_w1_mps": -0.09183319177474836,
+        "slow_time_abs_error_pp": 0.08961474036850792,
+        "slow_entries_abs_error_per_10min": 0.027831954249571078
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "taxi",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": -6.645237790073571e-05,
+        "od_js": 0.029680607317626062,
+        "length_js": 0.0006184513650652861,
+        "hotspot_f1": -0.050000000000000044,
+        "speed_w1_mps": 0.005364722270464473,
+        "slow_time_abs_error_pp": -0.018425460636516622,
+        "slow_entries_abs_error_per_10min": -0.004665179268223074
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "bicycle",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": 0.00011612849438341014,
+        "od_js": 0.005751387054571289,
+        "length_js": -0.004604898409945924,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.04779725551556835,
+        "slow_time_abs_error_pp": 0.2998324958123971,
+        "slow_entries_abs_error_per_10min": 0.11371887110206089
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "bus",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": -0.002046400556229125,
+        "od_js": 0.0006664939871943651,
+        "length_js": 0.006238614520487615,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": 0.15104183565980844,
+        "slow_time_abs_error_pp": 3.736180904522655,
+        "slow_entries_abs_error_per_10min": 1.3199984401187637
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "motorcycle",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": 0.0009292691896463636,
+        "od_js": -0.027634688137942176,
+        "length_js": 0.00024421180411359107,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.0019043602703484597,
+        "slow_time_abs_error_pp": 0.059463986599663565,
+        "slow_entries_abs_error_per_10min": 0.01952539284781607
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "passenger",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": 0.0007560791925914981,
+        "od_js": 0.0033837859611806076,
+        "length_js": -0.0025488425366486387,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": 0.040019990823563556,
+        "slow_time_abs_error_pp": 0.06616415410385201,
+        "slow_entries_abs_error_per_10min": 0.028465526759936854
+      }
+    },
+    {
+      "seed": 42,
+      "mode": "taxi",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": -0.00015846398393735625,
+        "od_js": -0.0011479885810086188,
+        "length_js": -0.0013067276263492161,
+        "hotspot_f1": 0.04999999999999993,
+        "speed_w1_mps": 0.061523179352078294,
+        "slow_time_abs_error_pp": 0.08793969849246164,
+        "slow_entries_abs_error_per_10min": 0.07071129713503144
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "bicycle",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.000627256107882607,
+        "od_js": 0.0021866938104800338,
+        "length_js": 0.003715117928620601,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.0028584877052802993,
+        "slow_time_abs_error_pp": 0.011725293132329284,
+        "slow_entries_abs_error_per_10min": -0.013768905643370688
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "bus",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0005544649702015911,
+        "od_js": -0.00623866336102414,
+        "length_js": 0.011573752001454322,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": 0.07586033391561542,
+        "slow_time_abs_error_pp": 1.7010050251256423,
+        "slow_entries_abs_error_per_10min": 0.15071783152271934
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "motorcycle",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": -0.000727836002779746,
+        "od_js": 0.0059481092208791275,
+        "length_js": -0.005622128017754633,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.05171855831543759,
+        "slow_time_abs_error_pp": 0.08040201005024983,
+        "slow_entries_abs_error_per_10min": 0.020498391418621864
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "passenger",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0012203797666268165,
+        "od_js": -0.004620981203732943,
+        "length_js": -0.002445330974420956,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.0018757718617623542,
+        "slow_time_abs_error_pp": 0.06616415410385335,
+        "slow_entries_abs_error_per_10min": 0.012375976423546486
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "taxi",
+      "comparison": "B minus A",
+      "difference": {
+        "density_js": 0.0011769827469831516,
+        "od_js": 0.014697517907398316,
+        "length_js": -0.005311602952530536,
+        "hotspot_f1": 0.04999999999999993,
+        "speed_w1_mps": -0.0015037524205483432,
+        "slow_time_abs_error_pp": 0.12395309882746885,
+        "slow_entries_abs_error_per_10min": 0.04494405501534182
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "bicycle",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": 0.0004768870058598539,
+        "od_js": 0.010649074590295404,
+        "length_js": -0.0033466605548828987,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.04320541285344509,
+        "slow_time_abs_error_pp": 0.35175879396985155,
+        "slow_entries_abs_error_per_10min": 0.14004164942691544
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "bus",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": 0.0005191455245937096,
+        "od_js": 0.008528251813694078,
+        "length_js": 0.007202989827353512,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": 0.096969962583635,
+        "slow_time_abs_error_pp": 2.2998324958123852,
+        "slow_entries_abs_error_per_10min": 0.9818607340231731
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "motorcycle",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": -0.0004647315611458567,
+        "od_js": 0.01566238220644514,
+        "length_js": -0.008685775811690367,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.03295622397786624,
+        "slow_time_abs_error_pp": 0.08207705192629655,
+        "slow_entries_abs_error_per_10min": 0.046569056675676235
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "passenger",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": -8.198403865720873e-05,
+        "od_js": -0.00293691172355659,
+        "length_js": -0.002580730846328042,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": -0.011205055563436761,
+        "slow_time_abs_error_pp": 0.06700167504187515,
+        "slow_entries_abs_error_per_10min": 0.053857679015100635
+      }
+    },
+    {
+      "seed": 43,
+      "mode": "taxi",
+      "comparison": "D minus C",
+      "difference": {
+        "density_js": -0.00038859796372343576,
+        "od_js": -0.005493061443340386,
+        "length_js": 0.0007753192773984679,
+        "hotspot_f1": 0.0,
+        "speed_w1_mps": 0.024948033994095287,
+        "slow_time_abs_error_pp": 0.15159128978224357,
+        "slow_entries_abs_error_per_10min": 0.05344830477360707
+      }
+    }
+  ],
+  "bus_bicycle_label_swap": {
+    "all-C-42": {
+      "applicable": true,
+      "pairs": 113,
+      "eligible_requests_per_side": {
+        "bus": 600,
+        "bicycle": 600
+      },
+      "matching_rule": "Disjoint minimum-cost pairs. All five standardized continuous attributes within 0.75 SD, departure within 180 minutes, each OD cell coordinate within 2 grid steps.",
+      "covered_fraction": 0.18833333333333332,
+      "observed_pair_ids_sha256": "83f38e13d4ec489b65f39dfc2c76bb01ff80f4b67ae988e03c6ad5d42eed8700",
+      "observed_bus_minus_bicycle": {
+        "mean_speed_mps": -0.5946880319372725,
+        "p90_speed_mps": 6.942578370753005,
+        "slow_time_percent": 41.93534041890872,
+        "slow_entries_per_10min": 8.366965774147888
+      },
+      "generated_bus_minus_bicycle": {
+        "mean_speed_mps": 0.1973380598029399,
+        "p90_speed_mps": 1.7071368319171927,
+        "slow_time_percent": 7.746698092231064,
+        "slow_entries_per_10min": 2.157091721298547
+      },
+      "absolute_contrast_error": {
+        "mean_speed_mps": 0.7920260917402124,
+        "p90_speed_mps": 5.235441538835813,
+        "slow_time_percent": 34.18864232667766,
+        "slow_entries_per_10min": 6.20987405284934
+      }
+    },
+    "all-D-42": {
+      "applicable": true,
+      "pairs": 113,
+      "eligible_requests_per_side": {
+        "bus": 600,
+        "bicycle": 600
+      },
+      "matching_rule": "Disjoint minimum-cost pairs. All five standardized continuous attributes within 0.75 SD, departure within 180 minutes, each OD cell coordinate within 2 grid steps.",
+      "covered_fraction": 0.18833333333333332,
+      "observed_pair_ids_sha256": "83f38e13d4ec489b65f39dfc2c76bb01ff80f4b67ae988e03c6ad5d42eed8700",
+      "observed_bus_minus_bicycle": {
+        "mean_speed_mps": -0.5946880319372725,
+        "p90_speed_mps": 6.942578370753005,
+        "slow_time_percent": 41.93534041890872,
+        "slow_entries_per_10min": 8.366965774147888
+      },
+      "generated_bus_minus_bicycle": {
+        "mean_speed_mps": 0.129098030912168,
+        "p90_speed_mps": 1.2800037920217506,
+        "slow_time_percent": 5.074042780273051,
+        "slow_entries_per_10min": 1.3859315639467362
+      },
+      "absolute_contrast_error": {
+        "mean_speed_mps": 0.7237860628494405,
+        "p90_speed_mps": 5.662574578731254,
+        "slow_time_percent": 36.86129763863567,
+        "slow_entries_per_10min": 6.981034210201152
+      }
+    },
+    "all-C-43": {
+      "applicable": true,
+      "pairs": 113,
+      "eligible_requests_per_side": {
+        "bus": 600,
+        "bicycle": 600
+      },
+      "matching_rule": "Disjoint minimum-cost pairs. All five standardized continuous attributes within 0.75 SD, departure within 180 minutes, each OD cell coordinate within 2 grid steps.",
+      "covered_fraction": 0.18833333333333332,
+      "observed_pair_ids_sha256": "83f38e13d4ec489b65f39dfc2c76bb01ff80f4b67ae988e03c6ad5d42eed8700",
+      "observed_bus_minus_bicycle": {
+        "mean_speed_mps": -0.5946880319372725,
+        "p90_speed_mps": 6.942578370753005,
+        "slow_time_percent": 41.93534041890872,
+        "slow_entries_per_10min": 8.366965774147888
+      },
+      "generated_bus_minus_bicycle": {
+        "mean_speed_mps": 0.22045436746001026,
+        "p90_speed_mps": 1.890319255857592,
+        "slow_time_percent": 8.627206830613245,
+        "slow_entries_per_10min": 2.3950801108670627
+      },
+      "absolute_contrast_error": {
+        "mean_speed_mps": 0.8151423993972827,
+        "p90_speed_mps": 5.0522591148954135,
+        "slow_time_percent": 33.308133588295476,
+        "slow_entries_per_10min": 5.971885663280824
+      }
+    },
+    "all-D-43": {
+      "applicable": true,
+      "pairs": 113,
+      "eligible_requests_per_side": {
+        "bus": 600,
+        "bicycle": 600
+      },
+      "matching_rule": "Disjoint minimum-cost pairs. All five standardized continuous attributes within 0.75 SD, departure within 180 minutes, each OD cell coordinate within 2 grid steps.",
+      "covered_fraction": 0.18833333333333332,
+      "observed_pair_ids_sha256": "83f38e13d4ec489b65f39dfc2c76bb01ff80f4b67ae988e03c6ad5d42eed8700",
+      "observed_bus_minus_bicycle": {
+        "mean_speed_mps": -0.5946880319372725,
+        "p90_speed_mps": 6.942578370753005,
+        "slow_time_percent": 41.93534041890872,
+        "slow_entries_per_10min": 8.366965774147888
+      },
+      "generated_bus_minus_bicycle": {
+        "mean_speed_mps": 0.14740695381839844,
+        "p90_speed_mps": 1.2393536057845487,
+        "slow_time_percent": 5.45203895584115,
+        "slow_entries_per_10min": 1.605538830198951
+      },
+      "absolute_contrast_error": {
+        "mean_speed_mps": 0.7420949857556709,
+        "p90_speed_mps": 5.703224764968457,
+        "slow_time_percent": 36.483301463067576,
+        "slow_entries_per_10min": 6.761426943948937
+      }
+    }
+  }
+}
