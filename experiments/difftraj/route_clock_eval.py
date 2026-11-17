@@ -16,7 +16,8 @@ from velocity_label_balance import coverage
 from velocity_label_contrasts import SIGNATURE, motion_signature
 
 
-def create_maps(out, seed, selected, labels, ids, raw, duration, clocks):
+def create_maps(out, seed, selected, labels, ids, raw, duration, clocks, names=("Original clock","Route-conditioned clock"),
+                legend="original (orange), route-conditioned (blue)"):
     import matplotlib.pyplot as plt
     from matplotlib.collections import LineCollection
     from matplotlib.colors import Normalize
@@ -34,7 +35,7 @@ def create_maps(out, seed, selected, labels, ids, raw, duration, clocks):
         bounds=np.concatenate(paths)/1000
         center=(bounds.min(0)+bounds.max(0))/2
         radius=max(.15,.55*np.ptp(bounds,axis=0).max())
-        for ax,xy,v,title in zip(axes[i,:3],paths,vs,['SUMO','Original clock','Route-conditioned clock']):
+        for ax,xy,v,title in zip(axes[i,:3],paths,vs,['SUMO',*names]):
             xy=xy/1000
             ax.add_collection(LineCollection(roads,colors='#d9dce0',linewidths=.45))
             line=LineCollection(np.stack([xy[:-1],xy[1:]],axis=1),cmap='viridis',norm=color,linewidths=2)
@@ -52,7 +53,7 @@ def create_maps(out, seed, selected, labels, ids, raw, duration, clocks):
         ax.title.set_fontsize(9)
         bar=fig.colorbar(line,ax=axes[i,2],fraction=.04,pad=.015)
         bar.ax.tick_params(labelsize=7)
-    fig.suptitle(f'Fixed generated route and noise · seed {seed}\nCircle = start, cross = end. Map colour = m/s. Speed curves: SUMO (grey), original (orange), route-conditioned (blue).',fontsize=11)
+    fig.suptitle(f'Fixed generated route and noise · seed {seed}\nCircle = start, cross = end. Map colour = m/s. Speed curves: SUMO (grey), {legend}.',fontsize=11)
     fig.subplots_adjust(top=.93,wspace=.25,hspace=.50)
     fig.savefig(out/f'map-{seed}.png',dpi=155,bbox_inches='tight')
     plt.close(fig)
