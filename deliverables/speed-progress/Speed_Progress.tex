@@ -83,4 +83,34 @@ The velocity model recovered about two thirds of the observed low-speed time and
 {\small Figure 2. Two requests selected by median trip-ID rank among eligible matches. In the first row the requested mean is 4.9 m/s. With the velocity model, changing bicycle to bus produces repeated slow periods and higher moving speeds. The coordinate model produces similar curves for both labels. The maps show that a plausible speed profile can still lead to a misplaced destination. \record{velocity-class-control/trips-43.png}{Same requests at seed 43}.}
 
 \textbf{Conclusion.} In these SUMO validation experiments, sampling guidance modestly improved the speed distribution. Generating velocities directly produced larger motion gains and let vehicle labels control stop--go behaviour at a fixed requested mean speed. The remaining design question is whether the model can retain that control while reaching the requested destination more reliably.
+\newpage\section*{Road maps by vehicle: Bicycle}
+Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+\begin{center}\includegraphics[width=.97\linewidth]{maps/bicycle-1.png}\end{center}
+\begin{center}\includegraphics[width=.97\linewidth]{maps/bicycle-2.png}\end{center}
+{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+
+\newpage\section*{Road maps by vehicle: Bus}
+Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+\begin{center}\includegraphics[width=.97\linewidth]{maps/bus-1.png}\end{center}
+\begin{center}\includegraphics[width=.97\linewidth]{maps/bus-2.png}\end{center}
+{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+
+\newpage\section*{Road maps by vehicle: Motorcycle}
+Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+\begin{center}\includegraphics[width=.97\linewidth]{maps/motorcycle-1.png}\end{center}
+\begin{center}\includegraphics[width=.97\linewidth]{maps/motorcycle-2.png}\end{center}
+{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+
+\newpage\section*{Road maps by vehicle: Passenger car}
+Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+\begin{center}\includegraphics[width=.97\linewidth]{maps/passenger-1.png}\end{center}
+\begin{center}\includegraphics[width=.97\linewidth]{maps/passenger-2.png}\end{center}
+{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+
+\newpage\section*{Road maps by vehicle: Taxi}
+Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+\begin{center}\includegraphics[width=.97\linewidth]{maps/taxi-1.png}\end{center}
+\begin{center}\includegraphics[width=.97\linewidth]{maps/taxi-2.png}\end{center}
+{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+
 \end{document}
