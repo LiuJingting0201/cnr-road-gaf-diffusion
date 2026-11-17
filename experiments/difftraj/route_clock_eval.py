@@ -61,10 +61,11 @@ def create_maps(out, seed, selected, labels, ids, raw, duration, clocks):
 def evaluate(a):
     data,run,seed=a.data,a.run,a.seed
     old=a.base
+    route_seed=a.route_seed or seed
     norm=dict(np.load(run/'prepared/normalization.npz'))
     ck=torch.load(run/f'seed-{seed}/final.pt',map_location='cpu',weights_only=True)
     assert ck['seed']==seed and ck['epoch']==10 and ck['arm']=='C'
-    with np.load(old/f'coordinate-{seed}/eval/draw-cache.npz') as cr, np.load(old/f'velocity-{seed}/eval/draw-cache.npz') as vr:
+    with np.load(old/f'coordinate-{route_seed}/eval/draw-cache.npz') as cr, np.load(old/f'velocity-{seed}/eval/draw-cache.npz') as vr:
         for key in ('ids','validation_rows','draw_rows','draw_labels','keys','true_labels','noise_sha256','head_sha256'):
             np.testing.assert_array_equal(cr[key],vr[key])
         ids,rows,actual=cr['ids'],cr['validation_rows'],cr['true_labels']
@@ -101,7 +102,7 @@ def evaluate(a):
     bins=np.unique(np.quantile(tr,np.arange(1,20)/20))
     reference=features(ref,duration)
     obs=motion_signature(ref,duration)
-    report=dict(seed=seed,n=n,route_sha256=array_digest(route),noise_sha256=array_digest(noise),requests_sha256=string_digest(ids),
+    report=dict(seed=seed,route_seed=route_seed,n=n,route_sha256=array_digest(route),noise_sha256=array_digest(noise),requests_sha256=string_digest(ids),
                 pairs=info['bus_minus_bicycle'],observed_gap=dict(zip(SIGNATURE,(obs[right]-obs[left]).mean(0))),arms={})
     clocks=[]
     real_speeds=reference[1]
@@ -123,6 +124,9 @@ def evaluate(a):
         clocks.append(xy[:n])
     reportdir=run/'report'
     reportdir.mkdir(exist_ok=True)
+    if route_seed != seed:
+        reportdir=reportdir/f'common-routes-{route_seed}'
+        reportdir.mkdir(exist_ok=True)
     create_maps(reportdir,seed,[np.flatnonzero(actual==i)[0] for i in range(len(MODES))],actual,ids,raw,duration,clocks)
     (reportdir/f'metrics-{seed}.json').write_text(json.dumps(report,indent=2,allow_nan=False))
 
@@ -131,4 +135,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('data','base','run'): p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--seed',type=int,required=True)
+    p.add_argument('--route-seed',type=int,choices=(42,43))
     evaluate(p.parse_args())
