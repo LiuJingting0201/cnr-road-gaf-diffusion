@@ -1,0 +1,30 @@
+{
+  "42": {
+    "rows": 5000,
+    "median_generated_to_observed_polyline_length": 0.9373811289437011,
+    "p10_p90_length_ratio": [
+      0.8494456332083483,
+      1.0340784957065707
+    ],
+    "within_trip_bend_profile_comparable": 5000,
+    "median_within_trip_bend_profile_correlation": 0.30443925264100735,
+    "correlation_quartiles": [
+      0.03032858668298815,
+      0.5616632859777733
+    ]
+  },
+  "43": {
+    "rows": 5000,
+    "median_generated_to_observed_polyline_length": 0.9558483539869145,
+    "p10_p90_length_ratio": [
+      0.867205894636515,
+      1.057782017377655
+    ],
+    "within_trip_bend_profile_comparable": 5000,
+    "median_within_trip_bend_profile_correlation": 0.29405187121560994,
+    "correlation_quartiles": [
+      0.038448630050344754,
+      0.5669318450439615
+    ]
+  }
+}

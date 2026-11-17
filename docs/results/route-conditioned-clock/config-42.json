@@ -1,0 +1,37 @@
+{
+  "arm": "C",
+  "mode": "all",
+  "seed": 42,
+  "classes": [
+    "bicycle",
+    "bus",
+    "motorcycle",
+    "passenger",
+    "taxi"
+  ],
+  "epochs": 10,
+  "batch_size": 205,
+  "microbatch": 205,
+  "train_n": 200000,
+  "updates_per_epoch": 976,
+  "lr_start": 0.0002,
+  "lr_floor": 2e-05,
+  "gradient_norm_clip": 1.0,
+  "noise_levels": 500,
+  "speed_loss_weight": 0.0,
+  "train_index_sha256": "fb545a85ce37ecb423552e75d31c0c396a611e9029f9cdeaf3fad43bc4f5d87c",
+  "validation_index_sha256": "38a8dde118e925ef403f5fbe60eda373c3e51de3a26177364003a77a3ac9065b",
+  "release_manifest_sha256": "f145be0e6560d5fa433dce99569bab343f8b4c423f2db06dcbf16a9af98ff236",
+  "route_features": {
+    "seed": 42,
+    "descriptor": "log_length_16_unsigned_turns",
+    "training_rows": 200000,
+    "source_manifest": "2166be4362d59423b0df0b05ab27ca2e18df3f149270267bdf7bb8bc21318137",
+    "training_feature_sha256": "ea770c3fbfb22d3d0b09e2b9d2a09029df9690f0b7179e2daf74be4d62008fb8",
+    "coordinate_checkpoint_sha256": "b1ad8332bb73500ca542a77293b077386cccc1ff59b6b208a74adfaad52981bc",
+    "training_route_sampler": {
+      "ddim_steps": 100,
+      "base_rng_seed": 17119
+    }
+  }
+}

@@ -68,6 +68,8 @@ def combine(a):
             np.savez(a.out/'scale.npz',mean=mean,sd=sd)
         np.save(a.out/(split+'.npy'),((value-mean)/sd).astype('f4'))
     receipt=dict(seed=a.seed,descriptor='log_length_16_unsigned_turns',training_rows=200000,source_manifest=hashlib.sha256((a.data/'manifest.json').read_bytes()).hexdigest(),training_feature_sha256=hashlib.sha256((a.out/'train.npy').read_bytes()).hexdigest())
+    receipt['coordinate_checkpoint_sha256']=hashlib.sha256((a.base/f'coordinate-{a.seed}/final.pt').read_bytes()).hexdigest()
+    receipt['training_route_sampler']={'ddim_steps':100,'base_rng_seed':17119}
     (a.out/'manifest.json').write_text(json.dumps(receipt,indent=2))
 
 
