@@ -1,0 +1,7 @@
+# Does endpoint supervision preserve vehicle-specific motion?
+
+Adding the integrated endpoint loss increased requested destination-cell hits by 9.43 and 10.87 percentage points on the same 3,000 SUMO validation trips (training seeds 42 and 43). Seed 42 gained 511 previously missed destinations and lost 228 previously hit ones. Seed 43 gained 537 and lost 211. Resampling the 41 simulation episodes gave paired 95% intervals of 7.83–11.04 and 9.50–12.27 points. Median distance to the observed destination fell by 51 and 68 m. Both net bearing and displacement magnitude improved. The two models reached 47.6% and 48.6% destination hits, compared with 71.7% and 70.5% for the matched coordinate generators.
+
+Five-class speed W1 changed from 0.212 to 0.177 m/s and from 0.179 to 0.221 m/s. The equally weighted two-seed average changed from 0.196 to 0.199 m/s. Acceleration W1 rose slightly at both seeds. The class contrast also weakened: on the original 53 matched bus–bicycle pairs the new models retained 89–92% of their previous difference in low-speed time and entry count. Thus the endpoint improvement repeats, while preserving most of the learned stop–go distinction at this training weight. These results concern the same development requests and two training seeds.
+
+[Numeric comparisons, per-class results and both maps](RESULTS.md) · [Paired hit changes](paired-hits.json) · [Fixed comparison protocol](PROTOCOL.md)

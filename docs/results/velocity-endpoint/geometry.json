@@ -1,0 +1,850 @@
+{
+  "coordinate-42": {
+    "all": {
+      "n": 3000,
+      "start_displacement_cancellation_fraction": 0.6374634617543228,
+      "median_end_error_m": 195.24566741708918,
+      "median_start_error_m": 192.7246639495553,
+      "median_displacement_error_m": 267.50953550842473,
+      "median_signed_net_length_error_m": 9.625906800137727,
+      "median_abs_net_length_error_m": 147.1523812020664,
+      "median_net_angle_deg": 3.292826494842429,
+      "rms_net_length_term_m": 277.0557065506915,
+      "rms_net_angle_term_m": 261.8660992039333,
+      "angle_share_of_squared_displacement_error": 0.4718371940536984,
+      "original_hit": 0.7166666666666667,
+      "observed_start_only_hit": 0.5093333333333333,
+      "observed_net_bearing_only_hit": 0.599,
+      "observed_net_length_only_hit": 0.6103333333333333,
+      "angular_valid": 3000,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9065611390284757,
+          "median_deg": 38.69534937341582
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9563491228070176,
+          "median_deg": 26.08981063895379
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9701266666666667,
+          "median_deg": 10.281148616748625
+        }
+      ]
+    },
+    "bicycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6347486080905372,
+      "median_end_error_m": 217.202399096498,
+      "median_start_error_m": 215.3553738738743,
+      "median_displacement_error_m": 280.1693421928464,
+      "median_signed_net_length_error_m": 2.3607853402517094,
+      "median_abs_net_length_error_m": 165.07548522231173,
+      "median_net_angle_deg": 4.031257702637673,
+      "rms_net_length_term_m": 280.98245901123187,
+      "rms_net_angle_term_m": 261.90764006386956,
+      "angle_share_of_squared_displacement_error": 0.46490763078925723,
+      "original_hit": 0.7616666666666667,
+      "observed_start_only_hit": 0.5166666666666667,
+      "observed_net_bearing_only_hit": 0.5916666666666667,
+      "observed_net_length_only_hit": 0.595,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9732579564489112,
+          "median_deg": 36.43819240478675
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9684649122807018,
+          "median_deg": 27.802547748237604
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9613555555555555,
+          "median_deg": 11.436991827989338
+        }
+      ]
+    },
+    "bus": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6162549457555442,
+      "median_end_error_m": 61.77564628844269,
+      "median_start_error_m": 62.96865520103654,
+      "median_displacement_error_m": 86.10992200208872,
+      "median_signed_net_length_error_m": 19.895808996656342,
+      "median_abs_net_length_error_m": 54.460362972636744,
+      "median_net_angle_deg": 1.179597289148284,
+      "rms_net_length_term_m": 103.3442717686472,
+      "rms_net_angle_term_m": 77.84304757799896,
+      "angle_share_of_squared_displacement_error": 0.36198880594275024,
+      "original_hit": 0.85,
+      "observed_start_only_hit": 0.785,
+      "observed_net_bearing_only_hit": 0.8133333333333334,
+      "observed_net_length_only_hit": 0.8383333333333334,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.6421608040201005,
+          "median_deg": 18.799768622962155
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.863140350877193,
+          "median_deg": 7.971316778684548
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9225777777777778,
+          "median_deg": 3.0561144035138574
+        }
+      ]
+    },
+    "motorcycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6298822559388887,
+      "median_end_error_m": 249.8837482517443,
+      "median_start_error_m": 239.95878004986673,
+      "median_displacement_error_m": 336.53624620949444,
+      "median_signed_net_length_error_m": 4.120010051040026,
+      "median_abs_net_length_error_m": 192.0605001575451,
+      "median_net_angle_deg": 4.0186767538887675,
+      "rms_net_length_term_m": 320.45048889498173,
+      "rms_net_angle_term_m": 298.1330543012024,
+      "angle_share_of_squared_displacement_error": 0.463968613013133,
+      "original_hit": 0.6916666666666667,
+      "observed_start_only_hit": 0.43333333333333335,
+      "observed_net_bearing_only_hit": 0.53,
+      "observed_net_length_only_hit": 0.5366666666666666,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9736515912897823,
+          "median_deg": 44.711279201060535
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9846228070175439,
+          "median_deg": 33.318314887837694
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9893555555555555,
+          "median_deg": 14.06918685103297
+        }
+      ]
+    },
+    "passenger": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6361099346093582,
+      "median_end_error_m": 246.2971952474046,
+      "median_start_error_m": 237.03656669512634,
+      "median_displacement_error_m": 331.17730158264123,
+      "median_signed_net_length_error_m": -5.05424003853841,
+      "median_abs_net_length_error_m": 208.61646936400007,
+      "median_net_angle_deg": 4.1185036539687765,
+      "rms_net_length_term_m": 325.32392115874495,
+      "rms_net_angle_term_m": 291.0690641643369,
+      "angle_share_of_squared_displacement_error": 0.44459802115622277,
+      "original_hit": 0.6516666666666666,
+      "observed_start_only_hit": 0.39,
+      "observed_net_bearing_only_hit": 0.5416666666666666,
+      "observed_net_length_only_hit": 0.5233333333333333,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9722613065326633,
+          "median_deg": 46.842144366902495
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9825964912280701,
+          "median_deg": 35.36045107050659
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9868,
+          "median_deg": 14.159072449454104
+        }
+      ]
+    },
+    "taxi": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6507958942948447,
+      "median_end_error_m": 244.34842365570543,
+      "median_start_error_m": 243.10963748022513,
+      "median_displacement_error_m": 341.32952560724107,
+      "median_signed_net_length_error_m": -4.689441431780551,
+      "median_abs_net_length_error_m": 194.4268226191017,
+      "median_net_angle_deg": 4.315215078064519,
+      "rms_net_length_term_m": 292.6499143532932,
+      "rms_net_angle_term_m": 307.5867347609427,
+      "angle_share_of_squared_displacement_error": 0.5248694850864168,
+      "original_hit": 0.6283333333333333,
+      "observed_start_only_hit": 0.4216666666666667,
+      "observed_net_bearing_only_hit": 0.5183333333333333,
+      "observed_net_length_only_hit": 0.5583333333333333,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9714740368509213,
+          "median_deg": 45.94244645697026
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9829210526315789,
+          "median_deg": 34.685889186205394
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9905444444444444,
+          "median_deg": 14.232552295238998
+        }
+      ]
+    }
+  },
+  "coordinate-43": {
+    "all": {
+      "n": 3000,
+      "start_displacement_cancellation_fraction": 0.6406362527630599,
+      "median_end_error_m": 200.69224436824925,
+      "median_start_error_m": 195.31360047565408,
+      "median_displacement_error_m": 269.2465786439219,
+      "median_signed_net_length_error_m": 26.025907570644222,
+      "median_abs_net_length_error_m": 147.43143671838516,
+      "median_net_angle_deg": 3.329588112274604,
+      "rms_net_length_term_m": 289.12445595315177,
+      "rms_net_angle_term_m": 264.75201401566596,
+      "angle_share_of_squared_displacement_error": 0.45608164971607046,
+      "original_hit": 0.705,
+      "observed_start_only_hit": 0.5046666666666667,
+      "observed_net_bearing_only_hit": 0.6006666666666667,
+      "observed_net_length_only_hit": 0.615,
+      "angular_valid": 3000,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9050619765494138,
+          "median_deg": 39.14572333676766
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9558473684210527,
+          "median_deg": 26.340579617322053
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9707555555555556,
+          "median_deg": 10.402219725164795
+        }
+      ]
+    },
+    "bicycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6426179202595427,
+      "median_end_error_m": 223.42208738213964,
+      "median_start_error_m": 219.0535731334304,
+      "median_displacement_error_m": 278.82453180025686,
+      "median_signed_net_length_error_m": 34.36116756685726,
+      "median_abs_net_length_error_m": 165.52430472840342,
+      "median_net_angle_deg": 4.357869796227041,
+      "rms_net_length_term_m": 293.98521499274915,
+      "rms_net_angle_term_m": 265.08466685602974,
+      "angle_share_of_squared_displacement_error": 0.4484437904817844,
+      "original_hit": 0.7116666666666667,
+      "observed_start_only_hit": 0.5166666666666667,
+      "observed_net_bearing_only_hit": 0.5866666666666667,
+      "observed_net_length_only_hit": 0.6116666666666667,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9724958123953099,
+          "median_deg": 36.763827214593846
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9676491228070175,
+          "median_deg": 27.830356056521488
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9627,
+          "median_deg": 11.39850103586937
+        }
+      ]
+    },
+    "bus": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6076938425796894,
+      "median_end_error_m": 62.32288092443173,
+      "median_start_error_m": 59.56617948650491,
+      "median_displacement_error_m": 83.7205406449881,
+      "median_signed_net_length_error_m": 16.11385341559685,
+      "median_abs_net_length_error_m": 55.009455457135346,
+      "median_net_angle_deg": 1.0901419710337024,
+      "rms_net_length_term_m": 100.66187595401814,
+      "rms_net_angle_term_m": 77.85894182853555,
+      "angle_share_of_squared_displacement_error": 0.374317948159582,
+      "original_hit": 0.7933333333333333,
+      "observed_start_only_hit": 0.7416666666666667,
+      "observed_net_bearing_only_hit": 0.81,
+      "observed_net_length_only_hit": 0.815,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.6365075376884423,
+          "median_deg": 17.496067287092558
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.8622894736842105,
+          "median_deg": 7.504308846572827
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9227,
+          "median_deg": 2.887998402391521
+        }
+      ]
+    },
+    "motorcycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6367570905418033,
+      "median_end_error_m": 252.63366350301794,
+      "median_start_error_m": 250.16014461093485,
+      "median_displacement_error_m": 338.23182946324323,
+      "median_signed_net_length_error_m": 39.71975845639736,
+      "median_abs_net_length_error_m": 191.82374497634805,
+      "median_net_angle_deg": 4.128249800241374,
+      "rms_net_length_term_m": 342.51717278526763,
+      "rms_net_angle_term_m": 313.958726711701,
+      "angle_share_of_squared_displacement_error": 0.456579515162987,
+      "original_hit": 0.6833333333333333,
+      "observed_start_only_hit": 0.425,
+      "observed_net_bearing_only_hit": 0.5333333333333333,
+      "observed_net_length_only_hit": 0.5466666666666666,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9735929648241206,
+          "median_deg": 45.5842571725971
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9844649122807018,
+          "median_deg": 34.41233929712987
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9890555555555556,
+          "median_deg": 14.12855713807664
+        }
+      ]
+    },
+    "passenger": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6500112171574408,
+      "median_end_error_m": 242.43662214899535,
+      "median_start_error_m": 235.8202566019201,
+      "median_displacement_error_m": 324.9482951829483,
+      "median_signed_net_length_error_m": 33.59472754402668,
+      "median_abs_net_length_error_m": 205.58399113645714,
+      "median_net_angle_deg": 4.1148470581428285,
+      "rms_net_length_term_m": 333.4818741782634,
+      "rms_net_angle_term_m": 289.54725821704955,
+      "angle_share_of_squared_displacement_error": 0.42983117689016753,
+      "original_hit": 0.6783333333333333,
+      "observed_start_only_hit": 0.43333333333333335,
+      "observed_net_bearing_only_hit": 0.5516666666666666,
+      "observed_net_length_only_hit": 0.5416666666666666,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9719597989949749,
+          "median_deg": 47.33139665788325
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9827280701754386,
+          "median_deg": 35.65755761234765
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9886666666666667,
+          "median_deg": 14.194946157194547
+        }
+      ]
+    },
+    "taxi": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.6364115975218733,
+      "median_end_error_m": 247.71147713073188,
+      "median_start_error_m": 232.54220947724917,
+      "median_displacement_error_m": 343.94811728163904,
+      "median_signed_net_length_error_m": 25.24730462410787,
+      "median_abs_net_length_error_m": 187.0920085398468,
+      "median_net_angle_deg": 4.212978607392605,
+      "rms_net_length_term_m": 304.75639646749835,
+      "rms_net_angle_term_m": 302.8672190622189,
+      "angle_share_of_squared_displacement_error": 0.49689090566076205,
+      "original_hit": 0.6583333333333333,
+      "observed_start_only_hit": 0.4066666666666667,
+      "observed_net_bearing_only_hit": 0.5216666666666666,
+      "observed_net_length_only_hit": 0.56,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9707537688442212,
+          "median_deg": 46.76786519964898
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9821052631578947,
+          "median_deg": 35.45427089579353
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9906555555555555,
+          "median_deg": 14.499982217218164
+        }
+      ]
+    }
+  },
+  "velocity-42": {
+    "all": {
+      "n": 3000,
+      "start_displacement_cancellation_fraction": 0.3107808121098041,
+      "median_end_error_m": 290.81376434307316,
+      "median_start_error_m": 187.7326976675107,
+      "median_displacement_error_m": 297.37444227866297,
+      "median_signed_net_length_error_m": 4.7295685529070965,
+      "median_abs_net_length_error_m": 159.9701876721723,
+      "median_net_angle_deg": 3.8200119288159584,
+      "rms_net_length_term_m": 299.03679655968386,
+      "rms_net_angle_term_m": 285.24526448431266,
+      "angle_share_of_squared_displacement_error": 0.47640890730113794,
+      "original_hit": 0.47633333333333333,
+      "observed_start_only_hit": 0.47333333333333333,
+      "observed_net_bearing_only_hit": 0.489,
+      "observed_net_length_only_hit": 0.49733333333333335,
+      "angular_valid": 3000,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.8845577889447236,
+          "median_deg": 41.02326303952556
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9539701754385965,
+          "median_deg": 28.29846377622997
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9690288888888889,
+          "median_deg": 11.680804888142724
+        }
+      ]
+    },
+    "bicycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.3027451179701351,
+      "median_end_error_m": 307.5022182486764,
+      "median_start_error_m": 221.47937995583612,
+      "median_displacement_error_m": 299.02511747886285,
+      "median_signed_net_length_error_m": 3.6164895080021324,
+      "median_abs_net_length_error_m": 171.37156907237556,
+      "median_net_angle_deg": 4.65626531143971,
+      "rms_net_length_term_m": 288.1628954852068,
+      "rms_net_angle_term_m": 271.525593075206,
+      "angle_share_of_squared_displacement_error": 0.4703002394713113,
+      "original_hit": 0.485,
+      "observed_start_only_hit": 0.5016666666666667,
+      "observed_net_bearing_only_hit": 0.4583333333333333,
+      "observed_net_length_only_hit": 0.47833333333333333,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9755108877721943,
+          "median_deg": 39.89650562203805
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.970359649122807,
+          "median_deg": 30.97777584303107
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9601333333333333,
+          "median_deg": 12.861109745934545
+        }
+      ]
+    },
+    "bus": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": -0.016430583832450964,
+      "median_end_error_m": 93.9018665298129,
+      "median_start_error_m": 22.380961326444755,
+      "median_displacement_error_m": 86.15845252526411,
+      "median_signed_net_length_error_m": -2.1596312450191135,
+      "median_abs_net_length_error_m": 57.0611283246385,
+      "median_net_angle_deg": 1.2524940674940557,
+      "rms_net_length_term_m": 110.11770490289902,
+      "rms_net_angle_term_m": 110.83978970219195,
+      "angle_share_of_squared_displacement_error": 0.503267945669908,
+      "original_hit": 0.7066666666666667,
+      "observed_start_only_hit": 0.72,
+      "observed_net_bearing_only_hit": 0.7733333333333333,
+      "observed_net_length_only_hit": 0.7533333333333333,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.5749832495812396,
+          "median_deg": 9.912222337837594
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.8566140350877193,
+          "median_deg": 5.008622160983352
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9208777777777778,
+          "median_deg": 2.5608790211473917
+        }
+      ]
+    },
+    "motorcycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.32144366306553335,
+      "median_end_error_m": 365.6617218272618,
+      "median_start_error_m": 224.7448730307367,
+      "median_displacement_error_m": 367.45261213096313,
+      "median_signed_net_length_error_m": 14.636912928582774,
+      "median_abs_net_length_error_m": 224.31100235603185,
+      "median_net_angle_deg": 4.903745324600273,
+      "rms_net_length_term_m": 343.4808843885162,
+      "rms_net_angle_term_m": 334.83662701528255,
+      "angle_share_of_squared_displacement_error": 0.4872583950468185,
+      "original_hit": 0.42,
+      "observed_start_only_hit": 0.3616666666666667,
+      "observed_net_bearing_only_hit": 0.4066666666666667,
+      "observed_net_length_only_hit": 0.42,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9578475711892798,
+          "median_deg": 49.35189320487145
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9819912280701755,
+          "median_deg": 38.096510908714464
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9875444444444444,
+          "median_deg": 16.607929997759115
+        }
+      ]
+    },
+    "passenger": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.33335273001724797,
+      "median_end_error_m": 350.9136551664799,
+      "median_start_error_m": 226.45603304428784,
+      "median_displacement_error_m": 366.45790347952044,
+      "median_signed_net_length_error_m": -2.5553834581023693,
+      "median_abs_net_length_error_m": 228.1422754024777,
+      "median_net_angle_deg": 4.674952951941645,
+      "rms_net_length_term_m": 351.22245996577806,
+      "rms_net_angle_term_m": 311.2498094985423,
+      "angle_share_of_squared_displacement_error": 0.43988027889154724,
+      "original_hit": 0.37666666666666665,
+      "observed_start_only_hit": 0.3983333333333333,
+      "observed_net_bearing_only_hit": 0.395,
+      "observed_net_length_only_hit": 0.4216666666666667,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9580402010050251,
+          "median_deg": 50.098040299057885
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9806140350877193,
+          "median_deg": 38.94968964734005
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9866888888888888,
+          "median_deg": 17.15339166131963
+        }
+      ]
+    },
+    "taxi": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.31197841389830056,
+      "median_end_error_m": 360.16566655701786,
+      "median_start_error_m": 227.32389193947438,
+      "median_displacement_error_m": 366.7306137770237,
+      "median_signed_net_length_error_m": 25.015656576318634,
+      "median_abs_net_length_error_m": 220.393831337273,
+      "median_net_angle_deg": 4.647891892343441,
+      "rms_net_length_term_m": 332.5882302354652,
+      "rms_net_angle_term_m": 334.39600352532415,
+      "angle_share_of_squared_displacement_error": 0.5027103489383571,
+      "original_hit": 0.3933333333333333,
+      "observed_start_only_hit": 0.385,
+      "observed_net_bearing_only_hit": 0.4116666666666667,
+      "observed_net_length_only_hit": 0.41333333333333333,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9564070351758794,
+          "median_deg": 49.4178773491007
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9802719298245613,
+          "median_deg": 37.830852754884596
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9899,
+          "median_deg": 16.359243512872315
+        }
+      ]
+    }
+  },
+  "velocity-43": {
+    "all": {
+      "n": 3000,
+      "start_displacement_cancellation_fraction": 0.3186513099665745,
+      "median_end_error_m": 281.7427416255759,
+      "median_start_error_m": 185.11850145439496,
+      "median_displacement_error_m": 290.0328267034926,
+      "median_signed_net_length_error_m": 18.12243882084863,
+      "median_abs_net_length_error_m": 158.9459758550081,
+      "median_net_angle_deg": 3.652291491356287,
+      "rms_net_length_term_m": 294.1639971193314,
+      "rms_net_angle_term_m": 279.0045813864718,
+      "angle_share_of_squared_displacement_error": 0.47357004658286117,
+      "original_hit": 0.486,
+      "observed_start_only_hit": 0.4726666666666667,
+      "observed_net_bearing_only_hit": 0.504,
+      "observed_net_length_only_hit": 0.5153333333333333,
+      "angular_valid": 3000,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.8862311557788944,
+          "median_deg": 40.31138209844687
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9545842105263158,
+          "median_deg": 27.818145817054052
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9697377777777778,
+          "median_deg": 11.532324073524087
+        }
+      ]
+    },
+    "bicycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.3294117789879264,
+      "median_end_error_m": 308.6230093421787,
+      "median_start_error_m": 223.65303692097382,
+      "median_displacement_error_m": 294.7565184966975,
+      "median_signed_net_length_error_m": 30.294759311245798,
+      "median_abs_net_length_error_m": 173.5702816101973,
+      "median_net_angle_deg": 4.35291239530755,
+      "rms_net_length_term_m": 289.08343601445495,
+      "rms_net_angle_term_m": 261.1373193543228,
+      "angle_share_of_squared_displacement_error": 0.44933995251225506,
+      "original_hit": 0.49,
+      "observed_start_only_hit": 0.49333333333333335,
+      "observed_net_bearing_only_hit": 0.4716666666666667,
+      "observed_net_length_only_hit": 0.49166666666666664,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9768174204355109,
+          "median_deg": 38.48443049518163
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9719561403508772,
+          "median_deg": 29.781956929776012
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9617333333333333,
+          "median_deg": 12.651803718366775
+        }
+      ]
+    },
+    "bus": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.021863839535684576,
+      "median_end_error_m": 89.53684735828327,
+      "median_start_error_m": 23.376438360635575,
+      "median_displacement_error_m": 80.71878247932509,
+      "median_signed_net_length_error_m": 9.203607061339483,
+      "median_abs_net_length_error_m": 46.48866000354485,
+      "median_net_angle_deg": 1.2896893593521637,
+      "rms_net_length_term_m": 114.94186879804153,
+      "rms_net_angle_term_m": 105.37262913121413,
+      "angle_share_of_squared_displacement_error": 0.4566473342206408,
+      "original_hit": 0.715,
+      "observed_start_only_hit": 0.715,
+      "observed_net_bearing_only_hit": 0.78,
+      "observed_net_length_only_hit": 0.8116666666666666,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.574824120603015,
+          "median_deg": 9.847970616205854
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.8550263157894736,
+          "median_deg": 4.999518995272572
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9212777777777778,
+          "median_deg": 2.6556201766302805
+        }
+      ]
+    },
+    "motorcycle": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.3153328675126298,
+      "median_end_error_m": 358.95180960400836,
+      "median_start_error_m": 218.8113429427898,
+      "median_displacement_error_m": 369.0222696468345,
+      "median_signed_net_length_error_m": 12.428619667447833,
+      "median_abs_net_length_error_m": 229.34494638960632,
+      "median_net_angle_deg": 4.652144147177548,
+      "rms_net_length_term_m": 331.27836098462706,
+      "rms_net_angle_term_m": 321.88420848132455,
+      "angle_share_of_squared_displacement_error": 0.48562041046553384,
+      "original_hit": 0.3883333333333333,
+      "observed_start_only_hit": 0.36333333333333334,
+      "observed_net_bearing_only_hit": 0.41833333333333333,
+      "observed_net_length_only_hit": 0.4266666666666667,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9615326633165829,
+          "median_deg": 48.545735351933374
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9836842105263158,
+          "median_deg": 37.6464668549165
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9871777777777778,
+          "median_deg": 16.079618851099674
+        }
+      ]
+    },
+    "passenger": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.3350110841591755,
+      "median_end_error_m": 334.27739425800104,
+      "median_start_error_m": 226.28319016878558,
+      "median_displacement_error_m": 353.3233479385706,
+      "median_signed_net_length_error_m": 23.834487314176044,
+      "median_abs_net_length_error_m": 223.0799304164948,
+      "median_net_angle_deg": 4.221158114850796,
+      "rms_net_length_term_m": 346.33182112997855,
+      "rms_net_angle_term_m": 303.51863195592733,
+      "angle_share_of_squared_displacement_error": 0.4344031133711607,
+      "original_hit": 0.40166666666666667,
+      "observed_start_only_hit": 0.4083333333333333,
+      "observed_net_bearing_only_hit": 0.41,
+      "observed_net_length_only_hit": 0.4216666666666667,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9597989949748744,
+          "median_deg": 49.725808437425584
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9813070175438596,
+          "median_deg": 38.878502070652495
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9885888888888889,
+          "median_deg": 16.7575076034521
+        }
+      ]
+    },
+    "taxi": {
+      "n": 600,
+      "start_displacement_cancellation_fraction": 0.32387873400421563,
+      "median_end_error_m": 339.1691436492806,
+      "median_start_error_m": 224.5378590647107,
+      "median_displacement_error_m": 368.5663297436878,
+      "median_signed_net_length_error_m": 33.24853481669072,
+      "median_abs_net_length_error_m": 209.57998611628705,
+      "median_net_angle_deg": 4.9804910380206024,
+      "rms_net_length_term_m": 325.8685886082485,
+      "rms_net_angle_term_m": 337.91816765242044,
+      "angle_share_of_squared_displacement_error": 0.5181468063611246,
+      "original_hit": 0.435,
+      "observed_start_only_hit": 0.38333333333333336,
+      "observed_net_bearing_only_hit": 0.44,
+      "observed_net_length_only_hit": 0.425,
+      "angular_valid": 600,
+      "local_heading": [
+        {
+          "stride": 1,
+          "moving_fraction": 0.9581825795644892,
+          "median_deg": 48.649680232323334
+        },
+        {
+          "stride": 10,
+          "moving_fraction": 0.9809473684210527,
+          "median_deg": 37.07451183867484
+        },
+        {
+          "stride": 50,
+          "moving_fraction": 0.9899111111111111,
+          "median_deg": 16.039803450770954
+        }
+      ]
+    }
+  }
+}

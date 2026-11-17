@@ -1,0 +1,577 @@
+{
+  "coverage_only": false,
+  "split": "validation",
+  "requests": 3000,
+  "request_sha256": "d6177a41afe6248427df030a31ee2cccc4eecfbaae1ca5d8add44f231b8172e3",
+  "pairs": {
+    "bus_minus_bicycle": {
+      "first": "bicycle",
+      "second": "bus",
+      "before": {
+        "pairs": 113,
+        "mean_signed_gap_mps": -0.5413077001204705,
+        "mean_absolute_gap_mps": 0.6552526290654151
+      },
+      "after": {
+        "pairs": 53,
+        "mean_signed_gap_mps": -0.07361995013863788,
+        "mean_absolute_gap_mps": 0.23250936777143466
+      },
+      "matched_ids_sha256": "34975431dafaae758761734429f8af928e0b3069936f45b6d42863b409d50b15",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": 12.904234399034,
+          "eligible": true,
+          "observed": {
+            "mean": 39.62264150943396,
+            "percentile_95": [
+              38.475158812932584,
+              40.750924433488194
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 2.5362662368446003,
+              "percentile_95": [
+                2.0242723049208307,
+                3.0294159476628417
+              ]
+            },
+            "coordinate-43": {
+              "mean": 2.89655826301318,
+              "percentile_95": [
+                2.427111974969186,
+                3.380226604721721
+              ]
+            },
+            "velocity-42": {
+              "mean": 24.073196169526884,
+              "percentile_95": [
+                21.854318763629475,
+                26.258770266426477
+              ]
+            },
+            "velocity-43": {
+              "mean": 22.451882051768276,
+              "percentile_95": [
+                20.45569830283493,
+                24.319830283492937
+              ]
+            }
+          }
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": 9.511919439128564,
+          "eligible": true,
+          "observed": {
+            "mean": 7.87360925429143,
+            "percentile_95": [
+              7.546179059676278,
+              8.1810579334318
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 0.5365531478124629,
+              "percentile_95": [
+                0.268435381035895,
+                0.7731374029663285
+              ]
+            },
+            "coordinate-43": {
+              "mean": 0.7403443128359307,
+              "percentile_95": [
+                0.5296201815528958,
+                0.9451348820608689
+              ]
+            },
+            "velocity-42": {
+              "mean": 4.9075476313625686,
+              "percentile_95": [
+                4.375879829081498,
+                5.419160832176074
+              ]
+            },
+            "velocity-43": {
+              "mean": 4.574416331374051,
+              "percentile_95": [
+                4.093397964098059,
+                5.036783805533148
+              ]
+            }
+          }
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": 11.846032734477298,
+          "eligible": true,
+          "observed": {
+            "mean": 7.38208764479904,
+            "percentile_95": [
+              7.236225436751449,
+              7.530732157607038
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 0.9954784198539433,
+              "percentile_95": [
+                0.8596220419018801,
+                1.1245268279793303
+              ]
+            },
+            "coordinate-43": {
+              "mean": 0.8861928308716381,
+              "percentile_95": [
+                0.7394850434885142,
+                1.0401844238088733
+              ]
+            },
+            "velocity-42": {
+              "mean": 5.148871281588465,
+              "percentile_95": [
+                4.8055823128475605,
+                5.472093221707736
+              ]
+            },
+            "velocity-43": {
+              "mean": 4.592497018585023,
+              "percentile_95": [
+                4.21597818334489,
+                4.95475330485742
+              ]
+            }
+          }
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 9.415156210053023,
+          "eligible": true,
+          "observed": {
+            "mean": 0.3629029075633413,
+            "percentile_95": [
+              0.3519716207302025,
+              0.3749428050326051
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 0.0742383046565849,
+              "percentile_95": [
+                0.06238738014008332,
+                0.08607716829052123
+              ]
+            },
+            "coordinate-43": {
+              "mean": 0.050069237070197156,
+              "percentile_95": [
+                0.042742960657301224,
+                0.05652836754920382
+              ]
+            },
+            "velocity-42": {
+              "mean": 0.2525840708130847,
+              "percentile_95": [
+                0.2316306661770449,
+                0.27469604498947553
+              ]
+            },
+            "velocity-43": {
+              "mean": 0.22445171210447806,
+              "percentile_95": [
+                0.20304644399241506,
+                0.246967441733717
+              ]
+            }
+          }
+        }
+      }
+    },
+    "motorcycle_minus_bicycle": {
+      "first": "bicycle",
+      "second": "motorcycle",
+      "before": {
+        "pairs": 41,
+        "mean_signed_gap_mps": 1.8144341685086287,
+        "mean_absolute_gap_mps": 1.818345121495518
+      },
+      "after": {
+        "pairs": 1,
+        "mean_signed_gap_mps": -0.08017453623122428,
+        "mean_absolute_gap_mps": 0.08017453623122428
+      },
+      "matched_ids_sha256": "ebffd31b6898fc6e0d5a9103048a3394001cca8bbf158d82c11beec867ea72a9",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": null,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": null,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": null,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": null,
+          "eligible": false
+        }
+      }
+    },
+    "passenger_minus_bicycle": {
+      "first": "bicycle",
+      "second": "passenger",
+      "before": {
+        "pairs": 18,
+        "mean_signed_gap_mps": 1.5322702421972378,
+        "mean_absolute_gap_mps": 1.5322702421972378
+      },
+      "after": {
+        "pairs": 2,
+        "mean_signed_gap_mps": 0.28922727918923563,
+        "mean_absolute_gap_mps": 0.28922727918923563
+      },
+      "matched_ids_sha256": "af4577df1d02b37233e2d3ebc5c0fdc63f6c0b765ec503e99795b45519b43e66",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": 12.566512697614654,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": 7.284821989947381,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": 23.21652022905003,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 11.971656198101298,
+          "eligible": false
+        }
+      }
+    },
+    "taxi_minus_bicycle": {
+      "first": "bicycle",
+      "second": "taxi",
+      "before": {
+        "pairs": 21,
+        "mean_signed_gap_mps": 1.5531320283024708,
+        "mean_absolute_gap_mps": 1.5564127107664878
+      },
+      "after": {
+        "pairs": 4,
+        "mean_signed_gap_mps": 0.27072416819907796,
+        "mean_absolute_gap_mps": 0.2879477511351658
+      },
+      "matched_ids_sha256": "f94da35a2c35b702ed52524ea198fa4fc3eecd4154ccc7cac1d77208307e5912",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": 2.732461874461392,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": 3.316342433571891,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": 6.278038475239788,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 5.867108027076498,
+          "eligible": false
+        }
+      }
+    },
+    "motorcycle_minus_bus": {
+      "first": "bus",
+      "second": "motorcycle",
+      "before": {
+        "pairs": 20,
+        "mean_signed_gap_mps": 0.50250638073836,
+        "mean_absolute_gap_mps": 0.672728100704659
+      },
+      "after": {
+        "pairs": 12,
+        "mean_signed_gap_mps": -0.02654107161679753,
+        "mean_absolute_gap_mps": 0.2571617949937011
+      },
+      "matched_ids_sha256": "86016ac1306ebe989f3f66a30aa6f5ead040857c046119ffeea863c29fe5e71b",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": -9.841345066974975,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": -7.7998210655575715,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": -2.674217194325813,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 1.2588150633463602,
+          "eligible": false
+        }
+      }
+    },
+    "passenger_minus_bus": {
+      "first": "bus",
+      "second": "passenger",
+      "before": {
+        "pairs": 24,
+        "mean_signed_gap_mps": 1.1822564773832231,
+        "mean_absolute_gap_mps": 1.229736911374242
+      },
+      "after": {
+        "pairs": 4,
+        "mean_signed_gap_mps": 0.12780756168191765,
+        "mean_absolute_gap_mps": 0.1376132530899934
+      },
+      "matched_ids_sha256": "38c5c86a3e74c4c71e0864bedd1442598417c4131c0f8ee33a4ed67958719ec4",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": -11.321465844363813,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": -9.895592340601505,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": -0.472233217335065,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 1.7957235250180998,
+          "eligible": false
+        }
+      }
+    },
+    "taxi_minus_bus": {
+      "first": "bus",
+      "second": "taxi",
+      "before": {
+        "pairs": 14,
+        "mean_signed_gap_mps": 1.269725164085827,
+        "mean_absolute_gap_mps": 1.2764449529871027
+      },
+      "after": {
+        "pairs": 2,
+        "mean_signed_gap_mps": 0.19338994826489664,
+        "mean_absolute_gap_mps": 0.24042847057382755
+      },
+      "matched_ids_sha256": "172f358f1387e577b9a92981e81f86b7c0c1e4ee47a344f2f894661b011d07d9",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": -6.773801965187927,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": -13.437775850935122,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": -2.6061933386237928,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": 9.045973486794566,
+          "eligible": false
+        }
+      }
+    },
+    "passenger_minus_motorcycle": {
+      "first": "motorcycle",
+      "second": "passenger",
+      "before": {
+        "pairs": 577,
+        "mean_signed_gap_mps": 0.22404728161985135,
+        "mean_absolute_gap_mps": 0.7437841199732564
+      },
+      "after": {
+        "pairs": 253,
+        "mean_signed_gap_mps": 0.013486048036409392,
+        "mean_absolute_gap_mps": 0.2320160145470858
+      },
+      "matched_ids_sha256": "e70978d27f89c6560c570ec7d70938c39ea5f1446ece814f665c85ed6281dfe5",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": 0.09904959176634012,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": 0.11808317024917044,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": 0.1216765016282851,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": -0.39819014072423603,
+          "eligible": true,
+          "observed": {
+            "mean": -0.09285440262714116,
+            "percentile_95": [
+              -0.11750355547109302,
+              -0.06754696971841792
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 0.010185207951720596,
+              "percentile_95": [
+                0.006700632179498796,
+                0.01368220167022874
+              ]
+            },
+            "coordinate-43": {
+              "mean": 0.017098430923560774,
+              "percentile_95": [
+                0.014426205009976953,
+                0.020124909579369233
+              ]
+            },
+            "velocity-42": {
+              "mean": -0.07300469978196238,
+              "percentile_95": [
+                -0.08262940044324518,
+                -0.06316400941968324
+              ]
+            },
+            "velocity-43": {
+              "mean": -0.07028047640373,
+              "percentile_95": [
+                -0.07957225089344867,
+                -0.06026121110986997
+              ]
+            }
+          }
+        }
+      }
+    },
+    "taxi_minus_motorcycle": {
+      "first": "motorcycle",
+      "second": "taxi",
+      "before": {
+        "pairs": 579,
+        "mean_signed_gap_mps": 0.28016647035830344,
+        "mean_absolute_gap_mps": 0.7801917090006072
+      },
+      "after": {
+        "pairs": 254,
+        "mean_signed_gap_mps": 0.00250529306641062,
+        "mean_absolute_gap_mps": 0.23701948560521213
+      },
+      "matched_ids_sha256": "3bdc88ec3237fc3091b161a593bfb5411129021a2b4b2be04a9f8bc21c385783",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": 0.06005779967589185,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": 0.023552846054850744,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": 0.05034403278087662,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": -0.5046319072252997,
+          "eligible": true,
+          "observed": {
+            "mean": -0.11174440288487861,
+            "percentile_95": [
+              -0.13717417792460673,
+              -0.08655840419812955
+            ]
+          },
+          "generated": {
+            "coordinate-42": {
+              "mean": 0.010673764545742,
+              "percentile_95": [
+                0.00556233445821091,
+                0.016585833690051295
+              ]
+            },
+            "coordinate-43": {
+              "mean": 0.013666181320097243,
+              "percentile_95": [
+                0.010862214801486083,
+                0.0167658518106595
+              ]
+            },
+            "velocity-42": {
+              "mean": -0.07778093944876915,
+              "percentile_95": [
+                -0.08748400492372418,
+                -0.06882015518599353
+              ]
+            },
+            "velocity-43": {
+              "mean": -0.07363409827842234,
+              "percentile_95": [
+                -0.08358741564497904,
+                -0.0640483913495708
+              ]
+            }
+          }
+        }
+      }
+    },
+    "taxi_minus_passenger": {
+      "first": "passenger",
+      "second": "taxi",
+      "before": {
+        "pairs": 580,
+        "mean_signed_gap_mps": 0.07076740235110295,
+        "mean_absolute_gap_mps": 0.69712327498577
+      },
+      "after": {
+        "pairs": 245,
+        "mean_signed_gap_mps": 0.004907029133011257,
+        "mean_absolute_gap_mps": 0.211515665163063
+      },
+      "matched_ids_sha256": "681daf147869a2ab74490e52227e0edeec06ab50704b3621470a730477950713",
+      "features": {
+        "slow_time_percent": {
+          "observed_standardized_gap": -0.005813399371114202,
+          "eligible": false
+        },
+        "slow_entries_per_10min": {
+          "observed_standardized_gap": -0.09968318575720946,
+          "eligible": false
+        },
+        "p90_speed_mps": {
+          "observed_standardized_gap": -0.01943694441118935,
+          "eligible": false
+        },
+        "mean_abs_acceleration_mps2": {
+          "observed_standardized_gap": -0.06333039821212857,
+          "eligible": false
+        }
+      }
+    }
+  },
+  "max_requested_speed_gap_mps": 0.5,
+  "direction": "second class minus first class",
+  "min_pairs": 30,
+  "min_abs_observed_d": 0.2,
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 11167,
+  "bootstrap_unit": "matched pair; conditions on fixed sample and ignores episode dependence",
+  "head_sha256": "b35ad5b198d2ce7fa7243b7dca55307f871734b5aad837948267218e9b6559df",
+  "noise_sha256": "076d10cfb759ce4ec5f39f2e1ccadc374a682178a267bbb40a87653a9e0e524f",
+  "source_manifest_sha256": "2166be4362d59423b0df0b05ab27ca2e18df3f149270267bdf7bb8bc21318137",
+  "prepared_manifest_sha256": "f145be0e6560d5fa433dce99569bab343f8b4c423f2db06dcbf16a9af98ff236",
+  "checkpoints": {
+    "coordinate-42": "b1ad8332bb73500ca542a77293b077386cccc1ff59b6b208a74adfaad52981bc",
+    "coordinate-43": "f7a2ba4a236bdd8d0ea63633da3f758e5cf80ffb8d835474673bf4b9b1609b60",
+    "velocity-42": "96ebec4cb53c8b0e590cafed63bd1c38371b6d7238e33f377505542e8e7d3960",
+    "velocity-43": "14658fa1cfca079ab83e5171390fedc98ce095648fc29396c118061242105f70"
+  }
+}
