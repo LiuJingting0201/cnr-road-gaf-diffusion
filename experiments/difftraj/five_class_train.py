@@ -121,6 +121,15 @@ class ValidationNoise:
         return result
 
 
+def integrated_endpoint_loss(noisy, predicted_noise, clean, alpha_bar, token_sd, dt, cell_width):
+    # Center and token means cancel between predicted and target endpoints.
+    estimate = (noisy - (1-alpha_bar).sqrt()*predicted_noise) / alpha_bar.sqrt()
+    diff = (estimate-clean) * token_sd
+    error = (diff[:, :, 0] + dt[:, None]*diff[:, :, 1:].sum(dim=2)) / cell_width
+    penalty = F.smooth_l1_loss(error, torch.zeros_like(error), reduction='none')
+    return (alpha_bar[:, 0, :] * penalty).mean()
+
+
 def train(opts):
     if (opts.mode == 'all') != (opts.arm in ('C', 'D')):
         raise ValueError('A/B use a single vehicle class. Pooled C/D explicitly condition on class.')
@@ -136,6 +145,12 @@ def train(opts):
     validation = ValidationNoise(load_split(opts, 'validation', device), alpha, device)
     with np.load(opts.data / 'normalization.npz') as norm:
         sd = torch.as_tensor(norm['std'], dtype=x.dtype, device=device).reshape(1, 2, 1)
+        if opts.endpoint_weight:
+            if opts.arm != 'C' or not 0 < opts.endpoint_weight or not math.isfinite(opts.endpoint_weight):
+                raise ValueError('Expected a positive endpoint weight on pooled velocity arm C')
+            token_sd = torch.as_tensor(norm['velocity_token_std'].T.copy(), dtype=x.dtype, device=device)
+            cell_width = torch.as_tensor((norm['hi']-norm['lo'])/16, dtype=x.dtype, device=device)
+            interval = (h[:, 2]*float(norm['header_std'][1])+float(norm['header_mean'][1])).round()/199
     updates = math.ceil(len(x)/opts.batch_size)
     spec = dict(arm=opts.arm, mode=opts.mode, seed=opts.seed, classes=list(CLASSES), epochs=opts.epochs,
                 batch_size=opts.batch_size, microbatch=opts.microbatch, train_n=len(x),
@@ -144,6 +159,9 @@ def train(opts):
                 train_index_sha256=hashlib.sha256(ids.astype('<i8').tobytes()).hexdigest(),
                 validation_index_sha256=hashlib.sha256(validation.ids.astype('<i8').tobytes()).hexdigest(),
                 release_manifest_sha256=hashlib.sha256((opts.data/'manifest.json').read_bytes()).hexdigest())
+    if opts.endpoint_weight:
+        spec['integrated_endpoint_weight'] = opts.endpoint_weight
+    aux_name = 'weighted_endpoint_loss' if opts.endpoint_weight else 'weighted_speed_loss'
     out = opts.out
     specfile = out/'config.json'
     if specfile.exists() and json.loads(specfile.read_text()) != spec:
@@ -199,6 +217,9 @@ def train(opts):
                 noise_loss = F.mse_loss(pred, eps)
                 aux = (speed_supervision(z, pred, a, sd, v[idx], dt[idx])
                        if v is not None else noise_loss.new_zeros(()))
+                if opts.endpoint_weight:
+                    aux = opts.endpoint_weight * integrated_endpoint_loss(
+                        z, pred, x[idx], a, token_sd, interval[idx], cell_width)
                 ((noise_loss + aux) * (len(idx)/len(group))).backward()
                 group_loss += len(idx)*torch.stack((noise_loss.detach(), aux.detach()))
             norm = torch.nn.utils.clip_grad_norm_(net.parameters(), 1., error_if_nonfinite=True)
@@ -210,7 +231,7 @@ def train(opts):
                 noise, speed = (group_loss/len(group)).tolist()
                 atomic_json(out/'progress.json', dict(arm=opts.arm, mode=opts.mode, seed=opts.seed,
                             epoch=epoch, step=step, updates=update, target_updates=updates*opts.epochs,
-                            elapsed_s=elapsed(), noise_loss=noise, weighted_speed_loss=speed, lr=lr))
+                            elapsed_s=elapsed(), noise_loss=noise, lr=lr, **{aux_name: speed}))
         scheduler.step()
         val = validation.measure(net)
         noise, aux = (totals/len(x)).tolist()
@@ -219,7 +240,7 @@ def train(opts):
         if val < best:
             best = val
             save_checkpoint(out/'best.pt', weights)
-        record = dict(epoch=epoch, updates=epoch*updates, noise_loss=noise, weighted_speed_loss=aux,
+        record = dict(epoch=epoch, updates=epoch*updates, noise_loss=noise, **{aux_name: aux},
                       val_loss=val, best_val_loss=best, lr=lr, grad_norm_max=norm.max().item(),
                       clipped_steps=(norm>1.).sum().item(), elapsed_s=elapsed())
         history.append(record)
@@ -248,6 +269,7 @@ def main():
     parser.add_argument('--epochs', type=int, default=50)
     parser.add_argument('--batch-size', type=int, required=True)
     parser.add_argument('--microbatch', type=int, required=True)
+    parser.add_argument('--endpoint-weight', type=float, default=0.)
     parser.add_argument('--device', default='cuda')
     opts = parser.parse_args()
     opts.out.mkdir(parents=True, exist_ok=True)
