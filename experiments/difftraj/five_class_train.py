@@ -19,7 +19,7 @@ CLASSES = ('bicycle', 'bus', 'motorcycle', 'passenger', 'taxi')
 
 
 class VehicleDiffTraj(Guide_UNet):
-    def __init__(self, arm):
+    def __init__(self, arm, route_dim=0):
         config = SimpleNamespace(**{k: SimpleNamespace(**v) for k, v in upstream_config.items()})
         super().__init__(config)
         if arm in ('C', 'D'):
@@ -29,18 +29,26 @@ class VehicleDiffTraj(Guide_UNet):
         elif arm not in ('A', 'B'):
             raise ValueError(arm)
 
+        if route_dim:
+            self.route_projection = torch.nn.Linear(route_dim, self.ch, bias=False)
+            torch.nn.init.zeros_(self.route_projection.weight)
+
     def forward(self, x, t, head, y):
         if not hasattr(self, 'class_embedding'):
             return super().forward(x, t, head)
+        route = head[:, 8:]
+        head = head[:, :8]
         cond = self.guide_emb(head) + self.class_embedding(y)
+        if hasattr(self, 'route_projection'):
+            cond = cond + self.route_projection(route)
         placeholder = self.place_emb(torch.zeros_like(head))
         guided = self.unet(x, t, cond)
         unguided = self.unet(x, t, placeholder)
         return guided + self.guidance_scale * (guided - unguided)
 
 
-def make_model(arm, device='cuda'):
-    return VehicleDiffTraj(arm).to(device)
+def make_model(arm, device='cuda', route_dim=0):
+    return VehicleDiffTraj(arm, route_dim).to(device)
 
 
 def atomic_json(path, value):
@@ -76,6 +84,8 @@ def load_split(opts, split, device):
         return torch.from_numpy(np.load(path, mmap_mode='r')[ids]).to(device)
     x = load(folder / 'traj.npy').transpose(1, 2).contiguous()
     h = load(folder / 'head.npy')
+    if opts.route_features:
+        h = torch.cat([h,load(opts.route_features / (split+'.npy'))],dim=1)
     y = torch.from_numpy(labels[ids]).to(device)
     speed = dt = None
     if opts.arm in ('B', 'D'):
@@ -137,7 +147,12 @@ def train(opts):
         raise ValueError('Positive epoch and batch budgets required')
     device = torch.device(opts.device)
     torch.manual_seed(opts.seed)
-    net = make_model(opts.arm, device)
+    route_dim = 0
+    if opts.route_features:
+        if opts.arm != 'C' or opts.endpoint_weight != 0:
+            raise ValueError('Route-clock ablation requires unmodified pooled velocity loss')
+        route_dim = np.load(opts.route_features/'train.npy',mmap_mode='r').shape[1]
+    net = make_model(opts.arm, device, route_dim)
     optim = torch.optim.AdamW(net.parameters(), lr=2e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, T_max=opts.epochs, eta_min=2e-5)
     alpha = (1 - torch.linspace(.0001, .05, 500, device=device)).cumprod(0)
@@ -159,6 +174,10 @@ def train(opts):
                 train_index_sha256=hashlib.sha256(ids.astype('<i8').tobytes()).hexdigest(),
                 validation_index_sha256=hashlib.sha256(validation.ids.astype('<i8').tobytes()).hexdigest(),
                 release_manifest_sha256=hashlib.sha256((opts.data/'manifest.json').read_bytes()).hexdigest())
+    if opts.route_features:
+        spec['route_features'] = json.loads((opts.route_features/'manifest.json').read_text())
+        if spec['route_features']['seed'] != opts.seed:
+            raise ValueError('Coordinate seed differs from velocity seed')
     if opts.endpoint_weight:
         spec['integrated_endpoint_weight'] = opts.endpoint_weight
     aux_name = 'weighted_endpoint_loss' if opts.endpoint_weight else 'weighted_speed_loss'
@@ -270,6 +289,7 @@ def main():
     parser.add_argument('--batch-size', type=int, required=True)
     parser.add_argument('--microbatch', type=int, required=True)
     parser.add_argument('--endpoint-weight', type=float, default=0.)
+    parser.add_argument('--route-features', type=Path)
     parser.add_argument('--device', default='cuda')
     opts = parser.parse_args()
     opts.out.mkdir(parents=True, exist_ok=True)
