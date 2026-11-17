@@ -1,0 +1,12 @@
+{
+  "checkpoints": {
+    "coordinate-42": "b1ad8332bb73500ca542a77293b077386cccc1ff59b6b208a74adfaad52981bc",
+    "coordinate-43": "f7a2ba4a236bdd8d0ea63633da3f758e5cf80ffb8d835474673bf4b9b1609b60",
+    "velocity-42": "26cd14fc6735e4c92815fada0c1e12d846d480225b01e66417dd50137318d50b",
+    "velocity-43": "79cd369d30e52a119ba93ba45717e51bf39d26a72467401d246b826a83213183"
+  },
+  "source_manifest": "2166be4362d59423b0df0b05ab27ca2e18df3f149270267bdf7bb8bc21318137",
+  "prepared_manifest": "f145be0e6560d5fa433dce99569bab343f8b4c423f2db06dcbf16a9af98ff236",
+  "test_noise_seed": 42,
+  "ddim_steps": 100
+}
