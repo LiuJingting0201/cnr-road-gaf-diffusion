@@ -6,22 +6,16 @@
 \setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
 \newcommand{\record}[2]{\href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/blob/main/docs/results/#1}{#2}}
 \begin{document}
-{\small MASTER'S THESIS PROGRESS REPORT \hfill 17 November 2026}
 
-{\LARGE\bfseries How does speed enter trajectory diffusion?\par}
+{\small MASTER'S THESIS PROGRESS REPORT \hfill 20 November 2026}
+
+{\LARGE\bfseries Incorporating Speed and Vehicle Class\\into Trajectory Diffusion\par}
 Jingting Liu
 
-This report covers the speed and vehicle-class extension following the Porto reproduction of DiffTraj. The question is whether a generator can reach the requested destination and reproduce the different ways vehicles move at the same average speed. On five-class SUMO data, coordinate diffusion gave the most reliable endpoints, while velocity diffusion best recovered stop--go behaviour. Using the former to draw the route and the latter to set the pace preserved destination accuracy and much of the observed bus--bicycle contrast. On 5,000 frozen test journeys, retiming lowered speed-distribution error by 35.6\% and 41.5\% at the two training seeds while preserving every coordinate-model endpoint (Section 8). \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/tree/main/deliverables/porto-120-report}{Porto reproduction report}
+Following the Porto reproduction of DiffTraj, we tested whether speed and vehicle class improve trajectory generation. The final model uses coordinate diffusion for the route and velocity diffusion for its timing. On 5,000 frozen SUMO test trips, it reduced speed-distribution error by 35.6\% and 41.5\% across two seeds and preserved every coordinate-model endpoint. \href{https://github.com/LiuJingting0201/cnr-road-gaf-diffusion/tree/main/deliverables/porto-120-report}{Porto reproduction}
 
-\section*{1. Adding speed to coordinate diffusion}
-The starting point was \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9b4a28fb9eebe0430c3312a4898a41-Abstract.html}{DiffTraj (Zhu et al., NeurIPS 2023)}. Given trip attributes, its denoiser learns to remove Gaussian noise from a sequence of 200 positions. The request already gives the trip-average speed. Our question was whether information about speed \emph{within} the trip would improve the motion reconstructed from successive generated positions.
-
-An exploratory Beijing GeoLife experiment provided an initial motivation. In 108 matched bus--bicycle pairs, the observed low-speed time shares differed by 16.3 percentage points. Adding training penalties for low-speed share and entry rate to a class-conditioned coordinate model produced a label-switch difference below 0.01 points in both seeds. We used a larger, balanced SUMO corpus for the controlled comparisons below. \record{beijing-rhythm/REPORT.md}{Beijing results}
-
-\textbf{During training.} We compared two coordinate models with the same vehicle labels. One also penalized differences between predicted and observed segment speeds on the training trip. The extra term improved bicycle and motorcycle speed distributions at both seeds, while bus and taxi deteriorated. Across the five equally weighted classes, the average speed error increased.
-
-\textbf{During sampling.} We then froze the coordinate model. For each request we retrieved 32 same-class training trips with similar duration and mean speed. Five quantiles of their speeds guided the denoising steps. This improved speed W1 for every class at both seeds, with little change in the spatial metrics.
-
+\section*{1. Speed supervision and sampling guidance}
+DiffTraj (Zhu et al., 2023) denoises 200 positions conditioned on trip attributes, including average speed. We tested a segment-speed training loss and sampling guidance based on five speed quantiles from 32 same-class trips with similar duration and mean speed. The training loss raised average error. Guidance improved speed W1 in all five classes at both seeds.
 \begin{center}\small
 \begin{tabular}{lrr}\toprule
 Five-class mean speed W1 (m/s), lower is better & Seed 42 & Seed 43\\\midrule
@@ -29,22 +23,17 @@ Coordinate diffusion, standard sampler & .917 & .883\\
 With segment-speed training loss & .958 & .890\\
 With speed-quantile sampling guidance & .871 & .836\\\bottomrule
 \end{tabular}\end{center}
-W1 is the first Wasserstein distance between generated and observed speed distributions. Quantiles describe how often different speeds occur. They do not encode their order. In a bus diagnostic, shuffling the observed speeds within each trip preserved the speed distribution exactly while reducing the median low-speed spell from 29.0 to 13.1 seconds. That motivated testing the entire velocity sequence as the diffusion target. \record{general-speed-class/REPORT.md}{Five-class comparisons} $\cdot$ \record{terminal-bus/REPORT.md}{Bus diagnostic}
+
+W1 is the first Wasserstein distance between generated and observed distributions. In a bus diagnostic, shuffling speeds left W1 unchanged but shortened the median low-speed spell from 29.0 to 13.1 s. We then trained diffusion directly on velocity sequences. \record{general-speed-class/REPORT.md}{Supervision and guidance} $\cdot$ \record{terminal-bus/REPORT.md}{Bus diagnostic}
+
+\section*{2. Velocity diffusion}
+The SUMO MoST data contain 40,000 training trips per class (bus, bicycle, motorcycle, passenger car and taxi). Complete trips with at least 120 consecutive one-second observations were interpolated to 200 positions. Validation used separate simulation episodes.
+
+Both models used the same U-Net, Gaussian noise prediction, vehicle embedding and trip attributes (departure time, length, duration, point count, mean displacement, average speed and origin/destination cells). Each seed used 10 epochs, batch size 205, 9,760 AdamW updates, gradient clipping at 1, cosine learning-rate decay from $2\times10^{-4}$ to $2\times10^{-5}$ and 100 DDIM sampling steps. \record{velocity-class-control/PROTOCOL.md}{Training protocol}
+
+The velocity model generates a start offset and 199 two-dimensional vectors. For trip duration $T$, set $\Delta t=T/199$ and $v_i=(p_i-p_{i-1})/\Delta t$. The resulting positions are $\hat p_j=\hat p_0+\Delta t\sum_{i=1}^j\hat v_i$. Errors in the summed vectors move the endpoint.
 
 \newpage
-\section*{2. Generating velocities and integrating a trip}
-We simulated complete journeys on the MoST network in SUMO. Buses followed predefined routes with stops. Bicycles, motorcycles, passenger cars and taxis drew origins and destinations from roads permitted for their class. We retained completed trips with at least 120 consecutive one-second positions and interpolated each journey to 200 positions over its own duration $T$. The five classes supplied 40,000 training trips each. Validation used different simulation episodes.
-
-For positions $p_0,\ldots,p_{199}$ in metres, we computed the two-dimensional velocity $v_i=(p_i-p_{i-1})/\Delta t$, where $\Delta t=T/199$. The velocity model generated a starting offset within the origin-cell coordinate system and 199 velocity vectors. From the sampled start $\hat p_0$ we recovered the positions by summation,
-\[
-\hat p_j=\hat p_0+\Delta t\sum_{i=1}^{j}\hat v_i .
-\]
-The two components retain direction, so the model can turn. An error in the sum of those components displaces the endpoint even when the individual speed magnitudes look plausible.
-
-\textbf{Single-class check.} On 1,000 taxi validation requests, switching from coordinates to velocities reduced speed W1 from 1.183/1.173 to 0.160/0.203 m/s (seeds 42/43). Destination-cell hits dropped from 72.6/73.1\% to 31.1/32.6\%. This established a motion--location trade-off before introducing vehicle labels. \record{velocity-diffusion-pilot/REPORT.md}{Taxi comparison}
-
-\textbf{Five-class test.} We trained both representations from scratch with the same labelled 200,000 trips, U-Net, noise-prediction loss and trainable class embedding. Both received departure time, distance, duration, point count, mean displacement, mean speed and origin/destination cells. Each fit used 10 epochs, batch 205, 9,760 AdamW updates, norm-1 gradient clipping and cosine learning-rate decay from $2\,10^{-4}$ to $2\,10^{-5}$. Each representation used seeds 42 and 43. We sampled final checkpoints with 100 DDIM steps. This comparison has its own coordinate control because the earlier supervision experiment used a different training schedule.
-
 \begin{center}\small
 \begin{tabular}{lrr}\toprule
 Five-class validation mean & Coordinates (42 / 43) & Velocities (42 / 43)\\\midrule
@@ -56,12 +45,11 @@ Trip length JS $\downarrow$ & .0310 / .0253 & .0213 / .0112\\
 Hotspot F1 $\uparrow$ & .950 / .930 & .800 / .820\\
 Destination cell hit $\uparrow$ & 71.7 / 70.5\% & 38.2 / 37.7\%\\\bottomrule
 \end{tabular}\end{center}
-The table uses 600 fixed validation requests per class. Speed and tangential acceleration are computed from the reconstructed positions on the same physical-time grid as the observed comparison. Jensen--Shannon divergence (JS) compares occupancy, OD-pair or length histograms. Hotspot F1 measures overlap among the 20 busiest grid cells. The destination hit checks each trip against its requested cell. \record{velocity-class-control/STATS.md}{Per-class scores and evaluation details}
 
-\newpage
-\section*{3. Does changing the label change the way a vehicle moves?}
-We kept each request, including its mean speed, and the initial diffusion noise fixed, and changed only the vehicle label. To determine whether the generated change pointed in a realistic direction, we compared it with observed SUMO trips matched on similar requests. For buses and bicycles, 53 observed pairs had requested mean speeds within 0.50 m/s of one another. The mean signed gap was only $-0.074$ m/s. The observed contrast includes route and service differences on this network.
+Validation used 600 requests per class. Speed and acceleration come from consecutive output positions. JS is Jensen--Shannon divergence. Hotspot F1 measures overlap among the 20 busiest cells. Destination hit measures arrival in the requested cell. \record{velocity-class-control/STATS.md}{Per-class scores}
 
+\section*{3. Vehicle-label effects}
+We held each request and its noise fixed and switched the speed or coordinate model's vehicle label. The reference comprised 53 observed bus--bicycle pairs with requested average speeds within 0.50 m/s. A low-speed entry requires at least two consecutive intervals below 1 m/s after a faster interval.
 \begin{center}\small
 \begin{tabular}{lrrr}\toprule
 Bus minus bicycle & SUMO & Coordinates (42 / 43) & Velocities (42 / 43)\\\midrule
@@ -70,48 +58,31 @@ Low-speed entries per 10 min & +7.87 & +0.54 / +0.74 & +5.40 / +5.13\\
 90th-percentile speed (m/s) & +7.38 & +1.00 / +0.89 & +5.35 / +5.14\\
 Mean absolute acceleration (m/s$^2$) & +.363 & +.074 / +.050 & +.268 / +.254\\\bottomrule
 \end{tabular}\end{center}
-The velocity model recovered about two thirds of the observed low-speed time and entry differences. A low-speed entry requires at least two consecutive intervals below 1 m/s after a faster interval. A second contrast concerned acceleration: in 253 matched pairs, passenger cars had lower mean absolute acceleration than motorcycles by 0.093 m/s$^2$. The velocity model recovered reductions of 0.070/0.074 m/s$^2$. Passenger cars and taxis showed little observed separation, and six of the ten class pairs retained at most 12 matches under the strict mean-speed rule. \record{velocity-class-control/BALANCE.md}{All matching counts and uncertainty intervals}
+Velocity diffusion recovered about two-thirds of the observed low-speed gap. In 253 matched car--motorcycle pairs, it also recovered a reduction of 0.070/0.074 m/s$^2$ in mean absolute acceleration, against 0.093 m/s$^2$ in SUMO. \record{velocity-class-control/BALANCE.md}{Matching and uncertainty}
 
-\begin{center}\includegraphics[width=.98\linewidth]{motion-and-endpoints.png}\end{center}
-{\small Figure 1. The velocity model reduced speed-distribution error in every vehicle class at both seeds. The centre and right panels show the corresponding increase in median distance to the observed endpoint and the drop in requested-cell hits.}
-
-\textbf{Does supplying the class help at sampling time?} As a check, we inferred a plausible class from similar training requests instead of supplying the recorded label. This already selected the correct class for 1,826 of 3,000 requests. Supplying the recorded class reduced the velocity model's speed W1 by a further 0.024/0.038 m/s. The modest average gain and the larger fixed-request bus--bicycle effect answer different questions: many requests already reveal their likely class, yet deliberately switching class can change how a particular trip unfolds.
+\begin{center}\includegraphics[width=.97\linewidth]{motion-and-endpoints.png}\end{center}
+{\small Figure 1. Speed error and endpoint accuracy by vehicle class.}
 
 \newpage
-\section*{4. What one generated trip looks like}
-\begin{center}\includegraphics[width=\linewidth]{trips-42.png}\end{center}
-{\small Figure 2. Two requests selected by median trip-ID rank among eligible matches. In the first row the requested mean is 4.9 m/s. With the velocity model, changing bicycle to bus produces repeated slow periods and higher moving speeds. The coordinate model produces similar curves for both labels. The maps show that a plausible speed profile can still lead to a misplaced destination. \record{velocity-class-control/trips-43.png}{Same requests at seed 43}.}
+\section*{4. Combining route and motion}
+Adding a smooth L1 penalty on the integrated endpoint improved destination hits. We used weight 0.1, scaled by remaining diffusion signal power, and expressed endpoint error in grid-cell widths. Median endpoint error fell from 342 to 291 m and from 350 to 282 m. \record{velocity-endpoint/RESULTS.md}{Endpoint loss and maps}
 
-\textbf{Where does the endpoint error come from?} The velocity model learns both signed components of motion. On the 3,000 validation trips, its median net bearing error was about four degrees, compared with 3.3 degrees for coordinate diffusion. The median error in the straight-line distance between start and end was also larger: 186--194 m for velocities and 147 m for coordinates. Correcting only direction after sampling would therefore leave a substantial distance error. This motivated two ways of combining motion and location information. \record{velocity-class-control/DIRECTION.md}{Displacement analysis}
-
-\newpage
-\section*{5. Combining realistic motion with a reliable destination}
-\textbf{Teach the velocity generator where it finishes.} During training we integrated the predicted clean velocity sequence from its predicted start and compared the resulting endpoint with the observed one. We divided the error on each axis by the grid-cell width, applied a smooth L1 penalty and added it to the denoising loss with weight 0.1, scaled by the diffusion step's remaining signal power. At generation the request still supplied only the destination cell. Median endpoint error fell from 342 to 291 m and from 350 to 282 m across seeds. The bus--bicycle difference in low-speed time declined from 26.1/25.1 to 24.1/22.5 percentage points. \record{velocity-endpoint/RESULTS.md}{Paired comparisons and endpoint maps}
-
-\textbf{Use a generated route and a generated speed profile together.} The coordinate generator supplied the route as a polyline. The original velocity generator supplied a sequence of speed magnitudes $u_i$. For a route of length $L$, the distance along the route at sample $j$ was
+For the combined model, coordinate diffusion supplies a polyline of length $L$ and velocity diffusion supplies speeds $u_i$. At output step $j$, we interpolate the polyline at distance
 \[
-s_j=L\,\frac{\sum_{i=1}^{j}u_i\Delta t}{\sum_{i=1}^{199}u_i\Delta t},\qquad j=0,\dots,199.
+s_j=L\frac{\sum_{i=1}^j u_i\Delta t}{\sum_{i=1}^{199}u_i\Delta t}.
 \]
-Interpolating the polyline at $s_j$ gave the final coordinates. A low speed placed successive positions close together. At the last sample $s_{199}=L$, so the trajectory always ended at the coordinate model's sampled endpoint. This procedure used two previously trained generators. It required no observed route at generation. \record{velocity-retiming/README.md}{Retiming experiment}
-
+The final distance is $L$, so retiming preserves the sampled endpoint. A 9 km route paired with a speed profile that integrates to 10 km scales along-route speeds by 0.9. \record{velocity-retiming/README.md}{Retiming results}
 \begin{center}\small
 \begin{tabular}{lrrr}\toprule
-Generator & Destination hit (\%) & Speed W1 & Accel.\ W1\\\midrule
+Generator & Destination hit (\%) & Speed W1 (m/s) & Accel.\ W1 (m/s$^2$)\\\midrule
 Coordinates & 71.7 / 70.5 & 1.213 / 1.080 & .181 / .190\\
 Integrated velocities & 38.2 / 37.7 & .212 / .179 & .027 / .032\\
 Velocities with endpoint loss & 47.6 / 48.6 & .177 / .221 & .029 / .037\\
 Coordinate route with velocity profile & 71.7 / 70.5 & .793 / .627 & .043 / .043\\\bottomrule
 \end{tabular}\end{center}
-{\small Each entry gives seeds 42 / 43. Speed and acceleration W1 are measured from final positions in m/s and m/s$^2$.}
 
-The combined generator inherited the endpoint hit rate of coordinate diffusion and retained much of the acceleration fidelity of velocity diffusion. Absolute speed showed a trade-off. If the generated profile integrates to 10 km and the sampled route is 9 km long, retiming scales along-route speeds by 0.9 to finish on time. We therefore tested whether giving route information to the velocity generator before sampling would reduce the speed error.
-
-\newpage
-\section*{6. Does knowing the route improve speed generation?}
-For each training request the frozen coordinate model generated a route. We measured its length, resampled the polyline at equal distances and divided it into 16 consecutive sections. The conditional input was the log route length and the total absolute change in heading in each section. A learned linear projection added these 17 values to the original trip and vehicle embedding. The two new velocity fits used the same 200,000 labelled trips, denoising loss and 9,760 updates as their respective controls.
-
-For each validation request we fixed the coordinate route, trip attributes and initial noise, then applied the two speed models separately and measured their final trajectories. For the bus--bicycle comparison we also kept each request's route fixed when switching labels. We rescored the original combination under this stricter rule. The SUMO reference comprised the same 53 pairs with similar requested average speeds.
-
+\section*{5. Route geometry as a speed condition}
+We added the log length and total absolute heading change in each of 16 equal-distance sections of a generated route. A linear projection mapped the 17 features into the velocity model's conditioning embedding. The comparison fixed the route, request and noise. Label switches also used the same route.
 \begin{center}\small
 \begin{tabular}{lrr}\toprule
 Original $\rightarrow$ route-conditioned speed model & Seed 42 & Seed 43\\\midrule
@@ -121,23 +92,11 @@ Requested destination hit (\%) & $71.7\rightarrow71.7$ & $70.5\rightarrow70.5$\\
 Bus minus bicycle: low-speed time (pp) & $26.0\rightarrow24.5$ & $25.1\rightarrow24.8$\\
 Bus minus bicycle: low-speed entries / 10 min & $5.41\rightarrow5.00$ & $5.10\rightarrow5.07$\\\bottomrule
 \end{tabular}\end{center}
-{\small The corresponding observed bus--bicycle differences were 39.6 percentage points (pp) and 7.87 low-speed entries per ten minutes.}
-
-\textbf{How much did the choice of route matter?} On exactly the seed-42 routes, the two independently trained route-conditioned speed models gave W1 values of 0.7924 and 0.7925 m/s. Holding the seed-43 speed model fixed and switching to its seed-43 route set changed the error from 0.7925 to 0.6292 m/s. For these two sets of routes, that change was much larger than the change obtained by adding route descriptors. \record{route-conditioned-clock/RESULTS.md}{Fixed-route results for all five classes}
-
-In training, the sampled route and the observed trip supplying the speed target shared a request but could take different turns. In 5,000 training examples, the median within-trip correlation between their 16-section bend profiles was about 0.30 at both seeds. This limits the correspondence between a turn shown to the model and the speed target at that position. \record{route-conditioned-clock/training-pairing.json}{Geometry check}
-
-\textbf{Stage conclusion.} For these five simulated classes, the strongest evidence for the value of vehicle labels is the change in stop--go behaviour when the trip request and route stay fixed. We retain the simpler combination of a generated coordinate route and a vehicle-conditioned velocity profile. It preserves destination performance and captures a substantial part of the observed class difference. Adding length and bend descriptors gave no repeatable gain in speed W1. The remaining absolute-speed error depends in part on how much distance the sampled route covers in the requested time.
+Route inputs gave no consistent gain. On the same seed-42 routes, the two conditioned models scored 0.7924 and 0.7925 m/s. With seed-43 routes, the second model scored 0.6292 m/s. Generated and observed bend profiles had a median correlation of about 0.30 in training pairs. We carried the original combination into frozen testing. \record{route-conditioned-clock/RESULTS.md}{Fixed-route comparison}
 
 \newpage
-\section*{7. Reading the fixed-route maps}
-\begin{center}\includegraphics[width=\linewidth,height=.73\textheight,keepaspectratio]{../../docs/results/route-conditioned-clock/map-43.png}\end{center}
-{\small Figure 3. First validation request for each class, seed 43. Read across each row: SUMO observation, original combination, route-conditioned combination and speed over time. The middle maps share their route and endpoints by construction. Colour indicates interval speed on the same scale within each row. The orange and blue curves show where the two generated speed profiles differ. The grey curve is the observed trip for that request. \record{route-conditioned-clock/map-42.png}{Seed 42 maps} $\cdot$ \record{velocity-endpoint/map-43.png}{Endpoint-loss maps}.}
-
-\newpage
-\section*{8. Confirmation on the frozen SUMO test set}
-Before opening the test set, we fixed the two coordinate checkpoints, the two velocity checkpoints and the arc-length retiming rule. Each model received the original trip request and vehicle label. The test covered all 5,000 held-out journeys (1,000 per vehicle class) from 40 simulation episodes distinct from training and validation. Seeds 42 and 43 saw identical requests and initial noise. We used 100 DDIM steps and measured speed on the final 200 positions of each trip. \record{locked-test/PROTOCOL.md}{Preregistered comparison and checkpoint lock}
-
+\section*{6. Frozen SUMO test}
+We locked both model pairs and the retiming rule before opening 5,000 trips from 40 separate simulation episodes (1,000 per class). Both methods used the same requests and noise. Each combined draw reused its coordinate baseline's polyline. \record{locked-test/PROTOCOL.md}{Protocol and checkpoint hashes}
 \begin{center}\small
 \begin{tabular}{lrrrr}\toprule
 & \multicolumn{2}{c}{Seed 42} & \multicolumn{2}{c}{Seed 43}\\
@@ -150,9 +109,9 @@ OD JS & 0.2099 & 0.2099 & 0.2212 & 0.2212\\
 Length JS & 0.0256 & 0.0382 & 0.0233 & 0.0322\\
 Hotspot F1 & 0.960 & 0.960 & 0.930 & 0.930\\
 \bottomrule\end{tabular}\end{center}
-Speed W1 fell by 35.6\% and 41.5\% for seeds 42 and 43. All five vehicle classes improved at both seeds, with the largest absolute reduction for buses. Acceleration W1 also fell. Length JS increased at both seeds; resampling a polyline at different times can change the chord lengths between its 200 output points. Every combined draw had exactly the same start and end coordinates as the corresponding coordinate draw. The equality of endpoint hit rates is a property of the retiming rule. The speed error is measured after interpolation and can change.
+Speed W1 fell for every class at both seeds, with the largest absolute drop for buses. Every start and end coordinate exactly matched the coordinate baseline. Length JS increased because different sampling positions can change the sum of straight-line distances between output points.
 
-\textbf{Switching the label on a fixed route.} The preselected matching rule yielded 117 disjoint observed bus--bicycle pairs. Within each pair, the requested mean speeds differed by at most 0.50 m/s. At each of those two requests, we generated both labels with the same noise on the same coordinate-model route. The observed column compares matched journeys. The model columns give the change from a bicycle to a bus label within the same journey.
+For 117 observed bus--bicycle pairs with requested average speeds within 0.50 m/s, we generated both labels per request while fixing its route and noise. The combination recovered about 61\% of the observed low-speed differences, close to validation. \record{locked-test/RESULTS.md}{Per-class test results}
 \begin{center}\small
 \begin{tabular}{lrrr}\toprule
 Bus minus bicycle & SUMO & Combined 42 & Combined 43\\\midrule
@@ -160,42 +119,51 @@ Low-speed time (percentage points) & +40.00 & +24.62 & +24.52\\
 Low-speed entries per 10 min & +7.99 & +4.92 & +4.82\\
 90th-percentile speed (m/s) & +7.38 & +4.49 & +4.38\\
 \bottomrule\end{tabular}\end{center}
-The combined model recovered about 61\% of the observed differences in low-speed share and entry frequency. The generated effects were close to the validation differences of 25--26 percentage points and about five entries per ten minutes. The frozen test confirms both the speed-distribution improvement and the class-specific stop--go response in new simulation episodes on the same network. \record{locked-test/RESULTS.md}{Per-class scores and both seeds' test figures}
+\begin{center}\includegraphics[width=.88\linewidth,height=.22\textheight,keepaspectratio]{../../docs/results/locked-test/swap-42.png}\end{center}
+{\small Figure 2. Test speed profiles for the same route under bicycle and bus labels. \record{locked-test/swap-43.png}{Seed 43}}
+
+{\small Zhu et al. (2023). \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/cd9b4a28fb9eebe0430c3312a4898a41-Abstract.html}{DiffTraj: Generating GPS Trajectory with Diffusion Probabilistic Model}. NeurIPS.}
 
 \newpage
-\section*{9. Test trajectories and a fixed-route label switch}
-\begin{center}\includegraphics[width=.85\linewidth,height=.56\textheight,keepaspectratio]{../../docs/results/locked-test/map-42.png}\\[3pt]
-\includegraphics[width=.83\linewidth,height=.21\textheight,keepaspectratio]{../../docs/results/locked-test/swap-42.png}\end{center}
-{\small Figure 4. Top: the first test request per class, training seed 42. The coordinate and combined models follow the same underlying polyline. Colours and speed curves show changes in timing. Bottom: the median-ID bicycle request among the eligible matches, shown under two speed-model labels. The observed bicycle curve provides the reference for that request. \record{locked-test/map-43.png}{Seed 43 maps} $\cdot$ \record{locked-test/swap-43.png}{Seed 43 label switch}.}
+\section*{Frozen test trajectories}
+\begin{center}\includegraphics[width=\linewidth,height=.81\textheight,keepaspectratio]{../../docs/results/locked-test/map-42.png}\end{center}
+{\small Figure 3. First test request per class. Columns show SUMO, coordinate diffusion, the combined model and speed over time. Map colours show speed. \record{locked-test/map-43.png}{Seed 43}}
+
+\newpage
+\section*{Validation trajectories}
+\begin{center}\includegraphics[width=\linewidth,height=.37\textheight,keepaspectratio]{trips-42.png}\end{center}
+{\small Figure 4. Vehicle-label swaps under coordinate and velocity diffusion. \record{velocity-class-control/trips-43.png}{Seed 43}}
+\begin{center}\includegraphics[width=\linewidth,height=.43\textheight,keepaspectratio]{../../docs/results/route-conditioned-clock/map-43.png}\end{center}
+{\small Figure 5. Both timing models use the same generated polyline. \record{route-conditioned-clock/map-42.png}{Seed 42}}
 
 \newpage\section*{Appendix. Road maps by vehicle: Bicycle}
-Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+Two fixed validation requests, seed 42. Colour shows speed. Circles mark starts and crosses mark ends.
 \begin{center}\includegraphics[width=.97\linewidth]{maps/bicycle-1.png}\end{center}
 \begin{center}\includegraphics[width=.97\linewidth]{maps/bicycle-2.png}\end{center}
-{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+{\small Top row shows SUMO, coordinate diffusion and speed supervision. Bottom row shows sampling guidance, the matched coordinate control and velocity diffusion.}
 
 \newpage\section*{Appendix. Road maps by vehicle: Bus}
-Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+Two fixed validation requests, seed 42. Colour shows speed. Circles mark starts and crosses mark ends.
 \begin{center}\includegraphics[width=.97\linewidth]{maps/bus-1.png}\end{center}
 \begin{center}\includegraphics[width=.97\linewidth]{maps/bus-2.png}\end{center}
-{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+{\small Top row shows SUMO, coordinate diffusion and speed supervision. Bottom row shows sampling guidance, the matched coordinate control and velocity diffusion.}
 
 \newpage\section*{Appendix. Road maps by vehicle: Motorcycle}
-Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+Two fixed validation requests, seed 42. Colour shows speed. Circles mark starts and crosses mark ends.
 \begin{center}\includegraphics[width=.97\linewidth]{maps/motorcycle-1.png}\end{center}
 \begin{center}\includegraphics[width=.97\linewidth]{maps/motorcycle-2.png}\end{center}
-{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+{\small Top row shows SUMO, coordinate diffusion and speed supervision. Bottom row shows sampling guidance, the matched coordinate control and velocity diffusion.}
 
 \newpage\section*{Appendix. Road maps by vehicle: Passenger car}
-Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+Two fixed validation requests, seed 42. Colour shows speed. Circles mark starts and crosses mark ends.
 \begin{center}\includegraphics[width=.97\linewidth]{maps/passenger-1.png}\end{center}
 \begin{center}\includegraphics[width=.97\linewidth]{maps/passenger-2.png}\end{center}
-{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+{\small Top row shows SUMO, coordinate diffusion and speed supervision. Bottom row shows sampling guidance, the matched coordinate control and velocity diffusion.}
 
 \newpage\section*{Appendix. Road maps by vehicle: Taxi}
-Each block shows one validation request under the supplied vehicle label (seed 42). Within a block, the six maps share the same road extent and speed scale. A circle marks the start and a cross the end of each plotted path.
+Two fixed validation requests, seed 42. Colour shows speed. Circles mark starts and crosses mark ends.
 \begin{center}\includegraphics[width=.97\linewidth]{maps/taxi-1.png}\end{center}
 \begin{center}\includegraphics[width=.97\linewidth]{maps/taxi-2.png}\end{center}
-{\small Top row: SUMO, coordinate baseline, speed supervision. Bottom row: speed guidance applied to the top-row baseline, the separately trained coordinate control for velocity diffusion, and velocity diffusion. The first two requests per class in the fixed validation order were selected before viewing the maps.}
+{\small Top row shows SUMO, coordinate diffusion and speed supervision. Bottom row shows sampling guidance, the matched coordinate control and velocity diffusion.}
 
 \end{document}
